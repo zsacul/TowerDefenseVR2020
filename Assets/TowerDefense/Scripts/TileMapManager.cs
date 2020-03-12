@@ -8,6 +8,7 @@ public class TileMapManager : MonoBehaviour
     public int TilemapSizeX, TilemapSizeY;
     public float TilemapChunkSize;
     public GameObject TilemapChunk;
+    public GameObject TilemapBlocker;
     public NavMeshSurface surface;
 
     // Start is called before the first frame update
@@ -18,6 +19,8 @@ public class TileMapManager : MonoBehaviour
             for (int j = 0; j < TilemapSizeY; j++)
             {
                 GameObject Tile = Instantiate(TilemapChunk, new Vector3((float)i * TilemapChunkSize, 0.1f, (float)j * TilemapChunkSize), Quaternion.identity);
+                Tile.transform.SetParent(transform);
+                GameObject Block = Instantiate(TilemapBlocker, new Vector3((float)i * TilemapChunkSize, 0.5f, (float)j * TilemapChunkSize), Quaternion.identity);
                 Tile.transform.SetParent(transform);
             }
 
