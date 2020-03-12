@@ -13576,7 +13576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilemapSizeX: 16
   TilemapSizeY: 16
-  TilemapChunkSize: 1.01
+  TilemapChunkSize: 1
   TilemapChunk: {fileID: 3394336394628197914, guid: 37c477b8e5ea93748904733a43a45d45,
     type: 3}
   TilemapBlocker: {fileID: 3327089343925875729, guid: 968cc5993fb2b264e8ec5a6f7b82bab0,
@@ -18203,8 +18203,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964718763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.05, y: -5, z: 11.8}
-  m_LocalScale: {x: 30, y: 10, z: 30}
+  m_LocalPosition: {x: 11.05, y: -5, z: 7.5}
+  m_LocalScale: {x: 30, y: 10, z: 16}
   m_Children: []
   m_Father: {fileID: 346314695}
   m_RootOrder: 0
