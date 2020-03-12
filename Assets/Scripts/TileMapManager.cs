@@ -16,7 +16,10 @@ public class TileMapManager : MonoBehaviour
         // Create the game map.
         for (int i = 0; i < TilemapSizeX; i++)
             for (int j = 0; j < TilemapSizeY; j++)
-                Instantiate(TilemapChunk, new Vector3((float)i * TilemapChunkSize, 0.1f, (float)j * TilemapChunkSize), Quaternion.identity);
+            {
+                GameObject Tile = Instantiate(TilemapChunk, new Vector3((float)i * TilemapChunkSize, 0.1f, (float)j * TilemapChunkSize), Quaternion.identity);
+                Tile.transform.SetParent(transform);
+            }
 
         surface.BuildNavMesh(); // Bake navmesh. Call this everytime there is an update of the map.
     }
