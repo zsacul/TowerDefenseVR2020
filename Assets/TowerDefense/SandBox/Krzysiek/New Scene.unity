@@ -19370,6 +19370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2abe6baec00c9f49bea9e85beaf9f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 0}
+  breakEnd: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
+  breakStart: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
   spawnPoints:
   - {fileID: 1000521700}
   wave:
@@ -19379,7 +19382,8 @@ MonoBehaviour:
     bonusHp: 1
     bonusSpeed: 1
     groupSize: 2
-  breakLength: 0
+    nextGroupTime: 5
+  breakLength: 10
 --- !u!4 &1000521700
 Transform:
   m_ObjectHideFlags: 0

@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace SpawnManaging
 {
-    public class SpawnManager : MonoBehaviour
+    public class SpawnManager : GameEventListener
     {
+        [SerializeField]
+        GameEvent breakEnd;
+        [SerializeField]
+        GameEvent breakStart;
         [SerializeField]
         Transform[] spawnPoints;
         [SerializeField]
@@ -26,42 +30,49 @@ namespace SpawnManaging
         {
             if (spawnedInGroup >= wave[waveIndex].groupSize)
             {
-                Debug.Log("GroupEnd");
                 CancelInvoke("Spawn");
                 return;
             }
             GameObject obj = wave[waveIndex].waveData.GetEnemy();
             if(obj == null)//wave end
             {
-                Debug.Log("NULL");
                 CancelInvoke("Spawn");
                 CancelInvoke("SpawnLoop");
                 waveIndex++;
                 if(waveIndex < wave.Length)
                 {
                     wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
-                    Invoke("SpawnLoop", breakLength);
+                    InvokeRepeating("SpawnLoop", breakLength, 1);
+                    breakStart.Raise();
                 }
-                
+                else
+                {
+                    Debug.Log("All waves cleared");//TODO
+                }
                 return;
             }
             spawnedInGroup++;
-            Debug.Log("SHOULD WORK");
             Instantiate(obj, spawnPoints[spawnerIndex]);
         }
         private void SpawnLoop()
         {
-            if(!IsInvoking("Spawn"))
+            breakEnd.Raise();
+            if (!IsInvoking("Spawn"))
             {
                 spawnedInGroup = 0;
                 spawnerIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
-                InvokeRepeating("Spawn", wave[waveIndex].interval, wave[waveIndex].interval);
+                InvokeRepeating("Spawn", wave[waveIndex].nextGroupTime, wave[waveIndex].interval);
             }
         }
         private void EndSpawn()
         {
             CancelInvoke("Spawn");
+        }
 
+        public override void OnEventRaised(UnityEngine.Object data)
+        {
+            CancelInvoke("SpawnLoop");
+            CancelInvoke("Spawn");
         }
     }
     [Serializable]
@@ -78,6 +89,8 @@ namespace SpawnManaging
         public float bonusSpeed = 1;
         [Min(1)]
         public int groupSize = 1;
+        [Tooltip("time from end of last group to begining of new")]
+        public float nextGroupTime;
     }
 }
 
