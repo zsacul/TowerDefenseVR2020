@@ -23,7 +23,7 @@ public class DebugAgentBounceback : MonoBehaviour
             }
 
             if(whereping == 2) {
-                agent.GetComponent<EnemyAgentMotivator>().Ping2();
+                agent.GetComponent<EnemyAgentMotivator>().Ping1();
             }
         }
     }
