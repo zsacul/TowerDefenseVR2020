@@ -4,12 +4,16 @@ public class EnemyHPManager : MonoBehaviour {
     
     private UnityEngine.AI.NavMeshAgent enemyAgent;
 
+    public HealthBar healthBar;
+        
     [Min(1f)]
-    public float enemyHP = 100;
+    public float enemyMaxHP = 100;
     
+    private float enemyHP;  
 
     private void Start() {
         enemyAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        enemyHP = enemyMaxHP;
     }
 
     private void Death() {
@@ -20,6 +24,7 @@ public class EnemyHPManager : MonoBehaviour {
     public void ApplyDamage(float damage) {
         
         enemyHP -= damage;
+        healthBar.updateBar(enemyHP / enemyMaxHP);
 
         if (enemyHP <= 0 ) {
             Death();
