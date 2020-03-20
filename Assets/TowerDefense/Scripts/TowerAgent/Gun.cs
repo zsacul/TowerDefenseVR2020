@@ -7,9 +7,10 @@ public class Gun : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
-    public void fire(GameObject target, float speed, float damage)
+    public void fire(GameObject target, float speed, float damage, string type)
     {
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
-        instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage);
+        instBullet.transform.parent = GetComponentInParent<GunsManager>().gameObject.transform;
+        instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage, type);
     }
 }
