@@ -23,11 +23,27 @@ public class EnemyHPManager : MonoBehaviour {
         Destroy(gameObject, 3);
     }
 
-    public void ApplyDamage(float damage) {
+    public void ApplyDamage(Bullet b) {
+        damaged.Invoke();
+        if (b.GetBulletType() == TowerType.fire)
+            enemyHP -= b.GetDamage() * 2;
+        else
+            enemyHP -= b.GetDamage();
+
+        b.SetReadyToDestroy();
+
+        if (enemyHP <= 0 ) {
+            Death();
+        }
+    }
+
+    public void ApplyDamage(int damage)
+    {
         damaged.Invoke();
         enemyHP -= damage;
 
-        if (enemyHP <= 0 ) {
+        if (enemyHP <= 0)
+        {
             Death();
         }
     }

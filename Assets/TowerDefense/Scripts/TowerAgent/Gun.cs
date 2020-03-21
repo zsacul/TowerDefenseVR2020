@@ -7,10 +7,20 @@ public class Gun : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
-    public void fire(GameObject target, float speed, float damage, string type)
+    public void SetBullet(GameObject b)
     {
+        bullet = b;
+    }
+
+    public void fire(GameObject target, float speed, float damage, TowerType type)
+    {
+        if (target == null)
+            Debug.Log("BABOL");
+        else
+            Debug.Log(target.name);
+
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
-        instBullet.transform.parent = GetComponentInParent<GunsManager>().gameObject.transform;
+        instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
         instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage, type);
     }
 }
