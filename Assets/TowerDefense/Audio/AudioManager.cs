@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
         Sounds = GetComponent<AudioAssets>();
     }
 
-    public void PlaySound(AudioClip soundToPlay, GameObject originOfSound, AudioMixerGroup mixer, bool isLooped = false)
+    public void PlaySoundOnce(AudioClip soundToPlay, GameObject originOfSound, AudioMixerGroup mixer)
     {
         if(originOfSound.GetComponent<AudioSource>() == null)
         {
@@ -36,10 +36,8 @@ public class AudioManager : MonoBehaviour
         }
        
         AudioSource src = originOfSound.GetComponent<AudioSource>();
-        src.loop = isLooped;
         src.outputAudioMixerGroup = mixer;
-        src.clip = soundToPlay;
-        src.Play();
+        src.PlayOneShot(soundToPlay);
     }
     
     void Start()

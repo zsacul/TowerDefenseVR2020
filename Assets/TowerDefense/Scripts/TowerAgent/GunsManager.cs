@@ -37,7 +37,8 @@ public class GunsManager : MonoBehaviour
             foreach( Gun g in gunsList)
             {
                 g.fire(enemiesList[0], speed, damage);
-                GetComponent<AudioShortSounds>().Play();
+                if(GetComponent<AudioShortSounds>() != null)
+                     GetComponent<AudioShortSounds>().Play();
             }
 
             currentDelay = 0f;

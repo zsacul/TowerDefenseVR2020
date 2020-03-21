@@ -15,6 +15,6 @@ public class AudioShortSounds : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.I.PlaySound(clipToPlay, this.gameObject, mixer);
+        AudioManager.I.PlaySoundOnce(clipToPlay, this.gameObject, mixer);
     }
 }
