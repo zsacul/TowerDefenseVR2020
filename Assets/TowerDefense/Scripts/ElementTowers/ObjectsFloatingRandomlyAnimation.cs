@@ -10,12 +10,11 @@ public class ObjectsFloatingRandomlyAnimation : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < NumberOfObjects; i++)
+        for (int i = 0; i < NumberOfObjects; i++)
         {
             SpawnObject();
         }
-
-    }    
+    }
 
     private void SpawnObject()
     {
@@ -28,7 +27,6 @@ public class ObjectsFloatingRandomlyAnimation : MonoBehaviour
         flyingObject.transform.position = new Vector3(objectRotator.transform.position.x + 0.75f, objectRotator.transform.position.y, objectRotator.transform.position.z);
 
         objectRotator.RandomizeValues();
-        
     }
 
     private ObjectRotator ChooseRandomObject()
@@ -36,7 +34,7 @@ public class ObjectsFloatingRandomlyAnimation : MonoBehaviour
         return Objects[UnityEngine.Random.Range(0, Objects.Count)];
     }
 
-    
 
-    
+
+
 }

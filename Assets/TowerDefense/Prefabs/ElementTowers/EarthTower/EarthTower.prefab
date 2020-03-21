@@ -40,14 +40,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b087297bb41e9d4e982020d748586cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 10
-  FallingSpeed: 0
+  RotationSpeeds: {x: 0, y: 10, z: 0}
+  StartAngles: {x: 0, y: 0, z: 0}
   ShouldFall: 0
-  Height: 0
-  fixedRotationX: 0
-  fixedRotationY: 0
-  fixedRotationZ: 0
-  SetRotationFromParent: 0
 --- !u!1 &3065571658715748105
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +52,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6173797265635267009}
-  - component: {fileID: 3786271437681468261}
   - component: {fileID: 4970866168947170939}
   - component: {fileID: 2975782297079867613}
   m_Layer: 0
@@ -86,33 +80,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3786271437681468261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3065571658715748105}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb7b226c30f5bf40b0fde169aec18d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects:
-  - {fileID: 8924985979996357409, guid: 105ad5e4a6624f44aa8ede1833bd84e7, type: 3}
-  - {fileID: 6803052277787659621, guid: 535deb981425a794da82cbd2ff13cd7e, type: 3}
-  - {fileID: 7171601956242764961, guid: 9c83fc4653d4f8048a385ae679c255f0, type: 3}
-  ObjectRotator: {fileID: 3537593979838678342, guid: d9199264508446548a933f683c8525b7,
-    type: 3}
-  ObjectsHeights:
-  - 2
-  - 3
-  - 4
-  - 5
-  - 5.5
-  NumberOfObjectsOnHeight: 0f00000004000000050000000800000002000000
-  ActivateObjectsFalling: 0
-  SpawnRateTime: 1
 --- !u!114 &4970866168947170939
 MonoBehaviour:
   m_ObjectHideFlags: 0
