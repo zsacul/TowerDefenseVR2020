@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunsManagerBase : MonoBehaviour
+public class BaseTower : MonoBehaviour
 {
     protected TowerType type;
 
@@ -10,20 +10,19 @@ public class GunsManagerBase : MonoBehaviour
     protected List<Gun> gunsList;
 
     protected int numberOfEnemiesInRange;
-    protected float currentDelay;
     protected int numberOfActiveGuns;
     protected int maxNumberOfGuns;
+    protected int lvl;
+    protected int maxlvl;
+    protected float currentDelay;
+    protected GameObject bulletPref;
 
     [SerializeField]
     protected int upgradeRise;
     [SerializeField]
-    protected int upgradeDamageCost;
+    protected int upgradeCost;
     [SerializeField]
     protected int upgradeDamageIncreaseInPercent;
-    [SerializeField]
-    protected int upgradeNewGunCost;
-    [SerializeField]
-    protected int upgradeRangeCost;
     [SerializeField]
     protected int upgradeRangeIncreaseInPercent;
     [SerializeField]
@@ -37,6 +36,28 @@ public class GunsManagerBase : MonoBehaviour
     [SerializeField]
     protected float speed = 8f;
 
+    public int GetUpgradeCost()
+    {
+        return upgradeCost;
+    }
+
+    public int Getlvl()
+    {
+        return lvl;
+    }
+
+    public void Upgrade()
+    {
+        if (lvl < maxlvl)
+        {
+            UpgradeFireDamage();
+            UpgradeRange();
+            UpgradeAddGun();
+            lvl++;
+            upgradeCost *= upgradeRise;
+        }
+    }
+
     protected void deactivateGuns()
     {
         foreach (Gun g in gunsList)
@@ -45,19 +66,10 @@ public class GunsManagerBase : MonoBehaviour
         }
     }
 
-    public int GetNewGunCost()
+    virtual protected void setBulletTypeInGuns()
     {
-        return upgradeNewGunCost;
-    }
-
-    public int GetRangeIncreaseCost()
-    {
-        return upgradeRangeCost;
-    }
-
-    public int GetDamageIncreaseCost()
-    {
-        return upgradeDamageCost;
+        foreach (Gun g in gunsList)
+            g.SetBullet(bulletPref);
     }
 
     virtual protected IEnumerator shoot()
@@ -71,38 +83,20 @@ public class GunsManagerBase : MonoBehaviour
             yield return new WaitForSeconds(shootingDelay / numberOfActiveGuns / 2f);
         }
     }
-
-    virtual public bool IsAddGunUpgradeAvailable()
-    {
-        return numberOfActiveGuns < maxNumberOfGuns;
-    }
-
-    virtual public bool IsFireDamageUpgradeAvailable()
-    {
-        return damage < maxDamage;
-    }
-
-    virtual public bool IsRangeUpgradeAvailable()
-    {
-        return this.GetComponent<SphereCollider>().radius < maxRadius;
-    }
-
-    virtual public void UpgradeFireDamage()
+    
+    virtual protected void UpgradeFireDamage()
     {
         damage *= 1 + upgradeDamageIncreaseInPercent;
-        upgradeDamageCost += upgradeRise;
     }
 
-    virtual public void UpgradeAddGun()
+    virtual protected void UpgradeAddGun()
     {
         gunsList[numberOfActiveGuns].gameObject.SetActive(true);
         numberOfActiveGuns++;
-        upgradeNewGunCost += upgradeRise;
     }
 
-    virtual public void UpgradeRange()
+    virtual protected void UpgradeRange()
     {
         this.GetComponent<SphereCollider>().radius *= 1f + upgradeRangeIncreaseInPercent;
-        upgradeRangeCost += upgradeRise;
     }
 }

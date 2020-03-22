@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunsManagerStone : GunsManagerBase
+public class FireTower : BaseTower
 {
     [SerializeField]
-    GameObject StoneBullet;
+    GameObject FireBullet;
     // Start is called before the first frame update
     void Start()
     {
-        type = TowerType.stone;
+        type = TowerType.fire;
+        bulletPref = FireBullet;
         upgradeRise = 50;
-        upgradeDamageCost = 10;
-        upgradeNewGunCost = 10;
-        upgradeRangeCost = 10;
+        upgradeCost = 10;
         maxDamage = 100;
         maxRadius = 6f;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
@@ -25,19 +24,13 @@ public class GunsManagerStone : GunsManagerBase
         deactivateGuns();
         gunsList[0].gameObject.SetActive(true);
     }
-
-    void setBulletTypeInGuns()
-    {
-        foreach (Gun g in gunsList)
-            g.SetBullet(StoneBullet);
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
         currentDelay += Time.deltaTime;
         numberOfEnemiesInRange = enemiesList.Count;
-        if ( numberOfEnemiesInRange > 0 && currentDelay >= shootingDelay)
+        if (numberOfEnemiesInRange > 0 && currentDelay >= shootingDelay)
         {
             StartCoroutine(shoot());
             currentDelay = 0f;
@@ -45,4 +38,4 @@ public class GunsManagerStone : GunsManagerBase
         }
     }
 
-}   
+}

@@ -10,6 +10,11 @@ public class Bullet : MonoBehaviour
     TowerType type;
     bool readyToDestroy;
 
+    public Bullet(GameObject t, float s, float d, TowerType typ)
+    {
+        setBulletInfo(t, s, d, typ);
+    }
+
     public void setBulletInfo(GameObject t, float s, float d, TowerType typ)
     {
         target = t;
