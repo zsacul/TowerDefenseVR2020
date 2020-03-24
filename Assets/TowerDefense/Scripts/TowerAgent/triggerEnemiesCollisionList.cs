@@ -8,11 +8,7 @@ public class triggerEnemiesCollisionList : MonoBehaviour
 
     private void FixedUpdate()
     {
-        foreach (GameObject a in currentCollisions)
-        {
-            if (a == null)
-                currentCollisions.Remove(a);
-        }
+        currentCollisions.RemoveAll(item => item == null || item.GetComponent<Collider>() == null);
     }
 
     private void OnTriggerEnter(Collider collision)

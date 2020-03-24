@@ -34,4 +34,13 @@ public class EndpointManager : GameEventListener
     {
         Debug.Log("Game over");
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            DamageEndpoint(1);
+            other.GetComponent<EnemyHPManager>().ApplyDamage(1000000);
+        }
+        
+    }
 }

@@ -7,6 +7,8 @@ namespace SpawnManaging
     public class SpawnManager : GameEventListener
     {
         [SerializeField]
+        Transform target;
+        [SerializeField]
         GameEvent breakEnd;
         [SerializeField]
         GameEvent breakStart;
@@ -52,7 +54,7 @@ namespace SpawnManaging
                 return;
             }
             spawnedInGroup++;
-            Instantiate(obj, spawnPoints[spawnerIndex]);
+            Instantiate(obj, spawnPoints[spawnerIndex]).GetComponent<EnemyAgentMotivator>().target1 = target;
         }
         private void SpawnLoop()
         {
