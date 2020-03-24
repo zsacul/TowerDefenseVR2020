@@ -13426,65 +13426,6 @@ PrefabInstance:
       objectReference: {fileID: 1751637657}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e739c3a4de1d94e9afaa547a0809ca, type: 3}
---- !u!1 &493472360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493472363}
-  - component: {fileID: 493472362}
-  - component: {fileID: 493472361}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &493472361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493472360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2addf7d0ca6e7244b965b337aa042ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sTowerShotBlaster: {fileID: 8300000, guid: 3d408b21a66e5824abf9dc4145c98557, type: 3}
-  mProjectilesMaster: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
---- !u!114 &493472362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493472360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c089dda427ded54fa78248cff289f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sounds: {fileID: 0}
---- !u!4 &493472363
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493472360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7417088, y: 2.3541527, z: 2.1101284}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &497035553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5944502663502788209, guid: d1920aeaabe3a4a4c8ee3b49009104c8,
@@ -37271,7 +37212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709810199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -46094,6 +46035,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4315896199336624501, guid: ae0332a1eea44df4ca54bb67f6645dd8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315896199336624503, guid: ae0332a1eea44df4ca54bb67f6645dd8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4315896199824777917, guid: ae0332a1eea44df4ca54bb67f6645dd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48424,6 +48375,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc165ab4efd7149429ff92afc15a1eae, type: 3}
+--- !u!1001 &3022407711500138767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.7417088
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3541527
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.1101284
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634084, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634087, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6d67bcb62b91fc48a7794ac2b810b36, type: 3}
 --- !u!114 &3323817360917159682 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3323817360917159682, guid: 71fb421f79510cd4bbcc9a353ecc895a,
