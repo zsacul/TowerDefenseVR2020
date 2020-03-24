@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b087297bb41e9d4e982020d748586cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeeds: {x: 0, y: 20, z: 0}
+  RotationSpeeds: {x: 0, y: 0.5, z: 0}
   StartAngles: {x: 0, y: 0, z: 0}
   ShouldFall: 0

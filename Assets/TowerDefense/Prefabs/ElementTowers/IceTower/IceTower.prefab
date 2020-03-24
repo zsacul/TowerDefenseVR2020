@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b087297bb41e9d4e982020d748586cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeeds: {x: 0, y: 10, z: 0}
+  RotationSpeeds: {x: 0, y: 0.3, z: 0}
   StartAngles: {x: 0, y: 0, z: 0}
   ShouldFall: 0
 --- !u!114 &9165943748893206292
@@ -29,7 +29,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinFloatHeight: -0.02
   MaxFloatHeight: 0.02
-  FloatSpeed: 0.03
+  FloatSpeed: 0.0007
 --- !u!1 &6337077111633023746
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,9 +82,9 @@ MonoBehaviour:
   ObjectRotator: {fileID: 3537593979838678342, guid: d9199264508446548a933f683c8525b7,
     type: 3}
   SpawnRateTime: 0.45
-  FallingSpeed: 0.2
+  FallingSpeed: 0.004
   FallRange: {x: 1, y: 5.5}
-  RotationSpeed: 50
+  RotationSpeed: 1
   RandomizeAngle: 0
   RotationRadius: 0.6
 --- !u!1001 &1571504223169138141

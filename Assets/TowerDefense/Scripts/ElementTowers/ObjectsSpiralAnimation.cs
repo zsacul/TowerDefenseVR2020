@@ -12,16 +12,11 @@ public class ObjectsSpiralAnimation : MonoBehaviour
     public float RotationSpeed; // how fast objects rotate around center
     public bool RandomizeAngle; //should start y angle be randomized
     public float RotationRadius; // how far rotating object is from pillar
+    public bool ShouldSpawn = true;
 
-    private float spawnRateTime;
     void Start()
     {
-        spawnRateTime = SpawnRateTime;
-    }
-
-    private void Update()
-    {
-        SpawnFallingObject();
+        InvokeRepeating("SpawnFallingObject", 0.0f, SpawnRateTime);
     }
 
     private void SpawnObject()
@@ -46,14 +41,9 @@ public class ObjectsSpiralAnimation : MonoBehaviour
 
     private void SpawnFallingObject()
     {
-        if (spawnRateTime < 0)
+        if(ShouldSpawn)
         {
             SpawnObject();
-            spawnRateTime = SpawnRateTime;
-        }
-        else
-        {
-            spawnRateTime -= Time.deltaTime;
         }
     }
 }
