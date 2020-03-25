@@ -17,6 +17,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AnimationCurve defaultFadingCurve;
 
+
+    private AudioSource src; 
+
     ///does not interfere in ANY way with any sound, even on the same object
     public void playSoundOnce(AudioClip soundToPlay, GameObject originOfSound, AudioMixerGroup mixer)
     {
@@ -47,8 +50,9 @@ public class AudioManager : MonoBehaviour
             Curve = defaultFadingCurve;
         }
 
+        AudioSource aSrc = source.GetComponent<AudioSource>();
 
-        IEnumerator IEnumForFade = fadeOutCoorutine(source.GetComponent<AudioSource>(), duration, Curve, source.GetComponent<AudioSource>().volume);
+        IEnumerator IEnumForFade = fadeOutCoorutine(aSrc, duration, Curve, aSrc.volume);
         StartCoroutine(IEnumForFade);
     }
     
@@ -61,15 +65,16 @@ public class AudioManager : MonoBehaviour
             Curve = defaultFadingCurve;
         }
 
+        AudioSource aSrc = source.GetComponent<AudioSource>();
 
-        IEnumerator IEnumForFade = fadeInCoorutine(source.GetComponent<AudioSource>(), duration, Curve, source.GetComponent<AudioSource>().volume);
+        IEnumerator IEnumForFade = fadeInCoorutine(aSrc, duration, Curve, aSrc.volume);
         StartCoroutine(IEnumForFade);
     }
 
     //fades out(if specified) current bgm and fades in the new one
     public void playBGM(AudioClip BGM, float fadeInDuration = 1.0f, float fadeOutDuration = 1.0f)
     {
-        AudioSource src = GetComponent<AudioSource>();
+        
         if(src.isPlaying)
         {
             IEnumerator enumerator = changeBGM(BGM, fadeInDuration, fadeOutDuration);
@@ -83,11 +88,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //TODO maybe
     public void addBgmToQueue()
     {
 
     }
 
+    //TODO maybe
     public void pauseBGM(float fadeOutDuration = 1.0f)
     {
 
@@ -123,27 +130,27 @@ public class AudioManager : MonoBehaviour
     private IEnumerator changeBGM(AudioClip nextBGMtoPlay,  float fadeInDuration, float fadeOutDuration)
     {
         float currtime = 0;
-        AudioSource source = GetComponent<AudioSource>();
-        float startingVol = source.volume;
+        
+        float startingVol = src.volume;
         while (currtime < fadeOutDuration)
         {
-            source.volume = Mathf.Lerp(startingVol, 0.0f, defaultFadingCurve.Evaluate(currtime / fadeOutDuration));
+            src.volume = Mathf.Lerp(startingVol, 0.0f, defaultFadingCurve.Evaluate(currtime / fadeOutDuration));
             currtime += Time.deltaTime;
             yield return null;
         }
 
-        source.Stop();
-        source.volume = startingVol;
-        source.clip = nextBGMtoPlay;
-        source.Play();
+        src.Stop();
+        src.volume = startingVol;
+        src.clip = nextBGMtoPlay;
+        src.Play();
         fadeIn(this.gameObject, fadeInDuration);
     }
 
     void Start()
     {
-        this.GetComponent<AudioSource>().clip = Sounds.sBGMAction1;
-        this.GetComponent<AudioSource>().Play();
-        this.fadeOut(this.gameObject, 8.0f);
+       src.clip = Sounds.sBGMAction1;
+       src.Play();
+       fadeOut(this.gameObject, 8.0f);
     }
     private void Awake()
     {
@@ -155,10 +162,10 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         Sounds = GetComponent<AudioAssets>();
-        AudioSource audioSrc = this.gameObject.AddComponent<AudioSource>();
-        audioSrc.outputAudioMixerGroup = Sounds.mBGMMaster;
-        audioSrc.spatialBlend = 0;
-        audioSrc.maxDistance = 9999999;
+        src = this.gameObject.AddComponent<AudioSource>();
+        src.outputAudioMixerGroup = Sounds.mBGMMaster;
+        src.spatialBlend = 0;
+        src.maxDistance = 9999999;
     }
 
     //just for testing

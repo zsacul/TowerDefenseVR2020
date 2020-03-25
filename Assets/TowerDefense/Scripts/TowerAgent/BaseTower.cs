@@ -36,6 +36,10 @@ public class BaseTower : MonoBehaviour
     [SerializeField]
     protected float speed = 8f;
 
+    protected BaseSoundAttachment sound;
+
+
+
     public int GetUpgradeCost()
     {
         return upgradeCost;
@@ -78,7 +82,12 @@ public class BaseTower : MonoBehaviour
         foreach (Gun g in gunsList)
         {
             if (g.gameObject.activeSelf)
+            {
                 g.fire(enemiesList[t % numberOfEnemiesInRange], speed, damage, type);
+                if (sound != null)
+                    sound.Play();
+            }
+                
             t++;
             yield return new WaitForSeconds(shootingDelay / numberOfActiveGuns / 2f);
         }
