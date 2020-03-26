@@ -59,4 +59,30 @@ public class ChunkScene : MonoBehaviour
             }
         }
     }
+
+    public ChunkType GetChunkType(int x, int y) {
+        return map[x, y];
+    }
+
+    public (int, int) GetFirstChunkOfType(ChunkType type) {
+
+        (int, int) point = (0, 0);
+        bool wasPointFound = false;
+        for (int y = 0; y < mapString.sizeY; y++)
+        {
+            for (int x = 0; x < mapString.sizeX; x++)
+            {
+                if(map[x, y] == type){
+                    point = (x, y);
+                    wasPointFound = true;
+                    break;
+                }
+            }
+            if (wasPointFound) break;
+        }
+        if (!wasPointFound){
+            Debug.LogError($"ChunkScene.cs/GetFirstChunkOfType(): Point of type {type} wasn't found");
+        }
+        return point;
+    }
 }
