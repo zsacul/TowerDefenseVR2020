@@ -32,7 +32,7 @@ public class BaseTower : MonoBehaviour
     [SerializeField]
     protected float shootingDelay = 3f;
     [SerializeField]
-    protected float damage = 10f;
+    protected float damage = 25f;
     [SerializeField]
     protected float speed = 8f;
 

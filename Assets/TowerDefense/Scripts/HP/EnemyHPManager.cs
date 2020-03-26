@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class EnemyHPManager : MonoBehaviour {
     
     private UnityEngine.AI.NavMeshAgent enemyAgent;
-<<<<<<< HEAD:Assets/TowerDefense/Scripts/EnemyHPManager.cs
     public UnityEvent damaged;
     public UnityEvent killed;
     
@@ -12,20 +12,10 @@ public class EnemyHPManager : MonoBehaviour {
     GameObject targetPoint;
     
     [Min(1f)]
-    public float enemyHP = 100;
-=======
-
-    public HealthBar healthBar;
-        
-    [Min(1f)]
-    public float enemyMaxHP = 100;
-    
-    private float enemyHP;  
->>>>>>> origin/Dawid/HealthBars:Assets/TowerDefense/Scripts/HP/EnemyHPManager.cs
+    public float enemyHP = 100f;
 
     private void Start() {
         enemyAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        enemyHP = enemyMaxHP;
     }
 
     private void Death() {
@@ -36,7 +26,6 @@ public class EnemyHPManager : MonoBehaviour {
         Destroy(gameObject, 3);
     }
 
-<<<<<<< HEAD:Assets/TowerDefense/Scripts/EnemyHPManager.cs
     public void ApplyDamage(Bullet b) {
         damaged.Invoke();
         if (b.GetBulletType() == TowerType.fire)
@@ -44,17 +33,16 @@ public class EnemyHPManager : MonoBehaviour {
         else
             enemyHP -= b.GetDamage();
 
+        GetComponent<HealthBar>().updateBar(enemyHP);
+
         b.SetReadyToDestroy();
-=======
-    public void ApplyDamage(float damage) {
-        
-        enemyHP -= damage;
-        healthBar.updateBar(enemyHP / enemyMaxHP);
->>>>>>> origin/Dawid/HealthBars:Assets/TowerDefense/Scripts/HP/EnemyHPManager.cs
+
 
         if (enemyHP <= 0 ) {
             Death();
         }
+
+
     }
 
     public void ApplyDamage(int damage)
