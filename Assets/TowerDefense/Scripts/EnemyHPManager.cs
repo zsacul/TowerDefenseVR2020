@@ -6,10 +6,12 @@ public class EnemyHPManager : MonoBehaviour {
     private UnityEngine.AI.NavMeshAgent enemyAgent;
     public UnityEvent damaged;
     public UnityEvent killed;
-
+    
+    [SerializeField]
+    GameObject targetPoint;
+    
     [Min(1f)]
     public float enemyHP = 100;
-    
 
     private void Start() {
         enemyAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -46,5 +48,9 @@ public class EnemyHPManager : MonoBehaviour {
         {
             Death();
         }
+    }
+
+    public GameObject GetTargetPoint(){
+        return targetPoint;
     }
 }

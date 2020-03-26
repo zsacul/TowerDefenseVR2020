@@ -10785,6 +10785,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 442069745}
     m_Modifications:
+    - target: {fileID: 1656538626112843250, guid: 7b67bb1863767364fba8c14a6bb1bd24,
+        type: 3}
+      propertyPath: emittedTypes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2321391976155359515, guid: 7b67bb1863767364fba8c14a6bb1bd24,
         type: 3}
       propertyPath: cameraValidity.field
