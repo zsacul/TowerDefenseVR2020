@@ -8,19 +8,13 @@ public class EndpointManager : GameEventListener
     GameEvent gameOver;
 
     public int health;
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-    }
 
     bool GameOverCondition()
     {
         return this.health <= 0;
     }
 
+    // Method called by the enemy after arriving to the endpoint
     void DamageEndpoint(int damageValue)
     {
         this.health -= damageValue;
@@ -34,6 +28,7 @@ public class EndpointManager : GameEventListener
     {
         Debug.Log("Game over");
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
