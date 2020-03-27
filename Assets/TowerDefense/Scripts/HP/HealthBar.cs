@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour {
 
     private void Start()
     {
+        maxEnemyHP = GetComponent<EnemyHPManager>().enemyHP;
     }
 
     public void updateBar(float health) {
