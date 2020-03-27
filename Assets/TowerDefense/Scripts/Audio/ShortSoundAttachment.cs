@@ -6,7 +6,7 @@ public class ShortSoundAttachment : BaseSoundAttachment
 {
     override public void Play() 
     {
-        AudioManager.I.playSoundOnce(clipToPlay, this.gameObject, mixer);
-       // AudioManager.I.fadeOut(this.gameObject, 1.1f);
+        AudioManager.Instance.PlaySoundOnce(clipToPlay, this.gameObject, mixer);
+       // AudioManager.Instance.fadeOut(this.gameObject, 1.1f);
     }
 }
