@@ -6,9 +6,9 @@ public class PrefabsSet : ScriptableObject
 {
     [Tooltip("Randomly choosen, can't build, can't path, used outside borderline")]
     public GameObject[] none;
-    [Tooltip("Randomly choosen, can build, can path")]
+    [Tooltip("index == 0 => straight, index == 1 => corner, without path index > 1 randomly choosen, can build, can path")]
     public GameObject[] empty;
-    [Tooltip("index % 2 == 0 => straight border, index % 2 == 1 => border corner, randomly choosen, can't build, can't path")]
+    [Tooltip("index == 0 => inner corner, index == 1 => outer corner, straight index > 1 randomly choosen, can't build, can't path")]
     public GameObject[] border;
     [Tooltip("Randomly choosen, can't build, can't path")]
     public GameObject[] naturalObstacle;
