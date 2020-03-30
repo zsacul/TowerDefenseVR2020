@@ -15,6 +15,7 @@ public class ElectricTower : BaseTower
 
     void Start()
     {
+        sound = GetComponent<BaseSoundAttachment>();
         type = TowerType.electricity;
         bulletPref = lightning;
         upgradeRise = 50;
@@ -39,12 +40,15 @@ public class ElectricTower : BaseTower
 
     IEnumerator  makeLightningChain(GameObject t)
     {
+        if (sound != null)
+            sound.Play();
+
         GameObject target = t;
         GameObject startPoint = ligtningMaker;
         int numberOfHits = 1;
         int maxNumberOfHits = 4;
         float radius = 4f;
-        
+
         while (target != null && numberOfHits < maxNumberOfHits)
         {
             createLightning(startPoint, target);
