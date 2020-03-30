@@ -46,12 +46,12 @@ public class Chunk : MonoBehaviour
                         }
                     }
                 }
-                //check Path TODO
-                return true;
+                
+                return PathExist();
                 break;
             case ChunkType.playerObstacle:
-                //check Path TODO
-                return true;
+                
+                return PathExist();
                 break;
             default:
                 return false;
@@ -73,6 +73,7 @@ public class Chunk : MonoBehaviour
                 {
                     //TODO generate path from proper tiles with proper rotations
                 }
+
                 else
                 {
                     currentObject = Instantiate(prefabs.empty[Random.Range(0, prefabs.empty.Length)], transform);
@@ -100,5 +101,49 @@ public class Chunk : MonoBehaviour
                 currentObject = Instantiate(prefabs.endPoint[Random.Range(0, prefabs.endPoint.Length)], transform);
                 break;
         }
+    }
+
+    public bool PathExist() {
+
+        bool endPointReached = false;
+        HashSet<(int, int)> wasVisited = new HashSet<(int, int)>();
+        Queue<(int, int)> Q = new Queue<(int, int)>();
+        (int, int) spawnPoint = owner.GetFirstChunkOfType(ChunkType.spawnPoint);
+        (int, int) endPoint = owner.GetFirstChunkOfType(ChunkType.endPoint);
+        Q.Enqueue(spawnPoint);
+        wasVisited.Add(spawnPoint);
+
+
+        while(Q.Count != 0 || !endPointReached) 
+        {
+            (int, int) element = Q.Dequeue();
+            if (element == endPoint)
+            {
+                endPointReached = true;
+                break;
+            }
+            
+            wasVisited.Add(element);
+            int xCord = element.Item1;
+            int yCord = element.Item2;
+
+            // (x, y) -> (x+1,y), (x-1,y), (x, y+1), (x, y-1)
+            for(int y = yCord + 1; y <= yCord - 1; y -= 2) 
+            {
+                ChunkType chunkType = owner.GetChunkType(xCord, y);
+                if(chunkType == ChunkType.empty && (xCord != this.x && y != this.y) && !wasVisited.Contains((xCord, y))) {
+                    Q.Enqueue((xCord, y));
+                }
+            }
+            for(int x = xCord + 1; x <= xCord - 1; y -= 2) 
+            {
+                ChunkType chunkType = owner.GetChunkType(xCord, y);
+                if(chunkType == ChunkType.empty && (x != this.x && yCord != this.y) && !wasVisited.Contains((xCord, y))) {
+                    Q.Enqueue((xCord, y));
+                }
+            }
+        }
+
+        return endPointReached;
     }
 }
