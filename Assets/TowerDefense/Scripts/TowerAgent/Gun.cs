@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
         bullet = b;
     }
 
-    public void fire(GameObject target, float speed, float damage, TowerType type)
+    public void fire(GameObject target, float speed, float damage, ElementType type, float specialEffectDuration, float specialEffectDmg)
     {
         if (target == null)
             Debug.Log("BABOL");
@@ -21,6 +21,6 @@ public class Gun : MonoBehaviour
 
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
         instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
-        instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage, type);
+        instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage, type,specialEffectDuration, specialEffectDmg);
     }
 }

@@ -23,7 +23,7 @@ public class ElectricTower : BaseTower
     void Start()
     {
         EnemiesTarget = FindObjectOfType<EndpointManager>().gameObject;
-        type = TowerType.electricity;
+        type = ElementType.electricity;
         bulletPref = lightning;
         upgradeRise = 50;
         upgradeCost = 10;
@@ -85,7 +85,7 @@ public class ElectricTower : BaseTower
         int i = 1;
         foreach( GameObject e in hitedEnemiesList){
             e.GetComponent<NavMeshAgent>().destination = EnemiesTarget.transform.position;
-            e.GetComponent<EnemyHPManager>().ApplyDamage(new Bullet(e, 1, damage / i, TowerType.electricity));
+            e.GetComponent<EnemyHPManager>().ApplyDamage(new Bullet(e, 1, damage / i, ElementType.electricity));
             i++;
         }
         hitedEnemiesList.Clear();

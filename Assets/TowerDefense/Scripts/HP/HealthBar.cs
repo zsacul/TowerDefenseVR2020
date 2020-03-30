@@ -6,10 +6,10 @@ public class HealthBar : MonoBehaviour {
     float maxEnemyHP;
     [SerializeField]
     Image hp;
-
-    private void Start()
+    
+    public void SetMaxHp(float h)
     {
-        maxEnemyHP = GetComponent<EnemyHPManager>().enemyHP;
+        maxEnemyHP = h;
     }
 
     public void updateBar(float health) {
