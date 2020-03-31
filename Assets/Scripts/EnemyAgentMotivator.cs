@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAgentMotivator : MonoBehaviour {
-    public GameObject target1;
-    public GameObject target2;
+    public Transform target1;
     public Transform goal;
 
     private UnityEngine.AI.NavMeshAgent agent;
@@ -18,11 +17,7 @@ public class EnemyAgentMotivator : MonoBehaviour {
     }
 
     public void Ping1() {
-        agent.destination = target2.GetComponent<Transform>().position;
-    }
-
-    public void Ping2() {
-        agent.destination =  target1.GetComponent<Transform>().position;
+        agent.destination = target1.position;
     }
 
     // Update is called once per frame
