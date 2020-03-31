@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 46c47642da7617a438747b3709c44706
+guid: 0e1fae433b0e8ea42b20196c755fc856
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -9050395165898395331
-    second: armature|LeftHandGrabRest
+    second: HoldUnloaded
   - first:
       74: 755727339552733679
     second: armature|PullTrigger
@@ -14,10 +14,10 @@ ModelImporter:
     second: armature|ReleaseTrigger
   - first:
       74: 410970036137304707
-    second: armature|Reload.001
+    second: Reload
   - first:
       74: -503030676592143378
-    second: HoldLoaded
+    second: Shoot
   - first:
       74: -3192171844541725837
     second: PullTrigger
@@ -25,14 +25,8 @@ ModelImporter:
       74: -244733375837607530
     second: ReleaseTrigger
   - first:
-      74: 229770723416056496
-    second: Reload
-  - first:
-      74: -3704289112126983070
-    second: Shoot
-  - first:
-      74: 7129535886853727430
-    second: HoldUnloaded
+      74: -8882917109848633518
+    second: HoldLoaded
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -178,8 +172,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: HoldUnloaded
-      takeName: armature|PullTrigger
+      name: HoldLoaded
+      takeName: armature|shoot
       internalID: 0
       firstFrame: 0
       lastFrame: 0
@@ -207,8 +201,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: HoldLoaded
-      takeName: armature|shoot
+      name: HoldUnloaded
+      takeName: armature|LeftHandGrabRest
       internalID: 0
       firstFrame: 0
       lastFrame: 0
