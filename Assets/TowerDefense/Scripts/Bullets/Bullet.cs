@@ -7,19 +7,23 @@ public class Bullet : MonoBehaviour
     GameObject target;
     float speed;
     float damage;
-    TowerType type;
+    float specialEffectDuration;
+    float specialEffectDmg;
+    ElementType type;
     bool readyToDestroy;
 
-    public Bullet(GameObject t, float s, float d, TowerType typ)
+    public Bullet(GameObject t, float s, float d, ElementType typ, float eDur = 0f, float eDmg = 0f)
     {
-        setBulletInfo(t, s, d, typ);
+        setBulletInfo(t, s, d, typ, eDur, eDmg);
     }
 
-    public void setBulletInfo(GameObject t, float s, float d, TowerType typ)
+    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, float eDur = 0f, float eDmg = 0f)
     {
         target = t;
         speed = s;
         damage = d;
+        specialEffectDuration = eDur;
+        specialEffectDmg = eDmg;
         type = typ;
         readyToDestroy = false;
     }
@@ -52,14 +56,25 @@ public class Bullet : MonoBehaviour
     {
         readyToDestroy = true;
     }
-        
+
     public float GetDamage()
     {
         return damage;
     }
 
-    public TowerType GetBulletType()
+    public ElementType GetBulletType()
     {
         return type;
     }
+
+    public float GetSpecialEffectDuration()
+    {
+        return specialEffectDuration;
+    }
+
+    public float GetSpecialEffectDmg()
+    {
+        return specialEffectDmg;
+    }
+
 }

@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0752cbd73395554c8932c573ca086ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 0
-  upgradeCost: 0
+  upgradeRise: 20
+  upgradeCost: 20
   upgradeDamageIncreaseInPercent: 0
   upgradeRangeIncreaseInPercent: 0
   maxDamage: 0
@@ -218,6 +218,8 @@ MonoBehaviour:
   shootingDelay: 3
   damage: 10
   speed: 8
+  specialEffectDuration: 3
+  specialEffectDmg: 0.05
   FireBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
     type: 3}
 --- !u!1 &7201191021884345839

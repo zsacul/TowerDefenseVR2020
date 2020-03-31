@@ -9,12 +9,8 @@ public class FireTower : BaseTower
     // Start is called before the first frame update
     void Start()
     {
-        type = TowerType.fire;
+        type = ElementType.fire;
         bulletPref = FireBullet;
-        upgradeRise = 50;
-        upgradeCost = 10;
-        maxDamage = 100;
-        maxRadius = 6f;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());
         setBulletTypeInGuns();
@@ -34,7 +30,6 @@ public class FireTower : BaseTower
         {
             StartCoroutine(shoot());
             currentDelay = 0f;
-            UpgradeAddGun();
         }
     }
 

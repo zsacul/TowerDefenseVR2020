@@ -16,7 +16,7 @@ public class StoneTower: BaseTower
     // Start is called before the first frame update
     void Start()
     {
-        type = TowerType.stone;
+        type = ElementType.stone;
         bulletPref = StoneBullet;
         upgradeRise = 2;
         upgradeCost = 10;
@@ -47,21 +47,21 @@ public class StoneTower: BaseTower
             Debug.Log("level:" + lvl);
             if (lvl == 3)
             {
-                ChangeType(TowerType.electricity);
+                ChangeType(ElementType.electricity);
                 Debug.Log("Zmiana typu na electric");
             }
         }
     }
 
-    public void ChangeType(TowerType t)
+    public void ChangeType(ElementType t)
     {
         GameObject instTower;
         switch (t)
         {
-            case TowerType.fire:
+            case ElementType.fire:
                 instTower = Instantiate(PrefFireTower, transform.position, Quaternion.identity) as GameObject;
                 break;
-            case TowerType.electricity:
+            case ElementType.electricity:
                 instTower = Instantiate(PrefElectricTower, transform.position, Quaternion.identity) as GameObject;
                 break;
             default:

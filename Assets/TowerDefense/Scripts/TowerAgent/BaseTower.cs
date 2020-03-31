@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseTower : MonoBehaviour
 {
-    protected TowerType type;
+    protected ElementType type;
 
     protected List<GameObject> enemiesList;
     protected List<Gun> gunsList;
@@ -12,8 +12,8 @@ public class BaseTower : MonoBehaviour
     protected int numberOfEnemiesInRange;
     protected int numberOfActiveGuns;
     protected int maxNumberOfGuns;
-    protected int lvl;
-    protected int maxlvl;
+    protected int lvl = 1;
+    protected int maxlvl = 4;
     protected float currentDelay;
     protected GameObject bulletPref;
 
@@ -30,11 +30,16 @@ public class BaseTower : MonoBehaviour
     [SerializeField]
     protected float maxRadius;
     [SerializeField]
-    protected float shootingDelay = 3f;
+    protected float shootingDelay;
     [SerializeField]
-    protected float damage = 10f;
+    protected float damage;
     [SerializeField]
-    protected float speed = 8f;
+    protected float speed;
+    [SerializeField]
+    protected float specialEffectDuration;
+    [SerializeField]
+    protected float specialEffectDmg;
+
 
     protected BaseSoundAttachment sound;
 
@@ -58,7 +63,7 @@ public class BaseTower : MonoBehaviour
             UpgradeRange();
             UpgradeAddGun();
             lvl++;
-            upgradeCost *= upgradeRise;
+            upgradeCost += upgradeRise;
         }
     }
 
@@ -81,13 +86,12 @@ public class BaseTower : MonoBehaviour
         int t = 0;
         foreach (Gun g in gunsList)
         {
-            if (g.gameObject.activeSelf)
+            if (g.gameObject.activeSelf && enemiesList.Count > 0)
             {
-                g.fire(enemiesList[t % numberOfEnemiesInRange], speed, damage, type);
+                g.fire(enemiesList[t % numberOfEnemiesInRange], speed, damage, type, specialEffectDuration, specialEffectDmg);
                 if (sound != null)
                     sound.Play();
             }
-                
             t++;
             yield return new WaitForSeconds(shootingDelay / numberOfActiveGuns / 2f);
         }

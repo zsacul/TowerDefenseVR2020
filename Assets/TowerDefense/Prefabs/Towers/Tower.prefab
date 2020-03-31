@@ -137,9 +137,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba3f23a6db9811479878f0cf213b655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeRise: 0
+  upgradeCost: 0
+  upgradeDamageIncreaseInPercent: 0
+  upgradeRangeIncreaseInPercent: 0
+  maxDamage: 0
+  maxRadius: 0
   shootingDelay: 3
   damage: 10
   speed: 8
+  specialEffectDuration: 0
+  specialEffectDmg: 0
+  PrefFireTower: {fileID: 5671031205014947035, guid: 8541342c104dccb409feae4e34321f6f,
+    type: 3}
+  PrefStoneTower: {fileID: 4747033015648084934}
+  PrefElectricTower: {fileID: 3469616916530925228, guid: 10404743fad70de4fa5fec6c319b77ee,
+    type: 3}
+  StoneBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
+    type: 3}
 --- !u!114 &42886344979322904
 MonoBehaviour:
   m_ObjectHideFlags: 0
