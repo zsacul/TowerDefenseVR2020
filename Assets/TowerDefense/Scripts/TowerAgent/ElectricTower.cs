@@ -24,6 +24,9 @@ public class ElectricTower : BaseTower
     {
         EnemiesTarget = FindObjectOfType<EndpointManager>().gameObject;
         type = ElementType.electricity;
+
+        sound = GetComponent<BaseSoundAttachment>();
+
         bulletPref = lightning;
         upgradeRise = 50;
         upgradeCost = 10;
@@ -59,12 +62,14 @@ public class ElectricTower : BaseTower
     IEnumerator  makeLightningChain(GameObject t)
     {
         Debug.Log("NOWA SEKWENCJA");
+        if (sound != null)
+            sound.Play();
         GameObject target = t;
         GameObject startPoint = ligtningMaker;
         int numberOfHits = 1;
         int maxNumberOfHits = 4;
         float radius = 4f;
-        
+
         while (target != null && numberOfHits < maxNumberOfHits)
         {
             target.GetComponent<NavMeshAgent>().destination = target.transform.position;

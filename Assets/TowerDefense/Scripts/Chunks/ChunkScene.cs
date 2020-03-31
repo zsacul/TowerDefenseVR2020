@@ -7,6 +7,9 @@ public class ChunkScene : MonoBehaviour
     public float chunkSizeX;
     public float chunkSizeZ;
     public ChunkMapLevel mapString;
+    /// <summary>
+    /// NOT UPDATED - USE GetChunkType(int x, int y)
+    /// </summary>
     private ChunkType[,] map;
     public GameObject[] chunkPrefab;
     public Chunk[,] chunkMap;
@@ -18,6 +21,7 @@ public class ChunkScene : MonoBehaviour
         chunkMap = new Chunk[mapString.sizeX, mapString.sizeY];
         path = new bool[mapString.sizeX, mapString.sizeY];
         Build();
+        if(!(chunkMap[0, 0].BFS()))Debug.LogError("ChunkScene.cs/Start() initial path failed");
         UpdateChunks();
     }
     private void OnValidate()
@@ -30,7 +34,7 @@ public class ChunkScene : MonoBehaviour
             }
         }
     }
-    public void Build()
+    private void Build()
     {
         for (int y = 0; y < mapString.sizeY; y++)
         {
@@ -61,7 +65,7 @@ public class ChunkScene : MonoBehaviour
     }
 
     public ChunkType GetChunkType(int x, int y) {
-        return map[x, y];
+        return chunkMap[x, y].type;
     }
 
     public (int, int) GetFirstChunkOfType(ChunkType type) {
@@ -72,7 +76,7 @@ public class ChunkScene : MonoBehaviour
         {
             for (int x = 0; x < mapString.sizeX; x++)
             {
-                if(map[x, y] == type){
+                if(chunkMap[x, y].type == type){
                     point = (x, y);
                     wasPointFound = true;
                     break;

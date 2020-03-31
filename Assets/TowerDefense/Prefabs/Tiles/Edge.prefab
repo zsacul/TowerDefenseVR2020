@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5944502663502788209}
   - component: {fileID: 6027120451824759976}
+  - component: {fileID: 3926551124135305106}
   m_Layer: 0
   m_Name: Edge
   m_TagString: Untagged
@@ -124,3 +125,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.603232, y: 1.2061539, z: 2.0192864}
   m_Center: {x: 0.7021163, y: -0.54860485, z: 0.0015457869}
+--- !u!208 &3926551124135305106
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215967775341446242}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
