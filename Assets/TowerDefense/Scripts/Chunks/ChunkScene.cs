@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChunkScene : MonoBehaviour
 {
     public float chunkSizeX;
     public float chunkSizeZ;
     public ChunkMapLevel mapString;
+    public NavMeshSurface surface;
     /// <summary>
     /// NOT UPDATED - USE GetChunkType(int x, int y)
     /// </summary>
@@ -14,6 +16,7 @@ public class ChunkScene : MonoBehaviour
     public GameObject[] chunkPrefab;
     public Chunk[,] chunkMap;
     public bool[,] path;
+    public SpawnManaging.SpawnManager spawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +24,14 @@ public class ChunkScene : MonoBehaviour
         chunkMap = new Chunk[mapString.sizeX, mapString.sizeY];
         path = new bool[mapString.sizeX, mapString.sizeY];
         Build();
-        if(!(chunkMap[0, 0].BFS()))Debug.LogError("ChunkScene.cs/Start() initial path failed");
+        if (!(chunkMap[0, 0].BFS())) Debug.LogError("ChunkScene.cs/Start() initial path failed");
         UpdateChunks();
+        surface.BuildNavMesh();
+        (int, int) spawn = GetFirstChunkOfType(ChunkType.spawnPoint);
+        (int, int) target = GetFirstChunkOfType(ChunkType.endPoint);
+
+        spawner.spawnPoints[0] = chunkMap[spawn.Item1, spawn.Item2].transform;
+        spawner.target = chunkMap[target.Item1, target.Item2].transform;
     }
     private void OnValidate()
     {

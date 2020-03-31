@@ -7,13 +7,13 @@ namespace SpawnManaging
     public class SpawnManager : GameEventListener
     {
         [SerializeField]
-        Transform target;
+        public Transform target;
         [SerializeField]
         GameEvent breakEnd;
         [SerializeField]
         GameEvent breakStart;
-        [SerializeField]
-        Transform[] spawnPoints;
+        
+        public Transform[] spawnPoints;
         [SerializeField]
         Wave[] wave;
         bool paused;
