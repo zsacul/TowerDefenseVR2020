@@ -41,6 +41,10 @@ public class BaseTower : MonoBehaviour
     protected float specialEffectDmg;
 
 
+    protected BaseSoundAttachment sound;
+
+
+
     public int GetUpgradeCost()
     {
         return upgradeCost;
@@ -83,7 +87,11 @@ public class BaseTower : MonoBehaviour
         foreach (Gun g in gunsList)
         {
             if (g.gameObject.activeSelf && enemiesList.Count > 0)
+            {
                 g.fire(enemiesList[t % numberOfEnemiesInRange], speed, damage, type, specialEffectDuration, specialEffectDmg);
+                if (sound != null)
+                    sound.Play();
+            }
             t++;
             yield return new WaitForSeconds(shootingDelay / numberOfActiveGuns / 2f);
         }
