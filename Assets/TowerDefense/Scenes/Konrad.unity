@@ -1440,7 +1440,7 @@ MonoBehaviour:
   mapString: {fileID: 11400000, guid: 2ddfc037337011e4c93c86c05e52b079, type: 2}
   surface: {fileID: 0}
   chunkPrefab:
-  - {fileID: 5700410315599651911, guid: 49d4a9c5d4b6c4f4a9864ca2f000e91a, type: 3}
+  - {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}
   spawner: {fileID: 0}
 --- !u!4 &25025720
 Transform:
