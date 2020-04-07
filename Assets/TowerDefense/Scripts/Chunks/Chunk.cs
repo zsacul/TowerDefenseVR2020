@@ -18,7 +18,7 @@ public class Chunk : MonoBehaviour
     private GameObject currentObject;
     public bool ChangeType(ChunkType newType, int choice = 0)
     {
-        if(canBeModified && ValidOperation(newType))
+        if(/*canBeModified &&*/ ValidOperation(newType))
         {
             this.choice = choice;
             if (type != newType)

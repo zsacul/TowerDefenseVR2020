@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
         bullet = b;
     }
 
-    public void fire(GameObject target, float speed, float damage, ElementType type, float specialEffectDuration, float specialEffectDmg)
+    public void fire(GameObject target, float speed, float damage, ElementType type, int specialEffectDuration, int specialEffectDmg)
     {
         if (target == null)
             Debug.Log("BABOL");
