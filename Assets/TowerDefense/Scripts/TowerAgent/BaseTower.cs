@@ -36,9 +36,9 @@ public class BaseTower : MonoBehaviour
     [SerializeField]
     protected float speed;
     [SerializeField]
-    protected float specialEffectDuration;
+    protected int specialEffectDuration;
     [SerializeField]
-    protected float specialEffectDmg;
+    protected int specialEffectDmg;
 
 
     protected BaseSoundAttachment sound;
@@ -99,7 +99,7 @@ public class BaseTower : MonoBehaviour
     
     virtual protected void UpgradeFireDamage()
     {
-        damage *= 1 + upgradeDamageIncreaseInPercent;
+        damage *= 1f + ((float)upgradeDamageIncreaseInPercent)/100f;
     }
 
     virtual protected void UpgradeAddGun()
@@ -110,6 +110,6 @@ public class BaseTower : MonoBehaviour
 
     virtual protected void UpgradeRange()
     {
-        this.GetComponent<SphereCollider>().radius *= 1f + upgradeRangeIncreaseInPercent;
+        this.GetComponent<SphereCollider>().radius *= 1f + ((float)upgradeRangeIncreaseInPercent)/100f;
     }
 }

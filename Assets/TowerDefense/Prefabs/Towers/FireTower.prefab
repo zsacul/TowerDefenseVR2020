@@ -218,8 +218,8 @@ MonoBehaviour:
   shootingDelay: 3
   damage: 10
   speed: 8
-  specialEffectDuration: 3
-  specialEffectDmg: 0.05
+  specialEffectDuration: 0
+  specialEffectDmg: 0
   FireBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
     type: 3}
 --- !u!1 &7201191021884345839
