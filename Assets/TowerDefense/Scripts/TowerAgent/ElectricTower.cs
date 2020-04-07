@@ -15,8 +15,8 @@ public class ElectricTower : BaseTower
     List<GameObject> lightningsList = new List<GameObject>();
     List<GameObject> hitedEnemiesList = new List<GameObject>();
 
-    float speedOfShaking = 40.0f; //how fast it shakes
-    float amountOfShaking = 10.0f; //how much it shakes
+    float speedOfShaking = 80.0f; //how fast it shakes
+    float amountOfShaking = 5.0f; //how much it shakes
  
 
 
@@ -42,7 +42,7 @@ public class ElectricTower : BaseTower
         numberOfEnemiesInRange = enemiesList.Count;
         if (numberOfEnemiesInRange > 0 && currentDelay >= shootingDelay)
         {
-            Debug.Log("błyskawica");
+ //           Debug.Log("błyskawica");
             StartCoroutine(makeLightningChain(enemiesList[0]));
             currentDelay = 0f;
         }
@@ -61,7 +61,7 @@ public class ElectricTower : BaseTower
 
     IEnumerator  makeLightningChain(GameObject t)
     {
-        Debug.Log("NOWA SEKWENCJA");
+//        Debug.Log("NOWA SEKWENCJA");
         if (sound != null)
             sound.Play();
         GameObject target = t;
@@ -76,9 +76,9 @@ public class ElectricTower : BaseTower
             createLightning(startPoint, target);
             startPoint = target.GetComponent<EnemyHPManager>().GetTargetPoint();
             numberOfHits++;
-            Debug.Log("szukamy nowego targetu");
+//            Debug.Log("szukamy nowego targetu");
             target = findNextEnemy(startPoint.transform.position, radius, hitedEnemiesList);
-            Debug.Log(startPoint + " = " + target);  
+//            Debug.Log(startPoint + " = " + target);  
         }
 
         yield return new WaitForSeconds(0.8f);
@@ -98,15 +98,15 @@ public class ElectricTower : BaseTower
 
     void createLightning(GameObject start, GameObject end)
     {
-        Debug.Log("powstaje blyskawica");
+ //       Debug.Log("powstaje blyskawica");
         GameObject instLightning = Instantiate(lightning, transform.position, Quaternion.identity) as GameObject;
         instLightning.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
 
-        Debug.Log("prametry wchodza");
+//        Debug.Log("prametry wchodza");
         instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().StartObject = start;
         instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().EndObject = end.GetComponent<EnemyHPManager>().GetTargetPoint();
 
-        Debug.Log("Powstala blyskawica z " + start.name + " do " + end.name);
+ //       Debug.Log("Powstala blyskawica z " + start.name + " do " + end.name);
         lightningsList.Add(instLightning);
         hitedEnemiesList.Add(end);
 
@@ -134,7 +134,7 @@ public class ElectricTower : BaseTower
 
             i++;
         }
-        Debug.Log("nie znaleziono nowego qmpla");
+ //       Debug.Log("nie znaleziono nowego qmpla");
         return null;
     }
 

@@ -11,7 +11,7 @@ public class EnemyAgentMotivator : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         Ping1();
         //agent.destination = goal.position;
     }
