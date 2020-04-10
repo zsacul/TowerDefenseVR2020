@@ -51,6 +51,21 @@ public class HandDeployer : MonoBehaviour
         CallWakeup(PropList[listIterator].Instance);
     }
 
+    public void TriggerHook(float input)
+    {
+        Debug.Log(input);
+    }
+
+    public void GrabHook(float input)
+    {
+        PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
+    }
+
+    public void PointyHook(bool input)
+    {
+        Debug.Log(input);
+    }
+
     void Start()
     {
         foreach(GOArray Prop in PropList)

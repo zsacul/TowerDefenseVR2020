@@ -5,6 +5,8 @@ using UnityEngine;
 public class PropManager : MonoBehaviour
 {
     public int colortype;
+    public float dupsko;
+    public Animator GizmoAnimation;
     // Start is called before the first frame update
     public void Remove()
     {
@@ -18,10 +20,17 @@ public class PropManager : MonoBehaviour
         transform.gameObject.SetActive(true);
     }
 
+    public void GrabEvent(float input)
+    {
+        Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
+        GizmoAnimation.SetFloat("GripFloat", input);
+    }
+
     public void Initialize()
     {
         Debug.Log("Initialize called");
         GameObject Cylinder = transform.GetChild(1).gameObject;
+        //GizmoAnimation = GetComponent<Animator>();
         var HandRenderer = Cylinder.GetComponent<Renderer>();
         if (colortype == 0)
             HandRenderer.material.SetColor("_Color", Color.red);
@@ -32,12 +41,11 @@ public class PropManager : MonoBehaviour
     }
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
