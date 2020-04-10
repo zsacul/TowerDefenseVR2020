@@ -53,7 +53,7 @@ public class HandDeployer : MonoBehaviour
 
     public void TriggerHook(float input)
     {
-        Debug.Log(input);
+        PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(input);
     }
 
     public void GrabHook(float input)
@@ -63,7 +63,7 @@ public class HandDeployer : MonoBehaviour
 
     public void PointyHook(bool input)
     {
-        Debug.Log(input);
+      
     }
 
     void Start()

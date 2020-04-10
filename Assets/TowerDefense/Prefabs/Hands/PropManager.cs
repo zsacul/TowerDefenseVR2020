@@ -26,6 +26,13 @@ public class PropManager : MonoBehaviour
         GizmoAnimation.SetFloat("GripFloat", input);
     }
 
+    public void PointEvent(float input)
+    {
+        Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
+        GizmoAnimation.SetFloat("PointFloat", input);
+    }
+
+
     public void Initialize()
     {
         Debug.Log("Initialize called");
