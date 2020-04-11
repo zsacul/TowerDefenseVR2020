@@ -13167,7 +13167,17 @@ MonoBehaviour:
   - Prefab: {fileID: 7112997836993932903, guid: e356a5980f09dcb4380c349affb50718,
       type: 3}
     Instance: {fileID: 0}
-    description: red hand
+    description: blue hand
+    deployable: 1
+  - Prefab: {fileID: 7112997836993932903, guid: 91d31f99449b1da42812929e7a3f4ba6,
+      type: 3}
+    Instance: {fileID: 0}
+    description: green hand
+    deployable: 1
+  - Prefab: {fileID: 7112997836993932903, guid: 6a9cfb1f9558fb842b71c5ed030ed0ec,
+      type: 3}
+    Instance: {fileID: 0}
+    description: red  hand
     deployable: 1
   HandDeployerName: Left Hand Dispatcher
   listIterator: 0

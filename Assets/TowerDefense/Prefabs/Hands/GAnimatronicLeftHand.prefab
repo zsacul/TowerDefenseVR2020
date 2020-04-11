@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 8817980099074107579}
   - component: {fileID: 7576374719361191854}
   m_Layer: 0
-  m_Name: RAnimatronicLeftHand 1
+  m_Name: RAnimatronicLeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a7d75cef1226428681eee3f84c356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colortype: 0
+  colortype: 1
   dupsko: 0
   GizmoAnimation: {fileID: 7576374719361191854}
 --- !u!95 &7576374719361191854

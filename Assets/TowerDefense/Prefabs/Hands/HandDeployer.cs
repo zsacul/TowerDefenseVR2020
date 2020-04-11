@@ -63,7 +63,7 @@ public class HandDeployer : MonoBehaviour
 
     public void PointyHook(bool input)
     {
-      
+        PropList[listIterator].Instance.GetComponent<PropManager>().ThumbEvent(input);
     }
 
     void Start()

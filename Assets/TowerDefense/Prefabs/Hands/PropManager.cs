@@ -10,32 +10,41 @@ public class PropManager : MonoBehaviour
     // Start is called before the first frame update
     public void Remove()
     {
-        Debug.Log("Remove called");
+        //Debug.Log("Remove called");
         transform.gameObject.SetActive(false);
 
     }
     public void Respawn()
     {
-        Debug.Log("Respawn called");
+        //Debug.Log("Respawn called");
         transform.gameObject.SetActive(true);
     }
 
     public void GrabEvent(float input)
     {
-        Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
+        //Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
         GizmoAnimation.SetFloat("GripFloat", input);
     }
 
     public void PointEvent(float input)
     {
-        Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
+        //Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
         GizmoAnimation.SetFloat("PointFloat", input);
     }
 
 
+    public void ThumbEvent(bool input)
+    {
+        Debug.Log($"ThmbEvent {input}");
+        if (input == true)
+            GizmoAnimation.SetFloat("ThumbFloat", 0.99f);
+        else
+            GizmoAnimation.SetFloat("ThumbFloat", 0.01f);
+    }
+
     public void Initialize()
     {
-        Debug.Log("Initialize called");
+        //Debug.Log("Initialize called");
         GameObject Cylinder = transform.GetChild(1).gameObject;
         //GizmoAnimation = GetComponent<Animator>();
         var HandRenderer = Cylinder.GetComponent<Renderer>();
