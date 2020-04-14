@@ -16,6 +16,7 @@ public class IceSE1 : MonoBehaviour
     public IEnumerator RunSpecialEffect(EnemyHPManager enemy, float dmg, int time)
     {
         Debug.Log("jestesmy");
+        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
         Vector3 tmpDest = enemy.GetComponent<NavMeshAgent>().destination;
         enemy.GetComponent<NavMeshAgent>().destination = enemy.gameObject.transform.position;
 
@@ -23,16 +24,17 @@ public class IceSE1 : MonoBehaviour
             currentNumOfHits -= time;
         else
         {
-            while (currentNumOfHits < time)
+            while (currentNumOfHits < time && agent != null)
             {
                 Debug.Log("ilosc wykonanych obrazen" + currentNumOfHits);
-                yield return new WaitForSeconds(0.3f);
                 enemy.ApplyDamage(dmg);
                 currentNumOfHits++;
+
+                yield return new WaitForSeconds(0.3f);
             }
             currentNumOfHits = 0;
         }
-
-        enemy.GetComponent<NavMeshAgent>().destination = tmpDest;
+        if(agent != null)
+            enemy.GetComponent<NavMeshAgent>().destination = tmpDest;
     }
 }

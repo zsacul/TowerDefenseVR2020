@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿#define DEBUG
+//#undef DEBUG
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
@@ -10,6 +13,7 @@ public class EnemyHPManager : MonoBehaviour {
     int specialEffectDmgPerSec;
     ElementType bulletType;
     UnityEngine.AI.NavMeshAgent enemyAgent;
+    Vector3 last_velocity;
 
     public UnityEvent damaged;
     public UnityEvent killed;
@@ -22,15 +26,11 @@ public class EnemyHPManager : MonoBehaviour {
     GameObject targetPoint;
     [SerializeField]
     ElementType type;
-    [SerializeField]
-    float speed;
         
     private void Start()
     {
         speedManipulations = 1f;
         enemyAgent = GetComponent<NavMeshAgent>();
-        //enemyAgent.enabled = false;
-        Debug.Log("agent to: " + enemyAgent.name);
         elementsInfo = GameObject.Find("GameManager").GetComponent<Elements>();
         isSpecialEffectActive = false;
         GetComponent<HealthBar>().SetMaxHp(enemyHP);
@@ -38,14 +38,13 @@ public class EnemyHPManager : MonoBehaviour {
 
     private void Update()
     {
-        enemyAgent.enabled = true;
+       // enemyAgent.velocity = GetComponent<Rigidbody>().velocity;
     }
 
     private void Death() {
         killed.Invoke();
- //       Debug.Log("Enemy killed");
-        Destroy(enemyAgent);
         Destroy(GetComponent<Collider>());
+        Destroy(enemyAgent);
         Destroy(gameObject, 3);
     }
 
@@ -61,17 +60,14 @@ public class EnemyHPManager : MonoBehaviour {
                 enemyHP -= b.GetDamage();
                 specialEffectDurationInSec = b.GetSpecialEffectDuration();
                 specialEffectDmgPerSec = b.GetSpecialEffectDmg();
-                activateSpecialEffect(b.GetBulletType(), specialEffectDmgPerSec, specialEffectDurationInSec);
+                activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec);
                 break;
             case Resistance.low:
-                Debug.Log("jest ok");
                 enemyHP -= b.GetDamage() * 1.5f;
                 isSpecialEffectActive = true;
                 specialEffectDurationInSec = (int)(b.GetSpecialEffectDuration() * 1.5f);
                 specialEffectDmgPerSec = (int)(b.GetSpecialEffectDmg() * 1.5f);
-                Debug.Log("bullet type: " + b.GetBulletType() + "duration: " + specialEffectDurationInSec + " dmg: " + specialEffectDmgPerSec);
-                StartCoroutine(activateSpecialEffect(b.GetBulletType(), specialEffectDmgPerSec, specialEffectDurationInSec));
-                Debug.Log("mama");
+                StartCoroutine(activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec));
                 break;
             default:
                 break;
@@ -107,25 +103,23 @@ public class EnemyHPManager : MonoBehaviour {
         return targetPoint;
     }
 
-    IEnumerator activateSpecialEffect(ElementType type, int dmgPerSec, int durationInSec)
+    IEnumerator activateSpecialEffect(SpecialEffect SEtype, int dmgPerSec, int durationInSec)
     {
-        Debug.Log("special effect entry");
-        switch (type)
+        switch (SEtype)
         {
-            case ElementType.earth:
+            case SpecialEffect.EarthSE1:
                 break;
-            case ElementType.electricity:
-                Debug.Log("electricity special effect");
+            case SpecialEffect.ElectricitySE1:
                 break;
-            case ElementType.fire:
+            case SpecialEffect.FireSE1:
                 //podpal miniona
                 StartCoroutine(GetComponent<FireSE>().RunSpecialEffect(this, dmgPerSec, durationInSec));
                 break;
-            case ElementType.ice:
+            case SpecialEffect.IceSE1:
                 //zamroz miniona
                 StartCoroutine(GetComponent<IceSE1>().RunSpecialEffect(this, dmgPerSec, durationInSec));
                 break;
-            case ElementType.wind:
+            case SpecialEffect.WindSE1:
                 break;
             default:
                 yield return new WaitForSeconds(0f);
@@ -135,20 +129,29 @@ public class EnemyHPManager : MonoBehaviour {
 
     public void Slowdown(float slow)
     {
-        enemyAgent.speed /= slow;
-        speedManipulations *= slow;
+        if (enemyAgent != null)
+        {
+            enemyAgent.speed /= slow;
+            speedManipulations *= slow;
+        }
     }
 
     public void Speedup(float speed)
     {
-        enemyAgent.speed *= speed;
-        speedManipulations /= speed;
+        if (enemyAgent != null)
+        {
+            enemyAgent.speed *= speed;
+            speedManipulations /= speed;
+        }
     }
-    
+
     public void SetNormalSpeed()
     {
-        enemyAgent.speed *= speedManipulations;
-        speedManipulations = 1f;
+        if (enemyAgent != null)
+        {
+            enemyAgent.speed *= speedManipulations;
+            speedManipulations = 1f;
+        }
     }
 
     public ElementType GetElementType()

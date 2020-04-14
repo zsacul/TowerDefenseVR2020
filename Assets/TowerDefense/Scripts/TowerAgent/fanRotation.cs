@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#define DEBUG
+//#undef DEBUG
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +17,12 @@ public class fanRotation : MonoBehaviour
 
     public void speedupRotation(float speedup)
     {
+#if DEBUG
+        Debug.Log("Predkosc przed przyspieszeniem: " + RotationSpeed);
+#endif
         RotationSpeed *= speedup;
+#if DEBUG
+        Debug.Log("Predkosc po przyspieszeniu o " + speedup + ": " + RotationSpeed);
+#endif
     }
 }

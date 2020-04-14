@@ -72,6 +72,8 @@ public class ElectricTower : BaseTower
 
         while (target != null && numberOfHits < maxNumberOfHits)
         {
+            if (target.GetComponent<NavMeshAgent>() == null)
+                continue;
             target.GetComponent<NavMeshAgent>().destination = target.transform.position;
             createLightning(startPoint, target);
             startPoint = target.GetComponent<EnemyHPManager>().GetTargetPoint();

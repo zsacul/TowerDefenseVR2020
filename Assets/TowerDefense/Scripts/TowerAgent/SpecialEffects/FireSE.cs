@@ -22,7 +22,7 @@ public class FireSE : MonoBehaviour
             currentNumOfHits -= time;
         else
         {
-            while (currentNumOfHits < time)
+            while (currentNumOfHits < time && enemy != null)
             {
                 Debug.Log("ilosc wykonanych obrazen" + currentNumOfHits);
                 yield return new WaitForSeconds(0.3f);    
