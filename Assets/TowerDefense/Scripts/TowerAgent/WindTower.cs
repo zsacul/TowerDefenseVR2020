@@ -97,35 +97,17 @@ public class WindTower : BaseTower
             StartCoroutine(moveBack(enemy));
         }
     }
-
+        
     IEnumerator moveBack(GameObject enemy)
     {
         enemy.GetComponent<Rigidbody>().freezeRotation = true;
         enemy.GetComponent<NavMeshAgent>().isStopped = true;
         enemy.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, ExplosionSource.transform.position, explosionRadius, explosionUp, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(specialEffectDuration);
+
         enemy.GetComponent<Rigidbody>().freezeRotation = false;
         enemy.GetComponent<NavMeshAgent>().isStopped = false;
-        /*
-        switch (res)
-        {
-            case Resistance.high:
-                Debug.Log("high");
-                enemy.GetComponent<Rigidbody>().AddRelativeForce(Vector3.back * (dot * -1)/2f);
-                break;
-            case Resistance.normal:
-                Debug.Log("normal");
-                enemy.GetComponent<Rigidbody>().AddRelativeForce(Vector3.back * (dot * -1));
-                break;
-            case Resistance.low:
-                Debug.Log("low");
-                //enemy.GetComponent<Rigidbody>().AddRelativeForce(Vector3.back * (dot * -1) * 2);
-                Debug.Log(ExplosionSource.transform.position);
-                break;
-        }
-        */
-
     }
     
 }
