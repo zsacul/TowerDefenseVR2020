@@ -12,6 +12,3 @@ public enum SpecialEffect
     WindSE1
 }
 
-public class SpecialEffects : MonoBehaviour
-{
-}

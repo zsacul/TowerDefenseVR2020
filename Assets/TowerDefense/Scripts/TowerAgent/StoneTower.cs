@@ -5,23 +5,24 @@ using UnityEngine;
 public class StoneTower: BaseTower
 {
     [SerializeField]
-    GameObject PrefFireTower;
+    GameObject prefTowerFire;
     [SerializeField]
-    GameObject PrefStoneTower;
+    GameObject prefTowerStone;
     [SerializeField]
-    GameObject PrefElectricTower;
+    GameObject prefTowerElectric;
+    [SerializeField]
+    GameObject prefTowerIce;
+    [SerializeField]
+    GameObject prefTowerEarth;
+    [SerializeField]
+    GameObject prefTowerWind;
+    [SerializeField]
+    GameObject prefStoneBullet;
 
-    [SerializeField]
-    GameObject StoneBullet;
-    // Start is called before the first frame update
     void Start()
     {
         type = ElementType.stone;
-        bulletPref = StoneBullet;
-        upgradeRise = 2;
-        upgradeCost = 10;
-        lvl = 1;
-        maxlvl = 4;
+        bulletPref = prefStoneBullet;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());
         setBulletTypeInGuns();
@@ -31,10 +32,7 @@ public class StoneTower: BaseTower
         deactivateGuns();
         gunsList[0].gameObject.SetActive(true);
     }
-
     
-
-    // Update is called once per frame
     void Update()
     {
         currentDelay += Time.deltaTime;
@@ -43,13 +41,6 @@ public class StoneTower: BaseTower
         {
             StartCoroutine(shoot());
             currentDelay = 0f;
-            Upgrade();
-            Debug.Log("level:" + lvl);
-            if (lvl == 3)
-            {
-                ChangeType(ElementType.electricity);
-                Debug.Log("Zmiana typu na electric");
-            }
         }
     }
 
@@ -59,13 +50,23 @@ public class StoneTower: BaseTower
         switch (t)
         {
             case ElementType.fire:
-                instTower = Instantiate(PrefFireTower, transform.position, Quaternion.identity) as GameObject;
+                instTower = Instantiate(prefTowerFire, transform.position, Quaternion.identity) as GameObject;
                 break;
             case ElementType.electricity:
-                instTower = Instantiate(PrefElectricTower, transform.position, Quaternion.identity) as GameObject;
+                instTower = Instantiate(prefTowerElectric, transform.position, Quaternion.identity) as GameObject;
+                break;
+            case ElementType.ice:
+                instTower = Instantiate(prefTowerIce, transform.position, Quaternion.identity) as GameObject;
+                break;
+            case ElementType.earth:
+                instTower = Instantiate(prefTowerEarth, transform.position, Quaternion.identity) as GameObject;
+                break;
+            case ElementType.wind:
+                instTower = Instantiate(prefTowerWind, transform.position, Quaternion.identity) as GameObject;
                 break;
             default:
-                break;
+                Debug.Log("Bledna proba zmiany typu wiezyczki!");
+                return;
         }
 
         DestroyTower();

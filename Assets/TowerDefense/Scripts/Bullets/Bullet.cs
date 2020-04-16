@@ -30,6 +30,11 @@ public class Bullet : MonoBehaviour
         readyToDestroy = false;
     } 
 
+    public void ChangeSpecialEffect(SpecialEffect SE)
+    {
+        specialEffect = SE;
+    }
+
     private void Update()
     {
         float step = speed * Time.deltaTime;

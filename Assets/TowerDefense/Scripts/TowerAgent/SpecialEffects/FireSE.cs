@@ -1,35 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 
 public class FireSE : MonoBehaviour
 {
-    int currentNumOfHits;
+    float currentSpecialTime;
     ElementType type;
+
+    public UnityEvent start, end;
 
     private void Start()
     {
         type = ElementType.fire;
-        currentNumOfHits = 0;
+        currentSpecialTime = 0;
     }
 
-    public IEnumerator RunSpecialEffect(EnemyHPManager enemy, float dmg, int time)
+    public IEnumerator RunSpecialEffect(EnemyHPManager enemy, float dmg, float time)
     {
-        Debug.Log("jestesmy");
+        //TODO - wizualizacja podpalenia
 
-        if (currentNumOfHits > 0)
-            currentNumOfHits -= time;
-        else
+        currentSpecialTime += time;
+
+        if (currentSpecialTime == time)
         {
-            while (currentNumOfHits < time && enemy != null)
+            start.Invoke();
+            while (currentSpecialTime < time && enemy != null)
             {
-                Debug.Log("ilosc wykonanych obrazen" + currentNumOfHits);
-                yield return new WaitForSeconds(0.3f);    
+                yield return new WaitForSeconds(0.3f);
                 enemy.ApplyDamage(dmg);
-                currentNumOfHits++;
+                currentSpecialTime += Time.deltaTime;
             }
-            currentNumOfHits = 0;
+
+            if (enemy != null)
+            {
+                end.Invoke();
+                //TODO - koniec wizualizacji podpalenia
+            }
         }
     }
 }

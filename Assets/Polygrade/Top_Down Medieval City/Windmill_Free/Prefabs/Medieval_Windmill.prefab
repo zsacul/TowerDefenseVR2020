@@ -179,25 +179,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54b579fcf6c8c04c99f7e2c4bf920f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 0
-  upgradeCost: 0
+  upgradeRiseInPercent: 0
+  upgradeCostDMG: 0
+  upgradeCostRange: 0
+  upgradeCostDelay: 0
+  upgradeCostAddGun: 0
   upgradeDamageIncreaseInPercent: 0
   upgradeRangeIncreaseInPercent: 0
-  maxDamage: 0
-  maxRadius: 0
+  upgradeDelayIncreaseInPercent: 0
   shootingDelay: 5
   damage: 0
   speed: 0
   specialEffectDuration: 5
   specialEffectDmg: 0
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
   fan: {fileID: 3098935445637466780}
   windBlowDuration: 0
   windBlowRotationMult: 0
   elementsInfo: {fileID: 0}
-  explosionForce: 100
-  explosionRadius: 50
-  explosionUp: 20
+  explosionForce: 18
+  explosionRadius: 10
+  explosionUp: 0.5
   ExplosionSource: {fileID: 0}
+  minDistance: 5
+  windBlow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6325996209208482206
 MonoBehaviour:
   m_ObjectHideFlags: 0

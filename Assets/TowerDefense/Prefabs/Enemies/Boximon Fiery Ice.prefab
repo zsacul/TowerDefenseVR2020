@@ -1223,6 +1223,8 @@ GameObject:
   - component: {fileID: 7529174740701081662}
   - component: {fileID: -4370417999278139622}
   - component: {fileID: 7041665519999742397}
+  - component: {fileID: 6436567307307692921}
+  - component: {fileID: 676954444534060575}
   m_Layer: 11
   m_Name: Boximon Fiery Ice
   m_TagString: Enemy
@@ -1395,6 +1397,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12013d0f7d7887f40aed94aef95fa079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7529174740701081662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,6 +1415,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cc78aac073fa447b45f2747f033e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &-4370417999278139622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1418,7 +1432,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1436,6 +1450,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.62, y: 1.05, z: 0.6}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &6436567307307692921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927812008672363391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729d840093c122049b36ae0bceae452f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &676954444534060575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927812008672363391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292322a77e8b0594c9dc4045c8e5ac1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5928719865996939963
 GameObject:
   m_ObjectHideFlags: 0
