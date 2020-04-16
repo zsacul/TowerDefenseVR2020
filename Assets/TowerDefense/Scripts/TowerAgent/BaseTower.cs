@@ -40,31 +40,11 @@ public class BaseTower : MonoBehaviour
     [SerializeField]
     protected int specialEffectDmg;
 
-
     protected BaseSoundAttachment sound;
-
-
 
     public int GetUpgradeCost()
     {
         return upgradeCost;
-    }
-
-    public int Getlvl()
-    {
-        return lvl;
-    }
-
-    public void Upgrade()
-    {
-        if (lvl < maxlvl)
-        {
-            UpgradeFireDamage();
-            UpgradeRange();
-            UpgradeAddGun();
-            lvl++;
-            upgradeCost += upgradeRise;
-        }
     }
 
     protected void deactivateGuns()
@@ -97,19 +77,19 @@ public class BaseTower : MonoBehaviour
         }
     }
     
-    virtual protected void UpgradeFireDamage()
+    virtual public void UpgradeFireDamage()
     {
         damage *= 1f + ((float)upgradeDamageIncreaseInPercent)/100f;
     }
 
-    virtual protected void UpgradeAddGun()
+    virtual public void UpgradeAddGun()
     {
         gunsList[numberOfActiveGuns].gameObject.SetActive(true);
         numberOfActiveGuns++;
     }
 
-    virtual protected void UpgradeRange()
+    virtual public void UpgradeRange()
     {
-        this.GetComponent<SphereCollider>().radius *= 1f + ((float)upgradeRangeIncreaseInPercent)/100f;
+        GetComponent<SphereCollider>().radius *= 1f + ((float)upgradeRangeIncreaseInPercent)/100f;
     }
 }

@@ -1147,7 +1147,6 @@ GameObject:
   - component: {fileID: 4333476727925200126}
   - component: {fileID: 4333476727925200097}
   - component: {fileID: 3989068214373262759}
-  - component: {fileID: 6422893181396679609}
   m_Layer: 0
   m_Name: IceTower
   m_TagString: Untagged
@@ -1263,15 +1262,3 @@ MonoBehaviour:
   specialEffectDmg: 1
   IceBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
     type: 3}
---- !u!114 &6422893181396679609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9062161091482600853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4cc78aac073fa447b45f2747f033e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

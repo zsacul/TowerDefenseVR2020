@@ -15,9 +15,7 @@ public class Gun : MonoBehaviour
     public void fire(GameObject target, float speed, float damage, ElementType type, int specialEffectDuration, int specialEffectDmg)
     {
         if (target == null)
-            Debug.Log("BABOL");
-        else
-            Debug.Log(target.name);
+            return;
 
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
         instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;

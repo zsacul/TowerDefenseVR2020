@@ -24,17 +24,12 @@ public class ElectricTower : BaseTower
     {
         EnemiesTarget = FindObjectOfType<EndpointManager>().gameObject;
         type = ElementType.electricity;
+        bulletPref = lightning;
+        enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
 
         sound = GetComponent<BaseSoundAttachment>();
+        }
 
-        bulletPref = lightning;
-        upgradeRise = 50;
-        upgradeCost = 10;
-        enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
-        currentDelay = 0f;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         hitedEnemiesList.RemoveAll(item => item == null || item.GetComponent<Collider>() == null);
@@ -42,7 +37,6 @@ public class ElectricTower : BaseTower
         numberOfEnemiesInRange = enemiesList.Count;
         if (numberOfEnemiesInRange > 0 && currentDelay >= shootingDelay)
         {
- //           Debug.Log("błyskawica");
             StartCoroutine(makeLightningChain(enemiesList[0]));
             currentDelay = 0f;
         }
@@ -61,7 +55,6 @@ public class ElectricTower : BaseTower
 
     IEnumerator  makeLightningChain(GameObject t)
     {
-//        Debug.Log("NOWA SEKWENCJA");
         if (sound != null)
             sound.Play();
         GameObject target = t;
@@ -72,6 +65,8 @@ public class ElectricTower : BaseTower
 
         while (target != null && numberOfHits < maxNumberOfHits)
         {
+            if (target.GetComponent<NavMeshAgent>() == null)
+                continue;
             target.GetComponent<NavMeshAgent>().destination = target.transform.position;
             createLightning(startPoint, target);
             startPoint = target.GetComponent<EnemyHPManager>().GetTargetPoint();
@@ -98,18 +93,14 @@ public class ElectricTower : BaseTower
 
     void createLightning(GameObject start, GameObject end)
     {
- //       Debug.Log("powstaje blyskawica");
         GameObject instLightning = Instantiate(lightning, transform.position, Quaternion.identity) as GameObject;
         instLightning.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
-
-//        Debug.Log("prametry wchodza");
+        
         instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().StartObject = start;
         instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().EndObject = end.GetComponent<EnemyHPManager>().GetTargetPoint();
-
- //       Debug.Log("Powstala blyskawica z " + start.name + " do " + end.name);
+        
         lightningsList.Add(instLightning);
         hitedEnemiesList.Add(end);
-
     }
 
     void deleteLightnings()

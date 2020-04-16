@@ -9,7 +9,7 @@ public class EarthTower : BaseTower
     // Start is called before the first frame update
     void Start()
     {
-        type = ElementType.ice;
+        type = ElementType.earth;
         bulletPref = EarthBullet;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());
