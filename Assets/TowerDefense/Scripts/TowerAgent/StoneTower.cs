@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StoneTower: BaseTower
 {
@@ -18,6 +19,8 @@ public class StoneTower: BaseTower
     GameObject prefTowerWind;
     [SerializeField]
     GameObject prefStoneBullet;
+
+    public UnityEvent destroy;
 
     void Start()
     {
@@ -65,15 +68,16 @@ public class StoneTower: BaseTower
                 instTower = Instantiate(prefTowerWind, transform.position, Quaternion.identity) as GameObject;
                 break;
             default:
-                Debug.Log("Bledna proba zmiany typu wiezyczki!");
+                Debug.Log("Bledna proba zmiany typu wiezyczki!");   
                 return;
         }
 
         DestroyTower();
     }
 
-    void DestroyTower()
+    protected void DestroyTower()
     {
+        destroy.Invoke();
         Destroy(gameObject);
     }
 
