@@ -5,6 +5,7 @@ using UnityEngine;
 public class PropManager : MonoBehaviour
 {
     public int colortype;
+    public int PropID;
     public float dupsko;
     public Animator GizmoAnimation;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class PropManager : MonoBehaviour
 
     public virtual void ThumbEvent(bool input)
     {
-        Debug.Log($"ThmbEvent {input}");
+        //Debug.Log($"ThmbEvent {input}");
         if (input == true)
             GizmoAnimation.SetFloat("ThumbFloat", 0.99f);
         else

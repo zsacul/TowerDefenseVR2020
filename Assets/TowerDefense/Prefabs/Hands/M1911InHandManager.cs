@@ -14,11 +14,11 @@ public class M1911InHandManager : PropManager
     public GameObject Grabbable;
     public override void GrabEvent(float input)
     {
-        Debug.Log($"overriden gevent {input}");
-       // if (input > 0.70f) // The object is grabbed, treat it as usual
+       //Debug.Log($"overriden gevent {input}");
+        if (input > 0.70f) // The object is grabbed, treat it as usual
             GizmoAnimation.SetFloat("GripFloat", input);
-       // else
-       //     HandManger.GetComponent<HandDeployer>().DeployNth(0);
+        else
+            HandManger.GetComponent<HandDeployer>().DeployNth(0);
             /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
     }
 
@@ -30,7 +30,7 @@ public class M1911InHandManager : PropManager
         GameObject[] allObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
         foreach (GameObject rgo in allObjects)
            if (rgo.name == "VRTK Setup")
-              Grabbable = rgo.gameObject.transform.Find($"CameraRigs/UnityXRCameraRig/HeadAnchor/{ GrabbableName}").gameObject;
+              Grabbable = rgo.gameObject.transform.Find($"CameraRigs/UnityXRCameraRig/HeadAnchor/{GrabbableName}").gameObject;
 
         if (Grabbable == null)
             Debug.LogError("IF YOU DARE TO MISS THE GRABBABLE VARIABLE, WEIRD SHIT WILL HAPPEN!");
