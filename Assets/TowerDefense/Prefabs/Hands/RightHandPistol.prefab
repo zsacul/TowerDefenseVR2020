@@ -499,10 +499,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colortype: 0
+  PropID: 0
   dupsko: 0
   GizmoAnimation: {fileID: 5694935248109208743}
   Debree: {fileID: 7149795697468937675, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
   GrabbableName: M1911Grabbable
+  Grabbable: {fileID: 0}
+  projectile: {fileID: 8062622822930044955, guid: dd728f87066cd6d499f862a03a1a0a78,
+    type: 3}
+  TriggerState: 0
 --- !u!1 &5344343912686327659
 GameObject:
   m_ObjectHideFlags: 0

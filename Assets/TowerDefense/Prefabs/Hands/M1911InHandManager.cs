@@ -22,6 +22,27 @@ public class M1911InHandManager : PropManager
             /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
     }
 
+    public GameObject projectile;
+    private void pewpew()
+    {
+        GameObject P = Instantiate(projectile, transform.position, transform.rotation);
+        P.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * -10);
+    }
+
+    public bool TriggerState = false;
+    public override void PointEvent(float input)
+    {
+        GizmoAnimation.SetFloat("PointFloat", input);
+
+        if (input < 0.5f)
+            TriggerState = false;
+        else if (!TriggerState)
+        {
+            TriggerState = true;
+            pewpew();
+        }
+    }
+
     public override void Initialize()
     {
         HandManger = transform.parent.gameObject; /* assume that the parent is the hand manager */
