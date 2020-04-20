@@ -172,6 +172,8 @@ public class AudioManager : MonoBehaviour
 
         while(currtime<duration)
         {
+            if(source == null)
+                yield break;
             source.volume = Mathf.Lerp(startingVol, 0.0f, curve.Evaluate(currtime / duration));
             currtime += Time.deltaTime;
             yield return null;

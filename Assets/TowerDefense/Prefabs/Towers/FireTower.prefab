@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1104320572270761392}
   - component: {fileID: 1104320572270761391}
   - component: {fileID: 3802804915081556934}
+  - component: {fileID: 7715673939924633214}
   m_Layer: 0
   m_Name: FireTower
   m_TagString: Untagged
@@ -224,7 +225,18 @@ MonoBehaviour:
   specialEffectDmg: 2
   shootEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715673939924633214}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   updateRange:
     m_PersistentCalls:
       m_Calls: []
@@ -239,6 +251,20 @@ MonoBehaviour:
       m_Calls: []
   FireBullet: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
     type: 3}
+--- !u!114 &7715673939924633214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671031205014947035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfc150f288ac5646bbf6aa66a9ab177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToPlay: {fileID: 8300000, guid: 155bfd137c903ed479518cb689c77fb5, type: 3}
+  mixer: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
 --- !u!1 &7201191021884345839
 GameObject:
   m_ObjectHideFlags: 0

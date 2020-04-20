@@ -36,7 +36,6 @@ public class ElectricTower : BaseTower
         type = ElementType.electricity;
         bulletPref = lightning;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
-        sound = GetComponent<BaseSoundAttachment>();
     }
 
     void Update()
@@ -65,8 +64,6 @@ public class ElectricTower : BaseTower
     IEnumerator  makeLightningChain(GameObject t)
     {
         makeLightning.Invoke();
-        if (sound != null)
-            sound.Play();
         GameObject target = t;
         GameObject startPoint = ligtningMaker;
         int numberOfHits = 1;

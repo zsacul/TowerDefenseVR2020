@@ -21,16 +21,17 @@ public class FireSE : MonoBehaviour
     {
         //TODO - wizualizacja podpalenia
 
-        currentSpecialTime += time;
+        // currentSpecialTime += time;
+        currentSpecialTime = 0;
 
-        if (currentSpecialTime == time)
+        if (currentSpecialTime < time)
         {
             start.Invoke();
             while (currentSpecialTime < time && enemy != null)
             {
                 yield return new WaitForSeconds(0.3f);
                 enemy.ApplyDamage(dmg);
-                currentSpecialTime += Time.deltaTime;
+                currentSpecialTime += 0.3f;
             }
 
             if (enemy != null)

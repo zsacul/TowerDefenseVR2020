@@ -73,7 +73,7 @@ MonoBehaviour:
     type: 3}
   BGMFadeOutDuration: 5
   BGMFadeInDuration: 3
-  shouldUseBgmQueue: 1
+  shouldUseBgmQueue: 0
 --- !u!114 &3022407711178634086
 MonoBehaviour:
   m_ObjectHideFlags: 0
