@@ -23,10 +23,14 @@ MonoBehaviour:
   - {fileID: 7820431121732991906, guid: 995f4a98180cbd244994e99f5951f77b, type: 3}
   - {fileID: 7215967775341446242, guid: d1920aeaabe3a4a4c8ee3b49009104c8, type: 3}
   naturalObstacle:
+  - {fileID: 1051421574740293895, guid: 7ef2fddd2cad47f41affcaeb23b8a12f, type: 3}
+  playerObstacle:
   - {fileID: 8810554202345407054, guid: 39f32cae2ee8f2244962640ec4911a0c, type: 3}
-  playerObstacle: []
   tower:
-  - {fileID: 4747033015648084934, guid: 84f3e3abcc0ac374abaef4a571cff47d, type: 3}
+  - {fileID: 8617544049270700138, guid: 24c5efed567bcc24ebeeffe3db03a5c1, type: 3}
+  - {fileID: 5273637902542826825, guid: f43d074c27c637548b7120c5f4991e41, type: 3}
+  - {fileID: 7804601037545188239, guid: d4e0b1938717a46458457190bc186f8a, type: 3}
+  - {fileID: 4892120745590652542, guid: 97ef4f7319ed9ef4d87fd6579674f0f9, type: 3}
   spawnPoint:
   - {fileID: 5314216772696258674, guid: e6f6e2e3474751d408c3686f4c39f971, type: 3}
   endPoint:
