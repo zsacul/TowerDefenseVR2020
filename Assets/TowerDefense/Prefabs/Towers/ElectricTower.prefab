@@ -626,17 +626,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d099ca292a5244743b4d5fc95da3fb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 0
-  upgradeCost: 0
-  upgradeDamageIncreaseInPercent: 0
-  upgradeRangeIncreaseInPercent: 0
-  maxDamage: 0
-  maxRadius: 0
+  upgradeRiseInPercent: 100
+  upgradeCostDMG: 10
+  upgradeCostRange: 10
+  upgradeCostDelay: 10
+  upgradeCostAddGun: -1
+  upgradeDamageIncreaseInPercent: 50
+  upgradeRangeIncreaseInPercent: 50
+  upgradeDelayIncreaseInPercent: 25
   shootingDelay: 3
   damage: 10
   speed: 8
+  specialEffectDuration: 0
+  specialEffectDmg: 0
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  maxNumberOfEnemiesInChain: 3
+  upgradeCostIncMaxNumberOfEnemiesInChain: 10
+  radiusOfFindingNextEnemyInChain: 2
   lightning: {fileID: 106988, guid: 15dec7b07032b2f4aa6f855bfbe120f7, type: 3}
   ligtningMaker: {fileID: 6955301624341601909}
+  EnemiesTarget: {fileID: 0}
+  makeLightning:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4704443461675677384
 GameObject:
   m_ObjectHideFlags: 0

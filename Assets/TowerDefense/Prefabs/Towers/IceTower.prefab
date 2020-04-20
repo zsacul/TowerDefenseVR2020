@@ -1249,16 +1249,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd9a4d550a6cb842bea619fb0d39cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 0
-  upgradeCost: 0
-  upgradeDamageIncreaseInPercent: 0
-  upgradeRangeIncreaseInPercent: 0
-  maxDamage: 0
-  maxRadius: 0
+  upgradeRiseInPercent: 100
+  upgradeCostDMG: 10
+  upgradeCostRange: 10
+  upgradeCostDelay: 10
+  upgradeCostAddGun: 20
+  upgradeDamageIncreaseInPercent: 50
+  upgradeRangeIncreaseInPercent: 50
+  upgradeDelayIncreaseInPercent: 25
   shootingDelay: 3
   damage: 10
   speed: 8
   specialEffectDuration: 4
   specialEffectDmg: 1
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
   IceBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
     type: 3}

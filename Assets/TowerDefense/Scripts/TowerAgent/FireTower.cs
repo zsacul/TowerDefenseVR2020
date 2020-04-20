@@ -10,6 +10,7 @@ public class FireTower : BaseTower
     void Start()
     {
         type = ElementType.fire;
+        SE = SpecialEffect.FireSE1;
         bulletPref = FireBullet;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());
@@ -32,5 +33,6 @@ public class FireTower : BaseTower
             currentDelay = 0f;
         }
     }
+    
 
 }

@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 2072638125}
   - component: {fileID: 2072638130}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: StoneTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,23 +137,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba3f23a6db9811479878f0cf213b655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 0
-  upgradeCost: 0
+  upgradeRiseInPercent: 0
+  upgradeCostDMG: 0
+  upgradeCostRange: 0
+  upgradeCostDelay: 0
+  upgradeCostAddGun: 0
   upgradeDamageIncreaseInPercent: 0
   upgradeRangeIncreaseInPercent: 0
-  maxDamage: 0
-  maxRadius: 0
+  upgradeDelayIncreaseInPercent: 0
   shootingDelay: 3
   damage: 10
   speed: 8
   specialEffectDuration: 0
   specialEffectDmg: 0
-  PrefFireTower: {fileID: 5671031205014947035, guid: 8541342c104dccb409feae4e34321f6f,
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  prefTowerFire: {fileID: 5671031205014947035, guid: 8541342c104dccb409feae4e34321f6f,
     type: 3}
-  PrefStoneTower: {fileID: 4747033015648084934}
-  PrefElectricTower: {fileID: 3469616916530925228, guid: 10404743fad70de4fa5fec6c319b77ee,
+  prefTowerStone: {fileID: 4747033015648084934}
+  prefTowerElectric: {fileID: 3469616916530925228, guid: 10404743fad70de4fa5fec6c319b77ee,
     type: 3}
-  StoneBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
+  prefTowerIce: {fileID: 9062161091482600853, guid: bbcfb94c69dfcca45b46e69a8cf05d37,
+    type: 3}
+  prefTowerEarth: {fileID: 4747033015648084934}
+  prefTowerWind: {fileID: 862237436884529366, guid: e0b2e9bd7fa9cb6428c01b4f1da17ee0,
+    type: 3}
+  prefStoneBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
     type: 3}
 --- !u!114 &42886344979322904
 MonoBehaviour:

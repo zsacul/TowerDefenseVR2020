@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 
 public class WindTower : BaseTower
@@ -31,7 +32,8 @@ public class WindTower : BaseTower
 
     float currentSpecialEffectDuration;
     bool isBoosActive;
-    // Start is called before the first frame update
+
+    public UnityEvent windBlow;
     void Start()
     {
         type = ElementType.wind;
@@ -42,7 +44,6 @@ public class WindTower : BaseTower
         isBoosActive = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentDelay += Time.deltaTime;
@@ -66,8 +67,6 @@ public class WindTower : BaseTower
             }
             else
             {
-
-                
                 currentSpecialEffectDuration += Time.deltaTime;
             }
         }
@@ -87,6 +86,8 @@ public class WindTower : BaseTower
 
     void Blow()
     {
+        windBlow.Invoke();
+
         foreach (var enemy in enemiesList)
         {
             var e = enemy.GetComponent<EnemyHPManager>();
@@ -104,10 +105,13 @@ public class WindTower : BaseTower
         enemy.GetComponent<NavMeshAgent>().isStopped = true;
         enemy.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, ExplosionSource.transform.position, explosionRadius, explosionUp, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(specialEffectDuration);
+        yield return new WaitForSeconds(1f);
 
-        enemy.GetComponent<Rigidbody>().freezeRotation = false;
-        enemy.GetComponent<NavMeshAgent>().isStopped = false;
+        if (enemy.GetComponent<NavMeshAgent>() != null && enemy.GetComponent<Rigidbody>() != null)
+        {
+            enemy.GetComponent<Rigidbody>().freezeRotation = false;
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
+        }
     }
     
 }
