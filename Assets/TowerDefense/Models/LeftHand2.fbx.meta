@@ -1,17 +1,8 @@
 fileFormatVersion: 2
-guid: e137f6c9947ae7c4a982bb10db195b27
+guid: 00b9efa5d26cbcb4ea23096c20efc6da
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: 1983965039232826963
-    second: Armature|LeftHandGrabPointFinger
-  - first:
-      74: 3247563404578661860
-    second: Armature|LeftHandGrabRest
-  - first:
-      74: 8601208091435350351
-    second: Armature|LeftHandGrabThumb
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
