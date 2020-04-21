@@ -15,6 +15,7 @@ public class ObjectRotator : MonoBehaviour
     private float destroyHeightDown = 0;
     private float destroyHeightUp = 10;
     private float fallingSpeed;
+    private bool randomYAngle = false;
 
     public void SetFall(Vector2 FallRange, float FallingSpeed)
     {
@@ -36,7 +37,8 @@ public class ObjectRotator : MonoBehaviour
 
     public void RandomizeAngle()
     {
-        Angles.y = UnityEngine.Random.Range(0, 360f);
+        StartAngles.y = UnityEngine.Random.Range(0, 360f);
+        randomYAngle = true;
     }
 
     public void RandomizeValues()
@@ -72,6 +74,7 @@ public class ObjectRotator : MonoBehaviour
                 height = destroyHeightUp;
             }
             StartAngles = RepeatAngles;
+            if (randomYAngle) RandomizeAngle();
             ObjectsSpiralAnimation anim = GetComponentInParent<ObjectsSpiralAnimation>();
             if (anim != null)
             {
