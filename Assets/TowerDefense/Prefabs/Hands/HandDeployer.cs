@@ -37,6 +37,7 @@ public class HandDeployer : MonoBehaviour
 
     public void DeployNth(int Nth)
     {
+        //Debug.Log($"Call To deploy nth {Nth}");
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance);
         listIterator = Nth;
@@ -44,6 +45,7 @@ public class HandDeployer : MonoBehaviour
 
     public void DeployNext()
     {
+        //Debug.Log($"Call To deploy next {listIterator}");
         CallKill(PropList[listIterator].Instance);
         listIterator++;
         if (listIterator == PropList.Count)
@@ -59,6 +61,21 @@ public class HandDeployer : MonoBehaviour
     public void GrabHook(float input)
     {
         PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
+        if (listIterator == 0 && input > 0.7f) // hand is empty and we are grabbing shit.
+        {
+            Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
+            int i = 0;
+            while (i < LocatedNearby.Length)
+            {
+                if (LocatedNearby[i].gameObject.layer == 20)
+                {
+                    Debug.Log($"{LocatedNearby[i].name} :-propid-> {LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID}");
+                    DeployNth(LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID);
+                    break;
+                }
+            i++;
+            }
+        }
     }
 
     public void PointyHook(bool input)
