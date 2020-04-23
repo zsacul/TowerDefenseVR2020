@@ -26,7 +26,6 @@ public class M1911InHandManager : PropManager
     private void pewpew()
     {
         GameObject P = Instantiate(projectile, transform.position, transform.rotation);
-        P.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * -10);
     }
 
     public bool TriggerState = false;

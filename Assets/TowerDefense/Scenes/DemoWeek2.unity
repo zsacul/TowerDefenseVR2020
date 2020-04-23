@@ -32094,6 +32094,7 @@ GameObject:
   - component: {fileID: 1738301546}
   - component: {fileID: 1738301547}
   - component: {fileID: 1738301548}
+  - component: {fileID: 1738301549}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32153,6 +32154,25 @@ MonoBehaviour:
   obstaclePurchaseCanvasPrefab: {fileID: 2320948196604781495, guid: 3f23d1d26c6a1ac4fb0076ff2eaf3dd9,
     type: 3}
   rightController: {fileID: 65865500}
+--- !u!114 &1738301549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361a9b27408fe5744888e2e152e49649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunkSizeX: 2
+  chunkSizeZ: 2
+  mapString: {fileID: 11400000, guid: fbe261696791962489550591606b19db, type: 2}
+  surface: {fileID: 2089414113}
+  chunkPrefab:
+  - {fileID: 5700410315599651911, guid: 49d4a9c5d4b6c4f4a9864ca2f000e91a, type: 3}
+  spawner: {fileID: 752578749}
 --- !u!1 &1751637657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b,
@@ -33079,56 +33099,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1784772523}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1785663957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1785663959}
-  - component: {fileID: 1785663958}
-  m_Layer: 0
-  m_Name: test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1785663958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785663957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 361a9b27408fe5744888e2e152e49649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chunkSizeX: 2
-  chunkSizeZ: 2
-  mapString: {fileID: 11400000, guid: fbe261696791962489550591606b19db, type: 2}
-  surface: {fileID: 2089414113}
-  chunkPrefab:
-  - {fileID: 5700410315599651911, guid: 49d4a9c5d4b6c4f4a9864ca2f000e91a, type: 3}
-  spawner: {fileID: 752578749}
---- !u!4 &1785663959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785663957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1818752, y: 0, z: 18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1788347153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9101396540481678285, guid: 8582221f60901924ba4d2aed90b2cf95,

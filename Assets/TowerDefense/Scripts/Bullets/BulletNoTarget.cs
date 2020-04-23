@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletNoTarget : MonoBehaviour
 {
-    GameObject target;
     [SerializeField]
     float speed;
     [SerializeField]
@@ -16,33 +15,19 @@ public class Bullet : MonoBehaviour
     ElementType type;
     bool readyToDestroy;
 
-    public Bullet(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect specialEffect = SpecialEffect.none)
+    private void Awake()
     {
-        setBulletInfo(t, s, d, typ, eDur, eDmg);
+        Destroy(gameObject, 10);
     }
-
-    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect SE = SpecialEffect.none)
-    {
-        target = t;
-        speed = s;
-        damage = d;
-        specialEffectDurationInSec = eDur;
-        specialEffectDmgPerSec = eDmg;
-        type = typ;
-        specialEffect = SE;
-        readyToDestroy = false;
-    } 
 
     public void ChangeSpecialEffect(SpecialEffect SE)
     {
         specialEffect = SE;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-        transform.LookAt(target.transform.position);
+        transform.position += transform.forward * speed * Time.fixedDeltaTime;
         if (readyToDestroy)
             destroyBullet();
     }

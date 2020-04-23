@@ -29,4 +29,4 @@ MonoBehaviour:
   spawnPoint:
   - {fileID: 5314216772696258674, guid: e6f6e2e3474751d408c3686f4c39f971, type: 3}
   endPoint:
-  - {fileID: 132806931378583047, guid: b95be102ae1635644b2e16a13711e145, type: 3}
+  - {fileID: 132806931378583047, guid: 5904b1576b272e64691ab2425c1c0321, type: 3}
