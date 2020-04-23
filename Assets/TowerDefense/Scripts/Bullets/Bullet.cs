@@ -9,15 +9,16 @@ public class Bullet : MonoBehaviour
     float damage;
     int specialEffectDurationInSec;
     int specialEffectDmgPerSec;
+    SpecialEffect specialEffect;
     ElementType type;
     bool readyToDestroy;
 
-    public Bullet(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0)
+    public Bullet(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect specialEffect = SpecialEffect.none)
     {
         setBulletInfo(t, s, d, typ, eDur, eDmg);
     }
 
-    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0)
+    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect SE = SpecialEffect.none)
     {
         target = t;
         speed = s;
@@ -25,7 +26,13 @@ public class Bullet : MonoBehaviour
         specialEffectDurationInSec = eDur;
         specialEffectDmgPerSec = eDmg;
         type = typ;
+        specialEffect = SE;
         readyToDestroy = false;
+    } 
+
+    public void ChangeSpecialEffect(SpecialEffect SE)
+    {
+        specialEffect = SE;
     }
 
     private void Update()
@@ -77,4 +84,8 @@ public class Bullet : MonoBehaviour
         return specialEffectDmgPerSec;
     }
 
+    public SpecialEffect GetSpecialEffect()
+    {
+        return specialEffect;
+    }
 }

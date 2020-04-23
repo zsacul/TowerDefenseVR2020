@@ -209,18 +209,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0752cbd73395554c8932c573ca086ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeRise: 20
-  upgradeCost: 20
-  upgradeDamageIncreaseInPercent: 0
-  upgradeRangeIncreaseInPercent: 0
-  maxDamage: 0
-  maxRadius: 0
+  upgradeRiseInPercent: 100
+  upgradeCostDMG: 10
+  upgradeCostRange: 10
+  upgradeCostDelay: 10
+  upgradeCostAddGun: 20
+  upgradeDamageIncreaseInPercent: 50
+  upgradeRangeIncreaseInPercent: 50
+  upgradeDelayIncreaseInPercent: 25
   shootingDelay: 3
   damage: 10
   speed: 8
-  specialEffectDuration: 0
-  specialEffectDmg: 0
-  FireBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
+  specialEffectDuration: 3
+  specialEffectDmg: 2
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  FireBullet: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
     type: 3}
 --- !u!1 &7201191021884345839
 GameObject:

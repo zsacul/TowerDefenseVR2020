@@ -10,6 +10,7 @@ public class IceTower : BaseTower
     void Start()
     {
         type = ElementType.ice;
+        SE = SpecialEffect.IceSE1;
         bulletPref = IceBullet;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());

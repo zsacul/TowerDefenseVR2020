@@ -23,7 +23,6 @@ public enum Resistance
 
 public class Elements : MonoBehaviour
 {
-    int numOfElements = 7;
     static Resistance[,] resistanceArray = new Resistance[7, 7]; 
     
     void Start()

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//#define DEBUG
+#undef DEBUG
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +11,7 @@ public class EarthTower : BaseTower
     // Start is called before the first frame update
     void Start()
     {
-        type = ElementType.ice;
+        type = ElementType.earth;
         bulletPref = EarthBullet;
         enemiesList = GetComponent<triggerEnemiesCollisionList>().getCollidersList();
         gunsList = new List<Gun>(GetComponentsInChildren<Gun>());
