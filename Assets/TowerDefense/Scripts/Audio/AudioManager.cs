@@ -79,12 +79,15 @@ public class AudioManager : MonoBehaviour
     ///this only works if some clip is already being played on the source. Also, it stops audioSource after the duration and restores original volume
     public void FadeOut(GameObject source, float duration, AnimationCurve curve = null)
     {
+        if (source == null)
+            return;
         AnimationCurve Curve = curve;
         if (Curve == null)
         {
             Curve = defaultFadingCurve;
         }
 
+        
         AudioSource aSrc = source.GetComponent<AudioSource>();
 
         IEnumerator IEnumForFade = FadeOutCoroutine(aSrc, duration, Curve, aSrc.volume);
@@ -94,6 +97,8 @@ public class AudioManager : MonoBehaviour
     ///this only works if some clip is already being played on the source
     public void FadeIn(GameObject source, float duration, AnimationCurve curve = null)
     {
+        if (source == null)
+            return;
         AnimationCurve Curve = curve;
         if (Curve == null)
         {
@@ -188,6 +193,8 @@ public class AudioManager : MonoBehaviour
 
         while (currtime < duration)
         {
+            if (source == null)
+                yield break;
             source.volume = Mathf.Lerp(0.0f, targetVol, curve.Evaluate(currtime / duration));
             currtime += Time.deltaTime;
             yield return null;
