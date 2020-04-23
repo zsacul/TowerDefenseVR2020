@@ -31,7 +31,7 @@ public class Chunk : MonoBehaviour
         }
         return false;
     }
-    bool ValidOperation(ChunkType newType)
+    public bool ValidOperation(ChunkType newType)
     {
         switch(newType)
         {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2138233429803476267}
   m_Layer: 0
   m_Name: Chunk
-  m_TagString: Untagged
+  m_TagString: Chunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,3 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc3fdac4840d84cbf0b43be26a533e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBuild: {fileID: 8141420140228828782, guid: 21112940b47faba41a28bd87557b237b,
+    type: 3}
+  cantBuild: {fileID: 8512583784603318439, guid: 72eca0aa797bb0045bb6cfb83afd2cdf,
+    type: 3}

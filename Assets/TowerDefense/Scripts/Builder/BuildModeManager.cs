@@ -17,13 +17,24 @@ public class BuildModeManager : MonoBehaviour
     private GameEvent BuildingSuccess;
     [SerializeField]
     private GameEvent BuildingFailure;
+    [SerializeField]
+    private Canvas towerPurchaseCanvasPrefab;
+    [SerializeField]
+    private Canvas obstaclePurchaseCanvasPrefab;
+    [SerializeField]
+    public GameObject rightController;
+
+    private Canvas towerPurchaseCanvas;
+    private Canvas obstaclePurchaseCanvas;
+    private BoxCollider towerPurchaseCanvasCollider;
+    private BoxCollider obstaclePurchaseCanvasCollider;
+    private Text moneyText;
 
     private ChunkType selectedBuilding;
+
     private bool buildModeOn;
-    private Text moneyText;
-    private Text playerObstacleText;
-    private Text turretText;
-    private Text instructionText;
+    private bool purchasePanelActive;
+
     private RectTransform canvasRT;
     private float canvasXSize;
     private float canvasYSize;
@@ -31,30 +42,33 @@ public class BuildModeManager : MonoBehaviour
 
     void Start()
     {
+        towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
+        obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
+        towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
+        obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
         buildModeOn = false;
+        purchasePanelActive = false;
         canvasRT = canvas.GetComponent<RectTransform>();
         canvasXSize = canvasRT.sizeDelta.x / 2.0f;
         canvasYSize = canvasRT.sizeDelta.y / 2.0f;
         canvasZPos = canvasRT.localPosition.z;
-        SetTexts();
+        selectedBuilding = ChunkType.none;
+        SetMoneyText();
     }
 
-    void SetTexts()
+    private void SetMoneyText()
     {
         moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40);
-        playerObstacleText = SetText(-0.5f, -0.85f, "Press O to choose an Obstacle", 150, 40);
-        turretText = SetText(-0.2f, -0.85f, "Press T to choose a Tower", 150, 40);
-        instructionText = SetText(0.0f, 0.85f, "Building Mode: press Tab", 250, 40);
         moneyText.text = "Money: $" + money.ToString();
         UpdateUI();
     }
 
 
-    /// <summary>
-    /// Creates a new text. x and y determines its position. For x = 0.0, y = 0.0 it would be the center of the canvas,
-    /// for -1.0, -1.0 lower left corner, for 1.0, 1.0 upper right corner.
-    /// </summary>
-    Text SetText(float x, float y, string content, float width, float height)
+    // <summary>
+    // Creates a new text.x and y determines its position.For x = 0.0, y = 0.0 it would be the center of the canvas,
+    // for -1.0, -1.0 lower left corner, for 1.0, 1.0 upper right corner.
+    // </summary>
+    private Text SetText(float x, float y, string content, float width, float height)
     {
         GameObject newGO = new GameObject(content);
         newGO.transform.SetParent(canvas.transform);
@@ -75,47 +89,88 @@ public class BuildModeManager : MonoBehaviour
     {
         if (buildModeOn)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (purchasePanelActive)
             {
-                selectedBuilding = ChunkType.tower;
-                SetTextColours(Color.red, Color.black);
+                towerPurchaseCanvas.transform.rotation = Quaternion.LookRotation(towerPurchaseCanvas.transform.position - Camera.main.transform.position);
+                obstaclePurchaseCanvas.transform.rotation = Quaternion.LookRotation(obstaclePurchaseCanvas.transform.position - Camera.main.transform.position);
             }
-            else if (Input.GetKeyDown(KeyCode.O))
-            {
-                selectedBuilding = ChunkType.playerObstacle;
-                SetTextColours(Color.black, Color.red);
-                
-            }
-
         }
+
         if (UpdateModeCond())
         {
             buildModeOn = !buildModeOn;
             selectedBuilding = ChunkType.none;
 
             UpdateUI();
+        }
 
-            if (buildModeOn)
+        if (UpdatePanelActiveCond())
+        {
+            purchasePanelActive = !purchasePanelActive;
+            if (purchasePanelActive && buildModeOn)
             {
-                SetTextColours(Color.black, Color.black);
+                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.3f, 1.4f));
+                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.3f, 1.4f));
+                towerPurchaseCanvas.transform.position = towerPos;
+                obstaclePurchaseCanvas.transform.position = obstaclePos;
+            }
+
+            UpdateUI();
+        }
+
+        if (buildModeOn && selectedBuilding != ChunkType.none)
+        {
+            RaycastHit hit;
+            Vector3 lastChunk = new Vector3(0, 0, 0);
+            //If we point at something
+            if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000))
+            {
+               // Debug.Log("OBJECT HIT: " + hit.collider.gameObject.ToString());
+                if (hit.collider.gameObject.tag == "Chunk" && hit.collider.gameObject.transform.position != lastChunk)
+                {
+                    hit.collider.gameObject.GetComponent<BuildHandler>().SeeYou();
+                    lastChunk = hit.collider.gameObject.transform.position;
+                }
             }
         }
-        
     }
 
     //Updates UI according to the state of BuildModeOn
-    void UpdateUI()
+    private void UpdateUI()
     {
-        playerObstacleText.enabled = BuildModeOn;
-        moneyText.enabled = BuildModeOn;
-        turretText.enabled = BuildModeOn;
+        moneyText.enabled = buildModeOn;
+        if (buildModeOn)
+        {
+            UpdatePurchasePanels(purchasePanelActive);
+        }
+        else
+        {
+            UpdatePurchasePanels(false);
+        }
     }
 
-    //Sets colours of turretText and playerObstacleText
-    void SetTextColours(Color fortower, Color forObstacle)
+    private void UpdatePurchasePanels(bool state)
     {
-        turretText.color = fortower;
-        playerObstacleText.color = forObstacle;
+        towerPurchaseCanvas.enabled = state;
+        obstaclePurchaseCanvas.enabled = state;
+        towerPurchaseCanvasCollider.enabled = state;
+        obstaclePurchaseCanvasCollider.enabled = state;
+    }
+
+    public void ChooseTower()
+    {
+        //Debug.Log("Tower was chosen");
+        selectedBuilding = ChunkType.tower;
+        purchasePanelActive = false;
+        UpdateUI();
+    }
+
+    public void ChooseObstacle()
+    {
+        //Debug.Log("Obstacle was chosen");
+        selectedBuilding = ChunkType.playerObstacle;
+        purchasePanelActive = false;
+        UpdateUI();
     }
 
     // Currently BuildingMode is switched on/off after hitting Tab
@@ -124,14 +179,31 @@ public class BuildModeManager : MonoBehaviour
         return Input.GetKeyDown(KeyCode.Tab);
     }
 
-    public bool BuildModeOn {
-        get {
+    public bool UpdatePanelActiveCond()
+    {
+        return Input.GetKeyDown(KeyCode.B);
+    }
+
+    public bool BuildModeOn
+    {
+        get
+        {
             return buildModeOn;
         }
     }
 
-    public int Money {
-        get {
+    public bool PurchasePanelActive
+    {
+        get
+        {
+            return purchasePanelActive;
+        }
+    }
+
+    public int Money
+    {
+        get
+        {
             return money;
         }
     }
@@ -139,14 +211,16 @@ public class BuildModeManager : MonoBehaviour
     ///<summary>
     ///Returns selected building as ChunkType and its cost as int
     ///</summary>
-    public System.Tuple<ChunkType, int> ActiveBuildingInfo {
-        get {
+    public System.Tuple<ChunkType, int> ActiveBuildingInfo
+    {
+        get
+        {
             int cost = -1;
-            if(selectedBuilding == ChunkType.tower)
+            if (selectedBuilding == ChunkType.tower)
             {
                 cost = towerCost;
             }
-            else if(selectedBuilding == ChunkType.playerObstacle)
+            else if (selectedBuilding == ChunkType.playerObstacle)
             {
                 cost = playerObstacleCost;
             }

@@ -30750,6 +30750,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 10557673}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1482166846 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4315896199336624501, guid: ae0332a1eea44df4ca54bb67f6645dd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2147053488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1489169086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37538,6 +37544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1738301546}
   - component: {fileID: 1738301547}
+  - component: {fileID: 1738301548}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -37574,6 +37581,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb9bfc1a4c02a40bc74a80137141b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1738301548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbc2d77a35227546baa31e94968ba34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 1000
+  towerCost: 50
+  playerObstacleCost: 50
+  canvas: {fileID: 1482166846}
+  BuildingSuccess: {fileID: 11400000, guid: ea9314e8d9618fd4cab901b4226748c9, type: 2}
+  BuildingFailure: {fileID: 11400000, guid: 8212850ed5adf514cbd2b27658221f06, type: 2}
+  towerPurchaseCanvasPrefab: {fileID: 2437441869361944915, guid: 7a6887c75b606694bbe6c27c3f3cabd6,
+    type: 3}
+  obstaclePurchaseCanvasPrefab: {fileID: 2320948196604781495, guid: 3f23d1d26c6a1ac4fb0076ff2eaf3dd9,
+    type: 3}
+  rightController: {fileID: 65865500}
 --- !u!1 &1751637657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b,
