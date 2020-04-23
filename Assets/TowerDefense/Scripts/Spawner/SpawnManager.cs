@@ -22,6 +22,7 @@ namespace SpawnManaging
         [SerializeField]
         float breakLength;
         int spawnedInGroup;
+        public bool breakOn;
         // Update is called once per frame
         void Start()
         {
@@ -44,8 +45,7 @@ namespace SpawnManaging
                 if(waveIndex < wave.Length)
                 {
                     wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
-                    InvokeRepeating("SpawnLoop", breakLength, 1);
-                    breakStart.Raise();
+                    InitBreak();
                 }
                 else
                 {
@@ -58,7 +58,6 @@ namespace SpawnManaging
         }
         private void SpawnLoop()
         {
-            breakEnd.Raise();
             if (!IsInvoking("Spawn"))
             {
                 spawnedInGroup = 0;
@@ -76,6 +75,39 @@ namespace SpawnManaging
             CancelInvoke("SpawnLoop");
             CancelInvoke("Spawn");
         }
+        private void InitBreak()
+        {
+            InvokeRepeating("BreakCheck", 0, 1);
+        }
+        private void BreakCheck()
+        {
+            if(spawnPoints[0].childCount == 1)
+            {
+                CancelInvoke("BreakCheck");
+                StartBreak();
+            }
+        }
+        private void StartBreak()
+        {
+            breakStart.Raise();
+            breakOn = true;
+        }
+        public void EndBreak()
+        {
+            if(breakOn)
+            {
+                breakEnd.Raise();
+                InvokeRepeating("SpawnLoop", 0, 1);
+                breakOn = false;
+            }
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                EndBreak();
+            }
+        }
     }
     [Serializable]
     public class Wave
@@ -83,8 +115,6 @@ namespace SpawnManaging
         public WaveObject waveData;
         [Tooltip("interval between spawns")]
         public float interval;
-        [Tooltip("maxLength = 0 is ignored")]
-        public float maxLength;
         [Min(0.1f)]
         public float bonusHp = 1;
         [Min(0.1f)]

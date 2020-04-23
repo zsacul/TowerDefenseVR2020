@@ -7,6 +7,10 @@ public class GameEvent : ScriptableObject
     private List<GameEventListener> listeners = new List<GameEventListener>();
     [HideInInspector]
     public Object data;
+    private void OnEnable()
+    {
+        listeners = new List<GameEventListener>();
+    }
     public void Raise()
     {
         for (int i = listeners.Count - 1; i >= 0; i--)

@@ -15222,7 +15222,30 @@ MonoBehaviour:
   wave:
   - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
     interval: 1.5
-    maxLength: 0
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    interval: 1.5
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    interval: 1.5
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    interval: 1.5
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    interval: 1.5
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 3
