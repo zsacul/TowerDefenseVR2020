@@ -4290,7 +4290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &162686961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32148,9 +32148,11 @@ MonoBehaviour:
   canvas: {fileID: 1561748944}
   BuildingSuccess: {fileID: 11400000, guid: ea9314e8d9618fd4cab901b4226748c9, type: 2}
   BuildingFailure: {fileID: 11400000, guid: 8212850ed5adf514cbd2b27658221f06, type: 2}
-  towerPurchaseCanvasPrefab: {fileID: 0}
-  obstaclePurchaseCanvasPrefab: {fileID: 0}
-  rightController: {fileID: 0}
+  towerPurchaseCanvasPrefab: {fileID: 2437441869361944915, guid: 7a6887c75b606694bbe6c27c3f3cabd6,
+    type: 3}
+  obstaclePurchaseCanvasPrefab: {fileID: 2320948196604781495, guid: 3f23d1d26c6a1ac4fb0076ff2eaf3dd9,
+    type: 3}
+  rightController: {fileID: 65865500}
 --- !u!1 &1751637657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b,
