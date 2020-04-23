@@ -15,7 +15,7 @@ public class ObjectRotator : MonoBehaviour
     private float destroyHeightDown = 0;
     private float destroyHeightUp = 10;
     private float fallingSpeed;
-    private bool randomYAngle = false;
+    public bool randomYAngle = false;
 
     public void SetFall(Vector2 FallRange, float FallingSpeed)
     {
