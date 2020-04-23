@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 7682677548046484626}
   m_Layer: 0
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4837300891221883384}
   m_Layer: 0
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8685568500377081202}
   m_Layer: 0
   m_Name: DownLightning (1)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 7781102889333569522}
   m_Layer: 0
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8442511760419795166}
   m_Layer: 0
   m_Name: InsideLightnings
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8623960768863899756}
   m_Layer: 0
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 4332754907429763707}
   m_Layer: 0
   m_Name: DownLightnings
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5818390127018493146}
   m_Layer: 0
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 4074641468391426583}
   m_Layer: 0
   m_Name: InsideLightning (2)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 1662288648329251317}
   m_Layer: 0
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +389,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7951205731576094738}
   - component: {fileID: 2459272961780113566}
+  - component: {fileID: 1811956860207052949}
+  - component: {fileID: 250979561003377200}
+  - component: {fileID: 4122092280050513904}
+  - component: {fileID: 7401474893963003076}
+  - component: {fileID: 8658911673904205617}
   m_Layer: 0
   m_Name: ElectricTower
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748104644585446367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.44, y: 0, z: 18}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 727783811995031952}
@@ -452,6 +457,123 @@ MonoBehaviour:
   - {fileID: 919613649176202770}
   - {fileID: 7399974902351532336}
   turnOnLightingsTime: 5
+--- !u!114 &1811956860207052949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748104644585446367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4b089fd8e2d5c49aeff8b2411e3098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &250979561003377200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748104644585446367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d099ca292a5244743b4d5fc95da3fb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeRiseInPercent: 100
+  upgradeCostDMG: 10
+  upgradeCostRange: 10
+  upgradeCostDelay: 10
+  upgradeCostAddGun: -1
+  upgradeDamageIncreaseInPercent: 50
+  upgradeRangeIncreaseInPercent: 50
+  upgradeDelayIncreaseInPercent: 25
+  shootingDelay: 3
+  damage: 10
+  speed: 8
+  specialEffectDuration: 0
+  specialEffectDmg: 0
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  maxNumberOfEnemiesInChain: 3
+  upgradeCostIncMaxNumberOfEnemiesInChain: 10
+  radiusOfFindingNextEnemyInChain: 2
+  lightning: {fileID: 106988, guid: 15dec7b07032b2f4aa6f855bfbe120f7, type: 3}
+  ligtningMaker: {fileID: 6955301624341601909, guid: 10404743fad70de4fa5fec6c319b77ee,
+    type: 3}
+  EnemiesTarget: {fileID: 0}
+  makeLightning:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2036200670099337975, guid: 10404743fad70de4fa5fec6c319b77ee,
+          type: 3}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!135 &4122092280050513904
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748104644585446367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7401474893963003076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748104644585446367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfc150f288ac5646bbf6aa66a9ab177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToPlay: {fileID: 8300000, guid: bb2c07db4302843459ae1425fa42e4b6, type: 3}
+  mixer: {fileID: 8534533850075661724, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
+--- !u!54 &8658911673904205617
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748104644585446367}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2823770882054834690
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +586,7 @@ GameObject:
   - component: {fileID: 2637280608607037046}
   m_Layer: 0
   m_Name: DownLightning (2)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,7 +635,7 @@ GameObject:
   - component: {fileID: 6210223351967452494}
   m_Layer: 0
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +665,7 @@ GameObject:
   - component: {fileID: 8626629602204206822}
   m_Layer: 0
   m_Name: InsideLightning (4)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -573,7 +695,7 @@ GameObject:
   - component: {fileID: 98960715858591922}
   m_Layer: 0
   m_Name: LightningMaker
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,7 +726,7 @@ GameObject:
   - component: {fileID: 1378392364664803752}
   m_Layer: 0
   m_Name: DownLightning (3)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +775,7 @@ GameObject:
   - component: {fileID: 3575217207183707762}
   m_Layer: 0
   m_Name: InsideLightning (6)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,7 +805,7 @@ GameObject:
   - component: {fileID: 6377210050653955251}
   m_Layer: 0
   m_Name: InsideLightning (5)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -702,6 +824,19 @@ Transform:
   m_Father: {fileID: 8442511760419795166}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5303123258556394637
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814467530420766297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7642847003259603064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +864,7 @@ GameObject:
   - component: {fileID: 965861356895471353}
   m_Layer: 0
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,7 +911,7 @@ GameObject:
   - component: {fileID: 4068413382012206486}
   m_Layer: 0
   m_Name: DownLightning
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -825,7 +960,7 @@ GameObject:
   - component: {fileID: 4083032601402682661}
   m_Layer: 0
   m_Name: InsideLightning (3)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -855,7 +990,7 @@ GameObject:
   - component: {fileID: 2966794092101999368}
   m_Layer: 0
   m_Name: InsideLightning
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -885,7 +1020,7 @@ GameObject:
   - component: {fileID: 8974344960329415543}
   m_Layer: 0
   m_Name: InsideLightning (1)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,6 +1050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StormCloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 667102600496862026, guid: 28c05f1972e0ef0448f125c669ce8b06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 1260673968110102422, guid: 28c05f1972e0ef0448f125c669ce8b06,
         type: 3}
@@ -1062,6 +1202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewTowerBase
       objectReference: {fileID: 0}
+    - target: {fileID: 7875885855398594429, guid: 793ddad37eaba6841b0c8d430e6b16f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 793ddad37eaba6841b0c8d430e6b16f3, type: 3}
 --- !u!4 &4915815102832807443 stripped
@@ -1086,6 +1231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
         type: 3}
@@ -1223,6 +1373,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightPillar
       objectReference: {fileID: 0}
+    - target: {fileID: 2429178069397808720, guid: c2c1687c17784d84fa73498e45e195cb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 4146401945326850700, guid: c2c1687c17784d84fa73498e45e195cb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1230,15 +1385,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3bb1396946272d1499834bd8c66a4169, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c1687c17784d84fa73498e45e195cb, type: 3}
---- !u!4 &7550992610253288522 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1724163208563315779, guid: c2c1687c17784d84fa73498e45e195cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 9162563031799554057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6814467530420766297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2429178069397808720, guid: c2c1687c17784d84fa73498e45e195cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9162563031799554057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7550992610253288522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1724163208563315779, guid: c2c1687c17784d84fa73498e45e195cb,
     type: 3}
   m_PrefabInstance: {fileID: 9162563031799554057}
   m_PrefabAsset: {fileID: 0}
@@ -1258,6 +1413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879662412341496013, guid: 1dafceffe557cf443bbcafad9c6c9308,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 8494724326751615710, guid: 1dafceffe557cf443bbcafad9c6c9308,
         type: 3}

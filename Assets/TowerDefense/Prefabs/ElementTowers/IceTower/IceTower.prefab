@@ -16,6 +16,36 @@ MonoBehaviour:
   visibilityMaterial: {fileID: 2100000, guid: df38762b16038ca49ad011e3dd657532, type: 2}
   changingVisibilitySpeed: 0.2
   appearingDelay: 0
+--- !u!1 &2439539600616801407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799601618917383818}
+  m_Layer: 0
+  m_Name: gun
+  m_TagString: Bullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799601618917383818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439539600616801407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8072006149906541684}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4293458361273451983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,9 +104,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8072006149906541684}
   - component: {fileID: 9194273771799080147}
+  - component: {fileID: 1623996590922712630}
+  - component: {fileID: 1836560548891106254}
+  - component: {fileID: 8283066331669494507}
+  - component: {fileID: 1047717100205902508}
   m_Layer: 0
   m_Name: IceTower
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +131,7 @@ Transform:
   - {fileID: 4373270632541154199}
   - {fileID: 5154354279622115390}
   - {fileID: 4232587277059337873}
+  - {fileID: 799601618917383818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -123,6 +158,89 @@ MonoBehaviour:
   RandomizeAngle: 0
   RotationRadius: 0.6
   ShouldSpawn: 1
+--- !u!114 &1623996590922712630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4b089fd8e2d5c49aeff8b2411e3098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1836560548891106254
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8283066331669494507
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1047717100205902508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd9a4d550a6cb842bea619fb0d39cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeRiseInPercent: 100
+  upgradeCostDMG: 10
+  upgradeCostRange: 10
+  upgradeCostDelay: 10
+  upgradeCostAddGun: 20
+  upgradeDamageIncreaseInPercent: 50
+  upgradeRangeIncreaseInPercent: 50
+  upgradeDelayIncreaseInPercent: 25
+  shootingDelay: 3
+  damage: 10
+  speed: 8
+  specialEffectDuration: 4
+  specialEffectDmg: 1
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  IceBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
+    type: 3}
 --- !u!114 &2700223523819438191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
         type: 3}
@@ -236,6 +359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IceTowerTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 55281541024355102, guid: 9abc17dc2be849e40ba22645483e9395,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 1799381876347414466, guid: 9abc17dc2be849e40ba22645483e9395,
         type: 3}
@@ -378,6 +506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightPillar
       objectReference: {fileID: 0}
+    - target: {fileID: 2429178069397808720, guid: c2c1687c17784d84fa73498e45e195cb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 4146401945326850700, guid: c2c1687c17784d84fa73498e45e195cb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -464,6 +597,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewTowerBase
       objectReference: {fileID: 0}
+    - target: {fileID: 7875885855398594429, guid: 793ddad37eaba6841b0c8d430e6b16f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 793ddad37eaba6841b0c8d430e6b16f3, type: 3}
 --- !u!4 &4232587277059337873 stripped
@@ -488,6 +626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879662412341496013, guid: 1dafceffe557cf443bbcafad9c6c9308,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 8494724326751615710, guid: 1dafceffe557cf443bbcafad9c6c9308,
         type: 3}

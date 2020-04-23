@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5960960232260958454}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 9174352638960446795}
   m_Layer: 0
   m_Name: Grasses
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,9 +93,12 @@ GameObject:
   - component: {fileID: 9078294234405135791}
   - component: {fileID: 5389290806740002545}
   - component: {fileID: 8638327907931003518}
+  - component: {fileID: 3444223583287066603}
+  - component: {fileID: -432892557580538875}
+  - component: {fileID: -7783904139491376548}
   m_Layer: 0
   m_Name: BaseTower
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +200,88 @@ MonoBehaviour:
   visibilityMaterial: {fileID: 2100000, guid: b926aeacca3ab6844995049eb5b1c34a, type: 2}
   changingVisibilitySpeed: 0.2
   appearingDelay: 0
+--- !u!135 &3444223583287066603
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331933368153788787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-432892557580538875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331933368153788787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4b089fd8e2d5c49aeff8b2411e3098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7783904139491376548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331933368153788787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3f23a6db9811479878f0cf213b655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeRiseInPercent: 0
+  upgradeCostDMG: 0
+  upgradeCostRange: 0
+  upgradeCostDelay: 0
+  upgradeCostAddGun: 0
+  upgradeDamageIncreaseInPercent: 0
+  upgradeRangeIncreaseInPercent: 0
+  upgradeDelayIncreaseInPercent: 0
+  shootingDelay: 3
+  damage: 10
+  speed: 8
+  specialEffectDuration: 0
+  specialEffectDmg: 0
+  shootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  updateRange:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDMG:
+    m_PersistentCalls:
+      m_Calls: []
+  updateDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  updateAddGun:
+    m_PersistentCalls:
+      m_Calls: []
+  prefTowerFire: {fileID: 5671031205014947035, guid: 8541342c104dccb409feae4e34321f6f,
+    type: 3}
+  prefTowerStone: {fileID: 4747033015648084934, guid: 84f3e3abcc0ac374abaef4a571cff47d,
+    type: 3}
+  prefTowerElectric: {fileID: 3469616916530925228, guid: 10404743fad70de4fa5fec6c319b77ee,
+    type: 3}
+  prefTowerIce: {fileID: 9062161091482600853, guid: bbcfb94c69dfcca45b46e69a8cf05d37,
+    type: 3}
+  prefTowerEarth: {fileID: 4747033015648084934, guid: 84f3e3abcc0ac374abaef4a571cff47d,
+    type: 3}
+  prefTowerWind: {fileID: 862237436884529366, guid: e0b2e9bd7fa9cb6428c01b4f1da17ee0,
+    type: 3}
+  prefStoneBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
+    type: 3}
+  destroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &188870383407629747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725775557133048846, guid: f30c61231296ae94aa1292ef3d5139bb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f30c61231296ae94aa1292ef3d5139bb, type: 3}
@@ -365,6 +455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
 --- !u!4 &5743822067564985567 stripped
@@ -454,6 +549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
@@ -545,6 +645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
 --- !u!4 &1520042778709858444 stripped
@@ -634,6 +739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
@@ -725,6 +835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass1
       objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
 --- !u!4 &3067489160599287080 stripped
@@ -799,6 +914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133496596900407449, guid: 3a557441e01b8e74884d87c49733d48c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8999543587407062667, guid: 3a557441e01b8e74884d87c49733d48c, type: 3}
@@ -890,6 +1010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845869272524931284, guid: 15c575aadc57651489159a427b8ec8c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c575aadc57651489159a427b8ec8c8, type: 3}
