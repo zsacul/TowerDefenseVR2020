@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3022407711178634087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7417088, y: 2.3541527, z: 2.1101284}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,6 +69,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  sourceTemplate: {fileID: 5035635970274652091, guid: 0c29da93b26590340b9e0c5319e0c2bf,
+    type: 3}
+  BGMFadeOutDuration: 5
+  BGMFadeInDuration: 3
+  shouldUseBgmQueue: 0
 --- !u!114 &3022407711178634086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,5 +93,5 @@ MonoBehaviour:
   sBGMAmbient1: {fileID: 8300000, guid: 29cad730e351b6f4b8a961b7f89f54b2, type: 3}
   sBGMAmbient2: {fileID: 8300000, guid: bfeedf0d5dff01b4d816e21c4fac0552, type: 3}
   sBGMAmbient3: {fileID: 8300000, guid: 0b7d9560e52e59e4bae11b404ac11433, type: 3}
-  mProjectilesMaster: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
+  mParticlesMaster: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
   mBGMMaster: {fileID: 24300002, guid: 36556f40449f37d49aa779f86c4ba27f, type: 2}

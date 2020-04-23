@@ -23,6 +23,6 @@ public class AudioAssets : MonoBehaviour
     public AudioClip sBGMAmbient3;
 
     //mixers
-    public AudioMixerGroup mProjectilesMaster;
+    public AudioMixerGroup mParticlesMaster;
     public AudioMixerGroup mBGMMaster;
 }

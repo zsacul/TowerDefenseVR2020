@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 8198336189590904775}
   - component: {fileID: 8198336189590904792}
   - component: {fileID: 223231248527401686}
+  - component: {fileID: -2036200670099337975}
   m_Layer: 0
   m_Name: ElectricTower
   m_TagString: Untagged
@@ -662,7 +663,32 @@ MonoBehaviour:
   EnemiesTarget: {fileID: 0}
   makeLightning:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2036200670099337975}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2036200670099337975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469616916530925228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfc150f288ac5646bbf6aa66a9ab177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToPlay: {fileID: 8300000, guid: bb2c07db4302843459ae1425fa42e4b6, type: 3}
+  mixer: {fileID: 8534533850075661724, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
 --- !u!1 &4704443461675677384
 GameObject:
   m_ObjectHideFlags: 0
