@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildModeManager : MonoBehaviour
+public class BuildManager : MonoBehaviour
 {
     [SerializeField]
     private int money;
