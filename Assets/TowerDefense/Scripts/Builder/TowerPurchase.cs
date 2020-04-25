@@ -2,15 +2,14 @@
 using System.Collections;
 
 public class TowerPurchase : MonoBehaviour {
-    BuildModeManager buildManager;
+    BuildManager buildManager;
     void Start()
     {
-        buildManager = GameObject.Find("GameManager").GetComponent<BuildModeManager>();
+        buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //towerPurchaseCanvasCollider.enabled = false;
         buildManager.ChooseTower();
     }
 }
