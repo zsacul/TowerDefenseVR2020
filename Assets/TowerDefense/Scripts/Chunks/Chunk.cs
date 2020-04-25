@@ -25,7 +25,8 @@ public class Chunk : MonoBehaviour
             {
                 type = newType;
                 changeTypeEvent.Invoke();
-                owner.UpdateChunks();
+                UpdateChunk();
+                owner.UpdateChunks(true);
                 return true;
             }
         }

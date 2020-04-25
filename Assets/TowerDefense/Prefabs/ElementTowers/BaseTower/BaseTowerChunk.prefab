@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9163655353354264728}
-  - component: {fileID: 8150274896177340424}
+  - component: {fileID: 475542652786856229}
   m_Layer: 0
   m_Name: BaseTowerChunk
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8150274896177340424
+--- !u!114 &475542652786856229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,16 +42,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8617544049270700138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ef575124d8a73e449acc94c13f8c30c, type: 3}
+  m_Script: {fileID: 11500000, guid: 23ecd97ff752d3e498c7be7cc8edf0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireCanvasPrefab: {fileID: 8344855314892190429, guid: 73d69a4c837b39a498d1ec8d83ef82e0,
+  fireCanvasPrefab: {fileID: 8344855314892190429, guid: 98fb6015962862141b0710d53ba632a0,
     type: 3}
-  iceCanvasPrefab: {fileID: 8309758085442543269, guid: 739a22f483e438844a3d35b79bc0e421,
+  iceCanvasPrefab: {fileID: 8309758085442543269, guid: 6ef6cbe1e3129454e86201238feb7622,
     type: 3}
-  windCanvasPrefab: {fileID: 2534852967039529688, guid: 69adcd9a21fd1d04ca3d16ab0274bf58,
+  windCanvasPrefab: {fileID: 2534852967039529688, guid: ff8a29f8829f9ff4f98b065b72e6b33b,
     type: 3}
-  electricCanvasPrefab: {fileID: 7413660572395438324, guid: f2873b5dddbeca04dae3f04fdfa6bbf3,
+  electricCanvasPrefab: {fileID: 7413660572395438324, guid: 66f9bf8455f22c74e9c73f2b840d0aee,
     type: 3}
 --- !u!1001 &3632664331628622566
 PrefabInstance:

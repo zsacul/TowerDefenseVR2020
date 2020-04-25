@@ -32170,7 +32170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1738301545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f121f289f69cd294db2fd783ed553c81, type: 3}
+  m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
@@ -35052,7 +35052,7 @@ PrefabInstance:
     - target: {fileID: 3022407711178634085, guid: f6d67bcb62b91fc48a7794ac2b810b36,
         type: 3}
       propertyPath: shouldUseBgmQueue
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3022407711178634085, guid: f6d67bcb62b91fc48a7794ac2b810b36,
         type: 3}
@@ -38565,7 +38565,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.11666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 7e894b6164c32024d810b9a9bf832047, type: 2}
 --- !u!1001 &2101921184

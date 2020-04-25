@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 7413660572395438325}
   - component: {fileID: 7413660572395438322}
   - component: {fileID: 5402088051148099153}
-  - component: {fileID: 2917450804494992347}
+  - component: {fileID: -7825313112142168993}
   m_Layer: 5
   m_Name: ElectricUpgradeCanvas
   m_TagString: Untagged
@@ -430,7 +430,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8903198, y: 0.7051085, z: 0.017796218}
   m_Center: {x: 0.0022888184, y: 0.0064802766, z: 0.012141224}
---- !u!114 &2917450804494992347
+--- !u!114 &-7825313112142168993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,8 +439,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7413660572395438323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ece44a93e092243a6119d11a06fea4, type: 3}
+  m_Script: {fileID: 11500000, guid: ddefe037d11ed724ca27fd156bc1eb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunk: {fileID: 0}
+  chunk: {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}
   elementIndex: 2

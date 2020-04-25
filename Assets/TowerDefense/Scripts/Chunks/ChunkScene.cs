@@ -62,15 +62,17 @@ public class ChunkScene : MonoBehaviour
             }
         }
     }
-    public void UpdateChunks()
+    public void UpdateChunks(bool forced = false)
     {
         for (int y = 0; y < mapString.sizeY; y++)
         {
             for (int x = 0; x < mapString.sizeX; x++)
             {
+                if(!forced || chunkMap[x,y].type == ChunkType.empty)
                 chunkMap[x, y].UpdateChunk();
             }
         }
+        surface.BuildNavMesh();
     }
 
     public ChunkType GetChunkType(int x, int y) {
