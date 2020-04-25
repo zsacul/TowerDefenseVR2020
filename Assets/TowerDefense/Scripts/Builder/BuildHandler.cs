@@ -8,7 +8,7 @@ public class BuildHandler : MonoBehaviour
     private GameObject canBuild;
     [SerializeField]
     private GameObject cantBuild;
-    private BuildModeManager buildManager;
+    private BuildManager buildManager;
     private BoxCollider thisBoxCollider;
 
     // Object that's being instantiated after player in Build Mode points to this chunk 
@@ -25,7 +25,7 @@ public class BuildHandler : MonoBehaviour
 
     void Start()
     {
-        buildManager = GameObject.Find("GameManager").GetComponent<BuildModeManager>();
+        buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         thisBoxCollider = gameObject.AddComponent<BoxCollider>();
         thisBoxCollider.enabled = false;
         pointedAt = false;

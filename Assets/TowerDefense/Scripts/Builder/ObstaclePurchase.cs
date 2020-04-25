@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class ObstaclePurchase : MonoBehaviour {
-    BuildModeManager buildManager;
+    BuildManager buildManager;
     void Start()
     {
-        buildManager = GameObject.Find("GameManager").GetComponent<BuildModeManager>();
+        buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
     }
 
     private void OnTriggerEnter(Collider other)

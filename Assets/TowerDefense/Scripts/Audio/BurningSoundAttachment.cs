@@ -15,6 +15,7 @@ public class BurningSoundAttachment : BaseSoundAttachment
 
     public void Stop()
     {
-        AudioManager.Instance.FadeOut(this.gameObject, 0.6f);
+        if(src != null && src.isPlaying)
+            AudioManager.Instance.FadeOut(this.gameObject, 0.6f);
     }
 }

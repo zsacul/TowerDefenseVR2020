@@ -31,6 +31,19 @@ public class Chunk : MonoBehaviour
         }
         return false;
     }
+
+    public void UpgradeTower(int elementIndex)
+    {
+        if (type == ChunkType.tower)
+        {
+            if (currentObject != null)
+            {
+                Destroy(currentObject);
+            }
+            currentObject = Instantiate(prefabs.tower[elementIndex], transform);
+        }
+    }
+
     public bool ValidOperation(ChunkType newType)
     {
         switch(newType)
