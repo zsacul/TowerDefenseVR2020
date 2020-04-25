@@ -513,8 +513,7 @@ MonoBehaviour:
   upgradeCostIncMaxNumberOfEnemiesInChain: 10
   radiusOfFindingNextEnemyInChain: 2
   lightning: {fileID: 106988, guid: 15dec7b07032b2f4aa6f855bfbe120f7, type: 3}
-  ligtningMaker: {fileID: 6955301624341601909, guid: 10404743fad70de4fa5fec6c319b77ee,
-    type: 3}
+  ligtningMaker: {fileID: 4717084261969167523}
   EnemiesTarget: {fileID: 0}
   makeLightning:
     m_PersistentCalls:

@@ -25,6 +25,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799601618917383818}
+  - component: {fileID: 3201805430784538911}
   m_Layer: 0
   m_Name: gun
   m_TagString: Bullet
@@ -46,6 +47,19 @@ Transform:
   m_Father: {fileID: 8072006149906541684}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3201805430784538911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439539600616801407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e8ba43faeb12745ae420efb79d22a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
 --- !u!114 &4293458361273451983
 MonoBehaviour:
   m_ObjectHideFlags: 0
