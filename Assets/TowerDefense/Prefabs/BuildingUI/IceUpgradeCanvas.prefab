@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8309758085442543268}
   - component: {fileID: 8309758085442543267}
   - component: {fileID: 6865948219622821888}
-  - component: {fileID: 5398697067641288300}
+  - component: {fileID: -6586571503656628671}
   m_Layer: 5
   m_Name: IceUpgradeCanvas
   m_TagString: Untagged
@@ -262,7 +262,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8903198, y: 0.7051085, z: 0.017796218}
   m_Center: {x: 0.0022888184, y: 0.0064802766, z: 0.012141224}
---- !u!114 &5398697067641288300
+--- !u!114 &-6586571503656628671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,11 +271,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8309758085442543266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71effec547484f8fbaa86f5d333175a, type: 3}
+  m_Script: {fileID: 11500000, guid: 20ece44a93e092243a6119d11a06fea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chunk: {fileID: 0}
-  elementIndex: 0
+  elementIndex: 3
 --- !u!1 &8309758086957021147
 GameObject:
   m_ObjectHideFlags: 0

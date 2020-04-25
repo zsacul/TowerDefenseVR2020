@@ -24,7 +24,7 @@ public class ChunkScene : MonoBehaviour
         chunkMap = new Chunk[mapString.sizeX, mapString.sizeY];
         path = new bool[mapString.sizeX, mapString.sizeY];
         Build();
-        if (!(chunkMap[0, 0].BFS())) Debug.LogError("ChunkScene.cs/Start() initial path failed");
+        if (!(chunkMap[10, 10].BFS())) Debug.LogError("ChunkScene.cs/Start() initial path failed");
         UpdateChunks();
         surface.BuildNavMesh();
         (int, int) spawn = GetFirstChunkOfType(ChunkType.spawnPoint);

@@ -75,7 +75,7 @@ public class BuildHandler : MonoBehaviour
         //If this chunk is still being pointed at and player presses Enter, we should build
         else
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 Build();
             }

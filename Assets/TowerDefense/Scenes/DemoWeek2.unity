@@ -32123,8 +32123,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1738301546}
   - component: {fileID: 1738301547}
-  - component: {fileID: 1738301548}
   - component: {fileID: 1738301549}
+  - component: {fileID: 1738301548}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32170,12 +32170,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1738301545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcbc2d77a35227546baa31e94968ba34, type: 3}
+  m_Script: {fileID: 11500000, guid: f121f289f69cd294db2fd783ed553c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
-  towerCost: 35
-  playerObstacleCost: 20
+  money: 0
+  towerCost: 0
+  playerObstacleCost: 0
   canvas: {fileID: 1561748944}
   BuildingSuccess: {fileID: 11400000, guid: ea9314e8d9618fd4cab901b4226748c9, type: 2}
   BuildingFailure: {fileID: 11400000, guid: 8212850ed5adf514cbd2b27658221f06, type: 2}

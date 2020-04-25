@@ -27,7 +27,6 @@ public class ChunkMapLevel : ScriptableObject
             for(int x = 0; x < sizeX; x++)
             {
                 type[x, y] = (ChunkType)int.Parse(words[sizeX * y + x]);
-                Debug.Log(type[x, y]);
             }
         }
         return type;

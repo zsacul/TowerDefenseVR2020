@@ -25,7 +25,7 @@ public class Chunk : MonoBehaviour
             {
                 type = newType;
                 changeTypeEvent.Invoke();
-                UpdateChunk();
+                owner.UpdateChunks();
                 return true;
             }
         }
@@ -46,14 +46,21 @@ public class Chunk : MonoBehaviour
 
     public bool ValidOperation(ChunkType newType)
     {
-        switch(newType)
+        if (type == ChunkType.none ||
+            type == ChunkType.naturalObstacle ||
+            type == ChunkType.playerObstacle ||
+            type == ChunkType.border) return false;
+        int xSize = owner.mapString.sizeX;
+        int ySize = owner.mapString.sizeY;
+        switch (newType)
         {
             case ChunkType.tower:
                 for (int y = this.y - 1; y <= this.y + 1; y++)
                 {
                     for (int x = this.x - 1; x <= this.x + 1; x++)
                     {
-                        if (owner.chunkMap[x, y].type == ChunkType.tower)
+                        if (x >= 0 && y >= 0 && x < xSize && y < ySize && 
+                            owner.chunkMap[x, y].type == ChunkType.tower)
                         {
                             return false;
                         }
@@ -192,7 +199,7 @@ public class Chunk : MonoBehaviour
                 if(y < ySize && y >= 0)
                 {
                     ChunkType chunkType = owner.GetChunkType(xCord, y);
-                    if ((xCord != this.x && y != this.y) && value[xCord, y] == 0 && (chunkType == ChunkType.empty ||
+                    if ((xCord != this.x || y != this.y) && value[xCord, y] == 0 && (chunkType == ChunkType.empty ||
                                                                                     chunkType == ChunkType.endPoint ||
                                                                                     chunkType == ChunkType.spawnPoint))
                     {
@@ -201,17 +208,17 @@ public class Chunk : MonoBehaviour
                     }
                 }
             }
-            for (int x = xCord + 1; x >= xCord - 1; x -= 2)
+            for (int xx = xCord + 1; xx >= xCord - 1; xx -= 2)
             {
-                if(x < xSize && x >= 0)
+                if(xx < xSize && xx >= 0)
                 {
-                    ChunkType chunkType = owner.GetChunkType(x, yCord);
-                    if ((x != this.x && yCord != this.y) && value[x, yCord] == 0 && (chunkType == ChunkType.empty ||
+                    ChunkType chunkType = owner.GetChunkType(xx, yCord);
+                    if ((xx != this.x || yCord != this.y) && value[xx, yCord] == 0 && (chunkType == ChunkType.empty ||
                                                                                     chunkType == ChunkType.endPoint ||
                                                                                     chunkType == ChunkType.spawnPoint))
                     {
-                        Q.Enqueue((x, yCord));
-                        value[x, yCord] = value[xCord, yCord] + 1;
+                        Q.Enqueue((xx, yCord));
+                        value[xx, yCord] = value[xCord, yCord] + 1;
                     }
                 }
             }
@@ -263,6 +270,7 @@ public class Chunk : MonoBehaviour
         }
         else
         {
+
             return false;
         }
     }
