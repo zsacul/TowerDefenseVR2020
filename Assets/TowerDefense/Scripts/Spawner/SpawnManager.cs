@@ -26,7 +26,7 @@ namespace SpawnManaging
         // Update is called once per frame
         void Start()
         {
-            InvokeRepeating("SpawnLoop", 0, 1);
+            breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
         }
         private void Spawn()
