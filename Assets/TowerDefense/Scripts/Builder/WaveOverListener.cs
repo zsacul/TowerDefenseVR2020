@@ -9,7 +9,6 @@ public class WaveOverListener : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        Debug.Log("KONIEC FALI");
         gameObject.GetComponent<BuildManager>().ChangeWaveStatus(true);
     }
 }
