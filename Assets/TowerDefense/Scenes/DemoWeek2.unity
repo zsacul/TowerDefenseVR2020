@@ -32125,6 +32125,8 @@ GameObject:
   - component: {fileID: 1738301547}
   - component: {fileID: 1738301549}
   - component: {fileID: 1738301548}
+  - component: {fileID: 1738301551}
+  - component: {fileID: 1738301550}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32173,9 +32175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  towerCost: 0
-  playerObstacleCost: 0
+  money: 300
+  towerCost: 90
+  playerObstacleCost: 55
   canvas: {fileID: 1561748944}
   BuildingSuccess: {fileID: 11400000, guid: ea9314e8d9618fd4cab901b4226748c9, type: 2}
   BuildingFailure: {fileID: 11400000, guid: 8212850ed5adf514cbd2b27658221f06, type: 2}
@@ -32184,6 +32186,7 @@ MonoBehaviour:
   obstaclePurchaseCanvasPrefab: {fileID: 2320948196604781495, guid: 3f23d1d26c6a1ac4fb0076ff2eaf3dd9,
     type: 3}
   rightController: {fileID: 65865500}
+  WaveChanged: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32203,6 +32206,34 @@ MonoBehaviour:
   chunkPrefab:
   - {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}
   spawner: {fileID: 752578749}
+--- !u!114 &1738301550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440dc308f644766458c66f0d61855604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
+  waveStart: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
+--- !u!114 &1738301551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec5c2348832e4148bb24737c0fdb144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
+  waveOver: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
 --- !u!1 &1751637657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b,

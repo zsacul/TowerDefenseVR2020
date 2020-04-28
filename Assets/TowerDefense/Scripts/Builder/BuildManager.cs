@@ -23,6 +23,8 @@ public class BuildManager : MonoBehaviour
     private Canvas obstaclePurchaseCanvasPrefab;
     [SerializeField]
     public GameObject rightController;
+    [SerializeField]
+    private GameEvent WaveChanged; 
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -40,13 +42,16 @@ public class BuildManager : MonoBehaviour
     private float canvasYSize;
     private float canvasZPos;
 
+    private bool changedWaveStatus;
+
     void Start()
     {
         towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
         towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
         obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
-        buildModeOn = false;
+        buildModeOn = true;
+        changedWaveStatus = true;
         purchasePanelActive = false;
         canvasRT = canvas.GetComponent<RectTransform>();
         canvasXSize = canvasRT.sizeDelta.x / 2.0f;
@@ -58,7 +63,7 @@ public class BuildManager : MonoBehaviour
 
     private void SetMoneyText()
     {
-        moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40);
+        moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40, Color.white);
         moneyText.text = "Money: $" + money.ToString();
         UpdateUI();
     }
@@ -68,7 +73,7 @@ public class BuildManager : MonoBehaviour
     // Creates a new text.x and y determines its position.For x = 0.0, y = 0.0 it would be the center of the canvas,
     // for -1.0, -1.0 lower left corner, for 1.0, 1.0 upper right corner.
     // </summary>
-    private Text SetText(float x, float y, string content, float width, float height)
+    private Text SetText(float x, float y, string content, float width, float height, Color chosen_col)
     {
         GameObject newGO = new GameObject(content);
         newGO.transform.SetParent(canvas.transform);
@@ -76,7 +81,7 @@ public class BuildManager : MonoBehaviour
 
         Text newText = newGO.AddComponent<Text>();
         newText.text = content;
-        newText.color = Color.black;
+        newText.color = chosen_col;
         newText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         newText.fontStyle = FontStyle.Bold;
         newText.fontSize = 15;
@@ -96,13 +101,13 @@ public class BuildManager : MonoBehaviour
             }
         }
 
-        if (UpdateModeCond())
+       /* if (UpdateModeCond())
         {
             buildModeOn = !buildModeOn;
             selectedBuilding = ChunkType.none;
 
             UpdateUI();
-        }
+        }*/
 
         if (UpdatePanelActiveCond())
         {
@@ -176,7 +181,14 @@ public class BuildManager : MonoBehaviour
     // Currently BuildingMode is switched on/off after hitting Tab
     public bool UpdateModeCond()
     {
-        return Input.GetKeyDown(KeyCode.Tab);
+        /*if (changedWaveStatus)
+        {
+            changedWaveStatus = false;
+            return true;
+        }
+        return false;*/
+        return changedWaveStatus;
+        //return Input.GetKeyDown(KeyCode.Tab);
     }
 
     public bool UpdatePanelActiveCond()
@@ -248,5 +260,13 @@ public class BuildManager : MonoBehaviour
     public void Failure()
     {
         BuildingFailure.Raise();
+    }
+
+    public void ChangeWaveStatus(bool newStatus)
+    {
+        buildModeOn = newStatus;
+        selectedBuilding = ChunkType.none;
+        UpdateUI();
+        WaveChanged.Raise();
     }
 }
