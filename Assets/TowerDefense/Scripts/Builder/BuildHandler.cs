@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildHandler : MonoBehaviour
+public class BuildHandler : GameEventListener
 {
     [SerializeField]
     private GameObject canBuild;
@@ -27,19 +27,24 @@ public class BuildHandler : MonoBehaviour
     {
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         thisBoxCollider = gameObject.AddComponent<BoxCollider>();
-        thisBoxCollider.enabled = false;
+        thisBoxCollider.enabled = true;
         pointedAt = false;
         shouldCallHover = true;
         rightController = buildManager.rightController;
     }
 
+    public override void OnEventRaised(Object data)
+    {
+        thisBoxCollider.enabled = buildManager.BuildModeOn;
+    }
+
     void Update()
     {
         // Switch on Chunk's collider if building mode is turned on. 
-        if (buildManager.UpdateModeCond())
+       /* if (buildManager.UpdateModeCond())
         {
             thisBoxCollider.enabled = buildManager.BuildModeOn;
-        }
+        }*/
 
         if (pointedAt)
         {

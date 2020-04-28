@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc3fdac4840d84cbf0b43be26a533e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   canBuild: {fileID: 8141420140228828782, guid: 21112940b47faba41a28bd87557b237b,
     type: 3}
   cantBuild: {fileID: 8512583784603318439, guid: 72eca0aa797bb0045bb6cfb83afd2cdf,
