@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElectricTower
       objectReference: {fileID: 0}
+    - target: {fileID: 7401474893963003076, guid: 2be680497da04a64fb5e1fd6f616d7d4,
+        type: 3}
+      propertyPath: clipToPlay
+      value: 
+      objectReference: {fileID: 8300000, guid: bb2c07db4302843459ae1425fa42e4b6, type: 3}
     - target: {fileID: 7951205731576094738, guid: 2be680497da04a64fb5e1fd6f616d7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,7 +272,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8467092542140964662, guid: 2be680497da04a64fb5e1fd6f616d7d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2be680497da04a64fb5e1fd6f616d7d4, type: 3}
 --- !u!4 &4852959128903793318 stripped
 Transform:

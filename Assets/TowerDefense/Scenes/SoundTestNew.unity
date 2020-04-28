@@ -17643,12 +17643,12 @@ MonoBehaviour:
   wave:
   - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
     interval: 1.5
-    maxLength: 0
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 3
     nextGroupTime: 5
   breakLength: 5
+  breakOn: 0
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
@@ -39775,7 +39775,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5778944963606810425, guid: 10404743fad70de4fa5fec6c319b77ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10404743fad70de4fa5fec6c319b77ee, type: 3}
 --- !u!1001 &1814319317
 PrefabInstance:
@@ -45652,7 +45653,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.11666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: da246661a60cc2a42ac044012174cc64, type: 2}
 --- !u!4 &2092678020 stripped
