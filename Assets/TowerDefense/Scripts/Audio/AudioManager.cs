@@ -47,6 +47,7 @@ public class AudioManager : MonoBehaviour
         {
             AudioSource newSource = originOfSound.AddComponent<AudioSource>();
             newSource.playOnAwake = false;
+            newSource.enabled = true;
             newSource.spatialBlend = 1.0f;
         }
        
