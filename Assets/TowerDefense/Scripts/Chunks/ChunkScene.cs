@@ -66,7 +66,6 @@ public class ChunkScene : MonoBehaviour
     public void UpdateChunks(bool forced = false)
     {
         int i = 0;
-        float timeStart = Time.realtimeSinceStartup;
         if(!forced)
         {
             for (int y = 0; y < mapString.sizeY; y++)
@@ -92,7 +91,6 @@ public class ChunkScene : MonoBehaviour
                 }
             }
         }
-        Debug.Log($"updated {i} chunks in {Time.realtimeSinceStartup - timeStart} s");
         oldPath = (bool[,])path.Clone();
     }
 
