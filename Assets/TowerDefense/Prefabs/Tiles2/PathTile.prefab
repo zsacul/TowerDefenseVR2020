@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2757076349057882119}
   - component: {fileID: 5181042252587788354}
   - component: {fileID: 4462835397516602820}
+  - component: {fileID: -7398082985530141013}
   m_Layer: 0
   m_Name: PathTile
-  m_TagString: Untagged
+  m_TagString: PathChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +123,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.1326768, z: 2}
   m_Center: {x: 0, y: 0.0067137256, z: 0}
+--- !u!114 &-7398082985530141013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503542831824760027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

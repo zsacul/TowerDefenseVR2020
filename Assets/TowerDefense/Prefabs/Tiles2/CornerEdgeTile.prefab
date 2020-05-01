@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4737017110016523770}
   m_Layer: 0
   m_Name: CornerEdgeTile
-  m_TagString: Untagged
+  m_TagString: Chunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
