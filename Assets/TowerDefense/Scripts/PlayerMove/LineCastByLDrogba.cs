@@ -97,6 +97,11 @@
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
             {
+                if (hitData.collider.GetComponent<TeleportPoint>() != null)
+                {
+                    hitData.transform.position = hitData.collider.GetComponentInChildren<TeleportPoint>().transform.position;
+                    Debug.Log(hitData.collider.GetComponentInChildren<TeleportPoint>().name);
+                }
                 length = hitData.distance;
             }
 
