@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4595778489436398408}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.711, y: 1.038, z: -0}
+  m_LocalPosition: {x: -1.21, y: 0.98, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6382114165172755893}
@@ -79,13 +79,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5.15
-  m_Range: 3.44
-  m_SpotAngle: 142.99005
-  m_InnerSpotAngle: 77.70242
+  m_Intensity: 12
+  m_Range: 7
+  m_SpotAngle: 90.46698
+  m_InnerSpotAngle: 75.89242
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -475,11 +475,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3395845421452916104, guid: e2c56395693bdc64e8ddd95c9128e201,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3421219858956569405, guid: e2c56395693bdc64e8ddd95c9128e201,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 56f81df1d34c2204f824d99932a491ef, type: 2}
+    - target: {fileID: 3421219858956569405, guid: e2c56395693bdc64e8ddd95c9128e201,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3971226437540921684, guid: e2c56395693bdc64e8ddd95c9128e201,
         type: 3}
       propertyPath: m_Name
