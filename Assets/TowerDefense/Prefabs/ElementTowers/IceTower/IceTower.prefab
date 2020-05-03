@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 1836560548891106254}
   - component: {fileID: 8283066331669494507}
   - component: {fileID: 1047717100205902508}
+  - component: {fileID: 7531511795519296216}
   m_Layer: 0
   m_Name: IceTower
   m_TagString: Bullet
@@ -240,7 +241,18 @@ MonoBehaviour:
   specialEffectDmg: 1
   shootEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7531511795519296216}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   updateRange:
     m_PersistentCalls:
       m_Calls: []
@@ -255,6 +267,20 @@ MonoBehaviour:
       m_Calls: []
   IceBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
     type: 3}
+--- !u!114 &7531511795519296216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfc150f288ac5646bbf6aa66a9ab177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToPlay: {fileID: 8300000, guid: 4f7fa5a84e5083649ba45fb491318650, type: 3}
+  mixer: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
 --- !u!114 &2700223523819438191
 MonoBehaviour:
   m_ObjectHideFlags: 0
