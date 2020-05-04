@@ -31,7 +31,11 @@
             {
                 if (serializedType.ActualType != null && targetGameObject.TryGetComponent(serializedType) != null)
                 {
+                    if (serializedType.ToString() == "UnwalkableChunk")
+                        if (targetGameObject.GetComponentInChildren(serializedType) == null)
+                            return false;
                     return true;
+                    
                 }
             }
 
