@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TowerPurchase : MonoBehaviour {
+public class TowerPurchase : MonoBehaviour
+{
     BuildManager buildManager;
     void Start()
     {
@@ -10,6 +11,16 @@ public class TowerPurchase : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        buildManager.ChooseTower();
+        if (other.gameObject.tag == "HandCollider")
+        {
+            if (buildManager.ActiveBuildingInfo.Item1 == ChunkType.tower)
+            {
+                buildManager.ChooseNone();
+            }
+            else
+            {
+                buildManager.ChooseTower();
+            }
+        }
     }
 }

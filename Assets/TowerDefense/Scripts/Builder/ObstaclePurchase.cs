@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObstaclePurchase : MonoBehaviour {
+public class ObstaclePurchase : MonoBehaviour
+{
     BuildManager buildManager;
     void Start()
     {
@@ -10,6 +11,16 @@ public class ObstaclePurchase : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        buildManager.ChooseObstacle();
+        if (other.gameObject.tag == "HandCollider")
+        {
+            if (buildManager.ActiveBuildingInfo.Item1 == ChunkType.playerObstacle)
+            {
+                buildManager.ChooseNone();
+            }
+            else
+            {
+                buildManager.ChooseObstacle();
+            }
+        }
     }
 }

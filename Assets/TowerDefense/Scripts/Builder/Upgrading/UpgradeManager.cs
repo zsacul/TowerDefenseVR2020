@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
@@ -21,36 +22,36 @@ public class UpgradeManager : MonoBehaviour
     private bool canvasEnabled;
     private Transform pos;
     private GameObject thisChunk;
+    private bool upgradePanelsActive;
+
     void Start()
     {
         thisChunk = transform.parent.gameObject;
+        upgradePanelsActive = false;
+
         fireCanvas = Instantiate(fireCanvasPrefab);
         fireCanvas.transform.parent = transform;
-        fireCanvas.GetComponent<TowerUpgrade>().chunk = thisChunk;
 
         iceCanvas = Instantiate(iceCanvasPrefab);
         iceCanvas.transform.parent = transform;
-        iceCanvas.GetComponent<TowerUpgrade>().chunk = thisChunk;
 
         windCanvas = Instantiate(windCanvasPrefab);
         windCanvas.transform.parent = transform;
-        windCanvas.GetComponent<TowerUpgrade>().chunk = thisChunk;
 
         electricCanvas = Instantiate(electricCanvasPrefab);
         electricCanvas.transform.parent = transform;
-        electricCanvas.GetComponent<TowerUpgrade>().chunk = thisChunk;
 
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         pos = transform;
 
         DisableUpgradeCanvases();
 
-        windCanvas.transform.position = new Vector3(pos.position.x, 8.2f, pos.position.z + 1.2f);
-        fireCanvas.transform.position = new Vector3(pos.position.x, 8.2f, pos.position.z - 1.2f);
+        windCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z + 1.05f);
+        fireCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z - 1.05f);
         fireCanvas.transform.Rotate(new Vector3(0, 180, 0));
-        iceCanvas.transform.position = new Vector3(pos.position.x - 1.2f, 8.2f, pos.position.z);
+        iceCanvas.transform.position = new Vector3(pos.position.x - 1.05f, 8.4f, pos.position.z);
         iceCanvas.transform.Rotate(new Vector3(0, 270, 0));
-        electricCanvas.transform.position = new Vector3(pos.position.x + 1.2f, 8.2f, pos.position.z);
+        electricCanvas.transform.position = new Vector3(pos.position.x + 1.05f, 8.4f, pos.position.z);
         electricCanvas.transform.Rotate(new Vector3(0, 90, 0));
     }
 
@@ -59,15 +60,36 @@ public class UpgradeManager : MonoBehaviour
     {
         if (buildManager.BuildModeOn && GoodPosition())
         {
-            if (!canvasEnabled)
+            if (!canvasEnabled && !upgradePanelsActive)
             {
                 EnableUpgradeCanvases();
+                NoneSelected();
+            }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                upgradePanelsActive = !upgradePanelsActive;
+                if (canvasEnabled)
+                {
+                    NoneSelected();
+                    DisableUpgradeCanvases();
+                }
+                else
+                {
+                    EnableUpgradeCanvases();
+                }
             }
         }
         else if (canvasEnabled)
         {
             DisableUpgradeCanvases();
         }
+    }
+
+    public void UpgradeTower(int elementIndex, int upgradeCost)
+    {
+        thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
+        buildManager.DecreaseMoney(upgradeCost);
     }
 
     bool GoodPosition()
@@ -105,5 +127,46 @@ public class UpgradeManager : MonoBehaviour
         windCanvas.GetComponent<Collider>().enabled = true;
         electricCanvas.enabled = true;
         electricCanvas.GetComponent<Collider>().enabled = true;
+    }
+
+    /// <summary>
+    /// Sets field 'selected' of every canvas on this tower to false and 'selected' of the canvas that called this function to true.
+    /// </summary>
+    public void Selected(Canvas selectedCanvas)
+    {
+        NoneSelected();
+        TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
+        selectedCanvasTowerUpgrade.setSelectedTrue();
+        if (buildManager.money >= selectedCanvasTowerUpgrade.upgradeCost)
+        {
+            HighlightPanel(selectedCanvas, Color.green);
+        } else
+        {
+            HighlightPanel(selectedCanvas, Color.red);
+        }
+            
+        
+    }
+
+    // Sets field 'selected' of every canvas on this tower to false.
+    public void NoneSelected()
+    {
+        fireCanvas.GetComponent<TowerUpgrade>().setSelectedFalse();
+        HighlightPanel(fireCanvas, Color.clear);
+
+        iceCanvas.GetComponent<TowerUpgrade>().setSelectedFalse();
+        HighlightPanel(iceCanvas, Color.clear);
+
+        windCanvas.GetComponent<TowerUpgrade>().setSelectedFalse();
+        HighlightPanel(windCanvas, Color.clear);
+
+        electricCanvas.GetComponent<TowerUpgrade>().setSelectedFalse();
+        HighlightPanel(electricCanvas, Color.clear);
+    }
+
+    private void HighlightPanel(Canvas panel, Color color)
+    {
+        Image backgroundImage = panel.GetComponentInChildren<Image>();
+        backgroundImage.GetComponent<Outline>().effectColor = color;
     }
 }
