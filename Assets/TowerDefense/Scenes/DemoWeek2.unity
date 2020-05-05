@@ -35581,6 +35581,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5035635970274652091, guid: 7c99f97e15f07c04885b33227ec9a8a2,
         type: 3}
+    - target: {fileID: 3022407711178634085, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: BGMFadeInDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634085, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: BGMFadeOutDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022407711178634086, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: sBGMAmbient4
+      value: 
+      objectReference: {fileID: 8300000, guid: f37c0e3c622f7444d97d8d4bca6aee87, type: 3}
+    - target: {fileID: 3022407711178634086, guid: f6d67bcb62b91fc48a7794ac2b810b36,
+        type: 3}
+      propertyPath: sBGMAction4
+      value: 
+      objectReference: {fileID: 8300000, guid: 5db737766f57644448fff72239574e04, type: 3}
     - target: {fileID: 3022407711178634087, guid: f6d67bcb62b91fc48a7794ac2b810b36,
         type: 3}
       propertyPath: m_Name

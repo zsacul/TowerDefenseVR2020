@@ -10,5 +10,6 @@ public class WaveOverListener : GameEventListener
     public override void OnEventRaised(Object data)
     {
         gameObject.GetComponent<BuildManager>().ChangeWaveStatus(true);
+        AudioManager.Instance.PlayAmbientBGM();
     }
 }

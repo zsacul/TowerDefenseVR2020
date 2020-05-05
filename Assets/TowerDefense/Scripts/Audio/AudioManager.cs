@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     float BGMFadeOutDuration = 5.0f;
     [SerializeField]
-    float BGMFadeInDuration = 3.0f;
+    float BGMFadeInDuration = 1.0f;
 
 
     /// do not use this!!
@@ -33,6 +33,8 @@ public class AudioManager : MonoBehaviour
     public Queue<GameObject> freeSources = new Queue<GameObject>();
 
     private Queue<AudioClip> BGMqueue = new Queue<AudioClip>();
+    private List<AudioClip> ambientMusic = new List<AudioClip>();
+    private List<AudioClip> actionMusic = new List<AudioClip>();
 
     [SerializeField]
     bool shouldUseBgmQueue = true;
@@ -172,6 +174,32 @@ public class AudioManager : MonoBehaviour
         src.UnPause();
     }
 
+    public void PlayActionBGM()
+    {
+        shouldUseBgmQueue = true;
+        BGMqueue.Clear();
+        
+        for(int i=0; i<10; i++)
+        {
+            int r = Random.Range(0, actionMusic.Count);
+            BGMqueue.Enqueue(actionMusic[r]);
+        }
+        PlayBGM(BGMqueue.Dequeue(), BGMFadeInDuration, BGMFadeOutDuration+2);
+    }
+
+    public void PlayAmbientBGM()
+    {
+        shouldUseBgmQueue = true;
+        BGMqueue.Clear();
+
+        for (int i = 0; i < 10; i++)
+        {
+            int r = Random.Range(0, ambientMusic.Count);
+            BGMqueue.Enqueue(ambientMusic[r]);
+        }
+        PlayBGM(BGMqueue.Dequeue(), BGMFadeInDuration+4, BGMFadeOutDuration);
+    }
+
     private IEnumerator FadeOutCoroutine(AudioSource source, float duration, AnimationCurve curve, float startingVol)
     {
         float currtime = 0;
@@ -225,13 +253,20 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        AddBgmToQueue(Sounds.sBGMAction2);
-        AddBgmToQueue(Sounds.sBGMAmbient2);
-        AddBgmToQueue(Sounds.sBGMAmbient3);
-        AddBgmToQueue(Sounds.sBGMAction1);
-        if(shouldUseBgmQueue)
+      
+        ambientMusic.Add(Sounds.sBGMAmbient1);
+        ambientMusic.Add(Sounds.sBGMAmbient2);
+        ambientMusic.Add(Sounds.sBGMAmbient3);
+        ambientMusic.Add(Sounds.sBGMAmbient4);
+
+        actionMusic.Add(Sounds.sBGMAction1);
+        actionMusic.Add(Sounds.sBGMAction2);
+        actionMusic.Add(Sounds.sBGMAction3);
+        actionMusic.Add(Sounds.sBGMAction4);
+
+        if (shouldUseBgmQueue)
         {
-            PlayBGM(BGMqueue.Dequeue(), BGMFadeInDuration, BGMFadeOutDuration);
+            PlayAmbientBGM();
         }
     }
     private void Awake()

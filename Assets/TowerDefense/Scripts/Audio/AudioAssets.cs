@@ -18,9 +18,12 @@ public class AudioAssets : MonoBehaviour
     public AudioClip sBGMAction1;
     public AudioClip sBGMAction2;
     public AudioClip sBGMAction3;
+    public AudioClip sBGMAction4;
+
     public AudioClip sBGMAmbient1;
     public AudioClip sBGMAmbient2;
     public AudioClip sBGMAmbient3;
+    public AudioClip sBGMAmbient4;
 
     //mixers
     public AudioMixerGroup mParticlesMaster;
