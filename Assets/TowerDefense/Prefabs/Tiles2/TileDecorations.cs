@@ -54,7 +54,7 @@ public class TileDecorations : MonoBehaviour
                 if (transform.rotation.y == 0)
                 {
                     obj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(randomSpaceLimitX.x, randomSpaceLimitX.y),
-                                                         transform.position.y + upOffset,
+                                                         obj.transform.position.y + upOffset,
                                                          transform.position.z + UnityEngine.Random.Range(randomSpaceLimitY.x, randomSpaceLimitY.y));
                 }
                 else
