@@ -27,6 +27,7 @@ public class BuildHandler : GameEventListener
     {
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         thisBoxCollider = gameObject.AddComponent<BoxCollider>();
+        thisBoxCollider.size = new Vector3(2, 0.1326768f, 2);
         thisBoxCollider.enabled = true;
         pointedAt = false;
         shouldCallHover = true;
