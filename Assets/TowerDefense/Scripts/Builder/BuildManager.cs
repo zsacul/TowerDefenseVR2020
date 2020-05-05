@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BuildManager : MonoBehaviour
 {
     [SerializeField]
-    public int money;
+    private int money;
     [SerializeField]
     private int towerCost;
     [SerializeField]
@@ -67,6 +67,7 @@ public class BuildManager : MonoBehaviour
         //moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40, Color.white);
         //moneyText.text = "Money: $" + money.ToString();
         UIMoneyText.text = "$" + money.ToString();
+        SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
         UpdateUI();
     }
 
@@ -285,6 +286,12 @@ public class BuildManager : MonoBehaviour
         money += addVal;
         //moneyText.text = "Money: $" + money.ToString();
         UIMoneyText.text = "$" + money.ToString();
+    }
+
+
+    public int GetMoney()
+    {
+        return money;
     }
 
     public void Success()

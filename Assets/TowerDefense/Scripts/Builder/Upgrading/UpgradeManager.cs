@@ -88,8 +88,11 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeTower(int elementIndex, int upgradeCost)
     {
-        thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
-        buildManager.DecreaseMoney(upgradeCost);
+        if (buildManager.GetMoney() >= upgradeCost)
+        {
+            buildManager.DecreaseMoney(upgradeCost);
+            thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
+        }
     }
 
     bool GoodPosition()
@@ -137,7 +140,7 @@ public class UpgradeManager : MonoBehaviour
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
         selectedCanvasTowerUpgrade.setSelectedTrue();
-        if (buildManager.money >= selectedCanvasTowerUpgrade.upgradeCost)
+        if (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost)
         {
             HighlightPanel(selectedCanvas, Color.green);
         } else

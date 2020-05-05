@@ -459,4 +459,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementIndex: 1
-  upgradeCost: 0
+  upgradeCost: 200
