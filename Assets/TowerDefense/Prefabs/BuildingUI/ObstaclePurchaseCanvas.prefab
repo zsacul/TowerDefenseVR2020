@@ -342,7 +342,18 @@ MonoBehaviour:
     Obstacle
 
 
-    Cost: 50'
+    Cost: 55
+
+
+
+    select building and press ''C'' to
+    build
+
+
+    select again to stop building
+
+
+    press ''B'' to dismiss panels '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -376,7 +387,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 72
-  m_fontStyle: 32
+  m_fontStyle: 33
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -411,12 +422,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2320948198103648975}
-    characterCount: 19
+    characterCount: 121
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 4
+    spaceCount: 26
+    wordCount: 21
     linkCount: 0
-    lineCount: 4
+    lineCount: 15
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

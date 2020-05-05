@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullet
   - Chunk
+  - HandCollider
   - PathChunk
   layers:
   - Default
