@@ -24,18 +24,19 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     public GameObject rightController;
     [SerializeField]
-    private GameEvent WaveChanged; 
+    private GameEvent WaveChanged;
+    [SerializeField]
+    private Text UIMoneyText;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
     private BoxCollider towerPurchaseCanvasCollider;
     private BoxCollider obstaclePurchaseCanvasCollider;
-    private Text moneyText;
 
     private ChunkType selectedBuilding;
 
     private bool buildModeOn;
-    private bool purchasePanelActive;
+    private bool purchasePanelsActive;
 
     private RectTransform canvasRT;
     private float canvasXSize;
@@ -52,7 +53,7 @@ public class BuildManager : MonoBehaviour
         obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
         buildModeOn = true;
         changedWaveStatus = true;
-        purchasePanelActive = false;
+        purchasePanelsActive = false;
         canvasRT = canvas.GetComponent<RectTransform>();
         canvasXSize = canvasRT.sizeDelta.x / 2.0f;
         canvasYSize = canvasRT.sizeDelta.y / 2.0f;
@@ -63,8 +64,10 @@ public class BuildManager : MonoBehaviour
 
     private void SetMoneyText()
     {
-        moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40, Color.white);
-        moneyText.text = "Money: $" + money.ToString();
+        //moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40, Color.white);
+        //moneyText.text = "Money: $" + money.ToString();
+        UIMoneyText.text = "$" + money.ToString();
+        SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
         UpdateUI();
     }
 
@@ -94,28 +97,50 @@ public class BuildManager : MonoBehaviour
     {
         if (buildModeOn)
         {
-            if (purchasePanelActive)
+            if (purchasePanelsActive)
             {
                 towerPurchaseCanvas.transform.rotation = Quaternion.LookRotation(towerPurchaseCanvas.transform.position - Camera.main.transform.position);
                 obstaclePurchaseCanvas.transform.rotation = Quaternion.LookRotation(obstaclePurchaseCanvas.transform.position - Camera.main.transform.position);
             }
+
+            //Changing color of UIMoneyText Outline if we can/can't afford currently selected building
+            if (selectedBuilding != ChunkType.none)
+            {
+                int cost;
+                if (selectedBuilding == ChunkType.tower)
+                {
+                    cost = towerCost;
+                }
+                else
+                {
+                    cost = playerObstacleCost;
+                }
+                if (money <= cost)
+                {
+                    SetMoneyOutlineColor(Color.red);
+                }
+                else
+                {
+                    SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
+                }
+            }
         }
 
-       /* if (UpdateModeCond())
-        {
-            buildModeOn = !buildModeOn;
-            selectedBuilding = ChunkType.none;
+        /* if (UpdateModeCond())
+         {
+             buildModeOn = !buildModeOn;
+             selectedBuilding = ChunkType.none;
 
-            UpdateUI();
-        }*/
+             UpdateUI();
+         }*/
 
         if (UpdatePanelActiveCond())
         {
-            purchasePanelActive = !purchasePanelActive;
-            if (purchasePanelActive && buildModeOn)
+            purchasePanelsActive = !purchasePanelsActive;
+            if (purchasePanelsActive && buildModeOn)
             {
-                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.3f, 1.4f));
-                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.3f, 1.4f));
+                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.5f, 1.2f));
+                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
                 towerPurchaseCanvas.transform.position = towerPos;
                 obstaclePurchaseCanvas.transform.position = obstaclePos;
             }
@@ -130,7 +155,6 @@ public class BuildManager : MonoBehaviour
             //If we point at something
             if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000))
             {
-               // Debug.Log("OBJECT HIT: " + hit.collider.gameObject.ToString());
                 if (hit.collider.gameObject.tag == "Chunk" && hit.collider.gameObject.transform.position != lastChunk)
                 {
                     hit.collider.gameObject.GetComponent<BuildHandler>().SeeYou();
@@ -140,13 +164,19 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    private void SetMoneyOutlineColor(Color color)
+    {
+        UIMoneyText.GetComponent<Outline>().effectColor = color;
+    }
+
     //Updates UI according to the state of BuildModeOn
     private void UpdateUI()
     {
-        moneyText.enabled = buildModeOn;
+        //moneyText.enabled = buildModeOn;
+        UIMoneyText.enabled = buildModeOn;
         if (buildModeOn)
         {
-            UpdatePurchasePanels(purchasePanelActive);
+            UpdatePurchasePanels(purchasePanelsActive);
         }
         else
         {
@@ -164,21 +194,25 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
-        //Debug.Log("Tower was chosen");
         selectedBuilding = ChunkType.tower;
-        purchasePanelActive = false;
+        purchasePanelsActive = false;
         UpdateUI();
     }
 
     public void ChooseObstacle()
     {
-        //Debug.Log("Obstacle was chosen");
         selectedBuilding = ChunkType.playerObstacle;
-        purchasePanelActive = false;
+        purchasePanelsActive = false;
         UpdateUI();
     }
 
-    // Currently BuildingMode is switched on/off after hitting Tab
+    public void ChooseNone()
+    {
+        selectedBuilding = ChunkType.none;
+        purchasePanelsActive = false;
+        UpdateUI();
+    }
+
     public bool UpdateModeCond()
     {
         /*if (changedWaveStatus)
@@ -208,7 +242,7 @@ public class BuildManager : MonoBehaviour
     {
         get
         {
-            return purchasePanelActive;
+            return purchasePanelsActive;
         }
     }
 
@@ -243,13 +277,21 @@ public class BuildManager : MonoBehaviour
     public void DecreaseMoney(int decVal)
     {
         money -= decVal;
-        moneyText.text = "Money: $" + money.ToString();
+        //moneyText.text = "Money: $" + money.ToString();
+        UIMoneyText.text = "$" + money.ToString();
     }
 
     public void AddMoney(int addVal)
     {
         money += addVal;
-        moneyText.text = "Money: $" + money.ToString();
+        //moneyText.text = "Money: $" + money.ToString();
+        UIMoneyText.text = "$" + money.ToString();
+    }
+
+
+    public int GetMoney()
+    {
+        return money;
     }
 
     public void Success()
