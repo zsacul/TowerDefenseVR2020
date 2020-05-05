@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PrefabSetKonrad
   m_EditorClassIdentifier: 
   none:
-  - {fileID: 4608355799278031169, guid: 7530075ced01f3c48811915958447b21, type: 3}
+  - {fileID: 134289842002267823, guid: a7cba68d829f9cd43a66b3922e1a0e4d, type: 3}
   empty:
   - {fileID: 1623222002731259034, guid: 45f6708e838e1014f8e43f722aa0a17a, type: 3}
   - {fileID: 8643236808274961511, guid: 81d2701a0929d24408b3b7fe0104b063, type: 3}
