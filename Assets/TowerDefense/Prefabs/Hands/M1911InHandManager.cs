@@ -44,9 +44,10 @@ public class M1911InHandManager : PropManager
         HandManger = transform.parent.gameObject; /* assume that the parent is the hand manager */
     }
 
-    public override void Respawn()
+    public override void Respawn(GameObject Motivator)
     {
         transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
+        Destroy(Motivator);
     }
 
 

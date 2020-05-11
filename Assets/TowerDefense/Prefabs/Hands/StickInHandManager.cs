@@ -16,9 +16,10 @@ public class StickInHandManager : PropManager
         /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
     }
 
-    public override void Respawn()
+    public override void Respawn(GameObject Motivator)
     {
         transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
+        Destroy(Motivator);
         /* wywalić kij który złapaliśmy */
     }
 
