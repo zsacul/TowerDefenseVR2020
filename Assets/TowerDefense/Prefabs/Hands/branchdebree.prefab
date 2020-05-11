@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6567666581448685567}
   - component: {fileID: -7682751435235060442}
   - component: {fileID: 4459542380967455420}
+  - component: {fileID: 3939413681263127008}
   m_Layer: 20
   m_Name: branchdebree
   m_TagString: Untagged
@@ -125,3 +126,16 @@ CapsuleCollider:
   m_Height: 0.88
   m_Direction: 0
   m_Center: {x: 0.01, y: 0.01, z: 0}
+--- !u!114 &3939413681263127008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493958779012120596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66aa6579634e67a4fa7a666f7b63ca55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
