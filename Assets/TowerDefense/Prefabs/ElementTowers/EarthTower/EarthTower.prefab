@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 7941209238848389206}
   - component: {fileID: 1923807148855312576}
   - component: {fileID: 7691577127528205216}
+  - component: {fileID: 7887228878424445808}
   m_Layer: 0
   m_Name: EarthTower
   m_TagString: Bullet
@@ -208,6 +209,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7887228878424445808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065571658715748105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2254215468406a94d4b9027dde476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: fd4381e515e1544099013cd59e0ee53d,
+    type: 3}
+  upgradeCosts: fa000000f4010000e8030000
 --- !u!1 &5832107677774139027
 GameObject:
   m_ObjectHideFlags: 0

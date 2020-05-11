@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class UpgradeManager : MonoBehaviour
             if (!canvasEnabled && !upgradePanelsActive)
             {
                 EnableUpgradeCanvases();
+                SetUpgradeCosts();
                 NoneSelected();
             }
 
@@ -77,12 +79,14 @@ public class UpgradeManager : MonoBehaviour
                 else
                 {
                     EnableUpgradeCanvases();
+                    SetUpgradeCosts();
                 }
             }
         }
         else if (canvasEnabled)
         {
             DisableUpgradeCanvases();
+            NoneSelected();
         }
     }
 
@@ -92,6 +96,7 @@ public class UpgradeManager : MonoBehaviour
         {
             buildManager.DecreaseMoney(upgradeCost);
             thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
+            SetUpgradeCosts();
         }
     }
 
@@ -132,6 +137,29 @@ public class UpgradeManager : MonoBehaviour
         electricCanvas.GetComponent<Collider>().enabled = true;
     }
 
+    private void SetUpgradeCosts()
+    {
+        int fireUpgradeCost = fireCanvas.GetComponent<TowerUpgrade>().upgradeCost;
+        TextMeshProUGUI fireUpgradeCostLabel = fireCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        fireUpgradeCostLabel.SetText("Cost: {0}", fireUpgradeCost);
+        fireUpgradeCostLabel.color = (buildManager.Money >= fireUpgradeCost) ? Color.green : Color.red;
+
+        int iceUpgradeCost = electricCanvas.GetComponent<TowerUpgrade>().upgradeCost;
+        TextMeshProUGUI iceUpgradeCostLabel = iceCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        iceUpgradeCostLabel.SetText("Cost: {0}", iceUpgradeCost);
+        iceUpgradeCostLabel.color = (buildManager.Money >= iceUpgradeCost) ? Color.green : Color.red;
+
+        int electricUpgradeCost = electricCanvas.GetComponent<TowerUpgrade>().upgradeCost;
+        TextMeshProUGUI electricUpgradeCostLabel = electricCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        electricUpgradeCostLabel.SetText("Cost: {0}", electricUpgradeCost);
+        electricUpgradeCostLabel.color = (buildManager.Money >= electricUpgradeCost) ? Color.green : Color.red;
+
+        int windUpgradeCost = windCanvas.GetComponent<TowerUpgrade>().upgradeCost;
+        TextMeshProUGUI windUpgradeCostLabel = windCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        windUpgradeCostLabel.SetText("Cost: {0}", windUpgradeCost);
+        windUpgradeCostLabel.color = (buildManager.Money >= windUpgradeCost) ? Color.green : Color.red;
+    }
+
     /// <summary>
     /// Sets field 'selected' of every canvas on this tower to false and 'selected' of the canvas that called this function to true.
     /// </summary>
@@ -140,15 +168,8 @@ public class UpgradeManager : MonoBehaviour
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
         selectedCanvasTowerUpgrade.setSelectedTrue();
-        if (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost)
-        {
-            HighlightPanel(selectedCanvas, Color.green);
-        } else
-        {
-            HighlightPanel(selectedCanvas, Color.red);
-        }
-            
-        
+        Color highlightColor = (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost) ? Color.green : Color.red;
+        HighlightPanel(selectedCanvas, highlightColor);
     }
 
     // Sets field 'selected' of every canvas on this tower to false.
