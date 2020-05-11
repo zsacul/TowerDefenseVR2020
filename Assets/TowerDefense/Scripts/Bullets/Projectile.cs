@@ -59,8 +59,7 @@ public class Projectile : MonoBehaviour , IChargable
             other.collider.SendMessage("OnDamaged", damageData, SendMessageOptions.DontRequireReceiver);
         }
         onHit.Invoke();
-        transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
-        Debug.Log(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
+        //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
     }
     public void Destroy()
     {
