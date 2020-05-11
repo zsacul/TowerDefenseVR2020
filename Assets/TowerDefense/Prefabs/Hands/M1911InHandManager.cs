@@ -8,10 +8,7 @@ using UnityEngine;
 public class M1911InHandManager : PropManager
 {
     public GameObject Debree;
-    public string GrabbableName;
-
     private GameObject HandManger;
-    public GameObject Grabbable;
     public override void GrabEvent(float input)
     {
        //Debug.Log($"overriden gevent {input}");
@@ -45,22 +42,10 @@ public class M1911InHandManager : PropManager
     public override void Initialize()
     {
         HandManger = transform.parent.gameObject; /* assume that the parent is the hand manager */
-
-        /* https://knowyourmeme.com/photos/1384541-crying-cat */
-        GameObject[] allObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
-        foreach (GameObject rgo in allObjects)
-           if (rgo.name == "VRTK Setup")
-              Grabbable = rgo.gameObject.transform.Find($"CameraRigs/UnityXRCameraRig/HeadAnchor/{GrabbableName}").gameObject;
-
-        if (Grabbable == null)
-            Debug.LogError("IF YOU DARE TO MISS THE GRABBABLE VARIABLE, WEIRD SHIT WILL HAPPEN!");
-
-        Grabbable.SetActive(false); /* gdy złapiemy pistolet to chcemy żeby zniknął ten w HUD */
     }
 
     public override void Respawn()
     {
-        Grabbable.SetActive(false); /* gdy złapiemy pistolet to chcemy żeby zniknął ten w HUD */
         transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
     }
 
@@ -68,8 +53,9 @@ public class M1911InHandManager : PropManager
     public override void Remove()
     {
         transform.gameObject.SetActive(false); /* ofc chcemy też pokazać schować rękę */
-      //Debug.Log("I am once again asking you to fuck off");
-        Grabbable.SetActive(true); /* gdy puścimy pistolet, to chcemy żeby ten w HUD się pojawił */
-        //Instantiate(Debree); /* oraz chcemy zrobić zinstantiowany pistolet który se spadnie na ziemię */
+        GameObject dispatched = Instantiate(Debree);
+        dispatched.GetComponent<Transform>().position = transform.position;
+        dispatched.GetComponent<Transform>().rotation = transform.rotation;
+        dispatched.SetActive(true);
     }
 }
