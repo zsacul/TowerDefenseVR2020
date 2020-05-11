@@ -20,9 +20,12 @@ public class HandDeployer : MonoBehaviour
     public string HandDeployerName;
     public int listIterator;
 
+    private Vector3 speed; // I AM SPEED
+    private Vector3 lastPosition;
+
     private void CallKill(GameObject target)
     {
-        target.GetComponent<PropManager>().Remove();
+        target.GetComponent<PropManager>().Remove(speed);
     }
 
     private void CallWakeup(GameObject target)
@@ -113,8 +116,10 @@ public class HandDeployer : MonoBehaviour
     }
 
 // Update is called once per frame
-void Update()
+    void Update()
     {
-        
+        speed = (lastPosition - transform.position) * -100.0f;
+        Debug.Log(speed); 
+        lastPosition = transform.position;
     }
 }

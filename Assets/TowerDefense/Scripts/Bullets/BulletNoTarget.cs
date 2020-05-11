@@ -36,7 +36,6 @@ public class BulletNoTarget : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("damage!");
             collision.gameObject.BroadcastMessage("ApplyDamage", damage);
         }
         else if (collision.gameObject.tag != "Bullet")

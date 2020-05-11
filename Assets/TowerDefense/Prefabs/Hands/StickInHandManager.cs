@@ -24,13 +24,14 @@ public class StickInHandManager : PropManager
     }
 
 
-    public override void Remove()
+    public override void Remove(Vector3 DebreeVelocity)
     {
         transform.gameObject.SetActive(false);
-        GameObject distpatched = Instantiate(Debree);
-        distpatched.GetComponent<Transform>().position = transform.position;
-        distpatched.GetComponent<Transform>().rotation = transform.rotation;
-        distpatched.SetActive(true);
+        GameObject dispatched = Instantiate(Debree);
+        dispatched.GetComponent<Transform>().position = transform.position;
+        dispatched.GetComponent<Transform>().rotation = transform.rotation;
+        dispatched.GetComponent<Rigidbody>().velocity = DebreeVelocity;
+        dispatched.SetActive(true);
     }
 
     public override void Initialize()
