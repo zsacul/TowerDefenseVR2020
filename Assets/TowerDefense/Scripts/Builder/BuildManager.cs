@@ -27,6 +27,8 @@ public class BuildManager : MonoBehaviour
     private GameEvent WaveChanged;
     [SerializeField]
     private Text UIMoneyText;
+    [SerializeField]
+    public bool VRTKInputs;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -42,18 +44,19 @@ public class BuildManager : MonoBehaviour
     private float canvasXSize;
     private float canvasYSize;
     private float canvasZPos;
-
-    private bool changedWaveStatus;
+    private bool rightTriggerInUse;
+    private bool panelButtonPressed;
 
     void Start()
     {
+        panelButtonPressed = false;
         towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
         towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
         obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
         buildModeOn = true;
-        changedWaveStatus = true;
         purchasePanelsActive = false;
+        rightTriggerInUse = false;
         canvasRT = canvas.GetComponent<RectTransform>();
         canvasXSize = canvasRT.sizeDelta.x / 2.0f;
         canvasYSize = canvasRT.sizeDelta.y / 2.0f;
@@ -64,8 +67,6 @@ public class BuildManager : MonoBehaviour
 
     private void SetMoneyText()
     {
-        //moneyText = SetText(-0.7f, -0.85f, "Money", 150, 40, Color.white);
-        //moneyText.text = "Money: $" + money.ToString();
         UIMoneyText.text = "$" + money.ToString();
         SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
         UpdateUI();
@@ -97,6 +98,8 @@ public class BuildManager : MonoBehaviour
     {
         if (buildModeOn)
         {
+            UpdateButtonState(false);
+
             if (purchasePanelsActive)
             {
                 towerPurchaseCanvas.transform.rotation = Quaternion.LookRotation(towerPurchaseCanvas.transform.position - Camera.main.transform.position);
@@ -129,14 +132,6 @@ public class BuildManager : MonoBehaviour
             }
         }
 
-        /* if (UpdateModeCond())
-         {
-             buildModeOn = !buildModeOn;
-             selectedBuilding = ChunkType.none;
-
-             UpdateUI();
-         }*/
-
         if (UpdatePanelActiveCond())
         {
             purchasePanelsActive = !purchasePanelsActive;
@@ -167,6 +162,23 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            panelButtonPressed = false;
+        }
+        else
+        {
+            panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
+        }
+    }
+
     private void SetMoneyOutlineColor(Color color)
     {
         UIMoneyText.GetComponent<Outline>().effectColor = color;
@@ -175,7 +187,6 @@ public class BuildManager : MonoBehaviour
     //Updates UI according to the state of BuildModeOn
     private void UpdateUI()
     {
-        //moneyText.enabled = buildModeOn;
         UIMoneyText.enabled = buildModeOn;
         if (buildModeOn)
         {
@@ -216,21 +227,35 @@ public class BuildManager : MonoBehaviour
         UpdateUI();
     }
 
-    public bool UpdateModeCond()
-    {
-        /*if (changedWaveStatus)
-        {
-            changedWaveStatus = false;
-            return true;
-        }
-        return false;*/
-        return changedWaveStatus;
-        //return Input.GetKeyDown(KeyCode.Tab);
-    }
-
     public bool UpdatePanelActiveCond()
     {
-        return Input.GetKeyDown(KeyCode.B);
+        return panelButtonPressed;
+
+        // return Input.GetKeyDown(KeyCode.B);
+        /*if (VRTKInputs)
+        {
+            if (Input.GetAxis("VRTK_Axis10_RightTrigger") != 0)
+            {
+                if (!rightTriggerInUse)
+                {
+                    rightTriggerInUse = true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                rightTriggerInUse = false;
+                return false;
+            }
+        }
+        else
+        {
+            return Input.GetKeyDown(KeyCode.B);
+        }*/
     }
 
     public bool BuildModeOn
@@ -280,14 +305,12 @@ public class BuildManager : MonoBehaviour
     public void DecreaseMoney(int decVal)
     {
         money -= decVal;
-        //moneyText.text = "Money: $" + money.ToString();
         UIMoneyText.text = "$" + money.ToString();
     }
 
     public void AddMoney(int addVal)
     {
         money += addVal;
-        //moneyText.text = "Money: $" + money.ToString();
         UIMoneyText.text = "$" + money.ToString();
     }
 

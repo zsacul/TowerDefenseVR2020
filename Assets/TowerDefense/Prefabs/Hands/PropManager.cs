@@ -15,7 +15,21 @@ public class PropManager : MonoBehaviour
         transform.gameObject.SetActive(false);
 
     }
+
+    public virtual void Remove(Vector3 DebreeVelocity)
+    {
+        //Debug.Log("Remove called");
+        transform.gameObject.SetActive(false);
+
+    }
+
     public virtual void Respawn()
+    {
+        //Debug.Log("Respawn called");
+        transform.gameObject.SetActive(true);
+    }
+
+    public virtual void Respawn(GameObject Motivator)
     {
         //Debug.Log("Respawn called");
         transform.gameObject.SetActive(true);

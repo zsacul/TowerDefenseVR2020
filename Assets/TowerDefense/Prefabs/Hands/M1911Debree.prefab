@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5589185667785373776}
   m_LocalRotation: {x: -0, y: -0.9099614, z: 0, w: -0.41469315}
-  m_LocalPosition: {x: 0.2, y: -0.2, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5586520022025925646}
@@ -252,8 +252,9 @@ GameObject:
   - component: {fileID: 5586548996122427738}
   - component: {fileID: 3362456734702219572}
   - component: {fileID: 3362456734702219573}
+  - component: {fileID: 4392041911391527945}
   m_Layer: 20
-  m_Name: M1911Grabbable
+  m_Name: M1911Debree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5589237462600327502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16395816, y: 0.195, z: -0.05025181}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5591681324399835174}
@@ -287,7 +288,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.1
-  m_Center: {x: 0.2, y: -0.2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3362456734702219573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +302,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PropID: 1
+--- !u!54 &4392041911391527945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589237462600327502}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5589573924906774074
 GameObject:
   m_ObjectHideFlags: 0
