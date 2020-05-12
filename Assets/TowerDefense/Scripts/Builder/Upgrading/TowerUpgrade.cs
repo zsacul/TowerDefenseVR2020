@@ -7,7 +7,7 @@ public class TowerUpgrade : MonoBehaviour
     [SerializeField]
     private int elementIndex;
     public int upgradeCost;
-
+    private bool upgradeButtonPressed;
 
     //Indicates if this upgrade was selected by the player
     private bool selected;
@@ -15,15 +15,33 @@ public class TowerUpgrade : MonoBehaviour
 
     void Start()
     {
+        upgradeButtonPressed = false;
         upgradeManager = GetComponentInParent<UpgradeManager>();
         selected = false;
     }
 
     void Update()
     {
-        if (selected && Input.GetKeyDown(KeyCode.U))
+        UpdateButtonState(false);
+        if (selected && upgradeButtonPressed)//Input.GetKeyDown(KeyCode.U))
         {
             upgradeManager.UpgradeTower(elementIndex, upgradeCost);
+        }
+    }
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            upgradeButtonPressed = false;
+        }
+        else
+        {
+            upgradeButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton0);
         }
     }
 
@@ -38,12 +56,10 @@ public class TowerUpgrade : MonoBehaviour
     public void setSelectedFalse()
     {
         selected = false;
-        //przywroc kolor
     }
 
     public void setSelectedTrue()
     {
         selected = true;
-        //ustaw kolor taki
     }
 }

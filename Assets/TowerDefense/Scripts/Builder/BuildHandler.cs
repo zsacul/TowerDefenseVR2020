@@ -10,6 +10,7 @@ public class BuildHandler : GameEventListener
     private GameObject cantBuild;
     private BuildManager buildManager;
     private BoxCollider thisBoxCollider;
+    private bool buildButtonPressed;
 
     // Object that's being instantiated after player in Build Mode points to this chunk 
     private GameObject buildAvailUI;
@@ -25,6 +26,7 @@ public class BuildHandler : GameEventListener
 
     void Start()
     {
+        buildButtonPressed = false;
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         thisBoxCollider = gameObject.AddComponent<BoxCollider>();
         thisBoxCollider.size = new Vector3(2, 0.1326768f, 2);
@@ -36,16 +38,12 @@ public class BuildHandler : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        thisBoxCollider.enabled = buildManager.BuildModeOn;
+        //thisBoxCollider.enabled = buildManager.BuildModeOn;
     }
 
     void Update()
     {
-        // Switch on Chunk's collider if building mode is turned on. 
-       /* if (buildManager.UpdateModeCond())
-        {
-            thisBoxCollider.enabled = buildManager.BuildModeOn;
-        }*/
+        UpdateButtonState(false);
 
         if (pointedAt)
         {
@@ -57,6 +55,23 @@ public class BuildHandler : GameEventListener
                 HoverOn();
             }
             UpdatePointedAt();
+        }
+    }
+
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            buildButtonPressed = false;
+        }
+        else
+        {
+            buildButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
         }
     }
 
@@ -81,12 +96,23 @@ public class BuildHandler : GameEventListener
         //If this chunk is still being pointed at and player presses Enter, we should build
         else
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            //if (Input.GetKeyDown(KeyCode.C))
+            if(buildButtonPressed)
             {
                 Build();
             }
 
         }
+    }
+
+    public void PressBuildButton()
+    {
+
+    }
+
+    public void DeactivateBuildButton()
+    {
+
     }
 
     private void UpdateSelectedBuilding()
