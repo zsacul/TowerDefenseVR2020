@@ -55,10 +55,10 @@ public class Projectile : MonoBehaviour , IChargable
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Enemy"))
+        if (other.gameObject.tag == "Enemy")
         {
             onHit.Invoke();
-            other.collider.SendMessage("OnDamaged", damageData, SendMessageOptions.DontRequireReceiver);
+            other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
         }
         onHit.Invoke();
         transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));

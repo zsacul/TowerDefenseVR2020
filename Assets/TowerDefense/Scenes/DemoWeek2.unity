@@ -30700,6 +30700,7 @@ MonoBehaviour:
   rightController: {fileID: 65865500}
   WaveChanged: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   UIMoneyText: {fileID: 746120332}
+  VRTKInputs: 0
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30714,7 +30715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkSizeX: 2
   chunkSizeZ: 2
-  mapString: {fileID: 11400000, guid: 2ddfc037337011e4c93c86c05e52b079, type: 2}
+  mapString: {fileID: 11400000, guid: 11c654ba37db4fc4a87e1ba22df74496, type: 2}
   surface: {fileID: 2089414113}
   chunkPrefab:
   - {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}
@@ -36960,7 +36961,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.15666667
+  m_VoxelSize: 0.06666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: d024d6a0c9e41274b89f5662128a5bc4, type: 2}
 --- !u!1001 &2101921184

@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 7401474893963003076}
   - component: {fileID: 8658911673904205617}
   - component: {fileID: 7619976265493146611}
-  - component: {fileID: 6653148240520075275}
+  - component: {fileID: 7892162733950187412}
   m_Layer: 0
   m_Name: ElectricTower
   m_TagString: Bullet
@@ -590,7 +590,7 @@ CapsuleCollider:
   m_Height: 7.613495
   m_Direction: 1
   m_Center: {x: 0, y: 3.3067474, z: 0.008751392}
---- !u!114 &6653148240520075275
+--- !u!114 &7892162733950187412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -599,12 +599,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2748104644585446367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d2254215468406a94d4b9027dde476, type: 3}
+  m_Script: {fileID: 11500000, guid: 0466045f925efa14ebe1c7481e2da9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: fd4381e515e1544099013cd59e0ee53d,
+  statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: 19fe512ea76208e439e548c3c761cc07,
     type: 3}
-  upgradeCosts: fa000000f4010000e8030000
+  upgradeCosts: 320000006400000096000000
 --- !u!1 &2823770882054834690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1201,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4217995377379526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &670185843502668684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 667102600496862026, guid: 28c05f1972e0ef0448f125c669ce8b06,
+    type: 3}
+  m_PrefabInstance: {fileID: 4217995377379526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549334211309375348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1281,11 +1287,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7263855202518330110, guid: bf64e4ddc94636f4581a6e4f5bbd1e79,
     type: 3}
   m_PrefabInstance: {fileID: 549334211309375348}
---- !u!1 &670185843502668684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 667102600496862026, guid: 28c05f1972e0ef0448f125c669ce8b06,
-    type: 3}
-  m_PrefabInstance: {fileID: 4217995377379526}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2247268071700036477
 PrefabInstance:
@@ -1456,15 +1457,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1962bc15d115c2408c3881fecd9b735, type: 3}
---- !u!1 &7835737575833545054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
-    type: 3}
-  m_PrefabInstance: {fileID: 8330138326643080455}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6549773276064504653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+    type: 3}
+  m_PrefabInstance: {fileID: 8330138326643080455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7835737575833545054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
     type: 3}
   m_PrefabInstance: {fileID: 8330138326643080455}
   m_PrefabAsset: {fileID: 0}
@@ -1547,15 +1548,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3bb1396946272d1499834bd8c66a4169, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c1687c17784d84fa73498e45e195cb, type: 3}
---- !u!4 &7550992610253288522 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1724163208563315779, guid: c2c1687c17784d84fa73498e45e195cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 9162563031799554057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6814467530420766297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2429178069397808720, guid: c2c1687c17784d84fa73498e45e195cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9162563031799554057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7550992610253288522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1724163208563315779, guid: c2c1687c17784d84fa73498e45e195cb,
     type: 3}
   m_PrefabInstance: {fileID: 9162563031799554057}
   m_PrefabAsset: {fileID: 0}

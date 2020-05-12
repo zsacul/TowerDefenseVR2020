@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1180167932629785481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523582142778236108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f22bbad0dc69e24087993a9b1be01ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalMaterial: {fileID: 2100000, guid: 3c00e6cd54b306049846d5a8bfed074f, type: 2}
+  visibilityMaterial: {fileID: 2100000, guid: f32a0a3e9a4c8ac479fef61da5676e93, type: 2}
+  changingVisibilitySpeed: 0.2
+  appearingDelay: 0
 --- !u!1 &8617544049270700138
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +46,7 @@ Transform:
   m_Children:
   - {fileID: 1585828177121160473}
   - {fileID: 5340853151438411403}
+  - {fileID: 2557904100402015967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,6 +70,92 @@ MonoBehaviour:
     type: 3}
   electricCanvasPrefab: {fileID: 7413660572395438324, guid: 66f9bf8455f22c74e9c73f2b840d0aee,
     type: 3}
+--- !u!1001 &720682051568437397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9163655353354264728}
+    m_Modifications:
+    - target: {fileID: 511281083128635525, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0a3e9a4c8ac479fef61da5676e93, type: 2}
+    - target: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_Name
+      value: TowerPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a1962bc15d115c2408c3881fecd9b735, type: 3}
+--- !u!1 &1523582142778236108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+    type: 3}
+  m_PrefabInstance: {fileID: 720682051568437397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2557904100402015967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
+    type: 3}
+  m_PrefabInstance: {fileID: 720682051568437397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5015572951348121209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,6 +163,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9163655353354264728}
     m_Modifications:
+    - target: {fileID: 3368725415034755414, guid: 827472866adcd584aa8c435d0c433190,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3525479140033381557, guid: 1849b243408688043a6198dddff75cf7,
+        type: 3}
     - target: {fileID: 6024438981548385120, guid: 827472866adcd584aa8c435d0c433190,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,6 +229,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseTower
       objectReference: {fileID: 0}
+    - target: {fileID: 8638327907931003518, guid: 827472866adcd584aa8c435d0c433190,
+        type: 3}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c00e6cd54b306049846d5a8bfed074f, type: 2}
+    - target: {fileID: 8638327907931003518, guid: 827472866adcd584aa8c435d0c433190,
+        type: 3}
+      propertyPath: visibilityMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0a3e9a4c8ac479fef61da5676e93, type: 2}
+    - target: {fileID: 9078294234405135791, guid: 827472866adcd584aa8c435d0c433190,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0a3e9a4c8ac479fef61da5676e93, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 827472866adcd584aa8c435d0c433190, type: 3}
 --- !u!4 &1585828177121160473 stripped

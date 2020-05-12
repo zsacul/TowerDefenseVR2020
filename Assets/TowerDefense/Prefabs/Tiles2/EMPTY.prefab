@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4000971350229122236}
   - component: {fileID: 4679936168016163227}
   - component: {fileID: 7647352093603078469}
-  - component: {fileID: 6460439232612842660}
   m_Layer: 0
   m_Name: EMPTY
   m_TagString: Untagged
@@ -62,33 +61,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.1326768, z: 2}
   m_Center: {x: 0, y: 0.0067137256, z: 0}
---- !u!114 &6460439232612842660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134289842002267823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0914ad838174ea44962dec7ae400d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsOnTile:
-  - {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8, type: 3}
-  - {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
-  - {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527, type: 3}
-  objectsAmountRange: {x: 0, y: 3}
-  randomSpaceLimitX: {x: -1, y: 1}
-  randomSpaceLimitY: {x: -1, y: 1}
-  upOffset: 0.03
-  randomizeAngleY: 1
-  randomizeAngleX: 0
-  randomizeAngleZ: 0
-  randomizeScale: 0
-  objectChance:
-  - {x: 0, y: 0.3}
-  - {x: 0.3, y: 0.6}
-  - {x: 0.6, y: 0.7}
-  - {x: 0.7, y: 0.8}
-  - {x: 0.8, y: 0.9}

@@ -119,7 +119,6 @@ public class HandDeployer : MonoBehaviour
     void Update()
     {
         speed = (lastPosition - transform.position) * -100.0f;
-        Debug.Log(speed); 
         lastPosition = transform.position;
     }
 }
