@@ -23,9 +23,12 @@ public class UpgradeManager : MonoBehaviour
     private Transform pos;
     private GameObject thisChunk;
     private bool upgradePanelsActive;
+    private bool panelButtonPressed;
 
     void Start()
     {
+        panelButtonPressed = false;
+
         thisChunk = transform.parent.gameObject;
         upgradePanelsActive = false;
 
@@ -58,6 +61,8 @@ public class UpgradeManager : MonoBehaviour
 
     void Update()
     {
+        UpdateButtonState(false);
+
         if (buildManager.BuildModeOn && GoodPosition())
         {
             if (!canvasEnabled && !upgradePanelsActive)
@@ -66,7 +71,7 @@ public class UpgradeManager : MonoBehaviour
                 NoneSelected();
             }
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (panelButtonPressed)//Input.GetKeyDown(KeyCode.X))
             {
                 upgradePanelsActive = !upgradePanelsActive;
                 if (canvasEnabled)
@@ -83,6 +88,22 @@ public class UpgradeManager : MonoBehaviour
         else if (canvasEnabled)
         {
             DisableUpgradeCanvases();
+        }
+    }
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            panelButtonPressed = false;
+        }
+        else
+        {
+            panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
         }
     }
 

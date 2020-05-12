@@ -27,6 +27,8 @@ public class BuildManager : MonoBehaviour
     private GameEvent WaveChanged;
     [SerializeField]
     private Text UIMoneyText;
+    [SerializeField]
+    public bool VRTKInputs;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -43,9 +45,11 @@ public class BuildManager : MonoBehaviour
     private float canvasYSize;
     private float canvasZPos;
     private bool rightTriggerInUse;
+    private bool panelButtonPressed;
 
     void Start()
     {
+        panelButtonPressed = false;
         towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
         towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
@@ -94,6 +98,8 @@ public class BuildManager : MonoBehaviour
     {
         if (buildModeOn)
         {
+            UpdateButtonState(false);
+
             if (purchasePanelsActive)
             {
                 towerPurchaseCanvas.transform.rotation = Quaternion.LookRotation(towerPurchaseCanvas.transform.position - Camera.main.transform.position);
@@ -153,6 +159,23 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            panelButtonPressed = false;
+        }
+        else
+        {
+            panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
+        }
+    }
+
     private void SetMoneyOutlineColor(Color color)
     {
         UIMoneyText.GetComponent<Outline>().effectColor = color;
@@ -203,25 +226,33 @@ public class BuildManager : MonoBehaviour
 
     public bool UpdatePanelActiveCond()
     {
-        // INPUT 
+        return panelButtonPressed;
+
         // return Input.GetKeyDown(KeyCode.B);
-        if(Input.GetAxis("VRTK_Axis10_RightTrigger") != 0)
+        /*if (VRTKInputs)
         {
-            if (!rightTriggerInUse)
+            if (Input.GetAxis("VRTK_Axis10_RightTrigger") != 0)
             {
-                rightTriggerInUse = true;
-                return true;
+                if (!rightTriggerInUse)
+                {
+                    rightTriggerInUse = true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
+                rightTriggerInUse = false;
                 return false;
             }
         }
         else
         {
-            rightTriggerInUse = false;
-            return false;
-        }
+            return Input.GetKeyDown(KeyCode.B);
+        }*/
     }
 
     public bool BuildModeOn
