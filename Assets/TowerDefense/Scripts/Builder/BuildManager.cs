@@ -126,6 +126,9 @@ public class BuildManager : MonoBehaviour
                 {
                     SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
                 }
+            } else
+            {
+                SetMoneyOutlineColor(Color.grey);
             }
         }
 

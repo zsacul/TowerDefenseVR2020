@@ -19,6 +19,7 @@ public class EnemyHPManager : MonoBehaviour {
     public UnityEvent killed;
     [Min(1f)]
     public float enemyHP = 100f;
+    public int moneyDropped = 0;
 
     [SerializeField]
     Elements elementsInfo;
@@ -36,6 +37,7 @@ public class EnemyHPManager : MonoBehaviour {
     }
 
     private void Death() {
+        GameObject.Find("GameManager").GetComponent<BuildManager>().AddMoney(moneyDropped);
         killed.Invoke();
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);

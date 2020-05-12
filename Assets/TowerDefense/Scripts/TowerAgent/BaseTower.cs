@@ -89,7 +89,22 @@ public class BaseTower : MonoBehaviour
     {
         SE = se;
     }
-    
+
+    virtual public (float, int) DamageStatInfo()
+    {
+        return (damage, upgradeDamageIncreaseInPercent);
+    }
+
+    virtual public (float, int) DelayStatInfo()
+    {
+        return (shootingDelay, upgradeDelayIncreaseInPercent);
+    }
+
+    virtual public (float, int) RangeStatInfo()
+    {
+        return (GetComponent<SphereCollider>().radius, upgradeRangeIncreaseInPercent);
+    }
+
     virtual public void UpgradeFireDamage()
     {
         updateDMG.Invoke();
@@ -117,5 +132,10 @@ public class BaseTower : MonoBehaviour
         updateDelay.Invoke();
         shootingDelay *= 1f - ((float)upgradeDelayIncreaseInPercent / 100f);
         upgradeCostRange = (int)((float)upgradeCostRange * (1f + upgradeRiseInPercent / 100f));
+    }
+
+    virtual public ElementType GetElementType()
+    {
+        return type;
     }
 }

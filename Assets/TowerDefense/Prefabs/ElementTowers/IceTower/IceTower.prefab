@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 1047717100205902508}
   - component: {fileID: 7531511795519296216}
   - component: {fileID: 1045259132886852992}
+  - component: {fileID: 3677702912887019348}
   m_Layer: 0
   m_Name: IceTower
   m_TagString: Bullet
@@ -341,6 +342,21 @@ CapsuleCollider:
   m_Height: 7.4881268
   m_Direction: 1
   m_Center: {x: -0.022686362, y: 3.2440634, z: 0}
+--- !u!114 &3677702912887019348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337077111633023746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2254215468406a94d4b9027dde476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: fd4381e515e1544099013cd59e0ee53d,
+    type: 3}
+  upgradeCosts: fa000000f4010000e8030000
 --- !u!114 &2700223523819438191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,18 +473,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1962bc15d115c2408c3881fecd9b735, type: 3}
---- !u!1 &786902471000037764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
-    type: 3}
-  m_PrefabInstance: {fileID: 1571504223169138141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4373270632541154199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
     type: 3}
   m_PrefabInstance: {fileID: 1571504223169138141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &786902471000037764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571504223169138141}
 --- !u!1001 &2755004752980671530
 PrefabInstance:
   m_ObjectHideFlags: 0
