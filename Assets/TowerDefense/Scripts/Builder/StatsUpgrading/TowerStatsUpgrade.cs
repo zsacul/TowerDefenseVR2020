@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TowerStatsUpgrade : MonoBehaviour
 {
-    //Indicates if this upgrade was selected by the player
     private bool selected;
     private StatsUpgradeManager statsUpgradeManager;
 
@@ -16,9 +15,8 @@ public class TowerStatsUpgrade : MonoBehaviour
 
     void Update()
     {
-        if (selected && Input.GetKeyDown(KeyCode.U))
+        if (selected && Input.GetKeyDown(KeyCode.JoystickButton0))
         {
-            Debug.Log("Upgraded!");
             statsUpgradeManager.TowerLevelUp();
         }
     }

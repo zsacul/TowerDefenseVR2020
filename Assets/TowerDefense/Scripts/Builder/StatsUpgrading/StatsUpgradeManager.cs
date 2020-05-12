@@ -36,7 +36,6 @@ public class StatsUpgradeManager : MonoBehaviour
     private Color upgradeColor = new Color(0f, 1f, 0.11f, 1f);
     void Start()
     {
-        Debug.Log("Problem is in Start");
         towerScript = gameObject.GetComponent<BaseTower>();
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         currentLevelCanvas = Instantiate(statsUpgradeCanvasPrefab);
@@ -74,7 +73,7 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)
