@@ -35,6 +35,8 @@ public class Projectile : MonoBehaviour , IChargable
     }
     public void Init(float charge = 0)
     {
+        GetComponent<Collider>().enabled = false;
+        Invoke("EnableCollision", 0.1f);
         lifeTime = lifeTimeOverCharge.Evaluate(charge);
         speed = speedOverCharge.Evaluate(charge);
         damageData.damage *= dmgMultOverCharge.Evaluate(charge);
@@ -59,7 +61,7 @@ public class Projectile : MonoBehaviour , IChargable
             other.collider.SendMessage("OnDamaged", damageData, SendMessageOptions.DontRequireReceiver);
         }
         onHit.Invoke();
-        //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
+        transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
     }
     public void Destroy()
     {
@@ -74,6 +76,10 @@ public class Projectile : MonoBehaviour , IChargable
         CancelInvoke("End");
         lifeTime += amount;
         Invoke("End", lifeTime - time);
+    }
+    void EnableCollision()
+    {
+        GetComponent<Collider>().enabled = true;
     }
 }
 [System.Serializable]
