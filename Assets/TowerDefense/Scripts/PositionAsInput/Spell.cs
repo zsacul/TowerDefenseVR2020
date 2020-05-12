@@ -8,6 +8,7 @@ public class Spell : ScriptableObject
     public Vector2Int[] castSequence;
     public void Cast(Vector3 position, Quaternion direction, float charge)
     {
-        Instantiate(spellPrefab, position, direction);
+        GameObject o = Instantiate(spellPrefab, position, direction);
+        o.GetComponent<IChargable>().SetCharge(charge);
     }
 }
