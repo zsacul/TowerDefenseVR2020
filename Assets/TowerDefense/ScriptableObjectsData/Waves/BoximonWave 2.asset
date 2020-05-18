@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c54ad2297853984eaea6a0cc0149d99, type: 3}
-  m_Name: BoximonWave
+  m_Name: BoximonWave 2
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 1311928148011479111, guid: cf0827c30dbd6944cae00152d822fb42,
       type: 3}
-    count: 12
+    count: 6
   - enemyPrefab: {fileID: 5927812008672363391, guid: 8babda1d34fee824d933af3c1407be5a,
       type: 3}
-    count: 12
+    count: 6
   pattern: 0
   ignoreLimits: 0
   maxSpawns: -1

@@ -49,6 +49,22 @@ public class BuildManager : MonoBehaviour
     private bool rightTriggerInUse;
     private bool panelButtonPressed;
 
+    private static BuildManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    public static BuildManager Instance 
+    { 
+        get
+        { 
+            if(instance == null)
+            {
+                Debug.LogError("Missing BuildManager");
+            }
+            return instance;
+        } 
+    }
     void Start()
     {
         panelButtonPressed = false;

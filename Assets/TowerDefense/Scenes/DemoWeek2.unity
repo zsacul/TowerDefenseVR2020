@@ -14465,7 +14465,7 @@ MonoBehaviour:
     bonusSpeed: 0
     groupSize: 3
     nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+  - waveData: {fileID: 11400000, guid: 8b9fa501c07a26f419f53c373c4b3c69, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
@@ -14475,19 +14475,19 @@ MonoBehaviour:
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 3
+    groupSize: 4
     nextGroupTime: 5
   - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
     interval: 1.5
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 3
+    groupSize: 6
     nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+  - waveData: {fileID: 11400000, guid: 76cea4699b2cbac4b820cf5fa189e488, type: 2}
     interval: 1.5
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 3
+    groupSize: 6
     nextGroupTime: 5
   breakLength: 5
   breakOn: 0
@@ -30687,7 +30687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 300
+  money: 666999
   towerCost: 90
   playerObstacleCost: 55
   canvas: {fileID: 1561748944}
@@ -30699,6 +30699,7 @@ MonoBehaviour:
     type: 3}
   rightController: {fileID: 65865500}
   WaveChanged: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
+  BuildingSwitchedToNone: {fileID: 0}
   UIMoneyText: {fileID: 746120332}
   VRTKInputs: 0
 --- !u!114 &1738301549
@@ -33658,7 +33659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917868037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 29.4, y: 4.6, z: 33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1665110228}
@@ -36961,7 +36962,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
+  m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: d024d6a0c9e41274b89f5662128a5bc4, type: 2}
 --- !u!1001 &2101921184
