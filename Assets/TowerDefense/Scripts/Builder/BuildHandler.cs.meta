@@ -3,7 +3,16 @@ guid: bbdc3fdac4840d84cbf0b43be26a533e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - listenedEvent: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8, type: 2}
+  - canBuildTower: {fileID: 8642073982787748024, guid: ac84d6fe3693af94aa5a6cc7856f0c95,
+      type: 3}
+  - cantBuildTower: {fileID: 4319897612890846190, guid: e2db905986b69b54dabc7207bc5fdb60,
+      type: 3}
+  - canBuildObstacle: {fileID: 8892720345105553019, guid: b9c7c9e8b1ababb4895e424266dbf167,
+      type: 3}
+  - cantBuildObstacle: {fileID: 5148760106822035723, guid: f6daac58c920ab644ba90bfb0dc1cb31,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

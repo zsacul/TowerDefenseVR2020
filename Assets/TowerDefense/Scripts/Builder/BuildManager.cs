@@ -26,6 +26,8 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent WaveChanged;
     [SerializeField]
+    private GameEvent BuildingSwitchedToNone; 
+    [SerializeField]
     private Text UIMoneyText;
     [SerializeField]
     public bool VRTKInputs;
@@ -175,7 +177,14 @@ public class BuildManager : MonoBehaviour
         }
         else
         {
-            panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
+            if (VRTKInputs)
+            {
+                panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
+            }
+            else
+            {
+                panelButtonPressed = Input.GetKeyDown(KeyCode.B);
+            }
         }
     }
 
@@ -225,37 +234,12 @@ public class BuildManager : MonoBehaviour
         selectedBuilding = ChunkType.none;
         purchasePanelsActive = false;
         UpdateUI();
+        BuildingSwitchedToNone.Raise();
     }
 
     public bool UpdatePanelActiveCond()
     {
         return panelButtonPressed;
-
-        // return Input.GetKeyDown(KeyCode.B);
-        /*if (VRTKInputs)
-        {
-            if (Input.GetAxis("VRTK_Axis10_RightTrigger") != 0)
-            {
-                if (!rightTriggerInUse)
-                {
-                    rightTriggerInUse = true;
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                rightTriggerInUse = false;
-                return false;
-            }
-        }
-        else
-        {
-            return Input.GetKeyDown(KeyCode.B);
-        }*/
     }
 
     public bool BuildModeOn
