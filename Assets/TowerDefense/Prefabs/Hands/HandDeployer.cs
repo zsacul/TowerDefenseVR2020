@@ -20,6 +20,8 @@ public class HandDeployer : MonoBehaviour
     public string HandDeployerName;
     public int listIterator;
 
+    public GameObject RightInteractor;
+
     private Vector3 speed; // I AM SPEED
     private Vector3 lastPosition;
 
@@ -103,6 +105,20 @@ public class HandDeployer : MonoBehaviour
 
     void Start()
     {
+        if (transform.name == "LeftControllerAlias") // we are the follower propmanager.
+        {
+            PropList = new List<GOArray>(); // yeet everything
+
+            /* steal all the props from the other interactor */
+            foreach(GOArray Prop in RightInteractor.GetComponent<HandDeployer>().PropList)
+            {
+                GOArray Cprop = new GOArray();
+                Cprop.Prefab = Prop.Prefab;
+                Cprop.Prefab.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+                PropList.Add(Cprop);
+            }
+        }
+
         foreach(GOArray Prop in PropList)
         {
             Prop.Instance = Instantiate(Prop.Prefab, transform); // create a new prop.

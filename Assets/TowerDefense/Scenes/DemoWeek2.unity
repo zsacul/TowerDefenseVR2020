@@ -2671,6 +2671,7 @@ MonoBehaviour:
     deployable: 0
   HandDeployerName: 
   listIterator: 0
+  RightInteractor: {fileID: 0}
 --- !u!114 &65865503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11467,14 +11468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540c9ab324a556348accfc11f141a3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PropList:
-  - Prefab: {fileID: 7112997836993932903, guid: e356a5980f09dcb4380c349affb50718,
-      type: 3}
-    Instance: {fileID: 0}
-    description: 
-    deployable: 0
+  PropList: []
   HandDeployerName: 
   listIterator: 0
+  RightInteractor: {fileID: 65865500}
 --- !u!4 &484867502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4360459780143330, guid: 114b3c3ce4645364a97c8f0803bed65b,

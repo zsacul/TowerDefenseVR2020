@@ -746,7 +746,7 @@ Transform:
   m_GameObject: {fileID: 7112997836993932903}
   m_LocalRotation: {x: -0.6186492, y: 0.5713382, z: 0.4549855, w: 0.28954113}
   m_LocalPosition: {x: -0.058, y: 0.063, z: -0.142}
-  m_LocalScale: {x: 0.05, y: -0.05, z: 0.05}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 7512886700550641658}
   - {fileID: 5409218416171092279}
@@ -766,6 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colortype: 0
+  PropID: 0
   dupsko: 0
   GizmoAnimation: {fileID: 7576374719361191854}
 --- !u!95 &7576374719361191854
