@@ -2654,8 +2654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PropList:
-  - Prefab: {fileID: 7112997836993932903, guid: b61d0c6f01694a3489c214a350d3128a,
-      type: 3}
+  - Prefab: {fileID: 4137375818022343, guid: 1b4d4fe26af328740852b1392b73912c, type: 3}
     Instance: {fileID: 0}
     description: 
     deployable: 0

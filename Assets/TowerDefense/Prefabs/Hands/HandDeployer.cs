@@ -114,7 +114,7 @@ public class HandDeployer : MonoBehaviour
             {
                 GOArray Cprop = new GOArray();
                 Cprop.Prefab = Prop.Prefab;
-                Cprop.Prefab.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+                Cprop.Prefab.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
                 PropList.Add(Cprop);
             }
         }
