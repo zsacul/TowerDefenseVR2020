@@ -28,5 +28,7 @@ public class ButtonHandler : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         Debug.Log(transform.parent.transform.parent.ToString());
         transform.parent.transform.parent.GetComponent<TowerUpgrade>().Upgrade();
+        transform.localPosition += new Vector3(0f, 0.1f, 0f);
+        pushed = false;
     }
 }
