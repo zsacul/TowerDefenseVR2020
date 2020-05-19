@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour , IChargable
         {
             time += 0.02f;
             transform.localScale = Vector3.one * sizeOverTime.Evaluate(time / lifeTime);
-            transform.position += transform.forward * speedOverTime.Evaluate(time) * speed * Time.fixedDeltaTime;
+            //transform.position += transform.forward * speedOverTime.Evaluate(time) * speed * Time.fixedDeltaTime;
         }
         else
         {
@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour , IChargable
                 other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
             }
             onHit.Invoke();
-            transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
+            //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
         }
     }
     public void Destroy()
@@ -92,12 +92,14 @@ public class Projectile : MonoBehaviour , IChargable
     }
     public void Release()
     {
-        movement = movement.normalized;
         transform.rotation = Quaternion.LookRotation(movement);
         released = true;
         transform.parent = null;
         Invoke("EnableCollision", 0.15f);
         Invoke("End", lifeTime);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.velocity = movement * 50 * speed;
     }
 }
 [System.Serializable]
