@@ -14461,19 +14461,19 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 752578748}
   wave:
-  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 3
     nextGroupTime: 5
   - waveData: {fileID: 11400000, guid: 8b9fa501c07a26f419f53c373c4b3c69, type: 2}
-    interval: 2
-    bonusHp: 0
-    bonusSpeed: 0
-    groupSize: 3
-    nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
