@@ -54,9 +54,9 @@ public class StatsUpgradeManager : MonoBehaviour
         panelsActive = false;
 
         pos = transform;
-        currentLevelCanvas.transform.position = new Vector3(pos.position.x - 0.45f, 8.7f, pos.position.z + 1.05f);
+        currentLevelCanvas.transform.position = new Vector3(pos.position.x - 0.45f, 8.65f, pos.position.z + 1.05f);
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
-        nextLevelCanvas.transform.position = new Vector3(pos.position.x + 0.45f, 8.7f, pos.position.z + 1.05f);
+        nextLevelCanvas.transform.position = new Vector3(pos.position.x + 0.45f, 8.65f, pos.position.z + 1.05f);
 
         HighlightPanel(currentLevelCanvas, Color.clear);
         UpdatePanels();
@@ -99,7 +99,7 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI speedInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5].enabled = false;
         currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].enabled = false;
-        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[7].enabled = false;
+        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[7].SetText("Press \"X\" to dismiss panels");
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
 
         if (currentLevel == maxLevel)
