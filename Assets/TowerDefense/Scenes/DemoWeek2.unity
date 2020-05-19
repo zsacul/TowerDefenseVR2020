@@ -30687,7 +30687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 666999
+  money: 400
   towerCost: 90
   playerObstacleCost: 55
   canvas: {fileID: 1561748944}
@@ -30699,9 +30699,10 @@ MonoBehaviour:
     type: 3}
   rightController: {fileID: 65865500}
   WaveChanged: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
-  BuildingSwitchedToNone: {fileID: 0}
+  BuildingSwitchedToNone: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8,
+    type: 2}
   UIMoneyText: {fileID: 746120332}
-  VRTKInputs: 0
+  VRTKInputs: 1
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0
