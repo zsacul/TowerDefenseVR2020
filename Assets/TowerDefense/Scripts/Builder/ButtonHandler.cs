@@ -19,7 +19,7 @@ public class ButtonHandler : MonoBehaviour
             Debug.Log("Before calling Upgrade()");
             StartCoroutine(Upgrade());
             Debug.Log("After calling Upgrade()");
-            transform.position += new Vector3(0f, 0f, 0.05f);
+            transform.localPosition += new Vector3(0f, -0.1f, 0f);
         }
     }
 
