@@ -307,11 +307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'select upgrade and press ''U'' to confirm
-
-
-    press ''X'' to dismiss
-    panels '
+  m_text: Select Upgrade and Press Button to Confirm
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -380,12 +376,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3175798803968561566}
-    characterCount: 69
+    characterCount: 42
     spriteCount: 0
-    spaceCount: 13
-    wordCount: 12
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 5
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -706,7 +702,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 33
-  m_textAlignment: 516
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
