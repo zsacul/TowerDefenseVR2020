@@ -114,7 +114,6 @@ public class HandDeployer : MonoBehaviour
             {
                 GOArray Cprop = new GOArray();
                 Cprop.Prefab = Prop.Prefab;
-                Cprop.Prefab.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
                 PropList.Add(Cprop);
             }
         }
@@ -122,6 +121,11 @@ public class HandDeployer : MonoBehaviour
         foreach(GOArray Prop in PropList)
         {
             Prop.Instance = Instantiate(Prop.Prefab, transform); // create a new prop.
+            if (transform.name == "LeftControllerAlias")
+            {
+                Prop.Instance.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
+            }
+
             CallInit(Prop.Instance); // initialize the object
             CallKill(Prop.Instance); // remove the initialized object
         }
