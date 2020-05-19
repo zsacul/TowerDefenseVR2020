@@ -734,8 +734,8 @@ GameObject:
   - component: {fileID: 7545244780255571342}
   - component: {fileID: 7545244780255571343}
   - component: {fileID: 6950752448016611955}
-  - component: {fileID: 2003830546974788123}
   - component: {fileID: 6541229789500468976}
+  - component: {fileID: 7348605679719110059}
   m_Layer: 5
   m_Name: StatsUpgradeCanvas
   m_TagString: Untagged
@@ -844,18 +844,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.69818115, y: 0.9269409, z: 0.1058462}
   m_Center: {x: -0.0014953613, y: -0.0014648438, z: -0.0056055337}
---- !u!114 &2003830546974788123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7545244780255571568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764694fe1418a418bb9cd573d9af42eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6541229789500468976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,6 +859,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0}
   m_EffectDistance: {x: 0.015, y: 0.015}
   m_UseGraphicAlpha: 1
+--- !u!114 &7348605679719110059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545244780255571568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d6aa694de67994ab2eecd4111b5171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7545244780328428630
 GameObject:
   m_ObjectHideFlags: 0

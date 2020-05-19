@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048509839373268599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.55, z: 0}
+  m_LocalPosition: {x: 0, y: 9.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6024438981548385120}
@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: -432892557580538875}
   - component: {fileID: -7783904139491376548}
   - component: {fileID: -4014356300577690032}
+  - component: {fileID: 4339706476368668985}
   m_Layer: 0
   m_Name: BaseTower
   m_TagString: Bullet
@@ -161,6 +162,7 @@ Transform:
   - {fileID: 1502534963940204738}
   - {fileID: 8919388893202954785}
   - {fileID: 9174352638960446795}
+  - {fileID: 4515279745043417872}
   - {fileID: 5379975108013934159}
   - {fileID: 6234348169060830629}
   m_Father: {fileID: 0}
@@ -340,6 +342,11 @@ MonoBehaviour:
       m_Calls: []
 --- !u!114 &-4014356300577690032
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331933368153788787}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdfc150f288ac5646bbf6aa66a9ab177, type: 3}
@@ -389,7 +396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6024438981548385120}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8113593343124966911
 MonoBehaviour:

@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5935108937333300218}
   - component: {fileID: -4392588854937974633}
-  - component: {fileID: -7349895582748212020}
+  - component: {fileID: 810207095642382040}
   m_Layer: 0
   m_Name: ChunkKonrad
   m_TagString: Chunk
@@ -97,7 +97,7 @@ MonoBehaviour:
   y: 0
   owner: {fileID: 0}
   choice: 0
---- !u!114 &-7349895582748212020
+--- !u!114 &810207095642382040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,8 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc3fdac4840d84cbf0b43be26a533e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
-  canBuild: {fileID: 8141420140228828782, guid: 21112940b47faba41a28bd87557b237b,
+  listenedEvent: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8, type: 2}
+  canBuildTower: {fileID: 8642073982787748024, guid: ac84d6fe3693af94aa5a6cc7856f0c95,
     type: 3}
-  cantBuild: {fileID: 8512583784603318439, guid: 72eca0aa797bb0045bb6cfb83afd2cdf,
+  cantBuildTower: {fileID: 4319897612890846190, guid: e2db905986b69b54dabc7207bc5fdb60,
+    type: 3}
+  canBuildObstacle: {fileID: 8892720345105553019, guid: b9c7c9e8b1ababb4895e424266dbf167,
+    type: 3}
+  cantBuildObstacle: {fileID: 5148760106822035723, guid: f6daac58c920ab644ba90bfb0dc1cb31,
     type: 3}

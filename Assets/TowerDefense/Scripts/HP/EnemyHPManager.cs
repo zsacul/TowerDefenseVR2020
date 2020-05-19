@@ -37,7 +37,6 @@ public class EnemyHPManager : MonoBehaviour {
     }
 
     private void Death() {
-        GameObject.Find("GameManager").GetComponent<BuildManager>().AddMoney(moneyDropped);
         killed.Invoke();
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);
@@ -73,6 +72,7 @@ public class EnemyHPManager : MonoBehaviour {
         b.SetReadyToDestroy();
 
         if (enemyHP <= 0 ) {
+            BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
     }
@@ -100,6 +100,7 @@ public class EnemyHPManager : MonoBehaviour {
         GetComponent<HealthBar>().updateBar(enemyHP);
         if (enemyHP <= 0)
         {
+            BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
     }

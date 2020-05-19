@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5480932336012705644}
+  - component: {fileID: 2891297076886407848}
+  - component: {fileID: 8859960721132201728}
   m_Layer: 0
   m_Name: TreeChunk
   m_TagString: Untagged
@@ -32,6 +34,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2891297076886407848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900989527748577865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8328547, y: 3.7950106, z: 2.4662397}
+  m_Center: {x: -0.0294559, y: 3.6662726, z: 0.060438514}
+--- !u!65 &8859960721132201728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900989527748577865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7941509, y: 1.7382202, z: 0.8828493}
+  m_Center: {x: 0.028195351, y: 0.8691101, z: -0.022836655}
 --- !u!1001 &6384541465644104476
 PrefabInstance:
   m_ObjectHideFlags: 0
