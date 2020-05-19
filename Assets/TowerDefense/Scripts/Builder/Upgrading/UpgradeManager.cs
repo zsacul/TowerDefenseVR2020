@@ -55,12 +55,12 @@ public class UpgradeManager : MonoBehaviour
 
         DisableUpgradeCanvases();
 
-        windCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z + 1.05f);
-        fireCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z - 1.05f);
+        windCanvas.transform.position = new Vector3(pos.position.x, 8.65f, pos.position.z + 1.05f);
+        fireCanvas.transform.position = new Vector3(pos.position.x, 8.65f, pos.position.z - 1.05f);
         fireCanvas.transform.Rotate(new Vector3(0, 180, 0));
-        iceCanvas.transform.position = new Vector3(pos.position.x - 1.05f, 8.4f, pos.position.z);
+        iceCanvas.transform.position = new Vector3(pos.position.x - 1.05f, 8.65f, pos.position.z);
         iceCanvas.transform.Rotate(new Vector3(0, 270, 0));
-        electricCanvas.transform.position = new Vector3(pos.position.x + 1.05f, 8.4f, pos.position.z);
+        electricCanvas.transform.position = new Vector3(pos.position.x + 1.05f, 8.65f, pos.position.z);
         electricCanvas.transform.Rotate(new Vector3(0, 90, 0));
 
         buttonInstance = Instantiate(buttonPrefab);
@@ -78,6 +78,7 @@ public class UpgradeManager : MonoBehaviour
             {
                 EnableUpgradeCanvases();
                 SetUpgradeCosts();
+                buildManager.ChooseNone();
                 NoneSelected();
             }
 
