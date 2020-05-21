@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5394547650234467978}
   - component: {fileID: 1864984935449705075}
   - component: {fileID: 4679936168016163227}
-  - component: {fileID: 7647352093603078469}
   - component: {fileID: 6460439232612842660}
+  - component: {fileID: 7905515472731657872}
+  - component: {fileID: 3825298057764726076}
   m_Layer: 0
   m_Name: BaseTile2
   m_TagString: Untagged
@@ -98,19 +99,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 1, z: 0}
   m_TimeToStationary: 0.5
---- !u!65 &7647352093603078469
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134289842002267823}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.1326768, z: 2}
-  m_Center: {x: 0, y: 0.0067137256, z: 0}
 --- !u!114 &6460439232612842660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +129,30 @@ MonoBehaviour:
   - {x: 0.6, y: 0.7}
   - {x: 0.7, y: 0.8}
   - {x: 0.8, y: 0.9}
+--- !u!64 &7905515472731657872
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134289842002267823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 08d632c2281f46841b616d885167d041, type: 3}
+--- !u!65 &3825298057764726076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134289842002267823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.04197508, z: 2}
+  m_Center: {x: 0, y: 0.08711269, z: 0}

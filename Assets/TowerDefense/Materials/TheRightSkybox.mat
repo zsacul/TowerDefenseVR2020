@@ -49,14 +49,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
+<<<<<<< Updated upstream
     - _AtmosphereThickness: 1.0458469
+=======
+    - _AtmosphereThickness: 0.22569154
+>>>>>>> Stashed changes
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+<<<<<<< Updated upstream
     - _Exposure: 1.6560208
+=======
+    - _Exposure: 1.0432159
+>>>>>>> Stashed changes
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -79,7 +87,11 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.078431375, g: 0.34901962, b: 0.47058827, a: 1}
+<<<<<<< Updated upstream
     - _SkyTint: {r: 0.52787864, g: 0.78221035, b: 0.8680304, a: 1}
+=======
+    - _SkyTint: {r: 0.4878075, g: 0.4878075, b: 0.8780482, a: 1}
+>>>>>>> Stashed changes
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &4322874042107859638
 MonoBehaviour:

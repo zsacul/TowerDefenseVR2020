@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645211645844678258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1818752, y: 2.3495293, z: -12.873218}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5935108937333300218}
@@ -53,8 +53,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5935108937333300218}
   - component: {fileID: -4392588854937974633}
+<<<<<<< Updated upstream
   - component: {fileID: -7349895582748212020}
   m_Layer: 0
+=======
+  - component: {fileID: 810207095642382040}
+  m_Layer: 2
+>>>>>>> Stashed changes
   m_Name: ChunkKonrad
   m_TagString: Chunk
   m_Icon: {fileID: 0}

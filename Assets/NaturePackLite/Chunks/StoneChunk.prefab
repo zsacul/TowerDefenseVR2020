@@ -47,8 +47,13 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
+=======
+  m_Size: {x: 2.065781, y: 2, z: 2.0880663}
+  m_Center: {x: -0.032890797, y: 1, z: -0.04403326}
+>>>>>>> Stashed changes
 --- !u!1001 &761130457918987931
 PrefabInstance:
   m_ObjectHideFlags: 0

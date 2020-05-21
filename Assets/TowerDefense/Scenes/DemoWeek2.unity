@@ -5143,6 +5143,11 @@ PrefabInstance:
       propertyPath: physicsCast
       value: 
       objectReference: {fileID: 1915887373}
+    - target: {fileID: 8391352710448912418, guid: c69d84a3cadb94e45af0210c52e5728d,
+        type: 3}
+      propertyPath: maximumLength.x
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69d84a3cadb94e45af0210c52e5728d, type: 3}
 --- !u!4 &176654562 stripped

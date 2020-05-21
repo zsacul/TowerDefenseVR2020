@@ -8,8 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 902101855812591677}
   m_Layer: 0
+=======
+  - component: {fileID: 533987133725664484}
+  m_Layer: 2
+>>>>>>> Stashed changes
   m_Name: string
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,9 +44,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 5178008832780149190}
   m_Layer: 0
   m_Name: Bone.022
+=======
+  - component: {fileID: 1720989581123004971}
+  m_Layer: 2
+  m_Name: Bone_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,8 +112,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2563989346081555568}
   m_Layer: 0
+=======
+  - component: {fileID: 2916340357075894441}
+  m_Layer: 2
+>>>>>>> Stashed changes
   m_Name: right_ik.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,9 +148,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 3419834640404829273}
   m_Layer: 0
   m_Name: Bone.029
+=======
+  - component: {fileID: 1608454348202202574}
+  m_Layer: 2
+  m_Name: Crossbow
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,9 +216,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 3875906921494380920}
   m_Layer: 0
   m_Name: Bone.030
+=======
+  - component: {fileID: 4338887540750008779}
+  m_Layer: 2
+  m_Name: bow2.L
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,9 +253,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2022076943709171442}
   m_Layer: 0
   m_Name: Bone_end
+=======
+  - component: {fileID: 3686699459277644321}
+  m_Layer: 2
+  m_Name: left_limit_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,9 +289,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2404064442911970252}
   m_Layer: 0
   m_Name: Bone.039_end
+=======
+  - component: {fileID: 1244998175175990935}
+  m_Layer: 2
+  m_Name: bow1.R
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,9 +325,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2062656497550988829}
   m_Layer: 0
   m_Name: Bone.021
+=======
+  - component: {fileID: 257988096849184916}
+  m_Layer: 2
+  m_Name: right_limit
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,9 +362,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1921609453080746574}
   m_Layer: 0
   m_Name: bow1.R
+=======
+  - component: {fileID: 4268318458508096764}
+  m_Layer: 2
+  m_Name: Bone
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,9 +399,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4090459248740837112}
   m_Layer: 0
   m_Name: left_limit_end
+=======
+  - component: {fileID: 6811489454270470481}
+  - component: {fileID: 3816865327563312172}
+  m_Layer: 2
+  m_Name: Crossbow
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,9 +467,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1634238798232284893}
   m_Layer: 0
   m_Name: Bone.026
+=======
+  - component: {fileID: 3863961588127160904}
+  m_Layer: 2
+  m_Name: right_ik_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,9 +504,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 610656032385879117}
   m_Layer: 0
   m_Name: right_limit
+=======
+  - component: {fileID: 1282266107190752112}
+  m_Layer: 2
+  m_Name: string_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,9 +541,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2859897722879745108}
   m_Layer: 0
   m_Name: Bone.034
+=======
+  - component: {fileID: 9140781898880614976}
+  m_Layer: 2
+  m_Name: armature
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,9 +578,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4024847634818860306}
   m_Layer: 0
   m_Name: bow2.L
+=======
+  - component: {fileID: 178292963567968373}
+  m_Layer: 2
+  m_Name: right_ik.001
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,9 +615,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2143592573400289559}
   m_Layer: 0
   m_Name: Crossbow
+=======
+  - component: {fileID: 8933042700461356433}
+  m_Layer: 2
+  m_Name: bow4.L_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,6 +653,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 690350515013117100}
   m_Layer: 0
   m_Name: right_ik.001
@@ -598,6 +688,11 @@ GameObject:
   - component: {fileID: 8446331873829799577}
   m_Layer: 0
   m_Name: armature
+=======
+  - component: {fileID: 1217538314036128530}
+  m_Layer: 2
+  m_Name: bow2.R
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,9 +721,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1884321693037918121}
   m_Layer: 0
   m_Name: string_end
+=======
+  - component: {fileID: 7024422968740451135}
+  m_Layer: 2
+  m_Name: bow4.R_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,9 +757,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 7680381029808887782}
   m_Layer: 0
   m_Name: bow4.R_end
+=======
+  - component: {fileID: 2069922748744841103}
+  m_Layer: 2
+  m_Name: left_limit
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -686,9 +793,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 675314975486066706}
   m_Layer: 0
   m_Name: Bone.032_end
+=======
+  - component: {fileID: 2451991373861067474}
+  m_Layer: 2
+  m_Name: Bone.001_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,9 +829,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1947914620542644171}
   m_Layer: 0
   m_Name: bow2.R
+=======
+  - component: {fileID: 398298270944733113}
+  m_Layer: 2
+  m_Name: bow3.L
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,9 +866,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 8076495243632177480}
   m_Layer: 0
   m_Name: bow4.L_end
+=======
+  - component: {fileID: 6375059941750775699}
+  m_Layer: 2
+  m_Name: bow3.R
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,9 +902,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4303508099724765532}
   m_Layer: 0
   m_Name: Bone.028_end
+=======
+  - component: {fileID: 5634221710177827320}
+  m_Layer: 2
+  m_Name: bow1.L
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,9 +938,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4393248255203887577}
   m_Layer: 0
   m_Name: Bone.038
+=======
+  - component: {fileID: 3608082781770801858}
+  m_Layer: 2
+  m_Name: right_ik
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,9 +975,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1560003243407388147}
   m_Layer: 0
   m_Name: Bone.032
+=======
+  - component: {fileID: 2595725528482533450}
+  m_Layer: 2
+  m_Name: main
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,9 +1012,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4499797740181790353}
   m_Layer: 0
   m_Name: right_ik_end
+=======
+  - component: {fileID: 4881282040358127729}
+  m_Layer: 2
+  m_Name: bow4.R
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,9 +1048,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 3619037280047740674}
   m_Layer: 0
   m_Name: Bone.033
+=======
+  - component: {fileID: 3474862494687162130}
+  m_Layer: 2
+  m_Name: bow4.L
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -930,9 +1085,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 4969329778457113633}
   m_Layer: 0
   m_Name: Bone.024_end
+=======
+  - component: {fileID: 8292585014367445731}
+  m_Layer: 2
+  m_Name: right_limit_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,9 +1121,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1038915933452034912}
   m_Layer: 0
   m_Name: bow3.L
+=======
+  - component: {fileID: 6487509304335296915}
+  m_Layer: 2
+  m_Name: Bone.001
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -991,9 +1158,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2981418856507741986}
   m_Layer: 0
   m_Name: Bone.027
+=======
+  - component: {fileID: 4208563366711278819}
+  m_Layer: 2
+  m_Name: left_ik_end
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,9 +1195,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 7309767064169029549}
   m_Layer: 0
   m_Name: Bone.023
+=======
+  - component: {fileID: 6544059210428238111}
+  m_Layer: 2
+  m_Name: left_ik
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
