@@ -36,7 +36,7 @@ public class BulletNoTarget : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.BroadcastMessage("ApplyDamage", this);
+            collision.gameObject.BroadcastMessage("ApplyDamage", damage);
         }
         else if (collision.gameObject.tag != "Bullet")
             readyToDestroy = true;

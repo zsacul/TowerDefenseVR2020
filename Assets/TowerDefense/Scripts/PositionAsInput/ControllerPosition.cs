@@ -86,4 +86,16 @@ public class ControllerPosition : MonoBehaviour
         int yI = (int)(y / yDelta);
         return new Vector2Int(xI, yI);
     }
+    public void StartMove()
+    {
+        Vector3 relPos = head.InverseTransformPoint(controller.position);
+        float xMin = offset.x;
+        float xMax = offset.x + areaSize.x;
+        float yMin = offset.y;
+        float yMax = offset.y + areaSize.y;
+        float xDelta = (xMax - xMin) / resolution.x;
+        float yDelta = (yMax - yMin) / resolution.y;
+        offset.x = relPos.x - xDelta / 2;
+        offset.y = relPos.y - yDelta / 2;
+    }
 }

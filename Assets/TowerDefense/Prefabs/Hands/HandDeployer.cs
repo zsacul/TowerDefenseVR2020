@@ -20,9 +20,14 @@ public class HandDeployer : MonoBehaviour
     public string HandDeployerName;
     public int listIterator;
 
+    public GameObject RightInteractor;
+
+    private Vector3 speed; // I AM SPEED
+    private Vector3 lastPosition;
+
     private void CallKill(GameObject target)
     {
-        target.GetComponent<PropManager>().Remove();
+        target.GetComponent<PropManager>().Remove(speed);
     }
 
     private void CallWakeup(GameObject target)
@@ -30,9 +35,23 @@ public class HandDeployer : MonoBehaviour
         target.GetComponent<PropManager>().Respawn();
     }
 
+    private void CallWakeup(GameObject target, GameObject Motivator)
+    {
+        target.GetComponent<PropManager>().Respawn(Motivator);
+    }
+
+
     private void CallInit(GameObject target)
     {
         target.GetComponent<PropManager>().Initialize();
+    }
+
+    public void DeployNth(int Nth, GameObject Motivator)
+    {
+        //Debug.Log($"Call To deploy nth {Nth}");
+        CallKill(PropList[listIterator].Instance);
+        CallWakeup(PropList[Nth].Instance, Motivator);
+        listIterator = Nth;
     }
 
     public void DeployNth(int Nth)
@@ -42,6 +61,7 @@ public class HandDeployer : MonoBehaviour
         CallWakeup(PropList[Nth].Instance);
         listIterator = Nth;
     }
+
 
     public void DeployNext()
     {
@@ -70,7 +90,7 @@ public class HandDeployer : MonoBehaviour
                 if (LocatedNearby[i].gameObject.layer == 20)
                 {
                     Debug.Log($"{LocatedNearby[i].name} :-propid-> {LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID}");
-                    DeployNth(LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID);
+                    DeployNth(LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID, LocatedNearby[i].gameObject);
                     break;
                 }
             i++;
@@ -85,9 +105,27 @@ public class HandDeployer : MonoBehaviour
 
     void Start()
     {
+        if (transform.name == "LeftControllerAlias") // we are the follower propmanager.
+        {
+            PropList = new List<GOArray>(); // yeet everything
+
+            /* steal all the props from the other interactor */
+            foreach(GOArray Prop in RightInteractor.GetComponent<HandDeployer>().PropList)
+            {
+                GOArray Cprop = new GOArray();
+                Cprop.Prefab = Prop.Prefab;
+                PropList.Add(Cprop);
+            }
+        }
+
         foreach(GOArray Prop in PropList)
         {
             Prop.Instance = Instantiate(Prop.Prefab, transform); // create a new prop.
+            if (transform.name == "LeftControllerAlias")
+            {
+                Prop.Instance.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
+            }
+
             CallInit(Prop.Instance); // initialize the object
             CallKill(Prop.Instance); // remove the initialized object
         }
@@ -98,8 +136,9 @@ public class HandDeployer : MonoBehaviour
     }
 
 // Update is called once per frame
-void Update()
+    void Update()
     {
-        
+        speed = (lastPosition - transform.position) * -100.0f;
+        lastPosition = transform.position;
     }
 }

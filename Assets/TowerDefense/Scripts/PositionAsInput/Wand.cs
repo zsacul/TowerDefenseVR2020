@@ -13,12 +13,12 @@ public class Wand : MonoBehaviour
     public UnityEvent onStartCast; 
     public UnityEvent onCastSucces; 
     public UnityEvent onCastFailure;
-
+    private ControllerPosition instance;
     private bool casting;
-
+    IChargable current;
     private void Start()
     {
-        ControllerPosition instance = ControllerPosition.Instance(false);
+        instance = ControllerPosition.Instance(false);
         instance.inputChanged.AddListener(InputPosChanged);
         instance.inFrontEnter.AddListener(InFrontEnter);
         instance.inFrontExit.AddListener(InFrontExit);
@@ -67,28 +67,39 @@ public class Wand : MonoBehaviour
     }
     private void CastStart()
     {
+        instance.StartMove();
         currentPath.Clear();
+        currentPath.Add(Vector2Int.zero);
         onStartCast.Invoke();
         casting = true;
     }
     private void CastUpdate(Vector2Int pos)
     {
-        currentPath.Add(pos - startPos);
-    }
-    private void CastEnd()
-    {
-        casting = false;
+        if (current != null) return;
+        currentPath.Add(pos);
         Vector2Int[] sequence = currentPath.ToArray();
-        for(int i = 0; i < spells.Length; i++)
+        for (int i = 0; i < spells.Length; i++)
         {
-            if(SequenceMatch(spells[i].castSequence, sequence))
+            if (SequenceMatch(spells[i].castSequence, sequence))
             {
-                spells[i].Cast(transform.position, transform.rotation, charge);
+                current = spells[i].Cast(transform.position, transform.rotation, charge, transform);
                 onCastSucces.Invoke();
                 return;
             }
         }
-        onCastFailure.Invoke();
+    }
+    private void CastEnd()
+    {
+        casting = false;
+        if(current != null)
+        {
+            current.Release();
+            current = null;
+        }
+        else
+        {
+            onCastFailure.Invoke();
+        }
     }
     private bool SequenceMatch(Vector2Int[] template, Vector2Int[] sequence)
     {

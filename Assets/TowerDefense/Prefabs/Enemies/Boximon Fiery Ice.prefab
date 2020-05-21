@@ -1222,10 +1222,10 @@ GameObject:
   - component: {fileID: 7386925890183369894}
   - component: {fileID: 7529174740701081662}
   - component: {fileID: -4370417999278139622}
-  - component: {fileID: 7041665519999742397}
   - component: {fileID: 6436567307307692921}
   - component: {fileID: 676954444534060575}
   - component: {fileID: 5354499450771162016}
+  - component: {fileID: -6986994034469752413}
   m_Layer: 11
   m_Name: Boximon Fiery Ice
   m_TagString: Enemy
@@ -1380,6 +1380,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   enemyHP: 50
+  moneyDropped: 10
   elementsInfo: {fileID: 0}
   targetPoint: {fileID: 855572341449850307}
   type: 2
@@ -1464,26 +1465,13 @@ Rigidbody:
   m_GameObject: {fileID: 5927812008672363391}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
+  m_Drag: 15
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &7041665519999742397
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5927812008672363391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.62, y: 1.05, z: 0.6}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &6436567307307692921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,6 +1522,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clipToPlay: {fileID: 8300000, guid: 2c3c433e1eea4d64eb598c23768659d1, type: 3}
   mixer: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
+--- !u!136 &-6986994034469752413
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927812008672363391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.38755745
+  m_Height: 1.2542181
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.60621166, z: -0.014666438}
 --- !u!1 &5928719865996939963
 GameObject:
   m_ObjectHideFlags: 0

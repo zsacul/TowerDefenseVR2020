@@ -19,6 +19,7 @@ public class EnemyHPManager : MonoBehaviour {
     public UnityEvent killed;
     [Min(1f)]
     public float enemyHP = 100f;
+    public int moneyDropped = 0;
 
     [SerializeField]
     Elements elementsInfo;
@@ -71,10 +72,38 @@ public class EnemyHPManager : MonoBehaviour {
         b.SetReadyToDestroy();
 
         if (enemyHP <= 0 ) {
+            BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
     }
+    public void ApplyDamage(DamageData data)
+    {
+        damaged.Invoke();
+        Resistance res = elementsInfo.GetResistence(type, data.element);
 
+        switch (res)
+        {
+            case Resistance.high:
+                enemyHP -= data.damage * 0.7f;
+                break;
+            case Resistance.normal:
+                enemyHP -= data.damage;
+                activateSpecialEffect(data.specialEffect, (int)data.specialEffectDmgPerSec, data.specialEffectDurationInSec);
+                break;
+            case Resistance.low:
+                enemyHP -= data.damage * 1.5f;
+                activateSpecialEffect(data.specialEffect, (int)(data.specialEffectDmgPerSec * 1.5f), data.specialEffectDurationInSec * 1.5f);
+                break;
+            default:
+                break;
+        };
+        GetComponent<HealthBar>().updateBar(enemyHP);
+        if (enemyHP <= 0)
+        {
+            BuildManager.Instance.AddMoney(moneyDropped);
+            Death();
+        }
+    }
     public void ApplyDamage(float damage)
     {
         damaged.Invoke();

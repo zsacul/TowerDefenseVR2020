@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3615605521595646798}
   - component: {fileID: 6117520307386874767}
   - component: {fileID: 7479994818518242348}
-  - component: {fileID: 4403111544405741448}
+  - component: {fileID: 5258775160550824849}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,12 +89,12 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8062622822930044955}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4403111544405741448
+--- !u!114 &5258775160550824849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,9 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8062622822930044955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844599c966ade90488f29e72adc9d010, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bdeb3035460a7845ba9adfe277b84a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 0
+  speed: -50
+  damage: 10
   type: 0

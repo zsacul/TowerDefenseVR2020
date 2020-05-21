@@ -3,7 +3,17 @@ guid: 23ecd97ff752d3e498c7be7cc8edf0e9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fireCanvasPrefab: {fileID: 8344855314892190429, guid: 98fb6015962862141b0710d53ba632a0,
+      type: 3}
+  - iceCanvasPrefab: {fileID: 8309758085442543269, guid: 6ef6cbe1e3129454e86201238feb7622,
+      type: 3}
+  - windCanvasPrefab: {fileID: 2534852967039529688, guid: ff8a29f8829f9ff4f98b065b72e6b33b,
+      type: 3}
+  - electricCanvasPrefab: {fileID: 7413660572395438324, guid: 66f9bf8455f22c74e9c73f2b840d0aee,
+      type: 3}
+  - buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

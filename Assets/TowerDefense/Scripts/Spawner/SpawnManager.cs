@@ -22,10 +22,12 @@ namespace SpawnManaging
         [SerializeField]
         float breakLength;
         int spawnedInGroup;
+        int spawnMagicNumber;
         public bool breakOn;
         // Update is called once per frame
         void Start()
         {
+            spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
         }
@@ -49,6 +51,7 @@ namespace SpawnManaging
                 }
                 else
                 {
+                    InitBreak();
                     Debug.Log("All waves cleared");//TODO
                 }
                 return;
@@ -81,7 +84,9 @@ namespace SpawnManaging
         }
         private void BreakCheck()
         {
-            if(spawnPoints[0].childCount == 1)
+            Debug.Log(spawnMagicNumber);
+            Debug.Log(spawnPoints[0].childCount);
+            if (spawnPoints[0].childCount == spawnMagicNumber)
             {
                 CancelInvoke("BreakCheck");
                 StartBreak();

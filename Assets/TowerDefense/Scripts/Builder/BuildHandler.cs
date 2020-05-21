@@ -5,14 +5,20 @@ using UnityEngine;
 public class BuildHandler : GameEventListener
 {
     [SerializeField]
-    private GameObject canBuild;
+    private GameObject canBuildTower;
     [SerializeField]
-    private GameObject cantBuild;
+    private GameObject cantBuildTower;
+    [SerializeField]
+    private GameObject canBuildObstacle;
+    [SerializeField]
+    private GameObject cantBuildObstacle;
+
     private BuildManager buildManager;
     private BoxCollider thisBoxCollider;
+    private bool buildButtonPressed;
 
     // Object that's being instantiated after player in Build Mode points to this chunk 
-    private GameObject buildAvailUI;
+    private GameObject showedBuilding;
     private GameObject rightController;
 
     // Checks if controller points to this chunk
@@ -25,6 +31,7 @@ public class BuildHandler : GameEventListener
 
     void Start()
     {
+        buildButtonPressed = false;
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         thisBoxCollider = gameObject.AddComponent<BoxCollider>();
         thisBoxCollider.size = new Vector3(2, 0.1326768f, 2);
@@ -34,18 +41,17 @@ public class BuildHandler : GameEventListener
         rightController = buildManager.rightController;
     }
 
+    // When selected building changes to ChunkType.None, we should call UpdateSelectedBuilding and HoverOff 
+    // in order to destroy currently displayed UI of selected building
     public override void OnEventRaised(Object data)
     {
-        thisBoxCollider.enabled = buildManager.BuildModeOn;
+        UpdateSelectedBuilding();
+        HoverOff();
     }
 
     void Update()
     {
-        // Switch on Chunk's collider if building mode is turned on. 
-       /* if (buildManager.UpdateModeCond())
-        {
-            thisBoxCollider.enabled = buildManager.BuildModeOn;
-        }*/
+        UpdateButtonState(false);
 
         if (pointedAt)
         {
@@ -57,6 +63,30 @@ public class BuildHandler : GameEventListener
                 HoverOn();
             }
             UpdatePointedAt();
+        }
+    }
+
+    void LateUpdate()
+    {
+        UpdateButtonState(true);
+    }
+
+    private void UpdateButtonState(bool isLateUpdate)
+    {
+        if (isLateUpdate)
+        {
+            buildButtonPressed = false;
+        }
+        else
+        {
+            if (buildManager.VRTKInputs)
+            {
+                buildButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
+            }
+            else
+            {
+                buildButtonPressed = Input.GetKeyDown(KeyCode.C);
+            }
         }
     }
 
@@ -81,9 +111,11 @@ public class BuildHandler : GameEventListener
         //If this chunk is still being pointed at and player presses Enter, we should build
         else
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            //if (Input.GetKeyDown(KeyCode.C))
+            if(buildButtonPressed)
             {
                 Build();
+                HoverOff();
             }
 
         }
@@ -135,17 +167,27 @@ public class BuildHandler : GameEventListener
         UpdateSelectedBuilding();
         if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding) && buildManager.Money >= sBuildingCost)
         {
-            buildAvailUI = Instantiate(canBuild, transform.position, transform.rotation);
+            if (selectedBuilding == ChunkType.tower)
+                showedBuilding = Instantiate(canBuildTower, transform.position, transform.rotation);
+            else
+                showedBuilding = Instantiate(canBuildObstacle, transform.position, transform.rotation);
+            
         }
         else
         {
-            buildAvailUI = Instantiate(cantBuild, transform.position, transform.rotation);
+            if (selectedBuilding == ChunkType.tower)
+                showedBuilding = Instantiate(cantBuildTower, transform.position, transform.rotation);
+            else
+                showedBuilding = Instantiate(cantBuildObstacle, transform.position, transform.rotation);
         } 
     }
 
     public void HoverOff()
     {
-        Destroy(buildAvailUI);
+        if (showedBuilding != null)
+        {
+            Destroy(showedBuilding);
+        }
         shouldCallHover = true;
     }
 }
