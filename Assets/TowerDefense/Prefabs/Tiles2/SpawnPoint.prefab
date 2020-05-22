@@ -101,6 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382114165172755893}
+  - component: {fileID: -4697068198486621011}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: PathChunk
@@ -125,6 +126,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4697068198486621011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785082080632154548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &924467024475440199
 PrefabInstance:
   m_ObjectHideFlags: 0

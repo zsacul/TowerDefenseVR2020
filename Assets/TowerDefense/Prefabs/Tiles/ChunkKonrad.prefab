@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 5935108937333300218}
   - component: {fileID: -4392588854937974633}
   - component: {fileID: 810207095642382040}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ChunkKonrad
   m_TagString: Chunk
   m_Icon: {fileID: 0}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6438176356391664277}
   - component: {fileID: 4668986269874622143}
+  - component: {fileID: 1023067980610486923}
   m_Layer: 0
   m_Name: Tree2Chunk
   m_TagString: Untagged
@@ -44,8 +45,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4.205492, z: 2}
-  m_Center: {x: 0, y: 2.102746, z: 0}
+  m_Size: {x: 2, y: 4.2111945, z: 2}
+  m_Center: {x: -0.01683259, y: 2.158264, z: 0.0004878044}
+--- !u!114 &1023067980610486923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697348858006280995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1449736527261567587
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4505307189518481917}
   - component: {fileID: 1356555193322158354}
+  - component: {fileID: 6143366890500817221}
   m_Layer: 0
   m_Name: TreeObstacleChunk
   m_TagString: Untagged
@@ -44,8 +45,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.6768556, z: 2}
-  m_Center: {x: 0, y: 1.3384278, z: 0}
+  m_Size: {x: 2.689716, y: 2.7642796, z: 2.4897435}
+  m_Center: {x: -0.16604197, y: 1.3821398, z: 0.01005733}
+--- !u!114 &6143366890500817221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051421574740293895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7064070986528383866
 PrefabInstance:
   m_ObjectHideFlags: 0
