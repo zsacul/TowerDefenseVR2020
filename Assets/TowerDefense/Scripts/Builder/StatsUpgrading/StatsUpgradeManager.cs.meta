@@ -6,6 +6,8 @@ MonoImporter:
   defaultReferences:
   - statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: 19fe512ea76208e439e548c3c761cc07,
       type: 3}
+  - buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

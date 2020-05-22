@@ -34,7 +34,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     [SerializeField]
     int[] upgradeCosts;
+    [SerializeField]
+    private GameObject buttonPrefab;
+    private GameObject buttonInstance;
     private int maxLevel;
+
 
     private Color neutralColor = new Color(0.15f, 0.15f, 0.15f, 1f);
     private Color upgradeColor = new Color(0f, 1f, 0.11f, 1f);
@@ -65,6 +69,18 @@ public class StatsUpgradeManager : MonoBehaviour
         HighlightPanel(currentLevelCanvas, Color.clear);
         UpdatePanels();
         DisablePanels();
+
+        buttonInstance = Instantiate(buttonPrefab);
+        SetButtonPosition(nextLevelCanvas);
+    }
+
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
+        Vector3 rot = new Vector3(270, 45, 0);
+        buttonInstance.SetActive(true);
+        buttonInstance.transform.SetParent(selectedCanvas.transform, false);
+        buttonInstance.transform.localPosition = new Vector3(0.704f, -0.102f, -0.102f);
+        buttonInstance.transform.localRotation = Quaternion.Euler(rot);
     }
 
     void Update()

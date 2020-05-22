@@ -223,8 +223,11 @@ public class UpgradeManager : MonoBehaviour
         Color highlightColor = (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost) ? Color.green : Color.red;
         HighlightPanel(selectedCanvas, highlightColor);
 
+        SetButtonPosition(selectedCanvas);
+    }
 
-        Vector3 buttonRot = new Vector3(90, 0, 0);
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
         buttonInstance.SetActive(true);
         buttonInstance.transform.SetParent(selectedCanvas.transform, false);
         buttonInstance.transform.localPosition = new Vector3(0.6f, 0.0f, 0.2f);
