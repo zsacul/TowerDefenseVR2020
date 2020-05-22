@@ -87,7 +87,7 @@ public class HandDeployer : MonoBehaviour
             int i = 0;
             while (i < LocatedNearby.Length)
             {
-                if (LocatedNearby[i].gameObject.layer == 20)
+                if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
                     Debug.Log($"{LocatedNearby[i].name} :-propid-> {LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID}");
                     DeployNth(LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID, LocatedNearby[i].gameObject);
