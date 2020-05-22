@@ -106,6 +106,8 @@
                 length = hitData.distance;
             }
 
+            if (hitData.collider != null)
+                Debug.Log("Kolizja z " + hitData.collider.name);
             // Use an offset to move the point back and up a bit to prevent the cast clipping at the collision point.
             return ray.GetPoint(length - AdjustmentOffset) + (Vector3.up * AdjustmentOffset);
         }

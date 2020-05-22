@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3734953889699785273}
   - component: {fileID: 6983308055493416640}
   - component: {fileID: 2955019291097512067}
-  - component: {fileID: 6503377019022295625}
+  - component: {fileID: 2566432402482326698}
+  - component: {fileID: 2554792717921679728}
   m_Layer: 0
   m_Name: EdgeTile2
   m_TagString: Untagged
@@ -97,8 +98,8 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 1, z: 0}
   m_TimeToStationary: 0.5
---- !u!65 &6503377019022295625
-BoxCollider:
+--- !u!64 &2566432402482326698
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,6 +108,19 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.1326768, z: 2}
-  m_Center: {x: 0, y: 0.0067137256, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: abf0a9d5fab5ffc4c9485e512b284bbe, type: 3}
+--- !u!114 &2554792717921679728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706979399290659356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

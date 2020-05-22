@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5591611701368879386}
   - component: {fileID: 5611654475242853614}
   - component: {fileID: 5603240997361276524}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Magazin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5586572272238108180}
   - component: {fileID: 5611864558027373626}
   - component: {fileID: 5604013648884493698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 5586669542927455748}
   - component: {fileID: 5611629764374903940}
   - component: {fileID: 5603184800287940576}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: M1911
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,9 +253,9 @@ GameObject:
   - component: {fileID: 3362456734702219572}
   - component: {fileID: 3362456734702219573}
   - component: {fileID: 4392041911391527945}
-  m_Layer: 20
+  m_Layer: 2
   m_Name: M1911Debree
-  m_TagString: Untagged
+  m_TagString: Grababble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 5586520022025925646}
   - component: {fileID: 5612505728430012094}
   - component: {fileID: 5603252086728062012}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 5591605505346820324}
   - component: {fileID: 5612038349808529674}
   - component: {fileID: 5603199826968235168}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5591681324399835174}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CINEMA_4D_Editor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
