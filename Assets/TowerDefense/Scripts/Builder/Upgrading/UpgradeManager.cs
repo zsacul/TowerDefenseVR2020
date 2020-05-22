@@ -30,6 +30,11 @@ public class UpgradeManager : MonoBehaviour
     private GameObject buttonInstance;
     private bool anyUpgradeSelected;
 
+    private GameEvent UpgradeSelected;
+    private GameEvent UpgradeSuccess;
+    private GameEvent UpgradeFailure;
+
+
     void Start()
     {
         panelButtonPressed = false;
@@ -131,9 +136,13 @@ public class UpgradeManager : MonoBehaviour
     {
         if (buildManager.GetMoney() >= upgradeCost)
         {
+            UpgradeSuccess.Raise();
             buildManager.DecreaseMoney(upgradeCost);
             thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
             SetUpgradeCosts();
+        } else
+        {
+            UpgradeFailure.Raise();
         }
     }
 
@@ -207,6 +216,7 @@ public class UpgradeManager : MonoBehaviour
     /// </summary>
     public void Selected(Canvas selectedCanvas)
     {
+        UpgradeSelected.Raise();
         anyUpgradeSelected = true;
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();

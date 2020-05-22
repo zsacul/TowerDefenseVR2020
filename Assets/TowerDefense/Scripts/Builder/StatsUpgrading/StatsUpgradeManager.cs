@@ -28,6 +28,10 @@ public class StatsUpgradeManager : MonoBehaviour
     private bool panelsActive;
     private bool canvasEnabled;
 
+    private GameEvent StatsUpgradeSelected;
+    private GameEvent StatsUpgradeSuccess;
+    private GameEvent StatsUpgradeFailure;
+
     [SerializeField]
     int[] upgradeCosts;
     private int maxLevel;
@@ -149,6 +153,7 @@ public class StatsUpgradeManager : MonoBehaviour
     {
         if ((currentLevel != maxLevel) && (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]))
         {
+            StatsUpgradeSuccess.Raise();
             buildManager.DecreaseMoney(upgradeCosts[nextLevelCostIndex]);
             currentLevel += 1;
             towerScript.UpgradeDelay();
@@ -160,6 +165,9 @@ public class StatsUpgradeManager : MonoBehaviour
                 UpdateStats();
             }
             NotSelected();
+        } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
+        {
+            StatsUpgradeFailure.Raise();
         }
         UpdatePanels();
     }
@@ -187,6 +195,7 @@ public class StatsUpgradeManager : MonoBehaviour
 
     public void Selected()
     {
+        StatsUpgradeSelected.Raise();
         nextLevelCanvas.GetComponent<TowerStatsUpgrade>().setSelectedTrue();
         Color highlightColor = (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         HighlightPanel(nextLevelCanvas, highlightColor);
