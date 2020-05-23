@@ -92,7 +92,7 @@
             }
 
             Ray ray = new Ray(Origin.transform.position, Origin.transform.forward);
-            bool hasCollided = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, length, ~(1<<14));//Physics.IgnoreRaycastLayer);
+            bool hasCollided = PhysicsCast.Raycast(null, ray, out RaycastHit hitData, length, LayerMask.GetMask("IgnoreTeleportRaycast"));//Physics.IgnoreRaycastLayer);
 
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
@@ -122,7 +122,7 @@
             Vector3 point = Vector3.zero;
             Ray ray = new Ray(downwardOrigin, Vector3.down);
 
-            bool downRayHit = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, MaximumLength.y, 0);// Physics.IgnoreRaycastLayer);
+            bool downRayHit = PhysicsCast.Raycast(null, ray, out RaycastHit hitData, MaximumLength.y, LayerMask.GetMask("IgnoreTeleportRaycast"));// Physics.IgnoreRaycastLayer);
 
             if (!downRayHit || (TargetHit?.collider != null && TargetHit.Value.collider != hitData.collider))
             {
@@ -160,7 +160,7 @@
 
                 Ray pointsRay = new Ray(currentPoint, nextPointDirection);
 
-                if (!PhysicsCast.Raycast(PhysicsCast, pointsRay, out RaycastHit pointsHitData, nextPointDistance, Physics.IgnoreRaycastLayer))
+                if (!PhysicsCast.Raycast(null, pointsRay, out RaycastHit pointsHitData, nextPointDistance, LayerMask.GetMask("IgnoreTeleportRaycast"))) //Physics.IgnoreRaycastLayer))
                 {
                     continue;
                 }
@@ -168,7 +168,7 @@
                 Vector3 collisionPoint = pointsRay.GetPoint(pointsHitData.distance);
                 Ray downwardRay = new Ray(collisionPoint + Vector3.up * 0.01f, Vector3.down);
 
-                if (!PhysicsCast.Raycast(PhysicsCast, downwardRay, out RaycastHit downwardHitData, float.PositiveInfinity, Physics.IgnoreRaycastLayer))
+                if (!PhysicsCast.Raycast(null, downwardRay, out RaycastHit downwardHitData, float.PositiveInfinity, LayerMask.GetMask("IgnoreTeleportRaycast")))//Physics.IgnoreRaycastLayer))
                 {
                     TargetHit = null;
                     continue;
