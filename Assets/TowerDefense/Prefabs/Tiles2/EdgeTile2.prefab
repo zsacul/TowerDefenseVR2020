@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2955019291097512067}
   - component: {fileID: 2566432402482326698}
   - component: {fileID: 2554792717921679728}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EdgeTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

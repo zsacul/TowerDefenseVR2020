@@ -31,6 +31,10 @@ public class BuildManager : MonoBehaviour
     private Text UIMoneyText;
     [SerializeField]
     public bool VRTKInputs;
+    [SerializeField]
+    private GameEvent towerSelected;
+    [SerializeField]
+    private GameEvent towerBuilt;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -167,9 +171,9 @@ public class BuildManager : MonoBehaviour
         if (buildModeOn && selectedBuilding != ChunkType.none)
         {
             RaycastHit hit;
-            Vector3 lastChunk = new Vector3(0, 0, 0);
+            Vector3 lastChunk = new Vector3(0, -99, 0);
             //If we point at something
-            if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000))
+            if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000, ~(1 << 15)))
             {
                 if (hit.collider.gameObject.tag == "Chunk" && hit.collider.gameObject.transform.position != lastChunk)
                 {
@@ -233,6 +237,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
+        towerSelected.Raise();
         selectedBuilding = ChunkType.tower;
         purchasePanelsActive = false;
         UpdateUI();
@@ -323,6 +328,10 @@ public class BuildManager : MonoBehaviour
     public void Success()
     {
         BuildingSuccess.Raise();
+        if(selectedBuilding == ChunkType.tower)
+        {
+            towerBuilt.Raise();
+        }
     }
 
     public void Failure()

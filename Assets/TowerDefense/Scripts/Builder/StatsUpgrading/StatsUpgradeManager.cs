@@ -28,9 +28,10 @@ public class StatsUpgradeManager : MonoBehaviour
     private bool panelsActive;
     private bool canvasEnabled;
 
-    private GameEvent LevelUpSelected;
+    //private GameEvent LevelUpSelected;
+    [SerializeField]
     private GameEvent LevelUpSuccess;
-    private GameEvent LevelUpFailure;
+    //private GameEvent LevelUpFailure;
 
     [SerializeField]
     int[] upgradeCosts;
@@ -93,7 +94,8 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            if (buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.JoystickButton1) ||
+                (!buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.X)))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)
@@ -183,7 +185,7 @@ public class StatsUpgradeManager : MonoBehaviour
             NotSelected();
         } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]))
         {
-            LevelUpFailure.Raise();
+            //LevelUpFailure.Raise();
         }
 
         UpdatePanels();
@@ -212,7 +214,7 @@ public class StatsUpgradeManager : MonoBehaviour
 
     public void Selected()
     {
-        LevelUpSelected.Raise();
+        //LevelUpSelected.Raise();
         nextLevelCanvas.GetComponent<TowerStatsUpgrade>().setSelectedTrue();
         Color highlightColor = (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         HighlightPanel(nextLevelCanvas, highlightColor);
@@ -226,6 +228,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void DisablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(false);
+        }
         canvasEnabled = false;
         currentLevelCanvas.enabled = false;
         nextLevelCanvas.enabled = false;
@@ -235,6 +242,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void EnablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(true);
+        }
         UpdatePanels();
         canvasEnabled = true;
         currentLevelCanvas.enabled = true;

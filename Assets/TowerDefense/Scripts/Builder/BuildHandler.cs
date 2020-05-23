@@ -94,7 +94,7 @@ public class BuildHandler : GameEventListener
     {
         RaycastHit hit;
         //Checking if the controller still points at this chunk 
-        if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000))
+        if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000, ~(1 << 15)))
         {
             pointedAt = (hit.collider.gameObject.transform.position == transform.position);
         }

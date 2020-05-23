@@ -19,9 +19,7 @@ public class ButtonHandler : MonoBehaviour
         if(other.gameObject.tag == "HandCollider" && !pushed)
         {
             pushed = true;
-            Debug.Log("Before calling Upgrade()");
             StartCoroutine(Upgrade());
-            Debug.Log("After calling Upgrade()");
             transform.localPosition += new Vector3(0f, -0.1f, 0f);
         }
     }
