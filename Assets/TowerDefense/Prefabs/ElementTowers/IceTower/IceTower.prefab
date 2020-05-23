@@ -357,6 +357,7 @@ MonoBehaviour:
   statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: 19fe512ea76208e439e548c3c761cc07,
     type: 3}
   LevelUpSuccess: {fileID: 11400000, guid: b49714b34b43e46468ce2bd708927c4b, type: 2}
+  LevelUpFailure: {fileID: 11400000, guid: 627f7cebd156b443b832f4dc94f5dd44, type: 2}
   upgradeCosts: 320000006400000096000000
   buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
     type: 3}
