@@ -92,7 +92,7 @@
             }
 
             Ray ray = new Ray(Origin.transform.position, Origin.transform.forward);
-            bool hasCollided = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, length, Physics.IgnoreRaycastLayer);
+            bool hasCollided = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, length, ~(1<<14));//Physics.IgnoreRaycastLayer);
 
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
@@ -106,8 +106,8 @@
                 length = hitData.distance;
             }
 
-            if (hitData.collider != null)
-                Debug.Log("Kolizja z " + hitData.collider.name);
+            //if (hitData.collider != null)
+                //Debug.Log("Kolizja z " + hitData.collider.name);
             // Use an offset to move the point back and up a bit to prevent the cast clipping at the collision point.
             return ray.GetPoint(length - AdjustmentOffset) + (Vector3.up * AdjustmentOffset);
         }
@@ -122,7 +122,7 @@
             Vector3 point = Vector3.zero;
             Ray ray = new Ray(downwardOrigin, Vector3.down);
 
-            bool downRayHit = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, MaximumLength.y, Physics.IgnoreRaycastLayer);
+            bool downRayHit = PhysicsCast.Raycast(PhysicsCast, ray, out RaycastHit hitData, MaximumLength.y, 0);// Physics.IgnoreRaycastLayer);
 
             if (!downRayHit || (TargetHit?.collider != null && TargetHit.Value.collider != hitData.collider))
             {

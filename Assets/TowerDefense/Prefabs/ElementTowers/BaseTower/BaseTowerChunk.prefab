@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 475542652786856229}
   m_Layer: 0
   m_Name: BaseTowerChunk
-  m_TagString: Untagged
+  m_TagString: BaseTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
     type: 3}
   buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
     type: 3}
+  UpgradeSuccess: {fileID: 11400000, guid: de276a4972e11d94d80ff5b09d57a68d, type: 2}
 --- !u!1001 &720682051568437397
 PrefabInstance:
   m_ObjectHideFlags: 0

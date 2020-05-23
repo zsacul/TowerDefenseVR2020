@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoneyTextHandler : MonoBehaviour
+public class StaticTextHandler : MonoBehaviour
 {
-    public Text mon;
-    // Update is called once per frame
+    public Text text;
     void Update()
     {
         Vector3 monPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        mon.transform.position = monPos;
+        text.transform.position = monPos;
     }
 }

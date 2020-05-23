@@ -30,6 +30,11 @@ public class UpgradeManager : MonoBehaviour
     private GameObject buttonInstance;
     private bool anyUpgradeSelected;
 
+    //private GameEvent UpgradeSelected;
+    [SerializeField]
+    private GameEvent UpgradeSuccess;
+    //private GameEvent UpgradeFailure;
+
     void Start()
     {
         panelButtonPressed = false;
@@ -131,9 +136,14 @@ public class UpgradeManager : MonoBehaviour
     {
         if (buildManager.GetMoney() >= upgradeCost)
         {
+            UpgradeSuccess.Raise();
+            Debug.Log("UpgradeSuccess");
             buildManager.DecreaseMoney(upgradeCost);
             thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
             SetUpgradeCosts();
+        } else
+        {
+            //UpgradeFailure.Raise();
         }
     }
 
@@ -207,6 +217,7 @@ public class UpgradeManager : MonoBehaviour
     /// </summary>
     public void Selected(Canvas selectedCanvas)
     {
+        //UpgradeSelected.Raise();
         anyUpgradeSelected = true;
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
@@ -214,8 +225,11 @@ public class UpgradeManager : MonoBehaviour
         Color highlightColor = (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost) ? Color.green : Color.red;
         HighlightPanel(selectedCanvas, highlightColor);
 
+        SetButtonPosition(selectedCanvas);
+    }
 
-        Vector3 buttonRot = new Vector3(90, 0, 0);
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
         buttonInstance.SetActive(true);
         buttonInstance.transform.SetParent(selectedCanvas.transform, false);
         buttonInstance.transform.localPosition = new Vector3(0.6f, 0.0f, 0.2f);

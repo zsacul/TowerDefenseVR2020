@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8056416477086830779}
   - component: {fileID: 4583263339938269753}
   - component: {fileID: -3547394177082266330}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CornerPathTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

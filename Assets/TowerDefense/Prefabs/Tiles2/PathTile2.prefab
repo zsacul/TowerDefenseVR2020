@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1061162599329505350}
   - component: {fileID: 5311905661824075587}
   - component: {fileID: 7298777291736949457}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PathTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

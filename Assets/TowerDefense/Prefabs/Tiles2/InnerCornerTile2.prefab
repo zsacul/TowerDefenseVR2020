@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4260104654638381027}
   - component: {fileID: 1925698500444390365}
   - component: {fileID: 6042991449789221733}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: InnerCornerTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

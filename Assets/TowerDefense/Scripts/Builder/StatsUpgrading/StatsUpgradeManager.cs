@@ -28,9 +28,18 @@ public class StatsUpgradeManager : MonoBehaviour
     private bool panelsActive;
     private bool canvasEnabled;
 
+    //private GameEvent LevelUpSelected;
+    [SerializeField]
+    private GameEvent LevelUpSuccess;
+    //private GameEvent LevelUpFailure;
+
     [SerializeField]
     int[] upgradeCosts;
+    [SerializeField]
+    private GameObject buttonPrefab;
+    private GameObject buttonInstance;
     private int maxLevel;
+
 
     private Color neutralColor = new Color(0.15f, 0.15f, 0.15f, 1f);
     private Color upgradeColor = new Color(0f, 1f, 0.11f, 1f);
@@ -61,6 +70,18 @@ public class StatsUpgradeManager : MonoBehaviour
         HighlightPanel(currentLevelCanvas, Color.clear);
         UpdatePanels();
         DisablePanels();
+
+        buttonInstance = Instantiate(buttonPrefab);
+        SetButtonPosition(nextLevelCanvas);
+    }
+
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
+        Vector3 rot = new Vector3(270, 45, 0);
+        buttonInstance.SetActive(true);
+        buttonInstance.transform.SetParent(selectedCanvas.transform, false);
+        buttonInstance.transform.localPosition = new Vector3(0.704f, -0.102f, -0.102f);
+        buttonInstance.transform.localRotation = Quaternion.Euler(rot);
     }
 
     void Update()
@@ -73,7 +94,8 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            if (buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.JoystickButton1) ||
+                (!buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.X)))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)
@@ -149,6 +171,7 @@ public class StatsUpgradeManager : MonoBehaviour
     {
         if ((currentLevel != maxLevel) && (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]))
         {
+            LevelUpSuccess.Raise();
             buildManager.DecreaseMoney(upgradeCosts[nextLevelCostIndex]);
             currentLevel += 1;
             towerScript.UpgradeDelay();
@@ -160,7 +183,11 @@ public class StatsUpgradeManager : MonoBehaviour
                 UpdateStats();
             }
             NotSelected();
+        } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]))
+        {
+            //LevelUpFailure.Raise();
         }
+
         UpdatePanels();
     }
 
@@ -187,6 +214,7 @@ public class StatsUpgradeManager : MonoBehaviour
 
     public void Selected()
     {
+        //LevelUpSelected.Raise();
         nextLevelCanvas.GetComponent<TowerStatsUpgrade>().setSelectedTrue();
         Color highlightColor = (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         HighlightPanel(nextLevelCanvas, highlightColor);
@@ -200,6 +228,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void DisablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(false);
+        }
         canvasEnabled = false;
         currentLevelCanvas.enabled = false;
         nextLevelCanvas.enabled = false;
@@ -209,6 +242,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void EnablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(true);
+        }
         UpdatePanels();
         canvasEnabled = true;
         currentLevelCanvas.enabled = true;
