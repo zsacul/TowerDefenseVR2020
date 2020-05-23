@@ -88,8 +88,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281545523
-  m_fontColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
+    rgba: 4292203989
+  m_fontColor: {r: 0.8352941, g: 0.8352941, b: 0.8352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6468049, g: 0.7607843, b: 0.8039216, a: 1}
+  m_Color: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 5533857035196812105}
   - component: {fileID: 5533857035196812110}
   - component: {fileID: 6977970090277881325}
-  - component: {fileID: -6081821428136155175}
+  - component: {fileID: 587716927966855323}
   m_Layer: 5
   m_Name: 'TowerPurchaseCanvas '
   m_TagString: Untagged
@@ -360,7 +360,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6856079, y: 0.7051085, z: 0.017796218}
   m_Center: {x: 0.0022583008, y: 0.0064802766, z: 0.012141224}
---- !u!114 &-6081821428136155175
+--- !u!114 &587716927966855323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.64705884, g: 0.7607843, b: 0.8039216, a: 0.7882353}
+  m_Color: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 0.9490196}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
