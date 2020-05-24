@@ -48,7 +48,7 @@ public class InstructionsHandler : GameEventListener
     {
         if (!towerUpgradedBefore)
         {
-            instructions.text = "If you want, you can keep upgrading your tower even further.\nYou can also put some obstacles to modify enemies' path.\nIf you think you're ready, press right Y to start your first wave!";
+            instructions.text = "If you want, you can keep upgrading your tower even further.\nYou can also put some obstacles to modify enemies' path.\nIf you think you're ready, press right B to start your first wave!";
             towerUpgradedBefore = true;
         }
     }
