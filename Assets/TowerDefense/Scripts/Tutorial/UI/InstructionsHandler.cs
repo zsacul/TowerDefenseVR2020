@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class InstructionsHandler : GameEventListener
 {
@@ -9,6 +11,8 @@ public class InstructionsHandler : GameEventListener
     private bool panelOpenedBefore;
     private bool towerBuiltBefore;
     private bool towerUpgradedBefore;
+
+    public string sceneName;
 
     void Start()
     {
@@ -44,7 +48,7 @@ public class InstructionsHandler : GameEventListener
     {
         if (!towerUpgradedBefore)
         {
-            instructions.text = "If you want, you can keep upgrading your tower even further.\nYou can also put some obstacles to modify enemies' path.\nIf you think you're ready, press ... to start your first wave!";
+            instructions.text = "If you want, you can keep upgrading your tower even further.\nYou can also put some obstacles to modify enemies' path.\nIf you think you're ready, press right Y to start your first wave!";
             towerUpgradedBefore = true;
         }
     }
@@ -52,6 +56,13 @@ public class InstructionsHandler : GameEventListener
     public void EndOfWave()
     {
         instructions.text = "Congratulations, you have won!\n Now let's start the real challenge.";
+        StartCoroutine(endTutorial());
+    }
+
+    IEnumerator endTutorial()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(sceneName);
     }
 
 

@@ -145,7 +145,7 @@ public class UpgradeManager : MonoBehaviour
             SetUpgradeCosts();
         } else
         {
-            UpgradeFailure.Raise();
+            //UpgradeFailure.Raise();
         }
     }
 
@@ -219,7 +219,7 @@ public class UpgradeManager : MonoBehaviour
     /// </summary>
     public void Selected(Canvas selectedCanvas)
     {
-        UpgradeSelected.Raise();
+       // UpgradeSelected.Raise();
         anyUpgradeSelected = true;
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
