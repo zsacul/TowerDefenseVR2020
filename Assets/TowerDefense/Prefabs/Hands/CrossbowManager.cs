@@ -22,12 +22,22 @@ public class CrossbowManager : PropManager
         /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
     }
 
+    public GameObject projectile;
+    private void pewpew()
+    {
+        GameObject P = Instantiate(projectile, transform.position, transform.rotation);
+    }
+
     public override void PointEvent(float input)
     {
         if (input > 0.75)
         {
-            loaded = false;
-            Rest.SetActive(true);
+            if (control && loaded)
+            {
+                loaded = false;
+                Rest.SetActive(true);
+                pewpew();
+            }
         }
     }
 
