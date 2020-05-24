@@ -182,7 +182,7 @@ public class StatsUpgradeManager : MonoBehaviour
             NotSelected();
         } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
         {
-            //LevelUpFailure.Raise();
+            LevelUpFailure.Raise();
         }
 
         UpdatePanels();
