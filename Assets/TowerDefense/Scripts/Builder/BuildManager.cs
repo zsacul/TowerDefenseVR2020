@@ -35,6 +35,10 @@ public class BuildManager : MonoBehaviour
     private GameEvent towerSelected;
     [SerializeField]
     private GameEvent towerBuilt;
+    [SerializeField]
+    private GameEvent obstacleSelected;
+    [SerializeField]
+    private GameEvent obstacleBuilt;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -245,6 +249,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseObstacle()
     {
+        obstacleSelected.Raise();
         selectedBuilding = ChunkType.playerObstacle;
         purchasePanelsActive = false;
         UpdateUI();
@@ -331,6 +336,9 @@ public class BuildManager : MonoBehaviour
         if(selectedBuilding == ChunkType.tower)
         {
             towerBuilt.Raise();
+        } else if (selectedBuilding == ChunkType.playerObstacle)
+        {
+            obstacleBuilt.Raise();
         }
     }
 
