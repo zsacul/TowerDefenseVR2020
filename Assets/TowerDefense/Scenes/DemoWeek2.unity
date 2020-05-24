@@ -30704,7 +30704,7 @@ MonoBehaviour:
   BuildingSwitchedToNone: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8,
     type: 2}
   UIMoneyText: {fileID: 746120332}
-  VRTKInputs: 0
+  VRTKInputs: 1
   towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
   towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
 --- !u!114 &1738301549
