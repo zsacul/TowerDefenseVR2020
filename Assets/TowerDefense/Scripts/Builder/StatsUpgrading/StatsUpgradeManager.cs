@@ -30,8 +30,8 @@ public class StatsUpgradeManager : MonoBehaviour
 
     [SerializeField]
     private GameEvent LevelUpSuccess;
-    [SerializeField]
-    private GameEvent LevelUpFailure;
+    //[SerializeField]
+    //private GameEvent LevelUpFailure;
 
     [SerializeField]
     int[] upgradeCosts;
@@ -182,7 +182,7 @@ public class StatsUpgradeManager : MonoBehaviour
             NotSelected();
         } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
         {
-            LevelUpFailure.Raise();
+            //LevelUpFailure.Raise();
         }
 
         UpdatePanels();

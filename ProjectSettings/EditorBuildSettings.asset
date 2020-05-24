@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/TowerDefense/Scenes/DemoWeek2.unity
+    guid: 24fa77d45dd1216438baf0d58f901bb6
   m_configObjects: {}
