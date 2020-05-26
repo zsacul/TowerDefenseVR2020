@@ -107,7 +107,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectsOnTile.Array.data[0]
       value: 
-      objectReference: {fileID: 3948565734098743638, guid: dd7e448484d5d254c92a2d0ba82fb4db,
+      objectReference: {fileID: 4935391772454488030, guid: 0ccc5c62c39339a44ac6d3914b425f93,
         type: 3}
     - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
       propertyPath: randomizeScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
@@ -179,6 +179,21 @@ PrefabInstance:
     - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
       propertyPath: objectChance.Array.data[2].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: randomizedScaleMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: randomizedScaleRange.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460439232612842660, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: randomizedScaleRange.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -27,7 +27,7 @@ MonoBehaviour:
   playerObstacle:
   - {fileID: 8810554202345407054, guid: 39f32cae2ee8f2244962640ec4911a0c, type: 3}
   tower:
-  - {fileID: 8617544049270700138, guid: 24c5efed567bcc24ebeeffe3db03a5c1, type: 3}
+  - {fileID: 4670553099790185832, guid: d79d8773a15eb1846a284ef269fdf84e, type: 3}
   - {fileID: 5273637902542826825, guid: f43d074c27c637548b7120c5f4991e41, type: 3}
   - {fileID: 7804601037545188239, guid: d4e0b1938717a46458457190bc186f8a, type: 3}
   - {fileID: 4892120745590652542, guid: 97ef4f7319ed9ef4d87fd6579674f0f9, type: 3}
