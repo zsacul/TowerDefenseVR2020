@@ -819,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 11400000, guid: 3d32dee95c0a8d34583de9dc78269cf4, type: 2}
+  - {fileID: 11400000, guid: eb44cb4972e30c442aaf2cfbc7f6ebb1, type: 2}
   onStartCast:
     m_PersistentCalls:
       m_Calls: []

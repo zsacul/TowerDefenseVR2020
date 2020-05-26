@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Projectile : MonoBehaviour , IChargable
+public class ProjectileTwo : MonoBehaviour , IChargable
 {
     public DamageData damageData;
 
@@ -34,8 +34,7 @@ public class Projectile : MonoBehaviour , IChargable
         }
         else
         {
-            movement = transform.position - lastPos;
-            lastPos = transform.position;
+            
         }
     }
     public void SetCharge(float charge)
@@ -92,27 +91,12 @@ public class Projectile : MonoBehaviour , IChargable
     }
     public void Release()
     {
-        transform.rotation = Quaternion.LookRotation(movement);
         released = true;
         transform.parent = null;
         Invoke("EnableCollision", 0.25f);
         Invoke("End", lifeTime);
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        rb.velocity = movement * 50 * speed;
+        rb.velocity = transform.forward * 15 * speed;
     }
-}
-[System.Serializable]
-public struct DamageData
-{
-    public float damage;
-    public SpecialEffect specialEffect;
-    public float specialEffectDurationInSec;
-    public float specialEffectDmgPerSec;
-    public ElementType element;
-}
-public interface IChargable
-{
-    void SetCharge(float charge);
-    void Release();
 }
