@@ -29,10 +29,19 @@ public class StatsUpgradeManager : MonoBehaviour
     private bool canvasEnabled;
 
     [SerializeField]
+    private GameEvent LevelUpSuccess;
+    //[SerializeField]
+    //private GameEvent LevelUpFailure;
+
+    [SerializeField]
     int[] upgradeCosts;
+    [SerializeField]
+    private GameObject buttonPrefab;
+    private GameObject buttonInstance;
     private int maxLevel;
 
-    private Color neutralColor = new Color(0.15f, 0.15f, 0.15f, 1f);
+
+    private Color neutralColor = new Color(0.83f, 0.83f, 0.83f);
     private Color upgradeColor = new Color(0f, 1f, 0.11f, 1f);
     void Start()
     {
@@ -54,13 +63,24 @@ public class StatsUpgradeManager : MonoBehaviour
         panelsActive = false;
 
         pos = transform;
-        currentLevelCanvas.transform.position = new Vector3(pos.position.x - 0.45f, 8.7f, pos.position.z + 1.05f);
+        currentLevelCanvas.transform.position = new Vector3(pos.position.x - 0.45f, 8.65f, pos.position.z + 1.05f);
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
-        nextLevelCanvas.transform.position = new Vector3(pos.position.x + 0.45f, 8.7f, pos.position.z + 1.05f);
+        nextLevelCanvas.transform.position = new Vector3(pos.position.x + 0.45f, 8.65f, pos.position.z + 1.05f);
 
-        HighlightPanel(currentLevelCanvas, Color.clear);
         UpdatePanels();
         DisablePanels();
+
+        buttonInstance = Instantiate(buttonPrefab);
+        SetButtonPosition(nextLevelCanvas);
+    }
+
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
+        Vector3 rot = new Vector3(270, 45, 0);
+        buttonInstance.SetActive(true);
+        buttonInstance.transform.SetParent(selectedCanvas.transform, false);
+        buttonInstance.transform.localPosition = new Vector3(0.704f, -0.102f, -0.102f);
+        buttonInstance.transform.localRotation = Quaternion.Euler(rot);
     }
 
     void Update()
@@ -73,7 +93,8 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            if (buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.JoystickButton1) ||
+                (!buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.X)))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)
@@ -98,8 +119,7 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI rangeInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
         TextMeshProUGUI speedInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5].enabled = false;
-        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].enabled = false;
-        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[7].enabled = false;
+        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press \"X\" to dismiss panels");
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
 
         if (currentLevel == maxLevel)
@@ -127,8 +147,7 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI speedInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         TextMeshProUGUI costInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5];
 
-        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].enabled = true;
-        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[7].enabled = true;
+        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press button to level up");
 
         costInfo.color = (buildManager.Money >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         costInfo.SetText("Cost: {0}", upgradeCosts[nextLevelCostIndex]);
@@ -149,6 +168,7 @@ public class StatsUpgradeManager : MonoBehaviour
     {
         if ((currentLevel != maxLevel) && (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]))
         {
+            LevelUpSuccess.Raise();
             buildManager.DecreaseMoney(upgradeCosts[nextLevelCostIndex]);
             currentLevel += 1;
             towerScript.UpgradeDelay();
@@ -160,7 +180,11 @@ public class StatsUpgradeManager : MonoBehaviour
                 UpdateStats();
             }
             NotSelected();
+        } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
+        {
+            //LevelUpFailure.Raise();
         }
+
         UpdatePanels();
     }
 
@@ -188,18 +212,20 @@ public class StatsUpgradeManager : MonoBehaviour
     public void Selected()
     {
         nextLevelCanvas.GetComponent<TowerStatsUpgrade>().setSelectedTrue();
-        Color highlightColor = (buildManager.GetMoney() >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
-        HighlightPanel(nextLevelCanvas, highlightColor);
     }
 
     public void NotSelected()
     {
         nextLevelCanvas.GetComponent<TowerStatsUpgrade>().setSelectedFalse();
-        HighlightPanel(nextLevelCanvas, Color.clear);
     }
 
     void DisablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(false);
+        }
         canvasEnabled = false;
         currentLevelCanvas.enabled = false;
         nextLevelCanvas.enabled = false;
@@ -209,6 +235,11 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void EnablePanels()
     {
+        // Check if buttonInstance is null
+        if (buttonInstance)
+        {
+            buttonInstance.SetActive(true);
+        }
         UpdatePanels();
         canvasEnabled = true;
         currentLevelCanvas.enabled = true;
@@ -225,11 +256,5 @@ public class StatsUpgradeManager : MonoBehaviour
             Camera.main.transform.position.z <= (transform.position.z + 1);
 
         return goodX && goodZ;
-    }
-
-    private void HighlightPanel(Canvas panel, Color color)
-    {
-        Image backgroundImage = panel.GetComponentInChildren<Image>();
-        backgroundImage.GetComponent<Outline>().effectColor = color;
     }
 }

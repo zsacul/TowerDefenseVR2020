@@ -12,11 +12,13 @@ public class TowerUpgrade : MonoBehaviour
     //Indicates if this upgrade was selected by the player
     private bool selected;
     private UpgradeManager upgradeManager;
+    private BuildManager buildManager;
 
     void Start()
     {
         upgradeButtonPressed = false;
         upgradeManager = GetComponentInParent<UpgradeManager>();
+        buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         selected = false;
     }
 
@@ -25,12 +27,17 @@ public class TowerUpgrade : MonoBehaviour
         UpdateButtonState(false);
         if (selected && upgradeButtonPressed)//Input.GetKeyDown(KeyCode.U))
         {
-            upgradeManager.UpgradeTower(elementIndex, upgradeCost);
+            Upgrade();
         }
     }
     void LateUpdate()
     {
         UpdateButtonState(true);
+    }
+
+    public void Upgrade()
+    {
+        upgradeManager.UpgradeTower(elementIndex, upgradeCost);
     }
 
     private void UpdateButtonState(bool isLateUpdate)
@@ -41,7 +48,14 @@ public class TowerUpgrade : MonoBehaviour
         }
         else
         {
-            upgradeButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton0);
+            if (buildManager.VRTKInputs)
+            {
+                upgradeButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton0);
+            }
+            else
+            {
+                upgradeButtonPressed = Input.GetKeyDown(KeyCode.U);
+            }
         }
     }
 

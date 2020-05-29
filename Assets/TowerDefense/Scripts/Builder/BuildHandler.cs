@@ -5,15 +5,20 @@ using UnityEngine;
 public class BuildHandler : GameEventListener
 {
     [SerializeField]
-    private GameObject canBuild;
+    private GameObject canBuildTower;
     [SerializeField]
-    private GameObject cantBuild;
+    private GameObject cantBuildTower;
+    [SerializeField]
+    private GameObject canBuildObstacle;
+    [SerializeField]
+    private GameObject cantBuildObstacle;
+
     private BuildManager buildManager;
     private BoxCollider thisBoxCollider;
     private bool buildButtonPressed;
 
     // Object that's being instantiated after player in Build Mode points to this chunk 
-    private GameObject buildAvailUI;
+    private GameObject showedBuilding;
     private GameObject rightController;
 
     // Checks if controller points to this chunk
@@ -36,9 +41,12 @@ public class BuildHandler : GameEventListener
         rightController = buildManager.rightController;
     }
 
+    // When selected building changes to ChunkType.None, we should call UpdateSelectedBuilding and HoverOff 
+    // in order to destroy currently displayed UI of selected building
     public override void OnEventRaised(Object data)
     {
-        //thisBoxCollider.enabled = buildManager.BuildModeOn;
+        UpdateSelectedBuilding();
+        HoverOff();
     }
 
     void Update()
@@ -71,7 +79,14 @@ public class BuildHandler : GameEventListener
         }
         else
         {
-            buildButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
+            if (buildManager.VRTKInputs)
+            {
+                buildButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
+            }
+            else
+            {
+                buildButtonPressed = Input.GetKeyDown(KeyCode.C);
+            }
         }
     }
 
@@ -79,7 +94,7 @@ public class BuildHandler : GameEventListener
     {
         RaycastHit hit;
         //Checking if the controller still points at this chunk 
-        if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000))
+        if (Physics.Raycast(rightController.transform.position, rightController.transform.forward, out hit, 10000, ~(1 << 15)))
         {
             pointedAt = (hit.collider.gameObject.transform.position == transform.position);
         }
@@ -100,19 +115,10 @@ public class BuildHandler : GameEventListener
             if(buildButtonPressed)
             {
                 Build();
+                HoverOff();
             }
 
         }
-    }
-
-    public void PressBuildButton()
-    {
-
-    }
-
-    public void DeactivateBuildButton()
-    {
-
     }
 
     private void UpdateSelectedBuilding()
@@ -161,17 +167,27 @@ public class BuildHandler : GameEventListener
         UpdateSelectedBuilding();
         if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding) && buildManager.Money >= sBuildingCost)
         {
-            buildAvailUI = Instantiate(canBuild, transform.position, transform.rotation);
+            if (selectedBuilding == ChunkType.tower)
+                showedBuilding = Instantiate(canBuildTower, transform.position, transform.rotation);
+            else
+                showedBuilding = Instantiate(canBuildObstacle, transform.position, transform.rotation);
+            
         }
         else
         {
-            buildAvailUI = Instantiate(cantBuild, transform.position, transform.rotation);
+            if (selectedBuilding == ChunkType.tower)
+                showedBuilding = Instantiate(cantBuildTower, transform.position, transform.rotation);
+            else
+                showedBuilding = Instantiate(cantBuildObstacle, transform.position, transform.rotation);
         } 
     }
 
     public void HoverOff()
     {
-        Destroy(buildAvailUI);
+        if (showedBuilding != null)
+        {
+            Destroy(showedBuilding);
+        }
         shouldCallHover = true;
     }
 }

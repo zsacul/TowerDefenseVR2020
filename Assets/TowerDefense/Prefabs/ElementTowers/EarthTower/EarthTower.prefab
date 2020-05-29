@@ -240,7 +240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsUpgradeCanvasPrefab: {fileID: 7545244780255571341, guid: 19fe512ea76208e439e548c3c761cc07,
     type: 3}
+  LevelUpSuccess: {fileID: 11400000, guid: b49714b34b43e46468ce2bd708927c4b, type: 2}
+  LevelUpFailure: {fileID: 11400000, guid: d1a7adbd1191a43d1958bbb90b299892, type: 2}
   upgradeCosts: 320000006400000096000000
+  buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
+    type: 3}
 --- !u!1 &5832107677774139027
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5832107677774139027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.56, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6173797265635267009}

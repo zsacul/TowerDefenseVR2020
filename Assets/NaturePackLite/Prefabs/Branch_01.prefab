@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1493958779014389460}
   - component: {fileID: 6840989815014681252}
   - component: {fileID: 6567666581448685567}
-  m_Layer: 20
+  m_Layer: 2
   m_Name: Branch_01
-  m_TagString: Untagged
+  m_TagString: Grababble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

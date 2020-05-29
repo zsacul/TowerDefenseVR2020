@@ -21,13 +21,22 @@ public class Projectile : MonoBehaviour , IChargable
     public UnityEvent onHit;
     public UnityEvent onEnd;
 
-
-
+    private bool released;
+    private Vector3 lastPos;
+    private Vector3 movement;
     private void FixedUpdate()
     {
-        time += 0.02f;
-        transform.localScale = Vector3.one * sizeOverTime.Evaluate(time/lifeTime);
-        transform.position += transform.forward * speedOverTime.Evaluate(time) * speed * Time.fixedDeltaTime;
+        if(released)
+        {
+            time += 0.02f;
+            transform.localScale = Vector3.one * sizeOverTime.Evaluate(time / lifeTime);
+            //transform.position += transform.forward * speedOverTime.Evaluate(time) * speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            movement = transform.position - lastPos;
+            lastPos = transform.position;
+        }
     }
     public void SetCharge(float charge)
     {
@@ -36,13 +45,10 @@ public class Projectile : MonoBehaviour , IChargable
     public void Init(float charge = 0)
     {
         GetComponent<Collider>().enabled = false;
-        Invoke("EnableCollision", 0.1f);
         lifeTime = lifeTimeOverCharge.Evaluate(charge);
         speed = speedOverCharge.Evaluate(charge);
         damageData.damage *= dmgMultOverCharge.Evaluate(charge);
         damageData.specialEffectDmgPerSec *= dmgMultOverCharge.Evaluate(charge);
-        Invoke("End", lifeTime);
-        
         onInit.Invoke();
     }
     private void End()
@@ -55,13 +61,16 @@ public class Projectile : MonoBehaviour , IChargable
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if(released)
         {
+            if (other.gameObject.tag == "Enemy")
+            {
+                onHit.Invoke();
+                other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
+            }
             onHit.Invoke();
-            other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
+            //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
         }
-        onHit.Invoke();
-        transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
     }
     public void Destroy()
     {
@@ -81,6 +90,17 @@ public class Projectile : MonoBehaviour , IChargable
     {
         GetComponent<Collider>().enabled = true;
     }
+    public void Release()
+    {
+        transform.rotation = Quaternion.LookRotation(movement);
+        released = true;
+        transform.parent = null;
+        Invoke("EnableCollision", 0.25f);
+        Invoke("End", lifeTime);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.velocity = movement * 50 * speed;
+    }
 }
 [System.Serializable]
 public struct DamageData
@@ -91,7 +111,8 @@ public struct DamageData
     public float specialEffectDmgPerSec;
     public ElementType element;
 }
-interface IChargable
+public interface IChargable
 {
     void SetCharge(float charge);
+    void Release();
 }

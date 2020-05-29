@@ -16,6 +16,8 @@ public class Chunk : MonoBehaviour
     public ChunkScene owner;
     public int choice;
     private GameObject currentObject;
+    private GameObject newObject;
+    private float UpgradedTowerHeight;
     public bool ChangeType(ChunkType newType, int choice = 0)
     {
         if(/*canBeModified &&*/ ValidOperation(newType))
@@ -39,9 +41,12 @@ public class Chunk : MonoBehaviour
         {
             if (currentObject != null)
             {
-                Destroy(currentObject);
+                UpgradedTowerHeight = currentObject.GetComponent<TowerHeight>().towerHeight;
+                currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
+                Destroy(currentObject, 3f);
             }
-            currentObject = Instantiate(prefabs.tower[elementIndex], transform);
+            newObject = Instantiate(prefabs.tower[elementIndex], transform);
+            newObject.transform.localScale = new Vector3(newObject.transform.localScale.x, UpgradedTowerHeight, newObject.transform.localScale.z);
         }
     }
 

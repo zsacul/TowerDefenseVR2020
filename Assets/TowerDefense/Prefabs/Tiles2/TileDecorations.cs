@@ -13,6 +13,7 @@ public class TileDecorations : MonoBehaviour
     public bool randomizeAngleX = false;
     public bool randomizeAngleZ = false;
     public bool randomizeScale = false;
+    public Vector2 randomizedScaleRange = new Vector2(0.5f, 2.0f);
     public List<Vector2> objectChance = new List<Vector2> { new Vector2(0, 1) };
 
     void Start()
@@ -47,7 +48,7 @@ public class TileDecorations : MonoBehaviour
                 }
                 if (randomizeScale)
                 {
-                    float xz = UnityEngine.Random.Range(0.5f, 2f);
+                    float xz = UnityEngine.Random.Range(randomizedScaleRange.x, randomizedScaleRange.y);
                     obj.transform.localScale = new Vector3(xz, xz, xz);
                 }
 

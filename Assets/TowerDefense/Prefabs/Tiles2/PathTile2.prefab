@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1061162599329505350}
   - component: {fileID: 5311905661824075587}
   - component: {fileID: 7298777291736949457}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PathTile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,9 +90,9 @@ BoxCollider:
   m_GameObject: {fileID: 1623222002731259034}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.1326768, z: 2}
+  m_Size: {x: 2, y: 0.23, z: 5}
   m_Center: {x: 0, y: 0.0067137256, z: 0}
 --- !u!114 &7298777291736949457
 MonoBehaviour:

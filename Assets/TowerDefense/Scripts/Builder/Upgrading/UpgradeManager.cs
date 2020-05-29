@@ -25,10 +25,22 @@ public class UpgradeManager : MonoBehaviour
     private GameObject thisChunk;
     private bool upgradePanelsActive;
     private bool panelButtonPressed;
+    [SerializeField]
+    private GameObject buttonPrefab;
+    private GameObject buttonInstance;
+    private bool anyUpgradeSelected;
+
+   // [SerializeField]
+   // private GameEvent UpgradeSelected;
+    [SerializeField]
+    private GameEvent UpgradeSuccess;
+   // [SerializeField]
+   // private GameEvent UpgradeFailure;
 
     void Start()
     {
         panelButtonPressed = false;
+        anyUpgradeSelected = false;
 
         thisChunk = transform.parent.gameObject;
         upgradePanelsActive = false;
@@ -50,13 +62,16 @@ public class UpgradeManager : MonoBehaviour
 
         DisableUpgradeCanvases();
 
-        windCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z + 1.05f);
-        fireCanvas.transform.position = new Vector3(pos.position.x, 8.4f, pos.position.z - 1.05f);
+        windCanvas.transform.position = new Vector3(pos.position.x, 8.65f, pos.position.z + 1.05f);
+        fireCanvas.transform.position = new Vector3(pos.position.x, 8.65f, pos.position.z - 1.05f);
         fireCanvas.transform.Rotate(new Vector3(0, 180, 0));
-        iceCanvas.transform.position = new Vector3(pos.position.x - 1.05f, 8.4f, pos.position.z);
+        iceCanvas.transform.position = new Vector3(pos.position.x - 1.05f, 8.65f, pos.position.z);
         iceCanvas.transform.Rotate(new Vector3(0, 270, 0));
-        electricCanvas.transform.position = new Vector3(pos.position.x + 1.05f, 8.4f, pos.position.z);
+        electricCanvas.transform.position = new Vector3(pos.position.x + 1.05f, 8.65f, pos.position.z);
         electricCanvas.transform.Rotate(new Vector3(0, 90, 0));
+
+        buttonInstance = Instantiate(buttonPrefab);
+        buttonInstance.SetActive(false);
     }
 
 
@@ -70,6 +85,7 @@ public class UpgradeManager : MonoBehaviour
             {
                 EnableUpgradeCanvases();
                 SetUpgradeCosts();
+                buildManager.ChooseNone();
                 NoneSelected();
             }
 
@@ -107,7 +123,14 @@ public class UpgradeManager : MonoBehaviour
         }
         else
         {
-            panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
+            if (buildManager.VRTKInputs)
+            {
+                panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
+            }
+            else
+            {
+                panelButtonPressed = Input.GetKeyDown(KeyCode.X);
+            }
         }
     }
 
@@ -115,9 +138,14 @@ public class UpgradeManager : MonoBehaviour
     {
         if (buildManager.GetMoney() >= upgradeCost)
         {
+            UpgradeSuccess.Raise();
+            Debug.Log("UpgradeSuccess");
             buildManager.DecreaseMoney(upgradeCost);
             thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
             SetUpgradeCosts();
+        } else
+        {
+            //UpgradeFailure.Raise();
         }
     }
 
@@ -143,6 +171,11 @@ public class UpgradeManager : MonoBehaviour
         windCanvas.GetComponent<Collider>().enabled = false;
         electricCanvas.enabled = false;
         electricCanvas.GetComponent<Collider>().enabled = false;
+        if (anyUpgradeSelected)
+        {
+            buttonInstance.SetActive(false);
+            anyUpgradeSelected = false; 
+        }
     }
 
     private void EnableUpgradeCanvases()
@@ -186,11 +219,22 @@ public class UpgradeManager : MonoBehaviour
     /// </summary>
     public void Selected(Canvas selectedCanvas)
     {
+        //UpgradeSelected.Raise();
+        anyUpgradeSelected = true;
         NoneSelected();
         TowerUpgrade selectedCanvasTowerUpgrade = selectedCanvas.GetComponent<TowerUpgrade>();
         selectedCanvasTowerUpgrade.setSelectedTrue();
         Color highlightColor = (buildManager.GetMoney() >= selectedCanvasTowerUpgrade.upgradeCost) ? Color.green : Color.red;
         HighlightPanel(selectedCanvas, highlightColor);
+
+        SetButtonPosition(selectedCanvas);
+    }
+
+    private void SetButtonPosition(Canvas selectedCanvas)
+    {
+        buttonInstance.SetActive(true);
+        buttonInstance.transform.SetParent(selectedCanvas.transform, false);
+        buttonInstance.transform.localPosition = new Vector3(0.6f, 0.0f, 0.2f);
     }
 
     // Sets field 'selected' of every canvas on this tower to false.

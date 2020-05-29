@@ -15,7 +15,7 @@ public class TowerStatsUpgrade : MonoBehaviour
 
     void Update()
     {
-        if (selected && Input.GetKeyDown(KeyCode.JoystickButton0))
+        if (selected && (Input.GetKeyDown(KeyCode.U)))
         {
             statsUpgradeManager.TowerLevelUp();
         }
