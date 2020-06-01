@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4703714223017033056, guid: 3e6deb4e386570540ae8a6534a912a45,
     type: 3}
-  offset: {x: -0.2, y: 0, z: 0}
+  offset: {x: -0.1, y: 0, z: 0}
   castSequence:
   - {x: -1, y: 0}
   - {x: -2, y: 0}

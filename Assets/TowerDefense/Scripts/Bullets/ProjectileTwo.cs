@@ -98,5 +98,6 @@ public class ProjectileTwo : MonoBehaviour , IChargable
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.velocity = transform.forward * 15 * speed;
+        GetComponent<LineRenderer>().enabled = false;
     }
 }
