@@ -14,7 +14,7 @@ public class BookGrabManager : PropManager
             GizmoAnimation.SetFloat("GripFloat", input);
         else
         {
-            BookHook.GetComponent<BookManager>().EnableMarkers();
+            BookHook.GetComponent<BookManager>().LeaveBook();
             HandManger.GetComponent<HandDeployer>().DeployNth(0);
         }
         /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
@@ -24,8 +24,17 @@ public class BookGrabManager : PropManager
     {
         transform.gameObject.SetActive(true);
 
+
+
         // motivator is the book target
         BookHook = Motivator.transform.parent.gameObject;
+
+        char MotivatorName = Motivator.name[10];
+
+        if (MotivatorName == 'L') 
+            BookHook.GetComponent<BookManager>().TurnLeft();
+        else
+            BookHook.GetComponent<BookManager>().TurnRight();
 
         // bookhook has a function to spawn/despawn grab motivators
         BookHook.GetComponent<BookManager>().DisableMarkers();

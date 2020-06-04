@@ -99,8 +99,11 @@ public class HandDeployer : MonoBehaviour
             i++;
             }
 
-            Debug.Log($"{chosen.name} :-propid-> {chosen.GetComponent<GrababbleManager>().PropID}");
-            DeployNth(chosen.GetComponent<GrababbleManager>().PropID, chosen);
+            if (mindist < 90.0f)
+            {
+                Debug.Log($"{chosen.name} :-propid-> {chosen.GetComponent<GrababbleManager>().PropID}");
+                DeployNth(chosen.GetComponent<GrababbleManager>().PropID, chosen);
+            }
         }
     }
 
