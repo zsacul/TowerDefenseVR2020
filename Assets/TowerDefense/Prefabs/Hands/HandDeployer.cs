@@ -85,16 +85,22 @@ public class HandDeployer : MonoBehaviour
         {
             Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
             int i = 0;
+            GameObject chosen = new GameObject();
+            float mindist = 100.0f;
             while (i < LocatedNearby.Length)
             {
                 if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
-                    Debug.Log($"{LocatedNearby[i].name} :-propid-> {LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID}");
-                    DeployNth(LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID, LocatedNearby[i].gameObject);
-                    break;
+                    if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position)) {
+                        mindist = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
+                        chosen = LocatedNearby[i].gameObject;
+                    }
                 }
             i++;
             }
+
+            Debug.Log($"{chosen.name} :-propid-> {chosen.GetComponent<GrababbleManager>().PropID}");
+            DeployNth(chosen.GetComponent<GrababbleManager>().PropID, chosen);
         }
     }
 
