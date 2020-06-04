@@ -44,7 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50427ddc9fba2be4f8cf8a1633003da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BookPages: []
+  BookPages:
+  - {fileID: 5506907945103091160, guid: 7c3debba90823f34dbec046b9750d1da, type: 3}
+  - {fileID: 8880649826814682509, guid: e4027a0829f52954286a186414e2895f, type: 3}
+  - {fileID: 2092394771254758868, guid: 9a6464618f637f74fad4bb3814b12f20, type: 3}
+  - {fileID: 5444750900852188302, guid: d0cf1936bca610244b721bff03ab7cd8, type: 3}
+  - {fileID: 8887522703619033652, guid: e3bdd3d234d90654e89e8ded03a74a78, type: 3}
+  - {fileID: 8637644196922193621, guid: 85c1b0df8c48a5b4d94219b383008a35, type: 3}
+  - {fileID: 4797837513202748740, guid: 2ca9b679c7e3f62439765bb9133cf9a4, type: 3}
 --- !u!1 &3916511795531215415
 GameObject:
   m_ObjectHideFlags: 0
