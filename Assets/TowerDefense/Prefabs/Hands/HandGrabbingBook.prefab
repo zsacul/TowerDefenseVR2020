@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3915294056157646804}
   - component: {fileID: 4981076334279954798}
-  - component: {fileID: 5138432887574945610}
+  - component: {fileID: 5796080613209103047}
   m_Layer: 0
   m_Name: HandGrabbingBook
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5138432887574945610
+--- !u!114 &5796080613209103047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4137375818022343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714a7d75cef1226428681eee3f84c356, type: 3}
+  m_Script: {fileID: 11500000, guid: fb81fc49f02493b4c8b1f8d71f1c9deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colortype: 0

@@ -56,7 +56,7 @@ public class HandDeployer : MonoBehaviour
 
     public void DeployNth(int Nth)
     {
-        //Debug.Log($"Call To deploy nth {Nth}");
+        Debug.Log($"Call To deploy nth {Nth}");
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance);
         listIterator = Nth;
