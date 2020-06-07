@@ -13,24 +13,29 @@ namespace SpawnManaging
         [SerializeField]
         GameEvent breakStart;
         
+
+        BreakButtonHandler BreakButton;
         public Transform[] spawnPoints;
         [SerializeField]
         Wave[] wave;
+        [SerializeField]
+        float breakDuration;
         bool paused;
         int waveIndex;
         int spawnerIndex;
-        [SerializeField]
-        float breakLength;
         int spawnedInGroup;
         int spawnMagicNumber;
         public bool breakOn;
+        float breakTime;
         // Update is called once per frame
         void Start()
         {
             spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
+            breakTime = 0;
         }
+        
         private void Spawn()
         {
             if (spawnedInGroup >= wave[waveIndex].groupSize)
@@ -96,11 +101,19 @@ namespace SpawnManaging
         {
             breakStart.Raise();
             breakOn = true;
+            breakTime = 0;
         }
+
         public void EndBreak()
         {
             if(breakOn)
             {
+                if (BreakButton == null)
+                {
+                    BreakButton = FindObjectOfType<BreakButtonHandler>();
+                    if (BreakButton == null)
+                        Debug.LogError("Nie ma na planszy breakbuttona");
+                }
                 breakEnd.Raise();
                 InvokeRepeating("SpawnLoop", 0, 1);
                 breakOn = false;
@@ -108,10 +121,13 @@ namespace SpawnManaging
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
             {
                 EndBreak();
             }
+
+            if (breakOn)
+                breakTime += Time.deltaTime;
         }
     }
     [Serializable]
