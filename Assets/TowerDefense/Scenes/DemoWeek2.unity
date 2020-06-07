@@ -14292,6 +14292,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1673858657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &730750928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7617125982666209930, guid: c76845e11da67cf42b62f762bc9ff4bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8443961938089658986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &730750931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730750928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a47ac973ff042d46adeb826329622d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
+  towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
+    type: 3}
+  obstaclePrefab: {fileID: 5044071366785473100, guid: 7ce170d0bcfefbb4bb33210fb0122c08,
+    type: 3}
+  towerScale: {x: 0.02, y: 0.015, z: 0.02}
+  obstacleScale: {x: 0.016, y: 0.04, z: 0.016}
+  towerOffset: {x: 0, y: -0.02, z: -0.015}
+  obstacleOffset: {x: -0.067, y: -0.02, z: 0.044}
+--- !u!114 &730750932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730750928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08f146a0bee5dc45a8912f764b49884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: beee8687c3d95ac4495aec6c6c2371a5, type: 2}
+--- !u!114 &730750933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730750928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fe6641005eb1f408b22c23b2cb8929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: 24078b5ecd39d05419fe22f7950293d1, type: 2}
 --- !u!1 &734348935
 GameObject:
   m_ObjectHideFlags: 0
@@ -30705,7 +30758,7 @@ MonoBehaviour:
   BuildingSwitchedToNone: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8,
     type: 2}
   UIMoneyText: {fileID: 746120332}
-  VRTKInputs: 1
+  VRTKInputs: 0
   towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
   towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
 --- !u!114 &1738301549
@@ -42231,6 +42284,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617125982666209930, guid: c76845e11da67cf42b62f762bc9ff4bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: HandCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443961938472187264, guid: c76845e11da67cf42b62f762bc9ff4bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443961938472187270, guid: c76845e11da67cf42b62f762bc9ff4bd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8915191336960692123, guid: c76845e11da67cf42b62f762bc9ff4bd,
         type: 3}

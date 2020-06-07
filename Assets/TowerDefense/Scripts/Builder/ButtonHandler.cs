@@ -19,12 +19,12 @@ public class ButtonHandler : MonoBehaviour
         if(other.gameObject.tag == "HandCollider" && !pushed)
         {
             pushed = true;
-            StartCoroutine(Upgrade());
+            StartCoroutine(TryUpgradingTower());
             transform.localPosition += new Vector3(0f, -0.1f, 0f);
         }
     }
 
-    IEnumerator Upgrade()
+    IEnumerator TryUpgradingTower()
     {
         yield return new WaitForSeconds(1.2f);
 
