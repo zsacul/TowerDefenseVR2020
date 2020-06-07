@@ -38,6 +38,8 @@ public class BookGrabManager : PropManager
 
         // bookhook has a function to spawn/despawn grab motivators
         BookHook.GetComponent<BookManager>().DisableMarkers();
+
+        BookHook.GetComponent<BookManager>().VRPageControll = true;
     }
 
     public override void Initialize()

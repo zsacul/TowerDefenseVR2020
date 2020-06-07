@@ -34,6 +34,7 @@ public class BookManager : MonoBehaviour
             Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             BookOpened = true;
             Mpage.SetActive(true);
+            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 105.0f);
         }
     }
 
@@ -47,13 +48,13 @@ public class BookManager : MonoBehaviour
             Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             BookOpened = true;
             Mpage.SetActive(true);
+            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 85.0f);
         }
     }
 
     public void LeaveBook()
     {
         VRPageControll = false;
-        Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 85.0f);
         FloatingPagePosition = Mpage.transform.localRotation.eulerAngles.z;
     }
     // Start is called before the first frame update
