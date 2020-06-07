@@ -14,7 +14,8 @@ public class BookManager : MonoBehaviour
     private int bookpage = 0;
     public void EnableMarkers()
     {
-        Lmarker.SetActive(true);
+        if(bookpage > 0)
+            Lmarker.SetActive(true);
         Rmarker.SetActive(true);
     }
 
@@ -31,10 +32,11 @@ public class BookManager : MonoBehaviour
             Debug.Log("call to flip left!");
             bookpage -= 2;
             Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
-            Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
+            Mpage.GetComponent<BookPageMngr>().Display_nth(bookpage + 1);
+            //Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             BookOpened = true;
             Mpage.SetActive(true);
-            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 105.0f);
+            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 85.0f);
         }
     }
 
@@ -44,11 +46,12 @@ public class BookManager : MonoBehaviour
         {
             Debug.Log("call to flip right!");
             bookpage += 2;
-            Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
+            //Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
+            Mpage.GetComponent<BookPageMngr>().Display_nth(bookpage - 1);
             Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             BookOpened = true;
             Mpage.SetActive(true);
-            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 85.0f);
+            Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 105.0f);
         }
     }
 
@@ -84,6 +87,8 @@ public class BookManager : MonoBehaviour
                 EnableMarkers();
                 Mpage.SetActive(false);
                 Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+                Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
+                Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             }
 
             if (FloatingPagePosition < 0.0f)
@@ -92,6 +97,8 @@ public class BookManager : MonoBehaviour
                 EnableMarkers();
                 Mpage.SetActive(false);
                 Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+                Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
+                Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             }
         }
     }
