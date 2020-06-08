@@ -11,7 +11,8 @@ public class BookManager : MonoBehaviour
     public bool BookOpened = false;
     public bool VRPageControll = false;
     public float FloatingPagePosition = 0.0f;
-    private int bookpage = 0;
+    public int bookpage = 0;
+    private int transaction_direction = 0;
     public void EnableMarkers()
     {
         if(bookpage > 0)
@@ -29,6 +30,7 @@ public class BookManager : MonoBehaviour
     {
         if (bookpage > 0)
         {
+            transaction_direction = 1;
             Debug.Log("call to flip left!");
             bookpage -= 2;
             Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
@@ -44,6 +46,7 @@ public class BookManager : MonoBehaviour
     {
         if (bookpage < 10)
         {
+            transaction_direction = 2;
             Debug.Log("call to flip right!");
             bookpage += 2;
             //Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
@@ -72,31 +75,36 @@ public class BookManager : MonoBehaviour
         {
             if (FloatingPagePosition > 90.0f)
             {
-                FloatingPagePosition += 45.0f * Time.deltaTime;
+                FloatingPagePosition += 90.0f * Time.deltaTime;
             }
             else
             {
-                FloatingPagePosition -= 45.0f * Time.deltaTime;
+                FloatingPagePosition -= 90.0f * Time.deltaTime;
             }
 
             Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, FloatingPagePosition);
 
-            if (FloatingPagePosition > 180.0f)
+            if (FloatingPagePosition > 170.0f)
             {
                 BookOpened = false;
                 EnableMarkers();
                 Mpage.SetActive(false);
                 Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+                if (transaction_direction == 1)
+                    bookpage += 2;
                 Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
                 Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             }
 
-            if (FloatingPagePosition < 0.0f)
+            if (FloatingPagePosition < 10.0f)
             {
                 BookOpened = false;
                 EnableMarkers();
                 Mpage.SetActive(false);
                 Mpage.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+                if (transaction_direction == 2)
+                    bookpage -= 2;
+
                 Lpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
                 Rpage.GetComponent<BookPageMngr>().Display_nth(bookpage);
             }

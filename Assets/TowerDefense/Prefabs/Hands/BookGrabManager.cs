@@ -28,13 +28,13 @@ public class BookGrabManager : PropManager
         transform.gameObject.SetActive(true);
 
         // motivator is the book target
-        BookHook = Motivator.transform.parent.gameObject;
+        BookHook = Motivator.transform.parent.gameObject.transform.parent.gameObject;
 
         char MotivatorName = Motivator.name[10];
 
         if (MotivatorName == 'L') 
             BookHook.GetComponent<BookManager>().TurnLeft();
-        else
+        if (MotivatorName == 'R')
             BookHook.GetComponent<BookManager>().TurnRight();
 
         // bookhook has a function to spawn/despawn grab motivators
@@ -63,9 +63,25 @@ public class BookGrabManager : PropManager
         if (grabbing)
         {
             Vector3 Delta = transform.position - MpageHook.transform.position;
+            Delta.z = 0.0f;
             Quaternion rotation = Quaternion.LookRotation(Delta);
             Vector3 EulerRot = rotation.eulerAngles;
-            MpageHook.transform.rotation = Quaternion.Euler(EulerRot);
+
+            Debug.Log(EulerRot.y);
+            if ((int)EulerRot.y > 180)
+            {
+                Debug.Log("A");
+                EulerRot.z = 180.0f + EulerRot.x;
+            }
+            else
+            {
+                Debug.Log("B");
+                EulerRot.z = - EulerRot.x;
+            }
+
+            EulerRot.y = 0.0f;
+            EulerRot.x = 0.0f;
+            MpageHook.transform.localRotation = Quaternion.Euler(EulerRot);
         }
     }
 }
