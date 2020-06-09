@@ -76,14 +76,14 @@ public class BookGrabManager : PropManager
             {
                 EulerRot.z = - EulerRot.x;
             }
-
+            /*
             if(EulerRot.z < 10.0f || EulerRot.z > 170.0f)
             {
                 BookHook.GetComponent<BookManager>().LeaveBook();
                 HandManger.GetComponent<HandDeployer>().DeployNth(0);
                 grabbing = false;
             }
-
+            */
             EulerRot.y = 0.0f;
             EulerRot.x = 0.0f;
             MpageHook.transform.localRotation = Quaternion.Euler(EulerRot);
