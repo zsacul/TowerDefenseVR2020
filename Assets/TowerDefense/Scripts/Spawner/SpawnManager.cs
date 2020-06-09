@@ -13,15 +13,19 @@ namespace SpawnManaging
         GameEvent breakEnd;
         [SerializeField]
         GameEvent breakStart;
+        [SerializeField]
+        LightningCycle lightningCycle;
         
+
+        BreakButtonHandler BreakButton;
         public Transform[] spawnPoints;
         [SerializeField]
         Wave[] wave;
+        [SerializeField]
+        float breakDuration;
         bool paused;
         int waveIndex;
         int spawnerIndex;
-        [SerializeField]
-        float breakLength;
         int spawnedInGroup;
         int spawnMagicNumber;
         public bool breakOn;
@@ -29,6 +33,7 @@ namespace SpawnManaging
         public Canvas waveInfoLabelPrefab;
         private Canvas waveInfoLabel;
 
+        float breakTime;
         // Update is called once per frame
         void Start()
         {
@@ -36,7 +41,9 @@ namespace SpawnManaging
             spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
+            breakTime = 0;
         }
+        
         private void Spawn()
         {
             if (spawnedInGroup >= wave[waveIndex].groupSize)
@@ -105,23 +112,36 @@ namespace SpawnManaging
             breakStart.Raise();
             breakOn = true;
             UpdateUI();
+            breakTime = 0;
+            StartCoroutine(lightningCycle.ChangeToDay());
         }
+
         public void EndBreak()
         {
             if(breakOn)
             {
+                //if (BreakButton == null)
+                //{
+                //    BreakButton = FindObjectOfType<BreakButtonHandler>();
+                //    if (BreakButton == null)
+                //        Debug.LogError("Nie ma na planszy breakbuttona");
+                //}
                 breakEnd.Raise();
-                InvokeRepeating("SpawnLoop", 0, 1);
+                InvokeRepeating("SpawnLoop", 3, 1);
                 breakOn = false;
+                StartCoroutine(lightningCycle.ChangeToNight());
             }
             UpdateUI();
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
             {
                 EndBreak();
             }
+
+            if (breakOn)
+                breakTime += Time.deltaTime;
         }
 
         private void UpdateUI()
