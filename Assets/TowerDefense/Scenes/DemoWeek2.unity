@@ -4995,6 +4995,11 @@ PrefabInstance:
       propertyPath: physicsCast
       value: 
       objectReference: {fileID: 1915887373}
+    - target: {fileID: 8391352710448912418, guid: c69d84a3cadb94e45af0210c52e5728d,
+        type: 3}
+      propertyPath: maximumLength.x
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69d84a3cadb94e45af0210c52e5728d, type: 3}
 --- !u!4 &176654562 stripped
@@ -13068,7 +13073,7 @@ PrefabInstance:
     - target: {fileID: 1322672732093859771, guid: c69d84a3cadb94e45af0210c52e5728d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1977522402952244861, guid: c69d84a3cadb94e45af0210c52e5728d,
         type: 3}
@@ -14512,6 +14517,7 @@ MonoBehaviour:
   target: {fileID: 0}
   breakEnd: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
   breakStart: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
+  lightningCycle: {fileID: 1785877129}
   spawnPoints:
   - {fileID: 752578748}
   wave:
@@ -14545,7 +14551,7 @@ MonoBehaviour:
     bonusSpeed: 0
     groupSize: 6
     nextGroupTime: 5
-  breakLength: 5
+  breakDuration: 305
   breakOn: 0
 --- !u!1 &756934109
 GameObject:
@@ -31580,6 +31586,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1784772523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1785877129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
+    type: 3}
+  m_PrefabInstance: {fileID: 7035261956184615994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dead9a2c466e44199cde1c78fc1012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790079313
 GameObject:
   m_ObjectHideFlags: 0
@@ -40325,7 +40343,7 @@ PrefabInstance:
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: SecondsInAFullDay
-      value: 60
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
@@ -41185,7 +41203,7 @@ PrefabInstance:
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: currentTime
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}

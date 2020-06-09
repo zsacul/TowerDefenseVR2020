@@ -41,7 +41,7 @@ public class HP_displayer : MonoBehaviour
             int chp = PoI.GetComponent<EndpointManager>().health;
             float scalechp = ((float)chp) / max_hp; // you can't possibly mean that the maxHP is not 100?
             float newscale = HP_display_primary_size * scalechp;
-            //Debug.Log(chp);
+//            Debug.Log(chp);
             // apply the scale to the HP_display
             Vector3 HPdisplay_scale = HP_display.transform.localScale;
             HPdisplay_scale.y = newscale;
