@@ -23,21 +23,21 @@ public class UIBuildings : GameEventListener
     private void SetUpUI()
     {
         towerInstance = Instantiate(towerPrefab, transform.position, transform.rotation);
-        obstacleInstance = Instantiate(obstaclePrefab, transform.position, transform.rotation);
+       // obstacleInstance = Instantiate(obstaclePrefab, transform.position, transform.rotation);
         towerInstance.transform.parent = gameObject.transform;
-        obstacleInstance.transform.parent = gameObject.transform;
-        towerInstance.transform.localScale = new Vector3(0.02f, 0.013f, 0.02f);
-        obstacleInstance.transform.localScale = new Vector3(0.015f, 0.03f, 0.015f);
+       // obstacleInstance.transform.parent = gameObject.transform;
+        towerInstance.transform.localScale = new Vector3(0.02f, 0.015f, 0.02f);
+       // obstacleInstance.transform.localScale = new Vector3(0.015f, 0.03f, 0.015f);
         towerInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
-        obstacleInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
+       // obstacleInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
         towerInstance.transform.localPosition = new Vector3(0, -0.02f, -0.015f);
-        obstacleInstance.transform.localPosition = new Vector3(-0.067f, -0.02f, 0.044f);
+       // obstacleInstance.transform.localPosition = new Vector3(-0.067f, -0.02f, 0.044f);
     }
 
     public override void OnEventRaised(Object data)
     {
         towerInstance.SetActive(!towerInstance.active);
-        obstacleInstance.SetActive(!obstacleInstance.active);
+       // obstacleInstance.SetActive(!obstacleInstance.active);
     }
 
     public void OnUITowerClicked()
