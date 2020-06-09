@@ -40776,7 +40776,7 @@ PrefabInstance:
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: SecondsInAFullDay
-      value: 60
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
@@ -41636,7 +41636,7 @@ PrefabInstance:
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: currentTime
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
