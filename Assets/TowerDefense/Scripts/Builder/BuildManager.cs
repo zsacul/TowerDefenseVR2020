@@ -354,4 +354,9 @@ public class BuildManager : MonoBehaviour
         UpdateUI();
         WaveChanged.Raise();
     }
+
+    public ChunkType Selected()
+    {
+        return selectedBuilding;
+    }
 }

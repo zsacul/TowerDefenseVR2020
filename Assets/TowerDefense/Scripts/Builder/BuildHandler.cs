@@ -81,7 +81,7 @@ public class BuildHandler : GameEventListener
         {
             if (buildManager.VRTKInputs)
             {
-                buildButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
+                buildButtonPressed = (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f);
             }
             else
             {

@@ -52,7 +52,7 @@ public class LightningCycle : MonoBehaviour
     {
         UpdateLight();
         currentTime += (Time.deltaTime / SecondsInAFullDay) * timeMultiplier;
-
+        
         if (currentTime >= 1)
         {
             currentTime = 0;//once we hit "midnight"; any time after that sunrise will begin.
@@ -90,4 +90,25 @@ public class LightningCycle : MonoBehaviour
         directionalLight.color = dirLightningColors.Evaluate(currentTime);
         
     }
+
+    
+    public IEnumerator ChangeToNight()
+    {
+        Debug.Log("odpalamy nocke");
+        float currentDayDuration = SecondsInAFullDay;
+        SecondsInAFullDay = 12f;
+        yield return new WaitUntil(() => currentTime >= 0.75);
+        SecondsInAFullDay = currentDayDuration;
+    }
+
+    public IEnumerator ChangeToDay()
+    {
+        Debug.Log("odpalamy dzionek");
+        float currentDayDuration = SecondsInAFullDay;
+        SecondsInAFullDay = 12f;
+        yield return new WaitUntil(() => currentTime <= 0.25);
+        yield return new WaitUntil(() => currentTime >= 0.25);
+        SecondsInAFullDay = currentDayDuration;
+    }
+
 }
