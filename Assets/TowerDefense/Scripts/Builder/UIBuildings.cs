@@ -36,8 +36,8 @@ public class UIBuildings : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        towerInstance.SetActive(false);
-        obstacleInstance.SetActive(false);
+        towerInstance.SetActive(!towerInstance.active);
+        obstacleInstance.SetActive(!obstacleInstance.active);
     }
 
     public void OnUITowerClicked()
