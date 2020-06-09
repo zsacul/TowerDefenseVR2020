@@ -94,6 +94,7 @@ public class LightningCycle : MonoBehaviour
     
     public IEnumerator ChangeToNight()
     {
+        Debug.Log("odpalamy nocke");
         float currentDayDuration = SecondsInAFullDay;
         SecondsInAFullDay = 24f;
         yield return new WaitUntil(() => currentTime >= 0.75);

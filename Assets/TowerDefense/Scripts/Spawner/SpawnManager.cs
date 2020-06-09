@@ -12,6 +12,8 @@ namespace SpawnManaging
         GameEvent breakEnd;
         [SerializeField]
         GameEvent breakStart;
+        [SerializeField]
+        LightningCycle lightningCycle;
         
 
         BreakButtonHandler BreakButton;
@@ -102,21 +104,23 @@ namespace SpawnManaging
             breakStart.Raise();
             breakOn = true;
             breakTime = 0;
+            lightningCycle.ChangeToDay();
         }
 
         public void EndBreak()
         {
             if(breakOn)
             {
-                if (BreakButton == null)
-                {
-                    BreakButton = FindObjectOfType<BreakButtonHandler>();
-                    if (BreakButton == null)
-                        Debug.LogError("Nie ma na planszy breakbuttona");
-                }
+                //if (BreakButton == null)
+                //{
+                //    BreakButton = FindObjectOfType<BreakButtonHandler>();
+                //    if (BreakButton == null)
+                //        Debug.LogError("Nie ma na planszy breakbuttona");
+                //}
                 breakEnd.Raise();
                 InvokeRepeating("SpawnLoop", 0, 1);
                 breakOn = false;
+                lightningCycle.ChangeToNight();
             }
         }
         private void Update()
