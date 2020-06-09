@@ -104,7 +104,7 @@ namespace SpawnManaging
             breakStart.Raise();
             breakOn = true;
             breakTime = 0;
-            lightningCycle.ChangeToDay();
+            StartCoroutine(lightningCycle.ChangeToDay());
         }
 
         public void EndBreak()
@@ -118,9 +118,9 @@ namespace SpawnManaging
                 //        Debug.LogError("Nie ma na planszy breakbuttona");
                 //}
                 breakEnd.Raise();
-                InvokeRepeating("SpawnLoop", 0, 1);
+                InvokeRepeating("SpawnLoop", 3, 1);
                 breakOn = false;
-                lightningCycle.ChangeToNight();
+                StartCoroutine(lightningCycle.ChangeToNight());
             }
         }
         private void Update()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5591611701368879386}
   - component: {fileID: 5611654475242853614}
   - component: {fileID: 5603240997361276524}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: Magazin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5586572272238108180}
   - component: {fileID: 5611864558027373626}
   - component: {fileID: 5604013648884493698}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,8 @@ GameObject:
   - component: {fileID: 5586669542927455748}
   - component: {fileID: 5611629764374903940}
   - component: {fileID: 5603184800287940576}
-  m_Layer: 2
+  - component: {fileID: 277072736690503159}
+  m_Layer: 14
   m_Name: M1911
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,6 +242,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &277072736690503159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589185667785373776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b812e42521a5a27499e76cc5ed56e3ac, type: 3}
 --- !u!1 &5589237462600327502
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,10 +265,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5586548996122427738}
-  - component: {fileID: 3362456734702219572}
   - component: {fileID: 3362456734702219573}
   - component: {fileID: 4392041911391527945}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: M1911Debree
   m_TagString: Grababble
   m_Icon: {fileID: 0}
@@ -276,19 +290,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3362456734702219572
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589237462600327502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3362456734702219573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +330,7 @@ GameObject:
   - component: {fileID: 5586520022025925646}
   - component: {fileID: 5612505728430012094}
   - component: {fileID: 5603252086728062012}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +409,7 @@ GameObject:
   - component: {fileID: 5591605505346820324}
   - component: {fileID: 5612038349808529674}
   - component: {fileID: 5603199826968235168}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5591681324399835174}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: CINEMA_4D_Editor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

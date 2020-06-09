@@ -96,15 +96,17 @@ public class LightningCycle : MonoBehaviour
     {
         Debug.Log("odpalamy nocke");
         float currentDayDuration = SecondsInAFullDay;
-        SecondsInAFullDay = 24f;
+        SecondsInAFullDay = 12f;
         yield return new WaitUntil(() => currentTime >= 0.75);
         SecondsInAFullDay = currentDayDuration;
     }
 
     public IEnumerator ChangeToDay()
     {
+        Debug.Log("odpalamy dzionek");
         float currentDayDuration = SecondsInAFullDay;
-        SecondsInAFullDay = 24f;
+        SecondsInAFullDay = 12f;
+        yield return new WaitUntil(() => currentTime <= 0.25);
         yield return new WaitUntil(() => currentTime >= 0.25);
         SecondsInAFullDay = currentDayDuration;
     }
