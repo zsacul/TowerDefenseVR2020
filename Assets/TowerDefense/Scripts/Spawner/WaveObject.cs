@@ -137,7 +137,18 @@ namespace SpawnManaging
                     break;
             }
         }
+
+        public int EnemiesLeft()
+        {
+            int totalEnemies = 0;
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                totalEnemies += enemies[i].count;
+            }
+            return totalEnemies;
+        }
     }
+
     [Serializable]
     public class EnemyCount
     {

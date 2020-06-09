@@ -14553,6 +14553,8 @@ MonoBehaviour:
     nextGroupTime: 5
   breakDuration: 305
   breakOn: 0
+  waveInfoLabelPrefab: {fileID: 7192888815029301453, guid: f53ed8432eadf483fa5b2d77a6fe7704,
+    type: 3}
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
@@ -37676,6 +37678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315896199336624501, guid: ae0332a1eea44df4ca54bb67f6645dd8,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4315896199824777917, guid: ae0332a1eea44df4ca54bb67f6645dd8,
         type: 3}
