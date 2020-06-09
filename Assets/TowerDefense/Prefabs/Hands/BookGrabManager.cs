@@ -70,13 +70,18 @@ public class BookGrabManager : PropManager
             Debug.Log(EulerRot.y);
             if ((int)EulerRot.y > 180)
             {
-                Debug.Log("A");
                 EulerRot.z = 180.0f + EulerRot.x;
             }
             else
             {
-                Debug.Log("B");
                 EulerRot.z = - EulerRot.x;
+            }
+
+            if(EulerRot.z < 10.0f || EulerRot.z > 170.0f)
+            {
+                BookHook.GetComponent<BookManager>().LeaveBook();
+                HandManger.GetComponent<HandDeployer>().DeployNth(0);
+                grabbing = false;
             }
 
             EulerRot.y = 0.0f;
