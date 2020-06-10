@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
+using System;
+using System.Text;
 
 [System.Serializable]
 public class NBOXselectable_t
@@ -9,6 +11,10 @@ public class NBOXselectable_t
     public GameObject Miniature;
     public GameObject MiniatureInstance;
     public int Cost;
+    public string ItemName;
+    public string ItemDescriptionLine1;
+    public string ItemDescriptionLine2;
+    public string ItemDescriptionLine3;
 }
 
 public class GenericNBoxSelector : MonoBehaviour
@@ -17,15 +23,27 @@ public class GenericNBoxSelector : MonoBehaviour
     public GameObject LookAtGJ;
     public GameObject StepParent;
     public GameObject EffectorHandHook;
-    public List<GameObject> NBOXstate;
-    public List<GameObject> NBOXselector;
+
 
     public Material Red;
     public Material Green;
 
+    public GameObject TowerName;
+    public GameObject TowerCost;
 
+    public GameObject TDL1;
+    public GameObject TDL2;
+    public GameObject TDL3;
+
+    public GameObject HbackDesc;
+    public GameObject Hbackdots;
+
+    public List<GameObject> NBOXstate;
+    public List<GameObject> NBOXselector;
     [SerializeField]
     private List<NBOXselectable_t> NBOXselectable;
+
+     
 
     // 5 - 35 with 4 spaces.
     // 5, 15, 25, 35
@@ -98,28 +116,49 @@ public class GenericNBoxSelector : MonoBehaviour
             transform.Rotate(-90.0f, 0.0f, 90.0f);
         }
 
-        bool shown = false;
         float mindist = 1000.0f;
         int chosen = 0;
         for(int i = 0; i < NBOXselector.Count; i++)
         {
             float dist = Vector3.Distance(NBOXselector[i].transform.position, EffectorHandHook.transform.position);
             Debug.Log($"{i} distance {dist}");
-            if(dist < mindist && dist < 0.25f)
+            if(dist < mindist)
             {
-                shown = true;
                 mindist = dist;
                 chosen = i;
             }
 
         }
 
-        
-        if(!shown)
+        if(mindist > 1.25f)
         {
+            gameObject.SetActive(false);
+        } else if(mindist > 0.25f) {
             DisplayBoard(0);
+            TowerName.GetComponent<TextMesh>().text = " ";
+            TowerCost.GetComponent<TextMesh>().text = " ";
+            TDL1.GetComponent<TextMesh>().text = " ";
+            TDL2.GetComponent<TextMesh>().text = " ";
+            TDL3.GetComponent<TextMesh>().text = " ";
+            HbackDesc.SetActive(true);
+            StringBuilder sb = new StringBuilder("[", 15);
+            for (float i = 0.25f; i < 1.25f; i += 0.1f)
+                if (i < mindist)
+                    sb.Append("|");
+                else
+                    sb.Append(" ");
+            sb.Append("]");
+            Hbackdots.SetActive(true);
+            Hbackdots.GetComponent<TextMesh>().text = sb.ToString();
         } else {
             DisplayBoard(chosen + 1);
+            HbackDesc.SetActive(false);
+            Hbackdots.SetActive(false);
+            TowerName.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemName;
+            TowerCost.GetComponent<TextMesh>().text = NBOXselectable[chosen].Cost.ToString();
+            TDL1.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine1;
+            TDL2.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine2;
+            TDL3.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine3;
         }
     }
 }
