@@ -2678,6 +2678,10 @@ MonoBehaviour:
     Instance: {fileID: 0}
     description: 
     deployable: 0
+  - Prefab: {fileID: 4137375818022343, guid: cc4433af2016b4c428e51daef9eda35c, type: 3}
+    Instance: {fileID: 0}
+    description: 
+    deployable: 0
   HandDeployerName: 
   listIterator: 0
   RightInteractor: {fileID: 0}
@@ -33681,6 +33685,11 @@ PrefabInstance:
       propertyPath: GameManagerGO
       value: 
       objectReference: {fileID: 1738301545}
+    - target: {fileID: 1511972902324861208, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+      propertyPath: PropID
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2857310375888505551, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33751,10 +33760,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0125
       objectReference: {fileID: 0}
+    - target: {fileID: 3706678399236513062, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+      propertyPath: PropID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956312465523703446, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+      propertyPath: PropID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718152306625402732, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+      propertyPath: PropID
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6924461699007965700, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_Name
       value: QuadSelectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924461699007965700, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a56a2053012074599ee4adcb4e240d, type: 3}
@@ -42303,6 +42332,11 @@ PrefabInstance:
     - target: {fileID: 8915191336960692123, guid: c76845e11da67cf42b62f762bc9ff4bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036291278473286282, guid: c76845e11da67cf42b62f762bc9ff4bd,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -81,6 +81,7 @@ public class GenericNBoxSelector : MonoBehaviour
             ins.transform.localRotation = Quaternion.Euler(new Vector3(90.0f, 0.0f, 0.0f));
             ins.transform.localPosition = new Vector3(0.0f, 0.0f, -0.3f);
             NBOXselectable[i].MiniatureInstance = ins;
+            NBOXselector[i].tag = "Grababble";
         }
 
         NBOXstate[0].SetActive(true);
@@ -96,6 +97,7 @@ public class GenericNBoxSelector : MonoBehaviour
             if (NBOXselectable[i].Cost <= cash)
             {
                 NBOXselector[i].GetComponent<MeshRenderer>().material = Green;
+                
             } 
             else
             {
@@ -105,6 +107,42 @@ public class GenericNBoxSelector : MonoBehaviour
     }
 
     // Update is called once per frame
+    void displayQuitPrompt(float mindist)
+    {
+        DisplayBoard(0);
+        TowerName.GetComponent<TextMesh>().text = " ";
+        TowerCost.GetComponent<TextMesh>().text = " ";
+        TDL1.GetComponent<TextMesh>().text = " ";
+        TDL2.GetComponent<TextMesh>().text = " ";
+        TDL3.GetComponent<TextMesh>().text = " ";
+        HbackDesc.SetActive(true);
+        StringBuilder sb = new StringBuilder("[", 15);
+        for (float i = 0.25f; i < 1.25f; i += 0.1f)
+            if (i < mindist)
+                sb.Append("|");
+            else
+                sb.Append(" ");
+        sb.Append("]");
+        Hbackdots.SetActive(true);
+        Hbackdots.GetComponent<TextMesh>().text = sb.ToString();
+    }
+
+    void displaySelectScreen(int chosen)
+    {
+        DisplayBoard(chosen + 1);
+        HbackDesc.SetActive(false);
+        Hbackdots.SetActive(false);
+        TowerName.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemName;
+        TowerCost.GetComponent<TextMesh>().text = NBOXselectable[chosen].Cost.ToString();
+        TDL1.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine1;
+        TDL2.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine2;
+        TDL3.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine3;
+    }
+
+    void displayInProgressBuild()
+    {
+
+    }
     void Update()
     {
 
@@ -134,31 +172,9 @@ public class GenericNBoxSelector : MonoBehaviour
         {
             gameObject.SetActive(false);
         } else if(mindist > 0.25f) {
-            DisplayBoard(0);
-            TowerName.GetComponent<TextMesh>().text = " ";
-            TowerCost.GetComponent<TextMesh>().text = " ";
-            TDL1.GetComponent<TextMesh>().text = " ";
-            TDL2.GetComponent<TextMesh>().text = " ";
-            TDL3.GetComponent<TextMesh>().text = " ";
-            HbackDesc.SetActive(true);
-            StringBuilder sb = new StringBuilder("[", 15);
-            for (float i = 0.25f; i < 1.25f; i += 0.1f)
-                if (i < mindist)
-                    sb.Append("|");
-                else
-                    sb.Append(" ");
-            sb.Append("]");
-            Hbackdots.SetActive(true);
-            Hbackdots.GetComponent<TextMesh>().text = sb.ToString();
+            displayQuitPrompt(mindist);
         } else {
-            DisplayBoard(chosen + 1);
-            HbackDesc.SetActive(false);
-            Hbackdots.SetActive(false);
-            TowerName.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemName;
-            TowerCost.GetComponent<TextMesh>().text = NBOXselectable[chosen].Cost.ToString();
-            TDL1.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine1;
-            TDL2.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine2;
-            TDL3.GetComponent<TextMesh>().text = NBOXselectable[chosen].ItemDescriptionLine3;
+            displaySelectScreen(chosen);
         }
     }
 }

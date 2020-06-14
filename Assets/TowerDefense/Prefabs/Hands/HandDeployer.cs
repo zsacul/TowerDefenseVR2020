@@ -13,6 +13,7 @@ public class GOArray
 
 public class HandDeployer : MonoBehaviour
 {
+    public bool retarded_controlls = true;
     [SerializeField]
     private List<GOArray> PropList;
     private GameObject CurrentlyDeployed;
@@ -62,7 +63,6 @@ public class HandDeployer : MonoBehaviour
         listIterator = Nth;
     }
 
-
     public void DeployNext()
     {
         //Debug.Log($"Call To deploy next {listIterator}");
@@ -73,14 +73,46 @@ public class HandDeployer : MonoBehaviour
         CallWakeup(PropList[listIterator].Instance);
     }
 
+    private int stateFlipFlop;
     public void TriggerHook(float input)
     {
-        PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(input);
+        if (retarded_controlls)
+        {
+            // Histerisis controll
+            if (input > 0.6f)
+            {
+                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
+                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
+                if (stateFlipFlop == 0)
+                {
+                    PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
+                    HandGrab(1.0f);
+                }
+
+                stateFlipFlop = 1;
+                
+            }
+
+            if (input < 0.3f)
+            {
+                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
+                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
+                stateFlipFlop = 0;
+            }
+        }
     }
 
     public void GrabHook(float input)
     {
-        PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
+        if (!retarded_controlls)
+        {
+            PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
+            HandGrab(input);
+        }
+    }
+
+    public void HandGrab(float input)
+    {
         if (listIterator == 0 && input > 0.7f) // hand is empty and we are grabbing shit.
         {
             Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
@@ -91,12 +123,13 @@ public class HandDeployer : MonoBehaviour
             {
                 if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
-                    if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position)) {
+                    if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position))
+                    {
                         mindist = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
                         chosen = LocatedNearby[i].gameObject;
                     }
                 }
-            i++;
+                i++;
             }
 
             if (mindist < 90.0f)
@@ -136,6 +169,7 @@ public class HandDeployer : MonoBehaviour
             }
 
             CallInit(Prop.Instance); // initialize the object
+            Prop.Instance.GetComponent<PropManager>().retarded_controlls = retarded_controlls;
             CallKill(Prop.Instance); // remove the initialized object
         }
 
