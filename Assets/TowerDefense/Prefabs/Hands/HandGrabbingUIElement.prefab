@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3915294056157646804}
   - component: {fileID: 4981076334279954798}
-  - component: {fileID: -8487623263062436319}
+  - component: {fileID: 4052364576692035912}
   m_Layer: 0
   m_Name: HandGrabbingUIElement
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-8487623263062436319
+--- !u!114 &4052364576692035912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,14 +62,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4137375818022343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d682f3b92aaa3ae4c8bbc7d3cbcb90b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 92f6a683d76bfa34eb859584b6dd6254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colortype: 0
   PropID: 0
-  dupsko: 0
-  GizmoAnimation: {fileID: 0}
-  Debree: {fileID: 0}
+  retarded_controlls: 0
+  GizmoAnimation: {fileID: 4981076334279954798}
 --- !u!1 &613707382197714871
 GameObject:
   m_ObjectHideFlags: 0

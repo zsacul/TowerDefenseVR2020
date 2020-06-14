@@ -24,7 +24,8 @@ public class GenericNBoxSelector : MonoBehaviour
     public GameObject StepParent;
     public GameObject EffectorHandHook;
 
-
+    public bool CurrentlyBuilding = false;
+    private int selectedItem = 0;
     public Material Red;
     public Material Green;
 
@@ -47,7 +48,7 @@ public class GenericNBoxSelector : MonoBehaviour
 
     // 5 - 35 with 4 spaces.
     // 5, 15, 25, 35
-    void DisplayBoard(int board)
+    public void DisplayBoard(int board)
     {
         foreach (GameObject Sent in NBOXstate)
         {
@@ -63,6 +64,14 @@ public class GenericNBoxSelector : MonoBehaviour
         }
 
         NBOXstate[board].SetActive(true);
+        selectedItem = board - 1;
+    }
+
+    public void CurrentlyBuildingS(bool state)
+    {
+        CurrentlyBuilding = state;
+        for (int i = 0; i < NBOXselectable.Count; i++)
+            NBOXselector[i].SetActive(!state);
     }
 
     // Start is called before the first frame update
@@ -106,6 +115,11 @@ public class GenericNBoxSelector : MonoBehaviour
         }
     }
 
+    public GameObject getSelectedMiniature()
+    {
+        return NBOXselectable[selectedItem].Miniature;
+    }
+
     // Update is called once per frame
     void displayQuitPrompt(float mindist)
     {
@@ -141,6 +155,10 @@ public class GenericNBoxSelector : MonoBehaviour
 
     void displayInProgressBuild()
     {
+        DisplayBoard(0);
+        TDL1.GetComponent<TextMesh>().text = "Żeby zbudować wypuść ulepszenie w <eeeeeee>s";
+        TDL2.GetComponent<TextMesh>().text = "Żeby anulować wypuść ulepszenie w powietrzu";
+        TDL3.GetComponent<TextMesh>().text = "";
 
     }
     void Update()
@@ -168,13 +186,24 @@ public class GenericNBoxSelector : MonoBehaviour
 
         }
 
-        if(mindist > 1.25f)
+        if (CurrentlyBuilding)
         {
-            gameObject.SetActive(false);
-        } else if(mindist > 0.25f) {
-            displayQuitPrompt(mindist);
-        } else {
-            displaySelectScreen(chosen);
+            displayInProgressBuild();
+        }
+        else
+        {
+            if (mindist > 1.25f)
+            {
+                gameObject.SetActive(false);
+            }
+            else if (mindist > 0.25f)
+            {
+                displayQuitPrompt(mindist);
+            }
+            else
+            {
+                displaySelectScreen(chosen);
+            }
         }
     }
 }

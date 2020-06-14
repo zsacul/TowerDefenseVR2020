@@ -85,8 +85,14 @@ public class HandDeployer : MonoBehaviour
                 PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
                 if (stateFlipFlop == 0)
                 {
-                    PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
-                    HandGrab(1.0f);
+                    if (listIterator != 0)
+                    {
+                        PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
+                    }
+                    else
+                    {
+                        HandGrab(1.0f);
+                    }
                 }
 
                 stateFlipFlop = 1;
