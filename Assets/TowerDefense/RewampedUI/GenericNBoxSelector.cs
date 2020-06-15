@@ -4,6 +4,7 @@ using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
 using System;
 using System.Text;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class NBOXselectable_t
@@ -23,7 +24,7 @@ public class GenericNBoxSelector : MonoBehaviour
     public GameObject LookAtGJ;
     public GameObject StepParent;
     public GameObject EffectorHandHook;
-
+    public GameEvent panelRequired;
     public bool CurrentlyBuilding = false;
     private int selectedItem = 0;
     public Material Red;
@@ -94,12 +95,13 @@ public class GenericNBoxSelector : MonoBehaviour
         }
 
         NBOXstate[0].SetActive(true);
-
+        
         Respawn();
     }
 
-    void Respawn()
+    public void Respawn()
     {
+        gameObject.SetActive(true);
         int cash = GameManagerGO.GetComponent<BuildManager>().Money;
         for(int i = 0; i < NBOXselectable.Count; i++)
         {
@@ -177,7 +179,7 @@ public class GenericNBoxSelector : MonoBehaviour
         for(int i = 0; i < NBOXselector.Count; i++)
         {
             float dist = Vector3.Distance(NBOXselector[i].transform.position, EffectorHandHook.transform.position);
-            Debug.Log($"{i} distance {dist}");
+            //Debug.Log($"{i} distance {dist}");
             if(dist < mindist)
             {
                 mindist = dist;

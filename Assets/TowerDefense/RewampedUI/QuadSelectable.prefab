@@ -1051,6 +1051,21 @@ MonoBehaviour:
   LookAtGJ: {fileID: 0}
   StepParent: {fileID: 0}
   EffectorHandHook: {fileID: 0}
+  PanelNeeded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3c471dc2955f2d3428f7b8c9161bc0d4, type: 2}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CurrentlyBuilding: 0
   Red: {fileID: 2100000, guid: 3379a911cc4407041892f37df05e0c45, type: 2}
   Green: {fileID: 2100000, guid: 96236e841fb31b647ae0df84b86dd25b, type: 2}
   TowerName: {fileID: 5067341149576879366}
