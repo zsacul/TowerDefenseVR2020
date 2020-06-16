@@ -103,15 +103,21 @@
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
             {
-                if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null && 
-                    (CurrentRedirector == null || CurrentRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>()) )
+                if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
                 {
-                    if(PotentialRedirector == null || PotentialRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
+                    if (PotentialRedirector == null || PotentialRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
                         PotentialRedirector = hitData.collider.GetComponentInChildren<TeleportRedirector>();
-                    Vector3 lol = PotentialRedirector.transform.position;
-                    Debug.Log("redireted teleport: " + lol + " - " + PotentialRedirector.name);
-                    return lol + (Vector3.up * AdjustmentOffset);
+
+                    if (CurrentRedirector == null || CurrentRedirector != PotentialRedirector)
+                    {
+                        Vector3 lol = PotentialRedirector.transform.position;
+                        Debug.Log("redireted teleport: " + lol + " - " + PotentialRedirector.name);
+                        return lol + (Vector3.up * AdjustmentOffset);
+                    }
                 }
+                else
+                    PotentialRedirector = null;
+
                 length = hitData.distance;
             }
 

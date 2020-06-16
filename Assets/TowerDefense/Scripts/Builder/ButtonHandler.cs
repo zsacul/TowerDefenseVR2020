@@ -16,6 +16,7 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("KOLIZJA Z BUTTONEM");
         if(other.gameObject.tag == "HandCollider" && !pushed)
         {
             pushed = true;
