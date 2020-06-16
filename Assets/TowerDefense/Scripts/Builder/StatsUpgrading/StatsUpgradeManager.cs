@@ -93,8 +93,7 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.JoystickButton1) ||
-                (!buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.X)))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.X))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)

@@ -51,8 +51,6 @@ public class BuildHandler : GameEventListener
 
     void Update()
     {
-        UpdateButtonState(false);
-
         if (pointedAt)
         {
             ChunkType previousBuilding = selectedBuilding;
@@ -63,30 +61,6 @@ public class BuildHandler : GameEventListener
                 HoverOn();
             }
             UpdatePointedAt();
-        }
-    }
-
-    void LateUpdate()
-    {
-        UpdateButtonState(true);
-    }
-
-    private void UpdateButtonState(bool isLateUpdate)
-    {
-        if (isLateUpdate)
-        {
-            buildButtonPressed = false;
-        }
-        else
-        {
-            if (buildManager.VRTKInputs)
-            {
-                buildButtonPressed = (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f);
-            }
-            else
-            {
-                buildButtonPressed = Input.GetKeyDown(KeyCode.C);
-            }
         }
     }
 
@@ -112,7 +86,7 @@ public class BuildHandler : GameEventListener
         else
         {
             //if (Input.GetKeyDown(KeyCode.C))
-            if(buildButtonPressed)
+            if(Input.GetKeyDown(KeyCode.C) || (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f))
             {
                 Build();
                 HoverOff();

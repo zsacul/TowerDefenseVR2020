@@ -77,8 +77,6 @@ public class UpgradeManager : MonoBehaviour
 
     void Update()
     {
-        UpdateButtonState(false);
-
         if (buildManager.BuildModeOn && GoodPosition())
         {
             if (!canvasEnabled && !upgradePanelsActive)
@@ -89,7 +87,7 @@ public class UpgradeManager : MonoBehaviour
                 NoneSelected();
             }
 
-            if (panelButtonPressed)//Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.X))
             {
                 upgradePanelsActive = !upgradePanelsActive;
                 if (canvasEnabled)
@@ -108,29 +106,6 @@ public class UpgradeManager : MonoBehaviour
         {
             DisableUpgradeCanvases();
             NoneSelected();
-        }
-    }
-    void LateUpdate()
-    {
-        UpdateButtonState(true);
-    }
-
-    private void UpdateButtonState(bool isLateUpdate)
-    {
-        if (isLateUpdate)
-        {
-            panelButtonPressed = false;
-        }
-        else
-        {
-            if (buildManager.VRTKInputs)
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
-            }
-            else
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.X);
-            }
         }
     }
 
