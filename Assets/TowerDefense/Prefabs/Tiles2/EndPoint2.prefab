@@ -33,7 +33,7 @@ Transform:
   - {fileID: 6650802000698094872}
   - {fileID: 8655983507913818758}
   m_Father: {fileID: 7400130778373308739}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &8413447912459889562
 MeshFilter:
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7207910688208179663}
   m_Layer: 0
   m_Name: Redirector
-  m_TagString: Untagged
+  m_TagString: DontChangeRedirector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,49 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecd53d5584da5144923db5badfcefed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4654175085037441308
-GameObject:
+--- !u!64 &3905192956459261618
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1564157165083625668}
-  - component: {fileID: 895244475390028034}
-  m_Layer: 0
-  m_Name: TeleporterRedirector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1564157165083625668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654175085037441308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 3.748, z: -0.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7400130778373308739}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &895244475390028034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654175085037441308}
+  m_GameObject: {fileID: 7187689450021876690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ecd53d5584da5144923db5badfcefed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 32d48ddbab2174645a8b25e9f1210783, type: 3}
 --- !u!1 &8086722118444561063
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +195,6 @@ Transform:
   - {fileID: 8320505438391798602}
   - {fileID: 7649933241718244680}
   - {fileID: 8865774031043830740}
-  - {fileID: 1564157165083625668}
   - {fileID: 7270611801111875477}
   - {fileID: 2693226983128536654}
   m_Father: {fileID: 0}
@@ -753,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 2372187113377979879, guid: 411baec3cf3efa64eab338ada08e0ae8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2372187113377979879, guid: 411baec3cf3efa64eab338ada08e0ae8,
         type: 3}
@@ -920,8 +890,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle
       objectReference: {fileID: 0}
+    - target: {fileID: 7280558717230101989, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280558717230101989, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235951240004036306, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonRedirector
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235951240004036306, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DontChangeRedirector
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a8e183416ee944b91d715b96354d1c, type: 3}
+--- !u!1 &7187689450021876690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2655519328435285647, guid: c0a8e183416ee944b91d715b96354d1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5144660791411203421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6189235211016241601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1333370168608775324, guid: c0a8e183416ee944b91d715b96354d1c,

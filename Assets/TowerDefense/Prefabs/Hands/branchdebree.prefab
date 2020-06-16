@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6567666581448685567}
   - component: {fileID: -7682751435235060442}
   - component: {fileID: 3939413681263127008}
-  - component: {fileID: 797097712921069930}
+  - component: {fileID: 2676878800068546243}
   m_Layer: 14
   m_Name: branchdebree
   m_TagString: Grababble
@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-BoxCollider:
+--- !u!64 &2676878800068546243
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,6 +135,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8140005, y: 0.21063976, z: 0.14940424}
-  m_Center: {x: 0.001674816, y: 0.044984005, z: -0.0013372749}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5528351815fd4c04abf537f22c7e18f1, type: 3}
