@@ -2694,7 +2694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 11400000, guid: 3d32dee95c0a8d34583de9dc78269cf4, type: 2}
+  - {fileID: 11400000, guid: 9c73ef5f149bf494186e8409b1df4e14, type: 2}
   - {fileID: 11400000, guid: eb44cb4972e30c442aaf2cfbc7f6ebb1, type: 2}
   onStartCast:
     m_PersistentCalls:
@@ -9852,6 +9852,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 442069742}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &446208731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8391352710448912418, guid: c69d84a3cadb94e45af0210c52e5728d,
+    type: 3}
+  m_PrefabInstance: {fileID: 176654561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57b1a00a82f48d3a19652931fc4887d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &450251226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35423,6 +35435,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 113615718}
     m_Modifications:
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 446208731}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: CheckTeleportRedirectors
+      objectReference: {fileID: 0}
+    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2787178629607972807, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: m_Name
