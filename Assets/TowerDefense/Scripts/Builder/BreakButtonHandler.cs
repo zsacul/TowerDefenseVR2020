@@ -19,12 +19,17 @@ public class BreakButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "HandCollider" && !pushed)
+        if(!pushed )
         {
-            pushed = true;
-            transform.localPosition += new Vector3(0f, -0.02f, 0f);
-            spawnManager.EndBreak();
-            ButtonClicked.Invoke();
+            if (IsPlayerOnTower())
+            {
+                pushed = true;
+                transform.localPosition += new Vector3(0f, -0.02f, 0f);
+                spawnManager.EndBreak();
+                ButtonClicked.Invoke();
+            }
+            else
+                Debug.Log("Gracz znajduje się na glebie");
         }
     }
 
@@ -32,6 +37,11 @@ public class BreakButtonHandler : MonoBehaviour
     {
         pushed = false;
         transform.localPosition -= new Vector3(0f, -0.02f, 0f);
+    }
+
+    private bool IsPlayerOnTower()
+    {
+        return Camera.main.transform.position.y > 4f;
     }
 
 }

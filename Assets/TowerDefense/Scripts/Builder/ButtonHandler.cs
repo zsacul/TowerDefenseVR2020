@@ -16,8 +16,8 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("KOLIZJA Z BUTTONEM");
-        if(other.gameObject.tag == "HandCollider" && !pushed)
+        //if(other.gameObject.tag == "HandCollider" && !pushed)
+        if(!pushed)
         {
             pushed = true;
             StartCoroutine(TryUpgradingTower());
