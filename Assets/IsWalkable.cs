@@ -14,7 +14,6 @@ public class IsWalkable : MonoBehaviour
 
     public void ChangeIsWalkable(bool b)
     {
-        Debug.Log("Is Walkable - Zmiana aktywnosci chunka");
         if (b)
             isWlkble.SetActive(true);
         else
