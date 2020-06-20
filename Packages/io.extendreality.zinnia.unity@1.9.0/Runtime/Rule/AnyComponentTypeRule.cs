@@ -22,6 +22,8 @@
         /// <inheritdoc/>
         protected override bool Accepts(GameObject targetGameObject)
         {
+
+            //Debug.Log(targetGameObject.name);
             if (ComponentTypes == null)
             {
                 return false;
@@ -29,13 +31,16 @@
 
             foreach (SerializableType serializedType in ComponentTypes.NonSubscribableElements)
             {
+                if (serializedType.ActualType.ToString() == "UnwalkableChunk");
+                    if (targetGameObject.GetComponentInChildren(serializedType) != null)
+                    {
+                        Debug.Log("Znaleziono UnwalkableChunk w dziecku");
+                        return true;
+                    }
+
                 if (serializedType.ActualType != null && targetGameObject.TryGetComponent(serializedType) != null)
                 {
-                    if (serializedType.ToString() == "UnwalkableChunk")
-                        if (targetGameObject.GetComponentInChildren(serializedType) == null)
-                            return false;
                     return true;
-                    
                 }
             }
 

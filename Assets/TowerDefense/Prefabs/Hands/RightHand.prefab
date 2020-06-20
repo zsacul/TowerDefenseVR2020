@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1709980098296384323}
   - component: {fileID: 4981076334279954798}
   - component: {fileID: 6995971599641279468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RightHand
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4833541002316485654}
   - component: {fileID: 512608359281738897}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Armature.001
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3984135369009694942}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.021
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890055720101937815}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.034
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4415641595949543454}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.026
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665642637270538010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.038
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176381739058427807}
   - component: {fileID: 4478995220946198681}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.028_end
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489041590555783984}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.032
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2500986814354972369}
   - component: {fileID: 5994897332821067661}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.032_end
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3216865262042765399}
   - component: {fileID: 4726959141496395986}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.035
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7796156177300799237}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.022
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2171726689400233915}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.030
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9085527753042387239}
   - component: {fileID: 5277497415840360025}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.039
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771957192623607055}
   - component: {fileID: 2259148235721663903}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.039_end
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333205182750837402}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.029
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -611,7 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6473057250791700607}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.037
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8669758036623514946}
   - component: {fileID: 6364271325209341767}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder.001
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617927167986348254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.024
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8412581879450907259}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.020
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7144350132997433299}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.025
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059262104313687873}
   - component: {fileID: 1767793789958770898}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.036_end
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470968466095007766}
   - component: {fileID: 4152302368290443522}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.031
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5664397273781240174}
   - component: {fileID: 6192550795804325918}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.023
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8006522999656016610}
   - component: {fileID: 7847262720662978873}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.024_end
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860864189441845697}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.033
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183057153836354017}
   - component: {fileID: 4767430480093317882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.027
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5881524680850205204}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.028
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6289465076643764924}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bone.036
   m_TagString: HandCollider
   m_Icon: {fileID: 0}
