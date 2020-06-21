@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireRaySphere
+  m_Name: IceBallSphere
   m_Shader: {fileID: -6465566751694194690, guid: 121162e7f051f2e49aa8dff89f0e168d,
     type: 3}
   m_ShaderKeywords: 
