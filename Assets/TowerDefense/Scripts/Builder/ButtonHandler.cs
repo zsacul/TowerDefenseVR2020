@@ -16,8 +16,7 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.gameObject.tag == "HandCollider" && !pushed)
-        if(!pushed)
+        if(other.gameObject.tag == "HandCollider" && !pushed)
         {
             pushed = true;
             StartCoroutine(TryUpgradingTower());
