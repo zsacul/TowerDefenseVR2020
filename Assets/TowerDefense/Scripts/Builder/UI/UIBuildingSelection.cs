@@ -6,27 +6,14 @@ public class UIBuildingSelection : MonoBehaviour
 {
     [SerializeField]
     private GameEvent UIBuildingClicked;
-    private bool collided;
-
-    void Start()
-    {
-        collided = false;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
        // Debug.Log("Collided with UI Tower. gameObject that collider = " + other.gameObject.name);
-        if (other.gameObject.tag == "HandCollider" && !collided)
+        if (other.gameObject.tag == "HandCollider")
         {
+            Debug.Log("Raise " + UIBuildingClicked.name);
             UIBuildingClicked.Raise();
-            collided = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag == "HandCollider")
-        {
-            collided = false;
         }
     }
 }

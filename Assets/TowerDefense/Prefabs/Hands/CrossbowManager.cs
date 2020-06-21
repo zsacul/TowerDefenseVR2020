@@ -48,21 +48,14 @@ public class CrossbowManager : PropManager
     }
 
 
-    private int remcount = 0;
     public override void Remove(Vector3 DebreeVelocity)
     {
         transform.gameObject.SetActive(false);
-
-        if (remcount > 0)
-        {
-            GameObject dispatched = Instantiate(Debree);
-            dispatched.GetComponent<Transform>().position = transform.position;
-            dispatched.GetComponent<Transform>().rotation = transform.rotation;
-            dispatched.GetComponent<Rigidbody>().velocity = DebreeVelocity;
-            dispatched.SetActive(true);
-        }
-
-        remcount++;
+        GameObject dispatched = Instantiate(Debree);
+        dispatched.GetComponent<Transform>().position = transform.position;
+        dispatched.GetComponent<Transform>().rotation = transform.rotation;
+        dispatched.GetComponent<Rigidbody>().velocity = DebreeVelocity;
+        dispatched.SetActive(true);
     }
 
     public override void Initialize()

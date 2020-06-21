@@ -13,7 +13,6 @@ TagManager:
   - BaseTower
   - Instructions
   - Grababble
-  - DontChangeRedirector
   layers:
   - Default
   - TransparentFX

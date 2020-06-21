@@ -50,22 +50,15 @@ public class M1911InHandManager : PropManager
         Destroy(Motivator);
     }
 
-    private int remcount = 0;
+
     public override void Remove(Vector3 DebreeVelocity)
     {
-        
         Debug.Log(DebreeVelocity);
         transform.gameObject.SetActive(false); /* ofc chcemy też pokazać schować rękę */
-
-        if (remcount > 0)
-        {
-            GameObject dispatched = Instantiate(Debree);
-            dispatched.GetComponent<Transform>().position = transform.position;
-            dispatched.GetComponent<Transform>().rotation = transform.rotation;
-            dispatched.GetComponent<Rigidbody>().velocity = DebreeVelocity;
-            dispatched.SetActive(true);
-        }
-
-        remcount++;
+        GameObject dispatched = Instantiate(Debree);
+        dispatched.GetComponent<Transform>().position = transform.position;
+        dispatched.GetComponent<Transform>().rotation = transform.rotation;
+        dispatched.GetComponent<Rigidbody>().velocity = DebreeVelocity;
+        dispatched.SetActive(true);
     }
 }

@@ -14618,7 +14618,6 @@ MonoBehaviour:
     nextGroupTime: 5
   breakDuration: 305
   breakOn: 0
-  waveInfoLabelPrefab: {fileID: 0}
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
@@ -35766,101 +35765,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 113615718}
     m_Modifications:
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2036949641}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckTeleportRedirectors
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: TeleportApplied.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 39082035}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: PolozenieKamery
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_Target
-      value: 
-      objectReference: {fileID: 2036949641}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: CheckTeleportRedirectors
-      objectReference: {fileID: 0}
-    - target: {fileID: 103839708580330939, guid: 52f87534fdefc6b47aadeae3a66454d8,
-        type: 3}
-      propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2787178629607972807, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: m_Name
@@ -36579,18 +36483,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 886739246}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2036949641 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8391352710448912418, guid: c69d84a3cadb94e45af0210c52e5728d,
-    type: 3}
-  m_PrefabInstance: {fileID: 176654561}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57b1a00a82f48d3a19652931fc4887d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2040557194
 GameObject:
   m_ObjectHideFlags: 0
