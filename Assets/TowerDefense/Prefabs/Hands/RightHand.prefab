@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 3915294056157646804}
   - component: {fileID: 1709980098296384323}
   - component: {fileID: 4981076334279954798}
-  - component: {fileID: 6995971599641279468}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RightHand
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,22 +69,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &6995971599641279468
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4137375818022343}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &613707382197714871
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,10 +78,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4833541002316485654}
-  - component: {fileID: 512608359281738897}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Armature.001
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,19 +101,6 @@ Transform:
   m_Father: {fileID: 3915294056157646804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &512608359281738897
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613707382197714871}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.008
-  m_Center: {x: -0.02, y: 0, z: 0}
 --- !u!1 &850780110439858122
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,9 +110,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3984135369009694942}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.021
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,9 +141,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890055720101937815}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.034
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,9 +172,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4415641595949543454}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.026
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,9 +203,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665642637270538010}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.038
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,10 +234,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176381739058427807}
-  - component: {fileID: 4478995220946198681}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.028_end
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,19 +255,6 @@ Transform:
   m_Father: {fileID: 5881524680850205204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4478995220946198681
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185933107743889130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1534520518541483156
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,9 +264,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489041590555783984}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.032
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,10 +295,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2500986814354972369}
-  - component: {fileID: 5994897332821067661}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.032_end
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,19 +316,6 @@ Transform:
   m_Father: {fileID: 4489041590555783984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5994897332821067661
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2210495813641935028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2641740080767199424
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,10 +325,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3216865262042765399}
-  - component: {fileID: 4726959141496395986}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.035
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,19 +347,6 @@ Transform:
   m_Father: {fileID: 890055720101937815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4726959141496395986
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641740080767199424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3025619993112318437
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,9 +356,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7796156177300799237}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.022
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,9 +387,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2171726689400233915}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.030
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,10 +418,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9085527753042387239}
-  - component: {fileID: 5277497415840360025}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.039
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,19 +440,6 @@ Transform:
   m_Father: {fileID: 1665642637270538010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5277497415840360025
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3591243593276066460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3886117790876057462
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,10 +449,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771957192623607055}
-  - component: {fileID: 2259148235721663903}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.039_end
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -558,19 +470,6 @@ Transform:
   m_Father: {fileID: 9085527753042387239}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2259148235721663903
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3886117790876057462}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4370573788789658743
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,9 +479,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333205182750837402}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.029
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,9 +510,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6473057250791700607}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.037
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,9 +542,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8669758036623514946}
   - component: {fileID: 6364271325209341767}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Cylinder.001
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -744,9 +643,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617927167986348254}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.024
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,9 +674,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8412581879450907259}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.020
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,9 +708,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7144350132997433299}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.025
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,10 +739,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059262104313687873}
-  - component: {fileID: 1767793789958770898}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.036_end
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -862,19 +760,6 @@ Transform:
   m_Father: {fileID: 6289465076643764924}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.72700006, y: 0.49500003, z: -0.70900005}
---- !u!135 &1767793789958770898
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6849574683563084700}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7260404234018462320
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,10 +769,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1470968466095007766}
-  - component: {fileID: 4152302368290443522}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.031
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,19 +791,6 @@ Transform:
   m_Father: {fileID: 2171726689400233915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4152302368290443522
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7260404234018462320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7462019609338106351
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,10 +800,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5664397273781240174}
-  - component: {fileID: 6192550795804325918}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.023
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -952,19 +822,6 @@ Transform:
   m_Father: {fileID: 7796156177300799237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6192550795804325918
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7462019609338106351}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7563230195529438501
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,10 +831,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8006522999656016610}
-  - component: {fileID: 7847262720662978873}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.024_end
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -996,19 +852,6 @@ Transform:
   m_Father: {fileID: 617927167986348254}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7847262720662978873
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7563230195529438501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7623238817627071893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,9 +861,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860864189441845697}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.033
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1049,10 +892,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183057153836354017}
-  - component: {fileID: 4767430480093317882}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.027
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,19 +914,6 @@ Transform:
   m_Father: {fileID: 4415641595949543454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4767430480093317882
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7815075619326346287}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8128204302616031603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,9 +923,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5881524680850205204}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.028
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,9 +954,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6289465076643764924}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bone.036
-  m_TagString: HandCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -70,7 +70,7 @@ public class GStringManager : PropManager
             String.transform.position = transform.position;
         if (String == null || LockTarget == null)
             return;
-        if(Vector3.Distance(String.transform.position, LockTarget.transform.position) < 0.05)
+        if(Vector3.Distance(String.transform.position, LockTarget.transform.position) < 0.1)
         {
             CrossBow.GetComponent<CrossbowManager>().loaded = true; // the crossbow is loaded
             CrossBow.GetComponent<CrossbowManager>().control = true;

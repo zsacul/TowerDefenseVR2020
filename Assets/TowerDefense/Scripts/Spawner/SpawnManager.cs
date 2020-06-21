@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Events;
 namespace SpawnManaging
 {
     public class SpawnManager : GameEventListener
@@ -16,8 +15,7 @@ namespace SpawnManaging
         GameEvent breakStart;
         [SerializeField]
         LightningCycle lightningCycle;
-
-        public UnityEvent WaveStart;
+        
 
         BreakButtonHandler BreakButton;
         public Transform[] spawnPoints;
@@ -129,7 +127,6 @@ namespace SpawnManaging
                 //        Debug.LogError("Nie ma na planszy breakbuttona");
                 //}
                 breakEnd.Raise();
-                WaveStart.Invoke();
                 InvokeRepeating("SpawnLoop", 3, 1);
                 breakOn = false;
                 StartCoroutine(lightningCycle.ChangeToNight());
