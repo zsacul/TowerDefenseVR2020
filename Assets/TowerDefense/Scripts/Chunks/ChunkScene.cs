@@ -15,6 +15,7 @@ public class ChunkScene : MonoBehaviour
     private ChunkType[,] map;
     public GameObject[] chunkPrefab;
     public Chunk[,] chunkMap;
+    public bool[,] oldPath;
     public bool[,] path;
     public SpawnManaging.SpawnManager spawner;
     // Start is called before the first frame update
@@ -23,10 +24,10 @@ public class ChunkScene : MonoBehaviour
         map = mapString.GetChunkType();
         chunkMap = new Chunk[mapString.sizeX, mapString.sizeY];
         path = new bool[mapString.sizeX, mapString.sizeY];
+        oldPath = new bool[mapString.sizeX, mapString.sizeY];
         Build();
         if (!(chunkMap[0, 0].BFS())) Debug.LogError("ChunkScene.cs/Start() initial path failed");
         UpdateChunks();
-        surface.BuildNavMesh();
         (int, int) spawn = GetFirstChunkOfType(ChunkType.spawnPoint);
         (int, int) target = GetFirstChunkOfType(ChunkType.endPoint);
 
@@ -62,15 +63,35 @@ public class ChunkScene : MonoBehaviour
             }
         }
     }
-    public void UpdateChunks()
+    public void UpdateChunks(bool forced = false)
     {
-        for (int y = 0; y < mapString.sizeY; y++)
+        int i = 0;
+        if(!forced)
         {
-            for (int x = 0; x < mapString.sizeX; x++)
+            for (int y = 0; y < mapString.sizeY; y++)
             {
-                chunkMap[x, y].UpdateChunk();
+                for (int x = 0; x < mapString.sizeX; x++)
+                {
+                    chunkMap[x, y].UpdateChunk();
+                    i++;
+                }
             }
         }
+        else
+        {
+            for (int y = 0; y < mapString.sizeY; y++)
+            {
+                for (int x = 0; x < mapString.sizeX; x++)
+                {
+                    if(oldPath[x,y] || path[x,y])
+                    {
+                       chunkMap[x, y].UpdateChunk();
+                        i++;
+                    }
+                }
+            }
+        }
+        oldPath = (bool[,])path.Clone();
     }
 
     public ChunkType GetChunkType(int x, int y) {

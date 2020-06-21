@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EndpointManager : GameEventListener
 {
     [SerializeField]
     GameEvent gameOver;
-
+    public UnityEvent damaged;
+    public UnityEvent destroyed;
     public int health;
 
     bool GameOverCondition()
@@ -21,6 +23,7 @@ public class EndpointManager : GameEventListener
         if (GameOverCondition())
         {
             gameOver.Raise();
+            destroyed.Invoke();
         }
     }
 
@@ -34,7 +37,9 @@ public class EndpointManager : GameEventListener
         if(other.tag == "Enemy")
         {
             DamageEndpoint(1);
+            other.transform.position = Vector3.down * 1000;
             other.GetComponent<EnemyHPManager>().ApplyDamage(1000000);
+            damaged.Invoke();
         }
         
     }

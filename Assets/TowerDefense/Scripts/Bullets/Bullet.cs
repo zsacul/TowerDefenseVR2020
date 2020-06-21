@@ -5,34 +5,46 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     GameObject target;
+    [SerializeField]
     float speed;
+    [SerializeField]
     float damage;
-    float specialEffectDuration;
-    float specialEffectDmg;
+    int specialEffectDurationInSec;
+    int specialEffectDmgPerSec;
+    SpecialEffect specialEffect;
+    [SerializeField]
     ElementType type;
     bool readyToDestroy;
 
-    public Bullet(GameObject t, float s, float d, ElementType typ, float eDur = 0f, float eDmg = 0f)
+    public Bullet(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect specialEffect = SpecialEffect.none)
     {
         setBulletInfo(t, s, d, typ, eDur, eDmg);
     }
 
-    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, float eDur = 0f, float eDmg = 0f)
+    public void setBulletInfo(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect SE = SpecialEffect.none)
     {
         target = t;
         speed = s;
         damage = d;
-        specialEffectDuration = eDur;
-        specialEffectDmg = eDmg;
+        specialEffectDurationInSec = eDur;
+        specialEffectDmgPerSec = eDmg;
         type = typ;
+        specialEffect = SE;
         readyToDestroy = false;
+    } 
+
+    public void ChangeSpecialEffect(SpecialEffect SE)
+    {
+        specialEffect = SE;
     }
 
     private void Update()
     {
+        if (target == null)
+            return;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-        transform.LookAt(target.transform);
+        transform.LookAt(target.transform.position);
         if (readyToDestroy)
             destroyBullet();
     }
@@ -67,14 +79,18 @@ public class Bullet : MonoBehaviour
         return type;
     }
 
-    public float GetSpecialEffectDuration()
+    public int GetSpecialEffectDuration()
     {
-        return specialEffectDuration;
+        return specialEffectDurationInSec;
     }
 
-    public float GetSpecialEffectDmg()
+    public int GetSpecialEffectDmg()
     {
-        return specialEffectDmg;
+        return specialEffectDmgPerSec;
     }
 
+    public SpecialEffect GetSpecialEffect()
+    {
+        return specialEffect;
+    }
 }

@@ -1,18 +1,25 @@
+﻿#define DEBUG
+//#undef DEBUG
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class EnemyHPManager : MonoBehaviour {
-
+    float speedManipulations;
+    float specialEffectDurationInSec;
     bool isSpecialEffectActive;
-    float specialEffectDuration;
-    float specialEffectDmg;
-    UnityEngine.AI.NavMeshAgent enemyAgent;
+    int specialEffectDmgPerSec;
+    ElementType bulletType;
+    NavMeshAgent enemyAgent;
+    Vector3 last_velocity;
 
     public UnityEvent damaged;
     public UnityEvent killed;
     [Min(1f)]
     public float enemyHP = 100f;
+    public int moneyDropped = 0;
 
     [SerializeField]
     Elements elementsInfo;
@@ -20,38 +27,26 @@ public class EnemyHPManager : MonoBehaviour {
     GameObject targetPoint;
     [SerializeField]
     ElementType type;
-    [SerializeField]
-    float speed;
-    
-    
-    
-
+        
     private void Start()
     {
-        enemyAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        enemyAgent = GetComponent<NavMeshAgent>();
         elementsInfo = GameObject.Find("GameManager").GetComponent<Elements>();
         isSpecialEffectActive = false;
         GetComponent<HealthBar>().SetMaxHp(enemyHP);
     }
 
-    private void Update()
-    {
-        if (isSpecialEffectActive)
-             StartCoroutine(specialEffect());
-
-    }
-
     private void Death() {
         killed.Invoke();
-        Debug.Log("Enemy killed");
-        Destroy(enemyAgent);
         Destroy(GetComponent<Collider>());
+        Destroy(enemyAgent);
         Destroy(gameObject, 3);
     }
 
     public void ApplyDamage(Bullet b) {
         damaged.Invoke();
         Resistance res = elementsInfo.GetResistence(type, b.GetBulletType());
+
         switch (res)
         {
             case Resistance.high:
@@ -59,44 +54,56 @@ public class EnemyHPManager : MonoBehaviour {
                 break;
             case Resistance.normal:
                 enemyHP -= b.GetDamage();
-                isSpecialEffectActive = true;
-                specialEffectDuration = b.GetSpecialEffectDuration();
-                specialEffectDmg = b.GetSpecialEffectDmg();
+                specialEffectDurationInSec = b.GetSpecialEffectDuration();
+                specialEffectDmgPerSec = b.GetSpecialEffectDmg();
+                activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec);
                 break;
             case Resistance.low:
                 enemyHP -= b.GetDamage() * 1.5f;
-                isSpecialEffectActive = true;
-                specialEffectDuration = b.GetSpecialEffectDuration() * 1.5f;
-                specialEffectDmg = b.GetSpecialEffectDmg() * 1.5f;
+                specialEffectDurationInSec = (int)(b.GetSpecialEffectDuration() * 1.5f);
+                specialEffectDmgPerSec = (int)(b.GetSpecialEffectDmg() * 1.5f);
+                StartCoroutine(activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec));
                 break;
             default:
                 break;
         };
         
         GetComponent<HealthBar>().updateBar(enemyHP);
-
         b.SetReadyToDestroy();
 
-
         if (enemyHP <= 0 ) {
+            BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
-
-
     }
-
-    IEnumerator specialEffect()
+    public void ApplyDamage(DamageData data)
     {
-        while (specialEffectDuration > 0)
+        damaged.Invoke();
+        Resistance res = elementsInfo.GetResistence(type, data.element);
+
+        switch (res)
         {
-            specialEffectDuration -= Time.deltaTime;
-            ApplyDamage(specialEffectDmg);
-            yield return new WaitForSeconds(0.3f);
+            case Resistance.high:
+                enemyHP -= data.damage * 0.7f;
+                break;
+            case Resistance.normal:
+                enemyHP -= data.damage;
+                activateSpecialEffect(data.specialEffect, (int)data.specialEffectDmgPerSec, data.specialEffectDurationInSec);
+                break;
+            case Resistance.low:
+                enemyHP -= data.damage * 1.5f;
+                activateSpecialEffect(data.specialEffect, (int)(data.specialEffectDmgPerSec * 1.5f), data.specialEffectDurationInSec * 1.5f);
+                break;
+            default:
+                break;
+        };
+        GetComponent<HealthBar>().updateBar(enemyHP);
+        if (enemyHP <= 0)
+        {
+            BuildManager.Instance.AddMoney(moneyDropped);
+            Death();
         }
-
-        isSpecialEffectActive = false;
     }
-
     public void ApplyDamage(float damage)
     {
         damaged.Invoke();
@@ -108,10 +115,39 @@ public class EnemyHPManager : MonoBehaviour {
         }
 
         GetComponent<HealthBar>().updateBar(enemyHP);
-
     }
 
     public GameObject GetTargetPoint(){
         return targetPoint;
+    }
+
+    IEnumerator activateSpecialEffect(SpecialEffect SEtype, int dmgPerSec, float durationInSec)
+    {
+        switch (SEtype)
+        {
+            case SpecialEffect.EarthSE1:
+                StartCoroutine(GetComponent<EarthSE1>().RunSpecialEffect(this, dmgPerSec, durationInSec));
+                break;
+            case SpecialEffect.ElectricitySE1:
+                StartCoroutine(GetComponent<ElectricitySE>().RunSpecialEffect(this, dmgPerSec, durationInSec));
+                break;
+            case SpecialEffect.FireSE1:
+                StartCoroutine(GetComponent<FireSE>().RunSpecialEffect(this, dmgPerSec, durationInSec));
+                break;
+            case SpecialEffect.IceSE1:
+                StartCoroutine(GetComponent<IceSE1>().RunSpecialEffect(this, dmgPerSec, durationInSec));
+                break;
+            case SpecialEffect.WindSE1:
+                //Nic sie nie dzieje
+                break;
+            default:
+                yield return new WaitForSeconds(0f);
+                break;
+        }
+    }
+
+    public ElementType GetElementType()
+    {
+        return type;
     }
 }

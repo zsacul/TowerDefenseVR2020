@@ -12,22 +12,32 @@ namespace SpawnManaging
         GameEvent breakEnd;
         [SerializeField]
         GameEvent breakStart;
+        [SerializeField]
+        LightningCycle lightningCycle;
         
+
+        BreakButtonHandler BreakButton;
         public Transform[] spawnPoints;
         [SerializeField]
         Wave[] wave;
+        [SerializeField]
+        float breakDuration;
         bool paused;
         int waveIndex;
         int spawnerIndex;
-        [SerializeField]
-        float breakLength;
         int spawnedInGroup;
+        int spawnMagicNumber;
+        public bool breakOn;
+        float breakTime;
         // Update is called once per frame
         void Start()
         {
-            InvokeRepeating("SpawnLoop", 0, 1);
+            spawnMagicNumber = 2;
+            breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
+            breakTime = 0;
         }
+        
         private void Spawn()
         {
             if (spawnedInGroup >= wave[waveIndex].groupSize)
@@ -44,11 +54,11 @@ namespace SpawnManaging
                 if(waveIndex < wave.Length)
                 {
                     wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
-                    InvokeRepeating("SpawnLoop", breakLength, 1);
-                    breakStart.Raise();
+                    InitBreak();
                 }
                 else
                 {
+                    InitBreak();
                     Debug.Log("All waves cleared");//TODO
                 }
                 return;
@@ -58,7 +68,6 @@ namespace SpawnManaging
         }
         private void SpawnLoop()
         {
-            breakEnd.Raise();
             if (!IsInvoking("Spawn"))
             {
                 spawnedInGroup = 0;
@@ -76,6 +85,54 @@ namespace SpawnManaging
             CancelInvoke("SpawnLoop");
             CancelInvoke("Spawn");
         }
+        private void InitBreak()
+        {
+            InvokeRepeating("BreakCheck", 0, 1);
+        }
+        private void BreakCheck()
+        {
+            Debug.Log(spawnMagicNumber);
+            Debug.Log(spawnPoints[0].childCount);
+            if (spawnPoints[0].childCount == spawnMagicNumber)
+            {
+                CancelInvoke("BreakCheck");
+                StartBreak();
+            }
+        }
+        private void StartBreak()
+        {
+            breakStart.Raise();
+            breakOn = true;
+            breakTime = 0;
+            StartCoroutine(lightningCycle.ChangeToDay());
+        }
+
+        public void EndBreak()
+        {
+            if(breakOn)
+            {
+                //if (BreakButton == null)
+                //{
+                //    BreakButton = FindObjectOfType<BreakButtonHandler>();
+                //    if (BreakButton == null)
+                //        Debug.LogError("Nie ma na planszy breakbuttona");
+                //}
+                breakEnd.Raise();
+                InvokeRepeating("SpawnLoop", 3, 1);
+                breakOn = false;
+                StartCoroutine(lightningCycle.ChangeToNight());
+            }
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
+            {
+                EndBreak();
+            }
+
+            if (breakOn)
+                breakTime += Time.deltaTime;
+        }
     }
     [Serializable]
     public class Wave
@@ -83,8 +140,6 @@ namespace SpawnManaging
         public WaveObject waveData;
         [Tooltip("interval between spawns")]
         public float interval;
-        [Tooltip("maxLength = 0 is ignored")]
-        public float maxLength;
         [Min(0.1f)]
         public float bonusHp = 1;
         [Min(0.1f)]

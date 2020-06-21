@@ -7,6 +7,12 @@ TagManager:
   - TilemapChunk
   - Enemy
   - Bullet
+  - Chunk
+  - HandCollider
+  - PathChunk
+  - BaseTower
+  - Instructions
+  - Grababble
   layers:
   - Default
   - TransparentFX
@@ -19,16 +25,16 @@ TagManager:
   - PostProcessing
   - PointerGrabbableObject
   - Glow
+  - Enemy
+  - Player
+  - NotWalkableForPlayer
+  - IgnoreTeleportRaycast
+  - IgnoreBuildRaycast
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grababble
   - 
   - 
   - 

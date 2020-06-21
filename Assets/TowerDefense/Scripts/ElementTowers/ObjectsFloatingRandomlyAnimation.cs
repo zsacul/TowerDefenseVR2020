@@ -7,12 +7,18 @@ public class ObjectsFloatingRandomlyAnimation : MonoBehaviour
     public List<ObjectRotator> Objects;
     public ObjectRotator ObjectRotator;
     public int NumberOfObjects;
+    public float SpawnRocksDelay = 3f;
 
     void Start()
     {
+        Invoke("SpawnFloatingRocks", SpawnRocksDelay);        
+    }
+
+    private void SpawnFloatingRocks()
+    {
         for (int i = 0; i < NumberOfObjects; i++)
         {
-            SpawnObject();
+            Invoke("SpawnObject", UnityEngine.Random.RandomRange(1000, 3000) / 1000f);
         }
     }
 
