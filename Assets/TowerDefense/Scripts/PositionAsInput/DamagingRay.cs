@@ -14,6 +14,7 @@ public class DamagingRay : MonoBehaviour , IChargable
     public float length;
     LineRenderer line;
     bool pulsing;
+    public ParticleSystem contactPoint; 
     private void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -43,10 +44,16 @@ public class DamagingRay : MonoBehaviour , IChargable
     {
         if(Physics.Raycast(transform.position, transform.forward, out var hit))
         {
+            ContactPointUpdate(true, hit.point, hit.normal);
+            
             if(hit.collider.TryGetComponent<EnemyHPManager>(out var hp))
             {
                 return hp;
             }
+        }
+        else
+        {
+            ContactPointUpdate(false, Vector3.zero, Vector3.zero);
         }
         return null;
     }
@@ -74,7 +81,11 @@ public class DamagingRay : MonoBehaviour , IChargable
             CancelInvoke("Pulse");
             endPulsing.Invoke();
         }
-        Destroy(gameObject);
+        line.enabled = false;
+        Destroy(this);
+        contactPoint.Stop();
+        Destroy(GetComponent<Renderer>());
+        Destroy(gameObject, 2);
     }
     void RayUpdate()
     {
@@ -88,5 +99,18 @@ public class DamagingRay : MonoBehaviour , IChargable
             endPoint = transform.position + transform.forward * 100.0f;
         }
         line.SetPositions(new Vector3[]{ transform.position, endPoint});
+    }
+    void ContactPointUpdate(bool active, Vector3 position, Vector3 normal)
+    {
+        if (active)
+        {
+            contactPoint.Play();
+            contactPoint.transform.position = position;
+            contactPoint.transform.LookAt(position + normal);
+        }
+        else
+        {
+            contactPoint.Stop();
+        }
     }
 }
