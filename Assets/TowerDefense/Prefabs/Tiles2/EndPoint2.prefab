@@ -1560,6 +1560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRButtonBreak
       objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255557282, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1613,6 +1618,16 @@ PrefabInstance:
     - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255591650, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255591650, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

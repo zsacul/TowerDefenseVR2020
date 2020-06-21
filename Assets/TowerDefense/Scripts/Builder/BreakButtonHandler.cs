@@ -6,38 +6,36 @@ using UnityEngine.Events;
 public class BreakButtonHandler : MonoBehaviour
 {
 
+    [SerializeField]
+    Transform ButtonPushedPosition;
+    [SerializeField]
+    Transform ButtonReleasedPosition;
+    
     bool pushed;
     SpawnManaging.SpawnManager spawnManager;
     public UnityEvent ButtonClicked;
- 
+    
     private void Start()
     {
         pushed = false;
         spawnManager = FindObjectOfType<SpawnManaging.SpawnManager>();
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if(!pushed )
+        if (transform.position.y <= ButtonPushedPosition.position.y && IsPlayerOnTower())
         {
-            if (IsPlayerOnTower())
-            {
-                pushed = true;
-                transform.localPosition += new Vector3(0f, -0.02f, 0f);
-                spawnManager.EndBreak();
-                ButtonClicked.Invoke();
-            }
-            else
-                Debug.Log("Gracz znajduje się na glebie");
+            spawnManager.EndBreak();
+            ButtonClicked.Invoke();
+        }
+        
+        if (transform.position.y > ButtonReleasedPosition.position.y)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.position = ButtonReleasedPosition.position;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        pushed = false;
-        transform.localPosition -= new Vector3(0f, -0.02f, 0f);
-    }
 
     private bool IsPlayerOnTower()
     {

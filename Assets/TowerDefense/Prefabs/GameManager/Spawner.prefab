@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &502891014700574038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502891014700574033}
+  - component: {fileID: 502891014700574032}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502891014700574033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502891014700574038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502891014700574032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502891014700574038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2abe6baec00c9f49bea9e85beaf9f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae, type: 2}
+  target: {fileID: 0}
+  breakEnd: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
+  breakStart: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
+  lightningCycle: {fileID: 0}
+  WaveStart:
+    m_PersistentCalls:
+      m_Calls: []
+  spawnPoints:
+  - {fileID: 502891014700574033}
+  wave:
+  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 3
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 8b9fa501c07a26f419f53c373c4b3c69, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 4
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    interval: 1.5
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 6
+    nextGroupTime: 5
+  - waveData: {fileID: 11400000, guid: 76cea4699b2cbac4b820cf5fa189e488, type: 2}
+    interval: 1.5
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 6
+    nextGroupTime: 5
+  breakDuration: 305
+  breakOn: 0
+  waveInfoLabelPrefab: {fileID: 7192888815029301453, guid: f53ed8432eadf483fa5b2d77a6fe7704,
+    type: 3}

@@ -31,7 +31,7 @@ TagManager:
   - NotWalkableForPlayer
   - IgnoreTeleportRaycast
   - IgnoreBuildRaycast
-  - 
+  - Interactable
   - 
   - 
   - 
