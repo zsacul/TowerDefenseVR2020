@@ -12,6 +12,6 @@ public class UIObstacleClickedListener : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        //uiBuildings.OnUIObstacleClicked();
+        uiBuildings.OnUIObstacleClicked();
     }
 }

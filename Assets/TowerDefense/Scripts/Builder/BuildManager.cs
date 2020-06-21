@@ -124,7 +124,7 @@ public class BuildManager : MonoBehaviour
     {
         if (buildModeOn)
         {
-            //UpdateButtonState(false);
+            UpdateButtonState(false);
 
             if (purchasePanelsActive)
             {
@@ -170,7 +170,6 @@ public class BuildManager : MonoBehaviour
             }
 
             UpdateUI();
-            panelButtonPressed = false;
         }
 
         if (buildModeOn && selectedBuilding != ChunkType.none)
@@ -191,12 +190,7 @@ public class BuildManager : MonoBehaviour
 
     void LateUpdate()
     {
-        //UpdateButtonState(true);
-    }
-
-    public void UITowerClicked()
-    {
-        panelButtonPressed = true;
+        UpdateButtonState(true);
     }
 
     private void UpdateButtonState(bool isLateUpdate)

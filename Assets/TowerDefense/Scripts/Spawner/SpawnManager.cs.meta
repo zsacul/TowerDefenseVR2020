@@ -3,13 +3,7 @@ guid: b2abe6baec00c9f49bea9e85beaf9f9a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - listenedEvent: {instanceID: 0}
-  - target: {instanceID: 0}
-  - breakEnd: {instanceID: 0}
-  - breakStart: {instanceID: 0}
-  - waveInfoLabelPrefab: {fileID: 7192888815029301453, guid: f53ed8432eadf483fa5b2d77a6fe7704,
-      type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
