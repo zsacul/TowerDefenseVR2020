@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6567666581448685567}
   - component: {fileID: -7682751435235060442}
   - component: {fileID: 3939413681263127008}
-  - component: {fileID: 797097712921069930}
+  - component: {fileID: 2676878800068546243}
   m_Layer: 14
   m_Name: branchdebree
   m_TagString: Grababble
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
---- !u!64 &797097712921069930
+--- !u!64 &2676878800068546243
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

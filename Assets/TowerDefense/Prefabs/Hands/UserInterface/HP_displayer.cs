@@ -29,7 +29,7 @@ public class HP_displayer : MonoBehaviour
         // since the endpoint might spawn after us, we do stupid crap untill we can find it.
         if (Endpoint == null)
         {
-            Debug.Log("missed");
+            //Debug.Log("missed");
             // cursed shit. absolutelly cursed shit.
             Endpoint = GameObject.Find("EndPoint(Clone)");
             if (Endpoint != null)
