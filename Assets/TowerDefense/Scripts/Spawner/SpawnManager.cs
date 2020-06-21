@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 namespace SpawnManaging
 {
     public class SpawnManager : GameEventListener
@@ -28,10 +29,15 @@ namespace SpawnManaging
         int spawnedInGroup;
         int spawnMagicNumber;
         public bool breakOn;
+
+        public Canvas waveInfoLabelPrefab;
+        private Canvas waveInfoLabel;
+
         float breakTime;
         // Update is called once per frame
         void Start()
         {
+            waveInfoLabel = Instantiate(waveInfoLabelPrefab);
             spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
@@ -64,7 +70,9 @@ namespace SpawnManaging
                 return;
             }
             spawnedInGroup++;
+            
             Instantiate(obj, spawnPoints[spawnerIndex]).GetComponent<EnemyAgentMotivator>().target1 = target;
+            UpdateUI();
         }
         private void SpawnLoop()
         {
@@ -103,6 +111,7 @@ namespace SpawnManaging
         {
             breakStart.Raise();
             breakOn = true;
+            UpdateUI();
             breakTime = 0;
             StartCoroutine(lightningCycle.ChangeToDay());
         }
@@ -122,6 +131,7 @@ namespace SpawnManaging
                 breakOn = false;
                 StartCoroutine(lightningCycle.ChangeToNight());
             }
+            UpdateUI();
         }
         private void Update()
         {
@@ -132,6 +142,36 @@ namespace SpawnManaging
 
             if (breakOn)
                 breakTime += Time.deltaTime;
+        }
+
+        private void UpdateUI()
+        {
+            if (!breakOn)
+            {
+                Transform spawnPoint = spawnPoints[0].transform;
+                waveInfoLabel.enabled = true;
+                waveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
+                waveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 9f, spawnPoint.position.z);
+                TextMeshProUGUI text = waveInfoLabel.GetComponentInChildren<TextMeshProUGUI>();
+                //GameObject enemyPreview = waveInfoLabel.GetComponentsInChildren<GameObject>()[1];
+                //enemyPreview = Instantiate(wave[waveIndex].waveData.GetEnemy());
+                int enemiesLeft = wave[waveIndex].waveData.EnemiesLeft();
+                if (enemiesLeft == 0)
+                {
+                    text.SetText("No enemies left");
+                } else if (enemiesLeft == 1)
+                {
+                    text.SetText("1 enemy left");
+                } else
+                {
+                    text.SetText(enemiesLeft + " enemies left");
+                }
+                
+            } else 
+            {
+                waveInfoLabel.enabled = false;
+            }
+            
         }
     }
     [Serializable]
