@@ -10,7 +10,7 @@
     /// <summary>
     /// Casts a parabolic line and creates points at the origin, the target and in between.
     /// </summary>
-    public class ParabolicLineCast : PointsCast
+    public class BuildingParabolicLineCast : PointsCast
     {
         /// <summary>
         /// The maximum length of the projected cast. The x value is the length of the forward cast, the y value is the length of the downward cast.
@@ -103,21 +103,6 @@
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
             {
-                if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
-                {
-                    if (PotentialRedirector == null || PotentialRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
-                        PotentialRedirector = hitData.collider.GetComponentInChildren<TeleportRedirector>();
-
-                    if (CurrentRedirector == null || CurrentRedirector != PotentialRedirector)
-                    {
-                        Vector3 lol = PotentialRedirector.transform.position;
-                        Debug.Log("redireted teleport: " + lol + " - " + PotentialRedirector.name);
-                        return lol + (Vector3.up * AdjustmentOffset);
-                    }
-                }
-                else
-                    PotentialRedirector = null;
-
                 length = hitData.distance;
             }
 
@@ -147,20 +132,6 @@
 
             if (downRayHit)
             {
-                if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
-                {
-                    Debug.Log("jest jakis teleportRedirector");
-                    if (CurrentRedirector == null || CurrentRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
-                    {
-                        Debug.Log("Sprawdzamy czy uzywamy juz tego redirectora");
-                        if (PotentialRedirector == null || PotentialRedirector.transform.position != downwardOrigin)
-                        {
-                            Debug.Log("przekierowywujemy wskaznik");
-                            PotentialRedirector = hitData.collider.GetComponentInChildren<TeleportRedirector>();
-                            return ProjectDown(PotentialRedirector.transform.position);
-                        }
-                    }
-                }
                 point = ray.GetPoint(hitData.distance);
 
                 TargetHit = hitData;
@@ -237,36 +208,6 @@
             {
                 points.Add(generatedPoint);
             }
-        }
-
-        public void CheckTeleportRedirectors()
-        {
-            StartCoroutine(CheckTele());   
-        }
-
-        IEnumerator<WaitForFixedUpdate> CheckTele()
-        {
-            if (PotentialRedirector != null)
-            {
-                yield return new WaitForFixedUpdate();
-                Debug.Log("Potencjalny przekierowywacz: " + PotentialRedirector.name);
-
-                if (Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) < 0.1f &&
-                    Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z) < 0.1f && PotentialRedirector.tag != "DontChangeRedirector")
-                {
-                    Debug.Log(PotentialRedirector.tag);
-                    CurrentRedirector = PotentialRedirector;
-                }
-                else
-                    Debug.Log("Odleglosc od potencjalnego przekierowywacza była: " + Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) + ", "
-                        + Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z));
-            }
-            else
-            {
-                CurrentRedirector = null;
-            }
-
-            PotentialRedirector = null;
         }
     }
 }

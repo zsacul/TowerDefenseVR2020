@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6941442173723328764}
+  - component: {fileID: 3059457123982602151}
   m_Layer: 0
   m_Name: Spike1
   m_TagString: Untagged
@@ -94,6 +95,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3059457123982602151
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503111738070896685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &625725559174223067
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6788128542446901685}
+  - component: {fileID: 3227572925357983495}
   m_Layer: 0
   m_Name: Spike2
   m_TagString: Untagged
@@ -441,6 +457,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3227572925357983495
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831692687819778241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2112786544563213065
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2593603718554234145}
+  - component: {fileID: 1290440341156195171}
   m_Layer: 0
   m_Name: Spike7
   m_TagString: Untagged
@@ -779,6 +810,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1290440341156195171
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618335374144318707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4670731183006465791
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98164294178770573}
+  - component: {fileID: 4883912013284694901}
   m_Layer: 0
   m_Name: Spike6
   m_TagString: Untagged
@@ -903,6 +949,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4883912013284694901
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880639633212001304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5109831968153033147
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978285435151500573}
+  - component: {fileID: 4643184658374217683}
   m_Layer: 0
   m_Name: Spike8
   m_TagString: Untagged
@@ -936,6 +997,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4643184658374217683
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109831968153033147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5287260251425810512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7042143535031177373}
+  - component: {fileID: 4532507654927433777}
   m_Layer: 0
   m_Name: Spike5
   m_TagString: Untagged
@@ -1296,6 +1372,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4532507654927433777
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863830501077806257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5884982216655988408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2431616666643916171}
+  - component: {fileID: 2161442438677121397}
   m_Layer: 0
   m_Name: Spike4
   m_TagString: Untagged
@@ -1541,6 +1632,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2161442438677121397
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730445849509419635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &6824196529304281647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009331945988957871}
+  - component: {fileID: 2834416595846985210}
   m_Layer: 0
   m_Name: Spike3
   m_TagString: Untagged
@@ -1788,6 +1894,20 @@ Transform:
   m_Father: {fileID: 8120046355229539283}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2834416595846985210
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268419223905465749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8074118091553608084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,6 +1980,7 @@ GameObject:
   - component: {fileID: 5484884639821164637}
   - component: {fileID: 7158980676323116181}
   - component: {fileID: 1961230874546423675}
+  - component: {fileID: 1909998679160873597}
   m_Layer: 0
   m_Name: IceSpikesObstacle
   m_TagString: Untagged
@@ -1912,10 +2033,22 @@ BoxCollider:
   m_GameObject: {fileID: 8810554202345407054}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1909998679160873597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810554202345407054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9058164848934435887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679936168016163227, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647352093603078469, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
