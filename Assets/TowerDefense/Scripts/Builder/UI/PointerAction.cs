@@ -10,29 +10,17 @@
     /// </summary>
     public class PointerAction : BooleanAction
     {
-        private bool value;
+        private BuildManager buildManager;
 
         void Start()
         {
-            value = false;
+            buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
         }
 
-        public void ChangeValue()
+        void Update()
         {
-            value = !value;
-            Receive(value);
+            Receive(buildManager.currentlyBuilding);
         }
 
-        public void Activate()
-        {
-            Receive(true);
-            value = true;
-        }
-
-        public void Deactivate()
-        {
-            Receive(false);
-            value = false;
-        }
     }
 }

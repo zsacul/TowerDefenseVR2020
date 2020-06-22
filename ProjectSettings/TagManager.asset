@@ -13,6 +13,7 @@ TagManager:
   - BaseTower
   - Instructions
   - Grababble
+  - BuildPointerCaster
   layers:
   - Default
   - TransparentFX

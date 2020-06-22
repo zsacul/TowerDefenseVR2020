@@ -5,11 +5,12 @@
     using Malimbe.PropertySerializationAttribute;
     using Malimbe.XmlDocumentationAttribute;
     using Zinnia.Utility;
-    
+
+
     /// <summary>
     /// Casts a parabolic line and creates points at the origin, the target and in between.
     /// </summary>
-    public class ParabolicLineCast : PointsCast
+    public class BuildingParabolicLineCast : PointsCast
     {
         /// <summary>
         /// The maximum length of the projected cast. The x value is the length of the forward cast, the y value is the length of the downward cast.
@@ -44,6 +45,8 @@
         [field: DocumentedByXml]
         public float CurveOffset { get; set; } = 1f;
 
+        [SerializeField]
+        public GameObject PlayerHeadset;
         /// <summary>
         /// Used to move the points back and up a bit to prevent the cast clipping at the collision points.
         /// </summary>
@@ -52,6 +55,9 @@
         /// A reusable collection of <see cref="Vector3"/>s.
         /// </summary>
         protected readonly List<Vector3> curvePoints = new List<Vector3>();
+
+        protected TeleportRedirector CurrentRedirector = null;
+        protected TeleportRedirector PotentialRedirector = null;
 
         protected override void OnEnable()
         {
@@ -97,17 +103,11 @@
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
             {
-                if (gameObject.tag != "BuildPointerCaster" && hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
-                {
-                    Vector3 lol = hitData.collider.GetComponentInChildren<TeleportRedirector>().transform.position;
-                    Debug.Log("redireted teleport: " + lol + " - " + hitData.collider.GetComponentInChildren<TeleportRedirector>().name);
-                    return lol + (Vector3.up * AdjustmentOffset);
-                }
                 length = hitData.distance;
             }
 
             //if (hitData.collider != null)
-                //Debug.Log("Kolizja z " + hitData.collider.name);
+            //Debug.Log("Kolizja z " + hitData.collider.name);
             // Use an offset to move the point back and up a bit to prevent the cast clipping at the collision point.
             return ray.GetPoint(length - AdjustmentOffset) + (Vector3.up * AdjustmentOffset);
         }
@@ -133,6 +133,7 @@
             if (downRayHit)
             {
                 point = ray.GetPoint(hitData.distance);
+
                 TargetHit = hitData;
             }
 

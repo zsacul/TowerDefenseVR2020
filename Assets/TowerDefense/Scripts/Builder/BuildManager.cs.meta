@@ -3,7 +3,20 @@ guid: 27cf6e8eee5c7bd4493b19b224ff176c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - canvas: {instanceID: 0}
+  - BuildingSuccess: {instanceID: 0}
+  - BuildingFailure: {instanceID: 0}
+  - towerPurchaseCanvasPrefab: {instanceID: 0}
+  - obstaclePurchaseCanvasPrefab: {instanceID: 0}
+  - rightController: {instanceID: 0}
+  - WaveChanged: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
+  - BuildingSwitchedToNone: {fileID: 11400000, guid: 9f48ed9f3f092474a94d5166833009c8,
+      type: 2}
+  - UIMoneyText: {instanceID: 0}
+  - towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
+  - towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
+  - teleportPointer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

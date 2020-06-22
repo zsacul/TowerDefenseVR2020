@@ -43,7 +43,7 @@ public class UIBuildings : GameEventListener
     public void OnUITowerClicked()
     {
         //Debug.Log("Inside UIBuildings.OnUITowerClicked()");
-        if(buildManager.Selected() == ChunkType.tower)
+        if(buildManager.selectedBuilding == ChunkType.tower)
         {
             buildManager.ChooseNone();
         }
@@ -55,7 +55,7 @@ public class UIBuildings : GameEventListener
 
     public void OnUIObstacleClicked()
     {
-        if(buildManager.Selected() == ChunkType.playerObstacle)
+        if(buildManager.selectedBuilding == ChunkType.playerObstacle)
         {
             buildManager.ChooseNone();
         }

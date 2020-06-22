@@ -29,22 +29,21 @@ public class BuildManager : MonoBehaviour
     private GameEvent BuildingSwitchedToNone; 
     [SerializeField]
     private Text UIMoneyText;
-    //[SerializeField]
-    //public bool VRTKInputs;
     [SerializeField]
     private GameEvent towerSelected;
     [SerializeField]
     private GameEvent towerBuilt;
     [SerializeField]
-    private GameEvent SelectionStatusChanged;
+    private GameObject teleportPointer;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
     private BoxCollider towerPurchaseCanvasCollider;
     private BoxCollider obstaclePurchaseCanvasCollider;
 
-    private ChunkType selectedBuilding;
-    public bool BuildModeOn { get; private set; }
+    public ChunkType selectedBuilding { get; private set; }
+    public bool currentlyBuilding { get; private set; }
+    public bool BuildModeOn { get; private set; }    
     private bool purchasePanelsActive;
 
     private RectTransform canvasRT;
@@ -74,6 +73,7 @@ public class BuildManager : MonoBehaviour
     }
     void Start()
     {
+        currentlyBuilding = false;
         panelButtonPressed = false;
         towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
@@ -202,39 +202,61 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
-        CheckSelectionStatus();
         towerSelected.Raise();
         selectedBuilding = ChunkType.tower;
         purchasePanelsActive = false;
         UpdateUI();
+        if (!currentlyBuilding)
+        {
+            StartBuilding();
+        }
     }
 
     public void ChooseObstacle()
     {
-        CheckSelectionStatus();
         selectedBuilding = ChunkType.playerObstacle;
         purchasePanelsActive = false;
         UpdateUI();
+        if (!currentlyBuilding)
+        {
+            StartBuilding();
+        }
     }
 
     public void ChooseNone()
     {
         selectedBuilding = ChunkType.none;
-        CheckSelectionStatus();
         purchasePanelsActive = false;
         UpdateUI();
         BuildingSwitchedToNone.Raise();
+        if (currentlyBuilding)
+        {
+            StopBuilding();
+        }
+    }
+
+    private void StopBuilding()
+    {
+        currentlyBuilding = false;
+        teleportPointer.SetActive(true);
+    }
+
+    private void StartBuilding()
+    {
+        currentlyBuilding = true;
+        teleportPointer.SetActive(false);
     }
 
     // Checks if player has changed his selected building from ChunkType.None to Tower/Obstacle or if he has deselected it 
     // (changed from Tower/Obstacle to ChunkType.None). If so, SelectionStatusChanged event is raised.
-    private void CheckSelectionStatus()
+    /*private void CheckSelectionStatus(ChunkType newType)
     {
-        if(selectedBuilding == ChunkType.none)
+        if(((newType == ChunkType.tower || newType == ChunkType.playerObstacle) && selectedBuilding == ChunkType.none)
+            || (newType == ChunkType.none && (selectedBuilding == ChunkType.tower || selectedBuilding == ChunkType.playerObstacle)))
         {
             SelectionStatusChanged.Raise();
         }
-    }
+    }*/
 
     private bool UpdatePanelCondition()
     {
@@ -261,7 +283,7 @@ public class BuildManager : MonoBehaviour
     ///<summary>
     ///Returns selected building as ChunkType and its cost as int
     ///</summary>
-    public System.Tuple<ChunkType, int> ActiveBuildingInfo
+    public System.Tuple<ChunkType, int> SelectedBuildingInfo
     {
         get
         {
@@ -318,10 +340,11 @@ public class BuildManager : MonoBehaviour
         BuildModeOn = newStatus;
         ChooseNone();
         WaveChanged.Raise();
+        Debug.Log("ChangeWaveStatus: BuildModeOn = " + BuildModeOn.ToString());
     }
 
-    public ChunkType Selected()
+    /*public ChunkType Selected()
     {
         return selectedBuilding;
-    }
+    }*/
 }

@@ -12,7 +12,7 @@ public class BuildPointer : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        pointerAction.ChangeValue();
+        //pointerAction.ChangeValue();
     }
 
     void Start()

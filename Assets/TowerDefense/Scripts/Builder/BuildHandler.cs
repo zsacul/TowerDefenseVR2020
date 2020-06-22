@@ -97,7 +97,7 @@ public class BuildHandler : GameEventListener
 
     private void UpdateSelectedBuilding()
     {
-        System.Tuple<ChunkType, int> selectedBuildingInfo = buildManager.ActiveBuildingInfo;
+        System.Tuple<ChunkType, int> selectedBuildingInfo = buildManager.SelectedBuildingInfo;
         selectedBuilding = selectedBuildingInfo.Item1;
         sBuildingCost = selectedBuildingInfo.Item2;
     }
