@@ -40,6 +40,8 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        if (target == null)
+            return;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         transform.LookAt(target.transform.position);
