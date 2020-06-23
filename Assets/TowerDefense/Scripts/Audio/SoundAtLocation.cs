@@ -14,17 +14,23 @@ public class SoundAtLocation : MonoBehaviour
     [SerializeField]
     protected AudioMixerGroup mixer;
 
+    Vector3 soundLocation;
     private void Start()
     {
 
     }
     public void Play(int clipNumber = 0)
     {
-        if (locationOverride != Vector3.zero)
+        if (locationOverride == Vector3.zero)
         {
-            locationOverride = this.transform.position;
+            soundLocation = this.transform.position;
         }
-        AudioManager.Instance.PlayOnceAtLocation(clips[clipNumber], locationOverride, mixer);
+        else
+        {
+            soundLocation = locationOverride;
+        }
+        
+        AudioManager.Instance.PlayOnceAtLocation(clips[clipNumber], soundLocation, mixer);
     }
 
 }
