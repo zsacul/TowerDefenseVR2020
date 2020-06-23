@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 using System.Text;
 using UnityEngine.Events;
+using System.Net.WebSockets;
 
 [System.Serializable]
 public class NBOXselectable_t
@@ -99,9 +100,41 @@ public class GenericNBoxSelector : MonoBehaviour
         Respawn();
     }
 
+    private bool first = true;
+    private GameObject invokerButton;
     public void Respawn()
     {
-        gameObject.SetActive(true);
+        transform.position = StepParent.transform.position;
+
+        if (!first) 
+        {
+            GameObject inv = null;
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2.0f);
+            float closest = 100.0f;
+            for(int i = 0; i < hitColliders.Length; i++)
+            {
+                Debug.Log($"{i} gość tag {hitColliders[i].gameObject.tag} nazwa {hitColliders[i].gameObject.name}");
+                if (hitColliders[i].gameObject.tag == "VRButton")
+                {
+                    if (Vector3.Distance(transform.position, hitColliders[i].gameObject.transform.position) < closest)
+                    {
+                        closest = Vector3.Distance(transform.position, hitColliders[i].gameObject.transform.position);
+                        inv = hitColliders[i].gameObject;
+                    }
+                }
+            }
+            
+            Debug.Log("przeszukani");
+            if (closest < 99.0f)
+            {
+                invokerButton = inv.gameObject;
+                Debug.Log($"ZNALEZIONY TO {invokerButton}");
+                if (invokerButton != null)
+                    invokerButton.GetComponent<UpgradeCylinderPlayerInteractionGovernor>().Enter();
+            }
+        }
+        
+        first = false;
         int cash = GameManagerGO.GetComponent<BuildManager>().Money;
         for(int i = 0; i < NBOXselectable.Count; i++)
         {
@@ -196,6 +229,14 @@ public class GenericNBoxSelector : MonoBehaviour
         {
             if (mindist > 1.25f)
             {
+                if (invokerButton != null)
+                {
+                    invokerButton.GetComponent<UpgradeCylinderPlayerInteractionGovernor>().Exit();
+                    invokerButton = null; 
+                }
+                else
+                    Debug.Log("The upgrade menu has been closed without a selected invoker. This might be a problem if this log displays more than once!");
+
                 gameObject.SetActive(false);
             }
             else if (mindist > 0.25f)

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class GenericButton : MonoBehaviour
 {
-    private bool pushed;
+    public bool pushed;
     private GameObject buttonInstance;
 
     private void Start()
     {
         pushed = false;
         buttonInstance = transform.parent.gameObject;
+    }
+
+    public void ResetButton()
+    {
+        transform.localPosition += new Vector3(0f, 0.1f, 0f);
+        pushed = false;
     }
 
     public virtual void OnButtonPush()

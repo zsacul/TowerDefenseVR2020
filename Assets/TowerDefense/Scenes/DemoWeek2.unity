@@ -4256,6 +4256,25 @@ Transform:
   m_Father: {fileID: 2052150948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &143950372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6924461699007965700, guid: b7a56a2053012074599ee4adcb4e240d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927024686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &143950373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143950372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc44c9bc3510b74dbc2b9eec8d5fa3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: 55aeb065c62ddce46a321d05c4b559ae, type: 2}
 --- !u!1 &161537693
 GameObject:
   m_ObjectHideFlags: 0
@@ -9697,6 +9716,10 @@ PrefabInstance:
     - target: {fileID: 1540271613746846, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
       propertyPath: m_Name
       value: TrackedAlias
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4144020432045324, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
       propertyPath: m_LocalRotation.x

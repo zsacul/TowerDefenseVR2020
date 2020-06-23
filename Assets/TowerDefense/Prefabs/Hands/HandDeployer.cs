@@ -8,7 +8,7 @@ public class GOArray
     public GameObject Prefab;
     public GameObject Instance;
     public string description;
-    public bool deployable;
+    public bool Ldep, Rdep;
 }
 
 public class HandDeployer : MonoBehaviour
@@ -23,6 +23,7 @@ public class HandDeployer : MonoBehaviour
 
     public GameObject RightInteractor;
 
+    private bool isRight;
     private Vector3 speed; // I AM SPEED
     private Vector3 lastPosition;
 
@@ -129,10 +130,14 @@ public class HandDeployer : MonoBehaviour
             {
                 if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
-                    if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position))
+                    if ((PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Ldep && !isRight) ||
+                       (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Rdep && isRight))
                     {
-                        mindist = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
-                        chosen = LocatedNearby[i].gameObject;
+                        if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position))
+                        {
+                            mindist = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
+                            chosen = LocatedNearby[i].gameObject;
+                        }
                     }
                 }
                 i++;
@@ -164,7 +169,9 @@ public class HandDeployer : MonoBehaviour
                 Cprop.Prefab = Prop.Prefab;
                 PropList.Add(Cprop);
             }
-        }
+
+            isRight = false;
+        } else { isRight = true;  }
 
         foreach(GOArray Prop in PropList)
         {
