@@ -24,6 +24,8 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     private bool released;
     private Vector3 lastPos;
     private Vector3 movement;
+    private float lastHit;
+
     private void FixedUpdate()
     {
         if(released)
@@ -64,10 +66,13 @@ public class ProjectileTwo : MonoBehaviour , IChargable
         {
             if (other.gameObject.tag == "Enemy")
             {
-                onHit.Invoke();
                 other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
             }
-            onHit.Invoke();
+            if(Time.time - lastHit > 0.05f)
+            {
+                lastHit = Time.time;
+                onHit.Invoke();
+            }
             //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
         }
     }
