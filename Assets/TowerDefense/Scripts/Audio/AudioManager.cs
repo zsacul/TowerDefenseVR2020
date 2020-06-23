@@ -152,8 +152,7 @@ public class AudioManager : MonoBehaviour
         srcLoc.SetActive(true);
         srcLoc.transform.position = originOfSound;
         src = srcLoc.GetComponent<AudioSource>();
-        if (mixer != null)
-            src.outputAudioMixerGroup = mixer;
+        src.outputAudioMixerGroup = mixer;
         src.clip = soundToPlay;
         src.Play();
     }

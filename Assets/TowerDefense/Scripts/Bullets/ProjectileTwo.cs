@@ -20,6 +20,8 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     public UnityEvent onInit;
     public UnityEvent onHit;
     public UnityEvent onEnd;
+    public UnityEvent onRelease;
+
 
     private bool released;
     private Vector3 lastPos;
@@ -91,6 +93,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     }
     public void Release()
     {
+        onRelease.Invoke();
         released = true;
         transform.parent = null;
         Invoke("EnableCollision", 0.25f);
