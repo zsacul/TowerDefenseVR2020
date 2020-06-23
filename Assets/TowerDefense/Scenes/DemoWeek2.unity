@@ -14567,6 +14567,8 @@ MonoBehaviour:
   breakOn: 0
   waveInfoLabelPrefab: {fileID: 7192888815029301453, guid: f53ed8432eadf483fa5b2d77a6fe7704,
     type: 3}
+  incomingWaveInfoLabelPrefab: {fileID: 1347076448830942058, guid: 138d92915a7eb44519cbb9bf5ad2a39d,
+    type: 3}
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0

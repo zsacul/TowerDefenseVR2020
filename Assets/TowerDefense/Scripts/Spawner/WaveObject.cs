@@ -138,6 +138,18 @@ namespace SpawnManaging
             }
         }
 
+        public EnemyCount[] GetWaveInfo()
+        {
+            EnemyCount[] result = new EnemyCount[enemies.Length];
+
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                result[i] = enemies[i];
+            }
+
+            return result;
+        }
+
         public int EnemiesLeft()
         {
             int totalEnemies = 0;
