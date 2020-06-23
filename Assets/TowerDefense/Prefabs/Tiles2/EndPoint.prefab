@@ -379,6 +379,21 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5083775427936912277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720496895005999272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71edd39e2e4688d46ae68e1221247df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToPlay: {fileID: 8300000, guid: 1a11b2fa3ea41de4a8534f2951e6dee9, type: 3}
+  mixer: {fileID: 24300002, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
+  playOnAwake: 1
 --- !u!1 &5554868714691725533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1368,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c56395693bdc64e8ddd95c9128e201, type: 3}
+--- !u!1 &4720496895005999272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3971226437540921684, guid: e2c56395693bdc64e8ddd95c9128e201,
+    type: 3}
+  m_PrefabInstance: {fileID: 8547325827278078460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8636157178245034683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 92315818281579335, guid: e2c56395693bdc64e8ddd95c9128e201,
