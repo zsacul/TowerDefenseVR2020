@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 [System.Serializable]
@@ -9,6 +10,10 @@ public class GOArray
     public GameObject Instance;
     public string description;
     public bool Ldep, Rdep;
+    public bool IntentionalGrab;
+    public float IGrabDistance;
+    public bool PolledGrab;
+    public float PolledGrabDistance;
 }
 
 public class HandDeployer : MonoBehaviour
@@ -23,7 +28,7 @@ public class HandDeployer : MonoBehaviour
 
     public GameObject RightInteractor;
 
-    private bool isRight;
+    public bool isRight;
     private Vector3 speed; // I AM SPEED
     private Vector3 lastPosition;
 
@@ -74,53 +79,10 @@ public class HandDeployer : MonoBehaviour
         CallWakeup(PropList[listIterator].Instance);
     }
 
-    private int stateFlipFlop;
-    public void TriggerHook(float input)
+    public bool HandGrab(float input, bool triggered)
     {
-        if (retarded_controlls)
-        {
-            // Histerisis controll
-            if (input > 0.6f)
-            {
-                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
-                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
-                if (stateFlipFlop == 0)
-                {
-                    if (listIterator != 0)
-                    {
-                        PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
-                    }
-                    else
-                    {
-                        HandGrab(1.0f);
-                    }
-                }
-
-                stateFlipFlop = 1;
-                
-            }
-
-            if (input < 0.3f)
-            {
-                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
-                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
-                stateFlipFlop = 0;
-            }
-        }
-    }
-
-    public void GrabHook(float input)
-    {
-        if (!retarded_controlls)
-        {
-            PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
-            HandGrab(input);
-        }
-    }
-
-    public void HandGrab(float input)
-    {
-        if (listIterator == 0 && input > 0.7f) // hand is empty and we are grabbing shit.
+        Debug.Log("HandGrab Invoked!");
+        if (listIterator == 0) // hand is empty and we are grabbing shit.
         {
             Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
             int i = 0;
@@ -130,14 +92,26 @@ public class HandDeployer : MonoBehaviour
             {
                 if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
+                    Debug.Log(LocatedNearby[i].gameObject.name);
                     if ((PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Ldep && !isRight) ||
                        (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Rdep && isRight))
                     {
-                        if (mindist >= Vector3.Distance(LocatedNearby[i].transform.position, transform.position))
-                        {
-                            mindist = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
-                            chosen = LocatedNearby[i].gameObject;
-                        }
+                        float grabbable_distance = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
+                        if ((
+                            triggered == true &&
+                            PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].IntentionalGrab &&
+                            PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].IGrabDistance < grabbable_distance
+                            ) || (
+                            triggered == false &&
+                            PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].PolledGrab &&
+                            PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].PolledGrabDistance < grabbable_distance
+                            )) {
+                                if (mindist >= grabbable_distance)
+                                {
+                                    mindist = grabbable_distance;
+                                    chosen = LocatedNearby[i].gameObject;
+                                }
+                            }
                     }
                 }
                 i++;
@@ -147,7 +121,69 @@ public class HandDeployer : MonoBehaviour
             {
                 Debug.Log($"{chosen.name} :-propid-> {chosen.GetComponent<GrababbleManager>().PropID}");
                 DeployNth(chosen.GetComponent<GrababbleManager>().PropID, chosen);
+                return true;
             }
+        }
+
+        return false;
+    }
+
+    public int stateFlipFlop;
+    public void HisterisisGrab(float input, bool intent)
+    {
+        if (retarded_controlls)
+        {
+            // Histerisis controll
+            if (input > 0.6f && stateFlipFlop == 0)
+            {
+                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
+                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
+                Debug.Log("HAND GRAB");
+
+                if (!HandGrab(1.0f, intent))
+                    stateFlipFlop = 3;
+
+                stateFlipFlop = 1;
+            }
+
+            if (input < 0.3f && stateFlipFlop == 1)
+            {
+                Debug.Log("HAND GRABRELEASE");
+                stateFlipFlop = 2;
+            }
+
+            if (input > 0.6f && stateFlipFlop == 2)
+            {
+                Debug.Log("HAND RELEASEBEGIN");
+                stateFlipFlop = 3;
+            }
+
+            if (input < 0.3f && stateFlipFlop == 3)
+            {
+                Debug.Log("HAND OPEN");
+                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
+                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
+                PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
+                stateFlipFlop = 0;
+            }
+        }
+    }
+    public void TriggerHook(float input)
+    {
+        PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(input);
+    }
+
+    public void GrabHook(float input)
+    {
+        if (!retarded_controlls)
+        {
+            PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(input);
+            HandGrab(input, true);
+            
+        } 
+        else
+        {
+            HisterisisGrab(input, true);
         }
     }
 
@@ -167,6 +203,14 @@ public class HandDeployer : MonoBehaviour
             {
                 GOArray Cprop = new GOArray();
                 Cprop.Prefab = Prop.Prefab;
+                Cprop.Ldep = Prop.Ldep;
+                Cprop.Rdep = Prop.Rdep;
+
+                Cprop.PolledGrabDistance = Prop.PolledGrabDistance;
+                Cprop.PolledGrab = Prop.PolledGrab;
+
+                Cprop.IntentionalGrab = Prop.IntentionalGrab;
+                Cprop.IGrabDistance = Prop.IGrabDistance;
                 PropList.Add(Cprop);
             }
 
@@ -191,10 +235,19 @@ public class HandDeployer : MonoBehaviour
         listIterator = 0;
     }
 
-// Update is called once per frame
+    // Update is called once per frame
+    int fid = 0;
     void Update()
     {
         speed = (lastPosition - transform.position) * -100.0f;
         lastPosition = transform.position;
+
+        fid += 1;
+
+       // if(fid > 5)
+       // {
+        //    fid = 0;
+            //HisterisisGrab(0.99f, false);
+        //}
     }
 }

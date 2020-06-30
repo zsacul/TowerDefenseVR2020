@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalMaterial: {fileID: 2100000, guid: 4f44d326ab1e1a54aa1bc886c705d469, type: 2}
   visibilityMaterial: {fileID: 2100000, guid: 8224d2049fcde0c44bd582154a9b1964, type: 2}
-  changingVisibilitySpeed: 0.2
-  appearingDelay: 0.5
+  changingVisibilitySpeed: 1000
+  appearingDelay: 0
 --- !u!114 &1026421314619172249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670185843502668684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b087297bb41e9d4e982020d748586cb, type: 3}
   m_Name: 
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670185843502668684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1337102d887585248ae2e326fe712454, type: 3}
   m_Name: 
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748104644585446367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855aab65c433d5445ada09fc2283e01e, type: 3}
   m_Name: 
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748104644585446367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a4b089fd8e2d5c49aeff8b2411e3098, type: 3}
   m_Name: 
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748104644585446367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d099ca292a5244743b4d5fc95da3fb48, type: 3}
   m_Name: 
@@ -205,7 +205,7 @@ SphereCollider:
   m_GameObject: {fileID: 2748104644585446367}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
@@ -248,7 +248,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2748104644585446367}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.9915428
   m_Height: 7.613495
   m_Direction: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748104644585446367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0466045f925efa14ebe1c7481e2da9e0, type: 3}
   m_Name: 
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalMaterial: {fileID: 2100000, guid: 1535d76e75c478144a7bc73aa2ba02c6, type: 2}
   visibilityMaterial: {fileID: 2100000, guid: ed00e766bd307624a9bac4d60670e1f3, type: 2}
-  changingVisibilitySpeed: 0.2
+  changingVisibilitySpeed: 10000
   appearingDelay: 0
 --- !u!114 &7642847003259603064
 MonoBehaviour:
@@ -396,8 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalMaterial: {fileID: 2100000, guid: f1e21d9e6ba0c0d41b0a5ca210f10d72, type: 2}
   visibilityMaterial: {fileID: 2100000, guid: 3bb1396946272d1499834bd8c66a4169, type: 2}
-  changingVisibilitySpeed: 0.2
-  appearingDelay: 1
+  changingVisibilitySpeed: 100
+  appearingDelay: 0
 --- !u!1001 &4217995377379526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,6 +496,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7951205731576094738}
     m_Modifications:
+    - target: {fileID: 4215777971716688722, guid: 793ddad37eaba6841b0c8d430e6b16f3,
+        type: 3}
+      propertyPath: changingVisibilitySpeed
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215777971716688722, guid: 793ddad37eaba6841b0c8d430e6b16f3,
+        type: 3}
+      propertyPath: appearingDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6563888352047166830, guid: 793ddad37eaba6841b0c8d430e6b16f3,
         type: 3}
       propertyPath: m_LocalPosition.x
