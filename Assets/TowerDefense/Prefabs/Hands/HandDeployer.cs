@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class GOArray
 
 public class HandDeployer : MonoBehaviour
 {
+    private bool critical_enforcer = false;
     public bool retarded_controlls = true;
     [SerializeField]
     private List<GOArray> PropList;
@@ -129,42 +131,58 @@ public class HandDeployer : MonoBehaviour
     }
 
     public int stateFlipFlop;
+    public float release_timeout;
     public void HisterisisGrab(float input, bool intent)
     {
         if (retarded_controlls)
         {
-            // Histerisis controll
-            if (input > 0.6f && stateFlipFlop == 0)
+            if (intent == false)
             {
-                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
-                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
-                Debug.Log("HAND GRAB");
+                if (HandGrab(1.0f, intent))
+                {
+                    stateFlipFlop = 2;
+                    release_timeout = 1.0f;
+                }
+                else
+                    stateFlipFlop = 0;
+            }
+            else
+            {
+                // Histerisis controll
+                if (input > 0.6f && stateFlipFlop == 0)
+                {
+                    Debug.Log("HAND GRAB");
+                    if (!critical_enforcer)
+                        if (!HandGrab(1.0f, intent))
+                            stateFlipFlop = 3;
 
-                if (!HandGrab(1.0f, intent))
+                    PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
+                    PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
+                    stateFlipFlop = 1;
+                }
+
+                if (input < 0.3f && stateFlipFlop == 1)
+                {
+                    Debug.Log("HAND GRABRELEASE");
+                    stateFlipFlop = 2;
+                }
+
+                if (input > 0.6f && stateFlipFlop == 2)
+                {
+                    Debug.Log("HAND RELEASEBEGIN");
                     stateFlipFlop = 3;
+                }
 
-                stateFlipFlop = 1;
-            }
-
-            if (input < 0.3f && stateFlipFlop == 1)
-            {
-                Debug.Log("HAND GRABRELEASE");
-                stateFlipFlop = 2;
-            }
-
-            if (input > 0.6f && stateFlipFlop == 2)
-            {
-                Debug.Log("HAND RELEASEBEGIN");
-                stateFlipFlop = 3;
-            }
-
-            if (input < 0.3f && stateFlipFlop == 3)
-            {
-                Debug.Log("HAND OPEN");
-                PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
-                PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
-                PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
-                stateFlipFlop = 0;
+                if (input < 0.3f && stateFlipFlop == 3)
+                {
+                    Debug.Log("HAND OPEN");
+                    if (listIterator != 0)
+                        release_timeout = 1.0f;
+                    PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
+                    PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
+                    PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
+                    stateFlipFlop = 0;
+                }
             }
         }
     }
@@ -183,7 +201,8 @@ public class HandDeployer : MonoBehaviour
         } 
         else
         {
-            HisterisisGrab(input, true);
+            if(release_timeout < 0.1f)
+                HisterisisGrab(input, true);
         }
     }
 
@@ -243,11 +262,14 @@ public class HandDeployer : MonoBehaviour
         lastPosition = transform.position;
 
         fid += 1;
-
-       // if(fid > 5)
-       // {
-        //    fid = 0;
-            //HisterisisGrab(0.99f, false);
-        //}
+        release_timeout = Math.Max(0.0f, release_timeout - Time.deltaTime);
+        if(fid > 5 && release_timeout < 0.1f && listIterator == 0)
+        {
+            fid = 0;
+            critical_enforcer = true;
+            Debug.Log("Nearby object catcher");
+            HisterisisGrab(0.99f, false);
+            critical_enforcer = false;
+        }
     }
 }

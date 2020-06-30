@@ -2680,8 +2680,8 @@ MonoBehaviour:
     Rdep: 1
     IntentionalGrab: 1
     IGrabDistance: 0.5
-    PolledGrab: 0
-    PolledGrabDistance: 0
+    PolledGrab: 1
+    PolledGrabDistance: 0.2
   - Prefab: {fileID: 4137375818022343, guid: f479ba1eacd553443bb172338fe0812e, type: 3}
     Instance: {fileID: 0}
     description: 
@@ -2722,6 +2722,8 @@ MonoBehaviour:
   listIterator: 0
   RightInteractor: {fileID: 0}
   isRight: 0
+  stateFlipFlop: 0
+  release_timeout: 0
 --- !u!114 &65865503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11622,6 +11624,8 @@ MonoBehaviour:
   listIterator: 0
   RightInteractor: {fileID: 65865500}
   isRight: 0
+  stateFlipFlop: 0
+  release_timeout: 0
 --- !u!4 &484867502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4360459780143330, guid: 114b3c3ce4645364a97c8f0803bed65b,
