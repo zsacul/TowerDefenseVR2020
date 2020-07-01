@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class BuildManager : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class BuildManager : MonoBehaviour
     private GameEvent towerBuilt;
     [SerializeField]
     private GameEvent SelectionStatusChanged;
+
+    public UnityEvent StartedPointing;
+    public UnityEvent StoppedPointing;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -200,7 +204,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
-        CheckSelectionStatus();
+        StartedPointing.Invoke();
         towerSelected.Raise();
         selectedBuilding = ChunkType.tower;
         purchasePanelsActive = false;
@@ -209,7 +213,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseObstacle()
     {
-        CheckSelectionStatus();
+        StartedPointing.Invoke();
         selectedBuilding = ChunkType.playerObstacle;
         purchasePanelsActive = false;
         UpdateUI();
@@ -217,22 +221,13 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseNone()
     {
+        StoppedPointing.Invoke();
         selectedBuilding = ChunkType.none;
-        CheckSelectionStatus();
         purchasePanelsActive = false;
         UpdateUI();
         BuildingSwitchedToNone.Raise();
     }
 
-    // Checks if player has changed his selected building from ChunkType.None to Tower/Obstacle or if he has deselected it 
-    // (changed from Tower/Obstacle to ChunkType.None). If so, SelectionStatusChanged event is raised.
-    private void CheckSelectionStatus()
-    {
-        if (selectedBuilding == ChunkType.none)
-        {
-            SelectionStatusChanged.Raise();
-        }
-    }
 
     private bool UpdatePanelCondition()
     {
