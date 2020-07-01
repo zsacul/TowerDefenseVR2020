@@ -26,19 +26,17 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent WaveChanged;
     [SerializeField]
-    private GameEvent BuildingSwitchedToNone; 
+    private GameEvent BuildingSwitchedToNone;
     [SerializeField]
     private Text UIMoneyText;
-    [SerializeField]
-    public bool VRTKInputs;
+    //[SerializeField]
+    //public bool VRTKInputs;
     [SerializeField]
     private GameEvent towerSelected;
     [SerializeField]
     private GameEvent towerBuilt;
-    //[SerializeField]
-    //private GameEvent obstacleSelected;
-    //[SerializeField]
-    //private GameEvent obstacleBuilt;
+    [SerializeField]
+    private GameEvent SelectionStatusChanged;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -46,8 +44,7 @@ public class BuildManager : MonoBehaviour
     private BoxCollider obstaclePurchaseCanvasCollider;
 
     private ChunkType selectedBuilding;
-
-    private bool buildModeOn;
+    public bool BuildModeOn { get; private set; }
     private bool purchasePanelsActive;
 
     private RectTransform canvasRT;
@@ -58,20 +55,20 @@ public class BuildManager : MonoBehaviour
     private bool panelButtonPressed;
 
     private static BuildManager instance;
+
     private void Awake()
     {
         instance = this;
     }
-    public static BuildManager Instance 
-    { 
-        get
-        { 
-            if(instance == null)
+
+    public static BuildManager Instance {
+        get {
+            if (instance == null)
             {
                 Debug.LogError("Missing BuildManager");
             }
             return instance;
-        } 
+        }
     }
     void Start()
     {
@@ -80,7 +77,7 @@ public class BuildManager : MonoBehaviour
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
         towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
         obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
-        buildModeOn = true;
+        BuildModeOn = true;
         purchasePanelsActive = false;
         rightTriggerInUse = false;
         canvasRT = canvas.GetComponent<RectTransform>();
@@ -98,31 +95,9 @@ public class BuildManager : MonoBehaviour
         UpdateUI();
     }
 
-
-    // <summary>
-    // Creates a new text.x and y determines its position.For x = 0.0, y = 0.0 it would be the center of the canvas,
-    // for -1.0, -1.0 lower left corner, for 1.0, 1.0 upper right corner.
-    // </summary>
-    private Text SetText(float x, float y, string content, float width, float height, Color chosen_col)
-    {
-        GameObject newGO = new GameObject(content);
-        newGO.transform.SetParent(canvas.transform);
-        newGO.transform.position = Vector3.zero;
-
-        Text newText = newGO.AddComponent<Text>();
-        newText.text = content;
-        newText.color = chosen_col;
-        newText.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-        newText.fontStyle = FontStyle.Bold;
-        newText.fontSize = 15;
-        newText.rectTransform.sizeDelta = new Vector2(width, height);
-        newText.transform.localPosition = new Vector3(canvasXSize * x, canvasYSize * y, canvasZPos);
-        return newText;
-    }
-
     void Update()
     {
-        if (buildModeOn)
+        if (BuildModeOn)
         {
             //UpdateButtonState(false);
 
@@ -152,16 +127,18 @@ public class BuildManager : MonoBehaviour
                 {
                     SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
                 }
-            } else
+            }
+
+            else
             {
                 SetMoneyOutlineColor(Color.grey);
             }
         }
 
-        if (UpdatePanelActiveCond())
+        if (UpdatePanelCondition())
         {
             purchasePanelsActive = !purchasePanelsActive;
-            if (purchasePanelsActive && buildModeOn)
+            if (purchasePanelsActive && BuildModeOn)
             {
                 Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.5f, 1.2f));
                 Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
@@ -173,7 +150,7 @@ public class BuildManager : MonoBehaviour
             panelButtonPressed = false;
         }
 
-        if (buildModeOn && selectedBuilding != ChunkType.none)
+        if (BuildModeOn && selectedBuilding != ChunkType.none)
         {
             RaycastHit hit;
             Vector3 lastChunk = new Vector3(0, -99, 0);
@@ -189,33 +166,9 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    void LateUpdate()
-    {
-        //UpdateButtonState(true);
-    }
-
     public void UITowerClicked()
     {
         panelButtonPressed = true;
-    }
-
-    private void UpdateButtonState(bool isLateUpdate)
-    {
-        if (isLateUpdate)
-        {
-            panelButtonPressed = false;
-        }
-        else
-        {
-            if (VRTKInputs)
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
-            }
-            else
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.B);
-            }
-        }
     }
 
     private void SetMoneyOutlineColor(Color color)
@@ -226,8 +179,8 @@ public class BuildManager : MonoBehaviour
     //Updates UI according to the state of BuildModeOn
     private void UpdateUI()
     {
-        UIMoneyText.enabled = buildModeOn;
-        if (buildModeOn)
+        UIMoneyText.enabled = BuildModeOn;
+        if (BuildModeOn)
         {
             UpdatePurchasePanels(purchasePanelsActive);
         }
@@ -247,6 +200,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
+        CheckSelectionStatus();
         towerSelected.Raise();
         selectedBuilding = ChunkType.tower;
         purchasePanelsActive = false;
@@ -255,7 +209,7 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseObstacle()
     {
-        //obstacleSelected.Raise();
+        CheckSelectionStatus();
         selectedBuilding = ChunkType.playerObstacle;
         purchasePanelsActive = false;
         UpdateUI();
@@ -264,36 +218,36 @@ public class BuildManager : MonoBehaviour
     public void ChooseNone()
     {
         selectedBuilding = ChunkType.none;
+        CheckSelectionStatus();
         purchasePanelsActive = false;
         UpdateUI();
         BuildingSwitchedToNone.Raise();
     }
 
-    public bool UpdatePanelActiveCond()
+    // Checks if player has changed his selected building from ChunkType.None to Tower/Obstacle or if he has deselected it 
+    // (changed from Tower/Obstacle to ChunkType.None). If so, SelectionStatusChanged event is raised.
+    private void CheckSelectionStatus()
     {
-        return panelButtonPressed;
-    }
-
-    public bool BuildModeOn
-    {
-        get
+        if (selectedBuilding == ChunkType.none)
         {
-            return buildModeOn;
+            SelectionStatusChanged.Raise();
         }
     }
 
-    public bool PurchasePanelActive
+    private bool UpdatePanelCondition()
     {
-        get
-        {
+        return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.B);
+    }
+
+
+    public bool PurchasePanelActive {
+        get {
             return purchasePanelsActive;
         }
     }
 
-    public int Money
-    {
-        get
-        {
+    public int Money {
+        get {
             return money;
         }
     }
@@ -301,10 +255,8 @@ public class BuildManager : MonoBehaviour
     ///<summary>
     ///Returns selected building as ChunkType and its cost as int
     ///</summary>
-    public System.Tuple<ChunkType, int> ActiveBuildingInfo
-    {
-        get
-        {
+    public System.Tuple<ChunkType, int> ActiveBuildingInfo {
+        get {
             int cost = -1;
             if (selectedBuilding == ChunkType.tower)
             {
@@ -339,10 +291,11 @@ public class BuildManager : MonoBehaviour
     public void Success()
     {
         BuildingSuccess.Raise();
-        if(selectedBuilding == ChunkType.tower)
+        if (selectedBuilding == ChunkType.tower)
         {
             towerBuilt.Raise();
-        } else if (selectedBuilding == ChunkType.playerObstacle)
+        }
+        else if (selectedBuilding == ChunkType.playerObstacle)
         {
             //obstacleBuilt.Raise();
         }
@@ -355,9 +308,8 @@ public class BuildManager : MonoBehaviour
 
     public void ChangeWaveStatus(bool newStatus)
     {
-        buildModeOn = newStatus;
-        selectedBuilding = ChunkType.none;
-        UpdateUI();
+        BuildModeOn = newStatus;
+        ChooseNone();
         WaveChanged.Raise();
     }
 

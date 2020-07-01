@@ -24,23 +24,23 @@ public class TowerUpgrade : MonoBehaviour
 
     void Update()
     {
-        UpdateButtonState(false);
+        //UpdateButtonState(false);
         if (selected && upgradeButtonPressed)//Input.GetKeyDown(KeyCode.U))
         {
             Upgrade();
         }
     }
-    void LateUpdate()
+    /*void LateUpdate()
     {
         UpdateButtonState(true);
-    }
+    }*/
 
     public void Upgrade()
     {
         upgradeManager.UpgradeTower(elementIndex, upgradeCost);
     }
 
-    private void UpdateButtonState(bool isLateUpdate)
+    /*private void UpdateButtonState(bool isLateUpdate)
     {
         if (isLateUpdate)
         {
@@ -57,7 +57,7 @@ public class TowerUpgrade : MonoBehaviour
                 upgradeButtonPressed = Input.GetKeyDown(KeyCode.U);
             }
         }
-    }
+    }*/
 
     void OnTriggerEnter(Collider other)
     {
