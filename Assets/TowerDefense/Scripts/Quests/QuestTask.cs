@@ -8,6 +8,7 @@ public class QuestTask : MonoBehaviour, IQuest
     public UnityEvent taskFinished;
     private int current;
     [SerializeField] private int target;
+
     public void IncrementTask()
     {
         current += 1;
@@ -16,10 +17,12 @@ public class QuestTask : MonoBehaviour, IQuest
             taskFinished.Invoke();
         }
     }
+
     public (int,int) GetTaskStateAsPair()
     {
         return (current, target);
     }
+
     public float GetTaskStateProc()
     {
         return (float)current / (float)target;

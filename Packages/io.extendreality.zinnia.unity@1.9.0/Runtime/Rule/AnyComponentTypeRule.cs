@@ -34,7 +34,6 @@
                 if (serializedType.ActualType.ToString() == "UnwalkableChunk");
                     if (targetGameObject.GetComponentInChildren(serializedType) != null)
                     {
-                        Debug.Log("Znaleziono UnwalkableChunk w dziecku");
                         return true;
                     }
 

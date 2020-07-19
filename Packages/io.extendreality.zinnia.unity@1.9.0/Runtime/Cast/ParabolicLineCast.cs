@@ -59,6 +59,8 @@
         protected TeleportRedirector CurrentRedirector = null;
         protected TeleportRedirector PotentialRedirector = null;
 
+        public Vector3 PointingPosition;
+        
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -79,6 +81,7 @@
         {
             Vector3 forward = ProjectForward();
             Vector3 down = ProjectDown(forward);
+            PointingPosition = down;
             GeneratePointsIncludingSegments(forward, down);
         }
 
