@@ -13289,7 +13289,7 @@ PrefabInstance:
     - target: {fileID: 1322672732093859771, guid: c69d84a3cadb94e45af0210c52e5728d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1977522402952244861, guid: c69d84a3cadb94e45af0210c52e5728d,
         type: 3}
@@ -14737,36 +14737,36 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 752578748}
   wave:
-  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
+  - waveData: {fileID: 11400000, guid: 753d6cdcb36e16549ba3f4012714d67d, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 3
     nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: e9cf824d9590c2f4cbeee56cbb0c3c88, type: 2}
+  - waveData: {fileID: 11400000, guid: b72ac1ac77e97be419995dace5f5029d, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 1
+    nextGroupTime: 0
+  - waveData: {fileID: 11400000, guid: de975c65757dbea4c8f593931ba98e91, type: 2}
+    interval: 2
+    bonusHp: 0
+    bonusSpeed: 0
+    groupSize: 1
+    nextGroupTime: 0
+  - waveData: {fileID: 11400000, guid: ab591bfb101032144ae7c4111fa147a9, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 3
-    nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 8b9fa501c07a26f419f53c373c4b3c69, type: 2}
-    interval: 2
-    bonusHp: 0
-    bonusSpeed: 0
-    groupSize: 4
-    nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 615926783b9286749a86e26fbc9daff0, type: 2}
+    nextGroupTime: 3
+  - waveData: {fileID: 11400000, guid: 65b9d4592d99cd44e9002ee99581b6d9, type: 2}
     interval: 1.5
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 6
-    nextGroupTime: 5
-  - waveData: {fileID: 11400000, guid: 76cea4699b2cbac4b820cf5fa189e488, type: 2}
-    interval: 1.5
-    bonusHp: 0
-    bonusSpeed: 0
-    groupSize: 6
-    nextGroupTime: 5
+    groupSize: 1
+    nextGroupTime: 0
   breakDuration: 305
   breakOn: 0
   waveInfoLabelPrefab: {fileID: 7192888815029301453, guid: f53ed8432eadf483fa5b2d77a6fe7704,
@@ -30867,9 +30867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 400
-  towerCost: 90
-  playerObstacleCost: 55
+  money: 200
+  towerCost: 80
+  playerObstacleCost: 40
   canvas: {fileID: 1561748944}
   BuildingSuccess: {fileID: 11400000, guid: ea9314e8d9618fd4cab901b4226748c9, type: 2}
   BuildingFailure: {fileID: 11400000, guid: 8212850ed5adf514cbd2b27658221f06, type: 2}
@@ -30910,28 +30910,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 649511991}
-        m_MethodName: RemoveSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1682159341}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: RemoveSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1814319320}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
   StoppedPointing:
     m_PersistentCalls:
@@ -30953,28 +30931,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: AddSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1682159341}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: AddSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1814319320}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

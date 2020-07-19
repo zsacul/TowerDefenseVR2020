@@ -474,8 +474,8 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
-  enemyHP: 50
-  moneyDropped: 10
+  enemyHP: 120
+  moneyDropped: 35
   elementsInfo: {fileID: 0}
   targetPoint: {fileID: 5451797206400831227}
   type: 0
