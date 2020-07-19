@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 8612384787130383387}
   - component: {fileID: 4426430936834607881}
   - component: {fileID: 4735888192799633328}
+  - component: {fileID: 868869954612109460}
   - component: {fileID: 6938930484072631361}
   m_Layer: 0
   m_Name: Sphere
@@ -311,6 +312,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   health: 10
+--- !u!114 &868869954612109460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526493092376421404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecbe83e8792597498ca275afc3170c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnemyHP: 0
+  hp: {fileID: 0}
 --- !u!114 &6938930484072631361
 MonoBehaviour:
   m_ObjectHideFlags: 0
