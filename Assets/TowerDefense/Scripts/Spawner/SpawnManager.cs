@@ -139,6 +139,13 @@ namespace SpawnManaging
             }
             UpdateUI();
         }
+
+        IEnumerator LateStartUpdateUI(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            UpdateUI();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
@@ -222,7 +229,7 @@ namespace SpawnManaging
 
             if (firstUIUpdate)
             {
-                incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x + 11.5f, spawnPoint.position.y + 19f, spawnPoint.position.z + 3.5f);
+                StartCoroutine(LateStartUpdateUI(0.1f));
                 firstUIUpdate = false;
             }
         }
