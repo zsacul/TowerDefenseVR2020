@@ -56,7 +56,7 @@ public class BuildManager : MonoBehaviour
     private float canvasYSize;
     private float canvasZPos;
     private bool rightTriggerInUse;
-    private bool panelButtonPressed;
+    private bool uiTowerClicked;
 
     private static BuildManager instance;
 
@@ -76,7 +76,7 @@ public class BuildManager : MonoBehaviour
     }
     void Start()
     {
-        panelButtonPressed = false;
+        uiTowerClicked = false;
         towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
         obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
         towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
@@ -144,14 +144,15 @@ public class BuildManager : MonoBehaviour
             purchasePanelsActive = !purchasePanelsActive;
             if (purchasePanelsActive && BuildModeOn)
             {
-                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.5f, 1.2f));
-                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
+                //Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.5f, 1.2f));
+                //Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
+                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.20f, 0.5f, 1f));
+                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.80f, 0.5f, 1f));
                 towerPurchaseCanvas.transform.position = towerPos;
                 obstaclePurchaseCanvas.transform.position = obstaclePos;
             }
 
             UpdateUI();
-            panelButtonPressed = false;
         }
 
         if (BuildModeOn && selectedBuilding != ChunkType.none)
@@ -172,7 +173,7 @@ public class BuildManager : MonoBehaviour
 
     public void UITowerClicked()
     {
-        panelButtonPressed = true;
+        uiTowerClicked = !uiTowerClicked;
     }
 
     private void SetMoneyOutlineColor(Color color)
@@ -231,6 +232,12 @@ public class BuildManager : MonoBehaviour
 
     private bool UpdatePanelCondition()
     {
+        if (uiTowerClicked)
+        {
+            uiTowerClicked = !uiTowerClicked;
+            return true;
+        }
+
         return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.B);
     }
 

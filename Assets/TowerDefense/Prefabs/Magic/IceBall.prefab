@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageData:
-    damage: 51
+    damage: 100
     specialEffect: 2
     specialEffectDurationInSec: 1
     specialEffectDmgPerSec: 0
