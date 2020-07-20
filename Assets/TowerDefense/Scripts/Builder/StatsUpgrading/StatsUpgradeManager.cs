@@ -119,7 +119,6 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI rangeInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
         TextMeshProUGUI speedInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5].enabled = false;
-        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press \"X\" to dismiss panels");
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
 
         if (currentLevel == maxLevel)
@@ -148,7 +147,7 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI speedInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         TextMeshProUGUI costInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5];
 
-        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press button to level up");
+        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press Button to Upgrade");
 
         costInfo.color = (buildManager.Money >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         costInfo.SetText("Cost: {0}", upgradeCosts[nextLevelCostIndex]);
