@@ -22,8 +22,13 @@ public class TutFinish : TeleportSubNode
 
     public override void ExitStep()
     {
-        base.ExitStep();
+        Invoke("Wyjscie", 10f);
         StartCoroutine("Wait");
+    }
+
+    void Wyjscie()
+    {
+        base.ExitStep();
     }
 
     IEnumerator Wait()

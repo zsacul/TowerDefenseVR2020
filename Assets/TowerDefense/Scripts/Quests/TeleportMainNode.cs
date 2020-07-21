@@ -71,7 +71,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
 
     public void ClearTasks()
     {
-        for(int i = ActiveTasks.Count - 1; i >= 0; i--)
+        for(int i = ActiveTasks.Count - 2; i >= 0; i--)
         {
             Debug.Log("wylaczono obiekt " + ActiveTasks[i].gameObject.name);
             ActiveTasks[i].gameObject.SetActive(false);
