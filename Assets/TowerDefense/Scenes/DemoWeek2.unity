@@ -9088,22 +9088,22 @@ PrefabInstance:
     - target: {fileID: 780374994233550537, guid: 769d3db005bea40548e24def10b46869,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 27.86
       objectReference: {fileID: 0}
     - target: {fileID: 780374994233550537, guid: 769d3db005bea40548e24def10b46869,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -32.73
       objectReference: {fileID: 0}
     - target: {fileID: 780374994233550537, guid: 769d3db005bea40548e24def10b46869,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 215.72
       objectReference: {fileID: 0}
     - target: {fileID: 780374994233550537, guid: 769d3db005bea40548e24def10b46869,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 95.45
       objectReference: {fileID: 0}
     - target: {fileID: 780374994233550537, guid: 769d3db005bea40548e24def10b46869,
         type: 3}
@@ -9139,6 +9139,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MoneyText
+      objectReference: {fileID: 0}
+    - target: {fileID: 780374994233550542, guid: 769d3db005bea40548e24def10b46869,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 780374994233550542, guid: 769d3db005bea40548e24def10b46869,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 769d3db005bea40548e24def10b46869, type: 3}
@@ -14738,31 +14748,31 @@ MonoBehaviour:
   - {fileID: 752578748}
   wave:
   - waveData: {fileID: 11400000, guid: 753d6cdcb36e16549ba3f4012714d67d, type: 2}
-    interval: 2
+    interval: 1
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 3
-    nextGroupTime: 5
+    groupSize: 1
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: b72ac1ac77e97be419995dace5f5029d, type: 2}
-    interval: 2
+    interval: 1
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
     nextGroupTime: 0
   - waveData: {fileID: 11400000, guid: de975c65757dbea4c8f593931ba98e91, type: 2}
-    interval: 2
+    interval: 1
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
     nextGroupTime: 0
   - waveData: {fileID: 11400000, guid: ab591bfb101032144ae7c4111fa147a9, type: 2}
-    interval: 2
+    interval: 1
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 3
-    nextGroupTime: 3
+    groupSize: 4
+    nextGroupTime: 2
   - waveData: {fileID: 11400000, guid: 65b9d4592d99cd44e9002ee99581b6d9, type: 2}
-    interval: 1.5
+    interval: 1
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
@@ -30867,7 +30877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 200
+  money: 400
   towerCost: 80
   playerObstacleCost: 40
   canvas: {fileID: 1561748944}
@@ -30961,7 +30971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkSizeX: 2
   chunkSizeZ: 2
-  mapString: {fileID: 11400000, guid: 11c654ba37db4fc4a87e1ba22df74496, type: 2}
+  mapString: {fileID: 11400000, guid: bd37b0c6c05c7274db03d60cbeb81bda, type: 2}
   surface: {fileID: 2089414113}
   chunkPrefab:
   - {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}

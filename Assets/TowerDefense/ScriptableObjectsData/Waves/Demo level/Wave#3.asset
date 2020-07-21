@@ -18,7 +18,7 @@ MonoBehaviour:
     count: 5
   - enemyPrefab: {fileID: 1311928148011479111, guid: cf0827c30dbd6944cae00152d822fb42,
       type: 3}
-    count: 1
+    count: 2
   pattern: 1
   ignoreLimits: 0
   maxSpawns: -1
