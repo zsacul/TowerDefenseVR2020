@@ -13,16 +13,20 @@ public class EndpointManager : GameEventListener
 
     bool GameOverCondition()
     {
-        GetComponent<HealthBar>().SetMaxHp(health);
+        //GetComponent<HealthBar>().SetMaxHp(health);
         return this.health <= 0;
     }
 
     // Method called by the enemy after arriving to the endpoint
     void DamageEndpoint(int damageValue)
     {
-        this.health -= damageValue;
-        GetComponent<HealthBar>().updateBar(health);
-        if (GameOverCondition())
+        //Debug.Log("HEALTH: " + health + "; damageValue: " + damageValue);
+        if (!GameOverCondition())
+        {
+            this.health -= damageValue;
+            GetComponent<HealthBar>().updateBar(health);
+        }
+        else
         {
             gameOver.Raise();
             destroyed.Invoke();
