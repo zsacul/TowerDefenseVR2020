@@ -18,5 +18,5 @@ MonoBehaviour:
     count: 6
   pattern: 0
   ignoreLimits: 0
-  maxSpawns: 0
+  maxSpawns: -1
   avoidIdent: 0

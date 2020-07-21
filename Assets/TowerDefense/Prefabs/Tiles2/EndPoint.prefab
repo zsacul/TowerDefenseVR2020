@@ -484,7 +484,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  health: 10
+  health: 15
 --- !u!114 &1263541253463825526
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementIndex: 2
-  upgradeCost: 200
+  upgradeCost: 140
 --- !u!1 &8246216072637188739
 GameObject:
   m_ObjectHideFlags: 0
