@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 536407717136467515}
   - component: {fileID: 7770148331051164413}
   m_Layer: 11
-  m_Name: Text (TMP)
+  m_Name: HP text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,12 +861,12 @@ PrefabInstance:
     - target: {fileID: 4831415326758836088, guid: f02e560951991704488c742939ab673a,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 275
+      value: 273
       objectReference: {fileID: 0}
     - target: {fileID: 4831415326758836088, guid: f02e560951991704488c742939ab673a,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 46
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4831415326758836088, guid: f02e560951991704488c742939ab673a,
         type: 3}
@@ -1288,6 +1288,11 @@ PrefabInstance:
       propertyPath: hp
       value: 
       objectReference: {fileID: 12427477369772581}
+    - target: {fileID: 868869954612109460, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: maxEnemyHP
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1333370168608775324, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1702,6 +1707,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3522052326075638086}
     m_Modifications:
+    - target: {fileID: 877557288677120329, guid: 5cdde0790bad64be5bf803b9f998692b,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076151966537992085, guid: 5cdde0790bad64be5bf803b9f998692b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5590247529781678580, guid: 5cdde0790bad64be5bf803b9f998692b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,6 +1866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256851905267461853, guid: 5cdde0790bad64be5bf803b9f998692b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7273872416784381523, guid: 5cdde0790bad64be5bf803b9f998692b,
         type: 3}

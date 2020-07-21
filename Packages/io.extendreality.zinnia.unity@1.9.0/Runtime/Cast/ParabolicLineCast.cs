@@ -100,7 +100,7 @@
                 if (gameObject.tag != "BuildPointerCaster" && hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
                 {
                     Vector3 lol = hitData.collider.GetComponentInChildren<TeleportRedirector>().transform.position;
-                    Debug.Log("redireted teleport: " + lol + " - " + hitData.collider.GetComponentInChildren<TeleportRedirector>().name);
+                    //Debug.Log("redireted teleport: " + lol + " - " + hitData.collider.GetComponentInChildren<TeleportRedirector>().name);
                     return lol + (Vector3.up * AdjustmentOffset);
                 }
                 length = hitData.distance;

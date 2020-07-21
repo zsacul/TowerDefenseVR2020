@@ -105,8 +105,8 @@ namespace SpawnManaging
         }
         private void BreakCheck()
         {
-            Debug.Log(spawnMagicNumber);
-            Debug.Log(spawnPoints[0].childCount);
+            //Debug.Log(spawnMagicNumber);
+            //Debug.Log(spawnPoints[0].childCount);
             if (spawnPoints[0].childCount == spawnMagicNumber)
             {
                 CancelInvoke("BreakCheck");
