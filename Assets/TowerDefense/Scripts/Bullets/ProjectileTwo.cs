@@ -20,10 +20,14 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     public UnityEvent onInit;
     public UnityEvent onHit;
     public UnityEvent onEnd;
+    public UnityEvent onRelease;
+
 
     private bool released;
     private Vector3 lastPos;
     private Vector3 movement;
+    private float lastHit;
+
     private void FixedUpdate()
     {
         if(released)
@@ -64,10 +68,13 @@ public class ProjectileTwo : MonoBehaviour , IChargable
         {
             if (other.gameObject.tag == "Enemy")
             {
-                onHit.Invoke();
                 other.collider.BroadcastMessage("ApplyDamage", damageData, SendMessageOptions.DontRequireReceiver);
             }
-            onHit.Invoke();
+            if(Time.time - lastHit > 0.05f)
+            {
+                lastHit = Time.time;
+                onHit.Invoke();
+            }
             //transform.rotation = Quaternion.LookRotation(Vector3.Reflect(transform.forward, other.GetContact(0).normal));
         }
     }
@@ -91,6 +98,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     }
     public void Release()
     {
+        onRelease.Invoke();
         released = true;
         transform.parent = null;
         Invoke("EnableCollision", 0.25f);

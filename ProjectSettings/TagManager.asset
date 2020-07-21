@@ -14,6 +14,7 @@ TagManager:
   - Instructions
   - Grababble
   - DontChangeRedirector
+  - BuildPointerCaster
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - NotWalkableForPlayer
   - IgnoreTeleportRaycast
   - IgnoreBuildRaycast
-  - Interactable
+  - 
   - 
   - 
   - 

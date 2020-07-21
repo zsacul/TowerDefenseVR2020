@@ -18,9 +18,9 @@ public class HP_displayer : MonoBehaviour
         HP_display_primary_size = HP_display.transform.localScale.y;
 
         // find Endpoint.
-        Endpoint = GameObject.Find("EndPoint");
+        //Endpoint = GameObject.Find("EndPoint");
         // cursed
-        PoI = Endpoint.transform.GetChild(1).gameObject;
+        //PoI = Endpoint.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame

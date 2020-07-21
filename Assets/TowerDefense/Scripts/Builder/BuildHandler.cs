@@ -27,7 +27,7 @@ public class BuildHandler : GameEventListener
     private bool shouldCallHover;
 
     private ChunkType selectedBuilding;
-    private int sBuildingCost; 
+    private int sBuildingCost;
 
     void Start()
     {
@@ -51,42 +51,16 @@ public class BuildHandler : GameEventListener
 
     void Update()
     {
-        UpdateButtonState(false);
-
         if (pointedAt)
         {
             ChunkType previousBuilding = selectedBuilding;
             UpdateSelectedBuilding();
-            if(previousBuilding != selectedBuilding)
+            if (previousBuilding != selectedBuilding)
             {
                 HoverOff();
                 HoverOn();
             }
             UpdatePointedAt();
-        }
-    }
-
-    void LateUpdate()
-    {
-        UpdateButtonState(true);
-    }
-
-    private void UpdateButtonState(bool isLateUpdate)
-    {
-        if (isLateUpdate)
-        {
-            buildButtonPressed = false;
-        }
-        else
-        {
-            if (buildManager.VRTKInputs)
-            {
-                buildButtonPressed = (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f);
-            }
-            else
-            {
-                buildButtonPressed = Input.GetKeyDown(KeyCode.C);
-            }
         }
     }
 
@@ -112,7 +86,7 @@ public class BuildHandler : GameEventListener
         else
         {
             //if (Input.GetKeyDown(KeyCode.C))
-            if(buildButtonPressed)
+            if (Input.GetKeyDown(KeyCode.C) || (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f))
             {
                 Build();
                 HoverOff();
@@ -150,7 +124,7 @@ public class BuildHandler : GameEventListener
                 }
             }
         }
-       // HoverOn();
+        // HoverOn();
     }
     public void SeeYou()
     {
@@ -171,7 +145,7 @@ public class BuildHandler : GameEventListener
                 showedBuilding = Instantiate(canBuildTower, transform.position, transform.rotation);
             else
                 showedBuilding = Instantiate(canBuildObstacle, transform.position, transform.rotation);
-            
+
         }
         else
         {
@@ -179,7 +153,7 @@ public class BuildHandler : GameEventListener
                 showedBuilding = Instantiate(cantBuildTower, transform.position, transform.rotation);
             else
                 showedBuilding = Instantiate(cantBuildObstacle, transform.position, transform.rotation);
-        } 
+        }
     }
 
     public void HoverOff()

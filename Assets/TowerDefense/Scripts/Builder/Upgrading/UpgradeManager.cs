@@ -30,12 +30,12 @@ public class UpgradeManager : MonoBehaviour
     private GameObject buttonInstance;
     private bool anyUpgradeSelected;
 
-   // [SerializeField]
-   // private GameEvent UpgradeSelected;
+    // [SerializeField]
+    // private GameEvent UpgradeSelected;
     [SerializeField]
     private GameEvent UpgradeSuccess;
-   // [SerializeField]
-   // private GameEvent UpgradeFailure;
+    // [SerializeField]
+    // private GameEvent UpgradeFailure;
 
     void Start()
     {
@@ -77,8 +77,6 @@ public class UpgradeManager : MonoBehaviour
 
     void Update()
     {
-        UpdateButtonState(false);
-
         if (buildManager.BuildModeOn && GoodPosition())
         {
             if (!canvasEnabled && !upgradePanelsActive)
@@ -89,7 +87,7 @@ public class UpgradeManager : MonoBehaviour
                 NoneSelected();
             }
 
-            if (panelButtonPressed)//Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.X))
             {
                 upgradePanelsActive = !upgradePanelsActive;
                 if (canvasEnabled)
@@ -110,29 +108,6 @@ public class UpgradeManager : MonoBehaviour
             NoneSelected();
         }
     }
-    void LateUpdate()
-    {
-        UpdateButtonState(true);
-    }
-
-    private void UpdateButtonState(bool isLateUpdate)
-    {
-        if (isLateUpdate)
-        {
-            panelButtonPressed = false;
-        }
-        else
-        {
-            if (buildManager.VRTKInputs)
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
-            }
-            else
-            {
-                panelButtonPressed = Input.GetKeyDown(KeyCode.X);
-            }
-        }
-    }
 
     public void UpgradeTower(int elementIndex, int upgradeCost)
     {
@@ -143,7 +118,8 @@ public class UpgradeManager : MonoBehaviour
             buildManager.DecreaseMoney(upgradeCost);
             thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
             SetUpgradeCosts();
-        } else
+        }
+        else
         {
             //UpgradeFailure.Raise();
         }
@@ -174,7 +150,7 @@ public class UpgradeManager : MonoBehaviour
         if (anyUpgradeSelected)
         {
             buttonInstance.SetActive(false);
-            anyUpgradeSelected = false; 
+            anyUpgradeSelected = false;
         }
     }
 

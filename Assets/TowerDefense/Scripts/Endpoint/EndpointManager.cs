@@ -13,6 +13,7 @@ public class EndpointManager : GameEventListener
 
     bool GameOverCondition()
     {
+        GetComponent<HealthBar>().SetMaxHp(health);
         return this.health <= 0;
     }
 
@@ -20,6 +21,7 @@ public class EndpointManager : GameEventListener
     void DamageEndpoint(int damageValue)
     {
         this.health -= damageValue;
+        GetComponent<HealthBar>().updateBar(health);
         if (GameOverCondition())
         {
             gameOver.Raise();

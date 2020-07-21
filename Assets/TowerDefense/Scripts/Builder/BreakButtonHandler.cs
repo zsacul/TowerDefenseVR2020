@@ -6,40 +6,32 @@ using UnityEngine.Events;
 public class BreakButtonHandler : MonoBehaviour
 {
 
-    [SerializeField]
-    Transform ButtonPushedPosition;
-    [SerializeField]
-    Transform ButtonReleasedPosition;
-    
     bool pushed;
     SpawnManaging.SpawnManager spawnManager;
     public UnityEvent ButtonClicked;
-    
+ 
     private void Start()
     {
         pushed = false;
         spawnManager = FindObjectOfType<SpawnManaging.SpawnManager>();
     }
 
-    private void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (transform.position.y <= ButtonPushedPosition.position.y && IsPlayerOnTower())
+        if(other.gameObject.tag == "HandCollider" && !pushed)
         {
+            pushed = true;
+            transform.localPosition += new Vector3(0f, -0.02f, 0f);
             spawnManager.EndBreak();
             ButtonClicked.Invoke();
         }
-        
-        if (transform.position.y > ButtonReleasedPosition.position.y)
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            transform.position = ButtonReleasedPosition.position;
-        }
     }
 
-
-    private bool IsPlayerOnTower()
+    private void OnTriggerExit(Collider other)
     {
-        return Camera.main.transform.position.y > 4f;
+        pushed = false;
+        transform.localPosition -= new Vector3(0f, -0.02f, 0f);
     }
 
 }
