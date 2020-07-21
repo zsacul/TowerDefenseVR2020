@@ -9,7 +9,9 @@ public class CameraTracker : MonoBehaviour
         cam = Camera.main;
     }
 
-    void Update() {
-        transform.LookAt(cam.transform.position);
+    void Update()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - cam.transform.position);
     }
+
 }
