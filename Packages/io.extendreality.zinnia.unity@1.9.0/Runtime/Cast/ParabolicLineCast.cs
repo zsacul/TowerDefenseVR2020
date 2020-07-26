@@ -114,7 +114,7 @@
                     if (CurrentRedirector == null || CurrentRedirector != PotentialRedirector)
                     {
                         Vector3 lol = PotentialRedirector.transform.position;
-                        Debug.Log("redireted teleport: " + lol + " - " + PotentialRedirector.name);
+                        //Debug.Log("redireted teleport: " + lol + " - " + PotentialRedirector.name);
                         return lol + (Vector3.up * AdjustmentOffset);
                     }
                 }
@@ -152,13 +152,13 @@
             {
                 if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
                 {
-                    Debug.Log("jest jakis teleportRedirector");
+                    //Debug.Log("jest jakis teleportRedirector");
                     if (CurrentRedirector == null || CurrentRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
                     {
-                        Debug.Log("Sprawdzamy czy uzywamy juz tego redirectora");
+                        //Debug.Log("Sprawdzamy czy uzywamy juz tego redirectora");
                         if (PotentialRedirector == null || PotentialRedirector.transform.position != downwardOrigin)
                         {
-                            Debug.Log("przekierowywujemy wskaznik");
+                            //Debug.Log("przekierowywujemy wskaznik");
                             PotentialRedirector = hitData.collider.GetComponentInChildren<TeleportRedirector>();
                             return ProjectDown(PotentialRedirector.transform.position);
                         }
@@ -252,17 +252,20 @@
             if (PotentialRedirector != null)
             {
                 yield return new WaitForFixedUpdate();
-                Debug.Log("Potencjalny przekierowywacz: " + PotentialRedirector.name);
+                //Debug.Log("Potencjalny przekierowywacz: " + PotentialRedirector.name);
 
                 if (Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) < 0.1f &&
                     Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z) < 0.1f && PotentialRedirector.tag != "DontChangeRedirector")
                 {
-                    Debug.Log(PotentialRedirector.tag);
+                    //Debug.Log(PotentialRedirector.tag);
                     CurrentRedirector = PotentialRedirector;
                 }
                 else
-                    Debug.Log("Odleglosc od potencjalnego przekierowywacza była: " + Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) + ", "
-                        + Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z));
+                {
+                    /*Debug.Log("Odleglosc od potencjalnego przekierowywacza była: " + Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) + ", "
+                        + Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z));*/
+                    
+                }
             }
             else
             {
