@@ -106,7 +106,8 @@
             // Adjust the cast length if something is blocking it.
             if (hasCollided && hitData.distance < length)
             {
-                if (hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
+
+                if (gameObject.tag != "BuildPointerCaster" && hitData.collider.GetComponentInChildren<TeleportRedirector>() != null)
                 {
                     if (PotentialRedirector == null || PotentialRedirector != hitData.collider.GetComponentInChildren<TeleportRedirector>())
                         PotentialRedirector = hitData.collider.GetComponentInChildren<TeleportRedirector>();
