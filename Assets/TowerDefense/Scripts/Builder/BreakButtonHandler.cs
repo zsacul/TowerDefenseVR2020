@@ -22,7 +22,7 @@ public class BreakButtonHandler : MonoBehaviour
         if(other.gameObject.tag == "HandCollider" && !pushed)
         {
             pushed = true;
-            transform.localPosition += new Vector3(0f, -0.02f, 0f);
+            transform.localPosition += new Vector3(0f, -0.06f, 0f);
             spawnManager.EndBreak();
             ButtonClicked.Invoke();
         }
@@ -31,7 +31,7 @@ public class BreakButtonHandler : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         pushed = false;
-        transform.localPosition -= new Vector3(0f, -0.02f, 0f);
+        transform.localPosition -= new Vector3(0f, -0.06f, 0f);
     }
 
 }

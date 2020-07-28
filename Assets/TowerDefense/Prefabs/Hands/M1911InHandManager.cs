@@ -54,7 +54,7 @@ public class M1911InHandManager : PropManager
     public override void Remove(Vector3 DebreeVelocity)
     {
         
-        Debug.Log(DebreeVelocity);
+        //Debug.Log(DebreeVelocity);
         transform.gameObject.SetActive(false); /* ofc chcemy też pokazać schować rękę */
 
         if (remcount > 0)
