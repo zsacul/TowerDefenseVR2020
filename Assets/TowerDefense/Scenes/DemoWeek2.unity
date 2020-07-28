@@ -30913,7 +30913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 10000
+  money: 500
   towerCost: 80
   playerObstacleCost: 40
   canvas: {fileID: 1561748944}
