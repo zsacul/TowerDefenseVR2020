@@ -83,7 +83,6 @@ public class HandDeployer : MonoBehaviour
 
     public bool HandGrab(float input, bool triggered)
     {
-        Debug.Log("HandGrab Invoked!");
         if (listIterator == 0) // hand is empty and we are grabbing shit.
         {
             Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
@@ -154,7 +153,10 @@ public class HandDeployer : MonoBehaviour
                     Debug.Log("HAND GRAB");
                     if (!critical_enforcer)
                         if (!HandGrab(1.0f, intent))
-                            stateFlipFlop = 3;
+                        {
+                            Debug.Log("SKIPPIN");
+                            stateFlipFlop = 2;
+                        }
 
                     PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.99f);
                     PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.99f);
@@ -178,9 +180,9 @@ public class HandDeployer : MonoBehaviour
                     Debug.Log("HAND OPEN");
                     if (listIterator != 0)
                         release_timeout = 1.0f;
+                    PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
                     PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
                     PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);
-                    PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
                     stateFlipFlop = 0;
                 }
             }
@@ -261,7 +263,7 @@ public class HandDeployer : MonoBehaviour
         speed = (lastPosition - transform.position) * -100.0f;
         lastPosition = transform.position;
 
-        fid += 1;
+        fid += 0;
         release_timeout = Math.Max(0.0f, release_timeout - Time.deltaTime);
         if(fid > 5 && release_timeout < 0.1f && listIterator == 0)
         {

@@ -2658,8 +2658,8 @@ MonoBehaviour:
   - Prefab: {fileID: 4137375818022343, guid: 1b4d4fe26af328740852b1392b73912c, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 1
-    Rdep: 1
+    Ldep: 0
+    Rdep: 0
     IntentionalGrab: 0
     IGrabDistance: 0
     PolledGrab: 0
@@ -2669,8 +2669,8 @@ MonoBehaviour:
     description: 
     Ldep: 1
     Rdep: 1
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    IntentionalGrab: 1
+    IGrabDistance: 0.1
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: ebe9c872f6a88a34a862f763accc2ed2, type: 3}
@@ -2679,8 +2679,8 @@ MonoBehaviour:
     Ldep: 1
     Rdep: 1
     IntentionalGrab: 1
-    IGrabDistance: 0.5
-    PolledGrab: 1
+    IGrabDistance: 0.1
+    PolledGrab: 0
     PolledGrabDistance: 0.2
   - Prefab: {fileID: 4137375818022343, guid: f479ba1eacd553443bb172338fe0812e, type: 3}
     Instance: {fileID: 0}
