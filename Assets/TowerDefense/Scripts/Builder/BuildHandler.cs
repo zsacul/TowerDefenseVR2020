@@ -82,10 +82,9 @@ public class BuildHandler : GameEventListener
         {
             HoverOff();
         }
-        //If this chunk is still being pointed at and player presses Enter, we should build
+        //If this chunk is still being pointed at and player presses C, we should build
         else
         {
-            //if (Input.GetKeyDown(KeyCode.C))
             if (Input.GetKeyDown(KeyCode.C) || (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f))
             {
                 Build();
@@ -139,7 +138,7 @@ public class BuildHandler : GameEventListener
     {
         shouldCallHover = false;
         UpdateSelectedBuilding();
-        if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding) && buildManager.Money >= sBuildingCost)
+        if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding, false) && buildManager.Money >= sBuildingCost)
         {
             if (selectedBuilding == ChunkType.tower)
                 showedBuilding = Instantiate(canBuildTower, transform.position, transform.rotation);
