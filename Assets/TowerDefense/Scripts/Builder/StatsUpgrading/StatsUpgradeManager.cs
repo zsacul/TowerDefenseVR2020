@@ -141,6 +141,7 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void SetNextLevelCanvas()
     {
+        UpdateNextLevelStats();
         TextMeshProUGUI levelInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[0];
         TextMeshProUGUI damageInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI rangeInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
@@ -153,13 +154,10 @@ public class StatsUpgradeManager : MonoBehaviour
         costInfo.SetText("Cost: {0}", upgradeCosts[nextLevelCostIndex]);
 
         levelInfo.SetText("Next level: {0}", currentLevel + 1);
-        nextLevelDamage = (float)Math.Round(damage * (1f + damagePerLevel / 100f), 2);
         damageInfo.SetText(nextLevelDamage.ToString());
         damageInfo.color = upgradeColor;
-        nextLevelRange = (float)Math.Round(range * (1f + rangePerLevel / 100f), 2);
         rangeInfo.SetText(nextLevelRange.ToString());
         rangeInfo.color = upgradeColor;
-        nextLevelSpeed = (float)Math.Round(speed * (1f - speedPerLevel / 100f), 2);
         speedInfo.SetText(nextLevelSpeed.ToString());
         speedInfo.color = upgradeColor;
     }
@@ -177,8 +175,9 @@ public class StatsUpgradeManager : MonoBehaviour
             if (currentLevel != maxLevel)
             {
                 nextLevelCostIndex += 1;
-                UpdateStats();
+                UpdateNextLevelStats();
             }
+            UpdateStats();
             NotSelected();
         }
         else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
@@ -209,6 +208,13 @@ public class StatsUpgradeManager : MonoBehaviour
         damage = nextLevelDamage;
         range = nextLevelRange;
         speed = nextLevelSpeed;
+    }
+
+    public void UpdateNextLevelStats()
+    {
+        nextLevelDamage = (float)Math.Round(damage * (1f + damagePerLevel / 100f), 2);
+        nextLevelRange = (float)Math.Round(range * (1f + rangePerLevel / 100f), 2);
+        nextLevelSpeed = (float)Math.Round(speed * (1f - speedPerLevel / 100f), 2);
     }
 
     public void Selected()
@@ -242,11 +248,11 @@ public class StatsUpgradeManager : MonoBehaviour
         {
             buttonInstance.SetActive(true);
         }
-        UpdatePanels();
         canvasEnabled = true;
         currentLevelCanvas.enabled = true;
         nextLevelCanvas.enabled = true;
         nextLevelCanvas.GetComponent<Collider>().enabled = true;
+        UpdatePanels();
     }
 
     bool GoodPosition()
