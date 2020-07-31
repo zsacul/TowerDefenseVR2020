@@ -1,31 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Wand : MonoBehaviour
 {
     public Spell[] spells;
-    private List<Vector2Int> currentPath;
-    private Vector2Int startPos;
+    public GameObject nodePrefab;
+    public Transform head;
+    public float distance;
+    private List<Transform> pathedNodes;
+    private Transform[] currentNodes;
+    private SpellTree tree;
     private float charge;
 
     public UnityEvent onStartCast; 
     public UnityEvent onCastSucces; 
     public UnityEvent onCastFailure;
-    private ControllerPosition instance;
+    private LineRenderer line;
     private bool casting;
     IChargable current;
     private void Start()
     {
-        instance = ControllerPosition.Instance(false);
-        instance.inputChanged.AddListener(InputPosChanged);
-        instance.inFrontEnter.AddListener(InFrontEnter);
-        instance.inFrontExit.AddListener(InFrontExit);
-        currentPath = new List<Vector2Int>();
+        line = GetComponent<LineRenderer>();
+        tree = new SpellTree(spells);
+        pathedNodes = new List<Transform>();
     }
     private void Update()
     {
+        if(casting)
+        {
+            line.enabled = true;
+            line.positionCount = pathedNodes.Count;
+            line.SetPositions(pathedNodes.ConvertAll(x => x.position).ToArray());
+        }
+        else
+        {
+            line.positionCount = 0;
+            line.enabled = false;
+        }
         if(!casting && (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.LeftControl)))
         {
             CastStart();
@@ -35,57 +49,32 @@ public class Wand : MonoBehaviour
             CastEnd();
         }
     }
-    void InputPosChanged(Vector2Int pos)
+    private void CastStart()
     {
-        if(Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.LeftControl))
+        pathedNodes.Clear();
+        tree.BeginCast();
+        onStartCast.Invoke();
+        SpawnNodes();
+        casting = true;
+    }
+    public void CastUpdate(Vector2Int pos)
+    {
+        if (current != null) return;
+        (bool, Spell) n = tree.CastStep(pos);
+        if(n.Item1)
         {
-            CastUpdate(pos);
+            pathedNodes.Add(currentNodes.First(x => x.GetComponent<NodeData>().nodePos == pos));
+            ClearUnusedNodes();
+            SpawnNodes();
+            if(n.Item2 != null)
+            {
+                current = n.Item2.Cast(transform.position, transform.rotation, charge, transform);
+                onCastSucces.Invoke();
+            }
         }
         else
         {
-            //end or passive update
-            if(!casting)
-            {
-                startPos = pos;
-            }
-        }
-    }
-    void InFrontEnter()
-    {
-        
-    }
-    void InFrontExit()
-    {
-
-    }
-    private void OnDestroy()
-    {
-        ControllerPosition instance = ControllerPosition.Instance(false);
-        instance.inputChanged.RemoveListener(InputPosChanged);
-        instance.inFrontEnter.RemoveListener(InFrontEnter);
-        instance.inFrontExit.RemoveListener(InFrontExit);
-    }
-    private void CastStart()
-    {
-        instance.StartMove();
-        currentPath.Clear();
-        currentPath.Add(Vector2Int.zero);
-        onStartCast.Invoke();
-        casting = true;
-    }
-    private void CastUpdate(Vector2Int pos)
-    {
-        if (current != null) return;
-        currentPath.Add(pos);
-        Vector2Int[] sequence = currentPath.ToArray();
-        for (int i = 0; i < spells.Length; i++)
-        {
-            if (SequenceMatch(spells[i].castSequence, sequence))
-            {
-                current = spells[i].Cast(transform.position, transform.rotation, charge, transform);
-                onCastSucces.Invoke();
-                return;
-            }
+            CastEnd();
         }
     }
     private void CastEnd()
@@ -100,32 +89,49 @@ public class Wand : MonoBehaviour
         {
             onCastFailure.Invoke();
         }
+        ClearNodes();
     }
-    private bool SequenceMatch(Vector2Int[] template, Vector2Int[] sequence)
+    private void ClearNodes()
     {
-        int j = 0;//iterator on template
-        Vector2Int previous = template[0];
-        for(int i = 0; i < sequence.Length && j < template.Length; i++)
+        if(currentNodes != null)
         {
-            //good match
-            if(Vector2Int.Distance(sequence[i], template[j])<2)
+            foreach (Transform t in currentNodes)
             {
-                previous = template[j];
-                j++;
-                continue;
+                Destroy(t.gameObject);
             }
-            //neutral match
-            if(Vector2Int.Distance(sequence[i], previous) < 2)
-            {
-                continue;
-            }
-            //negative match
-            return false;
+            currentNodes = null;
         }
-        if(j < template.Length - 1)
+        if(pathedNodes != null)
         {
-            return false;
+            foreach (Transform t in pathedNodes)
+            {
+                Destroy(t.gameObject);
+            }
+            pathedNodes.Clear();
         }
-        return true;
+    }
+    private void ClearUnusedNodes()
+    {
+        foreach(Transform t in currentNodes.Where(x => pathedNodes.Last() != x))
+        {
+            Destroy(t.gameObject);
+        }
+        currentNodes = null;
+    }
+    private void SpawnNodes()
+    {
+        Vector2Int[] nodes = tree.GetNodes();
+        currentNodes = new Transform[nodes.Length];
+        int i = 0;
+        foreach(Vector2Int n in nodes)
+        {
+            Vector3 pos = transform.position + head.right * n.x * distance + head.up * n.y * distance;
+            GameObject o = Instantiate(nodePrefab, pos, Quaternion.identity);
+            NodeData d = o.GetComponent<NodeData>();
+            d.nodePos = n;
+            d.wand = this;
+            currentNodes[i] = o.transform;
+            i++;
+        }
     }
 }

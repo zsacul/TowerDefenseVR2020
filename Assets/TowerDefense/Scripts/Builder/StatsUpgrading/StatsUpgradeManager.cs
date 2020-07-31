@@ -93,14 +93,14 @@ public class StatsUpgradeManager : MonoBehaviour
                 EnablePanels();
             }
 
-            if (buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.JoystickButton1) ||
-                (!buildManager.VRTKInputs && Input.GetKeyDown(KeyCode.X)))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.X))
             {
                 panelsActive = !panelsActive;
                 if (canvasEnabled)
                 {
                     DisablePanels();
-                } else
+                }
+                else
                 {
                     EnablePanels();
                 }
@@ -119,14 +119,14 @@ public class StatsUpgradeManager : MonoBehaviour
         TextMeshProUGUI rangeInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
         TextMeshProUGUI speedInfo = currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5].enabled = false;
-        currentLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press \"X\" to dismiss panels");
         currentLevelCanvas.GetComponent<Collider>().enabled = false;
 
         if (currentLevel == maxLevel)
         {
             currentLevelCanvas.transform.position = new Vector3(pos.position.x, 8.7f, pos.position.z + 1.05f);
             levelInfo.SetText("Tower level: Max");
-        } else
+        }
+        else
         {
             levelInfo.SetText("Tower level: {0}", currentLevel);
         }
@@ -141,25 +141,23 @@ public class StatsUpgradeManager : MonoBehaviour
 
     void SetNextLevelCanvas()
     {
-        TextMeshProUGUI levelInfo  = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[0];
+        UpdateNextLevelStats();
+        TextMeshProUGUI levelInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[0];
         TextMeshProUGUI damageInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI rangeInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
         TextMeshProUGUI speedInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         TextMeshProUGUI costInfo = nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[5];
 
-        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press button to level up");
+        nextLevelCanvas.GetComponentsInChildren<TextMeshProUGUI>()[6].SetText("Press Button to Upgrade");
 
         costInfo.color = (buildManager.Money >= upgradeCosts[nextLevelCostIndex]) ? Color.green : Color.red;
         costInfo.SetText("Cost: {0}", upgradeCosts[nextLevelCostIndex]);
 
         levelInfo.SetText("Next level: {0}", currentLevel + 1);
-        nextLevelDamage = (float)Math.Round(damage * (1f + damagePerLevel / 100f), 2);
         damageInfo.SetText(nextLevelDamage.ToString());
         damageInfo.color = upgradeColor;
-        nextLevelRange = (float)Math.Round(range * (1f + rangePerLevel / 100f), 2);
         rangeInfo.SetText(nextLevelRange.ToString());
         rangeInfo.color = upgradeColor;
-        nextLevelSpeed = (float)Math.Round(speed * (1f - speedPerLevel / 100f), 2);
         speedInfo.SetText(nextLevelSpeed.ToString());
         speedInfo.color = upgradeColor;
     }
@@ -177,10 +175,12 @@ public class StatsUpgradeManager : MonoBehaviour
             if (currentLevel != maxLevel)
             {
                 nextLevelCostIndex += 1;
-                UpdateStats();
+                UpdateNextLevelStats();
             }
+            UpdateStats();
             NotSelected();
-        } else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
+        }
+        else if ((currentLevel != maxLevel) && (buildManager.GetMoney() < upgradeCosts[nextLevelCostIndex]))
         {
             //LevelUpFailure.Raise();
         }
@@ -195,7 +195,8 @@ public class StatsUpgradeManager : MonoBehaviour
             SetCurrentLevelCanvas();
             nextLevelCanvas.enabled = false;
             nextLevelCanvas.GetComponent<Collider>().enabled = false;
-        } else
+        }
+        else
         {
             SetCurrentLevelCanvas();
             SetNextLevelCanvas();
@@ -207,6 +208,13 @@ public class StatsUpgradeManager : MonoBehaviour
         damage = nextLevelDamage;
         range = nextLevelRange;
         speed = nextLevelSpeed;
+    }
+
+    public void UpdateNextLevelStats()
+    {
+        nextLevelDamage = (float)Math.Round(damage * (1f + damagePerLevel / 100f), 2);
+        nextLevelRange = (float)Math.Round(range * (1f + rangePerLevel / 100f), 2);
+        nextLevelSpeed = (float)Math.Round(speed * (1f - speedPerLevel / 100f), 2);
     }
 
     public void Selected()
@@ -240,11 +248,11 @@ public class StatsUpgradeManager : MonoBehaviour
         {
             buttonInstance.SetActive(true);
         }
-        UpdatePanels();
         canvasEnabled = true;
         currentLevelCanvas.enabled = true;
         nextLevelCanvas.enabled = true;
         nextLevelCanvas.GetComponent<Collider>().enabled = true;
+        UpdatePanels();
     }
 
     bool GoodPosition()

@@ -32,18 +32,24 @@ namespace SpawnManaging
 
         public Canvas waveInfoLabelPrefab;
         private Canvas waveInfoLabel;
+        public Canvas incomingWaveInfoLabelPrefab;
+        private Canvas incomingWaveInfoLabel;
+        private bool firstUIUpdate;
 
         float breakTime;
         // Update is called once per frame
         void Start()
         {
             waveInfoLabel = Instantiate(waveInfoLabelPrefab);
+            incomingWaveInfoLabel = Instantiate(incomingWaveInfoLabelPrefab);
             spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
             breakTime = 0;
+            firstUIUpdate = true;
+            UpdateUI();
         }
-        
+
         private void Spawn()
         {
             if (spawnedInGroup >= wave[waveIndex].groupSize)
@@ -52,12 +58,12 @@ namespace SpawnManaging
                 return;
             }
             GameObject obj = wave[waveIndex].waveData.GetEnemy();
-            if(obj == null)//wave end
+            if (obj == null)//wave end
             {
                 CancelInvoke("Spawn");
                 CancelInvoke("SpawnLoop");
                 waveIndex++;
-                if(waveIndex < wave.Length)
+                if (waveIndex < wave.Length)
                 {
                     wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);
                     InitBreak();
@@ -70,7 +76,7 @@ namespace SpawnManaging
                 return;
             }
             spawnedInGroup++;
-            
+
             Instantiate(obj, spawnPoints[spawnerIndex]).GetComponent<EnemyAgentMotivator>().target1 = target;
             UpdateUI();
         }
@@ -99,8 +105,8 @@ namespace SpawnManaging
         }
         private void BreakCheck()
         {
-            Debug.Log(spawnMagicNumber);
-            Debug.Log(spawnPoints[0].childCount);
+            //Debug.Log(spawnMagicNumber);
+            //Debug.Log(spawnPoints[0].childCount);
             if (spawnPoints[0].childCount == spawnMagicNumber)
             {
                 CancelInvoke("BreakCheck");
@@ -111,14 +117,14 @@ namespace SpawnManaging
         {
             breakStart.Raise();
             breakOn = true;
-            UpdateUI();
             breakTime = 0;
+            UpdateUI();
             StartCoroutine(lightningCycle.ChangeToDay());
         }
 
         public void EndBreak()
         {
-            if(breakOn)
+            if (breakOn)
             {
                 //if (BreakButton == null)
                 //{
@@ -133,6 +139,17 @@ namespace SpawnManaging
             }
             UpdateUI();
         }
+
+        IEnumerator LateStartUpdateUI(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Transform spawnPoint = spawnPoints[0].transform;
+            waveInfoLabel.enabled = false;
+            incomingWaveInfoLabel.enabled = true;
+            incomingWaveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
+            incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 19f, spawnPoint.position.z);
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
@@ -146,32 +163,96 @@ namespace SpawnManaging
 
         private void UpdateUI()
         {
+            Transform spawnPoint = spawnPoints[0].transform;
             if (!breakOn)
             {
-                Transform spawnPoint = spawnPoints[0].transform;
+                incomingWaveInfoLabel.enabled = false;
                 waveInfoLabel.enabled = true;
                 waveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
                 waveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 9f, spawnPoint.position.z);
+                incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().SetText("Next wave:");
                 TextMeshProUGUI text = waveInfoLabel.GetComponentInChildren<TextMeshProUGUI>();
-                //GameObject enemyPreview = waveInfoLabel.GetComponentsInChildren<GameObject>()[1];
-                //enemyPreview = Instantiate(wave[waveIndex].waveData.GetEnemy());
                 int enemiesLeft = wave[waveIndex].waveData.EnemiesLeft();
                 if (enemiesLeft == 0)
                 {
                     text.SetText("No enemies left");
-                } else if (enemiesLeft == 1)
+                }
+                else if (enemiesLeft == 1)
                 {
                     text.SetText("1 enemy left");
-                } else
+                }
+                else
                 {
                     text.SetText(enemiesLeft + " enemies left");
                 }
-                
-            } else 
+
+            }
+            else
             {
                 waveInfoLabel.enabled = false;
+                incomingWaveInfoLabel.enabled = true;
+                incomingWaveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
+                incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 19f, spawnPoint.position.z);
+                EnemyCount[] incomingEnemies = wave[waveIndex].waveData.GetWaveInfo();
+
+                int fireEnemies = 0;
+                int windEnemies = 0;
+                int iceEnemies = 0;
+                int lightningEnemies = 0;
+                int stoneEnemies = 0;
+                int poisonEnemies = 0;
+
+                foreach (EnemyCount enemy in incomingEnemies)
+                {
+                    ElementType enemyType = enemy.enemyPrefab.GetComponent<EnemyHPManager>().GetElementType();
+                    switch (enemyType)
+                    {
+                        case ElementType.ice:
+                            iceEnemies += enemy.count;
+                            break;
+                        case ElementType.fire:
+                            fireEnemies += enemy.count;
+                            break;
+                        case ElementType.electricity:
+                            lightningEnemies += enemy.count;
+                            break;
+                        case ElementType.wind:
+                            windEnemies += enemy.count;
+                            break;
+                        case ElementType.stone:
+                            stoneEnemies += enemy.count;
+                            break;
+                        case ElementType.poison:
+                            poisonEnemies += enemy.count;
+                            break;
+                    }
+                }
+
+                if (lightningEnemies != 0)
+                    SetIncomingWaveText(0, lightningEnemies);
+                if (iceEnemies != 0)
+                    SetIncomingWaveText(1, iceEnemies);
+                if (fireEnemies != 0)
+                    SetIncomingWaveText(2, fireEnemies);
+                if (windEnemies != 0)
+                    SetIncomingWaveText(3, windEnemies);
+                if (stoneEnemies != 0)
+                    SetIncomingWaveText(4, stoneEnemies);
+                if (poisonEnemies != 0)
+                    SetIncomingWaveText(5, poisonEnemies);
             }
-            
+
+            if (firstUIUpdate)
+            {
+                StartCoroutine(LateStartUpdateUI(0.1f));
+                firstUIUpdate = false;
+            }
+        }
+
+        private void SetIncomingWaveText(int indexOfSpriteAsset, int numberOfEnemies)
+        {
+            String enemiesText = (numberOfEnemies > 1) ? "enemies" : "enemy";
+            incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().text += $"\n{numberOfEnemies}   <sprite={indexOfSpriteAsset}><size=70%>{enemiesText}<size=100%>";
         }
     }
     [Serializable]

@@ -19,9 +19,12 @@
     /// </summary>
     public class TransformPropertyApplier : MonoBehaviour
     {
+        public UnityEngine.Events.UnityEvent TeleportApplied;
+
         /// <summary>
         /// Holds data about a <see cref="TransformPropertyApplier"/> event.
         /// </summary>
+        /// 
         [Serializable]
         public class EventData
         {
@@ -200,6 +203,8 @@
         /// <summary>
         /// Applies the properties of the <see cref="Source"/> parameter to the target.
         /// </summary>
+        /// 
+        int b = -1;
         [RequiresBehaviourState]
         public virtual void Apply()
         {
@@ -208,6 +213,8 @@
                 return;
             }
 
+ //           Debug.Log("Target: " + Target.gameObject.transform.position + "Source: " + Source.TryGetGameObject().transform.position);
+
             targetTransformData.Clear();
             targetTransformData.Transform = Target.transform;
             targetTransformData.UseLocalValues = Source.UseLocalValues;
@@ -215,6 +222,9 @@
             Quaternion destinationRotation = CalculateRotation(Source, targetTransformData);
             Vector3 destinationPosition = CalculatePosition(Source, targetTransformData, destinationScale, destinationRotation);
             ProcessTransform(Source, targetTransformData, destinationScale, destinationRotation, destinationPosition);
+
+            TeleportApplied.Invoke();
+ //           Debug.Log("Main camera location: " + Camera.main.transform.position);
         }
 
         /// <summary>

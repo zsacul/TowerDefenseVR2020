@@ -12,6 +12,9 @@ TagManager:
   - PathChunk
   - BaseTower
   - Instructions
+  - Grababble
+  - DontChangeRedirector
+  - BuildPointerCaster
   - VRButton
   layers:
   - Default
