@@ -43,7 +43,6 @@ public class BuildTutorialManager : MonoBehaviour
     {
         if (started)
         {
-            Debug.LogError("Exit tutorial");
             TurnOffCurrentQuest();
             started = false;
             state = false;
@@ -75,7 +74,7 @@ public class BuildTutorialManager : MonoBehaviour
         TurnOffCurrentQuest();
         state = true;
         started = false;
-        Debug.Log("Tutorial ended");
+        //Debug.Log("Tutorial ended");
         InstructionsPanel.SetActive(true);
     }
 

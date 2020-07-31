@@ -16,13 +16,13 @@ public class BuildTutorialQuest : GameEventListener
     virtual public void EnterQuest()
     {
         InstructionsPanel.SetActive(true);
-        Debug.Log("Wejście do " + gameObject.name);
+        //Debug.Log("Wejście do " + gameObject.name);
     }
 
     virtual public void ExitQuest()
     {
         InstructionsPanel.SetActive(false);
-        Debug.Log("Wyjscie z " + gameObject.name);
+        //Debug.Log("Wyjscie z " + gameObject.name);
     }
 
     public virtual void SetNextQuest()
@@ -30,7 +30,7 @@ public class BuildTutorialQuest : GameEventListener
         state = true;
         if(nextQuest != null && BuildTutorialManager.Instance.CurrentQuest() != nextQuest && this.enabled)
         {
-            Debug.Log(gameObject.name + " calls SetNextQuest()");
+            //Debug.Log(gameObject.name + " calls SetNextQuest()");
             BuildTutorialManager.Instance.SetCurrentQuest(nextQuest);
             QuestFinished.Invoke();
             ExitQuest();
