@@ -32,7 +32,7 @@ TagManager:
   - NotWalkableForPlayer
   - IgnoreTeleportRaycast
   - IgnoreBuildRaycast
-  - 
+  - Spells
   - 
   - 
   - 
