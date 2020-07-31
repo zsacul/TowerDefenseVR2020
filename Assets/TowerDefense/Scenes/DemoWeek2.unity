@@ -30930,6 +30930,8 @@ MonoBehaviour:
   UIMoneyText: {fileID: 746120332}
   towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
   towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
+  obstacleSelected: {fileID: 11400000, guid: 757b31e66d12797489a1b6d0bd9ffc1c, type: 2}
+  obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
   StartedPointing:
