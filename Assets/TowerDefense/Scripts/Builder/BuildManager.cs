@@ -37,6 +37,10 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent towerBuilt;
     [SerializeField]
+    private GameEvent obstacleSelected;
+    [SerializeField]
+    private GameEvent obstacleBuilt;
+    [SerializeField]
     private GameEvent SelectionStatusChanged;
 
     public UnityEvent StartedPointing;
@@ -237,6 +241,7 @@ public class BuildManager : MonoBehaviour
     public void ChooseObstacle()
     {
         StartedPointing.Invoke();
+        obstacleSelected.Raise();
         selectedBuilding = ChunkType.playerObstacle;
         purchasePanelsActive = false;
         UpdateUI();
@@ -326,7 +331,7 @@ public class BuildManager : MonoBehaviour
         }
         else if (selectedBuilding == ChunkType.playerObstacle)
         {
-            //obstacleBuilt.Raise();
+            obstacleBuilt.Raise();
         }
     }
 
