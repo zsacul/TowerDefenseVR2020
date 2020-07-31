@@ -2714,8 +2714,8 @@ MonoBehaviour:
     description: 
     Ldep: 0
     Rdep: 1
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   HandDeployerName: 
