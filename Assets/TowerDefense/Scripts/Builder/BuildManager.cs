@@ -231,20 +231,26 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
-        StartedPointing.Invoke();
-        towerSelected.Raise();
-        selectedBuilding = ChunkType.tower;
-        purchasePanelsActive = false;
-        UpdateUI();
+        if (BuildModeOn)
+        {
+            StartedPointing.Invoke();
+            towerSelected.Raise();
+            selectedBuilding = ChunkType.tower;
+            purchasePanelsActive = false;
+            UpdateUI();
+        }
     }
 
     public void ChooseObstacle()
     {
-        StartedPointing.Invoke();
-        obstacleSelected.Raise();
-        selectedBuilding = ChunkType.playerObstacle;
-        purchasePanelsActive = false;
-        UpdateUI();
+        if (BuildModeOn)
+        {
+            StartedPointing.Invoke();
+            obstacleSelected.Raise();
+            selectedBuilding = ChunkType.playerObstacle;
+            purchasePanelsActive = false;
+            UpdateUI();
+        }
     }
 
     public void ChooseNone()
