@@ -35,6 +35,35 @@ public class Chunk : MonoBehaviour
         return false;
     }
 
+    public void UpgradeTower(TowerType elementType)
+    {
+        if (type == ChunkType.tower)
+        {
+            int elementIndex;
+            if (elementType == TowerType.fire) {
+                elementIndex = 4;
+            } else if (elementType == TowerType.ice) {
+                elementIndex = 3;
+            } else if (elementType == TowerType.lightning) {
+                elementIndex = 2;
+            } else if (elementType == TowerType.wind) {
+                elementIndex = 1;
+            } else {
+                Debug.Log("Chunk.cs/UpgradeTower(): Couldn't find appropriate elementIndex");
+                elementIndex = 0;
+            }
+
+            if (currentObject != null)
+            {
+                UpgradedTowerHeight = currentObject.GetComponent<TowerHeight>().towerHeight;
+                currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
+                Destroy(currentObject, 3f);
+            }
+            newObject = Instantiate(prefabs.tower[elementIndex], transform);
+            newObject.transform.localScale = new Vector3(newObject.transform.localScale.x, UpgradedTowerHeight, newObject.transform.localScale.z);
+        }
+    }
+
     public void UpgradeTower(int elementIndex)
     {
         if (type == ChunkType.tower)

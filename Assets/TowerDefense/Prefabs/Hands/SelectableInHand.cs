@@ -13,6 +13,7 @@ public class SelectableInHand : PropManager
     public Material Commited;
     public Material NotCommited;
     private GameObject Phantom;
+    private UpgradeTower upgradeManager;
 
     public override void PointEvent(float input)
     {
@@ -62,6 +63,7 @@ public class SelectableInHand : PropManager
 
         Panel = Motivator.transform.parent.gameObject;
         InvokerButton = Panel.GetComponent<GenericNBoxSelector>().invokerButton;
+        upgradeManager = InvokerButton.transform.parent.transform.parent.GetComponentInParent<UpgradeTower>();
         Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
         //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
         Miniature = Instantiate(Motivator);
@@ -86,6 +88,12 @@ public class SelectableInHand : PropManager
         {
             Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(false);
             Panel = null;
+        }
+
+        if (commited)
+        {
+            TowerType towerElement = TowerType.fire; // Dawid | Tutaj sobie przypisz żywiol wiezy
+            upgradeManager.ProceedTowerUpgrade(towerElement); // I tutaj podać ten żywiol jako argument
         }
 
         InvokerButton = null;
