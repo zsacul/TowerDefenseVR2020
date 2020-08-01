@@ -8,6 +8,10 @@ public class SelectableInHand : PropManager
     private GameObject HandManger;
     private GameObject Miniature;
     private GameObject Panel;
+    private GameObject InvokerButton;
+    private bool commited = false;
+    public Material Commited;
+    public Material NotCommited;
     public override void GrabEvent(float input)
     {
         if (!retarded_controlls)
@@ -45,11 +49,15 @@ public class SelectableInHand : PropManager
         GizmoAnimation.SetFloat("GripFloat", 0.0f);
         GizmoAnimation.SetFloat("PointFloat", 0.0f);
 
-        //Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
+        Panel = Motivator.transform.parent.gameObject;
+        InvokerButton = Panel.GetComponent<GenericNBoxSelector>().invokerButton;
+        Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
         //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
         Miniature = Instantiate(Motivator, transform);
         Miniature.transform.localPosition = new Vector3(0.07f, -1.09f, -2.07f);
         Miniature.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+        // for some reason we get the miniature inactive (wtf?)
+        Miniature.SetActive(true);
     }
 
     public override void Remove()
@@ -57,6 +65,8 @@ public class SelectableInHand : PropManager
         transform.gameObject.SetActive(false);
         Destroy(Miniature);
         Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(false);
+        Panel = null;
+        InvokerButton = null;
     }
 
     public override void Initialize()
@@ -75,6 +85,18 @@ public class SelectableInHand : PropManager
     // Update is called once per frame
     void Update()
     {
-
+        if (InvokerButton)
+        {
+            if (Vector3.Distance(transform.position, InvokerButton.transform.GetChild(1).transform.position) < 0.25f)
+            {
+                commited = true;
+                InvokerButton.transform.GetChild(1).gameObject.GetComponent<MeshRenderer>().material = Commited;
+            }
+            else
+            {
+                commited = true;
+                InvokerButton.transform.GetChild(1).gameObject.GetComponent<MeshRenderer>().material = NotCommited;
+            }
+        }
     }
 }

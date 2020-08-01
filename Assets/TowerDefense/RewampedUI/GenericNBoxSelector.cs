@@ -40,7 +40,6 @@ public class GenericNBoxSelector : MonoBehaviour
 
     public GameObject HbackDesc;
     public GameObject Hbackdots;
-
     public List<GameObject> NBOXstate;
     public List<GameObject> NBOXselector;
     [SerializeField]
@@ -101,7 +100,7 @@ public class GenericNBoxSelector : MonoBehaviour
     }
 
     private bool first = true;
-    private GameObject invokerButton;
+    public GameObject invokerButton;
     public void Respawn()
     {
         transform.position = StepParent.transform.position;

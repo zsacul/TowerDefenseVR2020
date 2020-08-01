@@ -69,6 +69,8 @@ MonoBehaviour:
   PropID: 0
   retarded_controlls: 0
   GizmoAnimation: {fileID: 4981076334279954798}
+  Commited: {fileID: 2100000, guid: 96236e841fb31b647ae0df84b86dd25b, type: 2}
+  NotCommited: {fileID: 2100000, guid: 3379a911cc4407041892f37df05e0c45, type: 2}
 --- !u!1 &613707382197714871
 GameObject:
   m_ObjectHideFlags: 0
