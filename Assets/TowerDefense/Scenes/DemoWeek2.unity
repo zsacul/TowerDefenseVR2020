@@ -2710,7 +2710,7 @@ MonoBehaviour:
     Ldep: 1
     Rdep: 1
     IntentionalGrab: 1
-    IGrabDistance: 0.1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: ebe9c872f6a88a34a862f763accc2ed2, type: 3}
@@ -2719,7 +2719,7 @@ MonoBehaviour:
     Ldep: 1
     Rdep: 1
     IntentionalGrab: 1
-    IGrabDistance: 0.1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0.2
   - Prefab: {fileID: 4137375818022343, guid: f479ba1eacd553443bb172338fe0812e, type: 3}
@@ -2727,8 +2727,8 @@ MonoBehaviour:
     description: 
     Ldep: 1
     Rdep: 1
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: 4107b2ea955cb12428627380fc49cc84, type: 3}
@@ -2736,8 +2736,8 @@ MonoBehaviour:
     description: 
     Ldep: 1
     Rdep: 1
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: 0eec1cf23948a8a48bce13b35fd7285f, type: 3}
@@ -2745,8 +2745,8 @@ MonoBehaviour:
     description: 
     Ldep: 1
     Rdep: 1
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: cc4433af2016b4c428e51daef9eda35c, type: 3}
@@ -2761,6 +2761,9 @@ MonoBehaviour:
   HandDeployerName: 
   listIterator: 0
   RightInteractor: {fileID: 0}
+  isRight: 0
+  stateFlipFlop: 0
+  release_timeout: 0
 --- !u!4 &65865505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4964578296126002, guid: 114b3c3ce4645364a97c8f0803bed65b,
