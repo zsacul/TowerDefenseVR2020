@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 92f6a683d76bfa34eb859584b6dd6254
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GizmoAnimation: {instanceID: 0}
+  - Commited: {fileID: 2100000, guid: 96236e841fb31b647ae0df84b86dd25b, type: 2}
+  - NotCommited: {fileID: 2100000, guid: 3379a911cc4407041892f37df05e0c45, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

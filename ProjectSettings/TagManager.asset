@@ -15,6 +15,7 @@ TagManager:
   - Grababble
   - DontChangeRedirector
   - BuildPointerCaster
+  - VRButton
   layers:
   - Default
   - TransparentFX

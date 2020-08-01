@@ -6,7 +6,7 @@ public class PropManager : MonoBehaviour
 {
     public int colortype;
     public int PropID;
-    public float dupsko;
+    public bool retarded_controlls;
     public Animator GizmoAnimation;
     // Start is called before the first frame update
     public virtual void Remove()
@@ -45,6 +45,11 @@ public class PropManager : MonoBehaviour
     {
         //Debug.Log($"Dupa {input} Animator {GizmoAnimation.name} {GizmoAnimation.GetFloat(1)}");
         GizmoAnimation.SetFloat("PointFloat", input);
+    }
+
+    public virtual void RetardedChangeGrabState()
+    {
+
     }
 
     public virtual void ThumbEvent(bool input)
