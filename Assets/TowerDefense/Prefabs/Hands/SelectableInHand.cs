@@ -12,6 +12,8 @@ public class SelectableInHand : PropManager
     private bool commited = false;
     public Material Commited;
     public Material NotCommited;
+    private GameObject Phantom;
+
     public override void GrabEvent(float input)
     {
         if (!retarded_controlls)
@@ -53,9 +55,10 @@ public class SelectableInHand : PropManager
         InvokerButton = Panel.GetComponent<GenericNBoxSelector>().invokerButton;
         Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
         //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
-        Miniature = Instantiate(Motivator, transform);
-        Miniature.transform.localPosition = new Vector3(0.07f, -1.09f, -2.07f);
+        Miniature = Instantiate(Motivator);
         Miniature.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+        Miniature.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+
         // for some reason we get the miniature inactive (wtf?)
         Miniature.SetActive(true);
     }
@@ -64,6 +67,7 @@ public class SelectableInHand : PropManager
     {
         transform.gameObject.SetActive(false);
         Destroy(Miniature);
+        Miniature = null;
         Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(false);
         Panel = null;
         InvokerButton = null;
@@ -79,12 +83,20 @@ public class SelectableInHand : PropManager
     // Start is called before the first frame update
     void Start()
     {
-
+        Phantom = new GameObject("phantom");
+        Instantiate(Phantom, transform);
+        Phantom.transform.localPosition = new Vector3(0.07f, -1.09f, -2.07f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Miniature)
+        {
+            Miniature.transform.position = Phantom.transform.position;
+            Debug.Log("tracking");
+        }
+
         if (InvokerButton)
         {
             if (Vector3.Distance(transform.position, InvokerButton.transform.GetChild(1).transform.position) < 0.25f)
