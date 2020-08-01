@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class SelectableInHand : PropManager
 {
@@ -37,22 +38,24 @@ public class SelectableInHand : PropManager
 
     public override void Respawn(GameObject Motivator)
     {
-        Panel = Motivator.transform.parent.gameObject;
-
+        //GameObject ball = Panel.transform.GetChild
         // sprawdź czy wybór jest w ogóle legalny!
 
         transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
         GizmoAnimation.SetFloat("GripFloat", 0.0f);
         GizmoAnimation.SetFloat("PointFloat", 0.0f);
 
-        Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
-        GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
-        Miniature = Instantiate(Miniaturka, transform);
+        //Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
+        //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
+        Miniature = Instantiate(Motivator, transform);
+        Miniature.transform.localPosition = new Vector3(0.07f, -1.09f, -2.07f);
+        Miniature.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
     }
 
     public override void Remove()
     {
         transform.gameObject.SetActive(false);
+        Destroy(Miniature);
         Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(false);
     }
 
