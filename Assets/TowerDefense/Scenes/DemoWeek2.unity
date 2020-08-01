@@ -9231,6 +9231,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1694890670}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &405414547
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405414544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.059908673
+  m_Center: {x: -0.04009132, y: 0, z: -0.12}
 --- !u!1 &407166169
 GameObject:
   m_ObjectHideFlags: 0
@@ -30930,6 +30943,8 @@ MonoBehaviour:
   UIMoneyText: {fileID: 746120332}
   towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
   towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
+  obstacleSelected: {fileID: 11400000, guid: 757b31e66d12797489a1b6d0bd9ffc1c, type: 2}
+  obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
   StartedPointing:

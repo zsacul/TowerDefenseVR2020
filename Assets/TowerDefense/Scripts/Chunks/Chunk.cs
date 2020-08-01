@@ -178,7 +178,7 @@ public class Chunk : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="changeMap">Determines whether BFS should modify current path or it's called just to check if a path exist. Default value: true</param>
+    /// <param name="changeMap">Determines whether BFS should modify current path or is it called just to check if a path exist. Default value: true</param>
     /// <returns></returns>
     public bool BFS(bool changeMap = true)
     {
