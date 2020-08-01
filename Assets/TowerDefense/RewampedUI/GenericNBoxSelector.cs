@@ -6,6 +6,7 @@ using System;
 using System.Text;
 using UnityEngine.Events;
 using System.Net.WebSockets;
+using UnityEditor.UI;
 
 [System.Serializable]
 public class NBOXselectable_t
@@ -97,6 +98,7 @@ public class GenericNBoxSelector : MonoBehaviour
         NBOXstate[0].SetActive(true);
         
         Respawn();
+        transform.gameObject.SetActive(false);
     }
 
     private bool first = true;
