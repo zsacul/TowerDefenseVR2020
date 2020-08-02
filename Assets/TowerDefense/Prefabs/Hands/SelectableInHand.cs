@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
@@ -46,38 +47,85 @@ public class SelectableInHand : PropManager
     {
         if (retarded_controlls)
         {
+            Remove();
             HandManger.GetComponent<HandDeployer>().DeployNth(0);
-            Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(false);
-            Destroy(Miniature);
         }
     }
 
     public override void Respawn(GameObject Motivator)
     {
-        //GameObject ball = Panel.transform.GetChild
-        // sprawdź czy wybór jest w ogóle legalny!
-
-        transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
-        GizmoAnimation.SetFloat("GripFloat", 0.0f);
-        GizmoAnimation.SetFloat("PointFloat", 0.0f);
-
+        string Motname = Motivator.name;
+        int Mot_id = Motname[2] - '0';
         Panel = Motivator.transform.parent.gameObject;
-        InvokerButton = Panel.GetComponent<GenericNBoxSelector>().invokerButton;
-        upgradeManager = InvokerButton.transform.parent.transform.parent.GetComponentInParent<UpgradeTower>();
-        Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
-        //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
-        Miniature = Instantiate(Motivator);
-        Miniature.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        Miniature.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        Miniature.transform.localRotation = Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f));
+        int selcost = Panel.GetComponent<GenericNBoxSelector>().NBOXselectable[Mot_id - 1].Cost;
+        int monies = Panel.GetComponent<GenericNBoxSelector>().cash;
 
-        // for some reason we get the miniature inactive (wtf?)
-        Miniature.SetActive(true);
+        if (monies < selcost)
+        {
+            Debug.Log($"[SelectableInHand] has been called, but cost {selcost} is higher than {monies}. Falling back to menu.");
+            RetardedChangeGrabState();
+        }
+        else
+        {
+            //GameObject ball = Panel.transform.GetChild
+            // sprawdź czy wybór jest w ogóle legalny!
+
+            transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
+            GizmoAnimation.SetFloat("GripFloat", 0.0f);
+            GizmoAnimation.SetFloat("PointFloat", 0.0f);
+
+            Panel = Motivator.transform.parent.gameObject;
+            InvokerButton = Panel.GetComponent<GenericNBoxSelector>().invokerButton;
+            upgradeManager = InvokerButton.transform.parent.transform.parent.GetComponentInParent<UpgradeTower>();
+            Panel.GetComponent<GenericNBoxSelector>().CurrentlyBuildingS(true);
+            //GameObject Miniaturka = Panel.GetComponent<GenericNBoxSelector>().getSelectedMiniature();
+            Miniature = Instantiate(Motivator);
+            Miniature.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            Miniature.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            Miniature.transform.localRotation = Quaternion.Euler(new Vector3(-90.0f, 0.0f, 0.0f));
+
+            // for some reason we get the miniature inactive (wtf?)
+            Miniature.SetActive(true);
+        }
     }
 
     public override void Remove()
     {
-        transform.gameObject.SetActive(false);
+
+        Debug.Log($"Remove called");
+        if (commited)
+        {
+            int panel_flavr = Panel.GetComponent<GenericNBoxSelector>().PanelFlvr;
+            Debug.Log($"Removing UI element grab with commitment! Panel flavr is {panel_flavr}");
+            
+            switch (panel_flavr)
+            {
+                case 0: // this should be an enum. We are upgrading towers.
+                    // hacky, but whatever.
+                    Debug.Log($"Upgrading tower with miniature {Miniature.name}");
+                    string MiniatureName = Miniature.name;
+                    int miniature_id = MiniatureName[2] - '0'; // from ID[1/2/3/4]
+
+                    TowerType towerElement = TowerType.lightning;
+
+                    if (miniature_id == 1)
+                        towerElement = TowerType.lightning;
+                    else if (miniature_id == 2)
+                        towerElement = TowerType.fire;
+                    else if (miniature_id == 3)
+                        towerElement = TowerType.ice;
+                    else if (miniature_id == 4)
+                        towerElement = TowerType.wind;
+                    // Dawid | Tutaj sobie przypisz żywiol wiezy
+                    upgradeManager.ProceedTowerUpgrade(towerElement); // I tutaj podać ten żywiol jako argument
+                    break;
+
+                default:
+                    Debug.LogWarning($"[SelectableInHand] Remove was called, with commited = True, but we failed to identify panel flavr {panel_flavr}");
+                    break;
+            }
+        }
+
         if (Miniature)
         {
             Destroy(Miniature);
@@ -90,13 +138,8 @@ public class SelectableInHand : PropManager
             Panel = null;
         }
 
-        if (commited)
-        {
-            TowerType towerElement = TowerType.fire; // Dawid | Tutaj sobie przypisz żywiol wiezy
-            upgradeManager.ProceedTowerUpgrade(towerElement); // I tutaj podać ten żywiol jako argument
-        }
-
         InvokerButton = null;
+        transform.gameObject.SetActive(false);
     }
 
     public override void Initialize()

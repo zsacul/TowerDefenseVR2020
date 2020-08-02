@@ -7,20 +7,9 @@ using System.Text;
 using UnityEngine.Events;
 using System.Net.WebSockets;
 using UnityEditor.UI;
+using Zinnia.Extension;
 
-[System.Serializable]
-public class NBOXselectable_t
-{
-    public GameObject Miniature;
-    public GameObject MiniatureInstance;
-    public int Cost;
-    public string ItemName;
-    public string ItemDescriptionLine1;
-    public string ItemDescriptionLine2;
-    public string ItemDescriptionLine3;
-}
-
-public class GenericNBoxSelector : MonoBehaviour
+public class NboxSelectorNewBuilding : MonoBehaviour
 {
     public GameObject GameManagerGO;
     public GameObject LookAtGJ;
@@ -45,8 +34,8 @@ public class GenericNBoxSelector : MonoBehaviour
     public List<GameObject> NBOXselector;
     [SerializeField]
     public List<NBOXselectable_t> NBOXselectable;
-    public int PanelFlvr = 0; // this identifies that we are a panel that upgrades towers
-    public int cash = 0; 
+    public int PanelFlvr = 1; // this identifies that we are a panel that upgrades towers
+    public int cash = 0;
 
     // 5 - 35 with 4 spaces.
     // 5, 15, 25, 35
@@ -79,25 +68,27 @@ public class GenericNBoxSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject Sent in NBOXstate)
+        foreach (GameObject Sent in NBOXstate)
         {
             Sent.SetActive(false);
         }
 
-        for(int i = 0; i < NBOXselectable.Count; i++)
+        for (int i = 0; i < NBOXselectable.Count; i++)
         {
             GameObject tmp = NBOXselectable[i].Miniature;
+            Debug.Log(tmp.name);
             GameObject ins = Instantiate(tmp, NBOXselector[i].transform);
-            ins.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            Debug.Log("setting scale!");
+            ins.transform.localScale = new Vector3(0.01f, 0.5f, 0.01f);
             ins.transform.localRotation = Quaternion.Euler(new Vector3(90.0f, 0.0f, 0.0f));
-            ins.transform.localPosition = new Vector3(0.0f, 0.0f, -0.3f);
+            ins.transform.localPosition = new Vector3(0.0f, 0.0f, 0.3f);
             NBOXselectable[i].MiniatureInstance = ins;
         }
 
         NBOXstate[0].SetActive(true);
-        
+
         Respawn();
-        transform.gameObject.SetActive(false);
+        //transform.gameObject.SetActive(false);
     }
 
     private bool first = true;
@@ -106,12 +97,12 @@ public class GenericNBoxSelector : MonoBehaviour
     {
         transform.position = StepParent.transform.position;
 
-        if (!first) 
+        if (!first)
         {
             GameObject inv = null;
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2.0f);
             float closest = 100.0f;
-            for(int i = 0; i < hitColliders.Length; i++)
+            for (int i = 0; i < hitColliders.Length; i++)
             {
                 Debug.Log($"{i} gość tag {hitColliders[i].gameObject.tag} nazwa {hitColliders[i].gameObject.name}");
                 if (hitColliders[i].gameObject.tag == "VRButton")
@@ -123,7 +114,7 @@ public class GenericNBoxSelector : MonoBehaviour
                     }
                 }
             }
-            
+
             Debug.Log("przeszukani");
             if (closest < 99.0f)
             {
@@ -133,16 +124,16 @@ public class GenericNBoxSelector : MonoBehaviour
                     invokerButton.GetComponent<UpgradeCylinderPlayerInteractionGovernor>().Enter();
             }
         }
-        
+
         first = false;
         cash = GameManagerGO.GetComponent<BuildManager>().Money;
-        for(int i = 0; i < NBOXselectable.Count; i++)
+        for (int i = 0; i < NBOXselectable.Count; i++)
         {
             if (NBOXselectable[i].Cost <= cash)
             {
                 NBOXselector[i].GetComponent<MeshRenderer>().material = Green;
                 NBOXselector[i].tag = "Grababble";
-            } 
+            }
             else
             {
                 NBOXselector[i].GetComponent<MeshRenderer>().material = Red;
@@ -210,11 +201,11 @@ public class GenericNBoxSelector : MonoBehaviour
 
         float mindist = 1000.0f;
         int chosen = 0;
-        for(int i = 0; i < NBOXselector.Count; i++)
+        for (int i = 0; i < NBOXselector.Count; i++)
         {
             float dist = Vector3.Distance(NBOXselector[i].transform.position, EffectorHandHook.transform.position);
             //Debug.Log($"{i} distance {dist}");
-            if(dist < mindist)
+            if (dist < mindist)
             {
                 mindist = dist;
                 chosen = i;
@@ -233,7 +224,7 @@ public class GenericNBoxSelector : MonoBehaviour
                 if (invokerButton != null)
                 {
                     invokerButton.GetComponent<UpgradeCylinderPlayerInteractionGovernor>().Exit();
-                    invokerButton = null; 
+                    invokerButton = null;
                 }
                 else
                     Debug.Log("The upgrade menu has been closed without a selected invoker. This might be a problem if this log displays more than once!");

@@ -93,7 +93,6 @@ public class HandDeployer : MonoBehaviour
             {
                 if (LocatedNearby[i].gameObject.tag == "Grababble")
                 {
-                    Debug.Log(LocatedNearby[i].gameObject.name);
                     if ((PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Ldep && !isRight) ||
                        (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Rdep && isRight))
                     {
