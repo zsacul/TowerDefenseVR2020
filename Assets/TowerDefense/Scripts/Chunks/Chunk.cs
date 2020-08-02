@@ -7,6 +7,7 @@ public class Chunk : MonoBehaviour
 {
     public ChunkType type;
     public PrefabsSet prefabs;
+    public GameEvent obstacleBuiltOnPath;
     private bool canBeModified;
     [Tooltip("if true => can change type in runtime with ChangeType function")]
     public UnityEvent changeTypeEvent;
@@ -25,6 +26,11 @@ public class Chunk : MonoBehaviour
             this.choice = choice;
             if (type != newType)
             {
+                if (newType == ChunkType.playerObstacle && owner.oldPath[x, y])
+                {
+                    //Debug.Log("obstacleBuiltOnPath.Raise()");
+                    obstacleBuiltOnPath.Raise();
+                }
                 type = newType;
                 changeTypeEvent.Invoke();
                 UpdateChunk();

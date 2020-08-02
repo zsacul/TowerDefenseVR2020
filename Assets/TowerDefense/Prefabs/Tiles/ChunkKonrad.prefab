@@ -90,6 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   prefabs: {fileID: 11400000, guid: 43f9cabbd994e1e4aa747b5f581b151f, type: 2}
+  obstacleBuiltOnPath: {fileID: 11400000, guid: f6655c6e5bf92004d9c928b60c5c5f4e,
+    type: 2}
   changeTypeEvent:
     m_PersistentCalls:
       m_Calls: []

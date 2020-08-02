@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build the obstacle anywhere
+  m_text: Build the obstacle on a path
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab8dec20cea0414f865e5b42fc28c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
+  listenedEvent: {fileID: 11400000, guid: f6655c6e5bf92004d9c928b60c5c5f4e, type: 2}
   QuestFinished:
     m_PersistentCalls:
       m_Calls: []
