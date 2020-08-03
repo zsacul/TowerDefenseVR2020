@@ -15,6 +15,7 @@ TagManager:
   - Grababble
   - DontChangeRedirector
   - BuildPointerCaster
+  - Arrow
   layers:
   - Default
   - TransparentFX

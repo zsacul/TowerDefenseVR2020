@@ -18,12 +18,12 @@ public class TutTeleport : TeleportSubNode
 
     private void Update()
     {
-        if (TeleportMainNode.Instance.GetCurrentTutorial() == this)
+        if (CrossbowMainNode.Instance.GetCurrentTutorial() == this)
         {
             if (Vector3.Distance(new Vector3(Camera.main.transform.position.x, Target.transform.position.y, Camera.main.transform.position.z), Target.transform.position) <= 0.5f)
                 SetNextStep();
 
-            if ((Vector3.Distance(Pointer.PointingPosition, Target.transform.position) > 0.5f) && !TeleportMainNode.Instance.GetState())
+            if ((Vector3.Distance(Pointer.PointingPosition, Target.transform.position) > 0.5f) && !CrossbowMainNode.Instance.GetState())
                 SetPrevStep();
         }
     }

@@ -17,7 +17,7 @@ public class TutFinish : TeleportSubNode
     {
         base.EnterStep();
         teleportDest.SetActive(false);
-        TeleportMainNode.Instance.SetTutorialDone();
+        CrossbowMainNode.Instance.SetTutorialDone();
     }
 
     public override void ExitStep()

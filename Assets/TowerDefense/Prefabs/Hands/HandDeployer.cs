@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class GOArray
@@ -14,13 +15,14 @@ public class GOArray
 public class HandDeployer : MonoBehaviour
 {
     [SerializeField]
-    private List<GOArray> PropList;
+    public List<GOArray> PropList;
     private GameObject CurrentlyDeployed;
     // Start is called before the first frame update
     public string HandDeployerName;
     public int listIterator;
 
     public GameObject RightInteractor;
+    public UnityEvent WeaponChange;
 
     private Vector3 speed; // I AM SPEED
     private Vector3 lastPosition;
@@ -52,6 +54,7 @@ public class HandDeployer : MonoBehaviour
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance, Motivator);
         listIterator = Nth;
+        WeaponChange.Invoke();
     }
 
     public void DeployNth(int Nth)
@@ -60,6 +63,7 @@ public class HandDeployer : MonoBehaviour
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance);
         listIterator = Nth;
+        WeaponChange.Invoke();
     }
 
 
@@ -103,6 +107,7 @@ public class HandDeployer : MonoBehaviour
             {
                 Debug.Log($"{chosen.name} :-propid-> {chosen.GetComponent<GrababbleManager>().PropID}");
                 DeployNth(chosen.GetComponent<GrababbleManager>().PropID, chosen);
+               // WeaponChange.Invoke();
             }
         }
     }

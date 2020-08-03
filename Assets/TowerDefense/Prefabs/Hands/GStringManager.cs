@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using VRTK.Prefabs.Interactions.Interactors.ComponentTags;
 
 public class GStringManager : PropManager
 {
+    public UnityEvent CrossbowLoaded;
+
     private GameObject HandManger;
     private GameObject CrossBow;
     private GameObject String;
@@ -72,7 +75,8 @@ public class GStringManager : PropManager
             return;
         if(Vector3.Distance(String.transform.position, LockTarget.transform.position) < 0.1)
         {
-            CrossBow.GetComponent<CrossbowManager>().loaded = true; // the crossbow is loaded
+            CrossbowLoaded.Invoke();
+            CrossBow.GetComponent <CrossbowManager>().loaded = true; // the crossbow is loaded
             CrossBow.GetComponent<CrossbowManager>().control = true;
             TargetBall.SetActive(false);
             HandManger.GetComponent<HandDeployer>().DeployNth(0); // call that we have loaded the crossbow
