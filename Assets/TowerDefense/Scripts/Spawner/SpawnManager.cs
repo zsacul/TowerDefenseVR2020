@@ -35,11 +35,13 @@ namespace SpawnManaging
         public Canvas incomingWaveInfoLabelPrefab;
         private Canvas incomingWaveInfoLabel;
         private bool firstUIUpdate;
+        private bool gameOver;
 
         float breakTime;
         // Update is called once per frame
         void Start()
         {
+            gameOver = false;
             waveInfoLabel = Instantiate(waveInfoLabelPrefab);
             incomingWaveInfoLabel = Instantiate(incomingWaveInfoLabelPrefab);
             spawnMagicNumber = 2;
@@ -124,7 +126,7 @@ namespace SpawnManaging
 
         public void EndBreak()
         {
-            if (breakOn)
+            if (breakOn && !gameOver)
             {
                 //if (BreakButton == null)
                 //{
@@ -137,7 +139,10 @@ namespace SpawnManaging
                 breakOn = false;
                 StartCoroutine(lightningCycle.ChangeToNight());
             }
-            UpdateUI();
+            else if (!gameOver)
+            {
+                UpdateUI();
+            }
         }
 
         IEnumerator LateStartUpdateUI(float waitTime)
@@ -152,13 +157,16 @@ namespace SpawnManaging
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
+            if ((/*Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) ||*/ breakTime > breakDuration)
+                && !gameOver)
             {
                 EndBreak();
             }
 
-            if (breakOn)
+            if (breakOn && !gameOver)
+            {
                 breakTime += Time.deltaTime;
+            }
         }
 
         private void UpdateUI()
@@ -254,6 +262,14 @@ namespace SpawnManaging
             String enemiesText = (numberOfEnemies > 1) ? "enemies" : "enemy";
             incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().text += $"\n{numberOfEnemies}   <sprite={indexOfSpriteAsset}><size=70%>{enemiesText}<size=100%>";
         }
+
+        public void GameOver()
+        {
+            gameOver = true;
+            Debug.Log("GameOver()");
+            // TODO: display GameOver info
+        }
+
     }
     [Serializable]
     public class Wave

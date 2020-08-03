@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BuildTutorialManager : MonoBehaviour
+public class BuildTutorialManager : MonoBehaviour, IQuest
 {
     public UnityEvent TutorialFinished;
     public GameObject InstructionsPanel;
@@ -87,5 +87,15 @@ public class BuildTutorialManager : MonoBehaviour
             currentQuest.gameObject.GetComponent<BuildTutorialQuest>().InstructionsPanel.SetActive(false);
             currentQuest = null;
         }
+    }
+
+    public void AddListenerFinish(UnityAction action)
+    {
+        TutorialFinished.AddListener(action);
+    }
+
+    public bool GetState()
+    {
+        return state;
     }
 }

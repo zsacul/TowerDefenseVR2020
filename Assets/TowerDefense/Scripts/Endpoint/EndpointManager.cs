@@ -11,6 +11,13 @@ public class EndpointManager : GameEventListener
     public UnityEvent destroyed;
     public int health;
 
+    private bool isGameOver;
+
+    private void Start()
+    {
+        isGameOver = false;
+    }
+
     bool GameOverCondition()
     {
         //GetComponent<HealthBar>().SetMaxHp(health);
@@ -21,21 +28,22 @@ public class EndpointManager : GameEventListener
     void DamageEndpoint(int damageValue)
     {
         //Debug.Log("HEALTH: " + health + "; damageValue: " + damageValue);
-        if (!GameOverCondition())
+        if (health >= 1)
         {
             this.health -= damageValue;
             GetComponent<HealthBar>().updateBar(health);
-        }
-        else
-        {
-            gameOver.Raise();
-            destroyed.Invoke();
+
+            if (GameOverCondition())
+            {
+                gameOver.Raise();
+                destroyed.Invoke();
+            }
         }
     }
 
     public override void OnEventRaised(Object data)
     {
-        Debug.Log("Game over");
+        isGameOver = true;
     }
 
     private void OnTriggerEnter(Collider other)
