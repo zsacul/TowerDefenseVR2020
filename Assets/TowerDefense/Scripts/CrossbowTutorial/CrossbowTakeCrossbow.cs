@@ -10,7 +10,7 @@ public class CrossbowTakeCrossbow : CrossbowSubNode
     HandDeployer LeftHand;
     [SerializeField]
     HandDeployer RighHand;
-    void Start()
+    void Start() 
     {
         state = false;
         gameObject.SetActive(false);
