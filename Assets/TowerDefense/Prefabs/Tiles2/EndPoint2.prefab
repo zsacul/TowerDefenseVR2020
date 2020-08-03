@@ -660,7 +660,7 @@ MonoBehaviour:
   upgradeRangeIncreaseInPercent: 0
   upgradeDelayIncreaseInPercent: 0
   shootingDelay: 1.2
-  damage: 20
+  damage: 5
   speed: 40
   specialEffectDuration: 0
   specialEffectDmg: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   upgradeRangeIncreaseInPercent: 0
   upgradeDelayIncreaseInPercent: 0
   shootingDelay: 1.2
-  damage: 20
+  damage: 5
   speed: 40
   specialEffectDuration: 0
   specialEffectDmg: 0
@@ -2501,7 +2501,7 @@ PrefabInstance:
     - target: {fileID: 868869954612109460, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}
       propertyPath: maxEnemyHP
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1333370168608775324, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}
@@ -2636,7 +2636,7 @@ PrefabInstance:
     - target: {fileID: 4735888192799633328, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}
       propertyPath: health
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7280558717230101989, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}

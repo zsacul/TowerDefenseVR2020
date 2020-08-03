@@ -14872,6 +14872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752578748}
   - component: {fileID: 752578749}
+  - component: {fileID: 752578750}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -14949,6 +14950,19 @@ MonoBehaviour:
     type: 3}
   incomingWaveInfoLabelPrefab: {fileID: 1347076448830942058, guid: 138d92915a7eb44519cbb9bf5ad2a39d,
     type: 3}
+--- !u!114 &752578750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752578747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e745372d233a54e98a6a72d12b0e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae, type: 2}
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
