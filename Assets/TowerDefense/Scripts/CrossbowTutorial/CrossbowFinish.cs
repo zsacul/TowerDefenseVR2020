@@ -29,6 +29,8 @@ public class CrossbowFinish : CrossbowSubNode
     void Wyjscie()
     {
         base.ExitStep();
+        canvasToDisplayText.enabled = true;
+        InfoForPlayer.text = "";
     }
 
     IEnumerator Wait()

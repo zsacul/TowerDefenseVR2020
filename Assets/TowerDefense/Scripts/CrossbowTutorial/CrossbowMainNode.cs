@@ -9,6 +9,7 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
 {
     public UnityEvent TasksFinished;
     public List<CrossbowSubNode> ActiveTasks = new List<CrossbowSubNode>();
+    BuildTutorialManager BuildTutorialManager;
 
     bool state;
     CrossbowSubNode currentTutorial;
@@ -48,6 +49,9 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
         state = true;
         ClearTasks();
         TasksFinished.Invoke();
+        BuildTutorialManager = FindObjectOfType<BuildTutorialManager>();
+        if (BuildTutorialManager != null)
+            BuildTutorialManager.StartTutorial();
     }
 
     public CrossbowSubNode GetCurrentTutorial()
@@ -80,10 +84,5 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
         ActiveTasks.Clear();
 
         Debug.Log("Wszystko wyczyszczone");
-    }
-
-    private void Start()
-    {
-        StartThisTutorial();
     }
 }

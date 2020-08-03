@@ -10,10 +10,18 @@ public class CrossbowTakeCrossbow : CrossbowSubNode
     HandDeployer LeftHand;
     [SerializeField]
     HandDeployer RighHand;
+    [SerializeField]
+    GameObject Target;
     void Start() 
     {
         state = false;
         gameObject.SetActive(false);
+    }
+
+    public override void EnterStep()
+    {
+        base.EnterStep();
+        Target.SetActive(true);
     }
 
     bool IsWeaponCrossbow()

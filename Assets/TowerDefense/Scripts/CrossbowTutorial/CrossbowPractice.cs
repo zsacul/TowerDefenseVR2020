@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CrossbowPractice : CrossbowSubNode
 {
+
+    [SerializeField]
+    GameObject ArcheryTarget;
     [SerializeField]
     int RequiredNumOfHits;
     int numOfHits;
@@ -21,5 +24,10 @@ public class CrossbowPractice : CrossbowSubNode
             SetNextStep();
     }
 
+    public override void EnterStep()
+    {
+        base.EnterStep();
+        ArcheryTarget.SetActive(true);
+    }
     // Update is called once per frame
 }

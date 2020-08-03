@@ -27,4 +27,11 @@ public class TutPointing : TeleportSubNode
             SetNextStep();
         }
     }
+
+    public override void EnterStep()
+    {
+        base.EnterStep();
+        if(!Target.activeSelf)
+            Target.SetActive(true);
+    }
 }
