@@ -71,6 +71,7 @@ public class CrossbowManager : PropManager
     public void LoadedCrossbowArrow()
     {
         LoadedArrow = Instantiate(LoadedArrowPrefab, transform.position, transform.rotation);
+        LoadedArrow.transform.SetParent(this.transform);
     }
 
     public override void Initialize()
