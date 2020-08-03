@@ -5,7 +5,9 @@ using UnityEngine;
 public class CrossbowManager : PropManager
 {
     public GameObject Debree;
+    public GameObject LoadedArrowPrefab;
     private GameObject HandManger;
+    private GameObject LoadedArrow;
     public bool loaded = false;
     public bool control = true;
 
@@ -25,6 +27,7 @@ public class CrossbowManager : PropManager
     public GameObject projectile;
     private void pewpew()
     {
+        Destroy(LoadedArrow);
         GameObject P = Instantiate(projectile, transform.position, transform.rotation);
     }
 
@@ -63,6 +66,11 @@ public class CrossbowManager : PropManager
         }
 
         remcount++;
+    }
+
+    public void LoadedCrossbowArrow()
+    {
+        LoadedArrow = Instantiate(LoadedArrowPrefab, transform.position, transform.rotation);
     }
 
     public override void Initialize()

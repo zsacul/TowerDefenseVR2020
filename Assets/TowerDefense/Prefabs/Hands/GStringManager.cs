@@ -72,11 +72,11 @@ public class GStringManager : PropManager
             return;
         if(Vector3.Distance(String.transform.position, LockTarget.transform.position) < 0.1)
         {
+            CrossBow.GetComponent<CrossbowManager>().LoadedCrossbowArrow();
             CrossBow.GetComponent<CrossbowManager>().loaded = true; // the crossbow is loaded
             CrossBow.GetComponent<CrossbowManager>().control = true;
             TargetBall.SetActive(false);
             HandManger.GetComponent<HandDeployer>().DeployNth(0); // call that we have loaded the crossbow
         }
-
     }
 }

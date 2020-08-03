@@ -70,12 +70,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colortype: 0
   PropID: 3
-  dupsko: 0
+  retarded_controlls: 0
   GizmoAnimation: {fileID: 4981076334279954798}
   Debree: {fileID: 1635064245034004468, guid: 411baec3cf3efa64eab338ada08e0ae8, type: 3}
+  LoadedArrowPrefab: {fileID: 6911849255335886095, guid: ebe0df4b9243ec0469356bca22923e53,
+    type: 3}
   loaded: 0
   control: 1
-  projectile: {fileID: 211131275357758899, guid: 1e96e9978424f43bbbefccf5da09b71e,
+  projectile: {fileID: 2168762925388800387, guid: f5064c439c7eb244a83a5ff7833bedf4,
     type: 3}
 --- !u!1 &287274007991061473
 GameObject:
