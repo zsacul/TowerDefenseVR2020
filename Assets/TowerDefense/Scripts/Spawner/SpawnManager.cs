@@ -35,11 +35,13 @@ namespace SpawnManaging
         public Canvas incomingWaveInfoLabelPrefab;
         private Canvas incomingWaveInfoLabel;
         private bool firstUIUpdate;
+        private bool gameOver;
 
         float breakTime;
         // Update is called once per frame
         void Start()
         {
+            gameOver = false;
             waveInfoLabel = Instantiate(waveInfoLabelPrefab);
             incomingWaveInfoLabel = Instantiate(incomingWaveInfoLabelPrefab);
             spawnMagicNumber = 2;
@@ -124,7 +126,7 @@ namespace SpawnManaging
 
         public void EndBreak()
         {
-            if (breakOn)
+            if (breakOn && !gameOver)
             {
                 //if (BreakButton == null)
                 //{
@@ -137,24 +139,34 @@ namespace SpawnManaging
                 breakOn = false;
                 StartCoroutine(lightningCycle.ChangeToNight());
             }
-            UpdateUI();
+            else if (!gameOver)
+            {
+                UpdateUI();
+            }
         }
 
         IEnumerator LateStartUpdateUI(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
-            UpdateUI();
+            Transform spawnPoint = spawnPoints[0].transform;
+            waveInfoLabel.enabled = false;
+            incomingWaveInfoLabel.enabled = true;
+            incomingWaveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
+            incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 19f, spawnPoint.position.z);
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || breakTime > breakDuration)
+            if ((/*Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) ||*/ breakTime > breakDuration)
+                && !gameOver)
             {
                 EndBreak();
             }
 
-            if (breakOn)
+            if (breakOn && !gameOver)
+            {
                 breakTime += Time.deltaTime;
+            }
         }
 
         private void UpdateUI()
@@ -168,7 +180,6 @@ namespace SpawnManaging
                 waveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 9f, spawnPoint.position.z);
                 incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().SetText("Next wave:");
                 TextMeshProUGUI text = waveInfoLabel.GetComponentInChildren<TextMeshProUGUI>();
-                //enemyPreview = Instantiate(wave[waveIndex].waveData.GetEnemy());
                 int enemiesLeft = wave[waveIndex].waveData.EnemiesLeft();
                 if (enemiesLeft == 0)
                 {
@@ -196,6 +207,8 @@ namespace SpawnManaging
                 int windEnemies = 0;
                 int iceEnemies = 0;
                 int lightningEnemies = 0;
+                int stoneEnemies = 0;
+                int poisonEnemies = 0;
 
                 foreach (EnemyCount enemy in incomingEnemies)
                 {
@@ -214,6 +227,12 @@ namespace SpawnManaging
                         case ElementType.wind:
                             windEnemies += enemy.count;
                             break;
+                        case ElementType.stone:
+                            stoneEnemies += enemy.count;
+                            break;
+                        case ElementType.poison:
+                            poisonEnemies += enemy.count;
+                            break;
                     }
                 }
 
@@ -224,7 +243,11 @@ namespace SpawnManaging
                 if (fireEnemies != 0)
                     SetIncomingWaveText(2, fireEnemies);
                 if (windEnemies != 0)
-                    SetIncomingWaveText(0, windEnemies);
+                    SetIncomingWaveText(3, windEnemies);
+                if (stoneEnemies != 0)
+                    SetIncomingWaveText(4, stoneEnemies);
+                if (poisonEnemies != 0)
+                    SetIncomingWaveText(5, poisonEnemies);
             }
 
             if (firstUIUpdate)
@@ -236,8 +259,17 @@ namespace SpawnManaging
 
         private void SetIncomingWaveText(int indexOfSpriteAsset, int numberOfEnemies)
         {
-            incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().text += $"\n{numberOfEnemies}   <sprite={indexOfSpriteAsset}><size=60%>enemies <size=100%>";
+            String enemiesText = (numberOfEnemies > 1) ? "enemies" : "enemy";
+            incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().text += $"\n{numberOfEnemies}   <sprite={indexOfSpriteAsset}><size=70%>{enemiesText}<size=100%>";
         }
+
+        public void GameOver()
+        {
+            gameOver = true;
+            Debug.Log("GameOver()");
+            // TODO: display GameOver info
+        }
+
     }
     [Serializable]
     public class Wave

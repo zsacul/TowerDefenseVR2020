@@ -11,13 +11,30 @@ public class M1911InHandManager : PropManager
     private GameObject HandManger;
     public override void GrabEvent(float input)
     {
-       //Debug.Log($"overriden gevent {input}");
-        if (input > 0.70f) // The object is grabbed, treat it as usual
-            GizmoAnimation.SetFloat("GripFloat", input);
-        else
-            HandManger.GetComponent<HandDeployer>().DeployNth(0);
+        if (!retarded_controlls)
+        {
+            //Debug.Log($"overriden gevent {input}");
+            if (input > 0.70f) // The object is grabbed, treat it as usual
+                GizmoAnimation.SetFloat("GripFloat", input);
+            else
+                HandManger.GetComponent<HandDeployer>().DeployNth(0);
             /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
+        }
+        else
+        {
+            GizmoAnimation.SetFloat("GripFloat", 0.99f);
+            GizmoAnimation.SetFloat("PointFloat", 0.99f);
+        }
     }
+
+    public override void RetardedChangeGrabState()
+    {
+        if (retarded_controlls)
+        {
+            HandManger.GetComponent<HandDeployer>().DeployNth(0);
+        }
+    }
+
 
     public GameObject projectile;
     private void pewpew()
@@ -54,7 +71,7 @@ public class M1911InHandManager : PropManager
     public override void Remove(Vector3 DebreeVelocity)
     {
         
-        Debug.Log(DebreeVelocity);
+        //Debug.Log(DebreeVelocity);
         transform.gameObject.SetActive(false); /* ofc chcemy też pokazać schować rękę */
 
         if (remcount > 0)

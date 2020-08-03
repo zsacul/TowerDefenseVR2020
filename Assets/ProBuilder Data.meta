@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ProBuilder Data.meta
 guid: 954b3dad5a1d9a147ac6fa8cec670d64
+=======
+guid: acced14b9ceaaa7458677f8f81046711
+>>>>>>> Zbyszek/demo2:Assets/Generative.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

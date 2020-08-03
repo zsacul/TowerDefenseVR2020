@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 5586548996122427738}
   - component: {fileID: 3362456734702219573}
   - component: {fileID: 4392041911391527945}
+  - component: {fileID: 8066529061825317348}
   m_Layer: 14
   m_Name: M1911Debree
   m_TagString: Grababble
@@ -319,6 +320,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8066529061825317348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589237462600327502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22544253, y: 0.14755702, z: 0.16842806}
+  m_Center: {x: -0.025115162, y: 0.01467526, z: 0.015811145}
 --- !u!1 &5589573924906774074
 GameObject:
   m_ObjectHideFlags: 0

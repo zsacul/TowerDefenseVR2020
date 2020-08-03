@@ -37,6 +37,10 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent towerBuilt;
     [SerializeField]
+    private GameEvent obstacleSelected;
+    [SerializeField]
+    private GameEvent obstacleBuilt;
+    [SerializeField]
     private GameEvent SelectionStatusChanged;
 
     public UnityEvent StartedPointing;
@@ -57,6 +61,7 @@ public class BuildManager : MonoBehaviour
     private float canvasZPos;
     private bool rightTriggerInUse;
     private bool uiTowerClicked;
+    private bool sceneLoaded;
 
     private static BuildManager instance;
 
@@ -77,26 +82,45 @@ public class BuildManager : MonoBehaviour
     void Start()
     {
         uiTowerClicked = false;
-        towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
-        obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
-        towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
-        obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
         BuildModeOn = true;
-        purchasePanelsActive = false;
         rightTriggerInUse = false;
-        canvasRT = canvas.GetComponent<RectTransform>();
-        canvasXSize = canvasRT.sizeDelta.x / 2.0f;
-        canvasYSize = canvasRT.sizeDelta.y / 2.0f;
-        canvasZPos = canvasRT.localPosition.z;
         selectedBuilding = ChunkType.none;
+        SetCanvasUI();
         SetMoneyText();
+
+        //Waiting to load a scene because during loading there's a collision with UITower occuring that causes 
+        //canvases to be activated
+        sceneLoaded = false;
+        StartCoroutine(WaitForSceneLoad(1f));
+    }
+
+    IEnumerator WaitForSceneLoad(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        sceneLoaded = true;
+        uiTowerClicked = false;
     }
 
     private void SetMoneyText()
     {
         UIMoneyText.text = "$" + money.ToString();
         SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
-        UpdateUI();
+        UIMoneyText.enabled = BuildModeOn;
+    }
+
+    private void SetCanvasUI()
+    {
+        towerPurchaseCanvas = Instantiate(towerPurchaseCanvasPrefab);
+        obstaclePurchaseCanvas = Instantiate(obstaclePurchaseCanvasPrefab);
+        towerPurchaseCanvasCollider = towerPurchaseCanvas.GetComponent<BoxCollider>();
+        obstaclePurchaseCanvasCollider = obstaclePurchaseCanvas.GetComponent<BoxCollider>();
+        purchasePanelsActive = false;
+        canvasRT = canvas.GetComponent<RectTransform>();
+        canvasXSize = canvasRT.sizeDelta.x / 2.0f;
+        canvasYSize = canvasRT.sizeDelta.y / 2.0f;
+        canvasZPos = canvasRT.localPosition.z;
+        //Debug.Log("Before calling UpdatePurchasePanels(false)");
+        UpdatePurchasePanels(false);
     }
 
     void Update()
@@ -152,6 +176,7 @@ public class BuildManager : MonoBehaviour
                 obstaclePurchaseCanvas.transform.position = obstaclePos;
             }
 
+            //Debug.Log("Before calling UpdateUI()");
             UpdateUI();
         }
 
@@ -197,6 +222,7 @@ public class BuildManager : MonoBehaviour
 
     private void UpdatePurchasePanels(bool state)
     {
+        // Debug.Log("UpdatePurchasePanels called with argument state = " + state.ToString());
         towerPurchaseCanvas.enabled = state;
         obstaclePurchaseCanvas.enabled = state;
         towerPurchaseCanvasCollider.enabled = state;
@@ -205,19 +231,26 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseTower()
     {
-        StartedPointing.Invoke();
-        towerSelected.Raise();
-        selectedBuilding = ChunkType.tower;
-        purchasePanelsActive = false;
-        UpdateUI();
+        if (BuildModeOn)
+        {
+            StartedPointing.Invoke();
+            towerSelected.Raise();
+            selectedBuilding = ChunkType.tower;
+            purchasePanelsActive = false;
+            UpdateUI();
+        }
     }
 
     public void ChooseObstacle()
     {
-        StartedPointing.Invoke();
-        selectedBuilding = ChunkType.playerObstacle;
-        purchasePanelsActive = false;
-        UpdateUI();
+        if (BuildModeOn)
+        {
+            StartedPointing.Invoke();
+            obstacleSelected.Raise();
+            selectedBuilding = ChunkType.playerObstacle;
+            purchasePanelsActive = false;
+            UpdateUI();
+        }
     }
 
     public void ChooseNone()
@@ -232,6 +265,11 @@ public class BuildManager : MonoBehaviour
 
     private bool UpdatePanelCondition()
     {
+        if (!sceneLoaded)
+        {
+            return false;
+        }
+
         if (uiTowerClicked)
         {
             uiTowerClicked = !uiTowerClicked;
@@ -299,7 +337,7 @@ public class BuildManager : MonoBehaviour
         }
         else if (selectedBuilding == ChunkType.playerObstacle)
         {
-            //obstacleBuilt.Raise();
+            obstacleBuilt.Raise();
         }
     }
 

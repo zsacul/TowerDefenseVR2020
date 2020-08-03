@@ -8,21 +8,38 @@ public class StickInHandManager : PropManager
     private GameObject HandManger;
     public override void GrabEvent(float input)
     {
-        //Debug.Log($"overriden gevent {input}");
-        if (input > 0.70f) // The object is grabbed, treat it as usual
-            GizmoAnimation.SetFloat("GripFloat", input);
+        if (!retarded_controlls)
+        {
+            //Debug.Log($"overriden gevent {input}");
+            if (input > 0.70f) // The object is grabbed, treat it as usual
+                GizmoAnimation.SetFloat("GripFloat", input);
+            else
+                HandManger.GetComponent<HandDeployer>().DeployNth(0);
+            /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
+        } 
         else
+        {
+            GizmoAnimation.SetFloat("GripFloat", 0.99f);
+            GizmoAnimation.SetFloat("PointFloat", 0.99f);
+        }
+    }
+
+    public override void RetardedChangeGrabState()
+    {
+        if (retarded_controlls)
+        {
             HandManger.GetComponent<HandDeployer>().DeployNth(0);
-        /* Jeśli puściliśmy obiekt, to tylko powiedzmy o tym naszemu managerowi. On zadba żeby nas wyłączyć i zawołać nasz poweoff */
+        }
     }
 
     public override void Respawn(GameObject Motivator)
     {
         transform.gameObject.SetActive(true); /* ofc chcemy też pokazać swoją rękę */
         Destroy(Motivator);
-        /* wywalić kij który złapaliśmy */
-    }
 
+        GizmoAnimation.SetFloat("GripFloat", 0.99f);
+        GizmoAnimation.SetFloat("PointFloat", 0.99f);
+    }
 
     public override void Remove(Vector3 DebreeVelocity)
     {
@@ -37,6 +54,8 @@ public class StickInHandManager : PropManager
     public override void Initialize()
     {
         HandManger = transform.parent.gameObject; /* assume that the parent is the hand manager */
+        GizmoAnimation.SetFloat("GripFloat", 0.99f);
+        GizmoAnimation.SetFloat("PointFloat", 0.99f);
     }
 
         // Start is called before the first frame update

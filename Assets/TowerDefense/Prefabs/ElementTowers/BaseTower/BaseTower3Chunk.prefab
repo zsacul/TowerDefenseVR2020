@@ -96,8 +96,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059713587900656600}
-  - component: {fileID: 5695474743079036633}
   - component: {fileID: 7919415616245134687}
+  - component: {fileID: 1290888975400203020}
   m_Layer: 0
   m_Name: BaseTower3Chunk
   m_TagString: BaseTower
@@ -122,29 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5695474743079036633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4670553099790185832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ecd97ff752d3e498c7be7cc8edf0e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireCanvasPrefab: {fileID: 8344855314892190429, guid: 98fb6015962862141b0710d53ba632a0,
-    type: 3}
-  iceCanvasPrefab: {fileID: 8309758085442543269, guid: 6ef6cbe1e3129454e86201238feb7622,
-    type: 3}
-  windCanvasPrefab: {fileID: 2534852967039529688, guid: ff8a29f8829f9ff4f98b065b72e6b33b,
-    type: 3}
-  electricCanvasPrefab: {fileID: 7413660572395438324, guid: 66f9bf8455f22c74e9c73f2b840d0aee,
-    type: 3}
-  buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
-    type: 3}
-  UpgradeSuccess: {fileID: 11400000, guid: de276a4972e11d94d80ff5b09d57a68d, type: 2}
 --- !u!114 &7919415616245134687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +135,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerHeight: 1
+--- !u!114 &1290888975400203020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670553099790185832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd04d8b848afaf46882d6176849adc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireUpgradeCost: 140
+  iceUpgradeCost: 140
+  lightningUpgradeCost: 180
+  windUpgradeCost: 50
 --- !u!1001 &388730569032362876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,6 +297,58 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -5589039531409514202, guid: b7a56a2053012074599ee4adcb4e240d,
+        type: 3}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921796993846849109, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: UpgradeButtonPushed
+      value: 
+      objectReference: {fileID: 11400000, guid: 55aeb065c62ddce46a321d05c4b559ae,
+        type: 2}
+    - target: {fileID: 6610829967358344856, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806731417505225994, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806731417505225994, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.646
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1962bc15d115c2408c3881fecd9b735, type: 3}

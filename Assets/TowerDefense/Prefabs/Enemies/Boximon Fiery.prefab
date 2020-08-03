@@ -475,7 +475,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   enemyHP: 120
-  moneyDropped: 35
+  moneyDropped: 25
   elementsInfo: {fileID: 0}
   targetPoint: {fileID: 5451797206400831227}
   type: 0

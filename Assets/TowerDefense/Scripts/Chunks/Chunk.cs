@@ -7,6 +7,7 @@ public class Chunk : MonoBehaviour
 {
     public ChunkType type;
     public PrefabsSet prefabs;
+    public GameEvent obstacleBuiltOnPath;
     private bool canBeModified;
     [Tooltip("if true => can change type in runtime with ChangeType function")]
     public UnityEvent changeTypeEvent;
@@ -25,6 +26,11 @@ public class Chunk : MonoBehaviour
             this.choice = choice;
             if (type != newType)
             {
+                if (newType == ChunkType.playerObstacle && owner.oldPath[x, y])
+                {
+                    //Debug.Log("obstacleBuiltOnPath.Raise()");
+                    obstacleBuiltOnPath.Raise();
+                }
                 type = newType;
                 changeTypeEvent.Invoke();
                 UpdateChunk();
@@ -33,6 +39,35 @@ public class Chunk : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void UpgradeTower(TowerType elementType)
+    {
+        if (type == ChunkType.tower)
+        {
+            int elementIndex;
+            if (elementType == TowerType.fire) {
+                elementIndex = 4;
+            } else if (elementType == TowerType.ice) {
+                elementIndex = 3;
+            } else if (elementType == TowerType.lightning) {
+                elementIndex = 2;
+            } else if (elementType == TowerType.wind) {
+                elementIndex = 1;
+            } else {
+                Debug.Log("Chunk.cs/UpgradeTower(): Couldn't find appropriate elementIndex");
+                elementIndex = 0;
+            }
+
+            if (currentObject != null)
+            {
+                UpgradedTowerHeight = currentObject.GetComponent<TowerHeight>().towerHeight;
+                currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
+                Destroy(currentObject, 3f);
+            }
+            newObject = Instantiate(prefabs.tower[elementIndex], transform);
+            newObject.transform.localScale = new Vector3(newObject.transform.localScale.x, UpgradedTowerHeight, newObject.transform.localScale.z);
+        }
     }
 
     public void UpgradeTower(int elementIndex)
@@ -50,7 +85,7 @@ public class Chunk : MonoBehaviour
         }
     }
 
-    public bool ValidOperation(ChunkType newType)
+    public bool ValidOperation(ChunkType newType, bool modifyPathInBFS = true)
     {
         if (type == ChunkType.none ||
             type == ChunkType.naturalObstacle ||
@@ -74,14 +109,14 @@ public class Chunk : MonoBehaviour
                 }
                 if (owner.path[this.x, this.y])
                 {
-                    return BFS();
+                    return BFS(modifyPathInBFS);
                 }
                 return true;
                 
             case ChunkType.playerObstacle:
                 if (owner.path[this.x, this.y])
                 {
-                    return BFS();
+                    return BFS(modifyPathInBFS);
                 }
                 return true;
                 
@@ -174,7 +209,13 @@ public class Chunk : MonoBehaviour
 
         return endPointReached;
     }
-    public bool BFS()
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="changeMap">Determines whether BFS should modify current path or is it called just to check if a path exist. Default value: true</param>
+    /// <returns></returns>
+    public bool BFS(bool changeMap = true)
     {
         int xSize = owner.mapString.sizeX;
         int ySize = owner.mapString.sizeY;
@@ -229,7 +270,7 @@ public class Chunk : MonoBehaviour
                 }
             }
         }
-        if(endPointReached)
+        if(endPointReached && changeMap)
         {
             (int, int) point = endPoint;
             step = value[endPoint.Item1, endPoint.Item2];
@@ -276,8 +317,7 @@ public class Chunk : MonoBehaviour
         }
         else
         {
-
-            return false;
+            return endPointReached;
         }
     }
     private void PrettyPath()
