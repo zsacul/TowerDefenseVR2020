@@ -33,4 +33,11 @@ public class CrossbowShoot : CrossbowSubNode
             if (!LeftHand.PropList[CrossbowId].Instance.GetComponent<CrossbowManager>().loaded)
             SetNextStep();
     }
+
+    public override void ExitStep()
+    {
+        base.ExitStep();
+        CrossbowMainNode.Instance.ClearTasks();
+    }
+
 }

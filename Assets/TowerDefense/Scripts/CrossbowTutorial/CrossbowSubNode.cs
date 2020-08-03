@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Zinnia.Tracking.Collision.Active.Operation.Extraction;
+using TMPro;
 
 public class CrossbowSubNode : MonoBehaviour
 {
     [SerializeField]
     protected string TextToDisplay;
     [SerializeField]
-    protected Text InfoForPlayer;
+    protected TextMeshProUGUI InfoForPlayer;
     [SerializeField]
     protected Canvas canvasToDisplayText;
     protected bool state;
