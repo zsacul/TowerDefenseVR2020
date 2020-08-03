@@ -2882,6 +2882,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb44cb4972e30c442aaf2cfbc7f6ebb1, type: 2}
   nodePrefab: {fileID: 2304112290064146884, guid: aa41b90139dee4c4e91ca2c2c3cde719,
     type: 3}
+  rightHand: {fileID: 65865500}
   head: {fileID: 442069745}
   distance: 0.17
   onStartCast:
