@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2059713587900656600}
   - component: {fileID: 7919415616245134687}
   - component: {fileID: 1290888975400203020}
+  - component: {fileID: 3877076758236877331}
   m_Layer: 0
   m_Name: BaseTower3Chunk
   m_TagString: BaseTower
@@ -151,6 +152,29 @@ MonoBehaviour:
   iceUpgradeCost: 140
   lightningUpgradeCost: 180
   windUpgradeCost: 50
+--- !u!114 &3877076758236877331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670553099790185832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ecd97ff752d3e498c7be7cc8edf0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireCanvasPrefab: {fileID: 8344855314892190429, guid: 98fb6015962862141b0710d53ba632a0,
+    type: 3}
+  iceCanvasPrefab: {fileID: 8309758085442543269, guid: 6ef6cbe1e3129454e86201238feb7622,
+    type: 3}
+  windCanvasPrefab: {fileID: 2534852967039529688, guid: ff8a29f8829f9ff4f98b065b72e6b33b,
+    type: 3}
+  electricCanvasPrefab: {fileID: 7413660572395438324, guid: 66f9bf8455f22c74e9c73f2b840d0aee,
+    type: 3}
+  buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
+    type: 3}
+  UpgradeSuccess: {fileID: 11400000, guid: de276a4972e11d94d80ff5b09d57a68d, type: 2}
 --- !u!1001 &388730569032362876
 PrefabInstance:
   m_ObjectHideFlags: 0
