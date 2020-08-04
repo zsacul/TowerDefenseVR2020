@@ -90,8 +90,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_682AF391: {r: 0.99215686, g: 0.53503567, b: 0, a: 0}
-    - Color_FBB48E0A: {r: 1.3041189, g: 0, b: 0, a: 0}
+    - Color_682AF391: {r: 0, g: 0.9820212, b: 0.99215686, a: 0}
+    - Color_FBB48E0A: {r: 1.3222513, g: 1.6774765, b: 1.741101, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
