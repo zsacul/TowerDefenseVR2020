@@ -14853,7 +14853,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 2.3569999
+  m_padding: 3.5
   m_canvasRenderer: {fileID: 680180949}
   m_TextComponent: {fileID: 344256057}
   m_materialReferenceIndex: 1
@@ -17066,22 +17066,22 @@ PrefabInstance:
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.032
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.058
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.071
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.30070576
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
@@ -17096,7 +17096,7 @@ PrefabInstance:
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.953717
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
@@ -17106,7 +17106,7 @@ PrefabInstance:
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7611321780722529360, guid: 92bd8c8b4f692c84b965b980488843bf,
         type: 3}
