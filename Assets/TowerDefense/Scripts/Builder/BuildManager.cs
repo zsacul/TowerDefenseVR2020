@@ -53,7 +53,7 @@ public class BuildManager : MonoBehaviour
     private BoxCollider towerPurchaseCanvasCollider;
     private BoxCollider obstaclePurchaseCanvasCollider;
 
-    private ChunkType selectedBuilding;
+    public ChunkType selectedBuilding;
     public bool BuildModeOn { get; private set; }
     private bool purchasePanelsActive;
 
@@ -63,6 +63,7 @@ public class BuildManager : MonoBehaviour
     private float canvasZPos;
     private bool rightTriggerInUse;
     private bool uiTowerClicked;
+
     private bool sceneLoaded;
 
     private static BuildManager instance;
@@ -175,8 +176,8 @@ public class BuildManager : MonoBehaviour
                 //Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
                 Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.20f, 0.5f, 1f));
                 Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.80f, 0.5f, 1f));
-                towerPurchaseCanvas.transform.position = towerPos;
-                obstaclePurchaseCanvas.transform.position = obstaclePos;
+                towerPurchaseCanvas.transform.position = new Vector3(towerPos.x, 1.5f, towerPos.z);
+                obstaclePurchaseCanvas.transform.position = new Vector3(obstaclePos.x, 1.5f, obstaclePos.z);
             }
 
             //Debug.Log("Before calling UpdateUI()");
@@ -202,6 +203,11 @@ public class BuildManager : MonoBehaviour
     public void UITowerClicked()
     {
         uiTowerClicked = !uiTowerClicked;
+    }
+
+    public void UICancelClicked()
+    {
+
     }
 
     private void SetMoneyOutlineColor(Color color)

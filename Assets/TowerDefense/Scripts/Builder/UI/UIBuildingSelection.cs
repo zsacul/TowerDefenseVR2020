@@ -5,12 +5,10 @@ using UnityEngine.Events;
 
 public class UIBuildingSelection : MonoBehaviour
 {
-    [SerializeField]
-    private GameEvent UIBuildingClicked;
-    [SerializeField]
-    private UnityEvent OnClick;
-
-    public GameObject gameManager;
+    //[SerializeField]
+    //private GameEvent UIBuildingClicked;
+    //[SerializeField]
+    //private UnityEvent OnClick;
 
     private BuildManager buildManager;
     private bool collided;
@@ -36,8 +34,17 @@ public class UIBuildingSelection : MonoBehaviour
             {
                 buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
             }
-            OnClick.Invoke();
-            buildManager.UITowerClicked();
+            //OnClick.Invoke();
+
+            if(tag == "UITowerSelection")
+            {
+                buildManager.UITowerClicked();
+            }
+            if(tag == "UICancelSelection")
+            {
+                buildManager.ChooseNone();
+            }
+            
             collided = true;
         }
     }
