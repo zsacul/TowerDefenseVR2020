@@ -10,12 +10,20 @@ public class UIBuildingSelection : MonoBehaviour
     [SerializeField]
     private UnityEvent OnClick;
 
+    public GameObject gameManager;
+
     private BuildManager buildManager;
     private bool collided;
 
     void Start()
     {
         collided = false;
+        StartCoroutine(waitForGameManager());
+    }
+
+    IEnumerator waitForGameManager()
+    {
+        yield return new WaitForSeconds(0.1f);
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
     }
 
@@ -24,7 +32,10 @@ public class UIBuildingSelection : MonoBehaviour
        // Debug.Log("Collided with UI Tower. gameObject that collider = " + other.gameObject.name);
         if (other.gameObject.tag == "HandCollider" && !collided)
         {
-            //UIBuildingClicked.Raise();
+            if(buildManager == null)
+            {
+                buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
+            }
             OnClick.Invoke();
             buildManager.UITowerClicked();
             collided = true;
