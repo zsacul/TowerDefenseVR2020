@@ -17,4 +17,10 @@ public class TeleportToCastle : TeleportSubNode
         if (Camera.main.transform.position.y > 3.5f)
             SetNextStep();
     }
+    public override void EnterStep()
+    {
+        base.EnterStep();
+        TeleportMainNode.Instance.teleDone = true;
+        TeleportMainNode.Instance.ClearTasks();
+    }
 }

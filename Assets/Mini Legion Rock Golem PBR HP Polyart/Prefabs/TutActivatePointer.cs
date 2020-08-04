@@ -16,4 +16,10 @@ public class TutActivatePointer : TeleportSubNode
         if(!TeleportMainNode.Instance.teleDone)
             base.SetPrevStep();
     }
+
+    public override void SetNextStep()
+    {
+        if(!TeleportMainNode.Instance.teleDone)
+            base.SetNextStep();
+    }
 }
