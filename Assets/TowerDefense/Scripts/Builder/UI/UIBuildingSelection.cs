@@ -5,14 +5,13 @@ using UnityEngine.Events;
 
 public class UIBuildingSelection : MonoBehaviour
 {
-    [SerializeField]
-    private GameEvent UIBuildingClicked;
-    [SerializeField]
-    private UnityEvent OnClick;
-
-    public GameObject gameManager;
+    //[SerializeField]
+    //private GameEvent UIBuildingClicked;
+    //[SerializeField]
+    //private UnityEvent OnClick;
 
     private BuildManager buildManager;
+    private UIBuildings uiBuildings;
     private bool collided;
 
     void Start()
@@ -25,6 +24,7 @@ public class UIBuildingSelection : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
+        uiBuildings = GameObject.Find("UI").GetComponent<UIBuildings>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,16 +36,27 @@ public class UIBuildingSelection : MonoBehaviour
             {
                 buildManager = GameObject.Find("GameManager").GetComponent<BuildManager>();
             }
-            OnClick.Invoke();
-            buildManager.UITowerClicked();
+            //OnClick.Invoke();
+
+            if(tag == "UITowerSelection")
+            {
+                buildManager.UITowerClicked();
+            }
+            
             collided = true;
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "HandCollider")
         {
             collided = false;
+        }
+
+        if(tag == "UICancelSelection")
+        {
+            buildManager.ChooseNone();
         }
     }
 }

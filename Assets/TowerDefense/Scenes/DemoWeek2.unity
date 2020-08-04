@@ -2762,29 +2762,7 @@ MonoBehaviour:
   listIterator: 0
   WeaponChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 518357473}
-        m_MethodName: WeaponChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 337736949}
-        m_MethodName: WeaponChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   RightInteractor: {fileID: 0}
   isRight: 0
   stateFlipFlop: 0
@@ -2907,7 +2885,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb44cb4972e30c442aaf2cfbc7f6ebb1, type: 2}
   nodePrefab: {fileID: 2304112290064146884, guid: aa41b90139dee4c4e91ca2c2c3cde719,
     type: 3}
-  rightHand: {fileID: 65865500}
+  rightHand: {fileID: 0}
   head: {fileID: 442069745}
   distance: 0.17
   onStartCast:
@@ -8541,18 +8519,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actions: {fileID: 335049018}
---- !u!114 &337736949 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 41301387, guid: b3395ce70c240954e9462fa57c81a35b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1687687294}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a075b43430b4248bbad7350ef1d368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &343398438
 GameObject:
   m_ObjectHideFlags: 0
@@ -12134,29 +12100,7 @@ MonoBehaviour:
   listIterator: 0
   WeaponChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 337736949}
-        m_MethodName: WeaponChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 518357473}
-        m_MethodName: WeaponChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   RightInteractor: {fileID: 65865500}
   isRight: 0
   stateFlipFlop: 0
@@ -12676,18 +12620,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b310d871f5b32844a3993d884746365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &518357473 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 126899747, guid: b3395ce70c240954e9462fa57c81a35b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1687687294}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c447c77dbc68f34381468438b8e1eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &521175680
@@ -15080,7 +15012,7 @@ MonoBehaviour:
   listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
     type: 3}
-  obstaclePrefab: {fileID: 5044071366785473100, guid: 7ce170d0bcfefbb4bb33210fb0122c08,
+  cancelPrefab: {fileID: 3876053850961151450, guid: 6eb4ab1b4db7546f0972190c0c1920de,
     type: 3}
 --- !u!1 &734348935
 GameObject:
@@ -32178,6 +32110,20 @@ MonoBehaviour:
   obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
+  SelectionDidChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 730750931}
+        m_MethodName: UpdateUIInstances
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   StartedPointing:
     m_PersistentCalls:
       m_Calls:
@@ -32239,6 +32185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  selectedBuilding: 0
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44437,6 +44384,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1694890672}
     m_Modifications:
+    - target: {fileID: 3383695294376069836, guid: c76845e11da67cf42b62f762bc9ff4bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6255247793838680178, guid: c76845e11da67cf42b62f762bc9ff4bd,
         type: 3}
       propertyPath: EffectorHandHook
@@ -44465,7 +44417,7 @@ PrefabInstance:
     - target: {fileID: 8443961938472187264, guid: c76845e11da67cf42b62f762bc9ff4bd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8443961938472187270, guid: c76845e11da67cf42b62f762bc9ff4bd,
         type: 3}
@@ -44532,7 +44484,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9036291278473286282, guid: c76845e11da67cf42b62f762bc9ff4bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c76845e11da67cf42b62f762bc9ff4bd, type: 3}
 --- !u!1001 &8699039616926670465
 PrefabInstance:

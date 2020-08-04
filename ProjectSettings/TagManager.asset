@@ -16,6 +16,9 @@ TagManager:
   - DontChangeRedirector
   - BuildPointerCaster
   - Arrow
+  - VRButton
+  - UITowerSelection
+  - UICancelSelection
   layers:
   - Default
   - TransparentFX
