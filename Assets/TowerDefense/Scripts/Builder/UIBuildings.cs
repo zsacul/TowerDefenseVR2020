@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIBuildings : GameEventListener
 {
     [SerializeField]
     private GameObject towerPrefab;
     [SerializeField]
-    private GameObject obstaclePrefab;
+    private GameObject cancelPrefab;
 
     private GameObject towerInstance;
-    private GameObject obstacleInstance;
+    private GameObject cancelInstance;
     private BuildManager buildManager;
 
 
@@ -20,24 +21,38 @@ public class UIBuildings : GameEventListener
         SetUpUI();
     }
 
+    public void UpdateUIInstances()
+    {
+        if (buildManager.selectedBuilding != ChunkType.none)
+        {
+            towerInstance.SetActive(false);
+            cancelInstance.SetActive(true);
+        } else
+        {
+            cancelInstance.SetActive(false);
+            towerInstance.SetActive(true);
+        }
+    }
+
     private void SetUpUI()
     {
         towerInstance = Instantiate(towerPrefab, transform.position, transform.rotation);
-       // obstacleInstance = Instantiate(obstaclePrefab, transform.position, transform.rotation);
+        cancelInstance = Instantiate(cancelPrefab, transform.position, transform.rotation);
         towerInstance.transform.parent = gameObject.transform;
-       // obstacleInstance.transform.parent = gameObject.transform;
+        cancelInstance.transform.parent = gameObject.transform;
         towerInstance.transform.localScale = new Vector3(0.02f, 0.015f, 0.02f);
-       // obstacleInstance.transform.localScale = new Vector3(0.015f, 0.03f, 0.015f);
+        cancelInstance.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         towerInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
-       // obstacleInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
+        //cancelInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
         towerInstance.transform.localPosition = new Vector3(0, -0.02f, -0.015f);
-       // obstacleInstance.transform.localPosition = new Vector3(-0.067f, -0.02f, 0.044f);
+        cancelInstance.transform.localPosition = new Vector3(0, -0.02f, -0.015f);
+        cancelInstance.SetActive(false);
     }
 
     public override void OnEventRaised(Object data)
     {
         towerInstance.SetActive(!towerInstance.active);
-       // obstacleInstance.SetActive(!obstacleInstance.active);
+       // cancelInstance.SetActive(!cancelInstance.active);
     }
 
     public void OnUITowerClicked()

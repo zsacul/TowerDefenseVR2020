@@ -787,6 +787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8096203251069839455}
   - component: {fileID: 6853505074665626775}
+  - component: {fileID: 4447282641318160297}
   m_Layer: 0
   m_Name: UIObstacle
   m_TagString: Untagged
@@ -829,6 +830,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4447282641318160297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044071366785473100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6257763, y: 2.588605, z: 3.7675843}
+  m_Center: {x: -0.2781229, y: -0.79430246, z: -0.23625636}
 --- !u!1 &5496717919367956886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIBuildingClicked: {fileID: 11400000, guid: 24078b5ecd39d05419fe22f7950293d1, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  gameManager: {fileID: 0}
 --- !u!1 &8839582456800231865
 GameObject:
   m_ObjectHideFlags: 0
