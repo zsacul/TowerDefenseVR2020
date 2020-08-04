@@ -3079,6 +3079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRButtonBreak
       objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255397954, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
         type: 3}
       propertyPath: m_LocalPosition.x
