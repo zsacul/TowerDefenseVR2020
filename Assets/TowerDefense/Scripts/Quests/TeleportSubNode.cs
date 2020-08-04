@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class TeleportSubNode : MonoBehaviour
 {
     [SerializeField]
     protected string TextToDisplay;
     [SerializeField]
-    protected Text InfoForPlayer;
+    protected TextMeshProUGUI InfoForPlayer;
     [SerializeField]
     protected Canvas canvasToDisplayText;
     protected bool state;
@@ -33,7 +34,7 @@ public class TeleportSubNode : MonoBehaviour
         canvasToDisplayText.enabled = false;
     }
 
-    public void SetNextStep()
+    virtual public void SetNextStep()
     {
         state = true;
         if (NextStep != null)
@@ -43,7 +44,7 @@ public class TeleportSubNode : MonoBehaviour
         }
     }
 
-    public void SetPrevStep()
+    virtual public void SetPrevStep()
     {
         state = false;
         if (PrevStep != null)

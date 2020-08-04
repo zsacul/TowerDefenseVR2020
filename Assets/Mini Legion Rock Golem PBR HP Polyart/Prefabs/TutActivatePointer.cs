@@ -10,5 +10,16 @@ public class TutActivatePointer : TeleportSubNode
         state = false;
         gameObject.SetActive(false);
     }
-    
+
+    public override void SetPrevStep()
+    {
+        if(!TeleportMainNode.Instance.teleDone)
+            base.SetPrevStep();
+    }
+
+    public override void SetNextStep()
+    {
+        if(!TeleportMainNode.Instance.teleDone)
+            base.SetNextStep();
+    }
 }

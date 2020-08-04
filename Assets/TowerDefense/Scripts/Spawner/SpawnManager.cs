@@ -44,6 +44,7 @@ namespace SpawnManaging
             gameOver = false;
             waveInfoLabel = Instantiate(waveInfoLabelPrefab);
             incomingWaveInfoLabel = Instantiate(incomingWaveInfoLabelPrefab);
+            incomingWaveInfoLabel.gameObject.SetActive(false);
             spawnMagicNumber = 2;
             breakOn = true;
             wave[waveIndex].waveData = ScriptableObject.Instantiate(wave[waveIndex].waveData);

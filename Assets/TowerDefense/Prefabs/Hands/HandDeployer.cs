@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class GOArray
@@ -22,12 +23,13 @@ public class HandDeployer : MonoBehaviour
     private bool critical_enforcer = false;
     public bool retarded_controlls = true;
     [SerializeField]
-    private List<GOArray> PropList;
+    public List<GOArray> PropList;
     private GameObject CurrentlyDeployed;
     // Start is called before the first frame update
     public string HandDeployerName;
     public int listIterator;
 
+    public UnityEvent WeaponChange;
     public GameObject RightInteractor;
 
     public bool isRight;
@@ -61,6 +63,7 @@ public class HandDeployer : MonoBehaviour
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance, Motivator);
         listIterator = Nth;
+        WeaponChange.Invoke();
     }
 
     public void DeployNth(int Nth)
@@ -69,6 +72,7 @@ public class HandDeployer : MonoBehaviour
         CallKill(PropList[listIterator].Instance);
         CallWakeup(PropList[Nth].Instance);
         listIterator = Nth;
+        WeaponChange.Invoke();
     }
 
     public void DeployNext()

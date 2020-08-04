@@ -10,11 +10,11 @@ public class TeleportMainNode : MonoBehaviour, IQuest
     public UnityEvent TasksFinished;
     public List<TeleportSubNode> ActiveTasks = new List<TeleportSubNode>();
 
-    bool state; 
+    bool state;
+    public bool teleDone;
     TeleportSubNode currentTutorial;
     [SerializeField]
     TeleportSubNode firstStep;
-
     private static TeleportMainNode instance;
     public static TeleportMainNode Instance
     {
@@ -83,6 +83,6 @@ public class TeleportMainNode : MonoBehaviour, IQuest
 
     private void Start()
     {
-        StartThisTutorial();
+        teleDone = false;
     }
 }

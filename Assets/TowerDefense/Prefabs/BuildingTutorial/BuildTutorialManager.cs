@@ -49,10 +49,11 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
             InstructionsPanel.SetActive(true);
         }
         else
-        { 
+        {
             SetCurrentQuest(firstQuest);
             started = true;
             InstructionsPanel.SetActive(false);
+            
         }
     }
 
@@ -72,10 +73,12 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
     public void EndTutorial()
     {
         TurnOffCurrentQuest();
+        TutorialFinished.Invoke();
         state = true;
         started = false;
         //Debug.Log("Tutorial ended");
         InstructionsPanel.SetActive(true);
+
     }
 
     private void TurnOffCurrentQuest()

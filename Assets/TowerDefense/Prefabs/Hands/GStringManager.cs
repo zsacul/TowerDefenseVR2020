@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using VRTK.Prefabs.Interactions.Interactors.ComponentTags;
 
 public class GStringManager : PropManager
 {
+    public UnityEvent CrossbowLoaded;
+
     private GameObject HandManger;
     private GameObject CrossBow;
     private GameObject String;

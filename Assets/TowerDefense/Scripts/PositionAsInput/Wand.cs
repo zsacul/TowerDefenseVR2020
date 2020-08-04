@@ -8,6 +8,7 @@ public class Wand : MonoBehaviour
 {
     public Spell[] spells;
     public GameObject nodePrefab;
+    public GameObject rightHand;
     public Transform head;
     public float distance;
     private List<Transform> pathedNodes;
@@ -20,16 +21,29 @@ public class Wand : MonoBehaviour
     public UnityEvent onCastFailure;
     private LineRenderer line;
     private bool casting;
+    private int itemsInRightHand;
+    private HandDeployer rightHandDeployer;
     IChargable current;
     private void Start()
     {
         line = GetComponent<LineRenderer>();
         tree = new SpellTree(spells);
         pathedNodes = new List<Transform>();
+        rightHandDeployer = rightHand.GetComponent<HandDeployer>();
     }
     private void Update()
     {
-        if(casting)
+
+        if (rightHandDeployer == null)
+        {
+            Debug.LogError("HandDeployer in RightControllerAlias not found");
+        }
+        else
+        {
+            itemsInRightHand = rightHandDeployer.listIterator;
+        }
+
+        if (casting)
         {
             line.enabled = true;
             line.positionCount = pathedNodes.Count;
@@ -40,7 +54,8 @@ public class Wand : MonoBehaviour
             line.positionCount = 0;
             line.enabled = false;
         }
-        if(!casting && (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.LeftControl)))
+        if(!casting && (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.LeftControl))
+            && itemsInRightHand == 0)
         {
             CastStart();
         }
@@ -48,6 +63,7 @@ public class Wand : MonoBehaviour
         {
             CastEnd();
         }
+
     }
     private void CastStart()
     {
