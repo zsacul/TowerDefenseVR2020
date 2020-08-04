@@ -9,7 +9,8 @@ public class TeleportMainNode : MonoBehaviour, IQuest
 {
     public UnityEvent TasksFinished;
     public List<TeleportSubNode> ActiveTasks = new List<TeleportSubNode>();
-
+    [SerializeField]
+    CrossbowMainNode CrossbowMainNode;
     bool state;
     public bool teleDone;
     TeleportSubNode currentTutorial;

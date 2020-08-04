@@ -35,7 +35,7 @@ public class CrossbowTakeCrossbow : CrossbowSubNode
 
         }
         else
-            if (IsWeaponCrossbow())
+            if (IsWeaponCrossbow() && this.gameObject.activeSelf)
         {
             Debug.Log("W rece jest kusza");
             SetNextStep();
