@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8836898999991176694}
   - component: {fileID: 2998959442846904591}
   - component: {fileID: 849331576206448174}
+  - component: {fileID: 3537150941248665053}
   m_Layer: 0
   m_Name: newArrow
   m_TagString: Bullet
@@ -94,3 +95,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7929139438592967118, guid: 209884c8e332ee04b8519139ccba41b1, type: 3}
+--- !u!114 &3537150941248665053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3576605453861471699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bdeb3035460a7845ba9adfe277b84a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -20
+  damage: 10
+  type: 1
