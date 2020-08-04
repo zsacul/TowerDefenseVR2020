@@ -3037,6 +3037,105 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   coordinateToExtract: 1
+--- !u!1001 &73785672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 752578749}
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndBreak
+      objectReference: {fileID: 0}
+    - target: {fileID: 343828941237217080, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: ButtonClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255397954, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_Name
+      value: VRButtonBreak
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072174274255558732, guid: ecc5ba40adfe72c4189aec1cedaa68e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecc5ba40adfe72c4189aec1cedaa68e6, type: 3}
 --- !u!1 &84447214
 GameObject:
   m_ObjectHideFlags: 0
@@ -15080,7 +15179,7 @@ MonoBehaviour:
   listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
     type: 3}
-  cancelPrefab: {fileID: 3876053850961151450, guid: 6eb4ab1b4db7546f0972190c0c1920de,
+  cancelPrefab: {fileID: 1662287221887085618, guid: 22e7c784bd82b438d8c15816b53b8140,
     type: 3}
 --- !u!1 &734348935
 GameObject:
@@ -30892,17 +30991,6 @@ PrefabInstance:
       propertyPath: RighHand
       value: 
       objectReference: {fileID: 65865502}
-    - target: {fileID: 41301387, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 2140759166}
-    - target: {fileID: 41301387, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: TextToDisplay
-      value: "Dobrze... Uciec by\u015B ju\u017C potrafi\u0142, jednak nie po to tutaj
-        jeste\u015B. Przenie\u015B si\u0119 w pobli\u017Ce kuszy, a nast\u0119pnie
-        zbli\u017C do niej r\u0119k\u0119 i wci\u015Bnij przycisk \"grab\", aby jej
-        doby\u0107."
-      objectReference: {fileID: 0}
     - target: {fileID: 126899747, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
       propertyPath: InfoForPlayer
       value: 
@@ -30919,11 +31007,6 @@ PrefabInstance:
       propertyPath: RightHand
       value: 
       objectReference: {fileID: 65865502}
-    - target: {fileID: 126899747, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: TextToDisplay
-      value: "Teraz zbli\u017C drug\u0105 r\u0119k\u0119 do cieciwy i chwy\u0107
-        j\u0105, tak samo jak wcze\u015Bniej z\u0142apa\u0142e\u015B kusz\u0119."
-      objectReference: {fileID: 0}
     - target: {fileID: 1271611694, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
       propertyPath: InfoForPlayer
       value: 
@@ -30940,11 +31023,6 @@ PrefabInstance:
       propertyPath: RightHand
       value: 
       objectReference: {fileID: 65865502}
-    - target: {fileID: 1271611694, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: TextToDisplay
-      value: "Teraz wyci\u0105gnij r\u0119k\u0119 przed siebie, popatrz przez celownik
-        i poci\u0105gnij za spust."
-      objectReference: {fileID: 0}
     - target: {fileID: 1347375767, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
       propertyPath: InfoForPlayer
       value: 
@@ -30961,12 +31039,6 @@ PrefabInstance:
       propertyPath: RightHand
       value: 
       objectReference: {fileID: 65865502}
-    - target: {fileID: 1347375767, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: TextToDisplay
-      value: "\u015Awietnie! Pozosta\u0142o jedynie naci\u0105gn\u0105\u0107 ci\u0119ciwe
-        zbli\u017Caj\u0105c r\u0119ke z cieciw\u0105 do r\u0119ki trzymaj\u0105cej
-        kusze i b\u0119dziesz gotowy na sw\xF3j pierwszy strza\u0142."
-      objectReference: {fileID: 0}
     - target: {fileID: 1585970464, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
       propertyPath: InfoForPlayer
       value: 
@@ -30983,11 +31055,6 @@ PrefabInstance:
       propertyPath: canvasToDisplayText
       value: 
       objectReference: {fileID: 1605585257}
-    - target: {fileID: 1901859452, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
-      propertyPath: TextToDisplay
-      value: "Pierwszy raz za Tob\u0105! Poka\u017C na co Ci\u0119 sta\u0107 i traf
-        w tarcz\u0119 3 razy."
-      objectReference: {fileID: 0}
     - target: {fileID: 472485289571010737, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_Mesh
@@ -31053,21 +31120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossbowTutorial
       objectReference: {fileID: 0}
-    - target: {fileID: 1143962660114416103, guid: b3395ce70c240954e9462fa57c81a35b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2693659027031220704, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1943742847}
-    - target: {fileID: 3911520231504734367, guid: b3395ce70c240954e9462fa57c81a35b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6940517242026248398, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_Mesh
@@ -35961,7 +36018,7 @@ PrefabInstance:
     - target: {fileID: 6924461699007965700, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a56a2053012074599ee4adcb4e240d, type: 3}
@@ -40844,24 +40901,6 @@ Transform:
   m_Father: {fileID: 1661096818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2140759166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3911520231504734367, guid: b3395ce70c240954e9462fa57c81a35b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1687687294}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2140759167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140759166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2145973134
 GameObject:
   m_ObjectHideFlags: 0
@@ -43656,7 +43695,7 @@ PrefabInstance:
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: SecondsInAFullDay
-      value: 600
+      value: 3600
       objectReference: {fileID: 0}
     - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
