@@ -15179,7 +15179,7 @@ MonoBehaviour:
   listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
     type: 3}
-  cancelPrefab: {fileID: 3876053850961151450, guid: 6eb4ab1b4db7546f0972190c0c1920de,
+  cancelPrefab: {fileID: 1662287221887085618, guid: 22e7c784bd82b438d8c15816b53b8140,
     type: 3}
 --- !u!1 &734348935
 GameObject:
@@ -35712,7 +35712,7 @@ PrefabInstance:
     - target: {fileID: 6924461699007965700, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a56a2053012074599ee4adcb4e240d, type: 3}

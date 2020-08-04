@@ -41,11 +41,11 @@ public class UIBuildings : GameEventListener
         towerInstance.transform.parent = gameObject.transform;
         cancelInstance.transform.parent = gameObject.transform;
         towerInstance.transform.localScale = new Vector3(0.02f, 0.015f, 0.02f);
-        cancelInstance.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        cancelInstance.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         towerInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
-        //cancelInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
+        cancelInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
         towerInstance.transform.localPosition = new Vector3(0, -0.02f, -0.015f);
-        cancelInstance.transform.localPosition = new Vector3(0, -0.02f, -0.015f);
+        cancelInstance.transform.localPosition = new Vector3(-0.05f, -0.01f, -0.015f);
         cancelInstance.SetActive(false);
     }
 
