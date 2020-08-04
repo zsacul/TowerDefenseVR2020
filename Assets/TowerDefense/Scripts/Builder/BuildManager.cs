@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class BuildManager : MonoBehaviour
 {
@@ -29,9 +30,10 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent BuildingSwitchedToNone;
     [SerializeField]
-    private Text UIMoneyText;
-    //[SerializeField]
-    //public bool VRTKInputs;
+    private GameObject UIMoneyTextGO;
+
+    private TextMeshPro UIMoneyText;
+
     [SerializeField]
     private GameEvent towerSelected;
     [SerializeField]
@@ -103,9 +105,10 @@ public class BuildManager : MonoBehaviour
 
     private void SetMoneyText()
     {
+        UIMoneyText = UIMoneyTextGO.GetComponent<TextMeshPro>();
         UIMoneyText.text = "$" + money.ToString();
         SetMoneyOutlineColor(new Color(0.02980483f, 1f, 0f, 0.5019608f));
-        UIMoneyText.enabled = BuildModeOn;
+        UIMoneyTextGO.SetActive(BuildModeOn);
     }
 
     private void SetCanvasUI()
@@ -203,13 +206,14 @@ public class BuildManager : MonoBehaviour
 
     private void SetMoneyOutlineColor(Color color)
     {
-        UIMoneyText.GetComponent<Outline>().effectColor = color;
+        UIMoneyText.outlineColor = color;
+        //UIMoneyText.GetComponent<Outline>().effectColor = color;
     }
 
     //Updates UI according to the state of BuildModeOn
     private void UpdateUI()
     {
-        UIMoneyText.enabled = BuildModeOn;
+        UIMoneyTextGO.SetActive(BuildModeOn);
         if (BuildModeOn)
         {
             UpdatePurchasePanels(purchasePanelsActive);
