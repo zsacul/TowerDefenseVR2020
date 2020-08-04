@@ -2887,7 +2887,7 @@ MonoBehaviour:
     type: 3}
   rightHand: {fileID: 0}
   head: {fileID: 442069745}
-  distance: 0.17
+  distance: 0.3
   onStartCast:
     m_PersistentCalls:
       m_Calls: []
@@ -36686,7 +36686,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.059908673
+  m_Radius: 0.12
   m_Center: {x: -0.04009132, y: 0, z: -0.12}
 --- !u!43 &1943742847
 Mesh:
