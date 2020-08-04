@@ -176,8 +176,8 @@ public class BuildManager : MonoBehaviour
             {
                 //Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.28f, 0.5f, 1.2f));
                 //Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.72f, 0.5f, 1.2f));
-                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.20f, 0.5f, 1f));
-                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.80f, 0.5f, 1f));
+                Vector3 towerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.24f, 0.5f, 0.6f));
+                Vector3 obstaclePos = Camera.main.ViewportToWorldPoint(new Vector3(0.76f, 0.5f, 0.6f));
                 towerPurchaseCanvas.transform.position = new Vector3(towerPos.x, Camera.main.transform.position.y, towerPos.z);
                 obstaclePurchaseCanvas.transform.position = new Vector3(obstaclePos.x, Camera.main.transform.position.y, obstaclePos.z);
             }
