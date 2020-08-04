@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIBuildings : GameEventListener
 {
@@ -20,7 +21,7 @@ public class UIBuildings : GameEventListener
         SetUpUI();
     }
 
-    void Update()
+    public void UpdateUIInstances()
     {
         if (buildManager.selectedBuilding != ChunkType.none)
         {

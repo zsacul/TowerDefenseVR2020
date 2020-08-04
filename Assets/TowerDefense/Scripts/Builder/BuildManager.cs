@@ -45,6 +45,8 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent SelectionStatusChanged;
 
+    public UnityEvent SelectionDidChanged;
+
     public UnityEvent StartedPointing;
     public UnityEvent StoppedPointing;
 
@@ -205,11 +207,6 @@ public class BuildManager : MonoBehaviour
         uiTowerClicked = !uiTowerClicked;
     }
 
-    public void UICancelClicked()
-    {
-
-    }
-
     private void SetMoneyOutlineColor(Color color)
     {
         UIMoneyText.outlineColor = color;
@@ -246,6 +243,7 @@ public class BuildManager : MonoBehaviour
             StartedPointing.Invoke();
             towerSelected.Raise();
             selectedBuilding = ChunkType.tower;
+            SelectionDidChanged.Invoke();
             purchasePanelsActive = false;
             UpdateUI();
         }
@@ -258,6 +256,7 @@ public class BuildManager : MonoBehaviour
             StartedPointing.Invoke();
             obstacleSelected.Raise();
             selectedBuilding = ChunkType.playerObstacle;
+            SelectionDidChanged.Invoke();
             purchasePanelsActive = false;
             UpdateUI();
         }
@@ -267,6 +266,7 @@ public class BuildManager : MonoBehaviour
     {
         StoppedPointing.Invoke();
         selectedBuilding = ChunkType.none;
+        SelectionDidChanged.Invoke();
         purchasePanelsActive = false;
         UpdateUI();
         BuildingSwitchedToNone.Raise();

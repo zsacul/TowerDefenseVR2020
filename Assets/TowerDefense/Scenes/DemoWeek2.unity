@@ -14785,7 +14785,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 2.3569999
+  m_padding: 3.5
   m_canvasRenderer: {fileID: 680180949}
   m_TextComponent: {fileID: 344256057}
   m_materialReferenceIndex: 1
@@ -15012,7 +15012,7 @@ MonoBehaviour:
   listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
   towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
     type: 3}
-  obstaclePrefab: {fileID: 5044071366785473100, guid: 7ce170d0bcfefbb4bb33210fb0122c08,
+  cancelPrefab: {fileID: 3876053850961151450, guid: 6eb4ab1b4db7546f0972190c0c1920de,
     type: 3}
 --- !u!1 &734348935
 GameObject:
@@ -32110,6 +32110,20 @@ MonoBehaviour:
   obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
+  SelectionDidChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 730750931}
+        m_MethodName: UpdateUIInstances
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   StartedPointing:
     m_PersistentCalls:
       m_Calls:
@@ -32171,6 +32185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  selectedBuilding: 0
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0
