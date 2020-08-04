@@ -2707,62 +2707,84 @@ MonoBehaviour:
   - Prefab: {fileID: 4137375818022343, guid: dd0b54027b22bac43a0b6374ad4c644a, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Ldep: 1
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: ebe9c872f6a88a34a862f763accc2ed2, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Ldep: 1
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
-    PolledGrabDistance: 0
+    PolledGrabDistance: 0.2
   - Prefab: {fileID: 4137375818022343, guid: f479ba1eacd553443bb172338fe0812e, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Ldep: 1
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: 4107b2ea955cb12428627380fc49cc84, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Ldep: 1
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: 0eec1cf23948a8a48bce13b35fd7285f, type: 3}
     Instance: {fileID: 0}
     description: 
-    Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Ldep: 1
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: cc4433af2016b4c428e51daef9eda35c, type: 3}
     Instance: {fileID: 0}
     description: 
     Ldep: 0
-    Rdep: 0
-    IntentionalGrab: 0
-    IGrabDistance: 0
+    Rdep: 1
+    IntentionalGrab: 1
+    IGrabDistance: 0.05
     PolledGrab: 0
     PolledGrabDistance: 0
   HandDeployerName: 
   listIterator: 0
   WeaponChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 406086739}
+        m_MethodName: WeaponChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 341027612}
+        m_MethodName: WeaponChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   RightInteractor: {fileID: 0}
   isRight: 0
   stateFlipFlop: 0
@@ -2887,7 +2909,7 @@ MonoBehaviour:
     type: 3}
   rightHand: {fileID: 65865500}
   head: {fileID: 442069745}
-  distance: 0.17
+  distance: 0.3
   onStartCast:
     m_PersistentCalls:
       m_Calls: []
@@ -8519,6 +8541,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actions: {fileID: 335049018}
+--- !u!114 &341027612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 126899747, guid: b3395ce70c240954e9462fa57c81a35b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687687294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c447c77dbc68f34381468438b8e1eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &343398438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8589,7 +8623,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 100}
+  m_SizeDelta: {x: 723.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344256057
 MonoBehaviour:
@@ -8640,8 +8674,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8657,7 +8691,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 124
+  m_firstOverflowCharacterIndex: 66
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -8686,7 +8720,7 @@ MonoBehaviour:
     spaceCount: 33
     wordCount: 34
     linkCount: 0
-    lineCount: 7
+    lineCount: 5
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -9598,6 +9632,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.059908673
   m_Center: {x: -0.04009132, y: 0, z: -0.12}
+--- !u!114 &406086739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 41301387, guid: b3395ce70c240954e9462fa57c81a35b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687687294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a075b43430b4248bbad7350ef1d368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407166169
 GameObject:
   m_ObjectHideFlags: 0
@@ -12100,7 +12146,29 @@ MonoBehaviour:
   listIterator: 0
   WeaponChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 406086739}
+        m_MethodName: WeaponChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 341027612}
+        m_MethodName: WeaponChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   RightInteractor: {fileID: 65865500}
   isRight: 0
   stateFlipFlop: 0
@@ -29038,7 +29106,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605585254}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 3.1914878}
+  m_LocalPosition: {x: 0, y: 0, z: -2.25}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
   m_Children:
   - {fileID: 344256056}
@@ -29047,8 +29115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 35.61, y: 13.51}
-  m_SizeDelta: {x: 150, y: 100}
+  m_AnchoredPosition: {x: 35.61, y: 12.08}
+  m_SizeDelta: {x: 308.35, y: 214.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1606082361
 PrefabInstance:
@@ -36686,7 +36754,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.059908673
+  m_Radius: 0.12
   m_Center: {x: -0.04009132, y: 0, z: -0.12}
 --- !u!43 &1943742847
 Mesh:
