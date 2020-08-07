@@ -28,6 +28,7 @@ namespace SpawnManaging
         int spawnerIndex;
         int spawnedInGroup;
         int spawnMagicNumber;
+        [NonSerialized]
         public bool breakOn;
 
         public Canvas waveInfoLabelPrefab;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -7,21 +8,26 @@ using UnityEngine.UI;
 public class BuildTutorialQuest : GameEventListener
 {
     public UnityEvent QuestFinished;
-    public GameObject InstructionsPanel;
+    public UnityEvent QuestFinishedFirstTime;
 
     protected bool state;
     [SerializeField]
     protected BuildTutorialQuest nextQuest;
+    [SerializeField]
+    protected string infoForPlayer;
+    [SerializeField]
+    protected TextMeshProUGUI textHolder;
+    protected bool doneInPast;
 
     virtual public void EnterQuest()
     {
-        InstructionsPanel.SetActive(true);
+        textHolder.text = infoForPlayer;
         //Debug.Log("Wejście do " + gameObject.name);
     }
 
     virtual public void ExitQuest()
     {
-        InstructionsPanel.SetActive(false);
+        textHolder.text = "";
         //Debug.Log("Wyjscie z " + gameObject.name);
     }
 
@@ -33,6 +39,11 @@ public class BuildTutorialQuest : GameEventListener
             //Debug.Log(gameObject.name + " calls SetNextQuest()");
             BuildTutorialManager.Instance.SetCurrentQuest(nextQuest);
             QuestFinished.Invoke();
+            if (!doneInPast)
+            {
+                QuestFinishedFirstTime.Invoke();
+                doneInPast = true;
+            }
             ExitQuest();
         }
     }

@@ -24,7 +24,10 @@ public class CrossbowSubNode : MonoBehaviour
 
     virtual public void EnterStep()
     {
+        gameObject.SetActive(true);
         Debug.Log("Wejście do " + gameObject.name);
+        if (gameObject.activeSelf)
+            Debug.Log(gameObject.name + " aktywny");
         canvasToDisplayText.enabled = true;
         InfoForPlayer.text = TextToDisplay;
     }

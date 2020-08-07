@@ -9,7 +9,10 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
 {
     public UnityEvent TasksFinished;
     public List<CrossbowSubNode> ActiveTasks = new List<CrossbowSubNode>();
+    [SerializeField]
     BuildTutorialManager BuildTutorialManager;
+    [SerializeField]
+    TeleportMainNode TeleportTutorial;
 
     bool state;
     CrossbowSubNode currentTutorial;
@@ -49,9 +52,11 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
         state = true;
         ClearTasks();
         TasksFinished.Invoke();
-        BuildTutorialManager = FindObjectOfType<BuildTutorialManager>();
         if (BuildTutorialManager != null)
+        {
+            BuildTutorialManager.gameObject.SetActive(true);
             BuildTutorialManager.StartTutorial();
+        }
     }
 
     public CrossbowSubNode GetCurrentTutorial()
@@ -71,11 +76,13 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
 
     public void StartThisTutorial()
     {
+        Destroy(TeleportTutorial.gameObject);
         SetCurrentTutorial(firstStep);
     }
 
     public void ClearTasks()
     {
+        Debug.Log("CLEAR TASKS CROSSBOW TUTORIAL");
         for (int i = ActiveTasks.Count - 2; i >= 0; i--)
         {
             Debug.Log("wylaczono obiekt " + ActiveTasks[i].gameObject.name);
