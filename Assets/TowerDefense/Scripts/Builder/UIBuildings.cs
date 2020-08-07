@@ -50,7 +50,8 @@ public class UIBuildings : GameEventListener
         cancelInstance = Instantiate(cancelPrefab, transform.position, transform.rotation);
         towerInstance.transform.parent = gameObject.transform;
         cancelInstance.transform.parent = gameObject.transform;
-        towerInstance.transform.localScale = new Vector3(0.02f, 0.015f, 0.02f);
+        //towerInstance.transform.localScale = new Vector3(0.02f, 0.015f, 0.02f);
+        //towerInstance.transform.localScale = new Vector3(1f, 1f, 1f);
         cancelInstance.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         towerInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
         cancelInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
