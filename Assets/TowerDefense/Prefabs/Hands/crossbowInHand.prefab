@@ -73,11 +73,11 @@ MonoBehaviour:
   retarded_controlls: 0
   GizmoAnimation: {fileID: 4981076334279954798}
   Debree: {fileID: 1635064245034004468, guid: 411baec3cf3efa64eab338ada08e0ae8, type: 3}
-  LoadedArrowPrefab: {fileID: 6911849255335886095, guid: ebe0df4b9243ec0469356bca22923e53,
+  LoadedArrowPrefab: {fileID: 5577087532629446476, guid: ff829beb2884b2049bd2aff9d9cc1dc7,
     type: 3}
   loaded: 0
   control: 1
-  projectile: {fileID: 2168762925388800387, guid: f5064c439c7eb244a83a5ff7833bedf4,
+  projectile: {fileID: 1169012919019611277, guid: 6650ad2e0284e254d925cf60b9c27b68,
     type: 3}
 --- !u!1 &287274007991061473
 GameObject:

@@ -27,8 +27,10 @@ public class CrossbowManager : PropManager
     public GameObject projectile;
     private void pewpew()
     {
+        Quaternion rotationForArrow = Quaternion.Euler(transform.localRotation.x + 61.42f, transform.localRotation.y - 209.02f, transform.localRotation.z + 112.03f);
+        Vector3 positionForArrow = LoadedArrow.transform.position;
         Destroy(LoadedArrow);
-        GameObject P = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject P = Instantiate(projectile, positionForArrow, rotationForArrow);
     }
 
     public override void PointEvent(float input)
@@ -72,6 +74,12 @@ public class CrossbowManager : PropManager
     {
         LoadedArrow = Instantiate(LoadedArrowPrefab, transform.position, transform.rotation);
         LoadedArrow.transform.SetParent(this.transform);
+        Quaternion rotationForArrow = Quaternion.Euler(transform.localRotation.x + 90, transform.localRotation.y, transform.localRotation.z);
+        Vector3 positionForArrow = new Vector3(transform.localPosition.x + 2.88f, transform.localPosition.y + 0.29f, transform.localPosition.z - 10.46f);
+        LoadedArrow.transform.localPosition = positionForArrow;
+        LoadedArrow.transform.localRotation = rotationForArrow;
+        LoadedArrow.transform.localScale = LoadedArrowPrefab.transform.localScale;
+        
     }
 
     public override void Initialize()
