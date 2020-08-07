@@ -51,7 +51,7 @@ public class UIBuildings : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        towerInstance.SetActive(!towerInstance.active);
+        towerInstance.SetActive(!towerInstance.activeSelf);
        // cancelInstance.SetActive(!cancelInstance.active);
     }
 
@@ -65,18 +65,6 @@ public class UIBuildings : GameEventListener
         else
         {
             buildManager.ChooseTower();
-        }
-    }
-
-    public void OnUIObstacleClicked()
-    {
-        if(buildManager.Selected() == ChunkType.playerObstacle)
-        {
-            buildManager.ChooseNone();
-        }
-        else
-        {
-            buildManager.ChooseObstacle();
         }
     }
 

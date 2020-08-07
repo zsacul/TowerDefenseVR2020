@@ -42,6 +42,10 @@ public class UIBuildingSelection : MonoBehaviour
             {
                 buildManager.UITowerClicked();
             }
+            else if(tag == "UICancelSelection")
+            {
+                buildManager.ChooseNone();
+            }
             
             collided = true;
         }
@@ -52,11 +56,6 @@ public class UIBuildingSelection : MonoBehaviour
         if(other.gameObject.tag == "HandCollider")
         {
             collided = false;
-        }
-
-        if(tag == "UICancelSelection")
-        {
-            buildManager.ChooseNone();
         }
     }
 }
