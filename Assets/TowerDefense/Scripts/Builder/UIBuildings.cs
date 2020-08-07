@@ -23,15 +23,25 @@ public class UIBuildings : GameEventListener
 
     public void UpdateUIInstances()
     {
-        if (buildManager.selectedBuilding != ChunkType.none)
+        if (buildManager.BuildModeOn)
         {
-            towerInstance.SetActive(false);
-            cancelInstance.SetActive(true);
-        } else
-        {
-            cancelInstance.SetActive(false);
-            towerInstance.SetActive(true);
+            if (buildManager.selectedBuilding != ChunkType.none)
+            {
+                towerInstance.SetActive(false);
+                cancelInstance.SetActive(true);
+            }
+            else
+            {
+                cancelInstance.SetActive(false);
+                towerInstance.SetActive(true);
+            }
         }
+    }
+
+    public void CloseUI()
+    {
+        towerInstance.SetActive(false);
+        cancelInstance.SetActive(false);
     }
 
     private void SetUpUI()
