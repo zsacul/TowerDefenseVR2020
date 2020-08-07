@@ -15240,7 +15240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
-  towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
+  towerPrefab: {fileID: 7957796827298215147, guid: eb7b0d81414d6724fa971f03578cebd2,
     type: 3}
   cancelPrefab: {fileID: 1662287221887085618, guid: 22e7c784bd82b438d8c15816b53b8140,
     type: 3}
