@@ -8,16 +8,26 @@ public class BulletNoTarget : MonoBehaviour
     float speed;
     [SerializeField]
     float damage;
+    [SerializeField]
+    float beginForce;
     int specialEffectDurationInSec;
     int specialEffectDmgPerSec;
     SpecialEffect specialEffect;
     [SerializeField]
     ElementType type;
     bool readyToDestroy;
+    Rigidbody arrowRB;
 
     private void Awake()
     {
         Destroy(gameObject, 10);
+    }
+
+    private void Start()
+    {
+        arrowRB = GetComponentInChildren<Rigidbody>();
+        Debug.Log("Imie: " + arrowRB.gameObject.name);
+        arrowRB.AddForce(transform.forward * -1f * beginForce, ForceMode.Impulse);
     }
 
     public void ChangeSpecialEffect(SpecialEffect SE)
@@ -25,9 +35,8 @@ public class BulletNoTarget : MonoBehaviour
         specialEffect = SE;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        transform.position += transform.forward * speed * Time.fixedDeltaTime;
         if (readyToDestroy)
             destroyBullet();
     }
