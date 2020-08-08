@@ -37,18 +37,14 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private GameEvent towerSelected;
     [SerializeField]
-    private GameEvent towerBuilt;
-    [SerializeField]
     private GameEvent obstacleSelected;
-    [SerializeField]
-    private GameEvent obstacleBuilt;
     [SerializeField]
     private GameEvent SelectionStatusChanged;
 
-    public UnityEvent SelectionDidChanged;
-
     public UnityEvent StartedPointing;
     public UnityEvent StoppedPointing;
+    public UnityEvent ObstacleBuilt;
+    public UnityEvent TowerBuilt;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -65,11 +61,21 @@ public class BuildManager : MonoBehaviour
     private float canvasZPos;
     private bool rightTriggerInUse;
     private bool uiTowerClicked;
-
     private bool sceneLoaded;
-
     private static BuildManager instance;
 
+    public bool PurchasePanelActive {
+        get {
+            return purchasePanelsActive;
+        }
+    }
+
+    public int Money {
+        get {
+            return money;
+        }
+    }
+    
     private void Awake()
     {
         instance = this;
@@ -244,7 +250,6 @@ public class BuildManager : MonoBehaviour
             StartedPointing.Invoke();
             towerSelected.Raise();
             selectedBuilding = ChunkType.tower;
-            SelectionDidChanged.Invoke();
             purchasePanelsActive = false;
             UpdateUI();
         }
@@ -257,7 +262,6 @@ public class BuildManager : MonoBehaviour
             StartedPointing.Invoke();
             obstacleSelected.Raise();
             selectedBuilding = ChunkType.playerObstacle;
-            SelectionDidChanged.Invoke();
             purchasePanelsActive = false;
             UpdateUI();
         }
@@ -267,7 +271,6 @@ public class BuildManager : MonoBehaviour
     {
         StoppedPointing.Invoke();
         selectedBuilding = ChunkType.none;
-        SelectionDidChanged.Invoke();
         purchasePanelsActive = false;
         UpdateUI();
         BuildingSwitchedToNone.Raise();
@@ -288,19 +291,6 @@ public class BuildManager : MonoBehaviour
         }
 
         return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.B);
-    }
-
-
-    public bool PurchasePanelActive {
-        get {
-            return purchasePanelsActive;
-        }
-    }
-
-    public int Money {
-        get {
-            return money;
-        }
     }
 
     ///<summary>
@@ -344,11 +334,11 @@ public class BuildManager : MonoBehaviour
         BuildingSuccess.Raise();
         if (selectedBuilding == ChunkType.tower)
         {
-            towerBuilt.Raise();
+            TowerBuilt.Invoke();
         }
         else if (selectedBuilding == ChunkType.playerObstacle)
         {
-            obstacleBuilt.Raise();
+            ObstacleBuilt.Invoke();
         }
         ChooseNone();
     }
