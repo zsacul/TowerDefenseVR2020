@@ -15208,23 +15208,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8443961938089658986}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &730750931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730750928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a47ac973ff042d46adeb826329622d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: 51457afaf55a4a14d8161d9f0cb05a2f, type: 2}
-  towerPrefab: {fileID: 1002257882691590529, guid: c837e1c1660aae646ace85f3e137818c,
-    type: 3}
-  cancelPrefab: {fileID: 1662287221887085618, guid: 22e7c784bd82b438d8c15816b53b8140,
-    type: 3}
 --- !u!1 &734348935
 GameObject:
   m_ObjectHideFlags: 0
@@ -32611,7 +32594,7 @@ MonoBehaviour:
   SelectionDidChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 730750931}
+      - m_Target: {fileID: 0}
         m_MethodName: UpdateUIInstances
         m_Mode: 1
         m_Arguments:
