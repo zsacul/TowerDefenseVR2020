@@ -43,8 +43,6 @@ public class BuildManager : MonoBehaviour
 
     public UnityEvent StartedPointing;
     public UnityEvent StoppedPointing;
-    public UnityEvent ObstacleBuilt;
-    public UnityEvent TowerBuilt;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
@@ -332,14 +330,6 @@ public class BuildManager : MonoBehaviour
     public void Success()
     {
         BuildingSuccess.Raise();
-        if (selectedBuilding == ChunkType.tower)
-        {
-            TowerBuilt.Invoke();
-        }
-        else if (selectedBuilding == ChunkType.playerObstacle)
-        {
-            ObstacleBuilt.Invoke();
-        }
         ChooseNone();
     }
 
