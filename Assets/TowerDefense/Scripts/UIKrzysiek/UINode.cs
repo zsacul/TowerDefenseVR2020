@@ -83,7 +83,6 @@ public class UINode : MonoBehaviour
     }
     public void LineUpdate()
     {
-        Debug.Log("line");
         line.SetPosition(0, transform.position);
         line.SetPosition(1, parentNode.transform.position);
     }
