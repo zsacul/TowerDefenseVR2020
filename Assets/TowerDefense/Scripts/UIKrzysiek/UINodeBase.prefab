@@ -5031,6 +5031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c29c44b2e17ef458c9e4fc2e25ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   onSelect:
     m_PersistentCalls:
       m_Calls: []
@@ -5047,4 +5048,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   parentNode: {fileID: 0}
-  childNodes: []
+  childNodes:
+  - node: {fileID: 2304112290064146884}
+    relativePosition: {x: 0, y: 0.2, z: 0}

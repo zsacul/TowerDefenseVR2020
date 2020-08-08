@@ -14,10 +14,12 @@ public class UINode : MonoBehaviour
     private LineRenderer line;
     public UINode parentNode;
     public NodePos[] childNodes;
+    private List<UINode> childrenUI;
     private bool selected;
     private bool drawLine;
     private void Start()
     {
+        childrenUI = new List<UINode>();
         line = GetComponent<LineRenderer>();
         onSpawned.Invoke();
     }
@@ -64,11 +66,21 @@ public class UINode : MonoBehaviour
                                                n.relativePosition.y * transform.up +
                                                n.relativePosition.z * transform.forward;
             GameObject o = Instantiate(n.node, pos, Quaternion.identity);
+            childrenUI.Add(o.GetComponent<UINode>());
         }
     }
     public void LineUpdate()
     {
         line.SetPosition(0, transform.position);
         line.SetPosition(1, parentNode.transform.position);
+    }
+    public void Dispose()
+    {
+        onDispose.Invoke();
+        foreach(UINode n in childrenUI)
+        {
+            n.Dispose();
+        }
+        Destroy(gameObject);
     }
 }
