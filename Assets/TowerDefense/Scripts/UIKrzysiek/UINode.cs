@@ -27,7 +27,12 @@ public class UINode : MonoBehaviour
     {
         if(parentNode != null && drawLine)
         {
+            line.enabled = true;
             LineUpdate();
+        }
+        else
+        {
+            line.enabled = false;
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -48,6 +53,12 @@ public class UINode : MonoBehaviour
         selected = true;
         drawLine = true;
         onSelect.Invoke();
+        foreach(UINode n in childrenUI)
+        {
+            n.Dispose();
+        }
+        childrenUI.Clear();
+        SpawnChildNodes();
         if(parentNode != null)
         {
             parentNode.Deselect();
@@ -67,10 +78,12 @@ public class UINode : MonoBehaviour
                                                n.relativePosition.z * transform.forward;
             GameObject o = Instantiate(n.node, pos, Quaternion.identity);
             childrenUI.Add(o.GetComponent<UINode>());
+            o.GetComponent<UINode>().parentNode = this;
         }
     }
     public void LineUpdate()
     {
+        Debug.Log("line");
         line.SetPosition(0, transform.position);
         line.SetPosition(1, parentNode.transform.position);
     }

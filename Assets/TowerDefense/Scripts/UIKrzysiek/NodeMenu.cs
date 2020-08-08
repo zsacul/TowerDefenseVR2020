@@ -28,7 +28,7 @@ public class NodeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("VRTK_Axis10_LeftTrigger") > 0.1f)
+        if(Input.GetAxis("VRTK_Axis9_LeftTrigger") > 0.1f)
         {
             if(!menuActive)
             {
@@ -45,6 +45,7 @@ public class NodeMenu : MonoBehaviour
                 {
                     n.Dispose();
                 }
+                childrenUI.Clear();
             }
             menuActive = false;
         }
