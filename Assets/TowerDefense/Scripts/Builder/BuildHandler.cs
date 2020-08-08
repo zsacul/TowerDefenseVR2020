@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BuildHandler : GameEventListener
 {
@@ -12,6 +13,9 @@ public class BuildHandler : GameEventListener
     private GameObject canBuildObstacle;
     [SerializeField]
     private GameObject cantBuildObstacle;
+
+    public UnityEvent TowerBuilt;
+    public UnityEvent ObstacleBuilt;
 
     private BuildManager buildManager;
     private BoxCollider thisBoxCollider;
@@ -27,7 +31,7 @@ public class BuildHandler : GameEventListener
     private bool shouldCallHover;
 
     private ChunkType selectedBuilding;
-    private int sBuildingCost;
+    private int selectedBuildingCost;
 
     void Start()
     {
@@ -98,7 +102,7 @@ public class BuildHandler : GameEventListener
     {
         System.Tuple<ChunkType, int> selectedBuildingInfo = buildManager.ActiveBuildingInfo;
         selectedBuilding = selectedBuildingInfo.Item1;
-        sBuildingCost = selectedBuildingInfo.Item2;
+        selectedBuildingCost = selectedBuildingInfo.Item2;
     }
 
     private void Build()
@@ -108,12 +112,20 @@ public class BuildHandler : GameEventListener
         {
             UpdateSelectedBuilding();
             //Debug.Log("PRESSED ON TILE. SELECTED BUILDING = " + building.ToString());
-            if (buildManager.Money >= sBuildingCost)
+            if (buildManager.Money >= selectedBuildingCost)
             {
                 if (gameObject.GetComponent<Chunk>().ChangeType(selectedBuilding))
                 {
-                    buildManager.DecreaseMoney(sBuildingCost);
+                    buildManager.DecreaseMoney(selectedBuildingCost);
                     buildManager.Success();
+                    if (selectedBuilding == ChunkType.tower)
+                    {
+                        TowerBuilt.Invoke();
+                    }
+                    else if(selectedBuilding == ChunkType.playerObstacle)
+                    {
+                        ObstacleBuilt.Invoke();
+                    }
                     //Debug.Log("SUCCESS");
                 }
                 else
@@ -138,7 +150,7 @@ public class BuildHandler : GameEventListener
     {
         shouldCallHover = false;
         UpdateSelectedBuilding();
-        if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding, false) && buildManager.Money >= sBuildingCost)
+        if (gameObject.GetComponent<Chunk>().ValidOperation(selectedBuilding, false) && buildManager.Money >= selectedBuildingCost)
         {
             if (selectedBuilding == ChunkType.tower)
                 showedBuilding = Instantiate(canBuildTower, transform.position, transform.rotation);
