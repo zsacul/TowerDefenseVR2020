@@ -65,9 +65,11 @@ public class LightningSpell : MonoBehaviour, IChargable
     void createLightning(GameObject start, GameObject end)
     {
         GameObject instLightning = Instantiate(lightning, transform.position, Quaternion.identity) as GameObject;
-        instLightning.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
-        DigitalRuby.LightningBolt.LightningBoltScript l = GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>();
+        DigitalRuby.LightningBolt.LightningBoltScript l = instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>();
         l.StartObject = start;
         l.EndObject = end;
+        l.Duration = 0.5f;
+        Debug.Log("created lightning");
+        Destroy(l.gameObject, 0.5f);
     }
 }

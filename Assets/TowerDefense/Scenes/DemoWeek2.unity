@@ -2905,6 +2905,7 @@ MonoBehaviour:
   spells:
   - {fileID: 11400000, guid: 9c73ef5f149bf494186e8409b1df4e14, type: 2}
   - {fileID: 11400000, guid: eb44cb4972e30c442aaf2cfbc7f6ebb1, type: 2}
+  - {fileID: 11400000, guid: 924e40a945cd8b44dbeed02861d6c501, type: 2}
   nodePrefab: {fileID: 2304112290064146884, guid: aa41b90139dee4c4e91ca2c2c3cde719,
     type: 3}
   rightHand: {fileID: 65865500}
