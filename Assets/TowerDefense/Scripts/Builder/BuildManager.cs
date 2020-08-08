@@ -131,7 +131,8 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
-        if (BuildModeOn)
+        if (BuildModeOn
+            )
         {
             //UpdateButtonState(false);
 
@@ -349,6 +350,7 @@ public class BuildManager : MonoBehaviour
         {
             obstacleBuilt.Raise();
         }
+        ChooseNone();
     }
 
     public void Failure()
