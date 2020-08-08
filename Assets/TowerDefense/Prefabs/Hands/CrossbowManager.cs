@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CrossbowManager : PropManager
 {
@@ -10,6 +11,7 @@ public class CrossbowManager : PropManager
     private GameObject LoadedArrow;
     public bool loaded = false;
     public bool control = true;
+    public UnityEvent OnShoot;
 
     private GameObject String;
     private GameObject Rest;
@@ -29,6 +31,7 @@ public class CrossbowManager : PropManager
     {
         Destroy(LoadedArrow);
         GameObject P = Instantiate(projectile, transform.position, transform.rotation);
+        OnShoot.Invoke();
     }
 
     public override void PointEvent(float input)

@@ -50,17 +50,21 @@ public class LightningSpell : MonoBehaviour, IChargable
     }
     EnemyHPManager DetectEnemy()
     {
-        try
+        EnemyHPManager[] hp = FindObjectsOfType<EnemyHPManager>();
+        if (hp.Length == 0) return null;
+        int nearestIndex = 0;
+        float distanceMin = int.MaxValue;
+        for(int i = 0; i < hp.Length; i++)
         {
-            EnemyHPManager hp = FindObjectsOfType<EnemyHPManager>().ToArray().First((EnemyHPManager hpt) =>
-            Vector3.Distance(hpt.transform.position, transform.position) < distance);
-            createLightning(gameObject, hp.gameObject);
-            return hp;
+            float dist = Vector3.Distance(hp[i].transform.position, transform.position);
+            if (distanceMin > dist)
+            {
+                distanceMin = dist;
+                nearestIndex = i;
+            }
         }
-        catch(Exception e)
-        {
-            return null;
-        }       
+        return hp[nearestIndex];
+             
     }
     void createLightning(GameObject start, GameObject end)
     {
@@ -68,8 +72,8 @@ public class LightningSpell : MonoBehaviour, IChargable
         DigitalRuby.LightningBolt.LightningBoltScript l = instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>();
         l.StartObject = start;
         l.EndObject = end;
-        l.Duration = 0.5f;
+        l.Duration = 1f;
         Debug.Log("created lightning");
-        Destroy(l.gameObject, 0.5f);
+        Destroy(l.gameObject, 1f);
     }
 }
