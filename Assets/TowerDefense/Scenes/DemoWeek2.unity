@@ -12297,8 +12297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childNodes:
-  - node: {fileID: 2304112290064146884, guid: 08c553a10128a0a4cab318593b3f069d, type: 3}
-    relativePosition: {x: 0, y: 0.2, z: 0}
+  - node: {fileID: 2937631584200620664, guid: 89cd034e1bc61604b8f3853ef09d23ea, type: 3}
+    relativePosition: {x: -0.1, y: 0.2, z: 0}
+  - node: {fileID: 2937631584200620664, guid: e794edbbff246e74f9e7bda5991c3639, type: 3}
+    relativePosition: {x: 0.1, y: 0.2, z: 0}
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -32586,25 +32588,9 @@ MonoBehaviour:
     type: 2}
   UIMoneyTextGO: {fileID: 1596105006}
   towerSelected: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
-  towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
   obstacleSelected: {fileID: 11400000, guid: 757b31e66d12797489a1b6d0bd9ffc1c, type: 2}
-  obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
-  SelectionDidChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateUIInstances
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   StartedPointing:
     m_PersistentCalls:
       m_Calls:

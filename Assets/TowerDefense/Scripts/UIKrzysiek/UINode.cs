@@ -12,7 +12,7 @@ public class UINode : MonoBehaviour
     public UnityEvent onTouch;
     public UnityEvent onSpawned;
     private LineRenderer line;
-    public UINode parentNode;
+    [HideInInspector]public UINode parentNode;
     public NodePos[] childNodes;
     private List<UINode> childrenUI;
     private bool selected;

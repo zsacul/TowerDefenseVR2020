@@ -41,13 +41,17 @@ public class NodeMenu : MonoBehaviour
             if (menuActive)
             {
                 onDeactivate.Invoke();
-                foreach (UINode n in childrenUI)
-                {
-                    n.Dispose();
-                }
-                childrenUI.Clear();
+                Dispose();
             }
             menuActive = false;
         }
+    }
+    public void Dispose()
+    {
+        foreach (UINode n in childrenUI)
+        {
+            n.Dispose();
+        }
+        childrenUI.Clear();
     }
 }
