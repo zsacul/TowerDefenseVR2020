@@ -35,11 +35,11 @@ public class ButtonHandler : MonoBehaviour
             parentCanvas.GetComponent<TowerUpgrade>().Upgrade();
         }
 
-        else if(IsStatsUpgrade(parentCanvas))
-        {
-            GameObject elementTower = parentCanvas.transform.parent.gameObject;
-            elementTower.GetComponent<StatsUpgradeManager>().TowerLevelUp();
-        }
+        //else if(IsStatsUpgrade(parentCanvas))
+        //{
+        //    GameObject elementTower = parentCanvas.transform.parent.gameObject;
+        //    elementTower.GetComponent<StatsUpgradeManager>().TowerLevelUp();
+        //}
 
         transform.localPosition += new Vector3(0f, 0.1f, 0f);
         pushed = false;

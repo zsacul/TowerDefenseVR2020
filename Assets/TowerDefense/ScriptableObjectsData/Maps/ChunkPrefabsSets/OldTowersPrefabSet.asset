@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e89994037662a4a81dd9454ae65d87, type: 3}
+  m_Name: OldTowersPrefabSet
+  m_EditorClassIdentifier: 
+  none:
+  - {fileID: 134289842002267823, guid: a7cba68d829f9cd43a66b3922e1a0e4d, type: 3}
+  empty:
+  - {fileID: 1623222002731259034, guid: 45f6708e838e1014f8e43f722aa0a17a, type: 3}
+  - {fileID: 8643236808274961511, guid: 81d2701a0929d24408b3b7fe0104b063, type: 3}
+  - {fileID: 134289842002267823, guid: a0ccfaf627d79d748a6a387cd2af5ef6, type: 3}
+  border:
+  - {fileID: 8282513281596063733, guid: 85c60b2b2eef6de41974432a856a5254, type: 3}
+  - {fileID: 6509909730868039404, guid: 9fccd93d9c095304a9b2e4eaa7854b2a, type: 3}
+  - {fileID: 8706979399290659356, guid: be2d475f2bae58c40abb28b00b68f5ed, type: 3}
+  naturalObstacle:
+  - {fileID: 4655364192024398156, guid: 2b909474cb760db4389433031477e783, type: 3}
+  playerObstacle:
+  - {fileID: 8810554202345407054, guid: 39f32cae2ee8f2244962640ec4911a0c, type: 3}
+  tower:
+  - {fileID: 3017088644902685982, guid: e172418f738294370b2b671838fa2457, type: 3}
+  - {fileID: 907404691014505125, guid: c82a2e77d809e4762b745ce67579d876, type: 3}
+  - {fileID: 3469616916530925228, guid: 10404743fad70de4fa5fec6c319b77ee, type: 3}
+  - {fileID: 9062161091482600853, guid: bbcfb94c69dfcca45b46e69a8cf05d37, type: 3}
+  - {fileID: 5671031205014947035, guid: 8541342c104dccb409feae4e34321f6f, type: 3}
+  spawnPoint:
+  - {fileID: 3785082080632154548, guid: aa7e1257db1705f43a7738b15f857ebd, type: 3}
+  endPoint:
+  - {fileID: 8086722118444561063, guid: 5592f3c394e58784cba518bd603e227c, type: 3}
