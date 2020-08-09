@@ -418,13 +418,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063446491551873082}
+  - component: {fileID: 2140759167}
   m_Layer: 16
   m_Name: ArcheryTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2063446491551873082
 Transform:
   m_ObjectHideFlags: 0
@@ -444,6 +445,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2140759167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911520230964157438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4123438012750264106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f65c259a95899944b71b4694db293ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   Hited:
     m_PersistentCalls:
       m_Calls: []

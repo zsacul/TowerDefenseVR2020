@@ -119,7 +119,6 @@ MonoBehaviour:
         m_CallState: 2
   CrossbowTutorial: {fileID: 0}
   firstQuest: {fileID: 6547818089451838684}
-  BuildingUI: {fileID: 0}
 --- !u!1 &3006521833825544387
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +225,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 1301228819782378019}
-  infoForPlayer: "Dotknij wie\u017Cy nad swoj\u0105 lew\u0105 d\u0142oni\u0105, a
-    nast\u0119pnie ikon\u0119 wie\u017Cy."
+  infoForPlayer: "\u015Awietnie Ci posz\u0142o! Teraz nauczysz si\u0119 budowa\u0107.
+    Wci\u015Bnij "
   textHolder: {fileID: 0}
 --- !u!1 &5600923643980453685
 GameObject:
@@ -337,4 +336,4 @@ MonoBehaviour:
     ni\u0105. Wybierz d\u0142oni\u0105 dowolne ulepszenie, a nast\u0119pnie uderz
     w przycisk, aby potwierdzi\u0107 sw\xF3j wyb\xF3r."
   textHolder: {fileID: 0}
-  button: {fileID: 0}
+  ButtonStartWave: {fileID: 0}

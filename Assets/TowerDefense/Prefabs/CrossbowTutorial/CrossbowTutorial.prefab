@@ -407,18 +407,6 @@ MonoBehaviour:
   BuildTutorialManager: {fileID: 0}
   TeleportTutorial: {fileID: 0}
   firstStep: {fileID: 41301387}
---- !u!114 &2140759167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3911520231504734367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &550024033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,6 +415,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 1143962660114416101}
     m_Modifications:
     - target: {fileID: 472485290111597520, guid: 844095ec4eeff7b4691f30542eb8909b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508293240719834138, guid: 844095ec4eeff7b4691f30542eb8909b,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -486,50 +479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2693659027580179073, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3911520230964157438, guid: 844095ec4eeff7b4691f30542eb8909b,
         type: 3}
       propertyPath: m_Name
       value: ArcheryTarget
-      objectReference: {fileID: 0}
-    - target: {fileID: 3911520230964157438, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1901859452}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Hit
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986835221560703037, guid: 844095ec4eeff7b4691f30542eb8909b,
-        type: 3}
-      propertyPath: Hited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6940517242567818159, guid: 844095ec4eeff7b4691f30542eb8909b,
         type: 3}
