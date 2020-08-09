@@ -6,6 +6,8 @@ using System.Linq;
 public class NodeUIUpgrades : MonoBehaviour
 {
     public int cost;
+    public int index;
+    public Vector3 target;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class NodeUIUpgrades : MonoBehaviour
         int index = 0;
         for(int i=0; i<managers.Length;i++)
         {
-            float distance = Vector3.Distance(transform.position, managers[i].transform.position);
+            float distance = Vector3.Distance(target, managers[i].transform.position);
             if(minDistance > distance)
             {
                 index = i;
@@ -29,15 +31,30 @@ public class NodeUIUpgrades : MonoBehaviour
         Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
         return managers[index];
     }
+    private void Update()
+    {
+        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9))
+        {
+            UpgradeTower(index);
+        }
+    }
     public void CheckForManager()
     {
-        if(FindUpgradeManager() == null)
+        if(FindObjectOfType<UpgradeManager>() == null)
         {
-            gameObject.GetComponent<UINode>().Dispose();
+            gameObject.GetComponent<UINode>().active = false;
         }
     }
     public void UpgradeTower(int index)
     {
         FindUpgradeManager().UpgradeTower(index, cost);
+    }
+    public void UpdateRayNode()
+    {
+        UpgradeTargeting.SetNode(this);
+    }
+    public void ActivateRay(bool state)
+    {
+        UpgradeTargeting.SetActiveRay(state);
     }
 }

@@ -14,7 +14,10 @@ public class BuildHandler : GameEventListener
     [SerializeField]
     private GameObject cantBuildObstacle;
 
+    [SerializeField]
     public UnityEvent TowerBuilt;
+
+    [SerializeField]
     public UnityEvent ObstacleBuilt;
 
     private BuildManager buildManager;
@@ -89,7 +92,7 @@ public class BuildHandler : GameEventListener
         //If this chunk is still being pointed at and player presses C, we should build
         else
         {
-            if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.JoystickButton9))
+            if (Input.GetKeyDown(KeyCode.C) || (Input.GetKeyDown(KeyCode.JoystickButton9)))
             {
                 Build();
                 HoverOff();

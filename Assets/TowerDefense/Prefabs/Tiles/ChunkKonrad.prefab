@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 5935108937333300218}
   - component: {fileID: -4392588854937974633}
   - component: {fileID: 810207095642382040}
+  - component: {fileID: 8283099211847691791}
   m_Layer: 14
   m_Name: ChunkKonrad
   m_TagString: Chunk
@@ -120,3 +121,48 @@ MonoBehaviour:
     type: 3}
   cantBuildObstacle: {fileID: 5148760106822035723, guid: f6daac58c920ab644ba90bfb0dc1cb31,
     type: 3}
+  TowerBuilt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8283099211847691791}
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ObstacleBuilt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8283099211847691791}
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8283099211847691791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700410315599651911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc16118ba8e1664cbbe1d5d5390ca8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 6dfef53d66f891d41a47cd3c8c7f06c8, type: 3}
+  - {fileID: 8300000, guid: a7ea59d6471ddbe48847ce9b97fba2f2, type: 3}
+  locationOverride: {x: 0, y: 0, z: 0}
+  mixer: {fileID: 8179919065236199464, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
