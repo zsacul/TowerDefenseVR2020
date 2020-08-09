@@ -245,7 +245,9 @@ public class BuildManager : MonoBehaviour
     {
         if (BuildModeOn)
         {
-            StartedPointing.Invoke();
+            //StartedPointing.Invoke();
+            RightRaycast.Instance.TurnBuilding(true);
+            RightRaycast.Instance.TurnTeleport(false);
             towerSelected.Raise();
             selectedBuilding = ChunkType.tower;
             purchasePanelsActive = false;
@@ -257,7 +259,9 @@ public class BuildManager : MonoBehaviour
     {
         if (BuildModeOn)
         {
-            StartedPointing.Invoke();
+            //StartedPointing.Invoke();
+            RightRaycast.Instance.TurnBuilding(true);
+            RightRaycast.Instance.TurnTeleport(false);
             obstacleSelected.Raise();
             selectedBuilding = ChunkType.playerObstacle;
             purchasePanelsActive = false;
@@ -267,7 +271,9 @@ public class BuildManager : MonoBehaviour
 
     public void ChooseNone()
     {
-        StoppedPointing.Invoke();
+        //StoppedPointing.Invoke();
+        RightRaycast.Instance.TurnBuilding(false);
+        RightRaycast.Instance.TurnTeleport(true);
         selectedBuilding = ChunkType.none;
         purchasePanelsActive = false;
         UpdateUI();
