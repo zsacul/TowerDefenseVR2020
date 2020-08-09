@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5180608902783996643}
   - component: {fileID: 4446072708484678207}
   - component: {fileID: 2053672006266892086}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 7768294517142669454}
   - component: {fileID: 8528985862220179757}
   - component: {fileID: 2022877926383365365}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 568109216836428747}
   - component: {fileID: 9058539211654420431}
   - component: {fileID: 2544064892679163219}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,8 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063446491551873082}
-  - component: {fileID: 3986835221560703037}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ArcheryTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,23 +444,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &3986835221560703037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3911520230964157438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f65c259a95899944b71b4694db293ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 5593974976111809404}
-  Hited:
-    m_PersistentCalls:
-      m_Calls: []
-  NumOfHits: 0
 --- !u!1 &4123438012750264106
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +457,7 @@ GameObject:
   - component: {fileID: 4232170670431272370}
   - component: {fileID: 5944783451442148337}
   - component: {fileID: 472485290111597520}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,8 +766,11 @@ GameObject:
   - component: {fileID: 8596141218076350210}
   - component: {fileID: 2262252545404113458}
   - component: {fileID: 7741642093539831007}
-  - component: {fileID: 2693659027580179073}
-  m_Layer: 0
+  - component: {fileID: 1508293240719834138}
+  - component: {fileID: 784197478907327197}
+  - component: {fileID: 7255944737242672902}
+  - component: {fileID: 2966567219126386738}
+  m_Layer: 16
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2312,7 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &2693659027580179073
+--- !u!64 &1508293240719834138
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2335,12 +2320,61 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5593974976111809404}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!191 &784197478907327197
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593974976111809404}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 0
+  m_AgentTypeID: 0
+  m_Start: {fileID: 0}
+  m_End: {fileID: 0}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 0
+--- !u!54 &7255944737242672902
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593974976111809404}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2966567219126386738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593974976111809404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f65c259a95899944b71b4694db293ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Hited:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5915938187517047483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2386,7 @@ GameObject:
   - component: {fileID: 7797925982779917108}
   - component: {fileID: 2555789397085685973}
   - component: {fileID: 902956796624698283}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2508,7 +2542,7 @@ GameObject:
   - component: {fileID: 2398419083896316630}
   - component: {fileID: 2743727317938865949}
   - component: {fileID: 1498879929951906247}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2607,7 +2641,7 @@ GameObject:
   - component: {fileID: 6404141705119018668}
   - component: {fileID: 4129758947761996362}
   - component: {fileID: 2974512238175542228}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Canvas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

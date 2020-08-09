@@ -287,6 +287,8 @@ MonoBehaviour:
   taskFailed:
     m_PersistentCalls:
       m_Calls: []
+  numOfHitsTEXT: {fileID: 0}
+  requestNumberOfHitsTEXT: {fileID: 0}
   ArcheryTarget: {fileID: 3911520231504734367}
   RequiredNumOfHits: 2
 --- !u!1 &1143962659508348598
@@ -402,6 +404,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   ActiveTasks: []
+  BuildTutorialManager: {fileID: 0}
+  TeleportTutorial: {fileID: 0}
   firstStep: {fileID: 41301387}
 --- !u!114 &2140759167
 MonoBehaviour:

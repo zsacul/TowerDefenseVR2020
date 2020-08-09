@@ -36,8 +36,8 @@ TagManager:
   - NotWalkableForPlayer
   - IgnoreTeleportRaycast
   - IgnoreBuildRaycast
-  - 
-  - 
+  - buildings&Obstacles
+  - Arrow
   - 
   - 
   - Grababble

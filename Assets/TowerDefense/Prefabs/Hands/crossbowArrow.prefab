@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2238028695508513834}
   - component: {fileID: 6647547557020032206}
   - component: {fileID: 5799237301183073605}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: grot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6935458022951697084}
   - component: {fileID: 5217013600376368685}
   - component: {fileID: 9036355173295418769}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: crossbowArrow
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -20
   damage: 10
-  beginForce: 10
+  beginForce: 5
   type: 0
 --- !u!54 &9036355173295418769
 Rigidbody:
@@ -128,7 +128,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &6671894153312628801
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7727529612970942663}
   - component: {fileID: 3843459714397929116}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,6 +328,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 849331576206448174, guid: d1abf7993a18c71429ab02fe0ef394e3,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2998959442846904591, guid: d1abf7993a18c71429ab02fe0ef394e3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -337,6 +342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: newArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576605453861471699, guid: d1abf7993a18c71429ab02fe0ef394e3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3537150941248665053, guid: d1abf7993a18c71429ab02fe0ef394e3, type: 3}
