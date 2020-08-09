@@ -5056,11 +5056,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -5473667243102400834}
+        m_MethodName: Emit
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSpawned:
     m_PersistentCalls:
       m_Calls: []
+  menuHead: {fileID: 0}
   parentNode: {fileID: 0}
   childNodes: []
+  selected: 0
 --- !u!114 &5866898135537692866
 MonoBehaviour:
   m_ObjectHideFlags: 0

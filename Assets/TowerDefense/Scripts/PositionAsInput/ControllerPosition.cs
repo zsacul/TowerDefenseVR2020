@@ -68,7 +68,7 @@ public class ControllerPosition : MonoBehaviour
         Vector2Int pos = PosInput(x, y);
         if(pos.x != lastPos.x || pos.y != lastPos.y)
         {
-            inputChanged.Invoke(pos);
+            //inputChanged.Invoke(pos);
             lastPos = pos;
         }
     }

@@ -43,6 +43,11 @@ public class UpgradeManager : MonoBehaviour
         anyUpgradeSelected = false;
 
         thisChunk = transform.parent.gameObject;
+        if(thisChunk.GetComponent<Chunk>() == null)
+        {
+            Destroy(this);
+            return;
+        }
         upgradePanelsActive = false;
 
         fireCanvas = Instantiate(fireCanvasPrefab);
@@ -110,6 +115,21 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void UpgradeTower(int elementIndex, int upgradeCost)
+    {
+        if (buildManager.GetMoney() >= upgradeCost)
+        {
+            Debug.Log("UpgradeSuccess");
+            UpgradeSuccess.Raise();
+            buildManager.DecreaseMoney(upgradeCost);
+            thisChunk.GetComponent<Chunk>().UpgradeTower(elementIndex);
+            SetUpgradeCosts();
+        }
+        else
+        {
+            //UpgradeFailure.Raise();
+        }
+    }
+    public void UpgradeTower(TowerType elementIndex, int upgradeCost)
     {
         if (buildManager.GetMoney() >= upgradeCost)
         {
