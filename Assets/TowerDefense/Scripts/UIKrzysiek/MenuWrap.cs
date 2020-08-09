@@ -20,6 +20,6 @@ public class MenuWrap : ScriptableObject
     }
     public void TeleportState(bool state)
     {
-        //RaidRaycast.Instance.TurnTeleport(state);
+        RightRaycast.Instance.TurnTeleport(state);
     }
 }
