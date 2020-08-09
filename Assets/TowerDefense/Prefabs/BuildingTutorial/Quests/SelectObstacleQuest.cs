@@ -4,4 +4,9 @@ using UnityEngine;
 
 public class SelectObstacleQuest : BuildTutorialQuest
 {
+    public override void EnterQuest()
+    {
+        base.EnterQuest();
+        BuildTutorialManager.Instance.currentState = BuildingTutorialState.selectObstacle;
+    }
 }
