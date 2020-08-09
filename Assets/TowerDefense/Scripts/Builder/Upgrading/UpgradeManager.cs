@@ -6,6 +6,8 @@ using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public bool UseCanvasUI;
+
     [SerializeField]
     private Canvas fireCanvasPrefab;
     [SerializeField]
@@ -82,7 +84,7 @@ public class UpgradeManager : MonoBehaviour
 
     void Update()
     {
-        if (buildManager.BuildModeOn && GoodPosition())
+        if (buildManager.BuildModeOn && GoodPosition() && UseCanvasUI)
         {
             if (!canvasEnabled && !upgradePanelsActive)
             {
