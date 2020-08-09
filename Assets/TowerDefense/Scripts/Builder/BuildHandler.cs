@@ -14,7 +14,10 @@ public class BuildHandler : GameEventListener
     [SerializeField]
     private GameObject cantBuildObstacle;
 
+    [SerializeField]
     public UnityEvent TowerBuilt;
+
+    [SerializeField]
     public UnityEvent ObstacleBuilt;
 
     private BuildManager buildManager;

@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 7215419438510805507}
   - component: {fileID: -7471863690458146838}
   - component: {fileID: 3249019453595534503}
+  - component: {fileID: 917746041784203473}
   m_Layer: 11
   m_Name: Boximon Fiery
   m_TagString: Enemy
@@ -474,6 +475,17 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 917746041784203473}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   enemyHP: 120
   moneyDropped: 25
   elementsInfo: {fileID: 0}
@@ -595,6 +607,25 @@ CapsuleCollider:
   m_Height: 1.2542181
   m_Direction: 1
   m_Center: {x: 0, y: 0.60621166, z: -0.014666438}
+--- !u!114 &917746041784203473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311928148011479111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5021980d989d14991fdf7ed565b7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: a015c6870b21c184e98820ac6a5c2a2b, type: 3}
+  - {fileID: 8300000, guid: d8ab68c968133874dbdd34c20609213a, type: 3}
+  - {fileID: 8300000, guid: 96deaa6d336f38243808ef84d4b5a505, type: 3}
+  - {fileID: 8300000, guid: 205488ff96dd6544aa0362360e42cafd, type: 3}
+  locationOverride: {x: 0, y: 0, z: 0}
+  mixer: {fileID: -8437005277784953515, guid: 97a48b9033878774798d6d7485eb51f9, type: 2}
 --- !u!1 &1311945874327141185
 GameObject:
   m_ObjectHideFlags: 0
