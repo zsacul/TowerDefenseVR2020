@@ -1,13 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum BuildingTutorialState
+{
+    notStarted,
+    selectTower,
+    buildTower,
+    upgradeTower,
+    selectObstacle,
+    buildObstacle
+}
+
 public class BuildTutorialManager : MonoBehaviour, IQuest
 {
+    [NonSerialized]
+    public BuildingTutorialState currentState;
     public UnityEvent TutorialFinished;
-
     bool state;
     bool started;
     [SerializeField]
@@ -33,6 +45,7 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
     {
         instance = this;
         started = false;
+        currentState = BuildingTutorialState.notStarted;
     }
 
     public BuildTutorialQuest CurrentQuest()

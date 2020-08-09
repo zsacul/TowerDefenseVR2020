@@ -16,6 +16,10 @@ public class BuildManager : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
     [SerializeField]
+    private GameEvent towerBuilt;
+    [SerializeField]
+    private GameEvent obstacleBuilt;
+    [SerializeField]
     private GameEvent BuildingSuccess;
     [SerializeField]
     private GameEvent BuildingFailure;
@@ -135,8 +139,7 @@ public class BuildManager : MonoBehaviour
 
     void Update()
     {
-        if (BuildModeOn
-            )
+        if (BuildModeOn)
         {
             //UpdateButtonState(false);
 
@@ -336,6 +339,14 @@ public class BuildManager : MonoBehaviour
     public void Success()
     {
         BuildingSuccess.Raise();
+        if(selectedBuilding == ChunkType.tower)
+        {
+            towerBuilt.Raise();
+        }
+        else if(selectedBuilding == ChunkType.playerObstacle)
+        {
+            obstacleBuilt.Raise();
+        }
     }
 
     public void Failure()
