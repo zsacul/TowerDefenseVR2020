@@ -9,20 +9,12 @@ public class TargetHit : MonoBehaviour
     [SerializeField]
     GameObject target;
     public UnityEvent Hited;
-
-    bool hited;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        hited = false;
-    }
+    public int NumOfHits;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Arrow")
+        if(collision.gameObject.tag == "Bullet")
         {
-            hited = true;
             collision.gameObject.transform.parent = this.gameObject.transform;
             Hited.Invoke();
         }

@@ -14,8 +14,6 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
     CrossbowMainNode CrossbowTutorial;
     [SerializeField]
     BuildTutorialQuest firstQuest;
-    [SerializeField]
-    GameObject BuildingUI;
     BuildTutorialQuest currentQuest;
 
     private static BuildTutorialManager instance;
@@ -53,7 +51,6 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
         else
         {
             Destroy(CrossbowTutorial.gameObject);
-            BuildingUI.SetActive(true);
             SetCurrentQuest(firstQuest);
             started = true;
         }
