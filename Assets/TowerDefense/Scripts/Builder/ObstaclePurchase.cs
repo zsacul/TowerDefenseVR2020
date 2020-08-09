@@ -13,7 +13,15 @@ public class ObstaclePurchase : MonoBehaviour
     {
         if (other.gameObject.tag == "HandCollider")
         {
-            buildManager.ChooseObstacle();
+            if(buildManager.Selected() == ChunkType.playerObstacle)
+            {
+                Debug.Log("Obstacle chooseNone()");
+                buildManager.ChooseNone();
+            }
+            else 
+            {
+                buildManager.ChooseObstacle();
+            }
         }
     }
 }

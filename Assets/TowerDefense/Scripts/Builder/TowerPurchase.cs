@@ -13,7 +13,14 @@ public class TowerPurchase : MonoBehaviour
     {
         if (other.gameObject.tag == "HandCollider")
         {
-            buildManager.ChooseTower();
+            if (buildManager.Selected() == ChunkType.tower)
+            {
+                buildManager.ChooseNone();
+            }
+            else
+            {
+                buildManager.ChooseTower();
+            }
         }
     }
 }
