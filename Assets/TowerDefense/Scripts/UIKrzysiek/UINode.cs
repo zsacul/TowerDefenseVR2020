@@ -39,8 +39,8 @@ public class UINode : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (!active) return;
         onTouch.Invoke();
+        if (!active) return;
         if(selected)
         {
             
@@ -96,6 +96,10 @@ public class UINode : MonoBehaviour
     }
     public void Dispose()
     {
+        if(selected)
+        {
+            onDeselect.Invoke();
+        }
         onDispose.Invoke();
         foreach(UINode n in childrenUI)
         {

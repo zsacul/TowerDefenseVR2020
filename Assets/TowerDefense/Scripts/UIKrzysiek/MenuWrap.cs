@@ -22,4 +22,8 @@ public class MenuWrap : ScriptableObject
     {
         RightRaycast.Instance.TurnTeleport(state);
     }
+    public void TargetingRayState(bool state)
+    {
+        UpgradeTargeting.SetActiveRay(state);
+    }
 }
