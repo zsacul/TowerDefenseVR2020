@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8419863704499392511}
   - component: {fileID: 6553264690017067647}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TeleportPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070293478853360454}
   - component: {fileID: 1229004877121735792}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: gun
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 2361998856054581298}
   - component: {fileID: 1620562939628697456}
   - component: {fileID: 8757217398167796794}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FireTower
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ MonoBehaviour:
   updateAddGun:
     m_PersistentCalls:
       m_Calls: []
-  FireBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
+  FireBullet: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
     type: 3}
 --- !u!136 &1620562939628697456
 CapsuleCollider:
@@ -413,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879662412341496013, guid: 1dafceffe557cf443bbcafad9c6c9308,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8494724326751615710, guid: 1dafceffe557cf443bbcafad9c6c9308,
         type: 3}
@@ -549,6 +554,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 2354150679068529972, guid: eeb35207e7459014d8f17fdd70f4aa29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb35207e7459014d8f17fdd70f4aa29, type: 3}
 --- !u!1 &4304780548951396618 stripped
@@ -635,6 +645,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 2429178069397808720, guid: c2c1687c17784d84fa73498e45e195cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4146401945326850700, guid: c2c1687c17784d84fa73498e45e195cb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -665,6 +680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerPlatform2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950728499951868141, guid: bf64e4ddc94636f4581a6e4f5bbd1e79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7263855202518330110, guid: bf64e4ddc94636f4581a6e4f5bbd1e79,
         type: 3}
@@ -822,6 +842,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7875885855398594429, guid: 793ddad37eaba6841b0c8d430e6b16f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 793ddad37eaba6841b0c8d430e6b16f3, type: 3}
 --- !u!4 &189421393803189228 stripped
@@ -856,6 +881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244122349623333977, guid: a1962bc15d115c2408c3881fecd9b735,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2990355775492630090, guid: a1962bc15d115c2408c3881fecd9b735,
         type: 3}
