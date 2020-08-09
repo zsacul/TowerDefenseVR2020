@@ -28,10 +28,8 @@ public class RightRaycast : MonoBehaviour
 
     public void TurnTeleport(bool newState)
     {
-        Debug.Log("TurnTeleport");
         if (newState && !teleportState)
         {
-            Debug.Log("TurnOnTeleport");
             TeleportOn.Invoke();
             teleportState = true;
         }
