@@ -9,9 +9,12 @@ public class TutTeleport : TeleportSubNode
     GameObject Target;
     [SerializeField]
     ParabolicLineCast Pointer;
+    [SerializeField]
+    GameObject Crossbow;
 
     private void Start()
     {
+        doneInPast = false;
         state = false;
         gameObject.SetActive(false);
     }
@@ -37,6 +40,7 @@ public class TutTeleport : TeleportSubNode
         if (TeleportMainNode.Instance.teleDone)
         {
             TeleportMainNode.Instance.ClearTasks();
+            Crossbow.SetActive(true);
             Target.SetActive(false);
         }
     }

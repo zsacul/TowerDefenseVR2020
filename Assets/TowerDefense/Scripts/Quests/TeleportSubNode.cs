@@ -14,12 +14,14 @@ public class TeleportSubNode : MonoBehaviour
     [SerializeField]
     protected Canvas canvasToDisplayText;
     protected bool state;
+    protected bool doneInPast;
     [SerializeField]
     protected TeleportSubNode NextStep;
     [SerializeField]
     protected TeleportSubNode PrevStep;
     public UnityEvent taskFinished;
     public UnityEvent taskFailed;
+    public UnityEvent taskFinishedFirstTime;
 
     virtual public void EnterStep()
     {
@@ -41,6 +43,11 @@ public class TeleportSubNode : MonoBehaviour
         {
             TeleportMainNode.Instance.SetCurrentTutorial(NextStep);
             taskFinished.Invoke();
+            if (!doneInPast)
+            {
+                doneInPast = true;
+                taskFinishedFirstTime.Invoke();
+            }
         }
     }
 

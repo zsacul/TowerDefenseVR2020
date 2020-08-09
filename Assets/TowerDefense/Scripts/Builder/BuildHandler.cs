@@ -92,7 +92,7 @@ public class BuildHandler : GameEventListener
         //If this chunk is still being pointed at and player presses C, we should build
         else
         {
-            if (Input.GetKeyDown(KeyCode.C) || (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f))
+            if (Input.GetKeyDown(KeyCode.C) || (Input.GetKeyDown(KeyCode.JoystickButton9)))
             {
                 Build();
                 HoverOff();

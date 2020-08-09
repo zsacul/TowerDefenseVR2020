@@ -355,7 +355,10 @@ GameObject:
   - component: {fileID: 2372187113377979879}
   - component: {fileID: -2872473772003423220}
   - component: {fileID: -8281224927600485791}
-  - component: {fileID: 1495317356314202371}
+  - component: {fileID: -6881614163989838928}
+  - component: {fileID: 6335527739123520671}
+  - component: {fileID: 65130997917461506}
+  - component: {fileID: 4764245791039297365}
   m_Layer: 14
   m_Name: CrossbowDroppable
   m_TagString: Grababble
@@ -408,7 +411,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1495317356314202371
+--- !u!114 &-6881614163989838928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635064245034004468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3605bfa8ee77ea849930c1d9ac985bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6335527739123520671
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,8 +434,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.703221, z: 13.683666}
-  m_Center: {x: 0, y: -1.8516097, z: -0.7452172}
+  m_Size: {x: 1, y: 1, z: 14.111393}
+  m_Center: {x: 0, y: 0, z: -0.7464126}
+--- !u!65 &65130997917461506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635064245034004468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.6137547, z: 3.9264393}
+  m_Center: {x: 0, y: -0.7427877, z: 4.29147}
+--- !u!65 &4764245791039297365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635064245034004468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.663843, y: 1, z: 3.918314}
+  m_Center: {x: -0.09324819, y: 0, z: -5.491566}
 --- !u!1 &1790126065953465739
 GameObject:
   m_ObjectHideFlags: 0

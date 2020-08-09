@@ -11,6 +11,7 @@ public class TutPointing : TeleportSubNode
     // Start is called before the first frame update
     void Start()
     {
+        doneInPast = false;
         state = false;
         gameObject.SetActive(false);
     }

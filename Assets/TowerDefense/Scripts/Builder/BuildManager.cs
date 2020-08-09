@@ -330,7 +330,6 @@ public class BuildManager : MonoBehaviour
     public void Success()
     {
         BuildingSuccess.Raise();
-        ChooseNone();
     }
 
     public void Failure()
@@ -348,5 +347,17 @@ public class BuildManager : MonoBehaviour
     public ChunkType Selected()
     {
         return selectedBuilding;
+    }
+    public static void BuildTower()
+    {
+        instance.ChooseTower();
+    }
+    public static void BuildObstacle()
+    {
+        instance.ChooseObstacle();
+    }
+    public static void ClearBuildMode()
+    {
+        instance.ChooseNone();
     }
 }

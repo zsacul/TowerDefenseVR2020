@@ -41,4 +41,9 @@ public class CrossbowTakeCrossbow : CrossbowSubNode
             SetNextStep();
         }
     }
+
+    private void Update()
+    {
+        Debug.Log("lala");
+    }
 }
