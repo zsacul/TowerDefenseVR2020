@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class BulletNoTarget : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class BulletNoTarget : MonoBehaviour
     ElementType type;
     bool readyToDestroy;
     Rigidbody arrowRB;
+    public UnityEvent EnemyHit;
 
     private void Awake()
     {
@@ -46,6 +49,7 @@ public class BulletNoTarget : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.BroadcastMessage("ApplyDamage", damage);
+            EnemyHit.Invoke();
         }
         else if (collision.gameObject.tag != "Bullet")
             readyToDestroy = true;
