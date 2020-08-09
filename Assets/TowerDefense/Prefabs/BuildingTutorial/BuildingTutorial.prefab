@@ -50,7 +50,7 @@ MonoBehaviour:
   QuestFinishedFirstTime:
     m_PersistentCalls:
       m_Calls: []
-  nextQuest: {fileID: 4196717894766157845}
+  nextQuest: {fileID: 4607602614648122427}
   infoForPlayer: "Teraz mo\u017Cesz j\u0105 wybudowa\u0107. Wyceluj br\u0105zowym
     wska\u017Anikiem na dost\u0119pne pole na mapie i naci\u015Bnij trigger."
   textHolder: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   CrossbowTutorial: {fileID: 0}
-  firstQuest: {fileID: 6547818089451838684}
+  firstQuest: {fileID: 4196717894766157845}
 --- !u!1 &3006521833825544387
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   QuestFinishedFirstTime:
     m_PersistentCalls:
       m_Calls: []
-  nextQuest: {fileID: 4607602614648122427}
+  nextQuest: {fileID: 6547818089451838684}
   infoForPlayer: "Wybuduj przeszkod\u0119 na fragmencie \u015Bcie\u017Cki."
   textHolder: {fileID: 0}
 --- !u!1 &8001073004606879489
