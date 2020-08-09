@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System;
 
 public class TeleportMainNode : MonoBehaviour, IQuest
 {
@@ -12,6 +13,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
     [SerializeField]
     CrossbowMainNode CrossbowMainNode;
     bool state;
+    [NonSerialized]
     public bool teleDone;
     TeleportSubNode currentTutorial;
     [SerializeField]
@@ -45,6 +47,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
 
     public void SetTutorialDone()
     {
+        CrossbowMainNode.gameObject.SetActive(true);
         state = true;
         ClearTasks();
         TasksFinished.Invoke();

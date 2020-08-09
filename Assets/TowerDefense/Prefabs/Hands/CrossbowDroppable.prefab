@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: -2872473772003423220}
   - component: {fileID: -8281224927600485791}
   - component: {fileID: 1495317356314202371}
+  - component: {fileID: -6881614163989838928}
   m_Layer: 14
   m_Name: CrossbowDroppable
   m_TagString: Grababble
@@ -421,6 +422,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 4.703221, z: 13.683666}
   m_Center: {x: 0, y: -1.8516097, z: -0.7452172}
+--- !u!114 &-6881614163989838928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635064245034004468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3605bfa8ee77ea849930c1d9ac985bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790126065953465739
 GameObject:
   m_ObjectHideFlags: 0

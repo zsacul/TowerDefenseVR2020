@@ -7,12 +7,15 @@ using UnityEngine.Events;
 public class BuildTutorialManager : MonoBehaviour, IQuest
 {
     public UnityEvent TutorialFinished;
-    public GameObject InstructionsPanel;
 
     bool state;
     bool started;
     [SerializeField]
+    CrossbowMainNode CrossbowTutorial;
+    [SerializeField]
     BuildTutorialQuest firstQuest;
+    [SerializeField]
+    GameObject BuildingUI;
     BuildTutorialQuest currentQuest;
 
     private static BuildTutorialManager instance;
@@ -46,14 +49,13 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
             TurnOffCurrentQuest();
             started = false;
             state = false;
-            InstructionsPanel.SetActive(true);
         }
         else
         {
+            Destroy(CrossbowTutorial.gameObject);
+            BuildingUI.SetActive(true);
             SetCurrentQuest(firstQuest);
             started = true;
-            InstructionsPanel.SetActive(false);
-            
         }
     }
 
@@ -77,8 +79,7 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
         state = true;
         started = false;
         //Debug.Log("Tutorial ended");
-        InstructionsPanel.SetActive(true);
-
+        Invoke("DestroyMe", 0.5f);
     }
 
     private void TurnOffCurrentQuest()
@@ -87,7 +88,6 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
         {
             currentQuest.gameObject.SetActive(false);
             currentQuest.gameObject.GetComponent<BuildTutorialQuest>().enabled = false;
-            currentQuest.gameObject.GetComponent<BuildTutorialQuest>().InstructionsPanel.SetActive(false);
             currentQuest = null;
         }
     }
@@ -100,5 +100,10 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
     public bool GetState()
     {
         return state;
+    }
+
+    void DestoryMe()
+    {
+        Destroy(this.gameObject);
     }
 }

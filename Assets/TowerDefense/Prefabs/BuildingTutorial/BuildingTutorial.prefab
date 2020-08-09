@@ -1,0 +1,340 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2028742893788405828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6371647974337372143}
+  - component: {fileID: 1301228819782378019}
+  m_Layer: 0
+  m_Name: BuildTowerQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6371647974337372143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028742893788405828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607836800918200612}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301228819782378019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028742893788405828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cfa36502e177345ba18dcf8fc7dea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
+  QuestFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestFinishedFirstTime:
+    m_PersistentCalls:
+      m_Calls: []
+  nextQuest: {fileID: 4196717894766157845}
+  infoForPlayer: "Teraz mo\u017Cesz j\u0105 wybudowa\u0107. Wyceluj br\u0105zowym
+    wska\u017Anikiem na dost\u0119pne pole na mapie i naci\u015Bnij trigger."
+  textHolder: {fileID: 0}
+--- !u!1 &2805872198241541645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607836800918200612}
+  - component: {fileID: 1130607938008037169}
+  m_Layer: 0
+  m_Name: BuildingTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &607836800918200612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805872198241541645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4061027429692805754}
+  - {fileID: 6371647974337372143}
+  - {fileID: 7856460321172708129}
+  - {fileID: 8137011107339123884}
+  - {fileID: 2905070746124339856}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1130607938008037169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805872198241541645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c257a0be84ec8984896f8b9731bb8da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7192888815029301442, guid: f53ed8432eadf483fa5b2d77a6fe7704,
+          type: 3}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  CrossbowTutorial: {fileID: 0}
+  firstQuest: {fileID: 6547818089451838684}
+  BuildingUI: {fileID: 0}
+--- !u!1 &3006521833825544387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7856460321172708129}
+  - component: {fileID: 4196717894766157845}
+  m_Layer: 0
+  m_Name: SelectObstacleQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7856460321172708129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006521833825544387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607836800918200612}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4196717894766157845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006521833825544387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6379d9eb277d04f8584ba24f73eab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: 757b31e66d12797489a1b6d0bd9ffc1c, type: 2}
+  QuestFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestFinishedFirstTime:
+    m_PersistentCalls:
+      m_Calls: []
+  nextQuest: {fileID: 2757680171432295122}
+  infoForPlayer: "Teraz czas na przeszkod\u0119. Najed\u017A na krzy\u017Cyk, \u017Ceby
+    anulowa\u0107 obecn\u0105 budow\u0119, a nast\u0119pnie ponownie najed\u017A
+    na wie\u017C\u0119 nad lew\u0105 d\u0142oni\u0105 i wybierz ikon\u0119 przeszkody."
+  textHolder: {fileID: 0}
+--- !u!1 &3207616316223987119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4061027429692805754}
+  - component: {fileID: 6547818089451838684}
+  m_Layer: 0
+  m_Name: SelectTowerQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4061027429692805754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207616316223987119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607836800918200612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6547818089451838684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207616316223987119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532705eaa059dcd4eb9b88de17bee6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: a7e01eae055c4414193863b0c8979334, type: 2}
+  QuestFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestFinishedFirstTime:
+    m_PersistentCalls:
+      m_Calls: []
+  nextQuest: {fileID: 1301228819782378019}
+  infoForPlayer: "Dotknij wie\u017Cy nad swoj\u0105 lew\u0105 d\u0142oni\u0105, a
+    nast\u0119pnie ikon\u0119 wie\u017Cy."
+  textHolder: {fileID: 0}
+--- !u!1 &5600923643980453685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8137011107339123884}
+  - component: {fileID: 2757680171432295122}
+  m_Layer: 0
+  m_Name: BuildObstacleQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8137011107339123884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600923643980453685}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7700005, y: 2.1769998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607836800918200612}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2757680171432295122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600923643980453685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab8dec20cea0414f865e5b42fc28c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: f6655c6e5bf92004d9c928b60c5c5f4e, type: 2}
+  QuestFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestFinishedFirstTime:
+    m_PersistentCalls:
+      m_Calls: []
+  nextQuest: {fileID: 4607602614648122427}
+  infoForPlayer: "Wybuduj przeszkod\u0119 na fragmencie \u015Bcie\u017Cki."
+  textHolder: {fileID: 0}
+--- !u!1 &8001073004606879489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2905070746124339856}
+  - component: {fileID: 4607602614648122427}
+  m_Layer: 0
+  m_Name: UpgradeTowerQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2905070746124339856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001073004606879489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607836800918200612}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4607602614648122427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001073004606879489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c43c3153fc212041ba70c796d1dd2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: de276a4972e11d94d80ff5b09d57a68d, type: 2}
+  QuestFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestFinishedFirstTime:
+    m_PersistentCalls:
+      m_Calls: []
+  nextQuest: {fileID: 0}
+  infoForPlayer: "Teraz czas na ulepszanie wie\u017Cy. Przeteleportuj si\u0119 na
+    ni\u0105. Wybierz d\u0142oni\u0105 dowolne ulepszenie, a nast\u0119pnie uderz
+    w przycisk, aby potwierdzi\u0107 sw\xF3j wyb\xF3r."
+  textHolder: {fileID: 0}
+  button: {fileID: 0}

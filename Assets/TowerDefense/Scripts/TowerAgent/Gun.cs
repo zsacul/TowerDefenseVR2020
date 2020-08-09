@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
             return;
 
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
-        instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
+//        instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;
         instBullet.GetComponent<Bullet>().setBulletInfo(target, speed, damage, type,specialEffectDuration, specialEffectDmg, se);
     }
 }

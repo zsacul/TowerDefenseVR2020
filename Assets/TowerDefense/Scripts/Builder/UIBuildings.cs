@@ -12,6 +12,7 @@ public class UIBuildings : GameEventListener
 
     private GameObject towerInstance;
     private GameObject cancelInstance;
+    [SerializeField]
     private BuildManager buildManager;
 
 

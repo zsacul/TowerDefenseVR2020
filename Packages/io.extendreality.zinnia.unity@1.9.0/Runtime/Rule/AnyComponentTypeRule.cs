@@ -31,7 +31,7 @@
 
             foreach (SerializableType serializedType in ComponentTypes.NonSubscribableElements)
             {
-                if (serializedType.ActualType.ToString() == "UnwalkableChunk");
+                if (serializedType.ActualType.ToString() == "UnwalkableChunk")
                     if (targetGameObject.GetComponentInChildren(serializedType) != null)
                     {
                         return true;
