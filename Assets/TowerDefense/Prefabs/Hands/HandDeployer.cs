@@ -113,6 +113,12 @@ public class HandDeployer : MonoBehaviour
                             )) {
                                 if (mindist >= grabbable_distance)
                                 {
+                                if (LocatedNearby[i].gameObject.name == "DummyGrababble")
+                                {
+                                    Debug.Log("Cieciwa w łape");
+                                    if (grabbable_distance > 0.1f)
+                                        break;
+                                }
                                     mindist = grabbable_distance;
                                     chosen = LocatedNearby[i].gameObject;
                                 }

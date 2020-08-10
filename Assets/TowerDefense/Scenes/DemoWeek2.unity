@@ -20096,10 +20096,10 @@ PrefabInstance:
     - target: {fileID: 1756117209638421028, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: TextToDisplay
-      value: "A nie m\xF3wi\u0142em? \u015Awietnie Ci posz\u0142o! Teraz wr\xF3\u0107
-        na zamek. Tak dla przypomnienia - dotknij panelu, wyceluj w dowoln\u0105
-        cz\u0119\u015B\u0107 zamku i wci\u015Bnij panel. Wszystkie budynki same b\u0119d\u0105
-        wiedzia\u0142y gdzie Ci\u0119 umie\u015Bci\u0107."
+      value: "I told you so? Great work! Now let\u2019s get back to the castle. Friendly
+        reminder - touch the touchpad, point at any part of the castle and then press
+        the touchpad. All buildings are enchanted and will automatically place you
+        at the right spot."
       objectReference: {fileID: 0}
     - target: {fileID: 3792947237479270348, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -20134,8 +20134,8 @@ PrefabInstance:
     - target: {fileID: 4377077090058531377, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: TextToDisplay
-      value: "Tak jest! Teraz wyceluj r\xF3\u017Cd\u017Ck\u0105 w wyczarowany przeze
-        mnie punkt przed zamkiem..."
+      value: "That\u2019s it! Now point the marker into that glowing sphere in front
+        of the castle."
       objectReference: {fileID: 0}
     - target: {fileID: 4377077090360597657, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -20155,8 +20155,8 @@ PrefabInstance:
     - target: {fileID: 4377077090360597657, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: TextToDisplay
-      value: "... i wci\u015Bnij panel na r\xF3\u017Cd\u017Cce! Obiecuj\u0119, \u017Ce
-        nie b\u0119dzie bola\u0142o."
+      value: "\u2026and press the touchpad on your controller! I promise it won\u2019t
+        hurt."
       objectReference: {fileID: 0}
     - target: {fileID: 4377077090360597657, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -20176,11 +20176,10 @@ PrefabInstance:
     - target: {fileID: 5570160983901840241, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: TextToDisplay
-      value: "Doskonale, nie ma na co czeka\u0107. Pierwsz\u0105 rzecz\u0105, bez
-        kt\xF3rej ani rusz, jest poruszanie si\u0119. Opr\xF3cz w\u0142asnych n\xF3g
-        masz do dyspozycji jedno z najlepszych odkry\u0107 magii - teleportacj\u0119.
-        Dotknij prosz\u0119 (nie przyciskaj!) panelu dotykoweg w Twojej r\xF3\u017Cd\u017Cce
-        (czy jak wolisz kontrolerze)."
+      value: "Excellent, no time to waste! First thing you\u2019ve got to learn is
+        how to move around. In addition to your own legs, you have one of the greatest
+        discoveries of magic at your disposal - teleportation. Please touch (do not
+        press!) the touchpad on your controller."
       objectReference: {fileID: 0}
     - target: {fileID: 6119510084811631282, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -33046,7 +33045,7 @@ MonoBehaviour:
   mapString: {fileID: 11400000, guid: bd37b0c6c05c7274db03d60cbeb81bda, type: 2}
   surface: {fileID: 2089414113}
   chunkPrefab:
-  - {fileID: 5700410315599651911, guid: 70e0849490cc7be499ebbf821a5f0bff, type: 3}
+  - {fileID: 5184269527576567688, guid: afbb3fb097e4a42d69b696265bf11bec, type: 3}
   spawner: {fileID: 752578749}
 --- !u!114 &1738301550
 MonoBehaviour:
