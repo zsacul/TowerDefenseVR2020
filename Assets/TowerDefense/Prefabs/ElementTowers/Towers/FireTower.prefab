@@ -252,7 +252,7 @@ MonoBehaviour:
   updateAddGun:
     m_PersistentCalls:
       m_Calls: []
-  FireBullet: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+  FireBullet: {fileID: 8395557603959344575, guid: 791f8ce3059755141aadc8514fd3d2ce,
     type: 3}
 --- !u!114 &7715673939924633214
 MonoBehaviour:
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e8ba43faeb12745ae420efb79d22a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7, type: 3}
+  bullet: {fileID: 8395557603959344575, guid: 791f8ce3059755141aadc8514fd3d2ce, type: 3}
 --- !u!114 &1023928929901556483
 MonoBehaviour:
   m_ObjectHideFlags: 0

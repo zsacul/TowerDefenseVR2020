@@ -72,7 +72,7 @@ public class ElectricTower : BaseTower
         {
             if (target.GetComponent<NavMeshAgent>() == null)
                 continue;
-            target.GetComponent<NavMeshAgent>().destination = target.transform.position;
+            target.GetComponent<NavMeshAgent>().isStopped = true;
             createLightning(startPoint, target);
             startPoint = target.GetComponent<EnemyHPManager>().GetTargetPoint();
             numberOfHits++;
@@ -87,7 +87,7 @@ public class ElectricTower : BaseTower
    void deleteHitedEnemyList(){
         int i = 1;
         foreach( GameObject e in hitedEnemiesList){
-            e.GetComponent<NavMeshAgent>().destination = EnemiesTarget.transform.position;
+            e.GetComponent<NavMeshAgent>().isStopped = false;
             e.GetComponent<EnemyHPManager>().ApplyDamage(new Bullet(e, 1, damage / i, ElementType.electricity));
             i++;
         }
