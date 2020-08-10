@@ -24,6 +24,8 @@ public class HandDeployer : MonoBehaviour
     public bool retarded_controlls = true;
     [SerializeField]
     public List<GOArray> PropList;
+    [SerializeField]
+    GameObject grabPoint;
     private GameObject CurrentlyDeployed;
     // Start is called before the first frame update
     public string HandDeployerName;
@@ -89,7 +91,7 @@ public class HandDeployer : MonoBehaviour
     {
         if (listIterator == 0) // hand is empty and we are grabbing shit.
         {
-            Collider[] LocatedNearby = Physics.OverlapSphere(transform.position, 1.0f);
+            Collider[] LocatedNearby = Physics.OverlapSphere(grabPoint.transform.position, 1.0f);
             int i = 0;
             GameObject chosen = new GameObject();
             float mindist = 100.0f;
@@ -101,7 +103,7 @@ public class HandDeployer : MonoBehaviour
                     if ((PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Ldep && !isRight) ||
                        (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Rdep && isRight))
                     {
-                        float grabbable_distance = Vector3.Distance(LocatedNearby[i].transform.position, transform.position);
+                        float grabbable_distance = Vector3.Distance(LocatedNearby[i].transform.position, grabPoint.transform.position);
                         if ((
                             triggered == true &&
                             PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].IntentionalGrab &&
