@@ -51,8 +51,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 4607602614648122427}
-  infoForPlayer: Place a tower anywhere you want. Point with your right hind and
-    press touchpad to confirm.
+  infoForPlayer: Towers can also be placed on a path. However, you can't build two
+    towers next to each other. Now, place it anywhere you want. Point with your right
+    hand and press touchpad to confirm.
   textHolder: {fileID: 0}
 --- !u!1 &2805872198241541645
 GameObject:
