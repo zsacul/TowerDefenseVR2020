@@ -80,6 +80,7 @@ public class GStringManager : PropManager
             CrossBow.GetComponent<CrossbowManager>().control = true;
             TargetBall.SetActive(false);
             HandManger.GetComponent<HandDeployer>().DeployNth(0); // call that we have loaded the crossbow
+            HandManger.GetComponent<HandDeployer>().stateFlipFlop = 0;
         }
     }
 }
