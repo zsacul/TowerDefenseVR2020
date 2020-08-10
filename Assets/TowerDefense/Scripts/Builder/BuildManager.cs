@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
+
+
 public class BuildManager : MonoBehaviour
 {
     [SerializeField]
@@ -44,9 +46,6 @@ public class BuildManager : MonoBehaviour
     private GameEvent obstacleSelected;
     [SerializeField]
     private GameEvent SelectionStatusChanged;
-
-    public UnityEvent StartedPointing;
-    public UnityEvent StoppedPointing;
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
