@@ -12,6 +12,12 @@ public class UpgradeTowerQuest : BuildTutorialQuest
         BuildTutorialManager.Instance.currentState = BuildingTutorialState.upgradeTower;
     }
 
+    public override void ExitQuest()
+    {
+        base.ExitQuest();
+        textHolder.text = "";
+    }
+
     public override void SetNextQuest()
     {
         state = true;
