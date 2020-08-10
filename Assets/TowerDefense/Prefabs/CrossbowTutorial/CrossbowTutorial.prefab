@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c447c77dbc68f34381468438b8e1eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToDisplay: "Teraz zbli\u017C drug\u0105 r\u0119k\u0119 do cieciwy i chwy\u0107
-    j\u0105, tak samo jak wcze\u015Bniej z\u0142apa\u0142e\u015B kusz\u0119."
+  TextToDisplay: Now bring your other hand closer to the string and grab it the same
+    way you grabbed crossbow.
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 1347375767}
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf85868ade93cb448b45fddfd94827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToDisplay: "Teraz wyci\u0105gnij r\u0119k\u0119 przed siebie, popatrz przez
-    celownik i poci\u0105gnij za spust."
+  TextToDisplay: Now put your hand out in front of you, look through the scope and
+    pull the trigger.
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 1901859452}
@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2405c9f7bf6d6f46b0488c3b068d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToDisplay: "\u015Awietnie! Pozosta\u0142o jedynie naci\u0105gn\u0105\u0107
-    ci\u0119ciwe zbli\u017Caj\u0105c r\u0119ke z cieciw\u0105 do r\u0119ki trzymaj\u0105cej
-    kusze i b\u0119dziesz gotowy na sw\xF3j pierwszy strza\u0142."
+  TextToDisplay: Well done! The only thing left is to stretch the string by bringing
+    the hand that holds it closer to the one that holds the crossbow and you will
+    be ready to fire your first shot!
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 1271611694}
@@ -275,8 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6425ee24269f25c4f923136ee453b853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToDisplay: "Pierwszy raz za Tob\u0105! Poka\u017C na co Ci\u0119 sta\u0107
-    i traf w tarcz\u0119 3 razy."
+  TextToDisplay: Great job! Before we start, practice by hitting the target 3 times.
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 1585970464}
@@ -334,9 +333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a075b43430b4248bbad7350ef1d368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToDisplay: "Dobrze... Uciec by\u015B ju\u017C potrafi\u0142, jednak nie po
-    to tutaj jeste\u015B. Przenie\u015B si\u0119 w pobli\u017Ce kuszy, a nast\u0119pnie
-    zbli\u017C do niej r\u0119k\u0119 i wci\u015Bnij przycisk \"grab\", aby jej doby\u0107."
+  TextToDisplay: Nice! The next step is to teach you how to defend yourself. Move
+    nearby the crossbow, bring your hand close to it and then press the trigger to
+    pick it up.
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 126899747}
