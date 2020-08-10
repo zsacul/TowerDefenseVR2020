@@ -93,6 +93,12 @@ public class Chunk : MonoBehaviour
             type == ChunkType.border) return false;
         int xSize = owner.mapString.sizeX;
         int ySize = owner.mapString.sizeY;
+
+        if(type == ChunkType.spawnPoint)
+        {
+            return false;
+        }
+
         switch (newType)
         {
             case ChunkType.tower:
