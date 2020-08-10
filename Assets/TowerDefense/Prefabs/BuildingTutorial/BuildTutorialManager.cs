@@ -88,7 +88,7 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
         TutorialFinished.Invoke();
         state = true;
         started = false;
-        //Debug.Log("Tutorial ended");
+        Debug.Log("Tutorial ended");
         Invoke("DestroyMe", 0.5f);
     }
 

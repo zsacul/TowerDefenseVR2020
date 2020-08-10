@@ -14,14 +14,15 @@ public class UpgradeTowerQuest : BuildTutorialQuest
 
     public override void ExitQuest()
     {
-        base.ExitQuest();
         textHolder.text = "";
+        base.ExitQuest();
     }
 
     public override void SetNextQuest()
     {
         state = true;
         QuestFinished.Invoke();
+        ExitQuest();
         BuildTutorialManager.Instance.EndTutorial();
         NodeMenu.SetPersistantState("start", true);
     }

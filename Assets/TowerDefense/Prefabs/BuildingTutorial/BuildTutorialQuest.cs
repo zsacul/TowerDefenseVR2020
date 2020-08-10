@@ -21,17 +21,11 @@ public class BuildTutorialQuest : GameEventListener
 
     virtual public void EnterQuest()
     {
-        Debug.Log("textHolder.text = infoForPlayer inside " + gameObject.name);
-
         textHolder.text = infoForPlayer;
-        //Debug.Log("Wejście do " + gameObject.name);
     }
 
     virtual public void ExitQuest()
     {
-        Debug.Log("textHolder.text = \"\" inside " + gameObject.name);
-        //textHolder.text = "";
-        //Debug.Log("Wyjscie z " + gameObject.name);
     }
 
     public virtual void SetNextQuest()
