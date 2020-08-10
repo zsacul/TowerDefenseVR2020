@@ -51,8 +51,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 4607602614648122427}
-  infoForPlayer: "Teraz mo\u017Cesz j\u0105 wybudowa\u0107. Wyceluj br\u0105zowym
-    wska\u017Anikiem na dost\u0119pne pole na mapie i naci\u015Bnij trigger."
+  infoForPlayer: Place a tower anywhere you want. Point with your right hind and
+    press touchpad to confirm.
   textHolder: {fileID: 0}
 --- !u!1 &2805872198241541645
 GameObject:
@@ -170,9 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 2757680171432295122}
-  infoForPlayer: "Teraz czas na przeszkod\u0119. Najed\u017A na krzy\u017Cyk, \u017Ceby
-    anulowa\u0107 obecn\u0105 budow\u0119, a nast\u0119pnie ponownie najed\u017A
-    na wie\u017C\u0119 nad lew\u0105 d\u0142oni\u0105 i wybierz ikon\u0119 przeszkody."
+  infoForPlayer: It's time to learn how to build. First off, press left trigger to
+    open building menu. Hit the hammer ball to see available buildings. Hit the ball
+    with spikes inside to select a obstacle. Remember to hold the trigger.
   textHolder: {fileID: 0}
 --- !u!1 &3207616316223987119
 GameObject:
@@ -225,8 +225,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 1301228819782378019}
-  infoForPlayer: "\u015Awietnie Ci posz\u0142o! Teraz nauczysz si\u0119 budowa\u0107.
-    Wci\u015Bnij "
+  infoForPlayer: 'Let''s do the same with the tower now. If you alreay forgot - press
+    left trigger and hit the hammer ball. To select a tower, hit the ball with a
+    tower inside. '
   textHolder: {fileID: 0}
 --- !u!1 &5600923643980453685
 GameObject:
@@ -279,7 +280,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 6547818089451838684}
-  infoForPlayer: "Wybuduj przeszkod\u0119 na fragmencie \u015Bcie\u017Cki."
+  infoForPlayer: 'Right now, you can point with your right hand to find a perfect
+    spot for your building. By placing it on the enemy''s path, you can modify their
+    route. Try it yourself! Point with your right hand at the path and press right
+    touchpad to build. '
   textHolder: {fileID: 0}
 --- !u!1 &8001073004606879489
 GameObject:
@@ -332,8 +336,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 0}
-  infoForPlayer: "Teraz czas na ulepszanie wie\u017Cy. Przeteleportuj si\u0119 na
-    ni\u0105. Wybierz d\u0142oni\u0105 dowolne ulepszenie, a nast\u0119pnie uderz
-    w przycisk, aby potwierdzi\u0107 sw\xF3j wyb\xF3r."
+  infoForPlayer: 'You''ve almost done it! Let''s teach you how to upgrade towers.
+    Open the building menu and touch the ball with arrows inside. You can see four
+    different elements. All of them are upgrades that modify your tower in a unique
+    way. Select one of them and point your right hand onto a tower. Pressing the
+    touchpad will upgrade the tower. '
   textHolder: {fileID: 0}
   ButtonStartWave: {fileID: 0}
