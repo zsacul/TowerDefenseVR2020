@@ -23,7 +23,7 @@ public class TutTeleport : TeleportSubNode
     {
         if (TeleportMainNode.Instance.GetCurrentTutorial() == this)
         {
-            if (Vector3.Distance(new Vector3(Camera.main.transform.position.x, Target.transform.position.y, Camera.main.transform.position.z), Target.transform.position) <= 0.5f)
+            if (Vector3.Distance(new Vector3(Camera.main.transform.position.x, Target.transform.position.y, Camera.main.transform.position.z), Target.transform.position) <= 2f)
             {
                 TeleportMainNode.Instance.teleDone = true;
                 SetNextStep();
