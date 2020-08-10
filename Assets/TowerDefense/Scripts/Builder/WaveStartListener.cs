@@ -11,5 +11,6 @@ public class WaveStartListener : GameEventListener
     {
         gameObject.GetComponent<BuildManager>().ChangeWaveStatus(false);
         AudioManager.Instance.PlayActionBGM();
+        NodeMenu.Switch(false);
     }
 }

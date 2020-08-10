@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,12 +7,36 @@ using UnityEngine.Events;
 
 public class NodeMenu : MonoBehaviour
 {
+    public Dictionary<string, bool> persistantState;
     public NodePos[] childNodes;
     public UnityEvent onActivate;
     private List<UINode> childrenUI;
     public UnityEvent onDeactivate;
     public Transform head;
     private bool menuActive;
+    private static NodeMenu instance;
+    public static bool GetPersistantState(string stateName)
+    {
+        if(!instance.persistantState.ContainsKey(stateName))
+        {
+            return false;
+        }
+        return instance.persistantState[stateName];
+    }
+    public static void SetPersistantState(string stateName, bool value)
+    {
+        if (instance.persistantState.ContainsKey(stateName))
+        {
+            instance.persistantState[stateName] = value;
+            return;
+        }
+        instance.persistantState.Add(stateName, value);
+    }
+    private void Awake()
+    {
+        instance = this;
+        persistantState = new Dictionary<string, bool>();
+    }
     private void Start()
     {
         childrenUI = new List<UINode>();
@@ -75,7 +100,23 @@ public class NodeMenu : MonoBehaviour
     }
     private void ChildSelected()
     {
-        UINode keepAlive = childrenUI.ToArray().First<UINode>((UINode n) => n.selected);
-        DisposeUnused(keepAlive);
+        try
+        {
+            UINode keepAlive = childrenUI.ToArray().First<UINode>((UINode n) => n.selected);
+            DisposeUnused(keepAlive);
+        }
+        catch(Exception e)
+        {
+            DisposeUnused(null);
+        }
+    }
+    public static void Switch(bool state)
+    {
+        if(!state)
+        {
+            instance.Dispose();
+        }
+        instance.enabled = state;
+
     }
 }

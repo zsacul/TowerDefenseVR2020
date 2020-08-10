@@ -6,6 +6,8 @@ public class SelectObstacleQuest : BuildTutorialQuest
 {
     public override void EnterQuest()
     {
+        NodeMenu.SetPersistantState("build", true);
+        NodeMenu.SetPersistantState("obstacle", true);
         base.EnterQuest();
         BuildTutorialManager.Instance.currentState = BuildingTutorialState.selectObstacle;
     }

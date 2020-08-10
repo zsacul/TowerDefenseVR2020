@@ -11,5 +11,6 @@ public class WaveOverListener : GameEventListener
     {
         gameObject.GetComponent<BuildManager>().ChangeWaveStatus(true);
         AudioManager.Instance.PlayAmbientBGM();
+        NodeMenu.Switch(true);
     }
 }

@@ -17,6 +17,6 @@ public class UpgradeTowerQuest : BuildTutorialQuest
         state = true;
         QuestFinished.Invoke();
         BuildTutorialManager.Instance.EndTutorial();
-        ButtonStartWave.SetActive(true);
+        NodeMenu.SetPersistantState("start", true);
     }
 }

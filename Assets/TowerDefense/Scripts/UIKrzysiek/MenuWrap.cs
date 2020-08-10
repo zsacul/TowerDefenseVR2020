@@ -26,4 +26,8 @@ public class MenuWrap : ScriptableObject
     {
         UpgradeTargeting.SetActiveRay(state);
     }
+    public void StartWave()
+    {
+        SpawnManaging.SpawnManager.StartWave();
+    }
 }

@@ -5032,7 +5032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c29c44b2e17ef458c9e4fc2e25ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
   onSelect:
     m_PersistentCalls:
       m_Calls: []
@@ -5070,6 +5069,8 @@ MonoBehaviour:
   onSpawned:
     m_PersistentCalls:
       m_Calls: []
+  activeMaterial: {fileID: 2100000, guid: ab40e369a26c4204fb4fd89b97fcd4fc, type: 2}
+  blockedMaterial: {fileID: 2100000, guid: f4110ea64d19b204b88e2f24d0a3e9d7, type: 2}
   menuHead: {fileID: 0}
   parentNode: {fileID: 0}
   childNodes: []

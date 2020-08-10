@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -20
-  damage: 10
+  damage: 40
   beginForce: 5
   type: 0
   EnemyHit:

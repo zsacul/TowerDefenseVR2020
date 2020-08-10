@@ -8,6 +8,7 @@ public class NodeUIUpgrades : MonoBehaviour
     public int cost;
     public int index;
     public Vector3 target;
+    private UpgradeManager[] managers;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class NodeUIUpgrades : MonoBehaviour
     }
     private UpgradeManager FindUpgradeManager()
     {
-        UpgradeManager[] managers = FindObjectsOfType<UpgradeManager>();
+        managers = managers == null ? FindObjectsOfType<UpgradeManager>() : managers;
         if (managers.Length == 0) return null;
         float minDistance = float.MaxValue;
         int index = 0;

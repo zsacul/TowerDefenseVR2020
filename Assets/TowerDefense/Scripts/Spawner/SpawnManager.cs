@@ -15,7 +15,7 @@ namespace SpawnManaging
         GameEvent breakStart;
         [SerializeField]
         LightningCycle lightningCycle;
-        
+        private static SpawnManager instance;
 
         BreakButtonHandler BreakButton;
         public Transform[] spawnPoints;
@@ -39,6 +39,10 @@ namespace SpawnManaging
         private bool gameOver;
 
         float breakTime;
+        private void Awake()
+        {
+            instance = this;
+        }
         // Update is called once per frame
         void Start()
         {
@@ -145,6 +149,10 @@ namespace SpawnManaging
             {
                 UpdateUI();
             }
+        }
+        public static void StartWave()
+        {
+            instance.EndBreak();
         }
 
         IEnumerator LateStartUpdateUI(float waitTime)

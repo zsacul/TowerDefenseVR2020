@@ -289,12 +289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: ac0cb88d21fb1094687e9c9b6ede7d3b,
-        type: 2}
+      objectReference: {fileID: 231065751919580418}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TeleportState
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -353,6 +352,12 @@ GameObject:
 --- !u!4 &2937631584200620658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2304112290064146894, guid: 08c553a10128a0a4cab318593b3f069d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3980418696443878332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &231065751919580418 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: -5473667243102400834, guid: 08c553a10128a0a4cab318593b3f069d,
     type: 3}
   m_PrefabInstance: {fileID: 3980418696443878332}
   m_PrefabAsset: {fileID: 0}

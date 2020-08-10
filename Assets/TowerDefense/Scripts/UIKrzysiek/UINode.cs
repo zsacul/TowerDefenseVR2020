@@ -3,15 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System;
 
 public class UINode : MonoBehaviour
 {
-    public bool active;
+    private bool actives = true;
+    public bool active
+    {
+        get => actives;
+        set
+        {
+            actives = value;
+            OnActiveChanged();
+        }
+    }
+
+    private void OnActiveChanged()
+    {
+        GetComponent<Renderer>().material = active ? activeMaterial : blockedMaterial;
+    }
+
     public UnityEvent onSelect;
     public UnityEvent onDeselect;
     public UnityEvent onDispose;
     public UnityEvent onTouch;
     public UnityEvent onSpawned;
+    public Material activeMaterial;
+    public Material blockedMaterial;
     [HideInInspector] public Transform menuHead;
     private LineRenderer line;
     [HideInInspector]public UINode parentNode;
@@ -73,8 +91,15 @@ public class UINode : MonoBehaviour
     {
         selected = false;
         onDeselect.Invoke();
-        UINode keepAlive = childrenUI.ToArray().First<UINode>((UINode n) => n.selected);
-        DisposeUnused(keepAlive);
+        try
+        {
+            UINode keepAlive = childrenUI.ToArray().First<UINode>((UINode n) => n.selected);
+            DisposeUnused(keepAlive);
+        }
+        catch(Exception e)
+        {
+            DisposeUnused(null);
+        }
     }
     public void SpawnChildNodes()
     {
@@ -118,5 +143,9 @@ public class UINode : MonoBehaviour
         }
         childrenUI.Clear();
         childrenUI.Add(keepAlive);
+    }
+    public void UsePersistantState(string stateName)
+    {
+        active = NodeMenu.GetPersistantState(stateName);
     }
 }

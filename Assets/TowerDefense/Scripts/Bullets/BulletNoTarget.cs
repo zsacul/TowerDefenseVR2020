@@ -29,7 +29,6 @@ public class BulletNoTarget : MonoBehaviour
     private void Start()
     {
         arrowRB = GetComponentInChildren<Rigidbody>();
-        Debug.Log("Imie: " + arrowRB.gameObject.name);
         arrowRB.AddForce(transform.forward * -1f * beginForce, ForceMode.Impulse);
     }
 

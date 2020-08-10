@@ -254,18 +254,20 @@
             {
                 yield return new WaitForFixedUpdate();
                 //Debug.Log("Potencjalny przekierowywacz: " + PotentialRedirector.name);
-
-                if (Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) < 0.1f &&
+                if (PotentialRedirector != null)
+                {
+                    if (Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) < 0.1f &&
                     Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z) < 0.1f && PotentialRedirector.tag != "DontChangeRedirector")
-                {
-                    //Debug.Log(PotentialRedirector.tag);
-                    CurrentRedirector = PotentialRedirector;
-                }
-                else
-                {
-                    /*Debug.Log("Odleglosc od potencjalnego przekierowywacza była: " + Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) + ", "
-                        + Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z));*/
-                    
+                    {
+                        //Debug.Log(PotentialRedirector.tag);
+                        CurrentRedirector = PotentialRedirector;
+                    }
+                    else
+                    {
+                        /*Debug.Log("Odleglosc od potencjalnego przekierowywacza była: " + Mathf.Abs(Camera.main.transform.position.x - PotentialRedirector.transform.position.x) + ", "
+                            + Mathf.Abs(Camera.main.transform.position.z - PotentialRedirector.transform.position.z));*/
+
+                    }
                 }
             }
             else
