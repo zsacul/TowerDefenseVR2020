@@ -32957,6 +32957,7 @@ GameObject:
   - component: {fileID: 1738301550}
   - component: {fileID: 1738301552}
   - component: {fileID: 1738301553}
+  - component: {fileID: 1738301554}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -33028,67 +33029,6 @@ MonoBehaviour:
   obstacleSelected: {fileID: 11400000, guid: 757b31e66d12797489a1b6d0bd9ffc1c, type: 2}
   SelectionStatusChanged: {fileID: 11400000, guid: 7672a5ce96f831a4c90e81c45e0e42d7,
     type: 2}
-  StartedPointing:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1921806508}
-        m_MethodName: StartAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: ClearSources
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  StoppedPointing:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1921806508}
-        m_MethodName: StopAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: AddSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1814319320}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 649511991}
-        m_MethodName: AddSource
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1682159341}
-          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   selectedBuilding: 0
 --- !u!114 &1738301549
 MonoBehaviour:
@@ -33241,6 +33181,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1738301554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738301545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4a16bd33b1bb34aa01b28adaa29d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleAnywhere: 0
+  obstacleOnPath: 0
+  towerAnywhere: 0
 --- !u!1 &1742880621
 GameObject:
   m_ObjectHideFlags: 0
