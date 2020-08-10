@@ -93,9 +93,19 @@ public class Chunk : MonoBehaviour
             type == ChunkType.border) return false;
         int xSize = owner.mapString.sizeX;
         int ySize = owner.mapString.sizeY;
+
+        if(type == ChunkType.spawnPoint)
+        {
+            return false;
+        }
+
         switch (newType)
         {
             case ChunkType.tower:
+                if (!BuildingConditions.Instance.towerAnywhere)
+                {
+                    return false;
+                }
                 for (int y = this.y - 1; y <= this.y + 1; y++)
                 {
                     for (int x = this.x - 1; x <= this.x + 1; x++)
@@ -116,9 +126,9 @@ public class Chunk : MonoBehaviour
             case ChunkType.playerObstacle:
                 if (owner.path[this.x, this.y])
                 {
-                    return BFS(modifyPathInBFS);
+                    return BuildingConditions.Instance.obstacleOnPath && BFS(modifyPathInBFS);
                 }
-                return true;
+                return BuildingConditions.Instance.obstacleAnywhere;
                 
             default:
                 return false;
