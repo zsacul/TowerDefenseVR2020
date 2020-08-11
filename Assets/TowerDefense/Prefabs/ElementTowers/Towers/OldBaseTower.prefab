@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2271366704508239629}
   - component: {fileID: 3917291109475125341}
   - component: {fileID: 578315822655925644}
+  - component: {fileID: 4945084311984909660}
   m_Layer: 16
   m_Name: OldBaseTower
   m_TagString: Untagged
@@ -158,6 +159,25 @@ MonoBehaviour:
   buttonPrefab: {fileID: 2072174274255397954, guid: 39742bd4e2c422e41842694c31c1173b,
     type: 3}
   UpgradeSuccess: {fileID: 11400000, guid: de276a4972e11d94d80ff5b09d57a68d, type: 2}
+--- !u!95 &4945084311984909660
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017088644902685982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07f9f8f26d697344e9a8224e51721a19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8778237557343447171
 GameObject:
   m_ObjectHideFlags: 0
