@@ -24,8 +24,7 @@ public class HandDeployer : MonoBehaviour
     public bool retarded_controlls = true;
     [SerializeField]
     public List<GOArray> PropList;
-    [SerializeField]
-    GameObject grabPoint;
+    public GameObject grabPoint;
     private GameObject CurrentlyDeployed;
     // Start is called before the first frame update
     public string HandDeployerName;
@@ -117,9 +116,9 @@ public class HandDeployer : MonoBehaviour
                                 {
                                 if (LocatedNearby[i].gameObject.name == "DummyGrababble")
                                 {
-                                    Debug.Log("Cieciwa w łape");
                                     if (grabbable_distance > 0.1f)
                                         break;
+                                    Debug.Log("Cieciwa w łape");
                                 }
                                     mindist = grabbable_distance;
                                     chosen = LocatedNearby[i].gameObject;

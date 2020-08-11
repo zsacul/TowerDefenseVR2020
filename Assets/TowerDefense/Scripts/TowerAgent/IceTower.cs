@@ -29,6 +29,7 @@ public class IceTower : BaseTower
         numberOfEnemiesInRange = enemiesList.Count;
         if (numberOfEnemiesInRange > 0 && currentDelay >= shootingDelay)
         {
+            Debug.Log("strzał z Ice Tower");
             StartCoroutine(shoot());
             currentDelay = 0f;
         }

@@ -8,38 +8,51 @@ public class IceSE1 : MonoBehaviour
 {
     float currentSpecialTime;
     ElementType type;
-
+    [SerializeField]
+    GameObject SnowPE;
+    [SerializeField]
+    MaterialColorChanger BoximonModel;
     public UnityEvent start, end;
+    bool isActive;
 
     private void Start()
     {
         type = ElementType.ice;
         currentSpecialTime = 0f;
+        isActive = false;
     }
 
     public IEnumerator RunSpecialEffect(EnemyHPManager enemy, float dmg, float time)
     {
-        //TODO - Wizualizacja zamrozenia
-
-        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-        agent.isStopped = true;
         currentSpecialTime += time;
 
-        if (currentSpecialTime == time)
+        if (!isActive)
         {
+            isActive = true;
+            //GameObject Snow = Instantiate(SnowPE);
+            //Snow.transform.position = GetComponentInChildren<EnemyTargetPoint>().transform.position;
+            //Snow.transform.SetParent(GetComponentInChildren<EnemyTargetPoint>().transform);
+            StartCoroutine(BoximonModel.SetFreezColor());
+
+            NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+            agent.isStopped = true;
             start.Invoke();
-            while (currentSpecialTime > 0 && agent != null)
+            while (currentSpecialTime > 0f && agent != null)
             {
+                Debug.Log("czas mrozenia = " + currentSpecialTime);
                 yield return new WaitForSeconds(0.3f);
                 enemy.ApplyDamage(dmg);
-                currentSpecialTime += Time.deltaTime;
+                currentSpecialTime -= 0.3f;
             }
+
+            isActive = false;
 
             if (agent != null)
             {
                 agent.isStopped = false;
                 end.Invoke();
-                //TODO - koniec wizualizacji zamrozenia
+                //Destroy(Snow);
+                StartCoroutine(BoximonModel.SetNormalColor());
             }
         }
     }

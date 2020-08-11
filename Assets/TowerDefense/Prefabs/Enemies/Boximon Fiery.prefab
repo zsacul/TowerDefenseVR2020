@@ -517,6 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12013d0f7d7887f40aed94aef95fa079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BurningPE: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+    type: 3}
   start:
     m_PersistentCalls:
       m_Calls: []
@@ -535,6 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cc78aac073fa447b45f2747f033e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SnowPE: {fileID: 5496865534257612880, guid: 8a2f423f9bc98af40bb79acab4007f69, type: 3}
+  BoximonModel: {fileID: 3699694705235559239}
   start:
     m_PersistentCalls:
       m_Calls: []
@@ -758,6 +762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314344931807338577}
   - component: {fileID: 1428911759152254451}
+  - component: {fileID: 3699694705235559239}
   m_Layer: 11
   m_Name: Boximon Fiery
   m_TagString: Untagged
@@ -850,6 +855,22 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.37303326, y: 0.06247446, z: -0.0000024437904}
     m_Extent: {x: 0.6532576, y: 0.37862855, z: 0.8032105}
   m_DirtyAABB: 0
+--- !u!114 &3699694705235559239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312168392890673925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b1418f3c59bd446a412b298c849128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseColor: {r: 1, g: 1, b: 1, a: 0}
+  FreezeColor: {r: 0, g: 1, b: 1, a: 0}
+  BoximonDefaultMaterial: {fileID: 2100000, guid: 1f5e90bc4adf1bd47a7a14f0f027609c,
+    type: 2}
 --- !u!1 &1312211844834644937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,6 +1555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3305549572794430640}
+  - component: {fileID: 8506932090946550872}
   m_Layer: 11
   m_Name: TargetPoint
   m_TagString: Untagged
@@ -1556,6 +1578,18 @@ Transform:
   m_Father: {fileID: 1306951017317609347}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8506932090946550872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451797206400831227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce96f00e18d161940b19325640237dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7056240268801825108
 GameObject:
   m_ObjectHideFlags: 0
