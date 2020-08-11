@@ -23,19 +23,24 @@ public class NodeUIUpgrades : MonoBehaviour
         int index = 0;
         for(int i=0; i<managers.Length;i++)
         {
-            float distance = Vector3.Distance(target, managers[i].transform.position);
+            float distance = Vector3.Distance(target - Vector3.up * target.y, managers[i].transform.position - Vector3.up * managers[i].transform.position.y);
             if(minDistance > distance)
             {
                 index = i;
                 minDistance = distance;
             }
         }
+        if (distance > 4)
+        {
+            targetedManager = null;
+            return;
+        }
         Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
         targetedManager =  managers[index];
     }
     private void Update()
     {
-        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9))
+        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9) && targetedManager != null)
         {
             UpgradeTower(index);
         }
