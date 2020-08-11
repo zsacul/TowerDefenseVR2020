@@ -44631,6 +44631,16 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495109, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 780
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495109, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 280
+      objectReference: {fileID: 0}
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44699,12 +44709,12 @@ PrefabInstance:
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 700
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 290
       objectReference: {fileID: 0}
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
