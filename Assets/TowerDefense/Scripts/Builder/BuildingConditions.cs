@@ -15,18 +15,23 @@ public class BuildingConditions : MonoBehaviour
         Instance = this;
     }
 
-    public void allowObstacleAnywhere(bool state)
+    public void AllowObstacleAnywhere(bool state)
     {
         obstacleAnywhere = state;
     }
 
-    public void allowObstacleOnPath(bool state)
+    public void AllowObstacleOnPath(bool state)
     {
         obstacleOnPath = state;
     }
 
-    public void allowTowerAnywhere(bool state)
+    public void AllowTowerAnywhere(bool state)
     {
         towerAnywhere = state;
+    }
+
+    public void AllowAll(bool state)
+    {
+        towerAnywhere = obstacleAnywhere = obstacleOnPath = state;
     }
 }
