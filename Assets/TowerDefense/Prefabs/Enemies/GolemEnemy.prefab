@@ -328,8 +328,10 @@ GameObject:
   - component: {fileID: 6637382002249881213}
   - component: {fileID: 1844838966785899302}
   - component: {fileID: -3958787040452374841}
+  - component: {fileID: 5286029571861814382}
+  - component: {fileID: 8873487376590145537}
   m_Layer: 0
-  m_Name: Polyart_Golem
+  m_Name: GolemEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,6 +512,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a62061997601c4409bcd793de1c00f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5286029571861814382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077356408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12013d0f7d7887f40aed94aef95fa079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurningPE: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+    type: 3}
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8873487376590145537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077356408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cc78aac073fa447b45f2747f033e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnowPE: {fileID: 5496865534257612880, guid: 8a2f423f9bc98af40bb79acab4007f69, type: 3}
+  BoximonModel: {fileID: 3474257849811690418}
+  start:
+    m_PersistentCalls:
+      m_Calls: []
+  end:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1099011281
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423454223}
   - component: {fileID: 1423454224}
+  - component: {fileID: 3474257849811690418}
   m_Layer: 0
   m_Name: RockGolemMesh
   m_TagString: Untagged
@@ -734,6 +777,22 @@ SkinnedMeshRenderer:
     m_Center: {x: -81.94922, y: 7.468132, z: 17.97406}
     m_Extent: {x: 256.02264, y: 222.98007, z: 335.63257}
   m_DirtyAABB: 0
+--- !u!114 &3474257849811690418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423454222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b1418f3c59bd446a412b298c849128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseColor: {r: 1, g: 1, b: 1, a: 0}
+  FreezeColor: {r: 0, g: 1, b: 1, a: 0}
+  BoximonDefaultMaterial: {fileID: 2100000, guid: 957781e2e64d0264f970dde36a30bd93,
+    type: 2}
 --- !u!1 &1459968636
 GameObject:
   m_ObjectHideFlags: 0

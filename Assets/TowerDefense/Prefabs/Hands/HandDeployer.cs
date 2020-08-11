@@ -117,7 +117,7 @@ public class HandDeployer : MonoBehaviour
                                 {
                                 if (LocatedNearby[i].gameObject.name == "DummyGrababble")
                                 {
-                                    if (grabbable_distance > 0.1f)
+                                    if (grabbable_distance > 0.2f)
                                         break;
                                     Debug.Log("Cieciwa w łape");
                                 }
