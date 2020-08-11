@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextToDisplay: Nice! The next step is to teach you how to defend yourself. Move
-    nearby the crossbow, bring your hand close to it and then press the trigger to
-    pick it up.
+    nearby the crossbow, bring your hand close to it and then press the grab to pick
+    it up.
   InfoForPlayer: {fileID: 0}
   canvasToDisplayText: {fileID: 0}
   NextStep: {fileID: 126899747}

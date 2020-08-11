@@ -29,12 +29,13 @@ public class NodeUIUpgrades : MonoBehaviour
                 index = i;
                 minDistance = distance;
             }
+            if (distance > 4)
+            {
+                targetedManager = null;
+                return;
+            }
         }
-        if (distance > 4)
-        {
-            targetedManager = null;
-            return;
-        }
+        
         Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
         targetedManager =  managers[index];
     }
