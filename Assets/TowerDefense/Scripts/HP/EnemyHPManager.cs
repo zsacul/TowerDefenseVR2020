@@ -14,6 +14,7 @@ public class EnemyHPManager : MonoBehaviour {
     ElementType bulletType;
     NavMeshAgent enemyAgent;
     Vector3 last_velocity;
+    MaterialPropertyBlock MPB;
 
     public UnityEvent damaged;
     public UnityEvent killed;

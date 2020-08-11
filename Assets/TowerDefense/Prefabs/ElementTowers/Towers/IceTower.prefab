@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 989495114983117972}
   - component: {fileID: 575233814969270343}
   - component: {fileID: 9140344418615962807}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1246656715688222024}
   - component: {fileID: 3619436022084678305}
   - component: {fileID: 5440146228375729009}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 435104462188909791}
   - component: {fileID: 885253886140596236}
   - component: {fileID: 8461049226072993020}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4248898806284570594}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PillarOfLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,6 +282,50 @@ Transform:
   m_Father: {fileID: 1423110164079974006}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1605862966486177872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734699311184244488}
+  - component: {fileID: 4358957741011759828}
+  m_Layer: 16
+  m_Name: IceGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &734699311184244488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605862966486177872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1423110164079974006}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4358957741011759828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605862966486177872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e8ba43faeb12745ae420efb79d22a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
 --- !u!1 &3131427683255234478
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +338,7 @@ GameObject:
   - component: {fileID: 4444820561014795597}
   - component: {fileID: 2222806306464203428}
   - component: {fileID: 7466237308909650804}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5017538724106222927}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +462,7 @@ GameObject:
   - component: {fileID: 2625044080385533834}
   - component: {fileID: 511675199120246883}
   - component: {fileID: 9105236284286732723}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +555,7 @@ GameObject:
   - component: {fileID: 2364798435013214829}
   - component: {fileID: 263075657136958852}
   - component: {fileID: 8854983018933873748}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9035451536529762383}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8907816465861774158}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +710,7 @@ GameObject:
   - component: {fileID: 6814782483135307677}
   - component: {fileID: 9071704031754858612}
   - component: {fileID: 333463225861550500}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,8 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4427506611187184330}
-  - component: {fileID: 126482015493157429}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,19 +822,6 @@ Transform:
   m_Father: {fileID: 1423110164079974006}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126482015493157429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809373858798210209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e8ba43faeb12745ae420efb79d22a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7, type: 3}
 --- !u!1 &6020998821265880511
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7337977180557658028}
   - component: {fileID: 599951601083097193}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FloatingTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +879,7 @@ GameObject:
   - component: {fileID: 4783338520903641953}
   - component: {fileID: 6995787066416612488}
   - component: {fileID: 1752919007483184472}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4707545722438500724}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +1002,7 @@ GameObject:
   - component: {fileID: 7955348146462607335}
   - component: {fileID: 6969222911197394790}
   - component: {fileID: 8720164773672488089}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TowerBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1064,7 @@ GameObject:
   - component: {fileID: 5952000852191223002}
   - component: {fileID: 6402150228998932489}
   - component: {fileID: 2448730591591900409}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6677239216946885649}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1178,7 @@ GameObject:
   - component: {fileID: 4333476727925200097}
   - component: {fileID: 3989068214373262759}
   - component: {fileID: 3348099558758392115}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: IceTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,6 +1206,7 @@ Transform:
   - {fileID: 5017538724106222927}
   - {fileID: 9035451536529762383}
   - {fileID: 4707545722438500724}
+  - {fileID: 734699311184244488}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1261,7 +1292,7 @@ MonoBehaviour:
   upgradeDelayIncreaseInPercent: 25
   shootingDelay: 3
   damage: 10
-  speed: 8
+  speed: 4
   specialEffectDuration: 4
   specialEffectDmg: 1
   shootEvent:
@@ -1279,7 +1310,7 @@ MonoBehaviour:
   updateAddGun:
     m_PersistentCalls:
       m_Calls: []
-  IceBullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7,
+  IceBullet: {fileID: 7121530740016581307, guid: 36866abd68832d741a651200e7696113,
     type: 3}
 --- !u!65 &3348099558758392115
 BoxCollider:
@@ -1305,6 +1336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseTile2
+      objectReference: {fileID: 0}
+    - target: {fileID: 134289842002267823, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4000971350229122236, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}

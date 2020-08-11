@@ -61,7 +61,8 @@ public class Bullet : MonoBehaviour
 
     private void destroyBullet()
     {
-        Destroy(this.gameObject);
+        Destroy(GetComponent<Collider>());
+        Destroy(this.gameObject, 0.5f);
     }
 
     public void SetReadyToDestroy()

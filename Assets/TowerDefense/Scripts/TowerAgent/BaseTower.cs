@@ -76,7 +76,7 @@ public class BaseTower : MonoBehaviour
         {
             if (g.gameObject.activeSelf && enemiesList.Count > 0)
             {
-                g.fire(enemiesList[t % numberOfEnemiesInRange], speed, damage, type, specialEffectDuration, specialEffectDmg, SE);
+                g.fire(enemiesList[t % numberOfEnemiesInRange].GetComponentInChildren<EnemyTargetPoint>().gameObject, speed, damage, type, specialEffectDuration, specialEffectDmg, SE);
                 if (sound != null)
                     sound.Play();
             }
