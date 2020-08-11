@@ -928,6 +928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseColor: {r: 1, g: 1, b: 1, a: 0}
   FreezeColor: {r: 0, g: 1, b: 1, a: 0}
+  BoximonDefaultMaterial: {fileID: 2100000, guid: f1779f0d8b6a05547af012556b3fd93a,
+    type: 2}
 --- !u!1 &5927794822809618553
 GameObject:
   m_ObjectHideFlags: 0

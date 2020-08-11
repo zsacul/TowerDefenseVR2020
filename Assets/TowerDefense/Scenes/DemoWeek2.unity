@@ -31380,6 +31380,12 @@ PrefabInstance:
       propertyPath: RighHand
       value: 
       objectReference: {fileID: 65865502}
+    - target: {fileID: 41301387, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
+      propertyPath: TextToDisplay
+      value: Nice! The next step is to teach you how to defend yourself. Move nearby
+        the crossbow, bring your hand close to it and then press the grab to pick
+        it up.
+      objectReference: {fileID: 0}
     - target: {fileID: 126899747, guid: b3395ce70c240954e9462fa57c81a35b, type: 3}
       propertyPath: InfoForPlayer
       value: 
