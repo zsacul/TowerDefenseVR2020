@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1402648924132037796}
   - component: {fileID: 3459019106522954573}
   - component: {fileID: 5279764976075995805}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3925774026663641207}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2268701993000425443}
   - component: {fileID: 1530323350424257328}
   - component: {fileID: 7790785574978940864}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1247388230328909608}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 2558853491042520286}
   - component: {fileID: 3265789348653825119}
   - component: {fileID: 3810593826137130912}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: TowerBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 914585491581930061}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1118045298993373272}
   - component: {fileID: 3239154699993354161}
   - component: {fileID: 6176216027156450913}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8112219339034049011}
   - component: {fileID: 5486677325244086540}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,51 +465,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7843056511515610668, guid: 4e9c3b7def9c30743a315fea79baaaa7, type: 3}
---- !u!1 &2191898191584427654
-GameObject:
+--- !u!114 &6332480045264567807
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2895944380796046485}
-  - component: {fileID: 5023406399343881040}
-  m_Layer: 16
-  m_Name: FloatingTop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2895944380796046485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191898191584427654}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4638331431685283757}
-  m_Father: {fileID: 6798793227686174031}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5023406399343881040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191898191584427654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 2524950497857676453}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9950919, y: 0.6935208, z: 1.9824957}
-  m_Center: {x: -0.006297946, y: 0.51785326, z: -0.000000059604645}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ecd53d5584da5144923db5badfcefed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3469616916530925228
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +494,7 @@ GameObject:
   - component: {fileID: -2036200670099337975}
   - component: {fileID: 5778944963606810425}
   - component: {fileID: 6621508820020861293}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: ElectricTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8435926954663272526}
-  - {fileID: 2895944380796046485}
+  - {fileID: 1432118862922010222}
   - {fileID: 8580153061018731739}
   - {fileID: 2558853491042520286}
   - {fileID: 8112219339034049011}
@@ -811,7 +778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8580153061018731739}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: PillarOfLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +811,7 @@ GameObject:
   - component: {fileID: 5470748196153712614}
   - component: {fileID: 4732369463215459125}
   - component: {fileID: 4075302728836868037}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +891,7 @@ GameObject:
   - component: {fileID: 6676813916508477041}
   - component: {fileID: 9214114898759448984}
   - component: {fileID: 475839391678920776}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,85 +972,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5649595744123689755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4638331431685283757}
-  - component: {fileID: 5340822032095742846}
-  - component: {fileID: 3692049674270205838}
-  m_Layer: 16
-  m_Name: default
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4638331431685283757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649595744123689755}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2895944380796046485}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5340822032095742846
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649595744123689755}
-  m_Mesh: {fileID: -2432090755550338912, guid: 3130325f07b3bfd4ea1dd0a24fb64b44, type: 3}
---- !u!23 &3692049674270205838
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649595744123689755}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1625ce462c3f42c4aaacfad48afacb73, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &6955301624341601909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595651278394291830}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1015,7 @@ GameObject:
   - component: {fileID: 8091527672440514164}
   - component: {fileID: 5998007192259709341}
   - component: {fileID: 3060382908703885389}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3495235317998412662}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Rock2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1139,7 @@ GameObject:
   - component: {fileID: 7869124359140411732}
   - component: {fileID: 5639470621556451005}
   - component: {fileID: 3965126382996399981}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1232,7 @@ GameObject:
   - component: {fileID: 7605395471526522035}
   - component: {fileID: 5403220787607651162}
   - component: {fileID: 3727152435459015306}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,6 +1313,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3690104580839605564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6798793227686174031}
+    m_Modifications:
+    - target: {fileID: 146995755058496217, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635180279644567873, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_Name
+      value: FloatingTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b662b798c57e08244b64bbba6b2eaa4b, type: 3}
+--- !u!1 &2524950497857676453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1170812247396327833, guid: b662b798c57e08244b64bbba6b2eaa4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3690104580839605564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1432118862922010222 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2371719235054783314, guid: b662b798c57e08244b64bbba6b2eaa4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3690104580839605564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4797495649991073010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1436,11 +1410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseTile2
-      objectReference: {fileID: 0}
-    - target: {fileID: 134289842002267823, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4000971350229122236, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}

@@ -120,6 +120,9 @@ public class UpgradeManager : MonoBehaviour
     {
         if (buildManager.GetMoney() >= upgradeCost)
         {
+            //important new code 11/08/2020
+            GetComponent<Animator>().SetTrigger("hide");
+            //end of new code
             Debug.Log("UpgradeSuccess");
             UpgradeSuccess.Raise();
             buildManager.DecreaseMoney(upgradeCost);
