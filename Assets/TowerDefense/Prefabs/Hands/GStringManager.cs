@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR;
 using VRTK.Prefabs.Interactions.Interactors.ComponentTags;
 
 public class GStringManager : PropManager
 {
+    GameObject grabPoint;
     public UnityEvent CrossbowLoaded;
 
     private GameObject HandManger;
@@ -58,6 +60,7 @@ public class GStringManager : PropManager
     public override void Initialize()
     {
         HandManger = transform.parent.gameObject; /* assume that the parent is the hand manager */
+        grabPoint = HandManger.GetComponent<HandDeployer>().grabPoint;
     }
 
     // Start is called before the first frame update
@@ -70,7 +73,7 @@ public class GStringManager : PropManager
     void Update()
     {
         if (grabbing)
-            String.transform.position = transform.position;
+            String.transform.position = grabPoint.transform.position;
         if (String == null || LockTarget == null)
             return;
         if(Vector3.Distance(String.transform.position, LockTarget.transform.position) < 0.2)
