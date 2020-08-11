@@ -59,6 +59,16 @@ public class Bullet : MonoBehaviour
             readyToDestroy = true;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.BroadcastMessage("ApplyDamage", this);
+        }
+        else if (other.gameObject.tag != "Bullet")
+            readyToDestroy = true;
+    }
+
     private void destroyBullet()
     {
         Destroy(GetComponent<Collider>());
