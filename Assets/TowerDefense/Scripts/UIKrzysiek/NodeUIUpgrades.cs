@@ -9,15 +9,16 @@ public class NodeUIUpgrades : MonoBehaviour
     public int index;
     public Vector3 target;
     private UpgradeManager[] managers;
+    private UpgradeManager targetedManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("FindUpgradeManager", 0, 0.2f);
     }
-    private UpgradeManager FindUpgradeManager()
+    private void FindUpgradeManager()
     {
         managers = managers == null ? FindObjectsOfType<UpgradeManager>() : managers;
-        if (managers.Length == 0) return null;
+        if (managers.Length == 0) return;
         float minDistance = float.MaxValue;
         int index = 0;
         for(int i=0; i<managers.Length;i++)
@@ -30,7 +31,7 @@ public class NodeUIUpgrades : MonoBehaviour
             }
         }
         Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
-        return managers[index];
+        targetedManager =  managers[index];
     }
     private void Update()
     {
@@ -48,7 +49,7 @@ public class NodeUIUpgrades : MonoBehaviour
     }
     public void UpgradeTower(int index)
     {
-        FindUpgradeManager().UpgradeTower(index, cost);
+        targetedManager.UpgradeTower(index, cost);
     }
     public void UpdateRayNode()
     {
