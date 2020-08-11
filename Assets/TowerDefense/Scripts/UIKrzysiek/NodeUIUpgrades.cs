@@ -23,6 +23,7 @@ public class NodeUIUpgrades : MonoBehaviour
         int index = 0;
         for(int i=0; i<managers.Length;i++)
         {
+            if (managers[i] == null) continue;
             float distance = Vector3.Distance(target - Vector3.up * target.y, managers[i].transform.position - Vector3.up * managers[i].transform.position.y);
             if(minDistance > distance)
             {
