@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 using TMPro;
 
 
@@ -37,31 +38,29 @@ public class BuildManager : MonoBehaviour
     private GameEvent BuildingSwitchedToNone;
     [SerializeField]
     private GameObject UIMoneyTextGO;
-
-    private TextMeshPro UIMoneyText;
-
     [SerializeField]
     private GameEvent towerSelected;
     [SerializeField]
     private GameEvent obstacleSelected;
     [SerializeField]
     private GameEvent SelectionStatusChanged;
+    [NonSerialized]
+    public ChunkType selectedBuilding;
+    public bool BuildModeOn { get; private set; }
 
     private Canvas towerPurchaseCanvas;
     private Canvas obstaclePurchaseCanvas;
     private BoxCollider towerPurchaseCanvasCollider;
     private BoxCollider obstaclePurchaseCanvasCollider;
-
-    public ChunkType selectedBuilding;
-    public bool BuildModeOn { get; private set; }
     private bool purchasePanelsActive;
-
     private RectTransform canvasRT;
     private float canvasXSize;
     private float canvasYSize;
     private float canvasZPos;
     private bool rightTriggerInUse;
     private bool uiTowerClicked;
+
+    private TextMeshPro UIMoneyText;
     private bool sceneLoaded;
     private static BuildManager instance;
 
