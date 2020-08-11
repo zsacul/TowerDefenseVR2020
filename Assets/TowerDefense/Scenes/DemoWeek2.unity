@@ -1833,7 +1833,7 @@ PrefabInstance:
     - target: {fileID: 607836800918200612, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 607836800918200612, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -1853,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -1888,6 +1888,36 @@ PrefabInstance:
     - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 208952903}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1301228819782378019, guid: b9aead6fffcd4884fb780b7cc2c95803,
@@ -2017,6 +2047,15 @@ PrefabInstance:
       propertyPath: textHolder
       value: 
       objectReference: {fileID: 344256057}
+    - target: {fileID: 4607602614648122427, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: infoForPlayer
+      value: You've almost done it! Let's teach you how to upgrade towers. Open the
+        building menu and touch the ball with arrows inside. You can see four different
+        elements. All of them are upgrades that modify your tower in a unique way.
+        Select one of them, point with your right hand onto a tower and press right
+        touchpad.
+      objectReference: {fileID: 0}
     - target: {fileID: 6547818089451838684, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.size
@@ -6089,6 +6128,27 @@ MonoBehaviour:
       m_Calls: []
   equalityTolerance: 1e-45
   axisName: VRTK_Axis5_RightVertical
+--- !u!1 &208952902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2805872198241541645, guid: b9aead6fffcd4884fb780b7cc2c95803,
+    type: 3}
+  m_PrefabInstance: {fileID: 35797792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &208952903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208952902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c386371c0dd82644ebcba1a996081b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHolder: {fileID: 344256057}
+  TextAftertutorial: Congratulations! You can now start your first wave. To do so,
+    open the building menu by pressing left trigger and touch the Start Wave ball.
 --- !u!1001 &211690987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8982,7 +9042,7 @@ PrefabInstance:
     - target: {fileID: 8181714994940393064, guid: 70fc919f316635b4fbd1b9bde5def60e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8181714994940393064, guid: 70fc919f316635b4fbd1b9bde5def60e,
         type: 3}
@@ -9180,75 +9240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &346291368
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586548996122427738, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5589237462600327502, guid: 981cb7f02e1014c40acf985d4addeebc,
-        type: 3}
-      propertyPath: m_Name
-      value: M1911Debree
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 981cb7f02e1014c40acf985d4addeebc, type: 3}
 --- !u!1 &346314694
 GameObject:
   m_ObjectHideFlags: 0
@@ -10282,7 +10273,7 @@ Transform:
   m_Children:
   - {fileID: 346314695}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412323498
 GameObject:
@@ -13274,7 +13265,7 @@ Transform:
   - {fileID: 1259529295}
   - {fileID: 516994509}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554430121
 GameObject:
@@ -16901,7 +16892,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 35797792}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 208952902}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c257a0be84ec8984896f8b9731bb8da6, type: 3}
@@ -18580,7 +18571,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981050873
 GameObject:
@@ -19654,6 +19645,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   coordinateToExtract: 0
+--- !u!1 &999219575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7321500428945264539, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7321500428331665149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &999219579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999219575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c49d53de720bad47adc8792c71e7c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
 --- !u!1 &1002318016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 64ae9cc10da81d048a062fc5bbe62bc7,
@@ -20016,7 +20026,7 @@ PrefabInstance:
     - target: {fileID: 116050600864992770, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 116050600864992770, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -31469,7 +31479,7 @@ PrefabInstance:
     - target: {fileID: 1143962660114416101, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1143962660114416101, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
@@ -32842,7 +32852,7 @@ Transform:
   - {fileID: 2126205621}
   - {fileID: 1742880622}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1738301547
 MonoBehaviour:
@@ -36144,7 +36154,7 @@ Transform:
   - {fileID: 442069743}
   - {fileID: 50196653}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1921806507
 GameObject:
@@ -36329,7 +36339,7 @@ PrefabInstance:
     - target: {fileID: 2857310375888505551, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2857310375888505551, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
@@ -40682,7 +40692,7 @@ Transform:
   - {fileID: 950863805}
   - {fileID: 324150767}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138232673
 GameObject:
@@ -44679,7 +44689,7 @@ PrefabInstance:
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
@@ -44970,7 +44980,7 @@ PrefabInstance:
     - target: {fileID: 7509562566981641647, guid: ee3bb3aa6009ab543942559dafcc2d18,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7509562566981641647, guid: ee3bb3aa6009ab543942559dafcc2d18,
         type: 3}
