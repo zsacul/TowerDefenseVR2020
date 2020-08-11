@@ -13,9 +13,6 @@ public class BuildingConditions : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        obstacleAnywhere = false;
-        obstacleOnPath = false;
-        towerAnywhere = false;
     }
 
     public void allowObstacleAnywhere(bool state)
