@@ -179,6 +179,16 @@ namespace SpawnManaging
             }
         }
 
+        public void ChangeWaveInfoLabelStatusTo(bool status)
+        {
+            waveInfoLabel.gameObject.SetActive(status);
+        }
+
+        public void ChangeIncomingWaveInfoLabelStatusTo(bool status)
+        {
+            incomingWaveInfoLabel.gameObject.SetActive(status);
+        }
+
         private void UpdateUI()
         {
             Transform spawnPoint = spawnPoints[0].transform;
