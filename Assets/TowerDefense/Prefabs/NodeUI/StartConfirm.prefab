@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Confirm
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1394331127295095265}
-    characterCount: 5
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -264,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 2304112290064146884, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: m_Name
-      value: Start
+      value: StartConfirm
       objectReference: {fileID: 0}
     - target: {fileID: 2304112290064146894, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -324,12 +324,12 @@ PrefabInstance:
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: childNodes.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -350,7 +350,7 @@ PrefabInstance:
         type: 3}
       propertyPath: childNodes.Array.data[0].node
       value: 
-      objectReference: {fileID: 2937631584200620664, guid: cf25aa7b31b788748a42677aae82f54f,
+      objectReference: {fileID: 2937631584200620664, guid: a5ee36b6dd5e84d49b0dc4fbf6cbaf05,
         type: 3}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -371,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: childNodes.Array.data[0].relativePosition.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -392,12 +392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: ac0cb88d21fb1094687e9c9b6ede7d3b,
-        type: 2}
+      objectReference: {fileID: 7374118214398929790}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartWave
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -449,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
       propertyPath: onSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5506404761458647768, guid: 08c553a10128a0a4cab318593b3f069d,
         type: 3}
@@ -535,5 +534,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48c29c44b2e17ef458c9e4fc2e25ae11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7374118214398929790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5866898135537692866, guid: 08c553a10128a0a4cab318593b3f069d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3980418696443878332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc16118ba8e1664cbbe1d5d5390ca8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
