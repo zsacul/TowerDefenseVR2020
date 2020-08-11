@@ -103,6 +103,9 @@ public class HandDeployer : MonoBehaviour
                        (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].Rdep && isRight))
                     {
                         float grabbable_distance = Vector3.Distance(LocatedNearby[i].transform.position, grabPoint.transform.position);
+                        Debug.Log("trigger: " + triggered);
+                        Debug.Log("PolledGrab: " + PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].PolledGrab);
+                        Debug.Log("PolledGrabDist: " + (PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].PolledGrabDistance < grabbable_distance));
                         if ((
                             triggered == true &&
                             PropList[LocatedNearby[i].gameObject.GetComponent<GrababbleManager>().PropID].IntentionalGrab &&
@@ -116,7 +119,7 @@ public class HandDeployer : MonoBehaviour
                                 {
                                 if (LocatedNearby[i].gameObject.name == "DummyGrababble")
                                 {
-                                    if (grabbable_distance > 0.1f)
+                                    if (grabbable_distance > 0.2f)
                                         break;
                                     Debug.Log("Cieciwa w łape");
                                 }
@@ -151,7 +154,7 @@ public class HandDeployer : MonoBehaviour
                 if (HandGrab(1.0f, intent))
                 {
                     stateFlipFlop = 2;
-                    release_timeout = 1.0f;
+                    release_timeout = 0.0f;
                 }
                 else
                     stateFlipFlop = 0;
@@ -190,7 +193,7 @@ public class HandDeployer : MonoBehaviour
                 {
                     Debug.Log("HAND OPEN");
                     if (listIterator != 0)
-                        release_timeout = 1.0f;
+                        release_timeout = 0.0f;
                     PropList[listIterator].Instance.GetComponent<PropManager>().RetardedChangeGrabState();
                     PropList[listIterator].Instance.GetComponent<PropManager>().PointEvent(0.0f);
                     PropList[listIterator].Instance.GetComponent<PropManager>().GrabEvent(0.0f);

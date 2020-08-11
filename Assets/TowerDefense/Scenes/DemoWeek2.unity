@@ -1920,6 +1920,52 @@ PrefabInstance:
       propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1347076448830942053, guid: 138d92915a7eb44519cbb9bf5ad2a39d,
+        type: 3}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 752578749}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeIncomingWaveInfoLabelStatusTo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1301228819782378019, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.size
@@ -3226,7 +3272,7 @@ MonoBehaviour:
     Ldep: 1
     Rdep: 1
     IntentionalGrab: 1
-    IGrabDistance: 0.05
+    IGrabDistance: 0
     PolledGrab: 0
     PolledGrabDistance: 0
   - Prefab: {fileID: 4137375818022343, guid: 0eec1cf23948a8a48bce13b35fd7285f, type: 3}
@@ -18152,7 +18198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944132866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0364, y: -0.0655, z: -0.0727}
+  m_LocalPosition: {x: -0.0364, y: 0.005, z: -0.0896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 65865505}
@@ -21679,7 +21725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162924246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0364, y: -0.0655, z: -0.0727}
+  m_LocalPosition: {x: -0.0364, y: 0.005, z: -0.0896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484867502}
@@ -32878,7 +32924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf6e8eee5c7bd4493b19b224ff176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 500
+  money: 260
   towerCost: 80
   playerObstacleCost: 40
   canvas: {fileID: 1561748944}
@@ -44640,6 +44686,43 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427652889129, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_padding
+      value: 3.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_text
+      value: "Good, you are finally awake! \nWe were worried that there is no one
+        left to defend the castle. Let's get you started! Whenever you ready press
+        the touchpad on your controller."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 174
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7321500427987495109, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
