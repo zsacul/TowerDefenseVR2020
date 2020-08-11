@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1572062819470426348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2441012661031908021}
+  - component: {fileID: 7325260249898402261}
+  m_Layer: 16
+  m_Name: gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2441012661031908021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572062819470426348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.234, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8641101694259604533}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7325260249898402261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572062819470426348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e8ba43faeb12745ae420efb79d22a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
 --- !u!1 &2403441815038363425
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6585772181576413061}
   - component: {fileID: 738655966951912022}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TeleportRedirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +98,7 @@ GameObject:
   - component: {fileID: 2271366704508239629}
   - component: {fileID: 3917291109475125341}
   - component: {fileID: 578315822655925644}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OldBaseTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ecd97ff752d3e498c7be7cc8edf0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseCanvasUI: 0
   fireCanvasPrefab: {fileID: 8344855314892190429, guid: 98fb6015962862141b0710d53ba632a0,
     type: 3}
   iceCanvasPrefab: {fileID: 8309758085442543269, guid: 6ef6cbe1e3129454e86201238feb7622,
@@ -130,7 +175,7 @@ GameObject:
   - component: {fileID: 431443329978649671}
   - component: {fileID: 4687214279865381105}
   - component: {fileID: 7457527154508803204}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,6 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6585772181576413061}
+  - {fileID: 2441012661031908021}
   m_Father: {fileID: 2271366704508239629}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -249,7 +295,7 @@ MonoBehaviour:
   upgradeDelayIncreaseInPercent: 0
   shootingDelay: 1.2
   damage: 20
-  speed: 40
+  speed: 10
   specialEffectDuration: 0
   specialEffectDmg: 0
   shootEvent:
@@ -290,7 +336,7 @@ MonoBehaviour:
     type: 3}
   prefTowerWind: {fileID: 862237436884529366, guid: e0b2e9bd7fa9cb6428c01b4f1da17ee0,
     type: 3}
-  prefStoneBullet: {fileID: 5717079372236470191, guid: 3d581170b332a6b4fbd0e05671b9d53e,
+  prefStoneBullet: {fileID: 2168762925388800387, guid: 1940da52aee783a4694eab88506925c8,
     type: 3}
   destroy:
     m_PersistentCalls:
@@ -346,6 +392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseTile2
+      objectReference: {fileID: 0}
+    - target: {fileID: 134289842002267823, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4000971350229122236, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}

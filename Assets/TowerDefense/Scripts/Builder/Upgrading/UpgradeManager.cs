@@ -84,7 +84,7 @@ public class UpgradeManager : MonoBehaviour
 
     void Update()
     {
-        if (buildManager.BuildModeOn && GoodPosition() && UseCanvasUI)
+        if (BuildManager.Instance.BuildModeOn && GoodPosition() && UseCanvasUI)
         {
             if (!canvasEnabled && !upgradePanelsActive)
             {

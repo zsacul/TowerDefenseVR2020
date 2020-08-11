@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1402648924132037796}
   - component: {fileID: 3459019106522954573}
   - component: {fileID: 5279764976075995805}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3925774026663641207}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2268701993000425443}
   - component: {fileID: 1530323350424257328}
   - component: {fileID: 7790785574978940864}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1247388230328909608}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 2558853491042520286}
   - component: {fileID: 3265789348653825119}
   - component: {fileID: 3810593826137130912}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TowerBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 914585491581930061}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1118045298993373272}
   - component: {fileID: 3239154699993354161}
   - component: {fileID: 6176216027156450913}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8112219339034049011}
   - component: {fileID: 5486677325244086540}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2895944380796046485}
   - component: {fileID: 5023406399343881040}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FloatingTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: -2036200670099337975}
   - component: {fileID: 5778944963606810425}
   - component: {fileID: 6621508820020861293}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ElectricTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8580153061018731739}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PillarOfLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 5470748196153712614}
   - component: {fileID: 4732369463215459125}
   - component: {fileID: 4075302728836868037}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 6676813916508477041}
   - component: {fileID: 9214114898759448984}
   - component: {fileID: 475839391678920776}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 4638331431685283757}
   - component: {fileID: 5340822032095742846}
   - component: {fileID: 3692049674270205838}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595651278394291830}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 8091527672440514164}
   - component: {fileID: 5998007192259709341}
   - component: {fileID: 3060382908703885389}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3495235317998412662}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 7869124359140411732}
   - component: {fileID: 5639470621556451005}
   - component: {fileID: 3965126382996399981}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 7605395471526522035}
   - component: {fileID: 5403220787607651162}
   - component: {fileID: 3727152435459015306}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1436,6 +1436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseTile2
+      objectReference: {fileID: 0}
+    - target: {fileID: 134289842002267823, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4000971350229122236, guid: a0ccfaf627d79d748a6a387cd2af5ef6,
         type: 3}
