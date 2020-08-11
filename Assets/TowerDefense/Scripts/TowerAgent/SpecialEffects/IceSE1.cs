@@ -35,7 +35,7 @@ public class IceSE1 : MonoBehaviour
             StartCoroutine(BoximonModel.SetFreezColor());
 
             NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-            //        agent.isStopped = true;
+            agent.isStopped = true;
             start.Invoke();
             while (currentSpecialTime > 0f && agent != null)
             {
@@ -49,7 +49,7 @@ public class IceSE1 : MonoBehaviour
 
             if (agent != null)
             {
-//                agent.isStopped = false;
+                agent.isStopped = false;
                 end.Invoke();
                 //Destroy(Snow);
                 StartCoroutine(BoximonModel.SetNormalColor());

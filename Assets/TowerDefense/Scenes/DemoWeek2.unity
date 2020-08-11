@@ -1833,7 +1833,7 @@ PrefabInstance:
     - target: {fileID: 607836800918200612, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 607836800918200612, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -10257,7 +10257,7 @@ Transform:
   m_Children:
   - {fileID: 346314695}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412323498
 GameObject:
@@ -13249,7 +13249,7 @@ Transform:
   - {fileID: 1259529295}
   - {fileID: 516994509}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554430121
 GameObject:
@@ -19805,6 +19805,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossbowDroppable
       objectReference: {fileID: 0}
+    - target: {fileID: 1635064245034004468, guid: 411baec3cf3efa64eab338ada08e0ae8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1799325888207153107, guid: 411baec3cf3efa64eab338ada08e0ae8,
         type: 3}
       propertyPath: m_Convex
@@ -20063,7 +20068,7 @@ PrefabInstance:
     - target: {fileID: 116050600864992770, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 116050600864992770, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
@@ -31609,7 +31614,7 @@ PrefabInstance:
     - target: {fileID: 1143962660114416101, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1143962660114416101, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
@@ -32981,7 +32986,7 @@ Transform:
   - {fileID: 2126205621}
   - {fileID: 1742880622}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1738301547
 MonoBehaviour:
@@ -36275,7 +36280,7 @@ Transform:
   - {fileID: 442069743}
   - {fileID: 50196653}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1921806507
 GameObject:
@@ -36460,7 +36465,7 @@ PrefabInstance:
     - target: {fileID: 2857310375888505551, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2857310375888505551, guid: b7a56a2053012074599ee4adcb4e240d,
         type: 3}
@@ -40813,7 +40818,7 @@ Transform:
   - {fileID: 950863805}
   - {fileID: 324150767}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138232673
 GameObject:
