@@ -265,3 +265,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149a18dfcbbb4304091de7eced7a22b5, type: 3}
+--- !u!1 &1064722706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717161885180871397, guid: 149a18dfcbbb4304091de7eced7a22b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064722705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064722707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064722706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcce586eb50bc5541bdee016d75ad37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childNodes: []
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1064722707}
+        m_MethodName: DisposeUnused
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UINode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  head: {fileID: 0}
+  targetMark: {fileID: 0}
+  spells: []
