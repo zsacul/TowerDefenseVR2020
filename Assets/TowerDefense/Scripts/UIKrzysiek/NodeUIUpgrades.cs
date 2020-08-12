@@ -13,6 +13,7 @@ public class NodeUIUpgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (index == 0) return;//index == 0 means it is "Upgrade" node -> not actual element upgrade you choose later
         InvokeRepeating("FindUpgradeManager", 0, 0.2f);
     }
     private void FindUpgradeManager()
@@ -30,10 +31,21 @@ public class NodeUIUpgrades : MonoBehaviour
                 index = i;
                 minDistance = distance;
             }
-            targetedManager = null;
         }
-        
-        Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
+        if (minDistance > 4.0f)
+        {
+            targetedManager = null;
+            NodeMenu.HideMarker();
+            return;
+        }
+        if (targetedManager != null)
+        {
+            NodeMenu.SetMarker(targetedManager.transform.position);
+        }
+        else
+        {
+            NodeMenu.HideMarker();
+        }
         targetedManager =  managers[index];
     }
     private void Update()
@@ -53,6 +65,7 @@ public class NodeUIUpgrades : MonoBehaviour
     public void UpgradeTower(int index)
     {
         targetedManager.UpgradeTower(index, cost);
+        NodeMenu.Dispose();
     }
     public void UpdateRayNode()
     {
@@ -61,5 +74,9 @@ public class NodeUIUpgrades : MonoBehaviour
     public void ActivateRay(bool state)
     {
         UpgradeTargeting.SetActiveRay(state);
+    }
+    private void OnDestroy()
+    {
+        NodeMenu.HideMarker();
     }
 }
