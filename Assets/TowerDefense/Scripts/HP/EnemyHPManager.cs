@@ -5,6 +5,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
+using Zinnia.Tracking.CameraRig;
+using TMPro;
 
 public class EnemyHPManager : MonoBehaviour {
     float speedManipulations;
@@ -28,6 +30,8 @@ public class EnemyHPManager : MonoBehaviour {
     GameObject targetPoint;
     [SerializeField]
     ElementType type;
+    [SerializeField]
+    Canvas DmgText;
         
     private void Start()
     {
@@ -45,22 +49,21 @@ public class EnemyHPManager : MonoBehaviour {
     }
 
     public void ApplyDamage(Bullet b) {
-        damaged.Invoke();
         Resistance res = elementsInfo.GetResistence(type, b.GetBulletType());
 
         switch (res)
         {
             case Resistance.high:
-                enemyHP -= b.GetDamage() * 0.7f;
+                ApplyDamage(b.GetDamage() * 0.7f);
                 break;
             case Resistance.normal:
-                enemyHP -= b.GetDamage();
+                ApplyDamage(b.GetDamage());
                 specialEffectDurationInSec = b.GetSpecialEffectDuration();
                 specialEffectDmgPerSec = b.GetSpecialEffectDmg();
                 activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec);
                 break;
             case Resistance.low:
-                enemyHP -= b.GetDamage() * 1.5f;
+                ApplyDamage(b.GetDamage() * 1.5f);
                 specialEffectDurationInSec = (int)(b.GetSpecialEffectDuration() * 1.5f);
                 specialEffectDmgPerSec = (int)(b.GetSpecialEffectDmg() * 1.5f);
                 StartCoroutine(activateSpecialEffect(b.GetSpecialEffect(), specialEffectDmgPerSec, specialEffectDurationInSec));
@@ -79,35 +82,36 @@ public class EnemyHPManager : MonoBehaviour {
     }
     public void ApplyDamage(DamageData data)
     {
-        damaged.Invoke();
         Resistance res = elementsInfo.GetResistence(type, data.element);
 
         switch (res)
         {
             case Resistance.high:
-                enemyHP -= data.damage * 0.7f;
+                ApplyDamage(data.damage * 0.7f);
                 break;
             case Resistance.normal:
-                enemyHP -= data.damage;
+                ApplyDamage(data.damage);
                 activateSpecialEffect(data.specialEffect, (int)data.specialEffectDmgPerSec, data.specialEffectDurationInSec);
                 break;
             case Resistance.low:
-                enemyHP -= data.damage * 1.5f;
+                ApplyDamage(data.damage * 1.5f);
                 activateSpecialEffect(data.specialEffect, (int)(data.specialEffectDmgPerSec * 1.5f), data.specialEffectDurationInSec * 1.5f);
                 break;
             default:
                 break;
         };
         GetComponent<HealthBar>().updateBar(enemyHP);
-        if (enemyHP <= 0)
-        {
-            BuildManager.Instance.AddMoney(moneyDropped);
-            Death();
-        }
     }
     public void ApplyDamage(float damage)
     {
         damaged.Invoke();
+        GameObject dmgObj = new GameObject();
+        dmgObj.AddComponent<TextMeshPro>();
+        dmgObj.AddComponent<CameraTracker>();
+        dmgObj.AddComponent<EnemyDmgTextLifetime>();
+        dmgObj.GetComponent<TextMeshPro>().text = damage.ToString();
+        GameObject go = Instantiate(dmgObj);
+        go.transform.parent = targetPoint.transform;
         enemyHP -= damage;
 
         if (enemyHP <= 0)
@@ -116,6 +120,11 @@ public class EnemyHPManager : MonoBehaviour {
         }
 
         GetComponent<HealthBar>().updateBar(enemyHP);
+        if (enemyHP <= 0)
+        {
+            BuildManager.Instance.AddMoney(moneyDropped);
+            Death();
+        }
     }
 
     public GameObject GetTargetPoint(){
