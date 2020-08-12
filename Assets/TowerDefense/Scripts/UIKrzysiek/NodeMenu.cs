@@ -13,6 +13,7 @@ public class NodeMenu : MonoBehaviour
     private List<UINode> childrenUI;
     public UnityEvent onDeactivate;
     public Transform head;
+    public GameObject targetMark;
     private bool menuActive;
     private static NodeMenu instance;
     public static bool GetPersistantState(string stateName)
@@ -36,6 +37,7 @@ public class NodeMenu : MonoBehaviour
     {
         instance = this;
         persistantState = new Dictionary<string, bool>();
+        HideMarker();
     }
     private void Start()
     {
@@ -75,17 +77,18 @@ public class NodeMenu : MonoBehaviour
             menuActive = false;
         }
     }
-    public void Dispose()
+    public static void Dispose()
     {
-        foreach (UINode n in childrenUI)
+        foreach (UINode n in instance.childrenUI)
         {
             if(n != null)
             {
                 n.Dispose();
             }
         }
-        childrenUI.Clear();
+        instance.childrenUI.Clear();
     }
+    
     public void DisposeUnused(UINode keepAlive)
     {
         foreach (UINode n in childrenUI)
@@ -114,9 +117,18 @@ public class NodeMenu : MonoBehaviour
     {
         if(!state)
         {
-            instance.Dispose();
+            Dispose();
         }
         instance.enabled = state;
 
+    }
+    public static void SetMarker(Vector3 pos)
+    {
+        instance.targetMark.transform.position = pos;
+        instance.targetMark.GetComponent<ParticleSystem>().Play();
+    }
+    public static void HideMarker()
+    {
+        instance.targetMark.GetComponent<ParticleSystem>().Stop();
     }
 }

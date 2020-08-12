@@ -38,12 +38,14 @@ public class UpgradeTargeting : MonoBehaviour
     }
     private void UpdateRay()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit info))
+        if(Physics.Raycast(transform.position + transform.forward, transform.forward, out RaycastHit info))
         {
+            upgrade.target = info.point;
             target = info.point;
         }
         else
         {
+            upgrade.target = transform.position + transform.forward * 100.0f;
             target = transform.position + transform.forward * 100.0f;
         }
     }

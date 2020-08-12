@@ -13,6 +13,7 @@ public class NodeUIUpgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (index == 0) return;//index == 0 means it is "Upgrade" node -> not actual element upgrade you choose later
         InvokeRepeating("FindUpgradeManager", 0, 0.2f);
     }
     private void FindUpgradeManager()
@@ -23,19 +24,33 @@ public class NodeUIUpgrades : MonoBehaviour
         int index = 0;
         for(int i=0; i<managers.Length;i++)
         {
-            float distance = Vector3.Distance(target, managers[i].transform.position);
+            if (managers[i] == null) continue;
+            float distance = Vector3.Distance(target - Vector3.up * target.y, managers[i].transform.position - Vector3.up * managers[i].transform.position.y);
             if(minDistance > distance)
             {
                 index = i;
                 minDistance = distance;
             }
         }
-        Debug.DrawRay(managers[index].transform.position, Vector3.up * 1000, Color.red);
+        if (minDistance > 4.0f)
+        {
+            targetedManager = null;
+            NodeMenu.HideMarker();
+            return;
+        }
+        if (targetedManager != null)
+        {
+            NodeMenu.SetMarker(targetedManager.transform.position);
+        }
+        else
+        {
+            NodeMenu.HideMarker();
+        }
         targetedManager =  managers[index];
     }
     private void Update()
     {
-        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9))
+        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9) && targetedManager != null)
         {
             UpgradeTower(index);
         }
@@ -50,6 +65,7 @@ public class NodeUIUpgrades : MonoBehaviour
     public void UpgradeTower(int index)
     {
         targetedManager.UpgradeTower(index, cost);
+        NodeMenu.Dispose();
     }
     public void UpdateRayNode()
     {
@@ -58,5 +74,9 @@ public class NodeUIUpgrades : MonoBehaviour
     public void ActivateRay(bool state)
     {
         UpgradeTargeting.SetActiveRay(state);
+    }
+    private void OnDestroy()
+    {
+        NodeMenu.HideMarker();
     }
 }

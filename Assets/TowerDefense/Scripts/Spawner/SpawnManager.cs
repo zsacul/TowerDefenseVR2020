@@ -162,7 +162,7 @@ namespace SpawnManaging
             waveInfoLabel.enabled = false;
             incomingWaveInfoLabel.enabled = true;
             incomingWaveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
-            incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 19f, spawnPoint.position.z);
+            incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 25f, spawnPoint.position.z);
         }
 
         private void Update()
@@ -220,7 +220,7 @@ namespace SpawnManaging
                 waveInfoLabel.enabled = false;
                 incomingWaveInfoLabel.enabled = true;
                 incomingWaveInfoLabel.transform.Rotate(new Vector3(0f, 0f, 0f));
-                incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 19f, spawnPoint.position.z);
+                incomingWaveInfoLabel.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 25f, spawnPoint.position.z);
                 EnemyCount[] incomingEnemies = wave[waveIndex].waveData.GetWaveInfo();
 
                 int fireEnemies = 0;

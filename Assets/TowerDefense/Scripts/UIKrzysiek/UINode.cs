@@ -27,6 +27,7 @@ public class UINode : MonoBehaviour
     public UnityEvent onDeselect;
     public UnityEvent onDispose;
     public UnityEvent onTouch;
+    public UnityEvent onTouchDisabled;
     public UnityEvent onSpawned;
     public Material activeMaterial;
     public Material blockedMaterial;
@@ -57,9 +58,14 @@ public class UINode : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (!active)
+        {
+            onTouchDisabled.Invoke();
+            return;
+        }
         onTouch.Invoke();
-        if (!active) return;
-        if(selected)
+
+        if (selected)
         {
             
         }
