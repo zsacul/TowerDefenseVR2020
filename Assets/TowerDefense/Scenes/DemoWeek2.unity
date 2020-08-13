@@ -3484,6 +3484,10 @@ MonoBehaviour:
   childNodes:
   - node: {fileID: 48629398347085829, guid: 93a0faf4a1f620c4080e129329b282b2, type: 3}
     relativePosition: {x: -0.3, y: -0.15, z: 0}
+  - node: {fileID: 48629398347085829, guid: 531d17066aba6d542b8b4c3b45141b92, type: 3}
+    relativePosition: {x: 0.3, y: -0.15, z: 0}
+  - node: {fileID: 2304112290064146884, guid: ad147b3bb11ece94dad167707e23c1df, type: 3}
+    relativePosition: {x: 0, y: 0, z: 0.3}
   onActivate:
     m_PersistentCalls:
       m_Calls:
@@ -3549,6 +3553,8 @@ MonoBehaviour:
   targetMark: {fileID: 1108249647}
   spells:
   - {fileID: 11400000, guid: f070bdc647baa244aa6378571899a194, type: 2}
+  - {fileID: 11400000, guid: 6c457044aec696e49876591da78e7fa2, type: 2}
+  rightHand: {fileID: 65865505}
 --- !u!114 &65865511
 MonoBehaviour:
   m_ObjectHideFlags: 0

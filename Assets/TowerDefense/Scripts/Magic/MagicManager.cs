@@ -11,6 +11,7 @@ public class MagicManager : MonoBehaviour
     public NodePos[] childNodes;
     public UnityEvent onActivate;
     private List<UINode> childrenUI;
+    private HandDeployer rightHandDeployer;
     public UnityEvent onDeactivate;
     public Transform head;
     public GameObject targetMark;
@@ -19,6 +20,8 @@ public class MagicManager : MonoBehaviour
     private static MagicManager instance;
     private float charge;
     private IChargable current;
+    public Transform rightHand;
+
     public static bool GetPersistantState(string stateName)
     {
         if (!instance.persistantState.ContainsKey(stateName))
@@ -45,6 +48,7 @@ public class MagicManager : MonoBehaviour
     private void Start()
     {
         childrenUI = new List<UINode>();
+        rightHandDeployer = rightHand.GetComponent<HandDeployer>();
     }
     public void SpawnChildNodes()
     {
@@ -62,7 +66,7 @@ public class MagicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f)
+        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f && rightHandDeployer.listIterator == 0)
         {
             if (!menuActive)
             {

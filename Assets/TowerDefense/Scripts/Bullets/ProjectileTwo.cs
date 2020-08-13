@@ -53,8 +53,6 @@ public class ProjectileTwo : MonoBehaviour , IChargable
         GetComponent<Collider>().enabled = false;
         lifeTime = lifeTimeOverCharge.Evaluate(charge);
         speed = speedOverCharge.Evaluate(charge);
-        damageData.damage *= dmgMultOverCharge.Evaluate(charge);
-        damageData.specialEffectDmgPerSec *= dmgMultOverCharge.Evaluate(charge);
         onInit.Invoke();
     }
     private void End()
@@ -101,6 +99,8 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     }
     public void Release()
     {
+        damageData.damage *= dmgMultOverCharge.Evaluate(charge);
+        damageData.specialEffectDmgPerSec *= dmgMultOverCharge.Evaluate(charge);
         onRelease.Invoke();
         released = true;
         if(transform.parent != null) transform.parent = null;

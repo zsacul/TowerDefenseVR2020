@@ -20,8 +20,9 @@ GameObject:
   - component: {fileID: -7596898777371843765}
   - component: {fileID: 5506404761458647768}
   - component: {fileID: 5866898135537692866}
+  - component: {fileID: 5425488622366209986}
   m_Layer: 16
-  m_Name: MagicNodeBase
+  m_Name: CrossbowCall
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +38,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
-  m_Children: []
+  m_Children:
+  - {fileID: 6602644862470314579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5060,6 +5062,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5425488622366209986}
+        m_MethodName: CallCrossBow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDispose:
     m_PersistentCalls:
       m_Calls: []
@@ -5132,3 +5145,105 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a61a988bc0691e6448b067f42591b1c5, type: 3}
   locationOverride: {x: 0, y: 0, z: 0}
   mixer: {fileID: 0}
+--- !u!114 &5425488622366209986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304112290064146884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50329d84b1ad00459312570526866f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5616883944149454749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2304112290064146894}
+    m_Modifications:
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308439427565791197, guid: e2f30bdf50d469945a46d5135670f6ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Crossbow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2f30bdf50d469945a46d5135670f6ff, type: 3}
+--- !u!4 &6602644862470314579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1608454348202202574, guid: e2f30bdf50d469945a46d5135670f6ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5616883944149454749}
+  m_PrefabAsset: {fileID: 0}
