@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.VersionControl;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -14,7 +15,13 @@ public class Bullet : MonoBehaviour
     SpecialEffect specialEffect;
     [SerializeField]
     ElementType type;
+    float FindEnemyRange;
     bool readyToDestroy;
+
+    private void Start()
+    {
+        FindEnemyRange = 2f;
+    }
 
     public Bullet(GameObject t, float s, float d, ElementType typ, int eDur = 0, int eDmg = 0, SpecialEffect specialEffect = SpecialEffect.none)
     {
@@ -40,13 +47,37 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (target == null)
-            return;
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-        transform.LookAt(target.transform.position);
+        if (target == null)
+        {
+            if (!findInRange())
+            {
+                transform.position += transform.forward * step;
+            }
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
+            transform.LookAt(target.transform.position);
+        }
+        
         if (readyToDestroy)
             destroyBullet();
+    }
+
+    private bool findInRange()
+    {
+        Collider[] cld = Physics.OverlapSphere(transform.position, FindEnemyRange);
+        foreach(Collider c in cld)
+        {
+            if (c.GetComponent<EnemyHPManager>())
+            {
+                target = c.gameObject;
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void OnCollisionEnter(Collision collision)

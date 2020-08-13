@@ -104,16 +104,13 @@ public class EnemyHPManager : MonoBehaviour {
     }
     public void ApplyDamage(float damage)
     {
-        damaged.Invoke();
-        GameObject dmgObj = new GameObject();
-        dmgObj.AddComponent<TextMeshPro>();
-        dmgObj.AddComponent<CameraTracker>();
-        dmgObj.AddComponent<EnemyDmgTextLifetime>();
-        dmgObj.GetComponent<TextMeshPro>().text = damage.ToString();
-        GameObject go = Instantiate(dmgObj);
-        go.transform.parent = targetPoint.transform;
+        if (damage > 0)
+        {
+            Canvas NewDmgText = Instantiate(DmgText);
+            NewDmgText.transform.parent = targetPoint.transform;
+            NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
+        }
         enemyHP -= damage;
-
         if (enemyHP <= 0)
         {
             Death();
