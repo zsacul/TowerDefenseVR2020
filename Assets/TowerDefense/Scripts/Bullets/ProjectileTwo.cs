@@ -12,6 +12,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     public AnimationCurve dmgMultOverCharge = AnimationCurve.Constant(0, 1, 1);
     public AnimationCurve speedOverCharge = AnimationCurve.Constant(0, 1, 1);
     public AnimationCurve lifeTimeOverCharge = AnimationCurve.Constant(0, 1, 1);
+    public AnimationCurve sizeOverCharge = AnimationCurve.Constant(0, 0, 1);
 
 
     private float lifeTime;
@@ -22,7 +23,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     public UnityEvent onEnd;
     public UnityEvent onRelease;
 
-
+    private float charge;
     private bool released;
     private Vector3 lastPos;
     private Vector3 movement;
@@ -33,7 +34,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
         if(released)
         {
             time += 0.02f;
-            transform.localScale = Vector3.one * sizeOverTime.Evaluate(time / lifeTime);
+            transform.localScale = Vector3.one * sizeOverTime.Evaluate(time / lifeTime) * sizeOverCharge.Evaluate(charge);
             //transform.position += transform.forward * speedOverTime.Evaluate(time) * speed * Time.fixedDeltaTime;
         }
         else
@@ -43,10 +44,12 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     }
     public void SetCharge(float charge)
     {
+        this.charge = charge;
         Init(charge);
     }
     public void Init(float charge = 0)
     {
+        transform.localScale = Vector3.one * sizeOverTime.Evaluate(0) * sizeOverCharge.Evaluate(charge);
         GetComponent<Collider>().enabled = false;
         lifeTime = lifeTimeOverCharge.Evaluate(charge);
         speed = speedOverCharge.Evaluate(charge);
@@ -100,7 +103,7 @@ public class ProjectileTwo : MonoBehaviour , IChargable
     {
         onRelease.Invoke();
         released = true;
-        transform.parent = null;
+        if(transform.parent != null) transform.parent = null;
         Invoke("EnableCollision", 0.25f);
         Invoke("End", lifeTime);
         Rigidbody rb = GetComponent<Rigidbody>();

@@ -138,16 +138,20 @@ public class MagicManager : MonoBehaviour
     {
         if (index > instance.spells.Length) return;
         instance.charge = 0;
-        instance.spells[index].Cast(instance.transform.position, instance.transform.rotation, instance.charge, instance.transform);
+        instance.current = instance.spells[index].Cast(instance.transform.position, instance.transform.rotation, instance.charge, instance.transform);
 
     }
     public static void Release()
     {
-        instance.current.Release();
+        if(instance.current != null)
+        {
+            instance.current.Release();
+            instance.current = null;
+        }
     }
-    public static void AddCharge(float charge)
+    public static void SetCharge(float charge)
     {
-        instance.charge += charge;
+        instance.charge = charge;
         instance.current.SetCharge(instance.charge);
     }
 }
