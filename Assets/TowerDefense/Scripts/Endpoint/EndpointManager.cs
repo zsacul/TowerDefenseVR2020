@@ -6,11 +6,10 @@ using UnityEngine.Events;
 public class EndpointManager : GameEventListener
 {
     [SerializeField]
-    GameEvent gameOver;
+    GameEvent gameLost;
     public UnityEvent damaged;
     public UnityEvent destroyed;
     public int health;
-
     private bool isGameOver;
 
     private void Start()
@@ -18,7 +17,7 @@ public class EndpointManager : GameEventListener
         isGameOver = false;
     }
 
-    bool GameOverCondition()
+    bool GameLostCondition()
     {
         //GetComponent<HealthBar>().SetMaxHp(health);
         return this.health <= 0;
@@ -33,9 +32,9 @@ public class EndpointManager : GameEventListener
             this.health -= damageValue;
             GetComponent<HealthBar>().updateBar(health);
 
-            if (GameOverCondition())
+            if (GameLostCondition())
             {
-                gameOver.Raise();
+                gameLost.Raise();
                 destroyed.Invoke();
             }
         }
