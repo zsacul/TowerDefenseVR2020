@@ -51,6 +51,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 4607602614648122427}
+  prevQuest: {fileID: 6547818089451838684}
   infoForPlayer: Towers can also be placed on a path. However, you can't build two
     towers next to each other. Now, place it anywhere you want. Point with your right
     hand and press touchpad to confirm.
@@ -171,6 +172,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 2757680171432295122}
+  prevQuest: {fileID: 0}
   infoForPlayer: It's time to learn how to build. First off, press left trigger to
     open building menu. Hit the hammer ball to see available buildings. Hit the ball
     with spikes inside to select a obstacle. Remember to hold the trigger.
@@ -226,6 +228,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 1301228819782378019}
+  prevQuest: {fileID: 0}
   infoForPlayer: 'Let''s do the same with the tower now. If you alreay forgot - press
     left trigger and hit the hammer ball. To select a tower, hit the ball with a
     tower inside. '
@@ -281,6 +284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 6547818089451838684}
+  prevQuest: {fileID: 4196717894766157845}
   infoForPlayer: 'Right now, you can point with your right hand to find a perfect
     spot for your building. By placing it on the enemy''s path, you can modify their
     route. Try it yourself! Point with your right hand at the path and press right
@@ -337,6 +341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextQuest: {fileID: 0}
+  prevQuest: {fileID: 0}
   infoForPlayer: 'You''ve almost done it! Let''s teach you how to upgrade towers.
     Open the building menu and touch the ball with arrows inside. You can see four
     different elements. All of them are upgrades that modify your tower in a unique

@@ -9,4 +9,12 @@ public class BuildTowerQuest : BuildTutorialQuest
         base.EnterQuest();
         BuildTutorialManager.Instance.currentState = BuildingTutorialState.buildTower;
     }
+
+    private void Update()
+    {
+        if(BuildManager.Instance.selectedBuilding != ChunkType.tower)
+        {
+            SetPrevQuest();
+        }
+    }
 }
