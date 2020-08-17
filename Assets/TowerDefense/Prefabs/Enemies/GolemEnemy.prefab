@@ -442,6 +442,7 @@ MonoBehaviour:
   elementsInfo: {fileID: 0}
   targetPoint: {fileID: 3060785792907437880}
   type: 1
+  DmgText: {fileID: 8358712588832557418, guid: 3c7b76b7ba01ecd4b9fe602a8cc6534d, type: 3}
 --- !u!114 &4521878194133221139
 MonoBehaviour:
   m_ObjectHideFlags: 0

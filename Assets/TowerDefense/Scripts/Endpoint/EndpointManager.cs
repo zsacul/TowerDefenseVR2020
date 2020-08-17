@@ -52,7 +52,7 @@ public class EndpointManager : GameEventListener
         {
             DamageEndpoint(1);
             other.transform.position = Vector3.down * 1000;
-            other.GetComponent<EnemyHPManager>().ApplyDamage(1000000);
+            other.GetComponent<EnemyHPManager>().Death();
             damaged.Invoke();
         }
         

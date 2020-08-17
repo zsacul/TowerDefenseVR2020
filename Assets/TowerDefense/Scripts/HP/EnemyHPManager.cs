@@ -43,7 +43,7 @@ public class EnemyHPManager : MonoBehaviour {
         GetComponent<HealthBar>().SetMaxHp(enemyHP);
     }
 
-    private void Death() {
+    public void Death() {
         //Debug.Log("Death() called");
         isDead = true;
         killed.Invoke();
