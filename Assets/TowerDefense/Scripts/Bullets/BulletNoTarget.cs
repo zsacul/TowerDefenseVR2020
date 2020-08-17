@@ -52,6 +52,7 @@ public class BulletNoTarget : MonoBehaviour
         }
         else if (collision.gameObject.tag != "Bullet")
             readyToDestroy = true;
+        ArrowStick(collision);
     }
 
     private void destroyBullet()
@@ -87,5 +88,14 @@ public class BulletNoTarget : MonoBehaviour
     public SpecialEffect GetSpecialEffect()
     {
         return specialEffect;
+    }
+
+    void ArrowStick(Collision col)
+    {
+        //transform.SetParent(col.transform);
+        Destroy(GetComponentInChildren<FixedJoint>());
+        Destroy(GetComponent<Rigidbody>());
+        Destroy(GetComponent<Collider>());
+        Destroy(GetComponentInChildren<Rigidbody>());
     }
 }
