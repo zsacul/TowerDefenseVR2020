@@ -66,7 +66,8 @@ public class MagicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f && rightHandDeployer.listIterator == 0)
+        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f && rightHandDeployer.listIterator == 0
+            && BuildManager.Instance.selectedBuilding == ChunkType.none)
         {
             if (!menuActive)
             {

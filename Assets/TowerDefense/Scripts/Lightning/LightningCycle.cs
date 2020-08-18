@@ -64,7 +64,7 @@ public class LightningCycle : GameEventListener
     {
         if (gameLost)
         {
-            changingSkyBoxTime += Time.deltaTime / 10.0f;
+            changingSkyBoxTime += Time.deltaTime / 8.0f;
             if (changingSkyBoxTime <= 1)
             {
                 UpdateSkyboxAfterDefeat();
@@ -84,7 +84,6 @@ public class LightningCycle : GameEventListener
 
     void UpdateLight()
     {
-       
         if (currentTime <= 0.25f || currentTime >= 0.75f)
         {
             probe.intensity = 0.45f;
