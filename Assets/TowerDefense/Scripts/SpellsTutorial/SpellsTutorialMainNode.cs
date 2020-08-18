@@ -9,8 +9,6 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
     public List<SpellsTutorialSubnode> ActiveTasks = new List<SpellsTutorialSubnode>();
     [SerializeField]
     BuildTutorialManager BuildTutorialManager;
-    [SerializeField]
-    TeleportMainNode TeleportTutorial;
 
     bool state;
     SpellsTutorialSubnode currentTutorial;
@@ -57,6 +55,7 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
             BuildTutorialManager.gameObject.SetActive(true);
             BuildTutorialManager.StartTutorial();
         }
+        Destroy(gameObject, 0.5f);
     }
 
     public SpellsTutorialSubnode GetCurrentTutorial()
@@ -76,7 +75,7 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
 
     public void StartThisTutorial()
     {
-        Destroy(TeleportTutorial.gameObject);
+        Destroy(BuildTutorialManager.gameObject);
         SetCurrentTutorial(firstStep);
     }
 

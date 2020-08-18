@@ -88,7 +88,6 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
         TutorialFinished.Invoke();
         state = true;
         started = false;
-        Invoke("DestroyMe", 0.5f);
     }
 
     private void TurnOffCurrentQuest()

@@ -1,0 +1,381 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5119165657524723185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165657524723188}
+  - component: {fileID: 5119165657524723187}
+  - component: {fileID: 5119165657524723186}
+  m_Layer: 0
+  m_Name: SpellsTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165657524723188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165657524723185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.598625, y: 3.2153678, z: 20.21187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5119165658309185220}
+  - {fileID: 5119165658525307530}
+  - {fileID: 5119165658628941845}
+  - {fileID: 5119165658523021496}
+  - {fileID: 5119165657643051945}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165657524723187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165657524723185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c7b0fb4b6c9834aba7a1de0cf250c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TasksFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5119165657524723186}
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: ChangeIncomingWaveInfoLabelStatusTo
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: AllowAll
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  ActiveTasks: []
+  BuildTutorialManager: {fileID: 0}
+  firstStep: {fileID: 5119165658309185219}
+  isElementChose: 0
+  elementChose: 0
+--- !u!114 &5119165657524723186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165657524723185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c386371c0dd82644ebcba1a996081b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHolder: {fileID: 0}
+  TextAftertutorial: Congratulations! You can now start your first wave. To do so,
+    open the building menu by pressing left trigger and touch the Start Wave ball.
+--- !u!1 &5119165657643051927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165657643051945}
+  - component: {fileID: 5119165657643051944}
+  m_Layer: 0
+  m_Name: finished
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165657643051945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165657643051927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5119165657524723188}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165657643051944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165657643051927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d55f031adec8c441b5d647055986441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: Well done! The night is comming. It means that our enemies will
+    be ther soon. Be ready to fight.
+  InfoForPlayer: {fileID: 0}
+  canvasToDisplayText: {fileID: 0}
+  NextStep: {fileID: 0}
+  PrevStep: {fileID: 0}
+  taskFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  taskFailed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5119165658309185218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165658309185220}
+  - component: {fileID: 5119165658309185219}
+  m_Layer: 0
+  m_Name: ActivateSpells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165658309185220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658309185218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5119165657524723188}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165658309185219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658309185218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56876dfb71ef0ae4daf02336afa75085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: Press left trigger to activate your magic
+  InfoForPlayer: {fileID: 0}
+  canvasToDisplayText: {fileID: 0}
+  NextStep: {fileID: 5119165658525307529}
+  PrevStep: {fileID: 5119165658309185219}
+  taskFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  taskFailed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5119165658523021478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165658523021496}
+  - component: {fileID: 5119165658523021479}
+  m_Layer: 0
+  m_Name: shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165658523021496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658523021478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5119165657524723188}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165658523021479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658523021478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d75b35ee99d5d459d8545aba4f2eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: To activate your spell just release the trigger.
+  InfoForPlayer: {fileID: 0}
+  canvasToDisplayText: {fileID: 0}
+  NextStep: {fileID: 5119165657643051944}
+  PrevStep: {fileID: 0}
+  taskFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  taskFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  MM: {fileID: 0}
+--- !u!1 &5119165658525307528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165658525307530}
+  - component: {fileID: 5119165658525307529}
+  m_Layer: 0
+  m_Name: elementChoice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165658525307530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658525307528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5119165657524723188}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165658525307529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658525307528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7cfff4cd640e44db1d0f4c6dd858b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: Choose one of the spheres in front of you. Each sphere represents
+    it's element - choose your favourite.
+  InfoForPlayer: {fileID: 0}
+  canvasToDisplayText: {fileID: 0}
+  NextStep: {fileID: 5119165658628941844}
+  PrevStep: {fileID: 0}
+  taskFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  taskFailed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5119165658628941843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5119165658628941845}
+  - component: {fileID: 5119165658628941844}
+  m_Layer: 0
+  m_Name: leastSpheresConnecting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5119165658628941845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658628941843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5119165657524723188}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5119165658628941844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119165658628941843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5f87504b202d249ab996948585fe82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: Connect least of spheres. The more spheres you connect, the more
+    powerfull your spell will be.
+  InfoForPlayer: {fileID: 0}
+  canvasToDisplayText: {fileID: 0}
+  NextStep: {fileID: 5119165658523021479}
+  PrevStep: {fileID: 0}
+  taskFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  taskFailed:
+    m_PersistentCalls:
+      m_Calls: []

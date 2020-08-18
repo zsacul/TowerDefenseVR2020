@@ -13,7 +13,7 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
     bool FindElementSpheres()
     {
         GameObject IceSphere = GameObject.Find("IceNodeClone(1)");
- //       GameObject FireSphere = GameObject.Find("FireNodeClone(1)");
+//        GameObject FireSphere = GameObject.Find("FireNodeClone(1)");
 
         if (IceSphere == null)// || FireSphere == null)
         {
@@ -22,7 +22,7 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
         }
 
         IceSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveIce);
- //       FireSphere.GetComponen<UINode>().onSelect.AddListener(OnActiveFire);
+//        FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveFire);
 
         return true;
     }

@@ -19,6 +19,7 @@ TagManager:
   - VRButton
   - UITowerSelection
   - UICancelSelection
+  - MoveableObject
   layers:
   - Default
   - TransparentFX
