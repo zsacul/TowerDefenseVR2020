@@ -62,10 +62,6 @@ public class LightningCycle : GameEventListener
     // Update is called once per frame
     void Update()
     {
-        if(count++ > 250 && !gameLost)
-        {
-            listenedEvent.Raise();
-        }
         if (gameLost)
         {
             changingSkyBoxTime += Time.deltaTime / 10.0f;
