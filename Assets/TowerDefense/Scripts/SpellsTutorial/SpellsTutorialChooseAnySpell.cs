@@ -2,17 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellsTutorialChooseAnySpell : MonoBehaviour
+public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterStep()
     {
-        
+        base.EnterStep();
+        FindElementSpheres();
     }
 
-    // Update is called once per frame
-    void Update()
+    bool FindElementSpheres()
     {
-        
+        GameObject IceSphere = GameObject.Find("IceNodeClone(1)");
+ //       GameObject FireSphere = GameObject.Find("FireNodeClone(1)");
+
+        if (IceSphere == null)// || FireSphere == null)
+        {
+            Debug.LogError("NIE ZNALEZIONO WSZYSTKICH WYBORÓW ŻYWIOŁU");
+            return false;
+        }
+
+        IceSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveIce);
+ //       FireSphere.GetComponen<UINode>().onSelect.AddListener(OnActiveFire);
+
+        return true;
+    }
+
+    public void OnActiveIce()
+    {
+        SpellsTutorialMainNode.Instance.isElementChose = true;
+        SpellsTutorialMainNode.Instance.elementChose = ElementType.ice;
+        SetNextStep();
+    }
+
+    public void OnActiveFire()
+    {
+        SpellsTutorialMainNode.Instance.isElementChose = true;
+        SpellsTutorialMainNode.Instance.elementChose = ElementType.fire;
+        SetNextStep();
     }
 }

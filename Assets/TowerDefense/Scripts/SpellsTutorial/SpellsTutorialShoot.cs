@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellsTutorialShoot : MonoBehaviour
+public class SpellsTutorialShoot : SpellsTutorialSubnode
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    MagicManager MM;
 
-    // Update is called once per frame
-    void Update()
+    public override void EnterStep()
     {
-        
+        base.EnterStep();
+        MM.onDeactivate.AddListener(SetNextStep);
     }
 }

@@ -16,6 +16,8 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
     SpellsTutorialSubnode currentTutorial;
     [SerializeField]
     SpellsTutorialSubnode firstStep;
+    public bool isElementChose;
+    public ElementType elementChose;
 
     private static SpellsTutorialMainNode instance;
     public static SpellsTutorialMainNode Instance

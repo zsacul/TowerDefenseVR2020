@@ -62,7 +62,7 @@ public class MagicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f)
+        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.Q))
         {
             if (!menuActive)
             {
