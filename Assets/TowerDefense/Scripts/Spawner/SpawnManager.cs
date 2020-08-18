@@ -223,7 +223,7 @@ namespace SpawnManaging
                 }
 
             }
-            else
+            else if(!gameOver)
             {
                 waveInfoLabel.enabled = false;
                 incomingWaveInfoLabel.enabled = true;
