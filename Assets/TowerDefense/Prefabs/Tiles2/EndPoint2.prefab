@@ -2172,6 +2172,12 @@ PrefabInstance:
       propertyPath: gameLostMat
       value: 
       objectReference: {fileID: 2100000, guid: e339c94c4b1160840a55e2cbf04f41f2, type: 2}
+    - target: {fileID: 4735888192799633328, guid: c0a8e183416ee944b91d715b96354d1c,
+        type: 3}
+      propertyPath: gameLost
+      value: 
+      objectReference: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae,
+        type: 2}
     - target: {fileID: 5121875617268783316, guid: c0a8e183416ee944b91d715b96354d1c,
         type: 3}
       propertyPath: m_Enabled
