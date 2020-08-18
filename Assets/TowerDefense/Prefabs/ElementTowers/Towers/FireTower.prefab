@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7715673939924633214}
   - component: {fileID: -3436686311331746345}
   - component: {fileID: 111834536138235571}
-  m_Layer: 16
+  m_Layer: 13
   m_Name: FireTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
