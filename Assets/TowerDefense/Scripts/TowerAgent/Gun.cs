@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
         if (target == null)
             return;
 
-        Debug.Log("Strzał z " + gameObject.name);
+        //Debug.Log("Strzał z " + gameObject.name);
 
         GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
 //        instBullet.transform.parent = GetComponentInParent<triggerEnemiesCollisionList>().gameObject.transform;

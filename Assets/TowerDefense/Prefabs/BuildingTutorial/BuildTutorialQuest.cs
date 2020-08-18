@@ -14,6 +14,8 @@ public class BuildTutorialQuest : GameEventListener
     [SerializeField]
     protected BuildTutorialQuest nextQuest;
     [SerializeField]
+    protected BuildTutorialQuest prevQuest;
+    [SerializeField]
     protected string infoForPlayer;
     [SerializeField]
     protected TextMeshProUGUI textHolder;
@@ -42,6 +44,14 @@ public class BuildTutorialQuest : GameEventListener
                 doneInPast = true;
             }
             ExitQuest();
+        }
+    }
+
+    public virtual void SetPrevQuest()
+    {
+        if(prevQuest != null && BuildTutorialManager.Instance.CurrentQuest() != nextQuest && this.enabled)
+        {
+            BuildTutorialManager.Instance.SetCurrentQuest(prevQuest);
         }
     }
 

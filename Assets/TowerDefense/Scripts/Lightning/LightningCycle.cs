@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightningCycle : MonoBehaviour
+public class LightningCycle : GameEventListener
 {
     public AnimationCurve lightIntensityCurve;
 
@@ -33,6 +33,16 @@ public class LightningCycle : MonoBehaviour
     bool isNight = false;
     public float sunSize = 0.06f;
 
+    public Gradient skyColorLost;
+    public Gradient groundColorLost;
+
+    private bool gameLost;
+    private float changingSkyBoxTime;
+    GradientColorKey[] skyKey;
+    GradientColorKey[] groundKey;
+    GradientAlphaKey[] alphaKey;
+
+    int count;
     void renderProbe()
     {
         probe.RenderProbe();
@@ -44,24 +54,36 @@ public class LightningCycle : MonoBehaviour
         lightIntensity = directionalLight.intensity;
         shadowIntensity = directionalLight.shadowStrength;
         Invoke("renderProbe", 0.05f);
-
+        gameLost = false;
+        count = 0;
+        changingSkyBoxTime = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateLight();
-        currentTime += (Time.deltaTime / SecondsInAFullDay) * timeMultiplier;
-        
-        if (currentTime >= 1)
+        if (gameLost)
         {
-            currentTime = 0;//once we hit "midnight"; any time after that sunrise will begin.
+            changingSkyBoxTime += Time.deltaTime / 8.0f;
+            if (changingSkyBoxTime <= 1)
+            {
+                UpdateSkyboxAfterDefeat();
+            }
+        }
+        else
+        {
+            UpdateLight();
+            currentTime += (Time.deltaTime / SecondsInAFullDay) * timeMultiplier;
+
+            if (currentTime >= 1)
+            {
+                currentTime = 0;//once we hit "midnight"; any time after that sunrise will begin.
+            }
         }
     }
 
     void UpdateLight()
     {
-       
         if (currentTime <= 0.25f || currentTime >= 0.75f)
         {
             probe.intensity = 0.45f;
@@ -111,4 +133,35 @@ public class LightningCycle : MonoBehaviour
         SecondsInAFullDay = currentDayDuration;
     }
 
+    public override void OnEventRaised(Object data)
+    {
+        gameLost = true;
+
+        skyKey = new GradientColorKey[2];
+        skyKey[0].color = skyColor.Evaluate(currentTime);
+        skyKey[0].time = 0.0f;
+        skyKey[1].color = Color.red;
+        skyKey[1].time = 1.0f;
+
+        groundKey = new GradientColorKey[2];
+        groundKey[0].color = groundLightningColor.Evaluate(currentTime);
+        groundKey[0].time = 0.0f;
+        groundKey[1].color = Color.red;
+        groundKey[1].time = 1.0f;
+
+        alphaKey = new GradientAlphaKey[2];
+        alphaKey[0].alpha = 1.0f;
+        alphaKey[0].time = 0.0f;
+        alphaKey[1].alpha = 1.0f;
+        alphaKey[1].time = 1.0f;
+
+        skyColorLost.SetKeys(skyKey, alphaKey);
+        groundColorLost.SetKeys(groundKey, alphaKey);
+    }
+
+    private void UpdateSkyboxAfterDefeat()
+    {
+        RenderSettings.ambientGroundColor = groundColorLost.Evaluate(changingSkyBoxTime);
+        RenderSettings.skybox.SetColor("_SkyTint", skyColorLost.Evaluate(changingSkyBoxTime));
+    }
 }

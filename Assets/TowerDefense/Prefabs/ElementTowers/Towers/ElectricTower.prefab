@@ -243,8 +243,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2558853491042520286}
-  - component: {fileID: 3265789348653825119}
   - component: {fileID: 3810593826137130912}
+  - component: {fileID: 1464385057219142175}
   m_Layer: 16
   m_Name: TowerBottom
   m_TagString: Untagged
@@ -267,19 +267,6 @@ Transform:
   m_Father: {fileID: 6798793227686174031}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3265789348653825119
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574437333398027981}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.5619065, z: 2}
-  m_Center: {x: 0, y: 0.12746432, z: 0}
 --- !u!208 &3810593826137130912
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -296,6 +283,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.1274643, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1464385057219142175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574437333398027981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3b2eddad4a7994695164ff31224207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1732393405073803459
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +481,7 @@ GameObject:
   - component: {fileID: -2036200670099337975}
   - component: {fileID: 5778944963606810425}
   - component: {fileID: 6621508820020861293}
-  m_Layer: 16
+  m_Layer: 13
   m_Name: ElectricTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,6 +844,7 @@ GameObject:
   - component: {fileID: 5470748196153712614}
   - component: {fileID: 4732369463215459125}
   - component: {fileID: 4075302728836868037}
+  - component: {fileID: 1223264430742390073}
   m_Layer: 16
   m_Name: default
   m_TagString: Untagged
@@ -913,6 +913,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1223264430742390073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032153309473250128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 95dc88fd91c6b5140b8c11db049c6dc5, type: 3}
 --- !u!1 &5364617023693018258
 GameObject:
   m_ObjectHideFlags: 0

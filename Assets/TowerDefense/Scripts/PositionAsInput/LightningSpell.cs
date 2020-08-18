@@ -11,8 +11,10 @@ public class LightningSpell : MonoBehaviour, IChargable
     public DamageData dmg;
     public UnityEvent hit;
     public UnityEvent fail;
+    [ContextMenuItem("Release", "Release")]
     public GameObject lightning;
-
+    private float charge;
+    
     public void Release()
     {
         Destroy(gameObject, 1.0f);
@@ -21,6 +23,7 @@ public class LightningSpell : MonoBehaviour, IChargable
         {
             hit.Invoke();
             DealDamage(hp);
+            CreateLightning(gameObject, hp.gameObject);
         }
         else
         {
@@ -30,7 +33,7 @@ public class LightningSpell : MonoBehaviour, IChargable
 
     public void SetCharge(float charge)
     {
-        
+        this.charge = charge;
     }
 
     // Start is called before the first frame update
@@ -46,6 +49,7 @@ public class LightningSpell : MonoBehaviour, IChargable
     }
     void DealDamage(EnemyHPManager hp)
     {
+        dmg.damage *= charge;
         hp.ApplyDamage(dmg);
     }
     EnemyHPManager DetectEnemy()
@@ -66,7 +70,7 @@ public class LightningSpell : MonoBehaviour, IChargable
         return hp[nearestIndex];
              
     }
-    void createLightning(GameObject start, GameObject end)
+    void CreateLightning(GameObject start, GameObject end)
     {
         GameObject instLightning = Instantiate(lightning, transform.position, Quaternion.identity) as GameObject;
         DigitalRuby.LightningBolt.LightningBoltScript l = instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>();

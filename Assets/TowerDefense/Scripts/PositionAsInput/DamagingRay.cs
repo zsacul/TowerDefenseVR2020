@@ -12,9 +12,15 @@ public class DamagingRay : MonoBehaviour , IChargable
     public UnityEvent endPulsing;
     public float repeatRate = 0.5f;
     public float length;
+    public AnimationCurve lifeTimeOverCharge = AnimationCurve.Linear(0, 0, 1, 2);
+    public AnimationCurve dmgMultOverCharge = AnimationCurve.Linear(0, 0, 1, 1);
+    public AnimationCurve sizeOverCharge = AnimationCurve.Linear(0, 0.15f, 1, 0.5f);
+
     LineRenderer line;
     bool pulsing;
-    public ParticleSystem contactPoint; 
+    public ParticleSystem contactPoint;
+    private float charge;
+
     private void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -28,13 +34,17 @@ public class DamagingRay : MonoBehaviour , IChargable
     }
     public void Release()
     {
+        dmg.damage *= dmgMultOverCharge.Evaluate(charge);
+        dmg.specialEffectDmgPerSec *= dmgMultOverCharge.Evaluate(charge);
+        length = lifeTimeOverCharge.Evaluate(charge);
         StartPulsing();
         Invoke("EndPulsing", length);
     }
 
     public void SetCharge(float charge)
     {
-       
+        this.charge = charge;
+        transform.localScale = Vector3.one * sizeOverCharge.Evaluate(charge);
     }
     void DealDamage(EnemyHPManager hp)
     {

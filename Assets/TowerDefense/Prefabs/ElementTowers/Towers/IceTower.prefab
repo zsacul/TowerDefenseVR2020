@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 435104462188909791}
   - component: {fileID: 885253886140596236}
   - component: {fileID: 8461049226072993020}
+  - component: {fileID: 6597587847851382053}
   m_Layer: 16
   m_Name: default
   m_TagString: Untagged
@@ -172,6 +173,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6597587847851382053
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589973244373192809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 95dc88fd91c6b5140b8c11db049c6dc5, type: 3}
 --- !u!1 &913183074672098801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1156,7 @@ GameObject:
   - component: {fileID: 4333476727925200097}
   - component: {fileID: 3989068214373262759}
   - component: {fileID: 3348099558758392115}
-  m_Layer: 16
+  m_Layer: 13
   m_Name: IceTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

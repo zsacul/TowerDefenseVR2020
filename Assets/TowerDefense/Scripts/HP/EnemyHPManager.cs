@@ -9,6 +9,7 @@ using Zinnia.Tracking.CameraRig;
 using TMPro;
 
 public class EnemyHPManager : MonoBehaviour {
+    bool isDead;
     float speedManipulations;
     float specialEffectDurationInSec;
     bool isSpecialEffectActive;
@@ -35,13 +36,16 @@ public class EnemyHPManager : MonoBehaviour {
         
     private void Start()
     {
+        isDead = false;
         enemyAgent = GetComponent<NavMeshAgent>();
         elementsInfo = GameObject.Find("GameManager").GetComponent<Elements>();
         isSpecialEffectActive = false;
         GetComponent<HealthBar>().SetMaxHp(enemyHP);
     }
 
-    private void Death() {
+    public void Death() {
+        //Debug.Log("Death() called");
+        isDead = true;
         killed.Invoke();
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);
@@ -49,6 +53,7 @@ public class EnemyHPManager : MonoBehaviour {
     }
 
     public void ApplyDamage(Bullet b) {
+       // Debug.Log("ApplyDamage() called");
         Resistance res = elementsInfo.GetResistence(type, b.GetBulletType());
 
         switch (res)
@@ -75,7 +80,7 @@ public class EnemyHPManager : MonoBehaviour {
         GetComponent<HealthBar>().updateBar(enemyHP);
         b.SetReadyToDestroy();
 
-        if (enemyHP <= 0 ) {
+        if (enemyHP <= 0 && !isDead) {
             BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
@@ -111,13 +116,9 @@ public class EnemyHPManager : MonoBehaviour {
             NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
         }
         enemyHP -= damage;
-        if (enemyHP <= 0)
-        {
-            Death();
-        }
 
         GetComponent<HealthBar>().updateBar(enemyHP);
-        if (enemyHP <= 0)
+        if (enemyHP <= 0 && !isDead)
         {
             BuildManager.Instance.AddMoney(moneyDropped);
             Death();

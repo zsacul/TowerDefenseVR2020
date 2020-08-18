@@ -49,9 +49,11 @@ public class BulletNoTarget : MonoBehaviour
         {
             collision.gameObject.BroadcastMessage("ApplyDamage", damage);
             EnemyHit.Invoke();
+        } else
+        {
+            ArrowStick(collision);
         }
-        else if (collision.gameObject.tag != "Bullet")
-            readyToDestroy = true;
+
     }
 
     private void destroyBullet()
@@ -87,5 +89,20 @@ public class BulletNoTarget : MonoBehaviour
     public SpecialEffect GetSpecialEffect()
     {
         return specialEffect;
+    }
+
+    void ArrowStick(Collision col)
+    {
+        //transform.SetParent(col.transform);
+        if(col.gameObject.tag == "MoveableObject")
+        {
+            transform.SetParent(col.gameObject.transform);
+        }
+        Destroy(GetComponentInChildren<FixedJoint>());
+        Destroy(GetComponent<Rigidbody>());
+        Destroy(GetComponent<Collider>());
+        Destroy(GetComponentInChildren<Rigidbody>());
+        Destroy(GetComponentInChildren<TrailRenderer>());
+        Invoke("SetReadyToDestroy", 4f);
     }
 }
