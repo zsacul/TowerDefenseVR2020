@@ -27,14 +27,14 @@ public class SpellsTutorialSubnode : MonoBehaviour
         Debug.Log("Wejście do " + gameObject.name);
         if (gameObject.activeSelf)
             Debug.Log(gameObject.name + " aktywny");
-        canvasToDisplayText.enabled = true;
+        //canvasToDisplayText.enabled = true;
         InfoForPlayer.text = TextToDisplay;
     }
 
     virtual public void ExitStep()
     {
         Debug.Log("Wyjscie z " + gameObject.name);
-        canvasToDisplayText.enabled = false;
+        //canvasToDisplayText.enabled = false;
     }
 
     public void SetNextStep()

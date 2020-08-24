@@ -14,6 +14,8 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
     SpellsTutorialSubnode currentTutorial;
     [SerializeField]
     SpellsTutorialSubnode firstStep;
+    [SerializeField]
+    MagicManager magic;
     public bool isElementChose;
     public ElementType elementChose;
 
@@ -75,6 +77,7 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
 
     public void StartThisTutorial()
     {
+        magic.enabled = true;
         Destroy(BuildTutorialManager.gameObject);
         SetCurrentTutorial(firstStep);
     }

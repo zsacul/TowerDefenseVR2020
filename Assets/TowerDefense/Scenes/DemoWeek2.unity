@@ -54387,6 +54387,12 @@ PrefabInstance:
       propertyPath: probe
       value: 
       objectReference: {fileID: 1958982201}
+    - target: {fileID: 7035261957170632692, guid: 77e35648e63698744b6f2a729d50ce75,
+        type: 3}
+      propertyPath: listenedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae,
+        type: 2}
     - target: {fileID: 7035261957170632694, guid: 77e35648e63698744b6f2a729d50ce75,
         type: 3}
       propertyPath: m_Name
