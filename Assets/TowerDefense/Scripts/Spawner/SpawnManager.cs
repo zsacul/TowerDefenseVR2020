@@ -14,6 +14,8 @@ namespace SpawnManaging
         [SerializeField]
         GameEvent breakStart;
         [SerializeField]
+        GameEvent GameWon;
+        [SerializeField]
         LightningCycle lightningCycle;
         private static SpawnManager instance;
 
@@ -36,7 +38,7 @@ namespace SpawnManaging
         public Canvas incomingWaveInfoLabelPrefab;
         private Canvas incomingWaveInfoLabel;
         private bool firstUIUpdate;
-        private bool gameOver;
+        private static bool gameOver;
 
         float breakTime;
         private void Awake()
@@ -80,6 +82,8 @@ namespace SpawnManaging
                 {
                     InitBreak();
                     Debug.Log("All waves cleared");//TODO
+                    gameOver = true;
+                    GameWon.Raise();
                 }
                 return;
             }
@@ -106,6 +110,7 @@ namespace SpawnManaging
         {
             CancelInvoke("SpawnLoop");
             CancelInvoke("Spawn");
+            GameOver();
         }
         private void InitBreak()
         {
@@ -152,7 +157,10 @@ namespace SpawnManaging
         }
         public static void StartWave()
         {
-            instance.EndBreak();
+            if (!gameOver)
+            {
+                instance.EndBreak();
+            }
         }
 
         IEnumerator LateStartUpdateUI(float waitTime)
@@ -215,7 +223,7 @@ namespace SpawnManaging
                 }
 
             }
-            else
+            else if(!gameOver)
             {
                 waveInfoLabel.enabled = false;
                 incomingWaveInfoLabel.enabled = true;

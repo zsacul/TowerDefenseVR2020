@@ -15782,7 +15782,6 @@ GameObject:
   m_Component:
   - component: {fileID: 752578748}
   - component: {fileID: 752578749}
-  - component: {fileID: 752578750}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -15820,6 +15819,7 @@ MonoBehaviour:
   target: {fileID: 0}
   breakEnd: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
   breakStart: {fileID: 11400000, guid: f77c5dfc0cac2de4eb82df9960d006c2, type: 2}
+  GameWon: {fileID: 11400000, guid: c2a9c2a169a46844691b87e0589b1268, type: 2}
   lightningCycle: {fileID: 1785877129}
   spawnPoints:
   - {fileID: 752578748}
@@ -15859,19 +15859,6 @@ MonoBehaviour:
     type: 3}
   incomingWaveInfoLabelPrefab: {fileID: 1347076448830942058, guid: 138d92915a7eb44519cbb9bf5ad2a39d,
     type: 3}
---- !u!114 &752578750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752578747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e745372d233a54e98a6a72d12b0e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae, type: 2}
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
@@ -19829,6 +19816,34 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7321500428331665149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &999219576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999219575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e745372d233a54e98a6a72d12b0e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: c2a9c2a169a46844691b87e0589b1268, type: 2}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 999219575}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  text: {fileID: 344256057}
 --- !u!114 &999219579
 MonoBehaviour:
   m_ObjectHideFlags: 0
