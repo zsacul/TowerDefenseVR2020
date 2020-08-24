@@ -11,7 +11,8 @@ public class GameLostListener : GameEventListener
 
     public override void OnEventRaised(Object data)
     {
-        text.text = "You have lost!\nGame will restart in 10 seconds.";
+        text.text = "Enemy has taken your castle, you have lost!\nGame will restart in 10 seconds.";
+        Endgame.Instance.ResetScene();
         OnLost.Invoke();
     }
 }
