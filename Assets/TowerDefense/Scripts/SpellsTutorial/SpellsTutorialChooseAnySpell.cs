@@ -12,18 +12,29 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
 
     bool FindElementSpheres()
     {
-        GameObject IceSphere = GameObject.Find("IceNodeClone(1)");
-//        GameObject FireSphere = GameObject.Find("FireNodeClone(1)");
+        GameObject IceSphere = GameObject.Find("IceNode 1(Clone)");
+        GameObject FireSphere = GameObject.Find("FireNode 1(Clone)");
+        GameObject ElectricSphere = GameObject.Find("ElectricNode 1(Clone)");
 
-        if (IceSphere == null)// || FireSphere == null)
+        if (IceSphere == null)
         {
-            Debug.LogError("NIE ZNALEZIONO WSZYSTKICH WYBORÓW ŻYWIOŁU");
+            Debug.LogError("NIE ZNALEZIONO LODOWEGO ŻYWIOŁU");
+            return false;
+        }
+        if (FireSphere == null)
+        {
+            Debug.LogError("NIE ZNALEZIONO OGNISTEGO ŻYWIOŁU");
+            return false;
+        }
+        if (ElectricSphere == null)
+        {
+            Debug.LogError("NIE ZNALEZIONO ELEKTRYCZNEGO ŻYWIOŁU");
             return false;
         }
 
         IceSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveIce);
-//        FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveFire);
-
+        FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveFire);
+        FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveElectric);
         return true;
     }
 
@@ -38,6 +49,13 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
     {
         SpellsTutorialMainNode.Instance.isElementChose = true;
         SpellsTutorialMainNode.Instance.elementChose = ElementType.fire;
+        SetNextStep();
+    }
+
+    public void OnActiveElectric()
+    {
+        SpellsTutorialMainNode.Instance.isElementChose = true;
+        SpellsTutorialMainNode.Instance.elementChose = ElementType.electricity;
         SetNextStep();
     }
 }

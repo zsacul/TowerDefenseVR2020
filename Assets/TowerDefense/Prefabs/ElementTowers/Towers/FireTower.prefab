@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3306528203186404201}
   - component: {fileID: 3256032356740984063}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351178657365186528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1351,7 +1351,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7081241549832129045, guid: f4f104b22b491254dbacdae5e6ee812b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4f104b22b491254dbacdae5e6ee812b, type: 3}
 --- !u!4 &6708073536131090089 stripped
 Transform:

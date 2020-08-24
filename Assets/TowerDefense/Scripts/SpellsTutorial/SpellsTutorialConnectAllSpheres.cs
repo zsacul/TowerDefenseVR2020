@@ -8,30 +8,41 @@ public class SpellsTutorialConnectAllSpheres : SpellsTutorialSubnode
     public override void EnterStep()
     {
         base.EnterStep();
-        findLastElementNode();
+        StartCoroutine(findLastElementNode());
     }
 
-    bool findLastElementNode()
+    IEnumerator findLastElementNode()
     {
+        yield return new WaitForEndOfFrame();
         switch (SpellsTutorialMainNode.Instance.elementChose)
         {
             case ElementType.ice:
                 {
-                    lastSphere = GameObject.Find("iceNode3clone(1)");
+                    lastSphere = GameObject.Find("IceNode 2(Clone)");
+                    if (lastSphere == null)
+                        Debug.LogError("NIE MA IceNode3(Clone) NA MAPIE");
                     break;
                 }
             case ElementType.fire:
                 {
-                    lastSphere = GameObject.Find("fireNode5clone(1)");
+                    lastSphere = GameObject.Find("FireNode 2(Clone)");
+                    if (lastSphere == null)
+                        Debug.LogError("NIE MA FireNode5(Clone) NA MAPIE");
+                    break;
+                }
+            case ElementType.electricity:
+                {
+                    lastSphere = GameObject.Find("ElectricNode 2(Clone)");
+                    if (lastSphere == null)
+                        Debug.LogError("NIE MA ElectricNode4(Clone) NA MAPIE");
                     break;
                 }
             default:
                 {
                     Debug.LogError("Wybrano żywioł nieuwzględniony");
-                    return false;
+                    break;
                 }
         }
         lastSphere.GetComponent<UINode>().onSelect.AddListener(SetNextStep);
-        return true;
     }
 }
