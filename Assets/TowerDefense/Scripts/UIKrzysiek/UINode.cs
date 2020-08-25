@@ -43,6 +43,14 @@ public class UINode : MonoBehaviour
         childrenUI = new List<UINode>();
         line = GetComponent<LineRenderer>();
         onSpawned.Invoke();
+        if (name == "Tower(Copy)")
+        {
+            active = BuildManager.CanBuildTower();
+        }
+        if(name == "Obstacle(Copy)")
+        {
+            active = BuildManager.CanBuildObstacle();
+        }
     }
     private void Update()
     {
