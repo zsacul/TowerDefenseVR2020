@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SetUnwalkableChunk : GameEventListener
 {
+    [SerializeField]
+    GameObject UnwalkableMaker;
+
+    bool UnwalkableOnWave = false;
     public override void OnEventRaised(Object data)
     {
-        gameObject.SetActive(true);
+        if(UnwalkableOnWave)
+            UnwalkableMaker.SetActive(true);
     }
 
 }
