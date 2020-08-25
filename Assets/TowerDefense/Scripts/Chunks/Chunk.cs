@@ -87,15 +87,22 @@ public class Chunk : MonoBehaviour
 
     public bool ValidOperation(ChunkType newType, bool modifyPathInBFS = true)
     {
+        owner.HideNewPath();
         if (type == ChunkType.none ||
             type == ChunkType.naturalObstacle ||
             type == ChunkType.playerObstacle ||
-            type == ChunkType.border) return false;
+            type == ChunkType.border)
+        {
+            owner.HideNewPath();
+            return false;
+        }
+        
         int xSize = owner.mapString.sizeX;
         int ySize = owner.mapString.sizeY;
 
         if(type == ChunkType.spawnPoint)
         {
+            owner.HideNewPath();
             return false;
         }
 
@@ -113,6 +120,7 @@ public class Chunk : MonoBehaviour
                         if (x >= 0 && y >= 0 && x < xSize && y < ySize && 
                             owner.chunkMap[x, y].type == ChunkType.tower)
                         {
+                            owner.HideNewPath();
                             return false;
                         }
                     }
@@ -280,7 +288,7 @@ public class Chunk : MonoBehaviour
                 }
             }
         }
-        if(endPointReached && changeMap)
+        if(endPointReached)
         {
             (int, int) point = endPoint;
             step = value[endPoint.Item1, endPoint.Item2];
@@ -288,18 +296,20 @@ public class Chunk : MonoBehaviour
             {
                 for (int y = 0; y < ySize; y++)
                 {
-                    owner.path[x, y] = false; 
+                    if (changeMap) owner.path[x, y] = false; 
                 }
             }
-            owner.path[endPoint.Item1, endPoint.Item2] = true;
-            owner.path[spawnPoint.Item1, spawnPoint.Item2] = true;
+            if (changeMap) owner.path[endPoint.Item1, endPoint.Item2] = true;
+            if (changeMap) owner.path[spawnPoint.Item1, spawnPoint.Item2] = true;
+            owner.route.Clear();
             //back track
             while (step > 1)
             {
+                owner.route.Add(point);
                 step--;
                 int x = point.Item1;
                 int y = point.Item2;
-                owner.path[x, y] = true;
+                if (changeMap) owner.path[x, y] = true;
                 if(x-1>=0 && step == value[x-1,y])
                 {
                     point = (x-1, y);
@@ -323,6 +333,8 @@ public class Chunk : MonoBehaviour
                 Debug.LogError($"Chunks.cs/BFS failed while backtracking");
                 return false;
             }
+            owner.ShowNewPath();
+            owner.Invoke("HideNewPath", 2);
             return true;
         }
         else

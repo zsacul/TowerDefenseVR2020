@@ -264,6 +264,11 @@ namespace DigitalRuby.LightningBolt
         private void UpdateLineRenderer()
         {
             int segmentCount = (segments.Count - startIndex) + 1;
+            if(lineRenderer == null)
+            {
+                Destroy(this);
+                return;
+            }
             lineRenderer.positionCount = segmentCount;
 
             if (segmentCount < 1)
