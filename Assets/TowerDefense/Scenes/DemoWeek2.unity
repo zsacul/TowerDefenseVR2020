@@ -2141,11 +2141,10 @@ PrefabInstance:
     - target: {fileID: 4607602614648122427, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: infoForPlayer
-      value: You've almost done it! Let's teach you how to upgrade towers. Open the
-        building menu and touch the ball with arrows inside. You can see four different
-        elements. All of them are upgrades that modify your tower in a unique way.
-        Select one of them, point with your right hand onto a tower and press right
-        touchpad.
+      value: Let's teach you how to upgrade towers. Open the building menu and touch
+        the ball with arrows inside. You can see four different elements. All of
+        them are upgrades that modify your tower in a unique way. Select one of them,
+        point with your right hand onto a tower and press right touchpad.
       objectReference: {fileID: 0}
     - target: {fileID: 6547818089451838684, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -19853,47 +19852,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7321500428331665149}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &999219576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999219575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e745372d233a54e98a6a72d12b0e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: c2a9c2a169a46844691b87e0589b1268, type: 2}
-  OnWin:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 999219575}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  text: {fileID: 344256057}
---- !u!114 &999219579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999219575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c49d53de720bad47adc8792c71e7c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listenedEvent: {fileID: 11400000, guid: e537610ff1e80a54fbec04a7a959d56b, type: 2}
 --- !u!1 &1002318016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 64ae9cc10da81d048a062fc5bbe62bc7,
@@ -21094,6 +21052,129 @@ Transform:
   m_Father: {fileID: 30139891}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1105414379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105414382}
+  - component: {fileID: 1105414381}
+  - component: {fileID: 1105414380}
+  - component: {fileID: 1105414383}
+  m_Layer: 0
+  m_Name: EndgameHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1105414380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105414379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e745372d233a54e98a6a72d12b0e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: c2a9c2a169a46844691b87e0589b1268, type: 2}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 999219575}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 752578749}
+        m_MethodName: ChangeWaveInfoLabelStatusTo
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  text: {fileID: 344256057}
+--- !u!114 &1105414381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105414379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1955fe17f7cf5341a9b80ce21fd2a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenedEvent: {fileID: 11400000, guid: ccd37894c580f1a42b260d0d53c9b5ae, type: 2}
+  OnLost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 999219575}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 752578749}
+        m_MethodName: ChangeWaveInfoLabelStatusTo
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  text: {fileID: 344256057}
+--- !u!4 &1105414382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105414379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.046371, y: -9.841932, z: 44.282402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105414383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105414379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a8a58465fb88b41b19f667d4f97327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1108249647
 GameObject:
   m_ObjectHideFlags: 0
@@ -53457,6 +53538,11 @@ PrefabInstance:
       propertyPath: magic
       value: 
       objectReference: {fileID: 65865510}
+    - target: {fileID: 5119165657524723187, guid: e558c48fba491514fac090f24823c884,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5119165657524723188, guid: e558c48fba491514fac090f24823c884,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53527,6 +53613,11 @@ PrefabInstance:
       propertyPath: InfoForPlayer
       value: 
       objectReference: {fileID: 344256057}
+    - target: {fileID: 5119165658309185219, guid: e558c48fba491514fac090f24823c884,
+        type: 3}
+      propertyPath: TextToDisplay
+      value: Press right trigger to activate your magic
+      objectReference: {fileID: 0}
     - target: {fileID: 5119165658523021479, guid: e558c48fba491514fac090f24823c884,
         type: 3}
       propertyPath: InfoForPlayer
@@ -54668,68 +54759,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3318639718450083430, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.07450981
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427652889129, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427652889129, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427652889129, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_padding
-      value: 3.518
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_text
-      value: "Good, you are finally awake! \nWe were worried that there is no one
-        left to defend the castle. Let's get you started! Whenever you ready press
-        the touchpad on your controller."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 174
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495108, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_textInfo.materialCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495109, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 780
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321500427987495109, guid: 2e7a22c900fed3b40a771fa239bb44a6,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 280
-      objectReference: {fileID: 0}
     - target: {fileID: 7321500428945264535, guid: 2e7a22c900fed3b40a771fa239bb44a6,
         type: 3}
       propertyPath: m_LocalPosition.x
