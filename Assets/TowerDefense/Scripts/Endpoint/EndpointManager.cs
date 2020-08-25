@@ -34,6 +34,7 @@ public class EndpointManager : GameEventListener
 
             if (GameLostCondition())
             {
+                Debug.Log("GameLost raised");
                 gameLost.Raise();
                 destroyed.Invoke();
             }
@@ -49,9 +50,13 @@ public class EndpointManager : GameEventListener
     {
         if(other.tag == "Enemy")
         {
-            DamageEndpoint(1);
+            if (isGameOver)
+            {
+                Debug.Log("Enemy entered endpoint after game over");
+            }
             other.transform.position = Vector3.down * 1000;
             other.GetComponent<EnemyHPManager>().Death();
+            DamageEndpoint(1);
             damaged.Invoke();
         }
         

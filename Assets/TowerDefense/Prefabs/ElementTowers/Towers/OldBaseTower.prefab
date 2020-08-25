@@ -359,7 +359,7 @@ MonoBehaviour:
   upgradeRangeIncreaseInPercent: 0
   upgradeDelayIncreaseInPercent: 0
   shootingDelay: 1.2
-  damage: 20
+  damage: 8
   speed: 10
   specialEffectDuration: 0
   specialEffectDmg: 0

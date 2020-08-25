@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class TutorialCanvasHandler : GameEventListener
 {
+    private bool tutorialRuns;
+
+    private void Start()
+    {
+        tutorialRuns = true;
+    }
     public override void OnEventRaised(Object data)
     {
-        Destroy(gameObject);
+        if (tutorialRuns)
+        {
+            gameObject.SetActive(false);
+            tutorialRuns = false;
+        }
     }
 }

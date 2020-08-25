@@ -40,7 +40,7 @@ public class UINode : MonoBehaviour
     private bool drawLine;
     private void Start()
     {
-        Debug.Log("START " + name);
+        //Debug.Log("START " + name);
         childrenUI = new List<UINode>();
         line = GetComponent<LineRenderer>();
         onSpawned.Invoke();
