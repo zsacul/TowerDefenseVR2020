@@ -35,7 +35,7 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
             Debug.LogError("NIE ZNALEZIONO ELEKTRYCZNEGO ŻYWIOŁU");
         }
         else
-            FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveElectric);
+            ElectricSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveElectric);
     }
 
     public void OnActiveIce()

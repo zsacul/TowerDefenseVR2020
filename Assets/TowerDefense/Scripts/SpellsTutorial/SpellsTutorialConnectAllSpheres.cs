@@ -13,28 +13,28 @@ public class SpellsTutorialConnectAllSpheres : SpellsTutorialSubnode
 
     IEnumerator findLastElementNode()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.5f);
         switch (SpellsTutorialMainNode.Instance.elementChose)
         {
             case ElementType.ice:
                 {
                     lastSphere = GameObject.Find("IceNode 2(Clone)");
                     if (lastSphere == null)
-                        Debug.LogError("NIE MA IceNode3(Clone) NA MAPIE");
+                        Debug.LogError("NIE MA IceNode2 (Clone) NA MAPIE");
                     break;
                 }
             case ElementType.fire:
                 {
                     lastSphere = GameObject.Find("FireNode 2(Clone)");
                     if (lastSphere == null)
-                        Debug.LogError("NIE MA FireNode5(Clone) NA MAPIE");
+                        Debug.LogError("NIE MA FireNode 2(Clone) NA MAPIE");
                     break;
                 }
             case ElementType.electricity:
                 {
                     lastSphere = GameObject.Find("ElectricNode 2(Clone)");
                     if (lastSphere == null)
-                        Debug.LogError("NIE MA ElectricNode4(Clone) NA MAPIE");
+                        Debug.LogError("NIE MA ElectricNode 2(Clone) NA MAPIE");
                     break;
                 }
             default:
