@@ -100,7 +100,7 @@ public class EnemyHPManager : MonoBehaviour {
                 break;
             case Resistance.low:
                 ApplyDamage(data.damage * 1.5f);
-                activateSpecialEffect(data.specialEffect, (int)(data.specialEffectDmgPerSec * 1.5f), data.specialEffectDurationInSec * 1.5f);
+                StartCoroutine(activateSpecialEffect(data.specialEffect, (int)(data.specialEffectDmgPerSec * 1.5f), data.specialEffectDurationInSec * 1.5f));
                 break;
             default:
                 break;

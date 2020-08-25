@@ -114,10 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg:
-    damage: 10
+    damage: 5
     specialEffect: 1
     specialEffectDurationInSec: 1
-    specialEffectDmgPerSec: 5
+    specialEffectDmgPerSec: 2
     element: 0
   pulse:
     m_PersistentCalls:

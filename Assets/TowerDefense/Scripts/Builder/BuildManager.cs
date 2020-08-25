@@ -375,4 +375,12 @@ public class BuildManager : MonoBehaviour
     {
         instance.ChooseNone();
     }
+    public static bool CanBuildTower()
+    {
+        return instance.money >= instance.towerCost && BuildingConditions.Instance.towerAnywhere;
+    }
+    public static bool CanBuildObstacle()
+    {
+        return instance.money >= instance.playerObstacleCost;
+    }
 }

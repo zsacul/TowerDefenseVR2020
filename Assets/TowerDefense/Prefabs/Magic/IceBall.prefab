@@ -118,7 +118,7 @@ MonoBehaviour:
   damageData:
     damage: 100
     specialEffect: 2
-    specialEffectDurationInSec: 1
+    specialEffectDurationInSec: 2
     specialEffectDmgPerSec: 0
     element: 2
   sizeOverTime:
