@@ -294,10 +294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   dmg:
-    damage: 80
+    damage: 50
     specialEffect: 4
-    specialEffectDurationInSec: 0.2
-    specialEffectDmgPerSec: 0
+    specialEffectDurationInSec: 1
+    specialEffectDmgPerSec: 1
     element: 3
   hit:
     m_PersistentCalls:

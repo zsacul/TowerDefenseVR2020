@@ -34,7 +34,7 @@ public class SpellsTutorialConnectAllSpheres : SpellsTutorialSubnode
                 {
                     lastSphere = GameObject.Find("ElectricNode 2(Clone)");
                     if (lastSphere == null)
-                        Debug.LogError("NIE MA ElectricNode4(Clone) NA MAPIE");
+                        Debug.LogError("NIE MA ElectricNode2(Clone) NA MAPIE");
                     break;
                 }
             default:

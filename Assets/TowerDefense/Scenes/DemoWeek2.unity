@@ -18474,6 +18474,8 @@ MonoBehaviour:
       VRTK.Prefabs.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - assemblyQualifiedTypeName: UnwalkableChunk, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  - assemblyQualifiedTypeName: Unwalkable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &953520808
 GameObject:
   m_ObjectHideFlags: 0
