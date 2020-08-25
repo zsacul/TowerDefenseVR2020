@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -7596898777371843765}
   - component: {fileID: 5506404761458647768}
   - component: {fileID: 5866898135537692866}
-  m_Layer: 16
+  m_Layer: 2
   m_Name: UINodeBase
   m_TagString: Bullet
   m_Icon: {fileID: 0}

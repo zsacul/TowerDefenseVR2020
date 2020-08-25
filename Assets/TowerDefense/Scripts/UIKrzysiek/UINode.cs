@@ -58,6 +58,7 @@ public class UINode : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.collider.tag != "HandCollider") return;
         if (!active)
         {
             onTouchDisabled.Invoke();

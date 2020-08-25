@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3239744079829564135}
   - component: {fileID: -8452284509098882877}
   - component: {fileID: 4656867524763051948}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FireRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,6 +454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sparks
       objectReference: {fileID: 0}
+    - target: {fileID: 8699406646614052974, guid: 8cfb756efc5585640bf861bf721a7eff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9006237400219213364, guid: 8cfb756efc5585640bf861bf721a7eff,
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -555,6 +560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: impulse
       objectReference: {fileID: 0}
+    - target: {fileID: 8699406646614052974, guid: 681c671edca06c54caa6bbf1f54d1017,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9006237400219213364, guid: 681c671edca06c54caa6bbf1f54d1017,
         type: 3}
       propertyPath: playOnAwake
@@ -651,6 +661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: contactPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8699406646614052974, guid: 8cfb756efc5585640bf861bf721a7eff,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9006237400219213364, guid: 8cfb756efc5585640bf861bf721a7eff,
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -732,6 +747,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 218346033571424339}
     m_Modifications:
+    - target: {fileID: 2192971633698438059, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5494889592791601756, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -806,6 +826,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496865534257612880, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497233455546841610, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497404520260547044, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497693218109804632, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498162141683548272, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5659950437876255770, guid: 3d5f53dfcb9c9fe40940f28fd4892a91,
         type: 3}

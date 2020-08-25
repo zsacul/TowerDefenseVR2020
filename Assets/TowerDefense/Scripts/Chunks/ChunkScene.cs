@@ -17,10 +17,13 @@ public class ChunkScene : MonoBehaviour
     public Chunk[,] chunkMap;
     public bool[,] oldPath;
     public bool[,] path;
+    public List<(int, int)> route;
     public SpawnManaging.SpawnManager spawner;
+    public LineRenderer newPathRender;
     // Start is called before the first frame update
     void Start()
     {
+        route = new List<(int, int)>();
         map = mapString.GetChunkType();
         chunkMap = new Chunk[mapString.sizeX, mapString.sizeY];
         path = new bool[mapString.sizeX, mapString.sizeY];
@@ -118,5 +121,21 @@ public class ChunkScene : MonoBehaviour
             Debug.LogError($"ChunkScene.cs/GetFirstChunkOfType(): Point of type {type} wasn't found");
         }
         return point;
+    }
+    public void ShowNewPath()
+    {
+        CancelInvoke("HideNewPath");
+        newPathRender.positionCount = this.route.Count;
+        (int, int)[] route = this.route.ToArray();
+        for(int i=0; i<this.route.Count; i++)
+        {
+            newPathRender.SetPosition(i, transform.position + Vector3.right * chunkSizeX * route[i].Item1
+                                                               + Vector3.forward * chunkSizeZ * route[i].Item2 + Vector3.up * 0.5f);
+        }
+        newPathRender.enabled = true;
+    }
+    public void HideNewPath()
+    {
+        newPathRender.enabled = false;
     }
 }

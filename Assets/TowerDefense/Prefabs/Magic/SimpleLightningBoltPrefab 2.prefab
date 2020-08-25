@@ -151,14 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartObject: {fileID: 163122}
+  StartObject: {fileID: 0}
   StartPosition: {x: 0, y: 0, z: 0}
-  EndObject: {fileID: 171180}
+  EndObject: {fileID: 0}
   EndPosition: {x: 0, y: 0, z: 0}
   Generations: 6
   Duration: 0.03
-  ChaosFactor: 0.15
-  ManualMode: 0
+  ChaosFactor: 0.02
+  ManualMode: 1
   Rows: 1
   Columns: 1
   AnimationMode: 1

@@ -12,7 +12,7 @@ public class LightningSpell : MonoBehaviour, IChargable
     public UnityEvent hit;
     public UnityEvent fail;
     [ContextMenuItem("Release", "Release")]
-    public GameObject lightning;
+    public DigitalRuby.LightningBolt.LightningBoltScript l;
     private float charge;
     
     public void Release()
@@ -72,12 +72,9 @@ public class LightningSpell : MonoBehaviour, IChargable
     }
     void CreateLightning(GameObject start, GameObject end)
     {
-        GameObject instLightning = Instantiate(lightning, transform.position, Quaternion.identity) as GameObject;
-        DigitalRuby.LightningBolt.LightningBoltScript l = instLightning.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>();
-        l.StartObject = start;
-        l.EndObject = end;
-        l.Duration = 1f;
-        Debug.Log("created lightning");
+        l.StartPosition = start.transform.position;
+        l.EndPosition = end.transform.position + Vector3.up * 0.5f;
         Destroy(l.gameObject, 1f);
+        l.Trigger();
     }
 }
