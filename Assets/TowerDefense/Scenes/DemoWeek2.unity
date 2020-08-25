@@ -15816,6 +15816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752578748}
   - component: {fileID: 752578749}
+  - component: {fileID: 752578750}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -15893,6 +15894,18 @@ MonoBehaviour:
     type: 3}
   incomingWaveInfoLabelPrefab: {fileID: 1347076448830942058, guid: 138d92915a7eb44519cbb9bf5ad2a39d,
     type: 3}
+--- !u!114 &752578750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752578747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c44b81a03140a4284acbfa6e0d9605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756934109
 GameObject:
   m_ObjectHideFlags: 0
@@ -53542,6 +53555,16 @@ PrefabInstance:
         type: 3}
       propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119165657524723187, guid: e558c48fba491514fac090f24823c884,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TemporaryFixForIncomingWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119165657524723187, guid: e558c48fba491514fac090f24823c884,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5119165657524723188, guid: e558c48fba491514fac090f24823c884,
         type: 3}

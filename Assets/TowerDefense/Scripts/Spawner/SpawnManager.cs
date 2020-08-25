@@ -298,6 +298,12 @@ namespace SpawnManaging
             // TODO: display GameOver info
         }
 
+        public void TemporaryFixForIncomingWave()
+        {
+            ChangeIncomingWaveInfoLabelStatusTo(true);
+            incomingWaveInfoLabel.enabled = false;
+        }
+
     }
     [Serializable]
     public class Wave
