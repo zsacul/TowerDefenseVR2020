@@ -13,6 +13,7 @@ public class GameLostListener : GameEventListener
     {
         text.text = "Enemy has taken your castle, you have lost!\nGame will restart in 10 seconds.";
         Endgame.Instance.ResetScene();
+        Debug.Log("Game Lost raised in TutorialCanvas.GameLostListener");
         OnLost.Invoke();
     }
 }

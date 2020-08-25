@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Endgame : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class Endgame : MonoBehaviour
 
     public void ResetScene()
     {
-        Debug.Log("ResetScene() not implemented");
+        StartCoroutine(WaitAndRestart());
     } 
+
+    IEnumerator WaitAndRestart()
+    {
+        yield return new WaitForSeconds(10.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
