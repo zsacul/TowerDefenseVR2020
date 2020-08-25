@@ -381,6 +381,6 @@ public class BuildManager : MonoBehaviour
     }
     public static bool CanBuildObstacle()
     {
-        return instance.money >= instance.playerObstacleCost;
+        return (instance.money >= instance.playerObstacleCost) && (BuildingConditions.Instance.obstacleOnPath || BuildingConditions.Instance.obstacleAnywhere);
     }
 }
