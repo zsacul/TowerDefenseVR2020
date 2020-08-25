@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 63b42525ab29ef44aa29d52cacebb03e,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2011,10 +2011,15 @@ PrefabInstance:
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1301228819782378019, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -2045,6 +2050,36 @@ PrefabInstance:
         type: 3}
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1738301554}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AllowTowerAnywhere
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757680171432295122, guid: b9aead6fffcd4884fb780b7cc2c95803,
+        type: 3}
+      propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2805872198241541645, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -2115,7 +2150,7 @@ PrefabInstance:
     - target: {fileID: 6547818089451838684, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: QuestFinished.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6547818089451838684, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
@@ -36405,6 +36440,11 @@ PrefabInstance:
       objectReference: {fileID: 879603411}
     - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
       propertyPath: BuildTutorialManager
       value: 
       objectReference: {fileID: 817929127}
@@ -36413,6 +36453,36 @@ PrefabInstance:
       propertyPath: TeleportTutorial
       value: 
       objectReference: {fileID: 111194592}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1738301554}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AllowObstacleOnPath
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143962660114416100, guid: b3395ce70c240954e9462fa57c81a35b,
+        type: 3}
+      propertyPath: TasksFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1143962660114416101, guid: b3395ce70c240954e9462fa57c81a35b,
         type: 3}
       propertyPath: m_LocalPosition.x
