@@ -13,7 +13,7 @@ public class SpellsTutorialConnectAllSpheres : SpellsTutorialSubnode
 
     IEnumerator findLastElementNode()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForEndOfFrame();
         switch (SpellsTutorialMainNode.Instance.elementChose)
         {
             case ElementType.ice:

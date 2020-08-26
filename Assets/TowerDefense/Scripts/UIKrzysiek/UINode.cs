@@ -40,14 +40,15 @@ public class UINode : MonoBehaviour
     private bool drawLine;
     private void Start()
     {
+        //Debug.Log("START " + name);
         childrenUI = new List<UINode>();
         line = GetComponent<LineRenderer>();
         onSpawned.Invoke();
-        if (name == "Tower(Copy)")
+        if (name == "Tower(Clone)")
         {
             active = BuildManager.CanBuildTower();
         }
-        if(name == "Obstacle(Copy)")
+        if(name == "Obstacle(Clone)")
         {
             active = BuildManager.CanBuildObstacle();
         }

@@ -15,7 +15,7 @@ public class MaterialColorChanger : MonoBehaviour
     {
         _propBlock = new MaterialPropertyBlock();
         _propBlock.SetColor("_BaseColor", BoximonDefaultMaterial.color);
-        Debug.Log(_propBlock.GetColor("_BaseColor"));
+        //Debug.Log(_propBlock.GetColor("_BaseColor"));
         _renderer = GetComponent<Renderer>();
         _renderer.SetPropertyBlock(_propBlock);
     }
