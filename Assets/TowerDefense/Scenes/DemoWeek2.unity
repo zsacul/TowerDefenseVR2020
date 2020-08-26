@@ -48293,6 +48293,11 @@ PrefabInstance:
       propertyPath: AfterTransformUpdated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 246726338017611044, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: applyTransformations
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2787178629607972807, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: m_Name
@@ -48401,7 +48406,7 @@ PrefabInstance:
     - target: {fileID: 6759483569300406686, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: offsetUsage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6759483569300406686, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
@@ -48411,6 +48416,11 @@ PrefabInstance:
     - target: {fileID: 6759483569300406686, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759483569300406686, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: applyDestinationRotation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8762128706450136148, guid: 52f87534fdefc6b47aadeae3a66454d8,
