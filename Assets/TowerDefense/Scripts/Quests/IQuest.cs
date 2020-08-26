@@ -7,4 +7,5 @@ public interface IQuest
 {
     void AddListenerFinish(UnityAction action);
     bool GetState();
+
 }

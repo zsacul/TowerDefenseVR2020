@@ -80,6 +80,18 @@ public class CrossbowMainNode : MonoBehaviour, IQuest
         SetCurrentTutorial(firstStep);
     }
 
+    public void Skip()
+    {
+        foreach (Transform child in transform)
+        {
+            var questScript = child.GetComponent<CrossbowSubNode>();
+            if (questScript)
+            {
+                questScript.SetNextStep();
+            }
+        }
+    }
+
     public void ClearTasks()
     {
         Debug.Log("CLEAR TASKS CROSSBOW TUTORIAL");

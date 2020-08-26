@@ -85,6 +85,18 @@ public class TeleportMainNode : MonoBehaviour, IQuest
         Debug.Log("Wszystko wyczyszczone");
     }
 
+    public void Skip()
+    {
+        foreach(Transform child in transform)
+        {
+            var questScript = child.GetComponent<TeleportSubNode>();
+            if (questScript)
+            {
+                questScript.SetNextStep();
+            }
+        }
+    }
+
     private void Start()
     {
         teleDone = false;

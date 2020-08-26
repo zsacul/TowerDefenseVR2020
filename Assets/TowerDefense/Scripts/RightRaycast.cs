@@ -31,13 +31,13 @@ public class RightRaycast : MonoBehaviour
         if (newState && !teleportState)
         {
             TeleportOn.Invoke();
-            Debug.Log("Turning on teleport Raycast");
+            //Debug.Log("Turning on teleport Raycast");
             teleportState = true;
         }
         else if (!newState)
         {
             TeleportOff.Invoke();
-            Debug.Log("Turning off teleport raycast");
+            //Debug.Log("Turning off teleport raycast");
             teleportState = false;
         }
     }

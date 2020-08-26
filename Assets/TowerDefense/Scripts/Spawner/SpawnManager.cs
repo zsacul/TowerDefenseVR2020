@@ -175,7 +175,7 @@ namespace SpawnManaging
 
         private void Update()
         {
-            if ((/*Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) ||*/ breakTime > breakDuration)
+            if ((Input.GetKeyDown(KeyCode.P) /*|| Input.GetKeyDown(KeyCode.JoystickButton0)*/ || breakTime > breakDuration)
                 && !gameOver)
             {
                 EndBreak();
