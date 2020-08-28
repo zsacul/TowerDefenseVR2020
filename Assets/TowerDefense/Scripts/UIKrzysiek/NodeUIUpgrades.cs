@@ -50,7 +50,8 @@ public class NodeUIUpgrades : MonoBehaviour
     }
     private void Update()
     {
-        if(index != 0 && Input.GetKeyDown(KeyCode.JoystickButton9) && targetedManager != null)
+        if(index != 0 && (Input.GetKeyDown(KeyCode.JoystickButton9) || Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f)
+            && targetedManager != null)
         {
             UpgradeTower(index);
         }
