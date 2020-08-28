@@ -20284,6 +20284,11 @@ PrefabInstance:
       propertyPath: CrossbowMainNode
       value: 
       objectReference: {fileID: 1883021458}
+    - target: {fileID: 1326546422422187767, guid: 05d4b0343e3533444bffd0ae1aaf2162,
+        type: 3}
+      propertyPath: crossbow
+      value: 
+      objectReference: {fileID: 13355195}
     - target: {fileID: 1756117209638421028, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: InfoForPlayer
