@@ -18,6 +18,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
     TeleportSubNode currentTutorial;
     [SerializeField]
     TeleportSubNode firstStep;
+    public GameObject crossbow;
     private static TeleportMainNode instance;
     public static TeleportMainNode Instance
     {
@@ -95,6 +96,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
                 questScript.SetNextStep();
             }
         }
+        crossbow.SetActive(true);
     }
 
     private void Start()
