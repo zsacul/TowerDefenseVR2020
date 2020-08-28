@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
+  m_Color: {r: 0.34117648, g: 0.34117648, b: 0.34117648, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -656,7 +656,7 @@ MonoBehaviour:
     behind you. You can skip the tutorial part by pressing the button on your castle.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f1744e5dace1e974795fb1824dcf5ad8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -757,6 +757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929b090d750a24d49bfefb4e940a1888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPush:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!64 &3905192956459261618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1578,6 +1581,11 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4842048416862478776, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 1073a2cdd6473914db33c1c9df733cb6, type: 2}
     - target: {fileID: 5514608786273572522, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -1646,6 +1654,11 @@ PrefabInstance:
       propertyPath: m_firstOverflowCharacterIndex
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6557750768408292236, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6702462816165207055, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1655,6 +1668,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376374083233678513, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376374083233678513, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376374083233678513, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376374083233678513, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.33962262
       objectReference: {fileID: 0}
     - target: {fileID: 7392474885015030736, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
         type: 3}
@@ -1756,6 +1789,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8106191359327905768, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bcfc094c1c26cf4ea1c05d7e1ecbf70, type: 2}
     - target: {fileID: 8457912225865955081, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1805,6 +1843,11 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8530406729610689733, guid: 8e4f6b943ebf6334ab03642b0c5fd594,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d72c989cdf2d8f45afdd0ff671ccf6b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4f6b943ebf6334ab03642b0c5fd594, type: 3}
 --- !u!1 &9003189487794925234 stripped
