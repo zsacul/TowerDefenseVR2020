@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727569798643438419}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -33.18898, y: -11.36838, z: -6.9078064}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7870948018080408614}
   m_RootOrder: 0
@@ -60,7 +60,6 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 5b544be69b4ab48449823bc8d58b7e76, type: 2}
   - {fileID: 2100000, guid: f925712b5f420c84f8d82a67adef5a9a, type: 2}
-  - {fileID: 2100000, guid: 1ce7f8885cff1b5409405d0faa21589f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7870948018080408614}
   m_Layer: 0
-  m_Name: newArrowv2 (1)
+  m_Name: texturedArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
