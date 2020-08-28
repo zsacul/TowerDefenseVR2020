@@ -213,7 +213,7 @@
                 return;
             }
 
- //           Debug.Log("Target: " + Target.gameObject.transform.position + "Source: " + Source.TryGetGameObject().transform.position);
+            Debug.Log("Target: " + Target.gameObject.transform.rotation + "Source: " + Source.TryGetGameObject().transform.rotation);
 
             targetTransformData.Clear();
             targetTransformData.Transform = Target.transform;
@@ -224,7 +224,7 @@
             ProcessTransform(Source, targetTransformData, destinationScale, destinationRotation, destinationPosition);
 
             TeleportApplied.Invoke();
- //           Debug.Log("Main camera location: " + Camera.main.transform.position);
+           Debug.Log("Main camera location: " + Camera.main.transform.position + ", rotation: " + Camera.main.transform.rotation);
         }
 
         /// <summary>

@@ -25,14 +25,14 @@ public class TeleportSubNode : MonoBehaviour
 
     virtual public void EnterStep()
     {
-        Debug.Log("Wejście do " + gameObject.name);
+        //Debug.Log("Wejście do " + gameObject.name);
         canvasToDisplayText.enabled = true;
         InfoForPlayer.text = TextToDisplay;
     }
 
     virtual public void ExitStep()
     {
-        Debug.Log("Wyjscie z " + gameObject.name);
+        //Debug.Log("Wyjscie z " + gameObject.name);
         canvasToDisplayText.enabled = false;
     }
 

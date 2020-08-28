@@ -101,6 +101,23 @@
         /// <param name="destination">The location to attempt to teleport to.</param>
         public virtual void Teleport(TransformData destination)
         {
+            if (Target != null && destination != null) 
+            {
+                Debug.Log("Target pos: " + Target.transform.position);
+                Debug.Log("Destin pos: " + destination.Transform.position);
+            }
+
+            else
+            {
+                if (Target == null)
+                {
+                    Debug.Log(" Target null");
+                }
+                if (destination == null)
+                {
+                    Debug.Log(" destination null");
+                }
+            }
             Configuration.Teleport(destination);
         }
 

@@ -194,6 +194,7 @@
         /// <param name="eventData">The data to emit.</param>
         public virtual void EmitSelected(ObjectPointer.EventData eventData)
         {
+            Debug.Log(gameObject.name);
             Facade.Selected?.Invoke(eventData);
         }
 
