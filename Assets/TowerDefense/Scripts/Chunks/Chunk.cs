@@ -233,7 +233,7 @@ public class Chunk : MonoBehaviour
     /// </summary>
     /// <param name="changeMap">Determines whether BFS should modify current path or is it called just to check if a path exist. Default value: true</param>
     /// <returns></returns>
-    public bool BFS(bool changeMap = true)
+    public bool BFS(bool changeMap = true, bool goThroughThisChunk = false)
     {
         int xSize = owner.mapString.sizeX;
         int ySize = owner.mapString.sizeY;
@@ -264,7 +264,7 @@ public class Chunk : MonoBehaviour
                 if(y < ySize && y >= 0)
                 {
                     ChunkType chunkType = owner.GetChunkType(xCord, y);
-                    if ((xCord != this.x || y != this.y) && value[xCord, y] == 0 && (chunkType == ChunkType.empty ||
+                    if ( (goThroughThisChunk || (xCord != this.x || y != this.y)) && value[xCord, y] == 0 && (chunkType == ChunkType.empty ||
                                                                                     chunkType == ChunkType.endPoint ||
                                                                                     chunkType == ChunkType.spawnPoint))
                     {
@@ -278,7 +278,7 @@ public class Chunk : MonoBehaviour
                 if(xx < xSize && xx >= 0)
                 {
                     ChunkType chunkType = owner.GetChunkType(xx, yCord);
-                    if ((xx != this.x || yCord != this.y) && value[xx, yCord] == 0 && (chunkType == ChunkType.empty ||
+                    if ((goThroughThisChunk || (xx != this.x || yCord != this.y)) && value[xx, yCord] == 0 && (chunkType == ChunkType.empty ||
                                                                                     chunkType == ChunkType.endPoint ||
                                                                                     chunkType == ChunkType.spawnPoint))
                     {
