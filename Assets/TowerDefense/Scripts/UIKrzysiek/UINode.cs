@@ -52,6 +52,12 @@ public class UINode : MonoBehaviour
         {
             active = BuildManager.CanBuildObstacle();
         }
+        if(TryGetComponent<NodeUIUpgrades>(out NodeUIUpgrades u))
+        {
+            active = u.cost <= BuildManager.Instance.Money;
+            u.CheckForManager();
+        }
+
     }
     private void Update()
     {
@@ -68,6 +74,7 @@ public class UINode : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag != "HandCollider") return;
+        
         if (!active)
         {
             onTouchDisabled.Invoke();
@@ -81,11 +88,17 @@ public class UINode : MonoBehaviour
         }
         else
         {
+            if (NodeMenu.GetSelectionFrame() == Time.frameCount || MagicManager.GetSelectionFrame() == Time.frameCount)
+            {
+                Debug.Log("multiple collision");
+                return;
+            }
             Select();
         }
     }
     public void Select()
     {
+        NodeMenu.NodeSelectedMsg();
         selected = true;
         drawLine = true;
         onSelect.Invoke();
