@@ -1887,6 +1887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5484884639821164637}
   - component: {fileID: 7158980676323116181}
+  - component: {fileID: 3665156711874047865}
   m_Layer: 18
   m_Name: IceSpikesObstacle
   m_TagString: Untagged
@@ -1930,6 +1931,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3665156711874047865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810554202345407054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e633e128316654cb7f982bd2f96913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9058164848934435887
 GameObject:
   m_ObjectHideFlags: 0
