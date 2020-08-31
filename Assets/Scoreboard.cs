@@ -1,0 +1,125 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Scoreboard : MonoBehaviour
+{
+
+    static private ScoreEntry emptyScoreEntry = new ScoreEntry { score = 0, username = "Username" };
+    // TODO: Make some good-looking top5 highscore
+    static private Highscores emptyScoreboard = new Highscores { highscoresList = new List<ScoreEntry> { emptyScoreEntry, emptyScoreEntry, emptyScoreEntry, emptyScoreEntry, emptyScoreEntry } };
+    static private string emptyScoreboardJson = JsonUtility.ToJson(emptyScoreboard);
+    private Highscores highscores;
+    private int currentScore;
+    private string currentUsername;
+
+    void Start()
+    {
+        // TODO: Get username from keyboard + reseting scoretable
+        currentScore = 0;
+        currentUsername = "Dawid";
+        UpdateCurrentScore();
+        UpdateScoreboard();
+    }
+
+    public void AddScore(int points)
+    {
+        currentScore += points;
+        UpdateCurrentScore();
+    }
+
+    void SetPlayerInfo()
+    {
+        // Przypisanie currentUsername
+    }
+
+    private void SetScoreOnPlace(int place, ScoreEntry score)
+    {
+        Canvas scoreCanvas = GetComponentsInChildren<Canvas>()[place];
+        TextMeshProUGUI scoreLabel = scoreCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
+        TextMeshProUGUI usernameLabel = scoreCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
+        scoreLabel.SetText(score.score.ToString());
+        usernameLabel.SetText(score.username);
+    }
+
+    public void UpdateCurrentScore()
+    {
+        Canvas currentGameCanvas = GetComponentsInChildren<Canvas>()[6];
+        TextMeshProUGUI currentUsernameLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
+        TextMeshProUGUI currentScoreLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
+        currentUsernameLabel.SetText(currentUsername);
+        currentScoreLabel.SetText(currentScore.ToString());
+    }
+
+    // TODO - na koniec gierki dodajemy nasz wynik do scoreboarda
+    private void AddScoreEntry(int score, string username)
+    {
+        ScoreEntry scoreEntry = new ScoreEntry { score = score, username = username };
+
+        highscores.highscoresList.Add(scoreEntry);
+
+        SaveCurrentScoreboard();
+
+        UpdateScoreboard();
+    }
+
+    private Highscores LoadScoreboardData()
+    {
+        // Get "scoreboard" values, emptyScoreboardJson for default scoreboard
+        string jsonString = PlayerPrefs.GetString("scoreboard", emptyScoreboardJson);
+        return JsonUtility.FromJson<Highscores>(jsonString);
+    }
+
+    private void SaveCurrentScoreboard()
+    {
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("scoreboard", json);
+        PlayerPrefs.Save();
+    }
+
+    public void UpdateScoreboard()
+    {
+        highscores = LoadScoreboardData();
+        highscores.GetTop5Scores();
+        for(int i = 0; i < highscores.highscoresList.Count; i++)
+        {
+            int place = i + 1;
+            ScoreEntry score = highscores.highscoresList[i];
+            SetScoreOnPlace(place, score);
+        }
+    }
+
+    public void ResetScoreboard()
+    {
+        PlayerPrefs.SetString("scoreboard", emptyScoreboardJson);
+        PlayerPrefs.Save();
+        UpdateScoreboard();
+    }
+}
+
+[System.Serializable]
+public class ScoreEntry
+{
+    public int score;
+    public string username;
+}
+
+public class Highscores
+{
+    public List<ScoreEntry> highscoresList;
+
+    public void GetTop5Scores()
+    {
+        List<ScoreEntry> result = new List<ScoreEntry>();
+
+        highscoresList.Sort(delegate (ScoreEntry score1, ScoreEntry score2) { return score2.score.CompareTo(score1.score); });
+
+        for(int i = 0; i < 5; i++)
+        {
+            result.Add(highscoresList[i]);
+        }
+
+        highscoresList = result;
+    }
+}
