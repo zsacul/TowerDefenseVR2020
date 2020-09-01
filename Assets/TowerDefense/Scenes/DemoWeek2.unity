@@ -1853,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
       propertyPath: TutorialFinished.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1130607938008037169, guid: b9aead6fffcd4884fb780b7cc2c95803,
         type: 3}
