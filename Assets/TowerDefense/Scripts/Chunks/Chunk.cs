@@ -90,7 +90,6 @@ public class Chunk : MonoBehaviour
         owner.HideNewPath();
         if (type == ChunkType.none ||
             type == ChunkType.naturalObstacle ||
-            type == ChunkType.playerObstacle ||
             type == ChunkType.border)
         {
             owner.HideNewPath();
@@ -109,10 +108,6 @@ public class Chunk : MonoBehaviour
         switch (newType)
         {
             case ChunkType.tower:
-                if (!BuildingConditions.Instance.towerAnywhere)
-                {
-                    return false;
-                }
                 for (int y = this.y - 1; y <= this.y + 1; y++)
                 {
                     for (int x = this.x - 1; x <= this.x + 1; x++)
@@ -134,9 +129,13 @@ public class Chunk : MonoBehaviour
             case ChunkType.playerObstacle:
                 if (owner.path[this.x, this.y])
                 {
-                    return BuildingConditions.Instance.obstacleOnPath && BFS(modifyPathInBFS);
+                    return BFS(modifyPathInBFS);
                 }
-                return BuildingConditions.Instance.obstacleAnywhere;
+                return true;
+
+            case ChunkType.empty:
+                Debug.Log("Trying to change type to ChunkType.empty");
+                return BFS(modifyPathInBFS, true);
                 
             default:
                 return false;
@@ -264,13 +263,14 @@ public class Chunk : MonoBehaviour
                 if(y < ySize && y >= 0)
                 {
                     ChunkType chunkType = owner.GetChunkType(xCord, y);
-                    if ( (goThroughThisChunk || (xCord != this.x || y != this.y)) && value[xCord, y] == 0 && (chunkType == ChunkType.empty ||
-                                                                                    chunkType == ChunkType.endPoint ||
-                                                                                    chunkType == ChunkType.spawnPoint))
+                    if ((((xCord != this.x || y != this.y)  && (chunkType == ChunkType.empty || 
+                        chunkType == ChunkType.endPoint || chunkType == ChunkType.spawnPoint)) ||
+                        (xCord == this.x && y == this.y && goThroughThisChunk)) && value[xCord, y] == 0) 
                     {
                         Q.Enqueue((xCord, y));
                         value[xCord, y] = value[xCord,yCord]+1;
                     }
+
                 }
             }
             for (int xx = xCord + 1; xx >= xCord - 1; xx -= 2)
@@ -278,9 +278,9 @@ public class Chunk : MonoBehaviour
                 if(xx < xSize && xx >= 0)
                 {
                     ChunkType chunkType = owner.GetChunkType(xx, yCord);
-                    if ((goThroughThisChunk || (xx != this.x || yCord != this.y)) && value[xx, yCord] == 0 && (chunkType == ChunkType.empty ||
-                                                                                    chunkType == ChunkType.endPoint ||
-                                                                                    chunkType == ChunkType.spawnPoint))
+                    if ((((xx != this.x || yCord != this.y) && (chunkType == ChunkType.empty || 
+                        chunkType == ChunkType.endPoint || chunkType == ChunkType.spawnPoint)) ||
+                        (xx == this.x && yCord == this.y && goThroughThisChunk)) && value[xx, yCord] == 0)
                     {
                         Q.Enqueue((xx, yCord));
                         value[xx, yCord] = value[xCord, yCord] + 1;
@@ -290,6 +290,7 @@ public class Chunk : MonoBehaviour
         }
         if(endPointReached)
         {
+
             (int, int) point = endPoint;
             step = value[endPoint.Item1, endPoint.Item2];
             for(int x = 0; x < xSize; x++)
@@ -330,8 +331,11 @@ public class Chunk : MonoBehaviour
                     point = (x, y+1);
                     continue;
                 }
-                Debug.LogError($"Chunks.cs/BFS failed while backtracking");
-                return false;
+                if (changeMap)
+                {
+                    Debug.LogError($"Chunks.cs/BFS failed while backtracking");
+                    return false;
+                }
             }
             owner.ShowNewPath();
             owner.Invoke("HideNewPath", 2);
