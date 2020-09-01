@@ -54169,6 +54169,12 @@ PrefabInstance:
       propertyPath: InfoForPlayer
       value: 
       objectReference: {fileID: 344256057}
+    - target: {fileID: 5119165658628941844, guid: e558c48fba491514fac090f24823c884,
+        type: 3}
+      propertyPath: TextToDisplay
+      value: Connect the spheres to strengthen the spell. The more spheres you connect,
+        the more powerfull your spell will be.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e558c48fba491514fac090f24823c884, type: 3}
 --- !u!1001 &5332812713877694036
