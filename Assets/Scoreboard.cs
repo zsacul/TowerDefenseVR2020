@@ -29,6 +29,13 @@ public class Scoreboard : MonoBehaviour
         UpdateCurrentScore();
     }
 
+    void SetScoreboardOnScene()
+    {
+        GameObject endpoint = GameObject.Find("EndPoint2");
+        transform.position = new Vector3(endpoint.transform.position.x -0.2f, endpoint.transform.position.y + 4.97f, endpoint.transform.position.z + 5.58f);
+        transform.Rotate(new Vector3(90f, 0f, 180f));
+    }
+
     void SetPlayerInfo()
     {
         // Przypisanie currentUsername
@@ -45,6 +52,7 @@ public class Scoreboard : MonoBehaviour
 
     public void UpdateCurrentScore()
     {
+        var x = GetComponentsInChildren<Canvas>();
         Canvas currentGameCanvas = GetComponentsInChildren<Canvas>()[6];
         TextMeshProUGUI currentUsernameLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI currentScoreLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
