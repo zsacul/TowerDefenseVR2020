@@ -61,7 +61,7 @@ public class BuildManager : MonoBehaviour
     private TextMeshPro UIMoneyText;
     private bool sceneLoaded;
     private static BuildManager instance;
-
+    public ParticleSystem moneyParticle;
     public bool PurchasePanelActive {
         get {
             return purchasePanelsActive;
@@ -96,6 +96,7 @@ public class BuildManager : MonoBehaviour
         selectedBuilding = ChunkType.none;
         SetCanvasUI();
         SetMoneyText();
+        moneyParticle = Instantiate(moneyParticle.gameObject, transform.position, Quaternion.identity, null).GetComponent<ParticleSystem>();
 
         //Waiting to load a scene because during loading there's a collision with UITower occuring that causes 
         //canvases to be activated
@@ -380,5 +381,10 @@ public class BuildManager : MonoBehaviour
     public static bool CanBuildObstacle()
     {
         return (instance.money >= instance.playerObstacleCost) && (BuildingConditions.Instance.obstacleOnPath || BuildingConditions.Instance.obstacleAnywhere);
+    }
+    public static void BurstMoneyEffect(int amount, Vector3 position)
+    {
+        instance.moneyParticle.transform.position = position;
+        instance.moneyParticle.Emit(amount);
     }
 }

@@ -50,6 +50,7 @@ public class EnemyHPManager : MonoBehaviour {
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);
         Destroy(gameObject, 3);
+        BuildManager.BurstMoneyEffect(moneyDropped, transform.position + Vector3.up * 0.2f);
     }
 
     public void ApplyDamage(Bullet b) {
