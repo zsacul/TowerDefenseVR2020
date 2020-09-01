@@ -54,16 +54,6 @@ public class BuildingDestroyer : MonoBehaviour
         }
     }
 
-    public void HoverOn()
-    {
-
-    }
-
-    public void HoverOff()
-    {
-
-    }
-
     public void ShowNewPath()
     {
         chunk.BFS(false, true);
