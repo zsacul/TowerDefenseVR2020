@@ -49085,6 +49085,16 @@ PrefabInstance:
       propertyPath: Teleporting.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6759483569300406686, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: applyDestinationRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371699073636397557, guid: 52f87534fdefc6b47aadeae3a66454d8,
+        type: 3}
+      propertyPath: layersToIgnore.m_Bits
+      value: 2097156
+      objectReference: {fileID: 0}
     - target: {fileID: 8762128706450136148, guid: 52f87534fdefc6b47aadeae3a66454d8,
         type: 3}
       propertyPath: m_LocalPosition.x
