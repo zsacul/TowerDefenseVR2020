@@ -7,6 +7,9 @@ public class Scoreboard : MonoBehaviour
 {
 
     static private ScoreEntry emptyScoreEntry = new ScoreEntry { score = 0, username = "Username" };
+    [SerializeField]
+    private GameObject scoreboardPrefab;
+    private GameObject scoreboard;
     // TODO: Make some good-looking top5 highscore
     static private Highscores emptyScoreboard = new Highscores { highscoresList = new List<ScoreEntry> { emptyScoreEntry, emptyScoreEntry, emptyScoreEntry, emptyScoreEntry, emptyScoreEntry } };
     static private string emptyScoreboardJson = JsonUtility.ToJson(emptyScoreboard);
@@ -17,8 +20,10 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         // TODO: Get username from keyboard + reseting scoretable
+        scoreboard = Instantiate(scoreboardPrefab);
         currentScore = 0;
         currentUsername = "Dawid";
+        SetScoreboardOnScene();
         UpdateCurrentScore();
         UpdateScoreboard();
     }
@@ -31,9 +36,9 @@ public class Scoreboard : MonoBehaviour
 
     void SetScoreboardOnScene()
     {
-        GameObject endpoint = GameObject.Find("EndPoint2");
-        transform.position = new Vector3(endpoint.transform.position.x -0.2f, endpoint.transform.position.y + 4.97f, endpoint.transform.position.z + 5.58f);
-        transform.Rotate(new Vector3(90f, 0f, 180f));
+        EndpointManager endpoint = FindObjectOfType<EndpointManager>();
+        scoreboard.transform.position = new Vector3(endpoint.transform.position.x -0.2f, endpoint.transform.position.y + 4.97f, endpoint.transform.position.z + 5.58f);
+        scoreboard.transform.Rotate(new Vector3(90f, 0f, 180f));
     }
 
     void SetPlayerInfo()
@@ -43,7 +48,7 @@ public class Scoreboard : MonoBehaviour
 
     private void SetScoreOnPlace(int place, ScoreEntry score)
     {
-        Canvas scoreCanvas = GetComponentsInChildren<Canvas>()[place];
+        Canvas scoreCanvas = scoreboard.GetComponentsInChildren<Canvas>()[place];
         TextMeshProUGUI scoreLabel = scoreCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI usernameLabel = scoreCanvas.GetComponentsInChildren<TextMeshProUGUI>()[2];
         scoreLabel.SetText(score.score.ToString());
@@ -52,8 +57,8 @@ public class Scoreboard : MonoBehaviour
 
     public void UpdateCurrentScore()
     {
-        var x = GetComponentsInChildren<Canvas>();
-        Canvas currentGameCanvas = GetComponentsInChildren<Canvas>()[6];
+        // var x = GetComponentsInChildren<Canvas>();
+        Canvas currentGameCanvas = scoreboard.GetComponentsInChildren<Canvas>()[6];
         TextMeshProUGUI currentUsernameLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI currentScoreLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
         currentUsernameLabel.SetText(currentUsername);
