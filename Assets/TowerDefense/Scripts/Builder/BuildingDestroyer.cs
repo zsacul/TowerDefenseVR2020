@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BuildingDestroyer : MonoBehaviour
 {
     private Chunk chunk;
+    public float returnedMoneyRate;
 
     private void Start()
     {
@@ -21,6 +23,10 @@ public class BuildingDestroyer : MonoBehaviour
         {
             ShowNewPath();
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            DestroyBuilding();
+        }
     }
 
     public void DestroyBuilding()
@@ -29,20 +35,38 @@ public class BuildingDestroyer : MonoBehaviour
         switch (chunk.type)
         {
             case ChunkType.playerObstacle:
-                moneyToReturn = BuildManager.Instance.playerObstacleCost / 2;
+                moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.playerObstacleCost / returnedMoneyRate);
                 break;
             case ChunkType.tower:
-                moneyToReturn = BuildManager.Instance.towerCost / 2;
+                moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.towerCost / returnedMoneyRate);
                 break;
             default:
                 Debug.LogError("Trying to destroy building that can't be destroyed");
                 return;
         }
-        chunk.ChangeType(ChunkType.empty);
+        if (chunk.ChangeType(ChunkType.empty))
+        {
+            BuildManager.Instance.AddMoney(moneyToReturn);
+        }
+        else
+        {
+            Debug.LogError("Building could not be destroyed");
+        }
+    }
+
+    public void HoverOn()
+    {
+
+    }
+
+    public void HoverOff()
+    {
+
     }
 
     public void ShowNewPath()
     {
         chunk.BFS(false, true);
     }
+
 }
