@@ -20841,7 +20841,7 @@ PrefabInstance:
     - target: {fileID: 4377077090058531377, guid: 05d4b0343e3533444bffd0ae1aaf2162,
         type: 3}
       propertyPath: TextToDisplay
-      value: "That\u2019s it! Now point the marker into that glowing sphere in front
+      value: "That\u2019s it! Now point the marker into the glowing circle in front
         of the castle."
       objectReference: {fileID: 0}
     - target: {fileID: 4377077090360597657, guid: 05d4b0343e3533444bffd0ae1aaf2162,
