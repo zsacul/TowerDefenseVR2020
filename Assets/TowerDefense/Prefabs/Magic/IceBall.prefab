@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 7016334763946764659}
   - component: {fileID: -7681324237595286241}
   - component: {fileID: 5096326496393976168}
-  m_Layer: 2
+  m_Layer: 21
   m_Name: IceBall
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -5349,7 +5349,7 @@ PrefabInstance:
     - target: {fileID: 2192971633698438059, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5494889592791601756, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
@@ -5429,27 +5429,27 @@ PrefabInstance:
     - target: {fileID: 5496865534257612880, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5497233455546841610, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5497404520260547044, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5497693218109804632, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5498162141683548272, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5659950437876255770, guid: 8a2f423f9bc98af40bb79acab4007f69,
         type: 3}

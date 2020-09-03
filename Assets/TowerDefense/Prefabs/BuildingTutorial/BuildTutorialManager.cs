@@ -84,6 +84,7 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
 
     public void EndTutorial()
     {
+        //Debug.Log("EndTutorial() in BuildTutorial called");
         TurnOffCurrentQuest();
         TutorialFinished.Invoke();
         state = true;
@@ -108,6 +109,20 @@ public class BuildTutorialManager : MonoBehaviour, IQuest
     public bool GetState()
     {
         return state;
+    }
+
+    public void Skip()
+    {
+        //Debug.Log("Skip() called");
+        foreach (Transform child in transform)
+        {
+            var questScript = child.GetComponent<BuildTutorialQuest>();
+            if (questScript)
+            {
+                //Debug.Log(questScript.gameObject + " tries to end");
+                questScript.SetNextQuest();
+            }
+        }
     }
 
     void DestoryMe()

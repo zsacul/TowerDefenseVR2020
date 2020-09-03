@@ -3,7 +3,23 @@ guid: 27cf6e8eee5c7bd4493b19b224ff176c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - canvas: {instanceID: 0}
+  - towerBuilt: {instanceID: 0}
+  - obstacleBuilt: {instanceID: 0}
+  - BuildingSuccess: {instanceID: 0}
+  - BuildingFailure: {instanceID: 0}
+  - towerPurchaseCanvasPrefab: {instanceID: 0}
+  - obstaclePurchaseCanvasPrefab: {instanceID: 0}
+  - rightController: {instanceID: 0}
+  - WaveChanged: {instanceID: 0}
+  - BuildingSwitchedToNone: {instanceID: 0}
+  - UIMoneyTextGO: {instanceID: 0}
+  - towerSelected: {instanceID: 0}
+  - obstacleSelected: {instanceID: 0}
+  - SelectionStatusChanged: {instanceID: 0}
+  - moneyParticle: {fileID: 9006237400219213364, guid: 467e6bf832549ef459e3df878c85b27a,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

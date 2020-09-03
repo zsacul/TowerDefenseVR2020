@@ -84,14 +84,26 @@ public class SpellsTutorialMainNode : MonoBehaviour, IQuest
 
     public void ClearTasks()
     {
-        Debug.Log("CLEAR TASKS CROSSBOW TUTORIAL");
+        //Debug.Log("CLEAR TASKS CROSSBOW TUTORIAL");
         for (int i = ActiveTasks.Count - 2; i >= 0; i--)
         {
-            Debug.Log("wylaczono obiekt " + ActiveTasks[i].gameObject.name);
+            //Debug.Log("wylaczono obiekt " + ActiveTasks[i].gameObject.name);
             ActiveTasks[i].gameObject.SetActive(false);
         }
         ActiveTasks.Clear();
 
-        Debug.Log("Wszystko wyczyszczone");
+        //Debug.Log("Wszystko wyczyszczone");
+    }
+
+    public void Skip()
+    {
+        foreach (Transform child in transform)
+        {
+            var questScript = child.GetComponent<SpellsTutorialSubnode>();
+            if (questScript)
+            {
+                questScript.SetNextStep();
+            }
+        }
     }
 }

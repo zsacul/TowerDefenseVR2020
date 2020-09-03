@@ -18,21 +18,21 @@ public class SpellsTutorialChooseAnySpell : SpellsTutorialSubnode
 
         if (IceSphere == null)
         {
-            Debug.LogError("NIE ZNALEZIONO LODOWEGO ŻYWIOŁU");
+            Debug.Log("NIE ZNALEZIONO LODOWEGO ŻYWIOŁU lub teleport skipnięty");
         }
         else
             IceSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveIce);
 
         if (FireSphere == null)
         {
-            Debug.LogError("NIE ZNALEZIONO OGNISTEGO ŻYWIOŁU");
+            Debug.Log("NIE ZNALEZIONO OGNISTEGO ŻYWIOŁU lub teleport skipnięty");
         }
         else
             FireSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveFire);
 
         if (ElectricSphere == null)
         {
-            Debug.LogError("NIE ZNALEZIONO ELEKTRYCZNEGO ŻYWIOŁU");
+            Debug.Log("NIE ZNALEZIONO ELEKTRYCZNEGO ŻYWIOŁU lub teleport skipnięty");
         }
         else
             ElectricSphere.GetComponent<UINode>().onSelect.AddListener(OnActiveElectric);

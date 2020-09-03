@@ -9,8 +9,6 @@ public class TutTeleport : TeleportSubNode
     GameObject Target;
     [SerializeField]
     ParabolicLineCast Pointer;
-    [SerializeField]
-    GameObject Crossbow;
 
     private void Start()
     {
@@ -36,11 +34,13 @@ public class TutTeleport : TeleportSubNode
 
     public override void ExitStep()
     {
+        Debug.Log("ExitStep()");
         base.ExitStep();
         if (TeleportMainNode.Instance.teleDone)
         {
+            Debug.Log("inside if in ExitStep()");
             TeleportMainNode.Instance.ClearTasks();
-            Crossbow.SetActive(true);
+            TeleportMainNode.Instance.crossbow.SetActive(true);
             Target.SetActive(false);
         }
     }

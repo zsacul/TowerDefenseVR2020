@@ -15,7 +15,7 @@ public class ObstaclePurchase : MonoBehaviour
         {
             if(buildManager.Selected() == ChunkType.playerObstacle)
             {
-                Debug.Log("Obstacle chooseNone()");
+                //Debug.Log("Obstacle chooseNone()");
                 buildManager.ChooseNone();
             }
             else 

@@ -50,6 +50,7 @@ public class EnemyHPManager : MonoBehaviour {
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);
         Destroy(gameObject, 3);
+        BuildManager.BurstMoneyEffect(moneyDropped, transform.position + Vector3.up * 0.2f);
     }
 
     public void ApplyDamage(Bullet b) {
@@ -113,7 +114,7 @@ public class EnemyHPManager : MonoBehaviour {
         {
             Canvas NewDmgText = Instantiate(DmgText);
             NewDmgText.transform.parent = targetPoint.transform;
-            NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
+            NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = ((int)damage).ToString();
         }
         enemyHP -= damage;
 

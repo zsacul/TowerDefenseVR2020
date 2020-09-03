@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7681324237595286241}
   - component: {fileID: 5096326496393976168}
   - component: {fileID: 4001702408669905131}
-  m_Layer: 2
+  m_Layer: 21
   m_Name: Lightning
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -341,15 +341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 106988, guid: ab21b77cee2910543a3dfd2d01cecc78, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 163122, guid: ab21b77cee2910543a3dfd2d01cecc78, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 171180, guid: ab21b77cee2910543a3dfd2d01cecc78, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 490088, guid: ab21b77cee2910543a3dfd2d01cecc78, type: 3}
       propertyPath: m_LocalPosition.x

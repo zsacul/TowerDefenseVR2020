@@ -14,7 +14,10 @@ public class NodeMenu : MonoBehaviour
     public UnityEvent onDeactivate;
     public Transform head;
     public GameObject targetMark;
-    private bool menuActive;
+    private HandDeployer leftHandDeployer;
+    private int selectionFrame;
+    [HideInInspector]
+    public bool menuActive;
     private static NodeMenu instance;
     public static bool GetPersistantState(string stateName)
     {
@@ -37,6 +40,7 @@ public class NodeMenu : MonoBehaviour
     {
         instance = this;
         persistantState = new Dictionary<string, bool>();
+        leftHandDeployer = GetComponent<HandDeployer>();
         HideMarker();
     }
     private void Start()
@@ -59,7 +63,7 @@ public class NodeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("VRTK_Axis9_LeftTrigger") > 0.1f)
+        if((Input.GetAxis("VRTK_Axis9_LeftTrigger") > 0.1f || Input.GetKey(KeyCode.Mouse0)) && !MagicManager.IsActive() && leftHandDeployer.listIterator == 0)
         {
             if(!menuActive)
             {
@@ -130,5 +134,21 @@ public class NodeMenu : MonoBehaviour
     public static void HideMarker()
     {
         instance.targetMark.GetComponent<ParticleSystem>().Stop();
+    }
+    public static bool IsActive()
+    {
+        return instance.menuActive;
+    }
+    private void OnDisable()
+    {
+        menuActive = false;
+    }
+    public static void NodeSelectedMsg()
+    {
+        instance.selectionFrame = Time.frameCount;
+    }
+    public static int GetSelectionFrame()
+    {
+        return instance.selectionFrame;
     }
 }

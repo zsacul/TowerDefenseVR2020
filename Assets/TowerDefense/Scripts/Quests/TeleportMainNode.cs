@@ -18,6 +18,7 @@ public class TeleportMainNode : MonoBehaviour, IQuest
     TeleportSubNode currentTutorial;
     [SerializeField]
     TeleportSubNode firstStep;
+    public GameObject crossbow;
     private static TeleportMainNode instance;
     public static TeleportMainNode Instance
     {
@@ -83,6 +84,19 @@ public class TeleportMainNode : MonoBehaviour, IQuest
         ActiveTasks.Clear();
 
         Debug.Log("Wszystko wyczyszczone");
+    }
+
+    public void Skip()
+    {
+        foreach(Transform child in transform)
+        {
+            var questScript = child.GetComponent<TeleportSubNode>();
+            if (questScript)
+            {
+                questScript.SetNextStep();
+            }
+        }
+        crossbow.SetActive(true);
     }
 
     private void Start()

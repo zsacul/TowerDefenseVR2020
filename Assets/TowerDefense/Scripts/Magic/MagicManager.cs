@@ -16,11 +16,13 @@ public class MagicManager : MonoBehaviour
     public Transform head;
     public GameObject targetMark;
     public SpellObject[] spells;
-    private bool menuActive;
+    [HideInInspector]
+    public bool menuActive;
     private static MagicManager instance;
     private float charge;
     private IChargable current;
     public Transform rightHand;
+    private int selectionFrame;
 
     public static bool GetPersistantState(string stateName)
     {
@@ -66,8 +68,8 @@ public class MagicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f && rightHandDeployer.listIterator == 0
-            && BuildManager.Instance.selectedBuilding == ChunkType.none)
+        if ((Input.GetAxis("VRTK_Axis10_RightTrigger") > 0.1f || Input.GetKey(KeyCode.Mouse1)) && rightHandDeployer.listIterator == 0
+            && BuildManager.Instance.selectedBuilding == ChunkType.none && !NodeMenu.IsActive())
         {
             if (!menuActive)
             {
@@ -158,5 +160,17 @@ public class MagicManager : MonoBehaviour
     {
         instance.charge = charge;
         instance.current.SetCharge(instance.charge);
+    }
+    public static bool IsActive()
+    {
+        return instance.menuActive;
+    }
+    public static void NodeSelectedMsg()
+    {
+        instance.selectionFrame = Time.frameCount;
+    }
+    public static int GetSelectionFrame()
+    {
+        return instance.selectionFrame;
     }
 }
