@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class NodeUIUpgrades : MonoBehaviour
+public class NodeUIUpgrades : MonoBehaviour, ITargetReceiver
 {
     public int cost;
     public int index;
@@ -79,5 +79,10 @@ public class NodeUIUpgrades : MonoBehaviour
     private void OnDestroy()
     {
         NodeMenu.HideMarker();
+    }
+
+    public void UpdateTarget(Vector3 target)
+    {
+        this.target = target;
     }
 }

@@ -7,6 +7,7 @@ public class BuildingDestroyer : MonoBehaviour
 {
     private Chunk chunk;
     public float returnedMoneyRate;
+    private bool hoverOn;
 
     private void Start()
     {
@@ -19,14 +20,7 @@ public class BuildingDestroyer : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            ShowNewPath();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            DestroyBuilding();
-        }
+        
     }
 
     public void DestroyBuilding()
@@ -47,6 +41,7 @@ public class BuildingDestroyer : MonoBehaviour
         if (chunk.ChangeType(ChunkType.empty))
         {
             BuildManager.Instance.AddMoney(moneyToReturn);
+            BuildManager.BurstMoneyEffect(moneyToReturn, transform.position);
         }
         else
         {
@@ -56,12 +51,19 @@ public class BuildingDestroyer : MonoBehaviour
 
     public void HoverOn()
     {
-
+        if(!hoverOn)
+        {
+            hoverOn = true;
+            ShowNewPath();
+        }
     }
 
     public void HoverOff()
     {
-
+        if(hoverOn)
+        {
+            chunk.owner.HideNewPath();
+        }
     }
 
     public void ShowNewPath()

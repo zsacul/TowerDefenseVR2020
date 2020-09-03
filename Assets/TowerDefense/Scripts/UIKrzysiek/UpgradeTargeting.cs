@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeTargeting : MonoBehaviour
 {
-    private NodeUIUpgrades upgrade;
+    private ITargetReceiver receiver;
     private bool active;
     Vector3 target;
     public LineRenderer line;
@@ -14,10 +14,7 @@ public class UpgradeTargeting : MonoBehaviour
     {
         instance = this;
     }
-    void Start()
-    {
-        upgrade = GetComponent<NodeUIUpgrades>();
-    }
+    
     static public void SetActiveRay(bool state)
     {
         instance.active = state;
@@ -40,12 +37,12 @@ public class UpgradeTargeting : MonoBehaviour
     {
         if(Physics.Raycast(transform.position + transform.forward, transform.forward, out RaycastHit info))
         {
-            upgrade.target = info.point;
+            receiver.UpdateTarget(info.point);
             target = info.point;
         }
         else
         {
-            upgrade.target = transform.position + transform.forward * 100.0f;
+            receiver.UpdateTarget(transform.position + transform.forward * 100.0f);
             target = transform.position + transform.forward * 100.0f;
         }
     }
@@ -54,8 +51,8 @@ public class UpgradeTargeting : MonoBehaviour
         line.SetPosition(0, transform.position);
         line.SetPosition(1, target);
     }
-    static public void SetNode(NodeUIUpgrades node)
+    static public void SetNode(ITargetReceiver node)
     {
-        instance.upgrade = node;
+        instance.receiver = node;
     }
 }

@@ -1156,6 +1156,7 @@ GameObject:
   - component: {fileID: 4333476727925200097}
   - component: {fileID: 3989068214373262759}
   - component: {fileID: 3348099558758392115}
+  - component: {fileID: -7616758745305659662}
   m_Layer: 13
   m_Name: IceTower
   m_TagString: Untagged
@@ -1305,6 +1306,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2471323, y: 5.7087264, z: 2.0230937}
   m_Center: {x: -0.006714344, y: 2.804363, z: 0.05301118}
+--- !u!114 &-7616758745305659662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062161091482600853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e633e128316654cb7f982bd2f96913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnedMoneyRate: 1
 --- !u!1001 &3332035838422032673
 PrefabInstance:
   m_ObjectHideFlags: 0
