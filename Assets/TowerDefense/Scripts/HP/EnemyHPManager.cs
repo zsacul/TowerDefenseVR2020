@@ -24,6 +24,8 @@ public class EnemyHPManager : MonoBehaviour {
     [Min(1f)]
     public float enemyHP = 100f;
     public int moneyDropped = 0;
+    [SerializeField]
+    public int pointsDropped;
 
     [SerializeField]
     Elements elementsInfo;
@@ -46,6 +48,7 @@ public class EnemyHPManager : MonoBehaviour {
     public void Death() {
         //Debug.Log("Death() called");
         isDead = true;
+        ApplyPoints();
         killed.Invoke();
         Destroy(GetComponent<Collider>());
         Destroy(enemyAgent);
@@ -123,6 +126,11 @@ public class EnemyHPManager : MonoBehaviour {
             BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
+    }
+
+    public void ApplyPoints()
+    {
+        FindObjectOfType<Scoreboard>().AddScore(pointsDropped);
     }
 
     public GameObject GetTargetPoint(){

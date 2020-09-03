@@ -1147,20 +1147,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -5242034798200553252, guid: e71ebc43ac7bc4841962393015decfcc,
-          type: 3}
-        m_MethodName: AddScore
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   enemyHP: 50
   moneyDropped: 15
+  pointsDropped: 50
   elementsInfo: {fileID: 0}
   targetPoint: {fileID: 855572341449850307}
   type: 2

@@ -23,22 +23,23 @@ public class Scoreboard : MonoBehaviour
         scoreboard = Instantiate(scoreboardPrefab);
         currentScore = 0;
         currentUsername = "Dawid";
-        SetScoreboardOnScene();
+        StartCoroutine(LateStart(0.1f));
         UpdateCurrentScore();
         UpdateScoreboard();
+    }
+
+    IEnumerator LateStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        EndpointManager endpoint = FindObjectOfType<EndpointManager>();
+        scoreboard.transform.position = new Vector3(endpoint.transform.position.x + 5.24f, endpoint.transform.position.y + 4.63f, endpoint.transform.position.z + 2.86f);
+        scoreboard.transform.Rotate(new Vector3(-180f, -90f, 180f));
     }
 
     public void AddScore(int points)
     {
         currentScore += points;
         UpdateCurrentScore();
-    }
-
-    void SetScoreboardOnScene()
-    {
-        EndpointManager endpoint = FindObjectOfType<EndpointManager>();
-        scoreboard.transform.position = new Vector3(endpoint.transform.position.x -0.2f, endpoint.transform.position.y + 4.97f, endpoint.transform.position.z + 5.58f);
-        scoreboard.transform.Rotate(new Vector3(90f, 0f, 180f));
     }
 
     void SetPlayerInfo()
@@ -57,7 +58,7 @@ public class Scoreboard : MonoBehaviour
 
     public void UpdateCurrentScore()
     {
-        // var x = GetComponentsInChildren<Canvas>();
+        var x = scoreboard.GetComponentsInChildren<Canvas>();
         Canvas currentGameCanvas = scoreboard.GetComponentsInChildren<Canvas>()[6];
         TextMeshProUGUI currentUsernameLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[1];
         TextMeshProUGUI currentScoreLabel = currentGameCanvas.GetComponentsInChildren<TextMeshProUGUI>()[3];
@@ -66,9 +67,9 @@ public class Scoreboard : MonoBehaviour
     }
 
     // TODO - na koniec gierki dodajemy nasz wynik do scoreboarda
-    private void AddScoreEntry(int score, string username)
+    public void AddScoreEntry()
     {
-        ScoreEntry scoreEntry = new ScoreEntry { score = score, username = username };
+        ScoreEntry scoreEntry = new ScoreEntry { score = currentScore, username = currentUsername };
 
         highscores.highscoresList.Add(scoreEntry);
 
