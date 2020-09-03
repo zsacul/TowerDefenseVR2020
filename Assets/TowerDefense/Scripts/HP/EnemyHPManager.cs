@@ -114,7 +114,7 @@ public class EnemyHPManager : MonoBehaviour {
         {
             Canvas NewDmgText = Instantiate(DmgText);
             NewDmgText.transform.parent = targetPoint.transform;
-            NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
+            NewDmgText.GetComponentInChildren<TextMeshProUGUI>().text = ((int)damage).ToString();
         }
         enemyHP -= damage;
 
