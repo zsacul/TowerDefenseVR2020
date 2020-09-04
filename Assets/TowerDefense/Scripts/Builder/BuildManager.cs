@@ -317,6 +317,7 @@ public class BuildManager : MonoBehaviour
 
     public void DecreaseMoney(int decVal)
     {
+        //TODO~KRZYSIEK//AudioSource.PlayClipAtPoint(buyClip, Camera.current.transform.position);
         money -= decVal;
         UIMoneyText.text = "$" + money.ToString();
     }
