@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 using TMPro;
-
+using System.Linq;
 
 
 public class BuildManager : MonoBehaviour
@@ -101,7 +101,7 @@ public class BuildManager : MonoBehaviour
         //Waiting to load a scene because during loading there's a collision with UITower occuring that causes 
         //canvases to be activated
         sceneLoaded = false;
-        StartCoroutine(WaitForSceneLoad(1f));
+        StartCoroutine(WaitForSceneLoad(0.5f));
     }
 
     IEnumerator WaitForSceneLoad(float seconds)
@@ -109,6 +109,16 @@ public class BuildManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         sceneLoaded = true;
         uiTowerClicked = false;
+        DisableObstacleDestruction();
+    }
+
+    private void DisableObstacleDestruction()
+    {
+        var obstacles = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "IceSpikesObstacle(Clone)");
+        foreach(var obstacle in obstacles)
+        {
+            Destroy(obstacle.GetComponent<BuildingDestroyer>());
+        }
     }
 
     private void SetMoneyText()
