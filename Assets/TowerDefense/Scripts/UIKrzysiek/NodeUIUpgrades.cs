@@ -10,6 +10,7 @@ public class NodeUIUpgrades : MonoBehaviour, ITargetReceiver
     public Vector3 target;
     private UpgradeManager[] managers;
     private UpgradeManager targetedManager;
+    public AudioClip buildClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,7 @@ public class NodeUIUpgrades : MonoBehaviour, ITargetReceiver
     }
     public void UpgradeTower(int index)
     {
+        AudioSource.PlayClipAtPoint(buildClip, Camera.main.transform.position);
         targetedManager.UpgradeTower(index, cost);
         NodeMenu.Dispose();
     }

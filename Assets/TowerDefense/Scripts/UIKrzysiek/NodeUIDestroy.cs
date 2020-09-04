@@ -8,6 +8,7 @@ public class NodeUIDestroy : MonoBehaviour, ITargetReceiver
     private BuildingDestroyer targetedManagerAux;
 
     private BuildingDestroyer[] managers;
+    public AudioClip destroyClip;
 
     private BuildingDestroyer targetedManager 
     { 
@@ -88,6 +89,7 @@ public class NodeUIDestroy : MonoBehaviour, ITargetReceiver
     }
     public void DestroyBuilding()
     {
+        AudioSource.PlayClipAtPoint(destroyClip, Camera.main.transform.position);
         targetedManager.DestroyBuilding();
         NodeMenu.Dispose();
     }

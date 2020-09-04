@@ -62,6 +62,9 @@ public class BuildManager : MonoBehaviour
     private bool sceneLoaded;
     private static BuildManager instance;
     public ParticleSystem moneyParticle;
+    public AudioClip buyClip;
+    public AudioClip getMoneyClip;
+
     public bool PurchasePanelActive {
         get {
             return purchasePanelsActive;
@@ -317,7 +320,7 @@ public class BuildManager : MonoBehaviour
 
     public void DecreaseMoney(int decVal)
     {
-        //TODO~KRZYSIEK//AudioSource.PlayClipAtPoint(buyClip, Camera.current.transform.position);
+        AudioSource.PlayClipAtPoint(buyClip, Camera.main.transform.position);
         money -= decVal;
         UIMoneyText.text = "$" + money.ToString();
     }

@@ -38544,6 +38544,8 @@ MonoBehaviour:
     type: 2}
   moneyParticle: {fileID: 9006237400219213364, guid: 467e6bf832549ef459e3df878c85b27a,
     type: 3}
+  buyClip: {fileID: 8300000, guid: 899dc311956621c439041d5e3b708443, type: 3}
+  getMoneyClip: {fileID: 8300000, guid: e8cbea4295a442f4ea4c75db689231c6, type: 3}
 --- !u!114 &1738301549
 MonoBehaviour:
   m_ObjectHideFlags: 0

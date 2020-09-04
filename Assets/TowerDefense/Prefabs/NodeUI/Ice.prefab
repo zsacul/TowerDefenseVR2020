@@ -218,8 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   index: 3
-  maxDistance: 0
   target: {x: 0, y: 0, z: 0}
+  buildClip: {fileID: 8300000, guid: 96a36f5c37838c14ab0e5e4fa44a720e, type: 3}
 --- !u!1 &7488207598504126954
 GameObject:
   m_ObjectHideFlags: 0

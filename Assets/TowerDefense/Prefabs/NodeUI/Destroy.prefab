@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e4ec180c951a34b974b95a26fd69e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyClip: {fileID: 8300000, guid: 8f1a80091e4705d42a6b9142c3f99351, type: 3}
 --- !u!1001 &2032924912760164323
 PrefabInstance:
   m_ObjectHideFlags: 0
