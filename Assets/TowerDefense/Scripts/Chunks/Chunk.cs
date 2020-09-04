@@ -45,28 +45,7 @@ public class Chunk : MonoBehaviour
     {
         if (type == ChunkType.tower)
         {
-            int elementIndex;
-            if (elementType == TowerType.fire) {
-                elementIndex = 4;
-            } else if (elementType == TowerType.ice) {
-                elementIndex = 3;
-            } else if (elementType == TowerType.lightning) {
-                elementIndex = 2;
-            } else if (elementType == TowerType.wind) {
-                elementIndex = 1;
-            } else {
-                Debug.Log("Chunk.cs/UpgradeTower(): Couldn't find appropriate elementIndex");
-                elementIndex = 0;
-            }
-
-            if (currentObject != null)
-            {
-                UpgradedTowerHeight = currentObject.GetComponent<TowerHeight>().towerHeight;
-                currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
-                Destroy(currentObject, 3f);
-            }
-            upgradedTower = Instantiate(prefabs.tower[elementIndex], transform);
-            upgradedTower.transform.localScale = new Vector3(upgradedTower.transform.localScale.x, UpgradedTowerHeight, upgradedTower.transform.localScale.z);
+            UpgradeTower((int)elementType);
         }
     }
 
@@ -87,7 +66,6 @@ public class Chunk : MonoBehaviour
 
     public void DestroyUpgradedTower()
     {
-        //TODO: animation for destruction of upgraded tower + event for sounds
         Destroy(upgradedTower, 3f);
     }
 
@@ -151,7 +129,7 @@ public class Chunk : MonoBehaviour
     {
         if(currentObject != null)
         {
-            Destroy(currentObject);
+            Destroy(currentObject, 3.0f);
         }
         switch(type)
         {
@@ -161,6 +139,10 @@ public class Chunk : MonoBehaviour
             case ChunkType.empty:
                 if (owner.path[x, y])
                 {
+                    if(currentObject != null)
+                    {
+                        currentObject.transform.Translate(Vector3.down*0.1f);
+                    }
                     PrettyPath();
                 }
                 else

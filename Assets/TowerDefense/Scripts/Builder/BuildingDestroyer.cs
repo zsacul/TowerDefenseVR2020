@@ -30,9 +30,11 @@ public class BuildingDestroyer : MonoBehaviour
         switch (chunk.type)
         {
             case ChunkType.playerObstacle:
+                GetComponent<Animator>().SetBool("Destroyed", true);
                 moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.playerObstacleCost / returnedMoneyRate);
                 break;
             case ChunkType.tower:
+                GetComponent<Animator>().SetTrigger("hide");
                 moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.towerCost / returnedMoneyRate);
                 break;
             default:

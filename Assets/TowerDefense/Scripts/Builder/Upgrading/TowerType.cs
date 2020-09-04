@@ -4,8 +4,9 @@ using UnityEngine;
 
 public enum TowerType
 {
-    fire,
+    basic,
     wind,
-    ice,
     lightning,
+    ice,
+    fire,
 }
