@@ -17,7 +17,7 @@ public class Chunk : MonoBehaviour
     public ChunkScene owner;
     public int choice;
     private GameObject currentObject;
-    private GameObject newObject;
+    private GameObject upgradedTower;
     private float UpgradedTowerHeight;
     public bool ChangeType(ChunkType newType, int choice = 0)
     {
@@ -65,8 +65,8 @@ public class Chunk : MonoBehaviour
                 currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
                 Destroy(currentObject, 3f);
             }
-            newObject = Instantiate(prefabs.tower[elementIndex], transform);
-            newObject.transform.localScale = new Vector3(newObject.transform.localScale.x, UpgradedTowerHeight, newObject.transform.localScale.z);
+            upgradedTower = Instantiate(prefabs.tower[elementIndex], transform);
+            upgradedTower.transform.localScale = new Vector3(upgradedTower.transform.localScale.x, UpgradedTowerHeight, upgradedTower.transform.localScale.z);
         }
     }
 
@@ -80,9 +80,15 @@ public class Chunk : MonoBehaviour
                 currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
                 Destroy(currentObject, 3f);
             }
-            newObject = Instantiate(prefabs.tower[elementIndex], transform);
-            newObject.transform.localScale = new Vector3(newObject.transform.localScale.x, UpgradedTowerHeight, newObject.transform.localScale.z);
+            upgradedTower = Instantiate(prefabs.tower[elementIndex], transform);
+            upgradedTower.transform.localScale = new Vector3(upgradedTower.transform.localScale.x, UpgradedTowerHeight, upgradedTower.transform.localScale.z);
         }
+    }
+
+    public void DestroyUpgradedTower()
+    {
+        //TODO: animation for destruction of upgraded tower + event for sounds
+        Destroy(upgradedTower, 3f);
     }
 
     public bool ValidOperation(ChunkType newType, bool modifyPathInBFS = true)
@@ -160,6 +166,11 @@ public class Chunk : MonoBehaviour
                 else
                 {
                     currentObject = Instantiate(prefabs.empty[Random.Range(2, prefabs.empty.Length)], transform);
+                }
+                //Destroys upgraded tower if it exists
+                if (upgradedTower)
+                {
+                    DestroyUpgradedTower();
                 }
                 break;
             case ChunkType.border:

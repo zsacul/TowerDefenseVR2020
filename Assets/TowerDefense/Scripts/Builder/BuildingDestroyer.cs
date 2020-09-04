@@ -11,6 +11,7 @@ public class BuildingDestroyer : MonoBehaviour
 
     private void Start()
     {
+        hoverOn = false;
         chunk = transform.parent.GetComponent<Chunk>();
         if (!chunk)
         {
@@ -63,6 +64,7 @@ public class BuildingDestroyer : MonoBehaviour
         if(hoverOn)
         {
             chunk.owner.HideNewPath();
+            hoverOn = false;
         }
     }
 
