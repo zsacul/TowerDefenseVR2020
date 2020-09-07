@@ -29,9 +29,10 @@ public class Scoreboard : MonoBehaviour
         UpdateCurrentScore();
     }
 
-    void SetPlayerInfo()
+    public void SetUsername(string username)
     {
-        // Przypisanie currentUsername
+        currentUsername = username;
+        UpdateCurrentScore();
     }
 
     private void SetScoreOnPlace(int place, ScoreEntry score)
