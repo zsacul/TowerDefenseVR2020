@@ -14,6 +14,9 @@ public class BuildManager : MonoBehaviour
     private int money;
     public int towerCost;
     public int playerObstacleCost;
+    public int fireTowerCost;
+    public int iceTowerCost;
+    public int electricTowerCost;
     [SerializeField]
     private Canvas canvas;
     [SerializeField]

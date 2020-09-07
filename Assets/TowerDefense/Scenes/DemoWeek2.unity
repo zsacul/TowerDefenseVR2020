@@ -38524,6 +38524,9 @@ MonoBehaviour:
   money: 260
   towerCost: 80
   playerObstacleCost: 40
+  fireTowerCost: 100
+  iceTowerCost: 100
+  electricTowerCost: 100
   canvas: {fileID: 1561748944}
   towerBuilt: {fileID: 11400000, guid: ef8a51249d9b0e64ab78aa9f70655b62, type: 2}
   obstacleBuilt: {fileID: 11400000, guid: 832ad4e967e29ac42a4010aefdec3eb7, type: 2}
