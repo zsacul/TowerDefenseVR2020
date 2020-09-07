@@ -3,7 +3,9 @@ guid: 8c760d9552c65448aaf0cdcf921bdac7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreboardPrefab: {fileID: 4630397884649646068, guid: e71ebc43ac7bc4841962393015decfcc,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
