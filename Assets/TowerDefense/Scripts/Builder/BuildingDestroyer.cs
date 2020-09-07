@@ -27,20 +27,41 @@ public class BuildingDestroyer : MonoBehaviour
     public void DestroyBuilding()
     {
         int moneyToReturn;
+        int buildingCost;
+
         switch (chunk.type)
         {
             case ChunkType.playerObstacle:
                 GetComponent<Animator>().SetBool("Destroyed", true);
-                moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.playerObstacleCost / returnedMoneyRate);
+                buildingCost = BuildManager.Instance.playerObstacleCost;
                 break;
             case ChunkType.tower:
+                Debug.Log("Typ wieży: " + chunk.GetTowerType());
+                buildingCost = BuildManager.Instance.towerCost;
+                switch (chunk.GetTowerType())
+                {
+                    case TowerType.basic:
+                        break;
+                    case TowerType.ice:
+                        buildingCost += BuildManager.Instance.iceTowerCost;
+                        break;
+                    case TowerType.fire:
+                        buildingCost += BuildManager.Instance.fireTowerCost;
+                        break;
+                    case TowerType.lightning:
+                        buildingCost += BuildManager.Instance.electricTowerCost;
+                        break;
+                    default:
+                        Debug.LogError("Unknown tower is being destroyed");
+                        return;
+                }
                 GetComponent<Animator>().SetTrigger("hide");
-                moneyToReturn = (int)Math.Ceiling(BuildManager.Instance.towerCost / returnedMoneyRate);
                 break;
             default:
                 Debug.LogError("Trying to destroy building that can't be destroyed");
                 return;
         }
+        moneyToReturn = (int)Math.Ceiling(buildingCost / returnedMoneyRate);
         if (chunk.ChangeType(ChunkType.empty))
         {
             BuildManager.Instance.AddMoney(moneyToReturn);

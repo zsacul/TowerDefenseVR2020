@@ -19,6 +19,7 @@ public class Chunk : MonoBehaviour
     private GameObject currentObject;
     private GameObject upgradedTower;
     private float UpgradedTowerHeight;
+    private TowerType currentTowerType;
     public bool ChangeType(ChunkType newType, int choice = 0)
     {
         if(/*canBeModified &&*/ ValidOperation(newType))
@@ -57,10 +58,24 @@ public class Chunk : MonoBehaviour
             {
                 UpgradedTowerHeight = currentObject.GetComponent<TowerHeight>().towerHeight;
                 currentObject.GetComponentInChildren<ObjectVisibility>().StartDisappearing();
-                Destroy(currentObject, 3f);
+                Destroy(currentObject, 2f);
             }
             upgradedTower = Instantiate(prefabs.tower[elementIndex], transform);
             upgradedTower.transform.localScale = new Vector3(upgradedTower.transform.localScale.x, UpgradedTowerHeight, upgradedTower.transform.localScale.z);
+            currentTowerType = (TowerType)elementIndex;
+        }
+    }
+
+
+    public TowerType GetTowerType()
+    {
+        if (type == ChunkType.tower)
+        {
+            return currentTowerType;
+        }
+        else
+        {
+            throw new System.InvalidOperationException("Trying to get a tower type of a chunk that is not a tower");
         }
     }
 
@@ -330,8 +345,12 @@ public class Chunk : MonoBehaviour
                     return false;
                 }
             }
-            owner.ShowNewPath();
-            owner.Invoke("HideNewPath", 2);
+            //We don't want to show the new path as a yellow line after actual path has been changed in this call
+            if (!changeMap)
+            {
+                owner.ShowNewPath();
+                owner.Invoke("HideNewPath", 2);
+            }
             return true;
         }
         else
