@@ -24,6 +24,7 @@ public class EnemyHPManager : MonoBehaviour {
     [Min(1f)]
     public float enemyHP = 100f;
     public int moneyDropped = 0;
+    public int scorepointsDropped = 0;
 
     [SerializeField]
     Elements elementsInfo;
@@ -51,6 +52,11 @@ public class EnemyHPManager : MonoBehaviour {
         Destroy(enemyAgent);
         Destroy(gameObject, 3);
         BuildManager.BurstMoneyEffect(moneyDropped, transform.position + Vector3.up * 0.2f);
+    }
+
+    public void ApplyScore()
+    {
+        Scoreboard.Instance.AddScore(scorepointsDropped);
     }
 
     public void ApplyDamage(Bullet b) {
@@ -83,6 +89,7 @@ public class EnemyHPManager : MonoBehaviour {
 
         if (enemyHP <= 0 && !isDead) {
             BuildManager.Instance.AddMoney(moneyDropped);
+            ApplyScore();
             Death();
         }
     }
@@ -121,6 +128,7 @@ public class EnemyHPManager : MonoBehaviour {
         GetComponent<HealthBar>().updateBar(enemyHP);
         if (enemyHP <= 0 && !isDead)
         {
+            ApplyScore();
             BuildManager.Instance.AddMoney(moneyDropped);
             Death();
         }
