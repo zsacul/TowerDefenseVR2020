@@ -229,9 +229,9 @@ MonoBehaviour:
       m_Calls: []
   nextQuest: {fileID: 1301228819782378019}
   prevQuest: {fileID: 0}
-  infoForPlayer: 'Let''s do the same with the tower now. If you alreay forgot - press
-    left trigger and hit the hammer ball. To select a tower, hit the ball with a
-    tower inside. '
+  infoForPlayer: 'Let''s do the same with the tower now. If you already forgot -
+    press left trigger and hit the hammer ball. To select a tower, hit the ball with
+    a tower inside. '
   textHolder: {fileID: 0}
 --- !u!1 &5600923643980453685
 GameObject:

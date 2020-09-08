@@ -264,6 +264,7 @@ namespace SpawnManaging
                     }
                 }
 
+                incomingWaveInfoLabel.GetComponentInChildren<TextMeshProUGUI>().text ="Next wave:";
                 if (lightningEnemies != 0)
                     SetIncomingWaveText(0, lightningEnemies);
                 if (iceEnemies != 0)
