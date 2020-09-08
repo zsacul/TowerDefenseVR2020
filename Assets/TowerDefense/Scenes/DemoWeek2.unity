@@ -16715,31 +16715,31 @@ MonoBehaviour:
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
-    nextGroupTime: 0
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: de975c65757dbea4c8f593931ba98e91, type: 2}
     interval: 1
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
-    nextGroupTime: 0
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: ab591bfb101032144ae7c4111fa147a9, type: 2}
     interval: 1
     bonusHp: 0
     bonusSpeed: 0
-    groupSize: 4
-    nextGroupTime: 2
+    groupSize: 1
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: 65b9d4592d99cd44e9002ee99581b6d9, type: 2}
     interval: 1
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
-    nextGroupTime: 0
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: a8e550f679851f044a07e2ed0122c9bf, type: 2}
     interval: 2
     bonusHp: 0
     bonusSpeed: 0
     groupSize: 1
-    nextGroupTime: 0
+    nextGroupTime: 1
   - waveData: {fileID: 11400000, guid: f66eb6ddfff605840b73ca7fe72fee2f, type: 2}
     interval: 1
     bonusHp: 0
@@ -52736,6 +52736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315896200844705111, guid: ae0332a1eea44df4ca54bb67f6645dd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4893095752389336993, guid: ae0332a1eea44df4ca54bb67f6645dd8,
         type: 3}
