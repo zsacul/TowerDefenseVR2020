@@ -15,8 +15,11 @@ public class RightRaycast : MonoBehaviour
 
     public static RightRaycast Instance;
 
+    private bool isTeleportPointing;
+
     private void Awake()
     {
+        isTeleportPointing = false;
         Instance = this;
     }
 
@@ -39,6 +42,10 @@ public class RightRaycast : MonoBehaviour
             TeleportOff.Invoke();
             //Debug.Log("Turning off teleport raycast");
             teleportState = false;
+            if (isTeleportPointing)
+            {
+                //press keycode
+            }
         }
     }
 
@@ -54,5 +61,15 @@ public class RightRaycast : MonoBehaviour
             BuildingOff.Invoke();
             buildingState = false;
         }
+    }
+
+    public void StartedPointing()
+    {
+        isTeleportPointing = true;
+    }
+
+    public void StoppedPointing()
+    {
+        isTeleportPointing = false;
     }
 }
