@@ -28,7 +28,7 @@
             Receive(false);
         }
 
-        public void ChangeValue()
+        /*public void ChangeValue()
         {
             value = !value;
             Receive(value);
@@ -44,6 +44,6 @@
         {
             Receive(false);
             value = false;
-        }
+        }*/
     }
 }
