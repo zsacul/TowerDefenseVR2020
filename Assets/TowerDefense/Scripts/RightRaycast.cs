@@ -10,16 +10,14 @@ public class RightRaycast : MonoBehaviour
 
     public UnityEvent TeleportOn;
     public UnityEvent TeleportOff;
+    public UnityEvent StopCurrentTeleport;
     public UnityEvent BuildingOn;
     public UnityEvent BuildingOff;
 
     public static RightRaycast Instance;
 
-    private bool isTeleportPointing;
-
     private void Awake()
     {
-        isTeleportPointing = false;
         Instance = this;
     }
 
@@ -39,13 +37,12 @@ public class RightRaycast : MonoBehaviour
         }
         else if (!newState)
         {
+            teleportState = false;
             TeleportOff.Invoke();
             //Debug.Log("Turning off teleport raycast");
-            teleportState = false;
-            if (isTeleportPointing)
-            {
-                //press keycode
-            }
+
+            //If a player is pointing with the teleport pointer right now, it's gonna be turned off
+            StopCurrentTeleport.Invoke();
         }
     }
 
@@ -61,15 +58,5 @@ public class RightRaycast : MonoBehaviour
             BuildingOff.Invoke();
             buildingState = false;
         }
-    }
-
-    public void StartedPointing()
-    {
-        isTeleportPointing = true;
-    }
-
-    public void StoppedPointing()
-    {
-        isTeleportPointing = false;
     }
 }

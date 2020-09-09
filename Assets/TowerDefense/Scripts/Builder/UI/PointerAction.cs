@@ -10,12 +10,12 @@
     /// </summary>
     public class PointerAction : BooleanAction
     {
-        private bool value;
+        //private bool value;
 
         void Start()
         {
-            Receive(false);
-            value = false;
+            //Receive(false);
+            //value = false;
         }
 
         public void StartAction()
