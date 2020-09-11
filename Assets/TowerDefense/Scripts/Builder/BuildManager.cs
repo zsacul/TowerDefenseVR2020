@@ -310,7 +310,8 @@ public class BuildManager : MonoBehaviour
             return true;
         }
 
-        return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.B);
+        // return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.B);
+        return false;
     }
 
     ///<summary>
