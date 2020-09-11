@@ -10029,6 +10029,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4254198765189177666, guid: a2a75739470f37940b7041c0d06a5b58,
+        type: 3}
+      propertyPath: m_Name
+      value: ActivateBuildPointer
+      objectReference: {fileID: 0}
     - target: {fileID: 4254198765189177668, guid: a2a75739470f37940b7041c0d06a5b58,
         type: 3}
       propertyPath: sources.Array.data[0]
@@ -39382,7 +39387,32 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 649511991}
-        m_MethodName: ClearSources
+        m_MethodName: RemoveSource
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1814319320}
+          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649511991}
+        m_MethodName: RemoveSource
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1682159341}
+          m_ObjectArgumentAssemblyTypeName: Zinnia.Action.Action, Zinnia.Runtime
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StopCurrentTeleport:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 649511991}
+        m_MethodName: TurnOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47688,7 +47718,7 @@ GameObject:
   - component: {fileID: 1921806509}
   - component: {fileID: 1921806508}
   m_Layer: 0
-  m_Name: PointerActivationEvent
+  m_Name: BuildPointerActivationEvent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52740,7 +52770,7 @@ PrefabInstance:
     - target: {fileID: 4315896200844705111, guid: ae0332a1eea44df4ca54bb67f6645dd8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4893095752389336993, guid: ae0332a1eea44df4ca54bb67f6645dd8,
         type: 3}

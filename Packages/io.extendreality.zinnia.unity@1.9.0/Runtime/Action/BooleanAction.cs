@@ -15,5 +15,11 @@
         public class UnityEvent : UnityEvent<bool>
         {
         }
+
+        //Serves only as a way to turn off currently activated teleport pointer because every other way failed
+        public void TurnOff()
+        {
+            ProcessValue(false);
+        }
     }
 }
